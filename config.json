@@ -105,6 +105,19 @@
         "escanteios_minimos": 1,
         "max_red_card_fav": 0
       }
+    },
+    "custom_1786330601371": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "MERCADO TESTE",
+      "minuto_inicio": 15,
+      "minuto_fim": 27,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": ""
+      }
     }
   }
 }
