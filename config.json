@@ -103,7 +103,8 @@
         "chutes_alvo_min": 4,
         "chutes_totais_min": 10,
         "escanteios_minimos": 1,
-        "max_red_card_fav": 0
+        "max_red_card_fav": 0,
+        "dapm_total_orig_min": 0.7
       }
     },
     "custom_1786330601371": {
