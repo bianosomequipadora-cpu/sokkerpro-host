@@ -890,7 +890,7 @@ def checar_resultado(sinal):
         ga = int(fixture.get('scoresVisitorTeam', 0) or 0)
         total_final = gh + ga
         total_ht = int(fixture.get('scoresHT', 0) or 0)
-        if mercado == 'HT':
+        if mercado in ('HT', 'over_05_ht', 'gol_intervalo'):
             return 'green' if total_ht >= 1 else 'red' if is_2h or is_final else None
         elif mercado == 'BTTS':
             return 'green' if gh >= 1 and ga >= 1 else 'red' if is_final else None
