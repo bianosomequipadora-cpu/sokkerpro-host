@@ -1,0 +1,23 @@
+name: SokkerPro Live Bot
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install requests
+      - run: python bot_sokkerpro.py
+        env:
+          TG_TOKEN: ${{ secrets.TG_SOKKERPRO_TOKEN }}
+          TG_GROUP_ID: '-1003843430798'
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
