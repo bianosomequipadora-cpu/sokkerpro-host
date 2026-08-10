@@ -985,21 +985,22 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
         new_last_id = update['update_id']
         msg = update.get('message', {})
         text = msg.get('text', '')
+        comando = text.partition(' ')[0].partition('@')[0].lower()
         chat_orig = msg.get('chat', {}).get('id', 0)
         msg_ts = msg.get('date', 0)
         if agora_ts - msg_ts > 600:
             continue
         pass
-        if text == '/relatoriomensal' and (not relatorio_respondido):
+        if comando == '/relatoriomensal' and (not relatorio_respondido):
             msg = enviar_relatorio_mensal()
             requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage', json={'chat_id': chat_orig, 'text': msg, 'parse_mode': 'HTML'})
             relatorio_respondido = True
-        if text == '/relatoriodiario' and (not relatorio_respondido):
+        if comando == '/relatoriodiario' and (not relatorio_respondido):
             enviar_relatorio_diario()
             relatorio_respondido = True
-        elif text == '/mercados' or text == '/mercados24h':
+        elif comando == '/mercados' or comando == '/mercados24h':
             try:
-                if text == '/mercados24h':
+                if comando == '/mercados24h':
                     msg = enviar_relatorio_mercados24h()
                 else:
                     msg = enviar_relatorio_performance()
@@ -1009,7 +1010,7 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
                     requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage', json={'chat_id': chat_orig, 'text': 'Ainda sem dados de performance registrados.', 'parse_mode': 'HTML'})
             except Exception as e:
                 print(f'[PERFORMANCE] Erro: {e}')
-        elif text == '/radar' and (not radar_respondido):
+        elif comando == '/radar' and (not radar_respondido):
             jogos_live = jogos_live or []
             jogos_na_janela = jogos_na_janela or []
             if jogos_na_janela:
