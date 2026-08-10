@@ -857,6 +857,24 @@ def checar_resultado(sinal):
             if fixture:
                 break
         if not fixture:
+            # O jogo pode já ter saído de /livescores. Busca o resultado
+            # definitivo diretamente pelo fixtureId na própria SokkerPro.
+            try:
+                detalhe = requests.get(
+                    f'https://m2.sokkerpro.com/fixture/{fid_raw}',
+                    headers={'User-Agent': 'Mozilla/5.0'}, timeout=10
+                ).json()
+                fixture = detalhe.get('data') if detalhe.get('success') else None
+                if fixture:
+                    eh_corner_ht = mercado in ('CORNER_HT', 'escanteio_ht') or sinal.get('tipo') == 'escanteio_ht'
+                    if eh_corner_ht and fixture.get('localCornersHT') is not None:
+                        fixture = dict(fixture)
+                        fixture['localCorners'] = fixture.get('localCornersHT')
+                        fixture['visitorCorners'] = fixture.get('visitorCornersHT')
+            except Exception as e:
+                print(f'[AUDITORIA] Fixture {fid_raw} indisponível: {e}')
+                return None
+        if not fixture:
             return None
         # O status oficial da SokkerPro é a fonte da verdade para o fim do período.
         # Não usar o minuto numérico: em 45+X/90+X ele pode antecipar a auditoria
