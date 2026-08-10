@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sokkerpro-v7';
+const CACHE_NAME = 'sokkerpro-v8';
 const assets = [
   'painel.html',
   'index.html'
