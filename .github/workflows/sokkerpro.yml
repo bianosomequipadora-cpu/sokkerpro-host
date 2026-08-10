@@ -19,5 +19,5 @@ jobs:
         env:
           TG_TOKEN: ${{ secrets.TG_SOKKERPRO_TOKEN }}
           TG_GROUP_ID: '-1003843430798'
-          GH_PAT: ${{ secrets.GH_PAT }}
+          GH_PAT: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
