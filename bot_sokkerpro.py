@@ -858,10 +858,12 @@ def checar_resultado(sinal):
                 break
         if not fixture:
             return None
-        status = fixture.get('status', '')
-        minute = int(fixture.get('minute', 0) or 0)
-        is_final = status in ('FT', 'PEN')
-        is_2h = status in ('2nd', 'HT') or minute >= 50
+        # O status oficial da SokkerPro é a fonte da verdade para o fim do período.
+        # Não usar o minuto numérico: em 45+X/90+X ele pode antecipar a auditoria
+        # enquanto ainda há acréscimos para jogar.
+        status = str(fixture.get('status', '')).strip().upper()
+        is_final = status in ('FT', 'PEN', 'AET')
+        is_2h = status in ('2ND', 'HT')
         mercados_ht = ['HT', 'CORNER_HT', 'BTTS', 'escanteio_ht']
         eh_mercado_ht = mercado in mercados_ht or (mercado and mercado.startswith('custom_') and (sinal.get('tipo') in ('escanteio_ht', 'gol_intervalo')))
         if not (is_final or (eh_mercado_ht and is_2h)):
