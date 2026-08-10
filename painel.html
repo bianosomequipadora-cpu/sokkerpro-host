@@ -253,7 +253,7 @@ async function salvarConfig(){
             var criterios={};
             card.querySelectorAll('input[type="number"]').forEach(function(campo){
                 var bruto=campo.value.trim();
-                if(bruto!=='' && !/^[+-]?(?:\\d+)(?:[.,]\\d+)?$/.test(bruto)) throw new Error('Valor inválido no campo numérico '+campo.id+'. Use apenas números.');
+                if(bruto!=='' && !/^[+-]?(?:\d+)(?:[.,]\d+)?$/.test(bruto)) throw new Error('Valor inválido no campo numérico '+campo.id+'. Use apenas números.');
             });
             function addIf(keyC, idSuf){var v=gv(key+'-'+idSuf); if(v!==null&&v!=='')criterios[keyC]=v;}
             addIf('situacao_favorito','sit-fav');
@@ -299,7 +299,7 @@ async function salvarConfig(){
                 var campo=document.getElementById(key+'-'+sufixo);
                 var bruto=campo ? campo.value.trim() : '';
                 if(bruto==='') throw new Error('Preencha '+rotulo+' do mercado '+key+'.');
-                if(!/^[-+]?\\d+$/.test(bruto)) throw new Error(rotulo+' inválida no mercado '+key+'. Use um número inteiro.');
+                if(!/^[-+]?\d+$/.test(bruto)) throw new Error(rotulo+' inválida no mercado '+key+'. Use um número inteiro.');
                 return Number(bruto);
             }
             var minutoInicio=inteiroObrigatorio('inicio','minutagem inicial');
