@@ -87,8 +87,10 @@ function gv(id) {
     if(el.type==='checkbox') return el.checked;
     if(el.type==='text') return el.value||'';
     if(el.type==='select-one') return el.value||'';
-    var v=parseFloat(el.value.replace(',','.'));
-    return isNaN(v)?(el.value||''):v;
+    var raw=el.value.trim();
+    if(raw==='') return null;
+    var v=parseFloat(raw.replace(',','.'));
+    return Number.isFinite(v)?v:null;
 }
 
 function criarCardMercado(key,dados,isCustom){
@@ -249,6 +251,10 @@ async function salvarConfig(){
         document.querySelectorAll('.card').forEach(function(card){
             var key=card.id.replace('card-','');
             var criterios={};
+            card.querySelectorAll('input[type="number"]').forEach(function(campo){
+                var bruto=campo.value.trim();
+                if(bruto!=='' && !/^[+-]?(?:\\d+)(?:[.,]\\d+)?$/.test(bruto)) throw new Error('Valor inválido no campo numérico '+campo.id+'. Use apenas números.');
+            });
             function addIf(keyC, idSuf){var v=gv(key+'-'+idSuf); if(v!==null&&v!=='')criterios[keyC]=v;}
             addIf('situacao_favorito','sit-fav');
                         addIf('appm_min_por_time','appm');
@@ -289,13 +295,25 @@ async function salvarConfig(){
             var tipoEl=document.getElementById(key+'-tipo');
             var tipoVal=tipoEl?tipoEl.value:'';
 
+            function inteiroObrigatorio(sufixo, rotulo){
+                var campo=document.getElementById(key+'-'+sufixo);
+                var bruto=campo ? campo.value.trim() : '';
+                if(bruto==='') throw new Error('Preencha '+rotulo+' do mercado '+key+'.');
+                if(!/^[-+]?\\d+$/.test(bruto)) throw new Error(rotulo+' inválida no mercado '+key+'. Use um número inteiro.');
+                return Number(bruto);
+            }
+            var minutoInicio=inteiroObrigatorio('inicio','minutagem inicial');
+            var minutoFim=inteiroObrigatorio('fim','minutagem final');
+            var periodo=inteiroObrigatorio('periodo','período');
+            if(minutoInicio<0 || minutoFim<0 || minutoInicio>minutoFim) throw new Error('Minutagem inválida no mercado '+key+'. Confira início e fim.');
+            if(periodo!==1 && periodo!==2) throw new Error('Período inválido no mercado '+key+'. Use 1 para HT ou 2 para FT.');
             merc[key]={
                 ativo:gv(key+'-ativo'),
                 notificar:gv(key+'-notificar'),
                 nome:(document.getElementById(key+'-nome')||{}).value||'',
-                minuto_inicio:parseInt(gv(key+"-inicio"))||0,
-                minuto_fim:parseInt(gv(key+"-fim"))||0,
-                periodo:parseInt(gv(key+"-periodo"))||0,
+                minuto_inicio:minutoInicio,
+                minuto_fim:minutoFim,
+                periodo:periodo,
                 tipo:tipoVal,
                 placar_valido:gv(key+'-placar-valido'),
                 criterios:criterios
