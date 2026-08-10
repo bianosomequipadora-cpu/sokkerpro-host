@@ -237,7 +237,12 @@ function renderizarMercados(){
 }
 
 async function salvarConfig(){
-    if(!TOKEN){st('Token do GitHub necessario!','err');return;}
+    if(!TOKEN){
+        var novoToken=prompt('Para salvar alterações, informe seu token do GitHub:');
+        if(!novoToken){st('Token do GitHub necessario!','err');return;}
+        TOKEN=novoToken.trim();
+        localStorage.setItem('github_token',TOKEN);
+    }
     st('Salvando...','loading');
     try{
         var merc={};
