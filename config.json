@@ -94,11 +94,12 @@
       "placar_valido": "",
       "criterios": {
         "situacao_favorito": "perdendo_ou_empatando",
+        "appm_min_por_time": 0.7,
+        "media_gols_partida_min": 2.2,
         "diferenca_gols_fav_max": 1,
         "chutes_totais_min": 5,
         "escanteios_minimos": 1,
-        "max_red_card_fav": 0,
-        "dapm_total_orig_min": 0.7
+        "max_red_card_fav": 0
       }
     },
     "escanteio_ft": {
@@ -112,56 +113,30 @@
       "placar_valido": "",
       "criterios": {
         "situacao_favorito": "perdendo_ou_empatando",
+        "appm_min_por_time": 0.7,
         "diferenca_gols_fav_max": 1,
         "chutes_alvo_min": 4,
         "chutes_totais_min": 10,
         "escanteios_minimos": 1,
-        "max_red_card_fav": 0,
-        "dapm_total_orig_min": 0.7
+        "max_red_card_fav": 0
       }
     },
-    "custom_1786330601371": {
+    "custom_1786404753790": {
       "ativo": true,
       "notificar": true,
-      "nome": "MERCADO TESTE",
-      "minuto_inicio": 15,
-      "minuto_fim": 27,
+      "nome": "⛳️⚠️ESCANTEIO ÁSIAT/LMT HT⚠️⛳️",
+      "minuto_inicio": 32,
+      "minuto_fim": 38,
       "periodo": 1,
-      "tipo": "gol_intervalo",
-      "placar_valido": "0x0",
+      "tipo": "escanteio_ht",
+      "placar_valido": "",
       "criterios": {
-        "situacao_favorito": "empatando",
-        "appm_min_por_time": 0.8,
-        "appm_total_min": 1.6,
-        "media_gols_partida_min": 2.5,
-        "media_gols_ht_min": 1.1,
-        "media_gols_ft_min": 1.4,
-        "btts_probabilidade_min": 65,
+        "situacao_favorito": "perdendo_ou_empatando",
         "diferenca_gols_fav_max": 1,
-        "chutes_alvo_min": 2,
-        "chutes_totais_min": 8,
-        "ataques_perigosos_min": 20,
-        "escanteios_minimos": 3,
+        "escanteios_minimos": 1,
         "max_red_card_fav": 0,
-        "posse_bola_min": 55,
-        "media_corners_total_min": 9.5,
-        "media_corners_casa_min": 4.5,
-        "media_corners_fora_min": 5,
-        "xg_total_min": 2.1,
-        "xg_casa_min": 1,
-        "xg_fora_min": 1.1,
-        "pressure_bar_min": 60,
-        "chutes_inside_min": 4,
-        "chutes_outside_min": 3,
-        "goal_attempts_min": 12,
-        "chutes_bloq_max": 2,
-        "defesas_min": 4,
-        "faltas_min": 10,
-        "yellow_max": 2,
-        "impedimentos_min": 3,
-        "dapm_5_min": 1.2,
-        "dapm_total_orig_min": 2.4,
-        "ball_safe_min": 50
+        "posse_bola_min": 58,
+        "dapm_total_orig_min": 0.9
       }
     }
   }
