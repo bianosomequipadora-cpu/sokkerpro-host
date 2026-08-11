@@ -1,28 +1,4 @@
 import os, sys, base64, requests as req
-try:
-    wf_path = '.github/workflows/sokkerpro.yml'
-    if os.path.exists(wf_path):
-        with open(wf_path, 'r') as f:
-            wf = f.read()
-        if 'cancel-in-progress' in wf:
-            wf = wf.replace('  cancel-in-progress: true\n', '')
-            wf = wf.replace('concurrency:\n  group: ${{ github.workflow }}-${{ github.ref }}\n', '')
-            with open(wf_path, 'w') as f:
-                f.write(wf)
-            token = os.environ.get('GH_PAT', '')
-            if token:
-                api_url = 'https://api.github.com/repos/cleubianodasilva-png/bot-sokkerpro/contents/.github/workflows/sokkerpro.yml'
-                h = {'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github.v3+json'}
-                cr = req.get(api_url, headers=h)
-                if cr.status_code == 200:
-                    cur_sha = cr.json()['sha']
-                    with open(wf_path, 'r') as f:
-                        new_content = f.read()
-                    req.put(api_url, headers=h, json={'message': 'fix: remove cancel-in-progress', 'content': base64.b64encode(new_content.encode()).decode(), 'sha': cur_sha})
-            print('[FIX] cancel-in-progress removido')
-except Exception as e:
-    print(f'[FIX] erro: {e}')
-
 def analisar_e_disparar(game, stats, p, m, sh, sa, odd_h, odd_a, sent_vistos):
     try:
         oh = float(odd_h) if odd_h else 3.0
