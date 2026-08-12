@@ -93,8 +93,8 @@
       "criterios": {
         "situacao_favorito": "empatando",
         "media_gols_partida_min": 2.6,
-        "chutes_alvo_min": 2,
-        "chutes_totais_min": 6,
+        "chutes_alvo_min": 4,
+        "chutes_totais_min": 7,
         "max_red_card_fav": 0,
         "pressure_bar_min": 65,
         "dapm_total_orig_min": 0.7
