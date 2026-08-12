@@ -134,6 +134,7 @@
       "criterios": {
         "situacao_favorito": "perdendo_ou_empatando",
         "diferenca_gols_fav_max": 1,
+        "chutes_totais_min": 6,
         "escanteios_minimos": 1,
         "max_red_card_fav": 0,
         "posse_bola_min": 58,
