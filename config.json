@@ -158,6 +158,23 @@
         "pressure_bar_min": 65,
         "dapm_total_orig_min": 0.75
       }
+    },
+    "custom_1786561800086": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "🚩🔞ESCANTEIO INTERVALO🔞🚩",
+      "minuto_inicio": 32,
+      "minuto_fim": 38,
+      "periodo": 1,
+      "tipo": "escanteio_ht",
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": "perdendo_ou_empatando",
+        "escanteios_minimos": 1,
+        "max_red_card_fav": 0,
+        "pressure_bar_min": 65,
+        "dapm_total_orig_min": 0.75
+      }
     }
   }
 }
