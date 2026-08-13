@@ -584,6 +584,7 @@ def _extrair_stats_sokkerpro(fix):
     def gf(k, d=0.0):
         return _get_float(fix.get(k, d))
     btts_prob = 0.0
+    prob_mercados = {}
     media_gols_ht_h = 0.0
     media_gols_ht_a = 0.0
     media_gols_ft_h = 0.0
@@ -604,6 +605,22 @@ def _extrair_stats_sokkerpro(fix):
                 media_gols_ft_a = gf(det.get('media_fora', 0))
     except Exception:
         pass
+    try:
+        prog = json.loads(fix.get('prognosticos', '{}') or '{}')
+        for key, item in prog.get('mercado_gols_primeiro_tempo', {}).items():
+            if isinstance(item, dict) and item.get('res') is not None:
+                prob_mercados['ht_' + key] = item.get('res')
+        for key, item in prog.get('mercado_gols', {}).items():
+            if isinstance(item, dict) and item.get('res') is not None:
+                prob_mercados['ft_' + key] = item.get('res')
+        item = prog.get('mercado_ambos_marcam', {}).get('ambos_sim', {})
+        if isinstance(item, dict) and item.get('probabilidade') is not None:
+            prob_mercados['btts'] = item.get('probabilidade')
+        for key, item in prog.get('mercado_escanteios', {}).items():
+            if isinstance(item, dict) and item.get('probabilidade') is not None:
+                prob_mercados['corner_' + key] = item.get('probabilidade')
+    except Exception:
+        pass
     _dapm_h = gf('localDapmTotal')
     _dapm_a = gf('visitorDapmTotal')
     dapm_max = max(_dapm_h, _dapm_a)
@@ -617,7 +634,7 @@ def _extrair_stats_sokkerpro(fix):
             return int(float(str(raw)))
         except:
             return -1
-    return {'chutes_tot_h': g('localShotsTotal'), 'chutes_tot_a': g('visitorShotsTotal'), 'chutes_gol_h': g('localShotsOnGoal'), 'chutes_gol_a': g('visitorShotsOnGoal'), 'escanteios_h': _corners('localCorners'), 'escanteios_a': _corners('visitorCorners'), 'ataques_perigosos_h': g('localAttacksDangerousAttacks'), 'ataques_perigosos_a': g('visitorAttacksDangerousAttacks'), 'red_cards_h': g('localRedCards'), 'red_cards_a': g('visitorRedCards'), 'dapm5_h': gf('localDapm5'), 'dapm5_a': gf('visitorDapm5'), 'dapm10_h': gf('localDapm10'), 'dapm10_a': gf('visitorDapm10'), 'dapm_total_h': gf('localDapmTotal'), 'dapm_total_a': gf('visitorDapmTotal'), 'medias_home_goal': gf('medias_home_goal'), 'medias_away_goal': gf('medias_away_goal'), 'medias_goal_h': gf('medias_home_goal'), 'medias_goal_a': gf('medias_away_goal'), 'medias_home_corners': gf('medias_home_corners'), 'medias_away_corners': gf('medias_away_corners'), 'medias_corners_h': gf('medias_home_corners'), 'medias_corners_a': gf('medias_away_corners'), 'chutes_inside_h': g('localShotsInsideBox'), 'chutes_inside_a': g('visitorShotsInsideBox'), 'chutes_outside_h': g('localShotsOutsideBox'), 'chutes_outside_a': g('visitorShotsOutsideBox'), 'chutes_bloq_h': g('localShotsBlocked'), 'chutes_bloq_a': g('visitorShotsBlocked'), 'goal_attempts_h': g('localGoalAttempts'), 'goal_attempts_a': g('visitorGoalAttempts'), 'faltas_h': g('localFouls'), 'faltas_a': g('visitorFouls'), 'yellow_cards_h': g('localYellowCards'), 'yellow_cards_a': g('visitorYellowCards'), 'impedimentos_h': g('localOffsides'), 'impedimentos_a': g('visitorOffsides'), 'defesas_h': g('localSaves'), 'defesas_a': g('visitorSaves'), 'pressure_bar_h': g('localPressureBar'), 'pressure_bar_a': g('visitorPressureBar'), 'ball_safe_h': g('localBallSafe'), 'ball_safe_a': g('visitorBallSafe'), 'xg_h': gf('localXg'), 'xg_a': gf('visitorXg'), 'posse_h': gf('localBallPossession'), 'posse_a': gf('visitorBallPossession'), 'ataques_h': g('localAttacksAttacks'), 'ataques_a': g('visitorAttacksAttacks'), 'btts_probabilidade': btts_prob, 'media_gols_ht_h': media_gols_ht_h, 'media_gols_ht_a': media_gols_ht_a, 'media_gols_ft_h': media_gols_ft_h, 'media_gols_ft_a': media_gols_ft_a, 'dapm_max_h': dapm_max, 'dapm_max_a': dapm_max}
+    return {'chutes_tot_h': g('localShotsTotal'), 'chutes_tot_a': g('visitorShotsTotal'), 'chutes_gol_h': g('localShotsOnGoal'), 'chutes_gol_a': g('visitorShotsOnGoal'), 'escanteios_h': _corners('localCorners'), 'escanteios_a': _corners('visitorCorners'), 'ataques_perigosos_h': g('localAttacksDangerousAttacks'), 'ataques_perigosos_a': g('visitorAttacksDangerousAttacks'), 'red_cards_h': g('localRedCards'), 'red_cards_a': g('visitorRedCards'), 'dapm5_h': gf('localDapm5'), 'dapm5_a': gf('visitorDapm5'), 'dapm10_h': gf('localDapm10'), 'dapm10_a': gf('visitorDapm10'), 'dapm_total_h': gf('localDapmTotal'), 'dapm_total_a': gf('visitorDapmTotal'), 'medias_home_goal': gf('medias_home_goal'), 'medias_away_goal': gf('medias_away_goal'), 'medias_goal_h': gf('medias_home_goal'), 'medias_goal_a': gf('medias_away_goal'), 'medias_home_corners': gf('medias_home_corners'), 'medias_away_corners': gf('medias_away_corners'), 'medias_corners_h': gf('medias_home_corners'), 'medias_corners_a': gf('medias_away_corners'), 'chutes_inside_h': g('localShotsInsideBox'), 'chutes_inside_a': g('visitorShotsInsideBox'), 'chutes_outside_h': g('localShotsOutsideBox'), 'chutes_outside_a': g('visitorShotsOutsideBox'), 'chutes_bloq_h': g('localShotsBlocked'), 'chutes_bloq_a': g('visitorShotsBlocked'), 'goal_attempts_h': g('localGoalAttempts'), 'goal_attempts_a': g('visitorGoalAttempts'), 'faltas_h': g('localFouls'), 'faltas_a': g('visitorFouls'), 'yellow_cards_h': g('localYellowCards'), 'yellow_cards_a': g('visitorYellowCards'), 'impedimentos_h': g('localOffsides'), 'impedimentos_a': g('visitorOffsides'), 'defesas_h': g('localSaves'), 'defesas_a': g('visitorSaves'), 'pressure_bar_h': g('localPressureBar'), 'pressure_bar_a': g('visitorPressureBar'), 'ball_safe_h': g('localBallSafe'), 'ball_safe_a': g('visitorBallSafe'), 'xg_h': gf('localXg'), 'xg_a': gf('visitorXg'), 'posse_h': gf('localBallPossession'), 'posse_a': gf('visitorBallPossession'), 'ataques_h': g('localAttacksAttacks'), 'ataques_a': g('visitorAttacksAttacks'), 'btts_probabilidade': btts_prob, 'media_gols_ht_h': media_gols_ht_h, 'media_gols_ht_a': media_gols_ht_a, 'media_gols_ft_h': media_gols_ft_h, 'media_gols_ft_a': media_gols_ft_a, 'dapm_max_h': dapm_max, 'dapm_max_a': dapm_max, 'prob_mercados': prob_mercados}
 
 def get_jogos_sokkerpro(fids_existentes):
     """Busca jogos, stats E odds em UMA unica chamada HTTP."""
@@ -736,7 +753,30 @@ def filtrar_janelas(jogos):
             resultado.append(j)
     return resultado
 
-def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, extra_val=None, cantos_atual=0, stats=None, sh=0, sa=0, fav_final='h', odd_h=None, odd_a=None, odd_b365=None, odd_bano=None, nome=None, tipo=''):
+def _probabilidade_para_sinal(stats, tipo, sh, sa, cantos_atual):
+    mapa = stats.get('prob_mercados', {}) if stats else {}
+    if tipo == 'gol_intervalo':
+        return mapa.get('ht_over_0_5')
+    if tipo == 'over_15':
+        return mapa.get('ft_over_1_5')
+    if tipo in ('over_gol', 'over', 'gol_partida'):
+        return mapa.get('ft_over_' + str(sh + sa + 1) + '_5')
+    if tipo == 'ambas_marcam':
+        return mapa.get('btts')
+    if tipo in ('escanteio', 'corner', 'escanteio_ht', 'escanteio_ft'):
+        alvo = cantos_atual + 0.5
+        for chave, valor in mapa.items():
+            if not chave.startswith('corner_over_'):
+                continue
+            try:
+                linha = float(chave.replace('corner_over_', '').replace('_', '.'))
+            except Exception:
+                continue
+            if abs(linha - alvo) < 0.01:
+                return valor
+    return None
+
+def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, extra_val=None, cantos_atual=0, stats=None, sh=0, sa=0, fav_final='h', odd_h=None, odd_a=None, odd_b365=None, odd_bano=None, nome=None, tipo='', probabilidade=None):
     NL = chr(10)
     chutes_h = stats.get('chutes_tot_h', 0) if stats else 0
     chutes_a = stats.get('chutes_tot_a', 0) if stats else 0
@@ -808,11 +848,12 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     else:
         fav_nome = '—'
     odd_rec = '1.70'
+    prob_texto = (NL + f'<b>📊 Probabilidade: {probabilidade}%</b>') if probabilidade is not None else ''
     sep = '━' * 20
     liga_texto = '<b>🌍 Liga: ' + liga + '</b>'
     if pais:
         liga_texto = '<b>🌍 Liga: ' + liga + ' (' + pais + ')</b>'
-    msg = f'{sep}' + NL + f'<b>{title}</b>' + NL + f'{sep}' + NL + f'<b>⚽️ Placar: {placar}</b>' + NL + f'{liga_texto}' + NL + f'<b>📡 {home} x {away}</b>' + NL + f'<b>👀 ODDs: Casa {(odd_h if odd_h else chr(8212))} / Fora {(odd_a if odd_a else chr(8212))}</b>' + NL + '<b>⏰️ Minuto: ' + str(minuto) + "'</b>" + NL + f'{sep}' + NL + '<b>📊 Estatísticas ao Vivo da Partida:</b>' + NL + f'<b>🚀 Chutes Totais: {chutes_h} | {chutes_a}</b>' + NL + f'<b>🎯 Chutes No Alvo: {alvo_h} | {alvo_a}</b>' + NL + f'<b>⚔️ Ataques Perigosos: {atq_per_h} | {atq_per_a}</b>' + NL + f'<b>🚩 Escanteios: {cant_h} | {cant_a}</b>' + NL + f'<b>🔥 APPM da Partida: {appm}</b>' + NL + f'<b>🔥 APPM Últ 10 Min: {dapm10}</b>' + NL + f'<b>🔥 APPM Últ 5 Min: {dapm5}</b>' + NL + f'{sep}' + NL + '<b>💡 Análise Técnica da Partida:</b>' + NL + f'<b>🎯 Favorito: {fav_nome}</b>' + NL + f'<b>🚨 Alerta: {alerta}</b>' + NL + f'{sep}' + NL + f'<b>📌 Entrada: {entrada}</b>' + NL + f'<b>💰 ODD Recomendada: {odd_rec}+</b>' + NL + f'{sep}' + NL + '<b>🔔Jogue com Responsabilidade🔔</b>'
+    msg = f'{sep}' + NL + f'<b>{title}</b>' + NL + f'{sep}' + NL + f'<b>⚽️ Placar: {placar}</b>' + NL + f'{liga_texto}' + NL + f'<b>📡 {home} x {away}</b>' + NL + f'<b>👀 ODDs: Casa {(odd_h if odd_h else chr(8212))} / Fora {(odd_a if odd_a else chr(8212))}</b>' + NL + '<b>⏰️ Minuto: ' + str(minuto) + "'</b>" + NL + f'{sep}' + NL + '<b>📊 Estatísticas ao Vivo da Partida:</b>' + NL + f'<b>🚀 Chutes Totais: {chutes_h} | {chutes_a}</b>' + NL + f'<b>🎯 Chutes No Alvo: {alvo_h} | {alvo_a}</b>' + NL + f'<b>⚔️ Ataques Perigosos: {atq_per_h} | {atq_per_a}</b>' + NL + f'<b>🚩 Escanteios: {cant_h} | {cant_a}</b>' + NL + f'<b>🔥 APPM da Partida: {appm}</b>' + NL + f'<b>🔥 APPM Últ 10 Min: {dapm10}</b>' + NL + f'<b>🔥 APPM Últ 5 Min: {dapm5}</b>' + NL + f'{sep}' + NL + '<b>💡 Análise Técnica da Partida:</b>' + NL + f'<b>🎯 Favorito: {fav_nome}</b>' + NL + f'<b>🚨 Alerta: {alerta}</b>' + NL + f'{sep}' + NL + f'<b>📌 Entrada: {entrada}</b>' + prob_texto + NL + f'<b>💰 ODD Recomendada: {odd_rec}+</b>' + NL + f'{sep}' + NL + '<b>🔔Jogue com Responsabilidade🔔</b>'
     keyboard = {'inline_keyboard': [[{'text': '🟣BET365🟣', 'url': 'https://www.bet365.bet.br/#/AX/'}, {'text': '🔵PARIPESA🔵', 'url': 'https://paripesa.com/en/live/football/'}]]}
     return (msg, keyboard)
 
@@ -1386,7 +1427,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             ob365 = j.get('odds_b365', {}).get(linha_str) if j.get('odds_b365') and linha_str else None
             obano = j.get('odds_bano', {}).get(linha_str) if j.get('odds_bano') and linha_str else None
             if notificar:
-                mid = send_telegram(msg_universal(h, a, m, liga, pais, 5, mk, cnome, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, nome=cnome, tipo=c_tipo), marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
+                mid = send_telegram(msg_universal(h, a, m, liga, pais, 5, mk, cnome, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, nome=cnome, tipo=c_tipo, probabilidade=_probabilidade_para_sinal(stats, c_tipo, sh, sa, extra_val if 'escanteio' in c_tipo else 0)), marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
             else:
                 print(f'[DIAG-{mk}-SILENT] {h} x {a} — notificar=False, registrando sem enviar')
                 mid = 0
