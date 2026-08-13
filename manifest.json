@@ -1,7 +1,7 @@
 {
   "id": "./",
-  "name": "ROBÔ APOSTA ESPORTIVA",
-  "short_name": "SokkerPro",
+  "name": "⚽️🚩Robô Aposta Esportiva🚩⚽️",
+  "short_name": "⚽️🚩Robô Aposta Esportiva🚩⚽️",
   "start_url": "./painel.html",
   "scope": "./",
   "display": "standalone",
@@ -9,7 +9,17 @@
   "theme_color": "#ffd700",
   "description": "Painel de Controle do Robô de Apostas",
   "icons": [
-    {"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
-    {"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
   ]
 }
