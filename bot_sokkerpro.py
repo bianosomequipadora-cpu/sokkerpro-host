@@ -30,13 +30,13 @@ def analisar_e_disparar(game, stats, p, m, sh, sa, odd_h, odd_a, sent_vistos):
             return ('CORNER_FT', 'Escanteio Limite FT')
     return ((None, None, None), None)
 
-def gerar_layout_relatorio(greens, reds, data_str):
+def gerar_layout_relatorio(greens, reds, data_str, refunds=0):
     sep = '━━━━━━━━━━━━━━━━━━━━'
     total = greens + reds
     taxa = greens / total * 100 if total > 0 else 0.0
-    return f'{sep}\n<b>📊 RELATÓRIO DIÁRIO — {data_str}</b>\n{sep}\n✅ GREEN: <b>{greens}</b>\n🔴 RED: <b>{reds}</b>\n📈 TOTAL DE ENTRADAS: <b>{total}</b>\n🎯 ASSERTIVIDADE: <b>{taxa:.1f}%</b>\n{sep}\n⚠️👆Resultados do dia👆⚠️'
+    return f'{sep}\n<b>📊 RELATÓRIO DIÁRIO — {data_str}</b>\n{sep}\n✅ GREEN: <b>{greens}</b>\n🔴 RED: <b>{reds}</b>\n↩️ REEMBOLSO: <b>{refunds}</b>\n📈 TOTAL DE ENTRADAS: <b>{total}</b>\n🎯 ASSERTIVIDADE: <b>{taxa:.1f}%</b>\n{sep}\n⚠️👆Resultados do dia👆⚠️'
 
-def gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos):
+def gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos, refunds=0):
     sep = '━' * 20
     total = greens + reds
     taxa = greens / total * 100 if total > 0 else 0.0
@@ -45,6 +45,7 @@ def gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos):
     msg += f'{sep}\n'
     msg += f'✅ GREEN: <b>{greens}</b>\n'
     msg += f'🔴 RED: <b>{reds}</b>\n'
+    msg += f'↩️ REEMBOLSO: <b>{refunds}</b>\n'
     msg += f'📈 TOTAL DE ENTRADAS: <b>{total}</b>\n'
     msg += f'🎯 ASSERTIVIDADE: <b>{taxa:.1f}%</b>\n'
     msg += f'{sep}\n'
@@ -348,7 +349,7 @@ def salvar_resultado(resultado, mercado=None):
 def get_relatorio_mensal():
     hoje = datetime.now(BRT)
     mes_str = hoje.strftime('%Y-%m')
-    greens, reds = (0, 0)
+    greens, reds, refunds = (0, 0, 0)
     registros = _load_resultados_github()
     dias_ativos = set()
     for r in registros:
@@ -357,35 +358,39 @@ def get_relatorio_mensal():
             dias_ativos.add(data_reg)
             if r.get('resultado') == 'green':
                 greens += 1
-            else:
+            elif r.get('resultado') == 'red':
                 reds += 1
-    return (greens, reds, len(dias_ativos))
+            elif r.get('resultado') == 'refund':
+                refunds += 1
+    return (greens, reds, len(dias_ativos), refunds)
 
 def get_relatorio_hoje():
     hoje = datetime.now(BRT).strftime('%Y-%m-%d')
-    greens, reds = (0, 0)
+    greens, reds, refunds = (0, 0, 0)
     registros = _load_resultados_github()
     for r in registros:
         if r.get('data') == hoje:
             if r.get('resultado') == 'green':
                 greens += 1
-            else:
+            elif r.get('resultado') == 'red':
                 reds += 1
-    return (greens, reds)
+            elif r.get('resultado') == 'refund':
+                refunds += 1
+    return (greens, reds, refunds)
 
 def enviar_relatorio_mensal():
     hoje = datetime.now(BRT)
     meses_pt = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
     mes_nome = f'{meses_pt[hoje.month - 1]}/{hoje.year}'
-    greens, reds, dias_ativos = get_relatorio_mensal()
-    msg = gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos)
+    greens, reds, dias_ativos, refunds = get_relatorio_mensal()
+    msg = gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos, refunds)
     return msg
 
 def enviar_relatorio_diario():
     hoje_key = f"relatorio_{datetime.now(BRT).strftime('%Y-%m-%d')}"
     hoje = datetime.now(BRT).strftime('%d/%m/%Y')
-    greens, reds = get_relatorio_hoje()
-    msg = gerar_layout_relatorio(greens, reds, hoje)
+    greens, reds, refunds = get_relatorio_hoje()
+    msg = gerar_layout_relatorio(greens, reds, hoje, refunds)
     confirmed_ids = set()
     sent = load_sent()
     if send_telegram(msg):
@@ -438,12 +443,15 @@ def registrar_performance(mercado, resultado):
     """Registra resultado de um mercado específico no performance.json."""
     perf = _load_performance_github()
     if mercado not in perf:
-        perf[mercado] = {'green': 0, 'red': 0, 'total': 0}
-    perf[mercado]['total'] += 1
-    if resultado == 'green':
-        perf[mercado]['green'] += 1
+        perf[mercado] = {'green': 0, 'red': 0, 'refund': 0, 'total': 0}
+    if resultado == 'refund':
+        perf[mercado]['refund'] = perf[mercado].get('refund', 0) + 1
     else:
-        perf[mercado]['red'] += 1
+        perf[mercado]['total'] += 1
+        if resultado == 'green':
+            perf[mercado]['green'] += 1
+        else:
+            perf[mercado]['red'] += 1
     _save_performance_github(perf)
     total = perf[mercado]['total']
     greens = perf[mercado]['green']
@@ -822,8 +830,8 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     dapm5 = max(dapm5_h, dapm5_a)
     title = nome if nome else mercado
     if tipo in ('escanteio', 'corner', 'escanteio_ht', 'escanteio_ft'):
-        linha = cantos_atual + 0.5
-        entrada = 'Mais de ' + str(linha) + '🚩'
+        linha = cantos_atual + 1.0
+        entrada = 'Mais de ' + f'{linha:.1f}' + ' Asiático🚩'
     elif tipo in ('gol_intervalo', 'over_gol', 'over_15', 'ambas_marcam', 'over', 'gol_partida'):
         if 'Over' not in str(entrada) and 'Ambas' not in str(entrada):
             if tipo == 'over_15':
@@ -837,8 +845,8 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
                 entrada = f'Mais de {linha}'
         entrada = entrada + '⚽️'
     elif 'CORNER' in mercado or 'ESCANTEIO' in mercado or (nome and 'CANTO' in nome.upper()):
-        linha = cantos_atual + 0.5
-        entrada = 'Mais de ' + str(linha) + '🚩'
+        linha = cantos_atual + 1.0
+        entrada = 'Mais de ' + f'{linha:.1f}' + ' Asiático🚩'
     elif 'Over' not in str(entrada) and 'Ambas' not in str(entrada):
         entrada = entrada + '⚽️'
     if fav_final == 'h':
@@ -923,16 +931,22 @@ def checar_resultado(sinal):
             c_a = _get_int(fixture.get('visitorCorners', 0))
             c_final = max(0, c_h) + max(0, c_a)
             c_entrada = sinal.get('extra_val', 0)
-            if c_final > c_entrada:
+            linha_asian = c_entrada + 1
+            if c_final > linha_asian:
                 return 'green'
+            if c_final == linha_asian:
+                return 'refund'
             return 'red'
         elif mercado == 'CORNER_FT':
             c_h = _get_int(fixture.get('localCorners', 0))
             c_a = _get_int(fixture.get('visitorCorners', 0))
             c_final = max(0, c_h) + max(0, c_a)
             c_entrada = sinal.get('extra_val', 0)
-            if c_final > c_entrada:
+            linha_asian = c_entrada + 1
+            if c_final > linha_asian:
                 return 'green'
+            if c_final == linha_asian:
+                return 'refund'
             return 'red' if is_final else None
         elif mercado and mercado.startswith('custom_'):
             extra = sinal.get('extra_val')
@@ -948,16 +962,22 @@ def checar_resultado(sinal):
                 c_a = _get_int(fixture.get('visitorCorners', 0))
                 c_final = max(0, c_h) + max(0, c_a)
                 c_entrada = extra if extra is not None else 0
-                if c_final > c_entrada:
+                linha_asian = c_entrada + 1
+                if c_final > linha_asian:
                     return 'green'
+                if c_final == linha_asian:
+                    return 'refund'
                 return 'red'
             elif tipo_mkt == 'escanteio_ft':
                 c_h = _get_int(fixture.get('localCorners', 0))
                 c_a = _get_int(fixture.get('visitorCorners', 0))
                 c_final = max(0, c_h) + max(0, c_a)
                 c_entrada = extra if extra is not None else 0
-                if c_final > c_entrada:
+                linha_asian = c_entrada + 1
+                if c_final > linha_asian:
                     return 'green'
+                if c_final == linha_asian:
+                    return 'refund'
                 return 'red' if is_final else None
             if extra is not None:
                 if total_final > extra:
@@ -1144,7 +1164,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             res = checar_resultado(s)
             if res:
                 confirmed_ids.add(uid)
-                emoji = '🟢GREEN CONFIRMADO🟢' if res == 'green' else '🔴RED CONFIRMADO🔴'
+                emoji = '🟢GREEN CONFIRMADO🟢' if res == 'green' else ('↩️REEMBOLSO CONFIRMADO↩️' if res == 'refund' else '🔴RED CONFIRMADO🔴')
                 if s.get('message_id'):
                     send_telegram(emoji, reply_to=s.get('message_id'))
                 salvar_resultado(res, mercado=s.get('mercado'))
