@@ -135,12 +135,12 @@ function criarCardMercado(key,dados,isCustom){
         '<div class="field"><label>Período (1=HT, 2=FT)</label><input type="number" id="'+key+'-periodo" value="'+per+'"></div>'+
         '<div class="field"><label>Tipo</label><select id="'+key+'-tipo">'+
         '<option value="">Selecione</option>'+
-        '<option value="gol_intervalo"'+(tp==='gol_intervalo'?' selected':'')+'>•Over Gol Intervalo</option>'+
-        '<option value="over_gol"'+(tp==='over_gol'?' selected':'')+'>•Over Gol Partida</option>'+
+        '<option value="gol_intervalo"'+(tp==='gol_intervalo'?' selected':'')+'>•Over Gol Limite HT</option>'+
+        '<option value="over_gol"'+(tp==='over_gol'?' selected':'')+'>•Over Gol Limite FT</option>'+
         '<option value="ambas_marcam"'+(tp==='ambas_marcam'?' selected':'')+'>•Ambas Marcam</option>'+
         '<option value="over_15"'+(tp==='over_15'?' selected':'')+'>•Over 1.5 Gols Partida</option>'+
-        '<option value="escanteio_ht"'+(tp==='escanteio_ht'||tp==='escanteio'?' selected':'')+'>•Escanteio Limite HT</option>'+
-        '<option value="escanteio_ft"'+(tp==='escanteio_ft'?' selected':'')+'>•Escanteio Limite FT</option>'+
+        '<option value="escanteio_ht"'+(tp==='escanteio_ht'||tp==='escanteio'?' selected':'')+'>•Escanteio Asiático HT</option>'+
+        '<option value="escanteio_ft"'+(tp==='escanteio_ft'?' selected':'')+'>•Escanteio Asiático FT</option>'+
         '</select></div>'+
         '<div class="field"><label>Placar Válido (ex: 0x0, 1x0)</label><input type="text" id="'+key+'-placar-valido" value="'+(pv||'')+'" placeholder="0x0">'+'</div>'+
         '<div class="field"><label>APPM (por time)</label><input type="number" step="0.1" id="'+key+'-appm" value="'+(v('appm_min_por_time')??'')+'"></div>'+
