@@ -183,7 +183,7 @@
       "minuto_inicio": 10,
       "minuto_fim": 30,
       "periodo": 1,
-      "tipo": "gol_intervalo",
+      "tipo": "over_gol",
       "placar_valido": "",
       "criterios": {
         "situacao_favorito": "perdendo_ou_empatando",
