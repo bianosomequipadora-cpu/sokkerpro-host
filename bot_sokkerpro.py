@@ -583,6 +583,18 @@ def _get_int(val, default=0):
     except:
         return default
 
+def _get_corner_total(fixture):
+    """Retorna total de escanteios; None quando a fonte não informou um dos lados."""
+    raw_h = fixture.get('localCorners')
+    raw_a = fixture.get('visitorCorners')
+    if raw_h is None or raw_a is None or str(raw_h).strip() in ('', 'x', 'X', 'None') or str(raw_a).strip() in ('', 'x', 'X', 'None'):
+        return None
+    c_h = _get_int(raw_h, default=-1)
+    c_a = _get_int(raw_a, default=-1)
+    if c_h < 0 or c_a < 0:
+        return None
+    return c_h + c_a
+
 def _extrair_stats_sokkerpro(fix):
     """Extrai TODOS os stats disponíveis de uma fixture SokkerPro."""
 
@@ -927,9 +939,9 @@ def checar_resultado(sinal):
         elif mercado in ['CORNER_HT']:
             if status not in ('HT', 'FT') and (not is_final):
                 return None
-            c_h = _get_int(fixture.get('localCorners', 0))
-            c_a = _get_int(fixture.get('visitorCorners', 0))
-            c_final = max(0, c_h) + max(0, c_a)
+            c_final = _get_corner_total(fixture)
+            if c_final is None:
+                return None
             c_entrada = sinal.get('extra_val', 0)
             linha_asian = c_entrada + 1
             if c_final > linha_asian:
@@ -938,9 +950,9 @@ def checar_resultado(sinal):
                 return 'refund'
             return 'red'
         elif mercado == 'CORNER_FT':
-            c_h = _get_int(fixture.get('localCorners', 0))
-            c_a = _get_int(fixture.get('visitorCorners', 0))
-            c_final = max(0, c_h) + max(0, c_a)
+            c_final = _get_corner_total(fixture)
+            if c_final is None:
+                return None
             c_entrada = sinal.get('extra_val', 0)
             linha_asian = c_entrada + 1
             if c_final > linha_asian:
@@ -958,9 +970,9 @@ def checar_resultado(sinal):
             elif tipo_mkt == 'escanteio_ht':
                 if status not in ('HT', 'FT') and (not is_final):
                     return None
-                c_h = _get_int(fixture.get('localCorners', 0))
-                c_a = _get_int(fixture.get('visitorCorners', 0))
-                c_final = max(0, c_h) + max(0, c_a)
+                c_final = _get_corner_total(fixture)
+                if c_final is None:
+                    return None
                 c_entrada = extra if extra is not None else 0
                 linha_asian = c_entrada + 1
                 if c_final > linha_asian:
@@ -969,9 +981,9 @@ def checar_resultado(sinal):
                     return 'refund'
                 return 'red'
             elif tipo_mkt == 'escanteio_ft':
-                c_h = _get_int(fixture.get('localCorners', 0))
-                c_a = _get_int(fixture.get('visitorCorners', 0))
-                c_final = max(0, c_h) + max(0, c_a)
+                c_final = _get_corner_total(fixture)
+                if c_final is None:
+                    return None
                 c_entrada = extra if extra is not None else 0
                 linha_asian = c_entrada + 1
                 if c_final > linha_asian:
@@ -995,17 +1007,17 @@ def checar_resultado(sinal):
         elif tipo_mkt == 'escanteio_ht':
             if status not in ('HT', 'FT') and (not is_final):
                 return None
-            c_h = _get_int(fixture.get('localCorners', 0))
-            c_a = _get_int(fixture.get('visitorCorners', 0))
-            c_final = max(0, c_h) + max(0, c_a)
+            c_final = _get_corner_total(fixture)
+            if c_final is None:
+                return None
             c_entrada = extra if extra is not None else 0
             if c_final > c_entrada:
                 return 'green'
             return 'red'
         elif tipo_mkt == 'escanteio_ft':
-            c_h = _get_int(fixture.get('localCorners', 0))
-            c_a = _get_int(fixture.get('visitorCorners', 0))
-            c_final = max(0, c_h) + max(0, c_a)
+            c_final = _get_corner_total(fixture)
+            if c_final is None:
+                return None
             c_entrada = extra if extra is not None else 0
             if c_final > c_entrada:
                 return 'green'
