@@ -446,6 +446,7 @@ def registrar_performance(mercado, resultado):
         perf[mercado] = {'green': 0, 'red': 0, 'refund': 0, 'total': 0}
     if resultado == 'refund':
         perf[mercado]['refund'] = perf[mercado].get('refund', 0) + 1
+        perf[mercado]['total'] += 1
     else:
         perf[mercado]['total'] += 1
         if resultado == 'green':
@@ -463,13 +464,15 @@ def get_performance():
     perf = _load_performance_github()
     resultado = {}
     for cod, nome in MAPA_MERCADO.items():
-        p = perf.get(cod, {'green': 0, 'red': 0, 'total': 0})
-        total = p['total']
-        greens = p['green']
-        reds = p['red']
-        pct = greens / total * 100 if total > 0 else 0
-        valido = total >= 1000 and pct >= 70
-        resultado[cod] = {'nome': nome, 'green': greens, 'red': reds, 'total': total, 'pct': pct, 'valido': valido}
+        p = perf.get(cod, {'green': 0, 'red': 0, 'refund': 0, 'total': 0})
+        greens = p.get('green', 0)
+        reds = p.get('red', 0)
+        refunds = p.get('refund', 0)
+        total = greens + reds + refunds
+        avaliados = greens + reds
+        pct = greens / avaliados * 100 if avaliados > 0 else 0
+        valido = avaliados >= 1000 and pct >= 70
+        resultado[cod] = {'nome': nome, 'green': greens, 'red': reds, 'refund': refunds, 'total': total, 'pct': pct, 'valido': valido}
     return resultado
 
 def gerar_layout_performance():
@@ -481,14 +484,16 @@ def gerar_layout_performance():
         nome = info['nome']
         g = info['green']
         r = info['red']
+        f = info['refund']
         t = info['total']
         pct = info['pct']
-        blocos.append(f'<b>{nome}</b>\n   ⏳ Total: {t} | 🟢 {g} | 🔴 {r}\n   🎯 Acerto: {pct:.1f}%')
+        blocos.append(f'<b>{nome}</b>\n   ⏳ Total: {t} | 🟢 {g} | 🔴 {r} | 🔄 {f}\n   🎯 Acerto: {pct:.1f}%')
     total_g = sum((d['green'] for d in dados.values()))
     total_r = sum((d['red'] for d in dados.values()))
-    total_t = total_g + total_r
+    total_f = sum((d['refund'] for d in dados.values()))
+    total_t = total_g + total_r + total_f
     total_pct = total_g / total_t * 100 if total_t > 0 else 0
-    msg = f"{sep}\n📊<b>RELATÓRIO DE PERFORMANCE</b>📊\n{sep}\n{f'{chr(10)}{sep}{chr(10)}'.join(blocos)}{chr(10)}{sep}\n📌 <b>TOTAL GERAL: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | {total_pct:.1f}%|\n{sep}\nRegras de Validação:\n✅ Mínimo 1000 entradas + ≥70%\n{sep}"
+    msg = f"{sep}\n📊<b>RELATÓRIO DE PERFORMANCE</b>📊\n{sep}\n{f'{chr(10)}{sep}{chr(10)}'.join(blocos)}{chr(10)}{sep}\n📌 <b>TOTAL GERAL: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔄 {total_f} | {total_pct:.1f}%|\n{sep}\nRegras de Validação:\n✅ Mínimo 1000 entradas + ≥70%\n{sep}"
     return msg
 
 def enviar_relatorio_performance():
@@ -502,7 +507,7 @@ def get_performance_24h():
     corte = agora - timedelta(hours=24)
     perf = {}
     for cod, nome in MAPA_MERCADO.items():
-        perf[cod] = {'nome': nome, 'green': 0, 'red': 0, 'total': 0}
+        perf[cod] = {'nome': nome, 'green': 0, 'red': 0, 'refund': 0, 'total': 0}
     for r in registros:
         ts_str = r.get('timestamp', '')
         mercado = r.get('mercado', '')
@@ -522,12 +527,16 @@ def get_performance_24h():
         perf[mercado]['total'] += 1
         if resultado == 'green':
             perf[mercado]['green'] += 1
+        elif resultado == 'refund':
+            perf[mercado]['refund'] += 1
         else:
             perf[mercado]['red'] += 1
     for cod, info in perf.items():
-        t = info['total']
         g = info['green']
-        info['pct'] = g / t * 100 if t > 0 else 0
+        r = info['red']
+        f = info['refund']
+        info['total'] = g + r + f
+        info['pct'] = g / (g + r) * 100 if (g + r) > 0 else 0
     return perf
 
 def gerar_layout_mercados24h():
@@ -539,14 +548,16 @@ def gerar_layout_mercados24h():
         nome = info['nome']
         g = info['green']
         r = info['red']
+        f = info['refund']
         t = info['total']
         pct = info['pct']
-        blocos.append(f'<b>{nome}</b>\n   Total: {t} | 🟢 {g} | 🔴 {r}\n   🎯 Acerto: {pct:.1f}%')
+        blocos.append(f'<b>{nome}</b>\n   Total: {t} | 🟢 {g} | 🔴 {r} | 🔄 {f}\n   🎯 Acerto: {pct:.1f}%')
     total_g = sum((d['green'] for d in dados.values()))
     total_r = sum((d['red'] for d in dados.values()))
-    total_t = total_g + total_r
+    total_f = sum((d['refund'] for d in dados.values()))
+    total_t = total_g + total_r + total_f
     total_pct = total_g / total_t * 100 if total_t > 0 else 0
-    msg = f"{sep}\n📊<b>MERCADOS — ÚLTIMAS 24H</b>📊\n{sep}\n{f'{chr(10)}{sep}{chr(10)}'.join(blocos)}{chr(10)}{sep}\n📌 <b>TOTAL GERAL: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | {total_pct:.1f}%|\n{sep}"
+    msg = f"{sep}\n📊<b>MERCADOS — ÚLTIMAS 24H</b>📊\n{sep}\n{f'{chr(10)}{sep}{chr(10)}'.join(blocos)}{chr(10)}{sep}\n📌 <b>TOTAL GERAL: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔄 {total_f} | {total_pct:.1f}%|\n{sep}"
     return msg
 
 def enviar_relatorio_mercados24h():
