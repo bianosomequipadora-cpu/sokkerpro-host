@@ -181,7 +181,7 @@
       "notificar": true,
       "nome": "⚠️TESTE NÃO ENTRE⚠️",
       "minuto_inicio": 10,
-      "minuto_fim": 30,
+      "minuto_fim": 27,
       "periodo": 1,
       "tipo": "over_gol",
       "placar_valido": "",
@@ -192,8 +192,8 @@
         "chutes_alvo_min": 2,
         "escanteios_minimos": 2,
         "max_red_card_fav": 0,
-        "pressure_bar_min": 50,
-        "dapm_total_orig_min": 0.5
+        "pressure_bar_min": 60,
+        "dapm_total_orig_min": 0.7
       }
     }
   }
