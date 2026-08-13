@@ -1164,7 +1164,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             res = checar_resultado(s)
             if res:
                 confirmed_ids.add(uid)
-                emoji = '🟢GREEN CONFIRMADO🟢' if res == 'green' else ('↩️REEMBOLSO CONFIRMADO↩️' if res == 'refund' else '🔴RED CONFIRMADO🔴')
+                emoji = '🟢GREEN CONFIRMADO🟢' if res == 'green' else ('🔄REEMBOLSO CONFIRMADO🔄' if res == 'refund' else '🔴RED CONFIRMADO🔴')
                 if s.get('message_id'):
                     send_telegram(emoji, reply_to=s.get('message_id'))
                 salvar_resultado(res, mercado=s.get('mercado'))
