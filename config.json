@@ -174,6 +174,22 @@
         "pressure_bar_min": 60,
         "dapm_total_orig_min": 0.7
       }
+    },
+    "custom_1786628260027": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "🚩💥ESCANTEIO ASIÁTICO HT💥🚩",
+      "minuto_inicio": 10,
+      "minuto_fim": 38,
+      "periodo": 1,
+      "tipo": "escanteio_ht",
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": "perdendo_ou_empatando",
+        "diferenca_gols_fav_max": 1,
+        "escanteios_minimos": 1,
+        "max_red_card_fav": 0
+      }
     }
   }
 }
