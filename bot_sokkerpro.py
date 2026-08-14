@@ -1206,8 +1206,9 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             confirmed_ids = set()
         rest = []
         for s in sinais_p:
-            tipo_confirmacao = s.get('tipo') or s.get('mercado') or '?'
-            uid = f"{s.get('fixture_id', '?')}_{tipo_confirmacao}"
+            # Cada mercado configurado possui sua própria confirmação.
+            # Mercados diferentes no mesmo jogo devem confirmar separadamente.
+            uid = f"{s.get('fixture_id', '?')}_{s.get('mercado', '?')}"
             if uid in confirmed_ids:
                 print(f'[SINAIS] Pulando duplicata: {uid}')
                 continue
