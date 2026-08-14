@@ -1188,7 +1188,8 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             confirmed_ids = set()
         rest = []
         for s in sinais_p:
-            uid = f"{s.get('fixture_id', '?')}_{s.get('mercado', '?')}"
+            tipo_confirmacao = s.get('tipo') or s.get('mercado') or '?'
+            uid = f"{s.get('fixture_id', '?')}_{tipo_confirmacao}"
             if uid in confirmed_ids:
                 print(f'[SINAIS] Pulando duplicata: {uid}')
                 continue
