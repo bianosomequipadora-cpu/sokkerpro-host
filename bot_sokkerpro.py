@@ -505,13 +505,13 @@ def gerar_layout_performance():
         f = info['refund']
         t = info['total']
         pct = info['pct']
-        blocos.append(f'<b>{nome}</b>\n   ⏳ Total: {t} | 🟢 {g} | 🔴 {r} | 🔄 {f}\n   🎯 Acerto: {pct:.1f}%')
+        blocos.append(f'<b>{nome}</b>\n   ⏳ Total: {t} | 🟢 {g} | 🔴 {r} | 🔵 {f}\n   🎯 Acerto: {pct:.1f}%')
     total_g = sum((d['green'] for d in dados.values()))
     total_r = sum((d['red'] for d in dados.values()))
     total_f = sum((d['refund'] for d in dados.values()))
     total_t = total_g + total_r + total_f
     total_pct = total_g / total_t * 100 if total_t > 0 else 0
-    msg = f"{sep}\n📊<b>RELATÓRIO DE PERFORMANCE</b>📊\n{sep}\n{f'{chr(10)}{sep}{chr(10)}'.join(blocos)}{chr(10)}{sep}\n📌 <b>TOTAL GERAL: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔄 {total_f} | {total_pct:.1f}%|\n{sep}\nRegras de Validação:\n✅ Mínimo 1000 entradas + ≥70%\n{sep}"
+    msg = f"{sep}\n📊<b>RELATÓRIO DE PERFORMANCE</b>📊\n{sep}\n{f'{chr(10)}{sep}{chr(10)}'.join(blocos)}{chr(10)}{sep}\n📌 <b>TOTAL GERAL: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n{sep}\nRegras de Validação:\n✅ Mínimo 1000 entradas + ≥70%\n{sep}"
     return msg
 
 def enviar_relatorio_performance():
@@ -569,13 +569,13 @@ def gerar_layout_mercados24h():
         f = info['refund']
         t = info['total']
         pct = info['pct']
-        blocos.append(f'<b>{nome}</b>\n   Total: {t} | 🟢 {g} | 🔴 {r} | 🔄 {f}\n   🎯 Acerto: {pct:.1f}%')
+        blocos.append(f'<b>{nome}</b>\n   Total: {t} | 🟢 {g} | 🔴 {r} | 🔵 {f}\n   🎯 Acerto: {pct:.1f}%')
     total_g = sum((d['green'] for d in dados.values()))
     total_r = sum((d['red'] for d in dados.values()))
     total_f = sum((d['refund'] for d in dados.values()))
     total_t = total_g + total_r + total_f
     total_pct = total_g / total_t * 100 if total_t > 0 else 0
-    msg = f"{sep}\n📊<b>MERCADOS — ÚLTIMAS 24H</b>📊\n{sep}\n{f'{chr(10)}{sep}{chr(10)}'.join(blocos)}{chr(10)}{sep}\n📌 <b>TOTAL GERAL: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔄 {total_f} | {total_pct:.1f}%|\n{sep}"
+    msg = f"{sep}\n📊<b>MERCADOS — ÚLTIMAS 24H</b>📊\n{sep}\n{f'{chr(10)}{sep}{chr(10)}'.join(blocos)}{chr(10)}{sep}\n📌 <b>TOTAL GERAL: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n{sep}"
     return msg
 
 def enviar_relatorio_mercados24h():
