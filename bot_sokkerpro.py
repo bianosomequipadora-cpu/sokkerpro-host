@@ -1022,17 +1022,25 @@ def checar_resultado(sinal):
             if c_final is None:
                 return None
             c_entrada = extra if extra is not None else 0
-            if c_final > c_entrada:
+            linha_asian = c_entrada + 1
+            if c_final > linha_asian:
                 return 'green'
+            if c_final == linha_asian:
+                return 'refund'
             return 'red'
         elif tipo_mkt == 'escanteio_ft':
+            if not is_final:
+                return None
             c_final = _get_corner_total(fixture)
             if c_final is None:
                 return None
             c_entrada = extra if extra is not None else 0
-            if c_final > c_entrada:
+            linha_asian = c_entrada + 1
+            if c_final > linha_asian:
                 return 'green'
-            return 'red' if is_final else None
+            if c_final == linha_asian:
+                return 'refund'
+            return 'red'
         return None
     except:
         return None
