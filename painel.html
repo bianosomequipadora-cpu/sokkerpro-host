@@ -201,7 +201,7 @@ async function abrirEntradas(mercado){
         var termo=(busca.value||'').toLowerCase().trim();
         var filtradas=list.filter(function(x){return !termo || ((x.home||'')+' '+(x.away||'')).toLowerCase().includes(termo);});
         if(!filtradas.length){el.innerHTML='<p>Nenhuma entrada encontrada.</p>';return;}
-        el.innerHTML=filtradas.map(function(x){var dt=x.timestamp?new Date(x.timestamp).toLocaleString('pt-BR'):'';var cor=x.resultado==='green'?'#2ecc71':(x.resultado==='red'?'#e74c3c':'#f1c40f');return '<div style="border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:11px;margin:8px 0"><b>'+ (x.home||'')+' x '+(x.away||'')+'</b><br><small>'+dt+'</small><br><span style="color:'+cor+';font-weight:bold">'+String(x.resultado||'pendente').toUpperCase()+'</span></div>';}).join('');
+        el.innerHTML=filtradas.map(function(x){var dt=x.timestamp?new Date(x.timestamp).toLocaleString('pt-BR'):'';var cor=x.resultado==='green'?'#2ecc71':(x.resultado==='red'?'#e74c3c':(x.resultado==='refund'?'#3498db':'#f1c40f'));var status=x.resultado==='refund'?'REEMBOLSO':String(x.resultado||'pendente').toUpperCase();return '<div style="border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:11px;margin:8px 0"><b>'+ (x.home||'')+' x '+(x.away||'')+'</b><br><small>'+dt+'</small><br><span style="color:'+cor+';font-weight:bold">'+status+'</span></div>';}).join('');
       }
       busca.addEventListener('input',renderEntradas);
       renderEntradas();
