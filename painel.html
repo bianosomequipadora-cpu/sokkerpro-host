@@ -104,11 +104,12 @@ function criarCardMercado(key,dados,isCustom){
     div.className='card'; div.id='card-'+key; div.style.opacity=ativo?'1':'0.5';
 
     // Busca performance se ja estiver carregada
-    var p = (window._CURRENT_PERF && window._CURRENT_PERF[key]) || {green:0,red:0,total:0};
-    var pct = p.total > 0 ? (p.green/p.total*100).toFixed(1) : '0.0';
+    var p = (window._CURRENT_PERF && window._CURRENT_PERF[key]) || {green:0,red:0,refund:0,total:0};
+    var pg=p.green||0, pr=p.red||0, pf=p.refund||0, pt=pg+pr+pf;
+    var pct = (pg+pr) > 0 ? (pg/(pg+pr)*100).toFixed(1) : '0.0';
     var perfHtml = '<div id="perf-'+key+'" style="margin-bottom:10px; padding:8px; background:rgba(255,255,255,0.03); border-radius:8px; font-size:0.85em;">'+
                    '<div style="display:flex; justify-content:space-between; align-items:center;">'+
-                   '<span>📊 '+p.total+'</span><span style="color:#2ecc71;">🟢 '+p.green+'</span><span style="color:#e74c3c;">🔴 '+p.red+'</span>'+
+                   '<span>📊 '+pt+'</span><span style="color:#2ecc71;">🟢 '+pg+'</span><span style="color:#e74c3c;">🔴 '+pr+'</span><span style="color:#3498db;">🔵 '+pf+'</span>'+
                    '<span style="font-weight:bold; '+(parseFloat(pct)>=70?'color:#2ecc71;':'color:#e74c3c;')+'">'+pct+'%</span></div></div>';
 
     var entradasHtml = '<button class="btn-entradas" onclick="abrirEntradas(\''+key+'\')">📋 Ver Jogos Enviados Do Mercado</button>';
@@ -380,9 +381,9 @@ async function carregarPerformance(){
 
         for(var cod in mercados){
             var perfKey = MAPA_PERF[cod] || cod;
-            var p=perf[perfKey]||{green:0,red:0,total:0};
-            var g=p.green||0,r2=p.red||0,t=p.total||0;
-            var pct=t>0?(g/t*100).toFixed(1):'0.0';
+            var p=perf[perfKey]||{green:0,red:0,refund:0,total:0};
+            var g=p.green||0,r2=p.red||0,rf=p.refund||0,t=g+r2+rf;
+            var pct=(g+r2)>0?(g/(g+r2)*100).toFixed(1):'0.0';
 
             var pEl=document.getElementById('perf-'+cod);
             if(pEl){
@@ -390,6 +391,7 @@ async function carregarPerformance(){
                     '<span>📊 '+t+'</span>'+
                     '<span style="color:#2ecc71;">🟢 '+g+'</span>'+
                     '<span style="color:#e74c3c;">🔴 '+r2+'</span>'+
+                    '<span style="color:#3498db;">🔵 '+rf+'</span>'+
                     '<span style="font-weight:bold; '+(parseFloat(pct)>=70?'color:#2ecc71;':'color:#e74c3c;')+'">'+pct+'%</span>'+
                     '</div>';
             }
