@@ -1491,8 +1491,31 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
     print(f'[Ciclo] Finalizado. Enviados neste ciclo: {total_env}')
     return (sent, total_env)
 
+def configurar_comandos_telegram():
+    """Publica o menu de comandos visível nos grupos do bot."""
+    comandos = [
+        {'command': 'mercados', 'description': 'Relatório de performance'},
+        {'command': 'mercados24h', 'description': 'Performance das últimas 24 horas'},
+        {'command': 'relatoriodiario', 'description': 'Relatório do dia'},
+        {'command': 'relatoriomensal', 'description': 'Relatório do mês'},
+        {'command': 'radar', 'description': 'Jogos ao vivo e oportunidades'},
+    ]
+    try:
+        r = requests.post(
+            f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/setMyCommands',
+            json={'commands': comandos, 'scope': {'type': 'all_group_chats'}},
+            timeout=10
+        )
+        if r.ok:
+            print('[CMD] Menu de comandos publicado para grupos')
+        else:
+            print(f'[CMD] Menu de comandos não publicado: HTTP {r.status_code}')
+    except Exception as e:
+        print(f'[CMD] Erro ao publicar menu de comandos: {e}')
+
 def run():
     """Executa 3 ciclos de 1 minuto cada para contornar limite de 5 min do cron."""
+    configurar_comandos_telegram()
     confirmed_ids = set()
     sent = load_sent()
     total_env = 0
