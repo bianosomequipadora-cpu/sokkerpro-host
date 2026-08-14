@@ -299,11 +299,29 @@ def _save_entradas(registros):
 
 def atualizar_entrada_historico(sinal, resultado):
     registros = _load_entradas()
+    message_id = sinal.get('message_id')
     fid = str(sinal.get('fixture_id', ''))
-    for r in registros:
-        if str(r.get('fixture_id', '')) == fid and r.get('mercado') == sinal.get('mercado'):
-            r['resultado'] = resultado
-            break
+    mercado = sinal.get('mercado')
+    atualizado = False
+    # Primeiro identifica a entrada exata pela mensagem enviada ao Telegram.
+    if message_id:
+        for r in registros:
+            if str(r.get('message_id', '')) == str(message_id):
+                r['resultado'] = resultado
+                atualizado = True
+                break
+    # Fallback somente para sinais antigos sem message_id: prioriza o pendente mais recente.
+    if not atualizado:
+        for r in reversed(registros):
+            if str(r.get('fixture_id', '')) == fid and r.get('mercado') == mercado and r.get('resultado') == 'pendente':
+                r['resultado'] = resultado
+                atualizado = True
+                break
+    if not atualizado:
+        for r in reversed(registros):
+            if str(r.get('fixture_id', '')) == fid and r.get('mercado') == mercado:
+                r['resultado'] = resultado
+                break
     _save_entradas(registros)
 
 def registrar_sinal(fid, mercado, home, away, message_id, extra_val=None, tipo=None):
