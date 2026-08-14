@@ -96,7 +96,7 @@ function criarCardMercado(key,dados,isCustom){
     var nome=md.nome||''; var ativo=md.ativo!==false;
     var notificar=md.notificar!==false;
     var ini=md.minuto_inicio||''; var fim=md.minuto_fim||'';
-    var per=md.periodo||''; var tp=md.tipo||''; var pv=md.placar_valido||'';
+    var per=md.periodo||''; var tp=md.tipo||''; var pv=md.placar_valido||''; var isAsianCorner=(tp==='escanteio_ht'||tp==='escanteio_ft'||tp==='corner');
 
     function v(key,def){ var x=cr[key]; return (x!==undefined&&x!==null)?x:(def??''); }
 
@@ -109,7 +109,7 @@ function criarCardMercado(key,dados,isCustom){
     var pct = (pg+pr) > 0 ? (pg/(pg+pr)*100).toFixed(1) : '0.0';
     var perfHtml = '<div id="perf-'+key+'" style="margin-bottom:10px; padding:8px; background:rgba(255,255,255,0.03); border-radius:8px; font-size:0.85em;">'+
                    '<div style="display:flex; justify-content:space-between; align-items:center;">'+
-                   '<span>📊 '+pt+'</span><span style="color:#2ecc71;">🟢 '+pg+'</span><span style="color:#e74c3c;">🔴 '+pr+'</span><span style="color:#3498db;">🔵 '+pf+'</span>'+
+                   '<span>📊 '+pt+'</span><span style="color:#2ecc71;">🟢 '+pg+'</span><span style="color:#e74c3c;">🔴 '+pr+'</span>'+(isAsianCorner?'<span style="color:#3498db;">🔵 '+pf+'</span>':'')+
                    '<span style="font-weight:bold; '+(parseFloat(pct)>=70?'color:#2ecc71;':'color:#e74c3c;')+'">'+pct+'%</span></div></div>';
 
     var entradasHtml = '<button class="btn-entradas" onclick="abrirEntradas(\''+key+'\')">📋 Ver Jogos Enviados Do Mercado</button>';
@@ -381,6 +381,8 @@ async function carregarPerformance(){
 
         for(var cod in mercados){
             var perfKey = MAPA_PERF[cod] || cod;
+            var md=mercados[cod]||{};
+            var isAsianCorner=(md.tipo==='escanteio_ht'||md.tipo==='escanteio_ft'||md.tipo==='corner');
             var p=perf[perfKey]||{green:0,red:0,refund:0,total:0};
             var g=p.green||0,r2=p.red||0,rf=p.refund||0,t=g+r2+rf;
             var pct=(g+r2)>0?(g/(g+r2)*100).toFixed(1):'0.0';
@@ -391,7 +393,7 @@ async function carregarPerformance(){
                     '<span>📊 '+t+'</span>'+
                     '<span style="color:#2ecc71;">🟢 '+g+'</span>'+
                     '<span style="color:#e74c3c;">🔴 '+r2+'</span>'+
-                    '<span style="color:#3498db;">🔵 '+rf+'</span>'+
+                    (isAsianCorner?'<span style="color:#3498db;">🔵 '+rf+'</span>':'')+
                     '<span style="font-weight:bold; '+(parseFloat(pct)>=70?'color:#2ecc71;':'color:#e74c3c;')+'">'+pct+'%</span>'+
                     '</div>';
             }
