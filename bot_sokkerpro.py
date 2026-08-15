@@ -31,13 +31,13 @@ def analisar_e_disparar(game, stats, p, m, sh, sa, odd_h, odd_a, sent_vistos):
     return ((None, None, None), None)
 
 def gerar_layout_relatorio(greens, reds, data_str, refunds=0):
-    sep = '━━━━━━━━━━━━━━━━━━━━━━━━'
+    sep = '━━━━━━━━━━━━━━━━━━━━━━━'
     total = greens + reds
     taxa = greens / total * 100 if total > 0 else 0.0
     return f'{sep}\n<b>📊 RELATÓRIO DIÁRIO — {data_str}</b>\n{sep}\n🟢 GREEN: <b>{greens}</b>\n🔴 RED: <b>{reds}</b>\n🔵REEMBOLSO: <b>{refunds}</b>\n📈 TOTAL DE ENTRADAS: <b>{total}</b>\n🎯 ASSERTIVIDADE: <b>{taxa:.1f}%</b>\n{sep}\n⚠️👆Resultados do dia👆⚠️'
 
 def gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos, refunds=0):
-    sep = '━' * 24
+    sep = '━' * 23
     total = greens + reds
     taxa = greens / total * 100 if total > 0 else 0.0
     msg = f'{sep}\n'
@@ -54,7 +54,7 @@ def gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos, refunds=0
     return msg
 
 def gerar_layout_radar(jogos_ao_vivo, jogos_na_janela):
-    sep = '━━━━━━━━━━━━━━━━━━━━━━━━'
+    sep = '━━━━━━━━━━━━━━━━━━━━━━━'
     texto_jan = ''
     for j in jogos_na_janela:
         h = j.get('home', '') or getattr(j, 'home', '')
@@ -525,7 +525,7 @@ def get_performance():
 def gerar_layout_performance():
     """Gera layout do relatório de performance por mercado."""
     dados = get_performance()
-    sep = '━' * 24
+    sep = '━' * 23
     blocos = []
     for cod, info in dados.items():
         nome = info['nome']
@@ -580,7 +580,7 @@ def get_performance_hoje():
 def gerar_layout_mercados_hoje():
     """Gera desempenho por mercado somente para o dia atual."""
     dados = get_performance_hoje()
-    sep = '━' * 24
+    sep = '━' * 23
     blocos = []
     for cod, info in dados.items():
         if info['total'] == 0:
@@ -594,7 +594,7 @@ def gerar_layout_mercados_hoje():
     total_pct = total_g / avaliados * 100 if avaliados > 0 else 0
     corpo = (f"{chr(10)}{sep}{chr(10)}".join(blocos) if blocos else 'Nenhum resultado registrado hoje.')
     data_hoje = datetime.now(BRT).strftime('%d/%m/%Y')
-    return f"{sep}\n📊<b>MERCADOS — HOJE — {data_hoje}</b>📊\n{sep}\n{corpo}\n{sep}\n📌 <b>TOTAL DO DIA: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n{sep}"
+    return f"{sep}\n📊<b>MERCADOS — {data_hoje}</b>📊\n{sep}\n{corpo}\n{sep}\n📌 <b>TOTAL DO DIA: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n{sep}"
 
 def get_performance_mensal():
     """Retorna performance por mercado somente do mês atual no fuso BRT."""
@@ -623,7 +623,7 @@ def get_performance_mensal():
 
 def gerar_layout_mercados_mensal():
     dados = get_performance_mensal()
-    sep = '━' * 24
+    sep = '━' * 23
     blocos = []
     for info in dados.values():
         if info['total'] == 0:
@@ -683,7 +683,7 @@ def get_performance_24h():
 def gerar_layout_mercados24h():
     """Gera layout do relatório de performance por mercado nas últimas 24h."""
     dados = get_performance_24h()
-    sep = '━' * 24
+    sep = '━' * 23
     blocos = []
     for cod, info in dados.items():
         nome = info['nome']
@@ -1024,7 +1024,7 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
         fav_nome = '—'
     odd_rec = '1.70'
     prob_texto = (NL + f'<b>📊 Probabilidade: {probabilidade}%</b>') if probabilidade is not None else ''
-    sep = '━' * 24
+    sep = '━' * 23
     liga_texto = '<b>🌍 Liga: ' + liga + '</b>'
     if pais:
         liga_texto = '<b>🌍 Liga: ' + liga + ' (' + pais + ')</b>'
@@ -1201,7 +1201,7 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
         print(f'[CMD] last_id lido do GitHub: {last_id}')
     except Exception:
         pass
-    sep = '━━━━━━━━━━━━━━━━━━━━━━━━'
+    sep = '━━━━━━━━━━━━━━━━━━━━━━━'
     try:
         r = requests.get(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/getUpdates', params={'offset': last_id + 1, 'timeout': 5}, timeout=10).json()
         if not r.get('ok'):
