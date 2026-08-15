@@ -154,6 +154,38 @@
         "pressure_bar_min": 70,
         "dapm_total_orig_min": 0.7
       }
+    },
+    "custom_1786765062960": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "🚨⚽️TESTE DE LAYOUT⚽️🚨",
+      "minuto_inicio": 1,
+      "minuto_fim": 42,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "placar_valido": "0x0",
+      "criterios": {
+        "diferenca_gols_fav_max": 1,
+        "escanteios_minimos": 1,
+        "max_red_card_fav": 0,
+        "situacao_favorito": ""
+      }
+    },
+    "custom_1786765177701": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "🚨🚩TESTE DE LAYOUT🚩🚨",
+      "minuto_inicio": 2,
+      "minuto_fim": 44,
+      "periodo": 1,
+      "tipo": "escanteio_ht",
+      "placar_valido": "",
+      "criterios": {
+        "diferenca_gols_fav_max": 1,
+        "escanteios_minimos": 1,
+        "max_red_card_fav": 0,
+        "situacao_favorito": ""
+      }
     }
   }
 }
