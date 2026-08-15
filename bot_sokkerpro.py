@@ -34,7 +34,7 @@ def gerar_layout_relatorio(greens, reds, data_str, refunds=0):
     sep = '━━━━━━━━━━━━━━━━━━━━'
     total = greens + reds
     taxa = greens / total * 100 if total > 0 else 0.0
-    return f'{sep}\n<b>📊 RELATÓRIO DIÁRIO — {data_str}</b>\n{sep}\n✅ GREEN: <b>{greens}</b>\n🔴 RED: <b>{reds}</b>\n↩️ REEMBOLSO: <b>{refunds}</b>\n📈 TOTAL DE ENTRADAS: <b>{total}</b>\n🎯 ASSERTIVIDADE: <b>{taxa:.1f}%</b>\n{sep}\n⚠️👆Resultados do dia👆⚠️'
+    return f'{sep}\n<b>📊 RELATÓRIO DIÁRIO — {data_str}</b>\n{sep}\n🟢 GREEN: <b>{greens}</b>\n🔴 RED: <b>{reds}</b>\n🔵REEMBOLSO: <b>{refunds}</b>\n📈 TOTAL DE ENTRADAS: <b>{total}</b>\n🎯 ASSERTIVIDADE: <b>{taxa:.1f}%</b>\n{sep}\n⚠️👆Resultados do dia👆⚠️'
 
 def gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos, refunds=0):
     sep = '━' * 20
@@ -43,9 +43,9 @@ def gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos, refunds=0
     msg = f'{sep}\n'
     msg += f'<b>📊 RELATÓRIO MENSAL — {mes_nome}</b>\n'
     msg += f'{sep}\n'
-    msg += f'✅ GREEN: <b>{greens}</b>\n'
+    msg += f'🟢 GREEN: <b>{greens}</b>\n'
     msg += f'🔴 RED: <b>{reds}</b>\n'
-    msg += f'↩️ REEMBOLSO: <b>{refunds}</b>\n'
+    msg += f'🔵REEMBOLSO: <b>{refunds}</b>\n'
     msg += f'📈 TOTAL DE ENTRADAS: <b>{total}</b>\n'
     msg += f'🎯 ASSERTIVIDADE: <b>{taxa:.1f}%</b>\n'
     msg += f'{sep}\n'
@@ -218,6 +218,35 @@ def _save_json_api(path, data, msg='state: atualiza [skip ci]'):
         return True
     except Exception as e:
         print(f'[API-PUT] Erro {path}: {e}')
+        return False
+
+def _claim_report_slot(chave):
+    """Tenta reservar um relatório uma única vez usando PUT condicional no GitHub."""
+    if not (GITHUB_TOKEN and GITHUB_REPO):
+        return False
+    caminho = 'relatorios_enviados.json'
+    url = f'https://api.github.com/repos/{GITHUB_REPO}/contents/{caminho}'
+    headers = {'Authorization': f'Bearer {GITHUB_TOKEN}', 'Accept': 'application/vnd.github+json'}
+    try:
+        sha = None
+        dados = []
+        resp = requests.get(url, headers=headers, timeout=10)
+        if resp.status_code == 200:
+            item = resp.json()
+            sha = item.get('sha')
+            dados = json.loads(base64.b64decode(item.get('content', '')).decode())
+        elif resp.status_code != 404:
+            return False
+        if chave in dados:
+            return False
+        dados.append(chave)
+        payload = {'message': f'state: reserva relatório {chave} [skip ci]', 'content': base64.b64encode(json.dumps(dados).encode()).decode()}
+        if sha:
+            payload['sha'] = sha
+        resposta = requests.put(url, headers={**headers, 'Content-Type': 'application/json'}, json=payload, timeout=15)
+        return resposta.status_code in (200, 201)
+    except Exception as e:
+        print(f'[RELATORIO] Não foi possível reservar {chave}: {e}')
         return False
 
 def _save_sent_api(sent):
@@ -510,7 +539,8 @@ def gerar_layout_performance():
     total_r = sum((d['red'] for d in dados.values()))
     total_f = sum((d['refund'] for d in dados.values()))
     total_t = total_g + total_r + total_f
-    total_pct = total_g / total_t * 100 if total_t > 0 else 0
+    total_avaliados = total_g + total_r
+    total_pct = total_g / total_avaliados * 100 if total_avaliados > 0 else 0
     msg = f"{sep}\n📊<b>RELATÓRIO DE PERFORMANCE</b>📊\n{sep}\n{f'{chr(10)}{sep}{chr(10)}'.join(blocos)}{chr(10)}{sep}\n📌 <b>TOTAL GERAL: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n{sep}\nRegras de Validação:\n✅ Mínimo 1000 entradas + ≥70%\n{sep}"
     return msg
 
@@ -574,7 +604,8 @@ def gerar_layout_mercados24h():
     total_r = sum((d['red'] for d in dados.values()))
     total_f = sum((d['refund'] for d in dados.values()))
     total_t = total_g + total_r + total_f
-    total_pct = total_g / total_t * 100 if total_t > 0 else 0
+    total_avaliados = total_g + total_r
+    total_pct = total_g / total_avaliados * 100 if total_avaliados > 0 else 0
     msg = f"{sep}\n📊<b>MERCADOS — ÚLTIMAS 24H</b>📊\n{sep}\n{f'{chr(10)}{sep}{chr(10)}'.join(blocos)}{chr(10)}{sep}\n📌 <b>TOTAL GERAL: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n{sep}"
     return msg
 
@@ -1511,11 +1542,18 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
     try:
         agora_hora = datetime.now(BRT)
         if agora_hora.hour == 23 and agora_hora.minute >= 55:
-            print(f'[AUTO] 23:55 — disparando relatório diário + mercados 24h')
-            enviar_relatorio_diario()
-            msg_mercados = enviar_relatorio_mercados24h()
-            if msg_mercados:
-                send_telegram(msg_mercados)
+            data_rel = agora_hora.strftime('%Y-%m-%d')
+            print(f'[AUTO] janela 23:55 — verificando relatórios de {data_rel}')
+            if _claim_report_slot(f'diario_{data_rel}'):
+                enviar_relatorio_diario()
+            else:
+                print(f'[AUTO] relatório diário já reservado: {data_rel}')
+            if _claim_report_slot(f'mercados24h_{data_rel}'):
+                msg_mercados = enviar_relatorio_mercados24h()
+                if msg_mercados:
+                    send_telegram(msg_mercados)
+            else:
+                print(f'[AUTO] relatório 24h já reservado: {data_rel}')
     except Exception as e:
         print(f'[AUTO] Erro auto-dispatch: {e}')
     print(f'[Ciclo] Finalizado. Enviados neste ciclo: {total_env}')
