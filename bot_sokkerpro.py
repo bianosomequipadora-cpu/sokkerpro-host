@@ -636,7 +636,9 @@ def gerar_layout_mercados_mensal():
     avaliados = total_g + total_r
     pct = total_g / avaliados * 100 if avaliados > 0 else 0
     corpo = (f"{chr(10)}{sep}{chr(10)}".join(blocos) if blocos else 'Nenhum resultado registrado neste mês.')
-    mes = datetime.now(BRT).strftime('%m/%Y')
+    meses_pt = ['JANEIRO', 'FEVEREIRO', 'MARÇO', 'ABRIL', 'MAIO', 'JUNHO', 'JULHO', 'AGOSTO', 'SETEMBRO', 'OUTUBRO', 'NOVEMBRO', 'DEZEMBRO']
+    agora = datetime.now(BRT)
+    mes = f'{meses_pt[agora.month - 1]}/{agora.year}'
     return f"{sep}\n📊<b>MERCADOS — {mes}</b>📊\n{sep}\n{corpo}\n{sep}\n📌 <b>TOTAL DO MÊS: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {pct:.1f}%|\n{sep}"
 
 def get_performance_24h():
