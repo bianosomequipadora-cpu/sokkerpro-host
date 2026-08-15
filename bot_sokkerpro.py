@@ -353,12 +353,12 @@ def atualizar_entrada_historico(sinal, resultado):
                 break
     _save_entradas(registros)
 
-def registrar_sinal(fid, mercado, home, away, message_id, extra_val=None, tipo=None):
+def registrar_sinal(fid, mercado, home, away, message_id, extra_val=None, tipo=None, entry_sh=None, entry_sa=None):
     sinais = _load_sinais_github()
-    sinais.append({'fixture_id': fid, 'mercado': mercado, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'tipo': tipo, 'timestamp': datetime.now(BRT).isoformat()})
+    sinais.append({'fixture_id': fid, 'mercado': mercado, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'tipo': tipo, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'timestamp': datetime.now(BRT).isoformat()})
     _save_sinais_github(sinais)
     historico = _load_entradas()
-    historico.append({'fixture_id': fid, 'mercado': mercado, 'tipo': tipo, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'timestamp': datetime.now(BRT).isoformat(), 'resultado': 'pendente'})
+    historico.append({'fixture_id': fid, 'mercado': mercado, 'tipo': tipo, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'timestamp': datetime.now(BRT).isoformat(), 'resultado': 'pendente'})
     _save_entradas(historico)
 
 def _load_resultados_github():
@@ -1111,8 +1111,9 @@ def checar_resultado(sinal):
         ga = int(fixture.get('scoresVisitorTeam', 0) or 0)
         total_final = gh + ga
         total_ht = int(fixture.get('scoresHT', 0) or 0)
+        entry_total = sinal.get('entry_total')
         if mercado in ('HT', 'over_05_ht', 'gol_intervalo'):
-            return 'green' if total_ht >= 1 else 'red' if is_2h or is_final else None
+            return 'green' if entry_total is not None and total_ht > entry_total else 'red' if entry_total is not None and (is_2h or is_final) else None
         elif mercado == 'BTTS':
             return 'green' if gh >= 1 and ga >= 1 else 'red' if is_final else None
         elif mercado == 'OFT':
@@ -1148,7 +1149,7 @@ def checar_resultado(sinal):
             extra = sinal.get('extra_val')
             tipo_mkt = sinal.get('tipo', '')
             if tipo_mkt == 'gol_intervalo':
-                return 'green' if total_ht >= 1 else 'red' if is_2h or is_final else None
+                return 'green' if entry_total is not None and total_ht > entry_total else 'red' if entry_total is not None and (is_2h or is_final) else None
             elif tipo_mkt == 'gol_partida':
                 return 'green' if total_final > extra else 'red' if is_final else None
             elif tipo_mkt == 'escanteio_ht':
@@ -1183,7 +1184,7 @@ def checar_resultado(sinal):
         extra = sinal.get('extra_val')
         tipo_mkt = sinal.get('tipo', '')
         if tipo_mkt == 'gol_intervalo':
-            return 'green' if total_ht >= 1 else 'red' if is_2h or is_final else None
+            return 'green' if entry_total is not None and total_ht > entry_total else 'red' if entry_total is not None and (is_2h or is_final) else None
         elif tipo_mkt in ('over_gol', 'over_15'):
             return 'green' if total_final > extra else 'red' if is_final else None
         elif tipo_mkt == 'ambas_marcam':
@@ -1665,7 +1666,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             sent.add(key)
             total_env += 1
             save_sent(sent)
-            registrar_sinal(fid, mk, h, a, mid, extra_val=extra_val, tipo=c_tipo)
+            registrar_sinal(fid, mk, h, a, mid, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa)
     try:
         agora_hora = datetime.now(BRT)
         if agora_hora.hour == 23 and agora_hora.minute >= 55:
