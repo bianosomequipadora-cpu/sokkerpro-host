@@ -593,7 +593,8 @@ def gerar_layout_mercados_hoje():
     avaliados = total_g + total_r
     total_pct = total_g / avaliados * 100 if avaliados > 0 else 0
     corpo = (f"{chr(10)}{sep}{chr(10)}".join(blocos) if blocos else 'Nenhum resultado registrado hoje.')
-    return f"{sep}\n📊<b>MERCADOS — HOJE</b>📊\n{sep}\n{corpo}\n{sep}\n📌 <b>TOTAL DO DIA: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n{sep}"
+    data_hoje = datetime.now(BRT).strftime('%d/%m/%Y')
+    return f"{sep}\n📊<b>MERCADOS — HOJE — {data_hoje}</b>📊\n{sep}\n{corpo}\n{sep}\n📌 <b>TOTAL DO DIA: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n{sep}"
 
 def get_performance_mensal():
     """Retorna performance por mercado somente do mês atual no fuso BRT."""
