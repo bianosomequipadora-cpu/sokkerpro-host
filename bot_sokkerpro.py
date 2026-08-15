@@ -548,6 +548,53 @@ def enviar_relatorio_performance():
     """Gera o relatório de performance. Retorna o texto da mensagem (sem enviar)."""
     return gerar_layout_performance()
 
+def get_performance_hoje():
+    """Retorna performance por mercado somente dos resultados do dia no fuso BRT."""
+    hoje = datetime.now(BRT).strftime('%Y-%m-%d')
+    registros = _load_resultados_github()
+    perf = {}
+    for cod, nome in MAPA_MERCADO.items():
+        perf[cod] = {'nome': nome, 'green': 0, 'red': 0, 'refund': 0, 'total': 0}
+    for r in registros:
+        if r.get('data') != hoje:
+            continue
+        mercado = r.get('mercado', '')
+        resultado = r.get('resultado', '')
+        if mercado not in perf or not resultado:
+            continue
+        perf[mercado]['total'] += 1
+        if resultado == 'green':
+            perf[mercado]['green'] += 1
+        elif resultado == 'refund':
+            perf[mercado]['refund'] += 1
+        else:
+            perf[mercado]['red'] += 1
+    for cod, info in perf.items():
+        g = info['green']
+        r = info['red']
+        f = info['refund']
+        info['total'] = g + r + f
+        info['pct'] = g / (g + r) * 100 if (g + r) > 0 else 0
+    return perf
+
+def gerar_layout_mercados_hoje():
+    """Gera desempenho por mercado somente para o dia atual."""
+    dados = get_performance_hoje()
+    sep = '━' * 20
+    blocos = []
+    for cod, info in dados.items():
+        if info['total'] == 0:
+            continue
+        blocos.append(f"<b>{info['nome']}</b>\n   Total: {info['total']} | 🟢 {info['green']} | 🔴 {info['red']} | 🔵 {info['refund']}\n   🎯 Acerto: {info['pct']:.1f}%")
+    total_g = sum(d['green'] for d in dados.values())
+    total_r = sum(d['red'] for d in dados.values())
+    total_f = sum(d['refund'] for d in dados.values())
+    total_t = total_g + total_r + total_f
+    avaliados = total_g + total_r
+    total_pct = total_g / avaliados * 100 if avaliados > 0 else 0
+    corpo = (f"{chr(10)}{sep}{chr(10)}".join(blocos) if blocos else 'Nenhum resultado registrado hoje.')
+    return f"{sep}\n📊<b>MERCADOS — HOJE</b>📊\n{sep}\n{corpo}\n{sep}\n📌 <b>TOTAL DO DIA: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n{sep}"
+
 def get_performance_24h():
     """Retorna performance por mercado nas últimas 24h a partir dos resultados salvos."""
     registros = _load_resultados_github()
@@ -1142,7 +1189,7 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
                 if comando == '/mercados24h':
                     msg = enviar_relatorio_mercados24h()
                 else:
-                    msg = enviar_relatorio_performance()
+                    msg = gerar_layout_mercados_hoje()
                 if msg:
                     requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage', json={'chat_id': chat_orig, 'text': msg, 'parse_mode': 'HTML'})
                 else:
@@ -1548,12 +1595,12 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 enviar_relatorio_diario()
             else:
                 print(f'[AUTO] relatório diário já reservado: {data_rel}')
-            if _claim_report_slot(f'mercados24h_{data_rel}'):
-                msg_mercados = enviar_relatorio_mercados24h()
+            if _claim_report_slot(f'mercados_dia_{data_rel}'):
+                msg_mercados = gerar_layout_mercados_hoje()
                 if msg_mercados:
                     send_telegram(msg_mercados)
             else:
-                print(f'[AUTO] relatório 24h já reservado: {data_rel}')
+                print(f'[AUTO] relatório de mercados do dia já reservado: {data_rel}')
     except Exception as e:
         print(f'[AUTO] Erro auto-dispatch: {e}')
     print(f'[Ciclo] Finalizado. Enviados neste ciclo: {total_env}')
