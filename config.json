@@ -165,10 +165,10 @@
       "tipo": "gol_intervalo",
       "placar_valido": "0x0",
       "criterios": {
+        "situacao_favorito": "perdendo_ou_empatando",
         "diferenca_gols_fav_max": 1,
         "escanteios_minimos": 1,
-        "max_red_card_fav": 0,
-        "situacao_favorito": ""
+        "max_red_card_fav": 0
       }
     },
     "custom_1786765177701": {
@@ -181,10 +181,10 @@
       "tipo": "escanteio_ht",
       "placar_valido": "",
       "criterios": {
+        "situacao_favorito": "perdendo_ou_empatando",
         "diferenca_gols_fav_max": 1,
         "escanteios_minimos": 1,
-        "max_red_card_fav": 0,
-        "situacao_favorito": ""
+        "max_red_card_fav": 0
       }
     },
     "custom_1786768656735": {
