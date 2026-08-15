@@ -387,10 +387,39 @@ def _save_resultados_github(registros):
         _save_json_api('resultados.json', registros, 'state: atualiza resultados [skip ci]')
     print(f'[RESULTADO] Salvo localmente: {len(registros)} registros')
 
-def salvar_resultado(resultado, mercado=None):
+def _claim_auditoria_slot(chave):
+    """Reserva uma auditoria única por fixture e mercado via PUT condicional."""
+    if not (GITHUB_TOKEN and GITHUB_REPO):
+        return False
+    caminho = 'auditorias_confirmadas.json'
+    url = f'https://api.github.com/repos/{GITHUB_REPO}/contents/{caminho}'
+    headers = {'Authorization': f'Bearer {GITHUB_TOKEN}', 'Accept': 'application/vnd.github+json'}
+    try:
+        sha = None
+        chaves = []
+        resposta = requests.get(url, headers=headers, timeout=10)
+        if resposta.status_code == 200:
+            item = resposta.json()
+            sha = item.get('sha')
+            chaves = json.loads(base64.b64decode(item.get('content', '')).decode())
+        elif resposta.status_code != 404:
+            return False
+        if chave in chaves:
+            return False
+        chaves.append(chave)
+        payload = {'message': f'state: reserva auditoria {chave} [skip ci]', 'content': base64.b64encode(json.dumps(chaves).encode()).decode()}
+        if sha:
+            payload['sha'] = sha
+        r = requests.put(url, headers={**headers, 'Content-Type': 'application/json'}, json=payload, timeout=15)
+        return r.status_code in (200, 201)
+    except Exception as e:
+        print(f'[AUDITORIA] Falha ao reservar {chave}: {e}')
+        return False
+
+def salvar_resultado(resultado, mercado=None, fixture_id=None):
     hoje = datetime.now(BRT).strftime('%Y-%m-%d')
     registros = _load_resultados_github()
-    registros.append({'data': hoje, 'resultado': resultado, 'mercado': mercado, 'timestamp': datetime.now(BRT).isoformat()})
+    registros.append({'data': hoje, 'resultado': resultado, 'mercado': mercado, 'fixture_id': fixture_id, 'timestamp': datetime.now(BRT).isoformat()})
     _save_resultados_github(registros)
 
 def get_relatorio_mensal():
@@ -1342,11 +1371,14 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 continue
             res = checar_resultado(s)
             if res:
+                if not _claim_auditoria_slot(uid):
+                    print(f'[SINAIS] Auditoria já reservada por outra execução: {uid}')
+                    continue
                 confirmed_ids.add(uid)
                 emoji = '🟢GREEN CONFIRMADO🟢' if res == 'green' else ('🔵REEMBOLSO CONFIRMADO🔵' if res == 'refund' else '🔴RED CONFIRMADO🔴')
                 if s.get('message_id'):
                     send_telegram(emoji, reply_to=s.get('message_id'))
-                salvar_resultado(res, mercado=s.get('mercado'))
+                salvar_resultado(res, mercado=s.get('mercado'), fixture_id=s.get('fixture_id'))
                 atualizar_entrada_historico(s, res)
                 registrar_performance(s.get('mercado'), res)
             else:
