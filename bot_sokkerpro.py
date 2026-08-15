@@ -595,6 +595,49 @@ def gerar_layout_mercados_hoje():
     corpo = (f"{chr(10)}{sep}{chr(10)}".join(blocos) if blocos else 'Nenhum resultado registrado hoje.')
     return f"{sep}\n📊<b>MERCADOS — HOJE</b>📊\n{sep}\n{corpo}\n{sep}\n📌 <b>TOTAL DO DIA: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n{sep}"
 
+def get_performance_mensal():
+    """Retorna performance por mercado somente do mês atual no fuso BRT."""
+    mes_atual = datetime.now(BRT).strftime('%Y-%m')
+    registros = _load_resultados_github()
+    perf = {cod: {'nome': nome, 'green': 0, 'red': 0, 'refund': 0, 'total': 0} for cod, nome in MAPA_MERCADO.items()}
+    for r in registros:
+        if not str(r.get('data', '')).startswith(mes_atual):
+            continue
+        mercado = r.get('mercado', '')
+        resultado = r.get('resultado', '')
+        if mercado not in perf or not resultado:
+            continue
+        perf[mercado]['total'] += 1
+        if resultado == 'green':
+            perf[mercado]['green'] += 1
+        elif resultado == 'refund':
+            perf[mercado]['refund'] += 1
+        else:
+            perf[mercado]['red'] += 1
+    for info in perf.values():
+        g, r, f = info['green'], info['red'], info['refund']
+        info['total'] = g + r + f
+        info['pct'] = g / (g + r) * 100 if (g + r) > 0 else 0
+    return perf
+
+def gerar_layout_mercados_mensal():
+    dados = get_performance_mensal()
+    sep = '━' * 20
+    blocos = []
+    for info in dados.values():
+        if info['total'] == 0:
+            continue
+        blocos.append(f"<b>{info['nome']}</b>\n   Total: {info['total']} | 🟢 {info['green']} | 🔴 {info['red']} | 🔵 {info['refund']}\n   🎯 Acerto: {info['pct']:.1f}%")
+    total_g = sum(d['green'] for d in dados.values())
+    total_r = sum(d['red'] for d in dados.values())
+    total_f = sum(d['refund'] for d in dados.values())
+    total_t = total_g + total_r + total_f
+    avaliados = total_g + total_r
+    pct = total_g / avaliados * 100 if avaliados > 0 else 0
+    corpo = (f"{chr(10)}{sep}{chr(10)}".join(blocos) if blocos else 'Nenhum resultado registrado neste mês.')
+    mes = datetime.now(BRT).strftime('%m/%Y')
+    return f"{sep}\n📊<b>MERCADOS — {mes}</b>📊\n{sep}\n{corpo}\n{sep}\n📌 <b>TOTAL DO MÊS: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {pct:.1f}%|\n{sep}"
+
 def get_performance_24h():
     """Retorna performance por mercado nas últimas 24h a partir dos resultados salvos."""
     registros = _load_resultados_github()
@@ -1184,12 +1227,14 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
         if comando == '/relatoriodiario' and (not relatorio_respondido):
             enviar_relatorio_diario()
             relatorio_respondido = True
-        elif comando == '/mercados' or comando == '/mercados24h':
+        elif comando in ('/mercados', '/mercadosmensal', '/mercados24h'):
             try:
-                if comando == '/mercados24h':
-                    msg = enviar_relatorio_mercados24h()
-                else:
+                if comando == '/mercadosmensal':
+                    msg = gerar_layout_mercados_mensal()
+                elif comando == '/mercados24h':
                     msg = gerar_layout_mercados_hoje()
+                else:
+                    msg = enviar_relatorio_performance()
                 if msg:
                     requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage', json={'chat_id': chat_orig, 'text': msg, 'parse_mode': 'HTML'})
                 else:
@@ -1609,8 +1654,9 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
 def configurar_comandos_telegram():
     """Publica o menu de comandos visível nos grupos do bot."""
     comandos = [
-        {'command': 'mercados', 'description': 'Relatório de performance'},
-        {'command': 'mercados24h', 'description': 'Performance das últimas 24 horas'},
+        {'command': 'mercados', 'description': 'Performance acumulada geral'},
+        {'command': 'mercadosmensal', 'description': 'Performance do mês atual'},
+        {'command': 'mercados24h', 'description': 'Performance do dia atual'},
         {'command': 'relatoriodiario', 'description': 'Relatório do dia'},
         {'command': 'relatoriomensal', 'description': 'Relatório do mês'},
         {'command': 'radar', 'description': 'Jogos ao vivo e oportunidades'},
