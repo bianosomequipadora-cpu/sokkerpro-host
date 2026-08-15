@@ -835,6 +835,8 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     cant_a = max(0, stats.get('escanteios_a', 0) if stats else 0)
     atq_per_h = stats.get('ataques_perigosos_h', 0) if stats else 0
     atq_per_a = stats.get('ataques_perigosos_a', 0) if stats else 0
+    pressao_h = stats.get('pressure_bar_h', 0) if stats else 0
+    pressao_a = stats.get('pressure_bar_a', 0) if stats else 0
     dapm10_h = _get_float(stats.get('dapm10_h', 0)) if stats else 0
     dapm10_a = _get_float(stats.get('dapm10_a', 0)) if stats else 0
     dapm5_h = _get_float(stats.get('dapm5_h', 0)) if stats else 0
@@ -902,8 +904,8 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     liga_texto = '<b>🌍 Liga: ' + liga + '</b>'
     if pais:
         liga_texto = '<b>🌍 Liga: ' + liga + ' (' + pais + ')</b>'
-    msg = f'{sep}' + NL + f'<b>{title}</b>' + NL + f'{sep}' + NL + f'<b>⚽️ Placar: {placar}</b>' + NL + f'{liga_texto}' + NL + f'<b>📡 {home} x {away}</b>' + NL + f'<b>👀 ODDs: Casa {(odd_h if odd_h else chr(8212))} / Fora {(odd_a if odd_a else chr(8212))}</b>' + NL + '<b>⏰️ Minuto: ' + str(minuto) + "'</b>" + NL + f'{sep}' + NL + '<b>📊 Estatísticas ao Vivo da Partida:</b>' + NL + f'<b>🚀 Chutes Totais: {chutes_h} | {chutes_a}</b>' + NL + f'<b>🎯 Chutes No Alvo: {alvo_h} | {alvo_a}</b>' + NL + f'<b>⚔️ Ataques Perigosos: {atq_per_h} | {atq_per_a}</b>' + NL + f'<b>🚩 Escanteios: {cant_h} | {cant_a}</b>' + NL + f'<b>🔥 APPM da Partida: {appm}</b>' + NL + f'<b>🔥 APPM Últ 10 Min: {dapm10}</b>' + NL + f'<b>🔥 APPM Últ 5 Min: {dapm5}</b>' + NL + f'{sep}' + NL + '<b>💡 Análise Técnica da Partida:</b>' + NL + f'<b>🎯 Favorito: {fav_nome}</b>' + NL + f'<b>🚨 Alerta: {alerta}</b>' + NL + f'{sep}' + NL + f'<b>📌 Entrada: {entrada}</b>' + prob_texto + NL + f'<b>💰 ODD Recomendada: {odd_rec}+</b>' + NL + f'{sep}' + NL + '<b>🔔Jogue com Responsabilidade🔔</b>'
-    keyboard = {'inline_keyboard': [[{'text': '🟣BET365🟣', 'url': 'https://www.bet365.bet.br/#/AX/'}, {'text': '🔵PARIPESA🔵', 'url': 'https://paripesa.com/en/live/football/'}]]}
+    msg = f'{sep}' + NL + f'<b>{title}</b>' + NL + f'{sep}' + NL + f'<b>⚽️ Placar: {placar}</b>' + NL + f'{liga_texto}' + NL + f'<b>📡 {home} x {away}</b>' + NL + f'<b>👀 ODDs: Casa {(odd_h if odd_h else chr(8212))} / Fora {(odd_a if odd_a else chr(8212))}</b>' + NL + '<b>⏰️ Minuto: ' + str(minuto) + "'</b>" + NL + f'{sep}' + NL + '<b>📊 Estatísticas ao Vivo da Partida:</b>' + NL + f'<b>🚀 Chutes Totais: {chutes_h} | {chutes_a}</b>' + NL + f'<b>🎯 Chutes No Alvo: {alvo_h} | {alvo_a}</b>' + NL + f'<b>🚩 Escanteios: {cant_h} | {cant_a}</b>' + NL + f'<b>⚔️ Ataques Perigosos: {atq_per_h} | {atq_per_a}</b>' + NL + f'<b>💥 Pressão Da Partida: {pressao_h} | {pressao_a}</b>' + NL + f'<b>🔥 APPM da Partida: {appm}</b>' + NL + f'<b>🔥 APPM Últ 10 Min: {dapm10}</b>' + NL + f'<b>🔥 APPM Últ 5 Min: {dapm5}</b>' + NL + f'{sep}' + NL + '<b>💡 Análise Técnica da Partida:</b>' + NL + f'<b>🎯 Favorito: {fav_nome}</b>' + NL + f'<b>🚨 Alerta: {alerta}</b>' + NL + f'{sep}' + NL + f'<b>📌 Entrada: {entrada}</b>' + prob_texto + NL + f'<b>💰 ODD Recomendada: {odd_rec}+</b>' + NL + f'{sep}' + NL + '<b>🔔Jogue com Responsabilidade🔔</b>'
+    keyboard = {'inline_keyboard': [[{'text': '🟣BET365🟣', 'url': 'https://www.bet365.bet.br/#/AX/'}, {'text': '🔵PARIPESA🔵', 'url': 'https://paripesa.com/en/live/football/'}, {'text': '🟠BETANO🟠', 'url': 'https://www.betano.bet.br/'}]]}
     return (msg, keyboard)
 
 def checar_resultado(sinal):
