@@ -4,7 +4,7 @@
     "over_gol_partida": {
       "ativo": true,
       "notificar": true,
-      "nome": "⚽️OVER GOL PARTIDA⚽️",
+      "nome": "⚽️OVER GOLS PARTIDA⚽️",
       "minuto_inicio": 55,
       "minuto_fim": 75,
       "periodo": 2,
@@ -103,7 +103,7 @@
     "custom_1786582175212": {
       "ativo": true,
       "notificar": true,
-      "nome": "⚽️OVER GOL INTERVALO⚽️",
+      "nome": "⚽️OVER 0.5 GOL INTERVALO⚽️",
       "minuto_inicio": 10,
       "minuto_fim": 27,
       "periodo": 1,
@@ -123,7 +123,7 @@
     "custom_1786749428009": {
       "ativo": true,
       "notificar": true,
-      "nome": "🚩CANTO ASIÁTICO HT🚩",
+      "nome": "🚩OVER CANTO ASIÁTICO HT🚩",
       "minuto_inicio": 30,
       "minuto_fim": 38,
       "periodo": 1,
@@ -162,7 +162,7 @@
     "custom_1786774362625": {
       "ativo": true,
       "notificar": true,
-      "nome": "🚩CORNER ASIÁTICO INTERVALO🚩",
+      "nome": "⛳️CORNER ASIÁTICO INTERVALO⛳️",
       "minuto_inicio": 30,
       "minuto_fim": 38,
       "periodo": 1,
@@ -182,7 +182,7 @@
     "custom_1786817362596": {
       "ativo": true,
       "notificar": true,
-      "nome": "🚩VEM ESCANTEIO ASIÁTICO HT🚩",
+      "nome": "⛳️VEM ESCANTEIO ASIÁTICO HT⛳️",
       "minuto_inicio": 32,
       "minuto_fim": 38,
       "periodo": 1,
