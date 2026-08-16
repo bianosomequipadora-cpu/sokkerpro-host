@@ -1117,7 +1117,7 @@ def checar_resultado(sinal):
         elif mercado == 'BTTS':
             return 'green' if gh >= 1 and ga >= 1 else 'red' if is_final else None
         elif mercado == 'OFT':
-            return 'green' if total_final >= 2 else 'red' if is_final else None
+            return 'green' if entry_total is not None and total_final > entry_total else 'red' if entry_total is not None and is_final else None
         elif mercado == 'OVERGOAL':
             gols_entrada = sinal.get('extra_val', 0)
             return 'green' if total_final > gols_entrada else 'red' if is_final else None
@@ -1152,6 +1152,8 @@ def checar_resultado(sinal):
                 return 'green' if entry_total is not None and total_ht > entry_total else 'red' if entry_total is not None and (is_2h or is_final) else None
             elif tipo_mkt == 'gol_partida':
                 return 'green' if total_final > extra else 'red' if is_final else None
+            elif tipo_mkt == 'over_15':
+                return 'green' if entry_total is not None and total_final > entry_total else 'red' if entry_total is not None and is_final else None
             elif tipo_mkt == 'ambas_marcam':
                 return 'green' if gh >= 1 and ga >= 1 else 'red' if is_final else None
             elif tipo_mkt == 'escanteio_ht':
@@ -1187,7 +1189,9 @@ def checar_resultado(sinal):
         tipo_mkt = sinal.get('tipo', '')
         if tipo_mkt == 'gol_intervalo':
             return 'green' if entry_total is not None and total_ht > entry_total else 'red' if entry_total is not None and (is_2h or is_final) else None
-        elif tipo_mkt in ('over_gol', 'over_15'):
+        elif tipo_mkt == 'over_15':
+            return 'green' if entry_total is not None and total_final > entry_total else 'red' if entry_total is not None and is_final else None
+        elif tipo_mkt in ('over_gol', 'over'):
             return 'green' if total_final > extra else 'red' if is_final else None
         elif tipo_mkt == 'ambas_marcam':
             return 'green' if gh >= 1 and ga >= 1 else 'red' if is_final else None
