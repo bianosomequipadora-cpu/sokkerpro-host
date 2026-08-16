@@ -1027,7 +1027,7 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     title = nome if nome else mercado
     if tipo in ('escanteio', 'corner', 'escanteio_ht', 'escanteio_ft'):
         linha = cantos_atual + 1.0
-        entrada = 'Mais de ' + f'{linha:.1f}' + ' Asiático🚩'
+        entrada = 'Mais de ' + f'{linha:.1f}' + ' Asiático⛳️'
     elif tipo in ('gol_intervalo', 'over_gol', 'over_15', 'ambas_marcam', 'over', 'gol_partida'):
         if 'Over' not in str(entrada) and 'Ambas' not in str(entrada):
             if tipo == 'over_15':
@@ -1042,7 +1042,7 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
         entrada = entrada + '⚽️'
     elif 'CORNER' in mercado or 'ESCANTEIO' in mercado or (nome and 'CANTO' in nome.upper()):
         linha = cantos_atual + 1.0
-        entrada = 'Mais de ' + f'{linha:.1f}' + ' Asiático🚩'
+        entrada = 'Mais de ' + f'{linha:.1f}' + ' Asiático⛳️'
     elif 'Over' not in str(entrada) and 'Ambas' not in str(entrada):
         entrada = entrada + '⚽️'
     if fav_final == 'h':
@@ -1057,7 +1057,7 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     liga_texto = '<b>🌍 Liga: ' + liga + '</b>'
     if pais:
         liga_texto = '<b>🌍 Liga: ' + liga + ' (' + pais + ')</b>'
-    msg = f'{sep}' + NL + f'<b>{title}</b>' + NL + f'{sep}' + NL + f'<b>⚽️ Placar: {placar}</b>' + NL + f'{liga_texto}' + NL + f'<b>📡 {home} x {away}</b>' + NL + f'<b>👀 ODDs: Casa {(odd_h if odd_h else chr(8212))} / Fora {(odd_a if odd_a else chr(8212))}</b>' + NL + '<b>⏰️ Minuto: ' + str(minuto) + "'</b>" + NL + f'{sep}' + NL + '<b>📊 Estatísticas ao Vivo da Partida:</b>' + NL + f'<b>🚀 Chutes Totais: {chutes_h} | {chutes_a}</b>' + NL + f'<b>🎯 Chutes No Alvo: {alvo_h} | {alvo_a}</b>' + NL + f'<b>🚩 Escanteios: {cant_h} | {cant_a}</b>' + NL + f'<b>⚔️ Ataques Perigosos: {atq_per_h} | {atq_per_a}</b>' + NL + f'<b>🌋 Pressão Da Partida: {pressao_h} | {pressao_a}</b>' + NL + f'<b>🔥 APPM da Partida: {appm}</b>' + NL + f'<b>🔥 APPM Últ 10 Min: {dapm10}</b>' + NL + f'<b>🔥 APPM Últ 5 Min: {dapm5}</b>' + NL + f'{sep}' + NL + '<b>💡 Análise Técnica da Partida:</b>' + NL + f'<b>🎯 Favorito: {fav_nome}</b>' + NL + f'<b>🚨 Alerta: {alerta}</b>' + NL + f'{sep}' + NL + f'<b>📌 Entrada: {entrada}</b>' + prob_texto + NL + f'<b>💰 ODD Recomendada: {odd_rec}+</b>' + NL + f'{sep}' + NL + '<b>🔔Jogue com Responsabilidade🔔</b>'
+    msg = f'{sep}' + NL + f'<b>{title}</b>' + NL + f'{sep}' + NL + f'<b>⚽️ Placar: {placar}</b>' + NL + f'{liga_texto}' + NL + f'<b>📡 {home} x {away}</b>' + NL + f'<b>👀 ODDs: Casa {(odd_h if odd_h else chr(8212))} / Fora {(odd_a if odd_a else chr(8212))}</b>' + NL + '<b>⏰️ Minuto: ' + str(minuto) + "'</b>" + NL + f'{sep}' + NL + '<b>📊 Estatísticas ao Vivo da Partida:</b>' + NL + f'<b>🚀 Chutes Totais: {chutes_h} | {chutes_a}</b>' + NL + f'<b>🎯 Chutes No Alvo: {alvo_h} | {alvo_a}</b>' + NL + f'<b>⛳️ Escanteios: {cant_h} | {cant_a}</b>' + NL + f'<b>⚔️ Ataques Perigosos: {atq_per_h} | {atq_per_a}</b>' + NL + f'<b>🌋 Pressão Da Partida: {pressao_h} | {pressao_a}</b>' + NL + f'<b>🔥 APPM da Partida: {appm}</b>' + NL + f'<b>🔥 APPM Últ 10 Min: {dapm10}</b>' + NL + f'<b>🔥 APPM Últ 5 Min: {dapm5}</b>' + NL + f'{sep}' + NL + '<b>💡 Análise Técnica da Partida:</b>' + NL + f'<b>🎯 Favorito: {fav_nome}</b>' + NL + f'<b>🚨 Alerta: {alerta}</b>' + NL + f'{sep}' + NL + f'<b>📌 Entrada: {entrada}</b>' + prob_texto + NL + f'<b>💰 ODD Recomendada: {odd_rec}+</b>' + NL + f'{sep}' + NL + '<b>🔔Jogue com Responsabilidade🔔</b>'
     keyboard = {'inline_keyboard': [[{'text': '🟢BET365🟢', 'url': 'https://www.bet365.bet.br/#/AZ/'}, {'text': '🔴SUPERBET🔴', 'url': 'https://superbet.bet.br/apostas/ao-vivo'}], [{'text': '🟠BETANO🟠', 'url': 'https://www.betano.bet.br/live/'}, {'text': '🔵PARIPESA🔵', 'url': 'https://paripesa.com/en/live/football'}]]}
     return (msg, keyboard)
 
