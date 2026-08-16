@@ -35,7 +35,8 @@ input:focus { border-color:#ffd700; outline:none; }
 .btn-save { width:100%; padding:16px; background:#27ae60; color:#fff; border:none; border-radius:12px; font-size:1.1em; font-weight:bold; cursor:pointer; margin-top:15px; box-shadow:0 4px 15px rgba(0,0,0,0.3); }
 .btn-add { width:100%; padding:14px; background:#3498db; color:#fff; border:none; border-radius:12px; font-size:1em; font-weight:bold; cursor:pointer; margin-top:10px; }
 .btn-entradas { background:#8e44ad; color:#fff; border:none; border-radius:9px; padding:9px 14px; font-weight:bold; cursor:pointer; margin:4px 0 10px; width:100%; } .btn-entradas:active { transform:scale(.98); opacity:.85; }
-.btn-del { background:#e74c3c; color:#fff; border:none; border-radius:50%; width:32px; height:32px; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.btn-clone { background:#8e44ad; color:#fff; border:none; border-radius:50%; width:32px; height:32px; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-right:6px; } .btn-clone:active { transform:scale(.95); opacity:.85; }
+ .btn-del { background:#e74c3c; color:#fff; border:none; border-radius:50%; width:32px; height:32px; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 #status { text-align:center; margin-top:12px; font-weight:500; font-size:0.85em; min-height:24px; word-break:break-word; }
 .ok { color:#2ecc71; } .err { color:#e74c3c; } .loading { color:#f1c40f; }
 .toggle-switch { position:relative; display:inline-block; width:48px; height:26px; flex-shrink:0; }
@@ -118,6 +119,7 @@ function criarCardMercado(key,dados,isCustom){
         '<label class="toggle-switch"><input type="checkbox" id="'+key+'-ativo" '+(ativo?'checked':'')+'><span class="toggle-slider"></span></label>'+
         '<label style="font-size:0.7em; color:#999; margin:0 8px;">🔔</label>'+
         '<label class="toggle-switch" title="Notificar no Telegram"><input type="checkbox" id="'+key+'-notificar" '+(notificar?'checked':'')+'><span class="toggle-slider"></span></label>'+
+        '<button class="btn-clone" title="Clonar mercado" onclick="clonarMercado(\''+key+'\')">⧉</button>'+
         '<button class="btn-del" onclick="removerMercado(\''+key+'\')">\u2715</button>'+'</div>'+
         entradasHtml +
         perfHtml +
@@ -184,6 +186,18 @@ function criarCardMercado(key,dados,isCustom){
 }
 
 function criarMercado(){var key='custom_'+Date.now();document.getElementById('custom-markets-container').appendChild(criarCardMercado(key,{},true));st('Novo mercado criado! Preencha e salve.','ok');}
+
+function clonarMercado(key){
+    var origem=CONFIG_INLINE.mercados&&CONFIG_INLINE.mercados[key];
+    if(!origem){st('Mercado de origem não encontrado.','err');return;}
+    var novoKey='custom_'+Date.now();
+    while(CONFIG_INLINE.mercados[novoKey]){novoKey='custom_'+(Date.now()+Math.floor(Math.random()*1000));}
+    var copia=JSON.parse(JSON.stringify(origem));
+    copia.nome=(copia.nome||'Mercado')+' — CÓPIA';
+    CONFIG_INLINE.mercados[novoKey]=copia;
+    document.getElementById('custom-markets-container').appendChild(criarCardMercado(novoKey,copia,true));
+    st('Mercado clonado! Edite e salve para confirmar.','ok');
+}
 
 function removerMercado(key){if(!confirm('Remover este mercado?'))return;var el=document.getElementById('card-'+key);if(el){el.remove();st('Mercado removido. Salve para confirmar.','ok');}}
 
