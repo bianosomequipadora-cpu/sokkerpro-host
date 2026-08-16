@@ -1152,6 +1152,8 @@ def checar_resultado(sinal):
                 return 'green' if entry_total is not None and total_ht > entry_total else 'red' if entry_total is not None and (is_2h or is_final) else None
             elif tipo_mkt == 'gol_partida':
                 return 'green' if total_final > extra else 'red' if is_final else None
+            elif tipo_mkt == 'ambas_marcam':
+                return 'green' if gh >= 1 and ga >= 1 else 'red' if is_final else None
             elif tipo_mkt == 'escanteio_ht':
                 if status not in ('HT', 'FT') and (not is_final):
                     return None
