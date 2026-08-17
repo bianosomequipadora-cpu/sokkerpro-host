@@ -1003,7 +1003,9 @@ def nome_liga_exibicao(liga, pais):
         ('NWSL', 'United States'): '🇺🇸 EUA. Liga Nacional Feminina de Futebol',
         ('Segunda Division', 'Uruguay'): '🇺🇾 Uruguai. Segunda Divisão',
         ('Primera Division', 'Venezuela'): '🇻🇪 Venezuela. Primeira Divisão',
-        ('Professional Development League', 'England'): '🏴 Inglaterra. Liga de Desenvolvimento Profissional'
+        ('Professional Development League', 'England'): '🏴 Inglaterra. Liga de Desenvolvimento Profissional',
+        ('Arabian Gulf Reserve League', 'United Arab Emirates'): '🇦🇪 Emirados Árabes Unidos. Liga de Reservas do Golfo Árabe',
+        ('Arabian Gulf Reservas Liga', 'United Arab Emirates'): '🇦🇪 Emirados Árabes Unidos. Liga de Reservas do Golfo Árabe'
     }
     def formato_liga_pais(texto):
         partes = texto.split(' ', 2)
@@ -1030,10 +1032,23 @@ def nome_liga_exibicao(liga, pais):
         'France': ('🇫🇷', 'França'), 'Germany': ('🇩🇪', 'Alemanha'), 'Netherlands': ('🇳🇱', 'Holanda'),
         'Belgium': ('🇧🇪', 'Bélgica'), 'Turkey': ('🇹🇷', 'Turquia'), 'Greece': ('🇬🇷', 'Grécia'),
         'Australia': ('🇦🇺', 'Austrália'), 'Japan': ('🇯🇵', 'Japão'), 'South Korea': ('🇰🇷', 'Coreia do Sul'),
-        'China': ('🇨🇳', 'China'), 'South Africa': ('🇿🇦', 'África do Sul')
+        'China': ('🇨🇳', 'China'), 'South Africa': ('🇿🇦', 'África do Sul'),
+        'United Arab Emirates': ('🇦🇪', 'Emirados Árabes Unidos'), 'Saudi Arabia': ('🇸🇦', 'Arábia Saudita'),
+        'Qatar': ('🇶🇦', 'Catar'), 'India': ('🇮🇳', 'Índia'), 'Russia': ('🇷🇺', 'Rússia'),
+        'Switzerland': ('🇨🇭', 'Suíça'), 'Austria': ('🇦🇹', 'Áustria'), 'Scotland': ('🏴', 'Escócia'),
+        'Wales': ('🏴', 'País de Gales'), 'Ireland': ('🇮🇪', 'Irlanda'), 'Poland': ('🇵🇱', 'Polônia'),
+        'Czech Republic': ('🇨🇿', 'República Tcheca'), 'Denmark': ('🇩🇰', 'Dinamarca'), 'Sweden': ('🇸🇪', 'Suécia'),
+        'Norway': ('🇳🇴', 'Noruega'), 'Finland': ('🇫🇮', 'Finlândia'), 'Ukraine': ('🇺🇦', 'Ucrânia'),
+        'Israel': ('🇮🇱', 'Israel'), 'Egypt': ('🇪🇬', 'Egito'), 'Morocco': ('🇲🇦', 'Marrocos'),
+        'Tunisia': ('🇹🇳', 'Tunísia'), 'Nigeria': ('🇳🇬', 'Nigéria'), 'Ghana': ('🇬🇭', 'Gana')
     }
     traducoes = {
         'Professional Development League': 'Liga de Desenvolvimento Profissional',
+        'Arabian Gulf Reserve League': 'Liga de Reservas do Golfo Árabe',
+        'Arabian Gulf Reservas Liga': 'Liga de Reservas do Golfo Árabe',
+        'Reserve League': 'Liga de Reservas',
+        'Reservas Liga': 'Liga de Reservas',
+        'Arabian Gulf': 'Golfo Árabe',
         'Division Profesional Reserva': 'Divisão Profissional — Reservas',
         'Women': 'Feminino', 'Woman': 'Feminino', 'Men': 'Masculino',
         'First Division': 'Primeira Divisão', 'Second Division': 'Segunda Divisão',
