@@ -873,6 +873,15 @@ def get_jogos_sokkerpro(fids_existentes):
                     oh = _get_float(fix.get('BET365_VENCEDOR_1_LIVE'))
                     oa = _get_float(fix.get('BET365_VENCEDOR_2_LIVE'))
                 pais_fix = fix.get('countryName', '')
+                if not pais_fix:
+                    iso_paises = {
+                        'ar':'Argentina','bo':'Bolivia','br':'Brazil','cl':'Chile','co':'Colombia','cr':'Costa Rica','ec':'Ecuador','sv':'El Salvador','gt':'Guatemala','hn':'Honduras','mx':'Mexico','ni':'Nicaragua','pa':'Panama','py':'Paraguay','pe':'Peru','pr':'Puerto Rico','us':'United States','uy':'Uruguay','ve':'Venezuela','ca':'Canada','gb':'England','es':'Spain','pt':'Portugal','it':'Italy','fr':'France','de':'Germany','nl':'Netherlands','be':'Belgium','tr':'Turkey','gr':'Greece','au':'Australia','jp':'Japan','kr':'South Korea','cn':'China','za':'South Africa','ae':'United Arab Emirates','sa':'Saudi Arabia','qa':'Qatar','in':'India','ru':'Russia','ch':'Switzerland','at':'Austria','pl':'Poland','cz':'Czech Republic','dk':'Denmark','se':'Sweden','no':'Norway','fi':'Finland','ua':'Ukraine','il':'Israel','eg':'Egypt','ma':'Morocco','tn':'Tunisia','ng':'Nigeria','gh':'Ghana','az':'Azerbaijan','lt':'Lithuania','bg':'Bulgaria','ro':'Romania','rs':'Serbia','hr':'Croatia','sk':'Slovakia','hu':'Hungary','si':'Slovenia','is':'Iceland','ie':'Ireland','sc':'Scotland','wales':'Wales','al':'Albania','ba':'Bosnia and Herzegovina','me':'Montenegro','mk':'North Macedonia','ge':'Georgia','am':'Armenia','kz':'Kazakhstan','uz':'Uzbekistan','th':'Thailand','my':'Malaysia','id':'Indonesia','vn':'Vietnam','nz':'New Zealand','zw':'Zimbabwe','ke':'Kenya','tz':'Tanzania','ug':'Uganda','dz':'Algeria','cm':'Cameroon','ci':'Ivory Coast','sn':'Senegal','br':'Brazil'
+                    }
+                    import re
+                    caminho_pais = str(fix.get('countryImagePath', ''))
+                    m_pais = re.search(r'/short/([a-z]{2})\.png', caminho_pais.lower())
+                    if m_pais:
+                        pais_fix = iso_paises.get(m_pais.group(1), '')
                 if not pais_fix and fix.get('leagueName') == 'Premier League' and ({fix.get('localTeamName'), fix.get('visitorTeamName')} & {'Qarabağ', 'Şamaxı FK'}):
                     pais_fix = 'Azerbaijan'
                 if not pais_fix and fix.get('leagueName') == 'A Lyga':
@@ -1052,7 +1061,7 @@ def nome_liga_exibicao(liga, pais):
         'Czech Republic': ('🇨🇿', 'República Tcheca'), 'Denmark': ('🇩🇰', 'Dinamarca'), 'Sweden': ('🇸🇪', 'Suécia'),
         'Norway': ('🇳🇴', 'Noruega'), 'Finland': ('🇫🇮', 'Finlândia'), 'Ukraine': ('🇺🇦', 'Ucrânia'),
         'Israel': ('🇮🇱', 'Israel'), 'Egypt': ('🇪🇬', 'Egito'), 'Morocco': ('🇲🇦', 'Marrocos'),
-        'Tunisia': ('🇹🇳', 'Tunísia'), 'Nigeria': ('🇳🇬', 'Nigéria'), 'Ghana': ('🇬🇭', 'Gana'), 'Azerbaijan': ('🇦🇿', 'Azerbaijão'), 'Lithuania': ('🇱🇹', 'Lituânia')
+        'Tunisia': ('🇹🇳', 'Tunísia'), 'Nigeria': ('🇳🇬', 'Nigéria'), 'Ghana': ('🇬🇭', 'Gana'), 'Azerbaijan': ('🇦🇿', 'Azerbaijão'), 'Lithuania': ('🇱🇹', 'Lituânia'), 'Bulgaria': ('🇧🇬', 'Bulgária')
     }
     traducoes = {
         'Professional Development League': 'Liga de Desenvolvimento Profissional',
