@@ -980,29 +980,30 @@ def _probabilidade_para_sinal(stats, tipo, sh, sa, cantos_atual):
 
 def nome_liga_exibicao(liga, pais):
     mapa = {
-        ('Liga Profesional de Fútbol', 'Argentina'): '🇦🇷 Argentina. Liga Profesional',
-        ('Serie A', 'Brazil'): '🇧🇷 Brasil. Brasileirão Série A',
-        ('Primera B', 'Chile'): '🇨🇱 Chile. Primera B',
-        ('Liga de Ascenso', 'Costa Rica'): '🇨🇷 Costa Rica. Liga de Ascenso',
+        ('Liga Profesional de Fútbol', 'Argentina'): '🇦🇷 Argentina. Liga Profissional',
+        ('Serie A', 'Brazil'): '🇧🇷 Brasil. Campeonato Brasileiro — Série A',
+        ('Primera B', 'Chile'): '🇨🇱 Chile. Primeira B',
+        ('Liga de Ascenso', 'Costa Rica'): '🇨🇷 Costa Rica. Liga de Acesso',
         ('Liga Pro', 'Ecuador'): '🇪🇨 Equador. LigaPro',
-        ('Primera Division', 'El Salvador'): '🇸🇻 El Salvador. Primera División',
+        ('Primera Division', 'El Salvador'): '🇸🇻 El Salvador. Primeira Divisão',
         ('Liga Nacional', 'Guatemala'): '🇬🇹 Guatemala. Liga Nacional',
         ('Liga Nacional', 'Honduras'): '🇭🇳 Honduras. Liga Nacional',
-        ('Liga Mx Women', 'Mexico'): '🇲🇽 México. Liga MX Femenil',
+        ('Liga Mx Women', 'Mexico'): '🇲🇽 México. Liga MX Feminina',
         ('Liga MX U21', 'Mexico'): '🇲🇽 México. Liga MX Sub-21',
         ('Liga MX', 'Mexico'): '🇲🇽 México. Liga MX',
-        ('Primera Division', 'Nicaragua'): '🇳🇮 Nicarágua. Primera División',
+        ('Primera Division', 'Nicaragua'): '🇳🇮 Nicarágua. Primeira Divisão',
         ('Lpf', 'Panama'): '🇵🇦 Panamá. LPF',
         ('Campeonato Femenino', 'Paraguay'): '🇵🇾 Paraguai. Campeonato Feminino',
-        ('Division Profesional Reserva', 'Paraguay'): '🇵🇾 Paraguai. Division Profesional Reserva',
-        ('Primera Division', 'Peru'): '🇵🇪 Peru. Primera División',
-        ('Liga Puerto Rico', 'Puerto Rico'): '🇵🇷 Porto Rico. Liga Puerto Rico',
+        ('Division Profesional Reserva', 'Paraguay'): '🇵🇾 Paraguai. Divisão Profissional — Reservas',
+        ('Primera Division', 'Peru'): '🇵🇪 Peru. Primeira Divisão',
+        ('Liga Puerto Rico', 'Puerto Rico'): '🇵🇷 Porto Rico. Liga Porto Rico',
         ('Major League Soccer', 'United States'): '🇺🇸 EUA. Campeonato dos Estados Unidos. MLS',
         ('MLS Next Pro', 'United States'): '🇺🇸 EUA. MLS Next Pro',
         ('USL League One', 'United States'): '🇺🇸 EUA. USL League One',
-        ('NWSL', 'United States'): '🇺🇸 EUA. NWSL',
-        ('Segunda Division', 'Uruguay'): '🇺🇾 Uruguai. Segunda División',
-        ('Primera Division', 'Venezuela'): '🇻🇪 Venezuela. Primera División'
+        ('NWSL', 'United States'): '🇺🇸 EUA. Liga Nacional Feminina de Futebol',
+        ('Segunda Division', 'Uruguay'): '🇺🇾 Uruguai. Segunda Divisão',
+        ('Primera Division', 'Venezuela'): '🇻🇪 Venezuela. Primeira Divisão',
+        ('Professional Development League', 'England'): '🏴 Inglaterra. Liga de Desenvolvimento Profissional'
     }
     nome_pronto = mapa.get((liga, pais))
     if nome_pronto:
@@ -1021,10 +1022,23 @@ def nome_liga_exibicao(liga, pais):
         'Australia': ('🇦🇺', 'Austrália'), 'Japan': ('🇯🇵', 'Japão'), 'South Korea': ('🇰🇷', 'Coreia do Sul'),
         'China': ('🇨🇳', 'China'), 'South Africa': ('🇿🇦', 'África do Sul')
     }
+    traducoes = {
+        'Professional Development League': 'Liga de Desenvolvimento Profissional',
+        'Division Profesional Reserva': 'Divisão Profissional — Reservas',
+        'Women': 'Feminino', 'Woman': 'Feminino', 'Men': 'Masculino',
+        'First Division': 'Primeira Divisão', 'Second Division': 'Segunda Divisão',
+        'Third Division': 'Terceira Divisão', 'Premier League': 'Liga Premier',
+        'Championship': 'Campeonato', 'League': 'Liga', 'Cup': 'Copa',
+        'Reserve': 'Reservas', 'Reserves': 'Reservas', 'Youth': 'Categorias de Base',
+        'U21': 'Sub-21', 'U20': 'Sub-20', 'U19': 'Sub-19', 'United States': 'Estados Unidos'
+    }
+    nome_liga = liga
+    for origem, destino in traducoes.items():
+        nome_liga = nome_liga.replace(origem, destino)
     info = paises.get(pais)
     if info:
-        return info[0] + ' ' + info[1] + '. ' + liga
-    return liga
+        return info[0] + ' ' + info[1] + '. ' + nome_liga
+    return nome_liga
 
 def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, extra_val=None, cantos_atual=0, stats=None, sh=0, sa=0, fav_final='h', odd_h=None, odd_a=None, odd_b365=None, odd_bano=None, nome=None, tipo='', probabilidade=None):
     NL = chr(10)
