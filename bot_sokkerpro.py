@@ -1004,7 +1004,27 @@ def nome_liga_exibicao(liga, pais):
         ('Segunda Division', 'Uruguay'): '🇺🇾 Uruguai. Segunda División',
         ('Primera Division', 'Venezuela'): '🇻🇪 Venezuela. Primera División'
     }
-    return mapa.get((liga, pais), liga)
+    nome_pronto = mapa.get((liga, pais))
+    if nome_pronto:
+        return nome_pronto
+    paises = {
+        'Argentina': ('🇦🇷', 'Argentina'), 'Bolivia': ('🇧🇴', 'Bolívia'), 'Brazil': ('🇧🇷', 'Brasil'),
+        'Chile': ('🇨🇱', 'Chile'), 'Colombia': ('🇨🇴', 'Colômbia'), 'Costa Rica': ('🇨🇷', 'Costa Rica'),
+        'Ecuador': ('🇪🇨', 'Equador'), 'El Salvador': ('🇸🇻', 'El Salvador'), 'Guatemala': ('🇬🇹', 'Guatemala'),
+        'Honduras': ('🇭🇳', 'Honduras'), 'Mexico': ('🇲🇽', 'México'), 'Nicaragua': ('🇳🇮', 'Nicarágua'),
+        'Panama': ('🇵🇦', 'Panamá'), 'Paraguay': ('🇵🇾', 'Paraguai'), 'Peru': ('🇵🇪', 'Peru'),
+        'Puerto Rico': ('🇵🇷', 'Porto Rico'), 'United States': ('🇺🇸', 'EUA'), 'Uruguay': ('🇺🇾', 'Uruguai'),
+        'Venezuela': ('🇻🇪', 'Venezuela'), 'Canada': ('🇨🇦', 'Canadá'), 'England': ('🏴', 'Inglaterra'),
+        'Spain': ('🇪🇸', 'Espanha'), 'Portugal': ('🇵🇹', 'Portugal'), 'Italy': ('🇮🇹', 'Itália'),
+        'France': ('🇫🇷', 'França'), 'Germany': ('🇩🇪', 'Alemanha'), 'Netherlands': ('🇳🇱', 'Holanda'),
+        'Belgium': ('🇧🇪', 'Bélgica'), 'Turkey': ('🇹🇷', 'Turquia'), 'Greece': ('🇬🇷', 'Grécia'),
+        'Australia': ('🇦🇺', 'Austrália'), 'Japan': ('🇯🇵', 'Japão'), 'South Korea': ('🇰🇷', 'Coreia do Sul'),
+        'China': ('🇨🇳', 'China'), 'South Africa': ('🇿🇦', 'África do Sul')
+    }
+    info = paises.get(pais)
+    if info:
+        return info[0] + ' ' + info[1] + '. ' + liga
+    return liga
 
 def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, extra_val=None, cantos_atual=0, stats=None, sh=0, sa=0, fav_final='h', odd_h=None, odd_a=None, odd_b365=None, odd_bano=None, nome=None, tipo='', probabilidade=None):
     NL = chr(10)
