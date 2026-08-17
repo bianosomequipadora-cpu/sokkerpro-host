@@ -1004,6 +1004,10 @@ def nome_liga_exibicao(liga, pais):
         ('Segunda Division', 'Uruguay'): '🇺🇾 Uruguai. Segunda Divisão',
         ('Primera Division', 'Venezuela'): '🇻🇪 Venezuela. Primeira Divisão',
         ('Professional Development League', 'England'): '🏴 Inglaterra. Liga de Desenvolvimento Profissional',
+        ('Second Liga', ''): '🇧🇬 Bulgária. Segunda Liga',
+        ('Second Liga', 'Bulgaria'): '🇧🇬 Bulgária. Segunda Liga',
+        ('Greek Copa', 'Greece'): '🇬🇷 Grécia. Copa da Grécia',
+        ('Greek Cup', 'Greece'): '🇬🇷 Grécia. Copa da Grécia',
         ('Arabian Gulf Reserve League', 'United Arab Emirates'): '🇦🇪 Emirados Árabes Unidos. Liga de Reservas do Golfo Árabe',
         ('Arabian Gulf Reservas Liga', 'United Arab Emirates'): '🇦🇪 Emirados Árabes Unidos. Liga de Reservas do Golfo Árabe'
     }
@@ -1052,6 +1056,9 @@ def nome_liga_exibicao(liga, pais):
         'Division Profesional Reserva': 'Divisão Profissional — Reservas',
         'Women': 'Feminino', 'Woman': 'Feminino', 'Men': 'Masculino',
         'First Division': 'Primeira Divisão', 'Second Division': 'Segunda Divisão',
+        'Second Liga': 'Segunda Liga',
+        'Greek Copa': 'Copa da Grécia',
+        'Greek Cup': 'Copa da Grécia',
         'Third Division': 'Terceira Divisão', 'Premier League': 'Liga Premier',
         'Championship': 'Campeonato', 'League': 'Liga', 'Cup': 'Copa',
         'Reserve': 'Reservas', 'Reserves': 'Reservas', 'Youth': 'Categorias de Base',
