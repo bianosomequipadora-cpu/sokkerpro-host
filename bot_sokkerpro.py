@@ -1245,7 +1245,7 @@ def nome_liga_exibicao(liga, pais):
         'South Africa': ('🇿🇦', 'África do Sul'),
         'Zambia': ('🇿🇲', 'Zâmbia'),
         'Zimbabwe': ('🇿🇼', 'Zimbábue'),
-        'England': ('🏴', 'Inglaterra'),
+        'England': ('\U0001f3f4\U000e0067\U000e0062\U000e0065\U000e006e\U000e0067\U000e007f', 'Inglaterra'),
         'Northern Ireland': ('🏴', 'Irlanda do Norte'),
         'Scotland': ('🏴', 'Escócia'),
         'Wales': ('🏴', 'País de Gales'),
