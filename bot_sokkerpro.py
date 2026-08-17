@@ -995,7 +995,7 @@ def _probabilidade_para_sinal(stats, tipo, sh, sa, cantos_atual):
     return None
 
 def nome_liga_exibicao(liga, pais):
-    ISO_PAIS = {
+    PAIS_NOME = {
         'Aruba': ('🇦🇼', 'Aruba'),
         'Afghanistan': ('🇦🇫', 'Afeganistão'),
         'Angola': ('🇦🇴', 'Angola'),
@@ -1245,12 +1245,13 @@ def nome_liga_exibicao(liga, pais):
         'South Africa': ('🇿🇦', 'África do Sul'),
         'Zambia': ('🇿🇲', 'Zâmbia'),
         'Zimbabwe': ('🇿🇼', 'Zimbábue'),
-        'England': ('\U0001f3f4\U000e0067\U000e0062\U000e0065\U000e006e\U000e0067\U000e007f', 'Inglaterra'),
+        'England': ('🏴󠁧󠁢󠁥󠁮󠁧󠁿', 'Inglaterra'),
         'Northern Ireland': ('🏴', 'Irlanda do Norte'),
         'Scotland': ('🏴', 'Escócia'),
         'Wales': ('🏴', 'País de Gales'),
+        'Faroe Islands': ('🇫🇴', 'Ilhas Faroé'),
     }
-    ISO_CODIGOS = {
+    PAIS_CODIGO = {
         'aw': ('🇦🇼', 'Aruba'),
         'af': ('🇦🇫', 'Afeganistão'),
         'ao': ('🇦🇴', 'Angola'),
@@ -1501,66 +1502,17 @@ def nome_liga_exibicao(liga, pais):
         'zm': ('🇿🇲', 'Zâmbia'),
         'zw': ('🇿🇼', 'Zimbábue'),
     }
-    ISO_CODIGOS['fo'] = ('🇫🇴', 'Ilhas Faroé')
-
-    ESPECIAIS = {
-        ('Liga Profesional de Fútbol', 'Argentina'): 'Liga Profissional',
-        ('Serie A', 'Brazil'): 'Campeonato Brasileiro Série A',
-        ('Primera B', 'Chile'): 'Liga de Ascenso',
-        ('Liga de Ascenso', 'Costa Rica'): 'Liga de Acesso',
-        ('Liga Pro', 'Ecuador'): 'LigaPro',
-        ('Primera Division', 'El Salvador'): 'Primeira Divisão',
-        ('Liga Nacional', 'Guatemala'): 'Liga Nacional',
-        ('Liga Nacional', 'Honduras'): 'Liga Nacional',
-        ('Liga Mx Women', 'Mexico'): 'Liga MX Feminina',
-        ('Liga MX U21', 'Mexico'): 'Liga MX Sub-21',
-        ('Liga MX', 'Mexico'): 'Liga MX',
-        ('Primera Division', 'Nicaragua'): 'Primeira Divisão',
-        ('Lpf', 'Panama'): 'LPF',
-        ('Campeonato Femenino', 'Paraguay'): 'Campeonato Feminino',
-        ('Division Profesional Reserva', 'Paraguay'): 'Divisão Profissional — Reservas',
-        ('Primera Division', 'Peru'): 'Primeira Divisão',
-        ('Liga Puerto Rico', 'Puerto Rico'): 'Liga Porto Rico',
-        ('Major League Soccer', 'United States'): 'Campeonato dos Estados Unidos. MLS',
-        ('MLS Next Pro', 'United States'): 'MLS Next Pro',
-        ('USL League One', 'United States'): 'USL League One',
-        ('NWSL', 'United States'): 'Liga Nacional Feminina de Futebol',
-        ('Segunda Division', 'Uruguay'): 'Segunda Divisão',
-        ('Primera Division', 'Venezuela'): 'Primeira Divisão',
-        ('Professional Development League', 'England'): 'Liga de Desenvolvimento Profissional',
-        ('Championship', 'England'): 'Campeonato Inglês — Championship',
-        ('Arabian Gulf Reserve League', 'United Arab Emirates'): 'Liga de Reservas do Golfo Árabe',
-        ('Arabian Gulf Reservas Liga', 'United Arab Emirates'): 'Liga de Reservas do Golfo Árabe',
-        ('Premier League', 'Azerbaijan'): 'Liga Premier',
-        ('A Lyga', 'Lithuania'): 'A Lyga',
-        ('Second Liga', 'Bulgaria'): 'Segunda Liga',
-        ('Greek Copa', 'Greece'): 'Copa da Grécia',
-        ('Greek Cup', 'Greece'): 'Copa da Grécia',
-        ('First Liga', 'Montenegro'): 'Primeira Liga',
-        ('Inkasso-Deildin', 'Iceland'): 'Inkasso-Deildin',
-        ('Premiership Development Liga', 'Northern Ireland'): 'Liga de Desenvolvimento da Premiership',
-        ('Premiership Development Liga', ''): 'Liga de Desenvolvimento da Premiership',
-    }
-    TRADUCOES = [
-        ('Professional Development League', 'Liga de Desenvolvimento Profissional'), ('Arabian Gulf Reserve League', 'Liga de Reservas do Golfo Árabe'), ('Arabian Gulf Reservas Liga', 'Liga de Reservas do Golfo Árabe'), ('Second Liga', 'Segunda Liga'), ('First Liga', 'Primeira Liga'), ('Greek Copa', 'Copa da Grécia'), ('Greek Cup', 'Copa da Grécia'), ('Women', 'Feminina'), ('Woman', 'Feminina'), ('Men', 'Masculina'), ('First Division', 'Primeira Divisão'), ('Second Division', 'Segunda Divisão'), ('Third Division', 'Terceira Divisão'), ('Premier League', 'Liga Premier'), ('Championship', 'Campeonato'), ('League', 'Liga'), ('Cup', 'Copa'), ('Reserve League', 'Liga de Reservas'), ('Reservas Liga', 'Liga de Reservas'), ('Reserves', 'Reservas'), ('Reserve', 'Reservas'), ('Youth', 'Categorias de Base'), ('U21', 'Sub-21'), ('U20', 'Sub-20'), ('U19', 'Sub-19')
-    ]
-    if pais.startswith('__ISO__:'):
-        pais = pais.split(':', 1)[1].lower()
     if isinstance(pais, str):
+        if pais.startswith('__ISO__:'):
+            pais = pais.split(':', 1)[1].lower()
         import re
         m_codigo = re.match(r'^([a-z]{2})\s+', pais.lower())
-        if m_codigo and m_codigo.group(1) in ISO_CODIGOS:
+        if m_codigo:
             pais = m_codigo.group(1)
-    info = ISO_PAIS.get(pais) or ISO_PAIS.get(pais.title()) or ISO_CODIGOS.get(pais.lower()) if isinstance(pais, str) else None
-    if not info and isinstance(pais, str) and len(pais) == 2:
-        info = ISO_PAIS.get(pais.lower())
-    nome = ESPECIAIS.get((liga, pais), liga)
-    if nome == liga:
-        for origem, destino in TRADUCOES:
-            nome = nome.replace(origem, destino)
+    info = PAIS_NOME.get(pais) or PAIS_CODIGO.get(pais.lower()) if isinstance(pais, str) else None
     if info:
-        return nome + ' (' + info[0] + ' ' + info[1] + ')'
-    return nome
+        return liga + ' (' + info[0] + ' ' + info[1] + ')'
+    return liga
 
 def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, extra_val=None, cantos_atual=0, stats=None, sh=0, sa=0, fav_final='h', odd_h=None, odd_a=None, odd_b365=None, odd_bano=None, nome=None, tipo='', probabilidade=None):
     NL = chr(10)
