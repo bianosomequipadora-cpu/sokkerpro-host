@@ -258,6 +258,26 @@
         "posse_bola_min": 58,
         "dapm_total_orig_min": 0.9
       }
+    },
+    "custom_1786925158726": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⛳️🤯PRESSURE BAR HT🤯⛳️",
+      "minuto_inicio": 32,
+      "minuto_fim": 38,
+      "periodo": 1,
+      "tipo": "escanteio_ht",
+      "placar_valido": "0x0, 1x1, 2x2",
+      "criterios": {
+        "situacao_favorito": "empatando",
+        "diferenca_gols_fav_max": 1,
+        "chutes_alvo_min": 2,
+        "chutes_totais_min": 7,
+        "escanteios_minimos": 1,
+        "max_red_card_fav": 0,
+        "pressure_bar_min": 68,
+        "chutes_bloq_max": 2
+      }
     }
   }
 }
