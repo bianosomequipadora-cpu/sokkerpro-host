@@ -294,8 +294,8 @@
         "chutes_totais_min": 3,
         "escanteios_minimos": 1,
         "max_red_card_fav": 0,
-        "xg_total_min": 0.7,
-        "pressure_bar_min": 60
+        "xg_total_min": 0.93,
+        "pressure_bar_min": 70
       }
     }
   }
