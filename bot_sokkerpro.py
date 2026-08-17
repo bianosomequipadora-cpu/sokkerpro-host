@@ -886,6 +886,8 @@ def get_jogos_sokkerpro(fids_existentes):
                     pais_fix = 'Azerbaijan'
                 if not pais_fix and fix.get('leagueName') == 'A Lyga':
                     pais_fix = 'Lithuania'
+                if not pais_fix and fix.get('leagueName') == 'Premiership Development Liga':
+                    pais_fix = 'Northern Ireland'
                 jogos.append({'fid': fid, 'home': fix.get('localTeamName', 'Home'), 'away': fix.get('visitorTeamName', 'Away'), 'minuto': minuto or _get_int(fix.get('minutePrimeiroTempo', 0)) or _get_int(fix.get('minuteSegundoTempo', 0)), 'period': period, 'sh': _get_int(fix.get('scoresLocalTeam', 0)), 'sa': _get_int(fix.get('scoresVisitorTeam', 0)), 'liga': fix.get('leagueName', 'Liga'), 'pais': pais_fix, 'source': 'sokkerpro', '_stats': stats, '_odd_h': oh if oh and oh > 1 else None, '_odd_a': oa if oa and oa > 1 else None})
     except:
         pass
@@ -1244,6 +1246,7 @@ def nome_liga_exibicao(liga, pais):
         'Zambia': ('🇿🇲', 'Zâmbia'),
         'Zimbabwe': ('🇿🇼', 'Zimbábue'),
         'England': ('🏴', 'Inglaterra'),
+        'Northern Ireland': ('🏴', 'Irlanda do Norte'),
         'Scotland': ('🏴', 'Escócia'),
         'Wales': ('🏴', 'País de Gales'),
     }
@@ -1534,6 +1537,8 @@ def nome_liga_exibicao(liga, pais):
         ('Greek Cup', 'Greece'): 'Copa da Grécia',
         ('First Liga', 'Montenegro'): 'Primeira Liga',
         ('Inkasso-Deildin', 'Iceland'): 'Inkasso-Deildin',
+        ('Premiership Development Liga', 'Northern Ireland'): 'Liga de Desenvolvimento da Premiership',
+        ('Premiership Development Liga', ''): 'Liga de Desenvolvimento da Premiership',
     }
     TRADUCOES = [
         ('Professional Development League', 'Liga de Desenvolvimento Profissional'), ('Arabian Gulf Reserve League', 'Liga de Reservas do Golfo Árabe'), ('Arabian Gulf Reservas Liga', 'Liga de Reservas do Golfo Árabe'), ('Second Liga', 'Segunda Liga'), ('First Liga', 'Primeira Liga'), ('Greek Copa', 'Copa da Grécia'), ('Greek Cup', 'Copa da Grécia'), ('Women', 'Feminina'), ('Woman', 'Feminina'), ('Men', 'Masculina'), ('First Division', 'Primeira Divisão'), ('Second Division', 'Segunda Divisão'), ('Third Division', 'Terceira Divisão'), ('Premier League', 'Liga Premier'), ('Championship', 'Campeonato'), ('League', 'Liga'), ('Cup', 'Copa'), ('Reserve League', 'Liga de Reservas'), ('Reservas Liga', 'Liga de Reservas'), ('Reserves', 'Reservas'), ('Reserve', 'Reservas'), ('Youth', 'Categorias de Base'), ('U21', 'Sub-21'), ('U20', 'Sub-20'), ('U19', 'Sub-19')
