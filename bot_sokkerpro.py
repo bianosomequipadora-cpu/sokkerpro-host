@@ -1498,6 +1498,8 @@ def nome_liga_exibicao(liga, pais):
         'zm': ('🇿🇲', 'Zâmbia'),
         'zw': ('🇿🇼', 'Zimbábue'),
     }
+    ISO_CODIGOS['fo'] = ('🇫🇴', 'Ilhas Faroé')
+
     ESPECIAIS = {
         ('Liga Profesional de Fútbol', 'Argentina'): 'Liga Profissional',
         ('Serie A', 'Brazil'): 'Campeonato Brasileiro Série A',
@@ -1538,6 +1540,11 @@ def nome_liga_exibicao(liga, pais):
     ]
     if pais.startswith('__ISO__:'):
         pais = pais.split(':', 1)[1].lower()
+    if isinstance(pais, str):
+        import re
+        m_codigo = re.match(r'^([a-z]{2})\s+', pais.lower())
+        if m_codigo and m_codigo.group(1) in ISO_CODIGOS:
+            pais = m_codigo.group(1)
     info = ISO_PAIS.get(pais) or ISO_PAIS.get(pais.title()) or ISO_CODIGOS.get(pais.lower()) if isinstance(pais, str) else None
     if not info and isinstance(pais, str) and len(pais) == 2:
         info = ISO_PAIS.get(pais.lower())
