@@ -1528,6 +1528,7 @@ def nome_liga_exibicao(liga, pais):
         ('Segunda Division', 'Uruguay'): 'Segunda Divisão',
         ('Primera Division', 'Venezuela'): 'Primeira Divisão',
         ('Professional Development League', 'England'): 'Liga de Desenvolvimento Profissional',
+        ('Championship', 'England'): 'Campeonato Inglês — Championship',
         ('Arabian Gulf Reserve League', 'United Arab Emirates'): 'Liga de Reservas do Golfo Árabe',
         ('Arabian Gulf Reservas Liga', 'United Arab Emirates'): 'Liga de Reservas do Golfo Árabe',
         ('Premier League', 'Azerbaijan'): 'Liga Premier',
