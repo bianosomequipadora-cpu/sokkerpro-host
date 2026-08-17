@@ -19,7 +19,7 @@
         "escanteios_minimos": 1,
         "max_red_card_fav": 0,
         "pressure_bar_min": 60,
-        "dapm_total_orig_min": 0.75
+        "dapm_total_orig_min": 0.7
       }
     },
     "custom_1786455437793": {
@@ -179,7 +179,7 @@
         "chutes_totais_min": 5,
         "escanteios_minimos": 1,
         "max_red_card_fav": 0,
-        "dapm_total_orig_min": 0.9
+        "dapm_total_orig_min": 0.7
       }
     },
     "custom_1786917376854": {
@@ -218,7 +218,7 @@
         "chutes_totais_min": 10,
         "escanteios_minimos": 1,
         "max_red_card_fav": 0,
-        "dapm_total_orig_min": 0.9
+        "dapm_total_orig_min": 0.7
       }
     },
     "custom_1786917448806": {
@@ -237,7 +237,7 @@
         "chutes_totais_min": 5,
         "escanteios_minimos": 1,
         "max_red_card_fav": 0,
-        "dapm_total_orig_min": 0.99
+        "dapm_total_orig_min": 0.7
       }
     },
     "custom_1786918627335": {
@@ -256,7 +256,7 @@
         "escanteios_minimos": 1,
         "max_red_card_fav": 0,
         "posse_bola_min": 58,
-        "dapm_total_orig_min": 0.9
+        "dapm_total_orig_min": 0.7
       }
     },
     "custom_1786925158726": {
