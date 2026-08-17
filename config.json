@@ -278,6 +278,25 @@
         "pressure_bar_min": 68,
         "chutes_bloq_max": 2
       }
+    },
+    "custom_1786928105693": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "OVER GOL HT PRESSÃO",
+      "minuto_inicio": 14,
+      "minuto_fim": 27,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": "empatando",
+        "media_gols_partida_min": 2.2,
+        "chutes_totais_min": 3,
+        "escanteios_minimos": 1,
+        "max_red_card_fav": 0,
+        "xg_total_min": 0.7,
+        "pressure_bar_min": 60
+      }
     }
   }
 }
