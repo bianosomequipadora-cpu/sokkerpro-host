@@ -1005,9 +1005,19 @@ def nome_liga_exibicao(liga, pais):
         ('Primera Division', 'Venezuela'): '🇻🇪 Venezuela. Primeira Divisão',
         ('Professional Development League', 'England'): '🏴 Inglaterra. Liga de Desenvolvimento Profissional'
     }
+    def formato_liga_pais(texto):
+        partes = texto.split(' ', 2)
+        if len(partes) == 3 and partes[0].startswith('🇬') or False:
+            pass
+        import re
+        m = re.match(r'^(\S+) (.+?)\. (.+)$', texto)
+        if m:
+            return m.group(3) + ' (' + m.group(1) + ' ' + m.group(2) + ')'
+        return texto
+
     nome_pronto = mapa.get((liga, pais))
     if nome_pronto:
-        return nome_pronto
+        return formato_liga_pais(nome_pronto)
     paises = {
         'Argentina': ('🇦🇷', 'Argentina'), 'Bolivia': ('🇧🇴', 'Bolívia'), 'Brazil': ('🇧🇷', 'Brasil'),
         'Chile': ('🇨🇱', 'Chile'), 'Colombia': ('🇨🇴', 'Colômbia'), 'Costa Rica': ('🇨🇷', 'Costa Rica'),
@@ -1037,7 +1047,7 @@ def nome_liga_exibicao(liga, pais):
         nome_liga = nome_liga.replace(origem, destino)
     info = paises.get(pais)
     if info:
-        return info[0] + ' ' + info[1] + '. ' + nome_liga
+        return formato_liga_pais(info[0] + ' ' + info[1] + '. ' + nome_liga)
     return nome_liga
 
 def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, extra_val=None, cantos_atual=0, stats=None, sh=0, sa=0, fav_final='h', odd_h=None, odd_a=None, odd_b365=None, odd_bano=None, nome=None, tipo='', probabilidade=None):
