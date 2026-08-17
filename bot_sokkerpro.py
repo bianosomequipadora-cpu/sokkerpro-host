@@ -994,6 +994,7 @@ def nome_liga_exibicao(liga, pais):
         ('Primera Division', 'Nicaragua'): '🇳🇮 Nicarágua. Primera División',
         ('Lpf', 'Panama'): '🇵🇦 Panamá. LPF',
         ('Campeonato Femenino', 'Paraguay'): '🇵🇾 Paraguai. Campeonato Feminino',
+        ('Division Profesional Reserva', 'Paraguay'): '🇵🇾 Paraguai. Division Profesional Reserva',
         ('Primera Division', 'Peru'): '🇵🇪 Peru. Primera División',
         ('Liga Puerto Rico', 'Puerto Rico'): '🇵🇷 Porto Rico. Liga Puerto Rico',
         ('Major League Soccer', 'United States'): '🇺🇸 EUA. Campeonato dos Estados Unidos. MLS',
