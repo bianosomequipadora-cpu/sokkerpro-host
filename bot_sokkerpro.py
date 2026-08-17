@@ -872,7 +872,10 @@ def get_jogos_sokkerpro(fids_existentes):
                 if not (oh > 1 and oa > 1):
                     oh = _get_float(fix.get('BET365_VENCEDOR_1_LIVE'))
                     oa = _get_float(fix.get('BET365_VENCEDOR_2_LIVE'))
-                jogos.append({'fid': fid, 'home': fix.get('localTeamName', 'Home'), 'away': fix.get('visitorTeamName', 'Away'), 'minuto': minuto or _get_int(fix.get('minutePrimeiroTempo', 0)) or _get_int(fix.get('minuteSegundoTempo', 0)), 'period': period, 'sh': _get_int(fix.get('scoresLocalTeam', 0)), 'sa': _get_int(fix.get('scoresVisitorTeam', 0)), 'liga': fix.get('leagueName', 'Liga'), 'pais': fix.get('countryName', ''), 'source': 'sokkerpro', '_stats': stats, '_odd_h': oh if oh and oh > 1 else None, '_odd_a': oa if oa and oa > 1 else None})
+                pais_fix = fix.get('countryName', '')
+                if not pais_fix and fix.get('leagueName') == 'Premier League' and ({fix.get('localTeamName'), fix.get('visitorTeamName')} & {'Qarabağ', 'Şamaxı FK'}):
+                    pais_fix = 'Azerbaijan'
+                jogos.append({'fid': fid, 'home': fix.get('localTeamName', 'Home'), 'away': fix.get('visitorTeamName', 'Away'), 'minuto': minuto or _get_int(fix.get('minutePrimeiroTempo', 0)) or _get_int(fix.get('minuteSegundoTempo', 0)), 'period': period, 'sh': _get_int(fix.get('scoresLocalTeam', 0)), 'sa': _get_int(fix.get('scoresVisitorTeam', 0)), 'liga': fix.get('leagueName', 'Liga'), 'pais': pais_fix, 'source': 'sokkerpro', '_stats': stats, '_odd_h': oh if oh and oh > 1 else None, '_odd_a': oa if oa and oa > 1 else None})
     except:
         pass
     return jogos
@@ -1008,6 +1011,7 @@ def nome_liga_exibicao(liga, pais):
         ('Second Liga', 'Bulgaria'): '🇧🇬 Bulgária. Segunda Liga',
         ('Greek Copa', 'Greece'): '🇬🇷 Grécia. Copa da Grécia',
         ('Greek Cup', 'Greece'): '🇬🇷 Grécia. Copa da Grécia',
+        ('Premier League', 'Azerbaijan'): '🇦🇿 Azerbaijão. Liga Premier',
         ('Arabian Gulf Reserve League', 'United Arab Emirates'): '🇦🇪 Emirados Árabes Unidos. Liga de Reservas do Golfo Árabe',
         ('Arabian Gulf Reservas Liga', 'United Arab Emirates'): '🇦🇪 Emirados Árabes Unidos. Liga de Reservas do Golfo Árabe'
     }
@@ -1044,7 +1048,7 @@ def nome_liga_exibicao(liga, pais):
         'Czech Republic': ('🇨🇿', 'República Tcheca'), 'Denmark': ('🇩🇰', 'Dinamarca'), 'Sweden': ('🇸🇪', 'Suécia'),
         'Norway': ('🇳🇴', 'Noruega'), 'Finland': ('🇫🇮', 'Finlândia'), 'Ukraine': ('🇺🇦', 'Ucrânia'),
         'Israel': ('🇮🇱', 'Israel'), 'Egypt': ('🇪🇬', 'Egito'), 'Morocco': ('🇲🇦', 'Marrocos'),
-        'Tunisia': ('🇹🇳', 'Tunísia'), 'Nigeria': ('🇳🇬', 'Nigéria'), 'Ghana': ('🇬🇭', 'Gana')
+        'Tunisia': ('🇹🇳', 'Tunísia'), 'Nigeria': ('🇳🇬', 'Nigéria'), 'Ghana': ('🇬🇭', 'Gana'), 'Azerbaijan': ('🇦🇿', 'Azerbaijão')
     }
     traducoes = {
         'Professional Development League': 'Liga de Desenvolvimento Profissional',
