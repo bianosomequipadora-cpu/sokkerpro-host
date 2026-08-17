@@ -979,10 +979,31 @@ def _probabilidade_para_sinal(stats, tipo, sh, sa, cantos_atual):
     return None
 
 def nome_liga_exibicao(liga, pais):
-    if liga == 'Major League Soccer' and pais == 'United States':
-        return 'EUA. Campeonato dos Estados Unidos. MLS'
-    return liga
-
+    mapa = {
+        ('Liga Profesional de Fútbol', 'Argentina'): '🇦🇷 Argentina. Liga Profesional',
+        ('Serie A', 'Brazil'): '🇧🇷 Brasil. Brasileirão Série A',
+        ('Primera B', 'Chile'): '🇨🇱 Chile. Primera B',
+        ('Liga de Ascenso', 'Costa Rica'): '🇨🇷 Costa Rica. Liga de Ascenso',
+        ('Liga Pro', 'Ecuador'): '🇪🇨 Equador. LigaPro',
+        ('Primera Division', 'El Salvador'): '🇸🇻 El Salvador. Primera División',
+        ('Liga Nacional', 'Guatemala'): '🇬🇹 Guatemala. Liga Nacional',
+        ('Liga Nacional', 'Honduras'): '🇭🇳 Honduras. Liga Nacional',
+        ('Liga Mx Women', 'Mexico'): '🇲🇽 México. Liga MX Femenil',
+        ('Liga MX U21', 'Mexico'): '🇲🇽 México. Liga MX Sub-21',
+        ('Liga MX', 'Mexico'): '🇲🇽 México. Liga MX',
+        ('Primera Division', 'Nicaragua'): '🇳🇮 Nicarágua. Primera División',
+        ('Lpf', 'Panama'): '🇵🇦 Panamá. LPF',
+        ('Campeonato Femenino', 'Paraguay'): '🇵🇾 Paraguai. Campeonato Feminino',
+        ('Primera Division', 'Peru'): '🇵🇪 Peru. Primera División',
+        ('Liga Puerto Rico', 'Puerto Rico'): '🇵🇷 Porto Rico. Liga Puerto Rico',
+        ('Major League Soccer', 'United States'): '🇺🇸 EUA. Campeonato dos Estados Unidos. MLS',
+        ('MLS Next Pro', 'United States'): '🇺🇸 EUA. MLS Next Pro',
+        ('USL League One', 'United States'): '🇺🇸 EUA. USL League One',
+        ('NWSL', 'United States'): '🇺🇸 EUA. NWSL',
+        ('Segunda Division', 'Uruguay'): '🇺🇾 Uruguai. Segunda División',
+        ('Primera Division', 'Venezuela'): '🇻🇪 Venezuela. Primera División'
+    }
+    return mapa.get((liga, pais), liga)
 
 def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, extra_val=None, cantos_atual=0, stats=None, sh=0, sa=0, fav_final='h', odd_h=None, odd_a=None, odd_b365=None, odd_bano=None, nome=None, tipo='', probabilidade=None):
     NL = chr(10)
