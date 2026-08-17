@@ -1506,7 +1506,7 @@ def nome_liga_exibicao(liga, pais):
     ESPECIAIS = {
         ('Liga Profesional de Fútbol', 'Argentina'): 'Liga Profissional',
         ('Serie A', 'Brazil'): 'Campeonato Brasileiro Série A',
-        ('Primera B', 'Chile'): 'Primeira B',
+        ('Primera B', 'Chile'): 'Liga de Ascenso',
         ('Liga de Ascenso', 'Costa Rica'): 'Liga de Acesso',
         ('Liga Pro', 'Ecuador'): 'LigaPro',
         ('Primera Division', 'El Salvador'): 'Primeira Divisão',
