@@ -243,7 +243,7 @@ async function salvarConfig(){
         var merc={};
         document.querySelectorAll('.card').forEach(function(card){
             var key=card.id.replace('card-','');
-            var criterios={};
+            var criterios=JSON.parse(JSON.stringify((CONFIG_INLINE.mercados[key]||{}).criterios||{}));
             card.querySelectorAll('input[type="number"]').forEach(function(campo){
                 var bruto=campo.value.trim();
                 if(bruto!=='' && !/^[+-]?(?:\d+)(?:[.,]\d+)?$/.test(bruto)) throw new Error('Valor inválido no campo numérico '+campo.id+'. Use apenas números.');
