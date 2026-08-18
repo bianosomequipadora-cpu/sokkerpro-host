@@ -2127,6 +2127,33 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 elif oper == 'max':
                     if valor_stats > valor_cfg:
                         motivos.append(f'{campo}={valor_stats:.1f} > max {valor_cfg:.1f}')
+            # Critérios brutos da API SokkerPro configurados pelo painel.
+            # Cada chave é avaliada uma única vez; valores ausentes não passam automaticamente.
+            api_criterios = mkt_cfg.get('criterios_api', [])
+            vistos_api = set()
+            for item in api_criterios:
+                campo = item.get('campo')
+                if not campo or campo in vistos_api:
+                    continue
+                vistos_api.add(campo)
+                if campo not in stats or stats.get(campo) is None or stats.get(campo) == '':
+                    motivos.append(f'{campo}=ausente')
+                    continue
+                try:
+                    atual = float(stats[campo])
+                    alvo = float(item.get('valor'))
+                    op = item.get('operador', 'gte')
+                    if op == 'gte': ok_api = atual >= alvo
+                    elif op == 'lte': ok_api = atual <= alvo
+                    elif op == 'gt': ok_api = atual > alvo
+                    elif op == 'lt': ok_api = atual < alvo
+                    elif op == 'eq': ok_api = atual == alvo
+                    elif op == 'between': ok_api = atual >= alvo and atual <= float(item.get('valor2'))
+                    else: ok_api = False
+                    if not ok_api:
+                        motivos.append(f'{campo}={atual:g} não atende {op} {alvo:g}')
+                except (TypeError, ValueError):
+                    motivos.append(f'{campo}=inválido')
             return (len(motivos) == 0, motivos)
         fav_gols = sh if fav_final == 'h' else sa
         adv_gols = sa if fav_final == 'h' else sh
