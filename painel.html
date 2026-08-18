@@ -27,6 +27,7 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
 .card { background:rgba(255,255,255,0.1); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.1); border-radius:15px; padding:16px; margin-bottom:16px; box-shadow:0 8px 32px rgba(0,0,0,0.3); width:100%; overflow:hidden; }
 .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:8px; }
 .field { display:flex; flex-direction:column; margin-bottom:8px; min-width:0; }
+.criteria-panel{grid-column:1/-1;background:rgba(0,0,0,.16);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px}.criteria-title{font-weight:700;margin-bottom:8px}.api-criterion{display:grid;grid-template-columns:minmax(180px,2fr) minmax(130px,1fr) minmax(100px,1fr) minmax(100px,1fr) 36px;gap:8px;align-items:end;margin:7px 0}.api-criterion select,.api-criterion input{width:100%}.btn-add-criterion{background:#16803c;color:#fff;border:0;border-radius:8px;padding:9px 12px;font-weight:700;cursor:pointer}.btn-remove-criterion{background:#8b1e2d;color:#fff;border:0;border-radius:8px;padding:9px;cursor:pointer}@media(max-width:700px){.grid{grid-template-columns:1fr!important}.api-criterion{grid-template-columns:1fr 1fr}.api-criterion .api-field{grid-column:1/-1}.api-criterion .btn-remove-criterion{grid-column:2}.criteria-panel{grid-column:1}}
 label { font-size:0.8em; color:#ddd; margin-bottom:3px; font-weight:500; }
 input, select { background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.3); border-radius:8px; padding:9px; color:#fff; font-size:0.95em; width:100%; max-width:100%; }
 input:focus { border-color:#ffd700; outline:none; }
@@ -146,44 +147,23 @@ function criarCardMercado(key,dados,isCustom){
         '<option value="escanteio_ft"'+(tp==='escanteio_ft'?' selected':'')+'>•Escanteio Asiático FT</option>'+
         '</select></div>'+
         '<div class="field"><label>Placar Válido (ex: 0x0, 1x0)</label><input type="text" id="'+key+'-placar-valido" value="'+(pv||'')+'" placeholder="0x0">'+'</div>'+
-        '<div class="field"><label>APPM do maior valor entre as equipes (mín.)</label><input type="number" step="0.1" id="'+key+'-appm" value="'+(v('appm_min_por_time')??'')+'"></div>'+
-        '<div class="field"><label>APPM Total — maior valor entre as equipes (mín.)</label><input type="number" step="0.1" id="'+key+'-appm-total" value="'+(v('appm_total_min')??'')+'"></div>'+
-        '<div class="field"><label>Média de Gols da Partida — soma casa + fora (mín.)</label><input type="number" step="0.1" id="'+key+'-media-gols" value="'+(v('media_gols_partida_min')??'')+'"></div>'+
-        '<div class="field"><label>Média de Gols HT — soma casa + fora (mín.)</label><input type="number" step="0.1" id="'+key+'-media-gols-ht" value="'+(v('media_gols_ht_min')??'')+'"></div>'+
-        '<div class="field"><label>Média de Gols FT — soma casa + fora (mín.)</label><input type="number" step="0.1" id="'+key+'-media-gols-ft" value="'+(v('media_gols_ft_min')??'')+'"></div>'+
-        '<div class="field"><label>BTTS Probabilidade (%)</label><input type="number" step="1" id="'+key+'-btts-prob" value="'+(v('btts_probabilidade_min')??'')+'"></div>'+
-        '<div class="field"><label>Diferença de Gols do Favorito (máx.)</label><input type="number" id="'+key+'-diff-gols" value="'+(v('diferenca_gols_fav_max')??'')+'"></div>'+
-        '<div class="field"><label>Chutes no Alvo — soma casa + fora (mín.)</label><input type="number" id="'+key+'-chutes-alvo" value="'+(v('chutes_alvo_min')??'')+'"></div>'+
-        '<div class="field"><label>Chutes Totais — soma casa + fora (mín.)</label><input type="number" id="'+key+'-chutes-tot" value="'+(v('chutes_totais_min')??'')+'"></div>'+
-        '<div class="field"><label>Ataques Perigosos do Favorito (mín.)</label><input type="number" id="'+key+'-atq-perig" value="'+(v('ataques_perigosos_min')??'')+'"></div>'+
-        '<div class="field"><label>Escanteios — soma casa + fora (mín.)</label><input type="number" id="'+key+'-esc-min" value="'+(v('escanteios_minimos')??'')+'"></div>'+
-        '<div class="field"><label>Cartões Vermelhos do Favorito (máx.)</label><input type="number" id="'+key+'-red-max" value="'+(v('max_red_card_fav')??'')+'"></div>'+
-        '<div class="field"><label>Posse de Bola do Favorito (mín. %)</label><input type="number" step="1" id="'+key+'-posse" value="'+(v('posse_bola_min')??'')+'"></div>'+
-        '<div class="field"><label>Média de Escanteios — soma casa + fora (mín.)</label><input type="number" step="0.1" id="'+key+'-media-corners" value="'+(v('media_corners_total_min')??'')+'"></div>'+
-        '<div class="field"><label>Média de Escanteios do Mandante (mín.)</label><input type="number" step="0.1" id="'+key+'-media-corners-casa" value="'+(v('media_corners_casa_min')??'')+'"></div>'+
-        '<div class="field"><label>Média de Escanteios do Visitante (mín.)</label><input type="number" step="0.1" id="'+key+'-media-corners-fora" value="'+(v('media_corners_fora_min')??'')+'"></div>'+
-        '<div class="field"><label>xG Total — soma casa + fora (mín.)</label><input type="number" step="0.1" id="'+key+'-xg-total" value="'+(v('xg_total_min')??'')+'"></div>'+
-        '<div class="field"><label>xG do Mandante (mín.)</label><input type="number" step="0.1" id="'+key+'-xg-casa" value="'+(v('xg_casa_min')??'')+'"></div>'+
-        '<div class="field"><label>xG do Visitante (mín.)</label><input type="number" step="0.1" id="'+key+'-xg-fora" value="'+(v('xg_fora_min')??'')+'"></div>'+
-        '<div class="field"><label>Pressão do Favorito (mín.)</label><input type="number" id="'+key+'-pressure" value="'+(v('pressure_bar_min')??'')+'"></div>'+
-        '<div class="field"><label>Chutes dentro da área do Favorito (mín.)</label><input type="number" id="'+key+'-chutes-inside" value="'+(v('chutes_inside_min')??'')+'"></div>'+
-        '<div class="field"><label>Chutes fora da área do Favorito (mín.)</label><input type="number" id="'+key+'-chutes-outside" value="'+(v('chutes_outside_min')??'')+'"></div>'+
-        '<div class="field"><label>Tentativas de Gol do Favorito (mín.)</label><input type="number" id="'+key+'-goal-attempts" value="'+(v('goal_attempts_min')??'')+'"></div>'+
-        '<div class="field"><label>Chutes Bloqueados do Favorito (máx.)</label><input type="number" id="'+key+'-chutes-bloq" value="'+(v('chutes_bloq_max')??'')+'"></div>'+
-        '<div class="field"><label>Defesas do Goleiro do Favorito (mín.)</label><input type="number" id="'+key+'-defesas" value="'+(v('defesas_min')??'')+'"></div>'+
-        '<div class="field"><label>Faltas do Favorito (mín.)</label><input type="number" id="'+key+'-faltas" value="'+(v('faltas_min')??'')+'"></div>'+
-        '<div class="field"><label>Cartões Amarelos do Favorito (máx.)</label><input type="number" id="'+key+'-yellow" value="'+(v('yellow_max')??'')+'"></div>'+
-        '<div class="field"><label>Impedimentos do Favorito (mín.)</label><input type="number" id="'+key+'-impedimentos" value="'+(v('impedimentos_min')??'')+'"></div>'+
-        '<div class="field"><label>DAPM dos últimos 5 min — maior valor entre as equipes (mín.)</label><input type="number" step="0.1" id="'+key+'-dapm5" value="'+(v('dapm_5_min')??'')+'"></div>'+
-        '<div class="field"><label>DAPM Total original da API — Favorito (mín.)</label><input type="number" step="0.1" id="'+key+'-dapm-total-orig" value="'+(v('dapm_total_orig_min')??'')+'"></div>'+
-        '<div class="field"><label>Ball Safe do Favorito (mín.)</label><input type="number" id="'+key+'-ball-safe" value="'+(v('ball_safe_min')??'')+'"></div>'+
-        '</div>';
+        '<div class="criteria-panel"><div class="criteria-title">Critérios reais da API SokkerPro</div><div id="'+key+'-api-criteria"></div><button type="button" class="btn-add-criterion" onclick="addApiCriterion(\''+key+'\')">+ Adicionar critério</button></div>'+
 
     div.innerHTML=html;
+    renderApiCriteria(div,key,cr);
     var chk=div.querySelector('input[type=checkbox]');
     if(chk){chk.addEventListener('change',function(){div.style.opacity=this.checked?'1':'0.5';});}
     return div;
 }
+
+var API_CRITERIA_CATALOG=[
+['localShotsTotal','Chutes totais — Mandante','chutes_tot_h'],['visitorShotsTotal','Chutes totais — Visitante','chutes_tot_a'],['localShotsOnGoal','Chutes no alvo — Mandante','chutes_gol_h'],['visitorShotsOnGoal','Chutes no alvo — Visitante','chutes_gol_a'],['localCorners','Escanteios — Mandante','escanteios_h'],['visitorCorners','Escanteios — Visitante','escanteios_a'],['localAttacksDangerousAttacks','Ataques perigosos — Mandante','ataques_perigosos_h'],['visitorAttacksDangerousAttacks','Ataques perigosos — Visitante','ataques_perigosos_a'],['localDapm5','DAPM últimos 5 min — Mandante','dapm5_h'],['visitorDapm5','DAPM últimos 5 min — Visitante','dapm5_a'],['localDapm10','DAPM últimos 10 min — Mandante','dapm10_h'],['visitorDapm10','DAPM últimos 10 min — Visitante','dapm10_a'],['localDapmTotal','DAPM total — Mandante','dapm_total_h'],['visitorDapmTotal','DAPM total — Visitante','dapm_total_a'],['localXg','xG — Mandante','xg_h'],['visitorXg','xG — Visitante','xg_a'],['localBallPossession','Posse de bola — Mandante','posse_h'],['visitorBallPossession','Posse de bola — Visitante','posse_a'],['localRedCards','Cartões vermelhos — Mandante','red_cards_h'],['visitorRedCards','Cartões vermelhos — Visitante','red_cards_a']];
+var API_OPS=[['gte','Maior ou igual a'],['lte','Menor ou igual a'],['gt','Maior que'],['lt','Menor que'],['eq','Igual a'],['between','Entre']];
+function apiRow(key,i,c){var id=key+'-api-'+i,campo=c&&c.campo||'',op=c&&c.operador||'gte',v=c&&c.valor!=null?c.valor:'',v2=c&&c.valor2!=null?c.valor2:'';var opts=API_CRITERIA_CATALOG.map(function(x){return '<option value="'+x[2]+'"'+(x[2]===campo?' selected':'')+'>'+x[1]+'</option>';}).join('');var ops=API_OPS.map(function(x){return '<option value="'+x[0]+'"'+(x[0]===op?' selected':'')+'>'+x[1]+'</option>';}).join('');return '<div class="api-criterion" data-api-row="1"><select class="api-field" id="'+id+'-campo">'+opts+'</select><select id="'+id+'-op" onchange="toggleApiSecond(\''+id+'\')">'+ops+'</select><input type="number" step="any" id="'+id+'-v" value="'+v+'" placeholder="Valor"><input type="number" step="any" id="'+id+'-v2" value="'+v2+'" placeholder="Valor 2"><button type="button" class="btn-remove-criterion" onclick="this.parentElement.remove()">✕</button></div>';}
+function toggleApiSecond(id){var op=document.getElementById(id+'-op'),v2=document.getElementById(id+'-v2');if(op&&v2)v2.style.visibility=op.value==='between'?'visible':'hidden';}
+function renderApiCriteria(div,key,cr){var box=div.querySelector('#'+key+'-api-criteria');if(!box)return;var arr=cr.criterios_api||[];box.innerHTML=arr.map(function(c,i){return apiRow(key,i,c);}).join('');box.querySelectorAll('[id$="-op"]').forEach(function(e){toggleApiSecond(e.id.slice(0,-3));});}
+function addApiCriterion(key){var box=document.getElementById(key+'-api-criteria');if(!box)return;var i=box.querySelectorAll('[data-api-row]').length;box.insertAdjacentHTML('beforeend',apiRow(key,i,{}));toggleApiSecond(key+'-api-'+i);}
+function readApiCriteria(card,key){var out=[],used={};card.querySelectorAll('[data-api-row]').forEach(function(row){var campo=row.querySelector('[id$="-campo"]'),op=row.querySelector('[id$="-op"]'),v=row.querySelector('[id$="-v"]'),v2=row.querySelector('[id$="-v2"]');if(campo&&op&&v&&v.value!==''){if(used[campo.value])return;var x={campo:campo.value,operador:op.value,valor:Number(v.value)};if(op.value==='between'&&v2&&v2.value!=='')x.valor2=Number(v2.value);out.push(x);used[campo.value]=true;}});return out;}
 
 function criarMercado(){var key='custom_'+Date.now();document.getElementById('custom-markets-container').appendChild(criarCardMercado(key,{},true));st('Novo mercado criado! Preencha e salve.','ok');}
 
@@ -329,7 +309,8 @@ async function salvarConfig(){
                 periodo:periodo,
                 tipo:tipoVal,
                 placar_valido:gv(key+'-placar-valido'),
-                criterios:criterios
+                criterios:criterios,
+                criterios_api:readApiCriteria(card,key)
             };
         });
         var fullConfig=JSON.parse(JSON.stringify(CONFIG_INLINE));
