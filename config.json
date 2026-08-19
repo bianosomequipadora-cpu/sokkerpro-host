@@ -172,7 +172,8 @@
         "chutes_alvo_min": 2,
         "chutes_totais_min": 3,
         "escanteios_minimos": 1,
-        "max_red_card_fav": 0
+        "max_red_card_fav": 0,
+        "appm_min_por_time": 1.5
       },
       "criterios_api": []
     },
