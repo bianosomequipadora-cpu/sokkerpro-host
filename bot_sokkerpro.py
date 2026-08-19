@@ -2145,7 +2145,12 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 if not campo or campo in vistos_api:
                     continue
                 vistos_api.add(campo)
-                if str(campo).startswith('prob_'):
+                if campo == 'appm_partida_calc':
+                    if not m or float(m) <= 0:
+                        motivos.append(f'{campo}=minuto inválido')
+                        continue
+                    atual_raw = (float(stats.get('ataques_perigosos_h', 0)) + float(stats.get('ataques_perigosos_a', 0))) / float(m)
+                elif str(campo).startswith('prob_'):
                     atual_raw = stats.get('prob_mercados', {}).get(str(campo)[5:])
                 else:
                     atual_raw = stats.get(campo)
