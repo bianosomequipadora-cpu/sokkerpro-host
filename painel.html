@@ -227,19 +227,30 @@ var ENTRADAS_REPO = "sokkerpro-host";
 async function abrirEntradas(mercado){
     var modal=document.getElementById("entradas-modal");
     if(!modal){ modal=document.createElement("div"); modal.id="entradas-modal"; modal.style.cssText="position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;padding:18px;overflow:auto"; document.body.appendChild(modal); }
-    modal.innerHTML='<div style="max-width:760px;margin:auto;background:#151525;border-radius:14px;padding:16px"><button onclick="document.getElementById(\'entradas-modal\').remove()" style="float:right;background:#e74c3c;color:#fff;border:0;border-radius:8px;padding:7px 12px">Fechar</button><h2 style="margin-bottom:14px">Entradas</h2><div style="display:flex;align-items:center;gap:8px;margin:12px 0"><span style="font-size:1.25em">🔍</span><input id="entradas-busca" type="search" placeholder="Digite o nome do jogo ou time..." style="flex:1;padding:11px;border-radius:9px;border:1px solid #555;background:#222;color:#fff"></div><div id="entradas-list">Carregando...</div></div>';
+    modal.innerHTML='<div style="max-width:760px;margin:auto;background:#151525;border-radius:14px;padding:16px"><button onclick="document.getElementById(\'entradas-modal\').remove()" style="float:right;background:#e74c3c;color:#fff;border:0;border-radius:8px;padding:7px 12px">Fechar</button><h2 style="margin-bottom:14px">Relatório do Mercado</h2><div id="entradas-resumo" style="border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:8px;text-align:center">Calculando...</div><div style="display:flex;align-items:center;gap:8px;margin:12px 0"><span style="font-size:1.25em">🔍</span><input id="entradas-busca" type="search" placeholder="Digite o nome do jogo ou time..." style="flex:1;padding:11px;border-radius:9px;border:1px solid #555;background:#222;color:#fff"></div><div id="entradas-list">Carregando...</div></div>';
     try{
       var r=await fetch('https://api.github.com/repos/'+REPO+'/contents/entradas.json?x='+Date.now(),{headers:{}});
       var list=[]; if(r.ok){var j=await r.json();list=JSON.parse(decodeURIComponent(escape(atob(j.content))));}
       list=list.filter(function(x){return x.mercado===mercado;}).reverse();
       var el=document.getElementById('entradas-list');
       var busca=document.getElementById('entradas-busca');
+      var resumo=document.getElementById('entradas-resumo');
+      function renderResumo(){
+        var green=list.filter(function(x){return String(x.resultado||'').toLowerCase()==='green';}).length;
+        var red=list.filter(function(x){return String(x.resultado||'').toLowerCase()==='red';}).length;
+        var refund=list.filter(function(x){return ['refund','reembolso'].indexOf(String(x.resultado||'').toLowerCase())>=0;}).length;
+        var pend=list.length-green-red-refund;
+        var decididos=green+red;
+        var assertividade=decididos?((green/decididos)*100).toFixed(1):'0.0';
+        resumo.innerHTML='<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:12px 0"><div style="color:#2ecc71"><b>🟢 GREEN</b><br>'+green+'</div><div style="color:#e74c3c"><b>🔴 RED</b><br>'+red+'</div><div style="color:#3498db"><b>🔵 REEMBOLSO</b><br>'+refund+'</div><div style="color:#f1c40f"><b>⏳ PENDENTES</b><br>'+pend+'</div><div><b>📈 ASSERTIVIDADE</b><br>'+assertividade+'%</div></div>';
+      }
       function renderEntradas(){
         var termo=(busca.value||'').toLowerCase().trim();
         var filtradas=list.filter(function(x){return !termo || ((x.home||'')+' '+(x.away||'')).toLowerCase().includes(termo);});
         if(!filtradas.length){el.innerHTML='<p>Nenhuma entrada encontrada.</p>';return;}
         el.innerHTML=filtradas.map(function(x){var dt=x.timestamp?new Date(x.timestamp).toLocaleString('pt-BR'):'';var cor=x.resultado==='green'?'#2ecc71':(x.resultado==='red'?'#e74c3c':(x.resultado==='refund'?'#3498db':'#f1c40f'));var status=x.resultado==='refund'?'REEMBOLSO':String(x.resultado||'pendente').toUpperCase();return '<div style="border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:11px;margin:8px 0"><b>'+ (x.home||'')+' x '+(x.away||'')+'</b><br><small>'+dt+'</small><br><span style="color:'+cor+';font-weight:bold">'+status+'</span></div>';}).join('');
       }
+      renderResumo();
       busca.addEventListener('input',renderEntradas);
       renderEntradas();
     }catch(e){document.getElementById('entradas-list').innerHTML='<p>Não foi possível carregar as entradas.</p>';}
