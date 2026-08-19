@@ -536,19 +536,28 @@ def registrar_performance(mercado, resultado):
     print(f'[PERFORMANCE] {MAPA_MERCADO.get(mercado, mercado)}: {resultado} ({greens}/{total} = {pct:.1f}%)')
 
 def get_performance():
-    """Retorna dict com performance e % por mercado, e validação 70%/1000."""
-    perf = _load_performance_github()
-    resultado = {}
-    for cod, nome in MAPA_MERCADO.items():
-        p = perf.get(cod, {'green': 0, 'red': 0, 'refund': 0, 'total': 0})
-        greens = p.get('green', 0)
-        reds = p.get('red', 0)
-        refunds = p.get('refund', 0)
-        total = greens + reds + refunds
+    """Retorna a performance acumulada geral usando todas as entradas reais."""
+    registros = _load_entradas()
+    resultado = {cod: {'nome': nome, 'green': 0, 'red': 0, 'refund': 0, 'total': 0} for cod, nome in MAPA_MERCADO.items()}
+    for registro in registros:
+        mercado = str(registro.get('mercado', ''))
+        if mercado not in resultado:
+            resultado[mercado] = {'nome': mercado, 'green': 0, 'red': 0, 'refund': 0, 'total': 0}
+        status = str(registro.get('resultado', '')).lower()
+        if status == 'green':
+            resultado[mercado]['green'] += 1
+        elif status == 'red':
+            resultado[mercado]['red'] += 1
+        elif status in ('refund', 'reembolso'):
+            resultado[mercado]['refund'] += 1
+    for info in resultado.values():
+        greens = info['green']
+        reds = info['red']
+        refunds = info['refund']
+        info['total'] = greens + reds + refunds
         avaliados = greens + reds
-        pct = greens / avaliados * 100 if avaliados > 0 else 0
-        valido = avaliados >= 1000 and pct >= 70
-        resultado[cod] = {'nome': nome, 'green': greens, 'red': reds, 'refund': refunds, 'total': total, 'pct': pct, 'valido': valido}
+        info['pct'] = greens / avaliados * 100 if avaliados > 0 else 0
+        info['valido'] = avaliados >= 1000 and info['pct'] >= 70
     return resultado
 
 def gerar_layout_performance():
