@@ -174,13 +174,7 @@
         "escanteios_minimos": 1,
         "max_red_card_fav": 0
       },
-      "criterios_api": [
-        {
-          "campo": "appm_partida_calc",
-          "operador": "gte",
-          "valor": 1.5
-        }
-      ]
+      "criterios_api": []
     },
     "custom_1786917328719": {
       "ativo": true,
