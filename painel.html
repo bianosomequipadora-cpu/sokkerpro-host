@@ -245,11 +245,12 @@ async function abrirEntradas(mercado){
         var pend=list.length-green-red-refund;
         var decididos=green+red;
         var assertividade=decididos?((green/decididos)*100).toFixed(1):'0.0';
+        var greenFmt=String(green).padStart(2,'0'), redFmt=String(red).padStart(2,'0'), refundFmt=String(refund).padStart(2,'0'), pendFmt=String(pend).padStart(2,'0');
         var stake=Number(localStorage.getItem('stake_'+mercado)||10);if(!isFinite(stake)||stake<=0)stake=10;
         var lucro=0,oddsOk=true;
         list.forEach(function(x){var r=String(x.resultado||'').toLowerCase();if(r!=='green'&&r!=='red')return;var odd=Number(x.odd_b365||x.odd_bano);if(!isFinite(odd)||odd<=1){oddsOk=false;return;}lucro+=r==='green'?stake*(odd-1):-stake;});
         var roi=decididos&&oddsOk?((lucro/(decididos*stake))*100).toFixed(1)+'%':'N/D (odds não salvas)';
-        resumo.innerHTML='<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:12px 0;font-size:.78em;line-height:1.2;word-break:normal;overflow:hidden"><div style="color:#2ecc71"><b>🟢 GREENS:</b> '+green+'</div><div style="color:#e74c3c"><b>🔴 REDS:</b> '+red+'</div><div style="color:#3498db"><b>🔵 REEMBOLSOS:</b> '+refund+'</div><div style="color:#f1c40f"><b>⏳ PENDENTES:</b> '+pend+'</div><div><b>📈 ASSERTIVIDADE:</b> '+assertividade+'%</div><div class="stake-box"><b>💰 VALOR DA APOSTA:</b><input id="stake-input" type="number" min="0.01" step="0.01" value="'+stake.toFixed(2)+'" style="width:90px;padding:4px"></div><div><b>📊 ROI:</b> <span id="roi-value">'+roi+'</span></div></div>';
+        resumo.innerHTML='<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:12px 0;font-size:.78em;line-height:1.2;word-break:normal;overflow:hidden"><div style="color:#2ecc71"><b>🟢 GREENS:</b>&nbsp;'+greenFmt+'</div><div style="color:#e74c3c"><b>🔴 REDS:</b>&nbsp;'+redFmt+'</div><div style="color:#3498db"><b>🔵 REEMBOLSOS:</b>&nbsp;'+refundFmt+'</div><div style="color:#f1c40f"><b>⏳ PENDENTES:</b>&nbsp;'+pendFmt+'</div><div><b>📈 ASSERTIVIDADE:</b> '+assertividade+'%</div><div class="stake-box"><b>💰 VALOR DA APOSTA:</b><input id="stake-input" type="number" min="0.01" step="0.01" value="'+stake.toFixed(2)+'" style="width:90px;padding:4px"></div><div><b>📊 ROI:</b> <span id="roi-value">'+roi+'</span></div></div>';
         var si=document.getElementById('stake-input');if(si)si.addEventListener('input',function(){var v=Number(this.value);if(isFinite(v)&&v>0){localStorage.setItem('stake_'+mercado,String(v));renderResumo();}});
       }
       function renderEntradas(){
