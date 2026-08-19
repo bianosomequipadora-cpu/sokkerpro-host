@@ -266,22 +266,17 @@ async function abrirEntradas(mercado){
 }
 
 async function carregarDoGitHub(){
-    st("Carregando dados...","loading");
+    st('Carregando dados...','loading');
     try{
-        var r=await fetch('https://api.github.com/repos/'+REPO+'/contents/config.json',{headers:{}});
-        if(r.ok){
-            var j=await r.json();
-            cfgSha=j.sha;
-            var decoded=decodeURIComponent(escape(atob(j.content)));
-            var configReal=JSON.parse(decoded);
-            CONFIG_INLINE=configReal;
-            st("Dados carregados!","ok");
-            await carregarPerformance();
-        } else {
-            st("Erro ao buscar dados: "+r.status,"err");
-        }
+        var r=await fetch('https://raw.githubusercontent.com/bianosomequipadora-cpu/sokkerpro-host/main/config.json?t='+Date.now(),{cache:'no-store'});
+        if(!r.ok) throw new Error('Não foi possível carregar a configuração atual.');
+        var configReal=await r.json();
+        CONFIG_INLINE=configReal;
+        st('Dados carregados!','ok');
+        await carregarPerformance();
     }catch(e){
-        st("Erro de conexao: "+e.message,"err");
+        st('ERRO: '+e.message,'err');
+        return;
     }
     renderizarMercados();
 }
