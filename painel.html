@@ -273,12 +273,12 @@ async function carregarDoGitHub(){
         var configReal=await r.json();
         CONFIG_INLINE=configReal;
         st('Dados carregados!','ok');
+        renderizarMercados();
         await carregarPerformance();
     }catch(e){
         st('ERRO: '+e.message,'err');
         return;
     }
-    renderizarMercados();
 }
 
 function renderizarMercados(){
