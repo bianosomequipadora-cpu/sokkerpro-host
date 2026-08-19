@@ -187,9 +187,8 @@ function criarCardMercado(key,dados,isCustom){
         '<div class="criteria-panel"><div class="criteria-title">Critérios reais da API SokkerPro</div><div id="'+key+'-api-criteria"></div><button type="button" class="btn-add-criterion" onclick="addApiCriterion(\''+key+'\')">+ Adicionar critério</button></div>';
 
     div.innerHTML=html;
-    div.setAttribute('data-minimized','1');
-    for(var mi=1;mi<div.children.length;mi++){div.children[mi].style.display='none';}
-    var minBtn=div.querySelector('.btn-min'); if(minBtn){minBtn.textContent='+';minBtn.title='Expandir mercado';}
+    div.setAttribute('data-minimized','0');
+    var minBtn=div.querySelector('.btn-min'); if(minBtn){minBtn.textContent='−';minBtn.title='Minimizar mercado';}
     renderApiCriteria(div,key,cr);
     var chk=div.querySelector('input[type=checkbox]');
     if(chk){chk.addEventListener('change',function(){div.style.opacity=this.checked?'1':'0.5';});}
