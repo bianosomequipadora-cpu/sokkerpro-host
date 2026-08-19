@@ -417,8 +417,8 @@ async function carregarPerformance(){
     try{
         var mercados=CONFIG_INLINE.mercados||{};
         var entradasReais=[];
-        var re=await fetch('https://api.github.com/repos/'+REPO+'/contents/entradas.json?t='+Date.now(),{headers:{}});
-        if(re.ok){var je=await re.json();entradasReais=JSON.parse(decodeURIComponent(escape(atob(je.content))));}
+        var re=await fetch('https://raw.githubusercontent.com/bianosomequipadora-cpu/sokkerpro-host/main/entradas.json?t='+Date.now(),{cache:'no-store'});
+        if(re.ok){entradasReais=await re.json();}
 
         var rp=await fetch('https://api.github.com/repos/'+REPO+'/contents/performance.json',{headers:{}});
         var perf={};
