@@ -100,7 +100,7 @@ function criarCardMercado(key,dados,isCustom){
     var ini=md.minuto_inicio||''; var fim=md.minuto_fim||'';
     var per=md.periodo||''; var tp=md.tipo||''; var pv=md.placar_valido||''; var isAsianCorner=(tp==='escanteio_ht'||tp==='escanteio_ft'||tp==='corner');
 
-    function v(key,def){ var x=cr[key]; return (x!==undefined&&x!==null)?x:(def??''); }
+    function v(key,def){ var x=cr[key]; return (x!==undefined&&x!==null)?x:((def!==undefined&&def!==null)?def:''); }
 
     var div=document.createElement('div');
     div.className='card'; div.id='card-'+key; div.style.opacity=ativo?'1':'0.5';
