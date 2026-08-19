@@ -419,6 +419,9 @@ async function salvarConfig(){
 async function carregarPerformance(){
     try{
         var mercados=CONFIG_INLINE.mercados||{};
+        var entradasReais=[];
+        var re=await fetch('https://api.github.com/repos/'+REPO+'/contents/entradas.json?t='+Date.now(),{headers:{}});
+        if(re.ok){var je=await re.json();entradasReais=JSON.parse(decodeURIComponent(escape(atob(je.content))));}
 
         var rp=await fetch('https://api.github.com/repos/'+REPO+'/contents/performance.json',{headers:{}});
         var perf={};
@@ -442,6 +445,8 @@ async function carregarPerformance(){
             var md=mercados[cod]||{};
             var isAsianCorner=(md.tipo==='escanteio_ht'||md.tipo==='escanteio_ft'||md.tipo==='corner');
             var p=perf[perfKey]||{green:0,red:0,refund:0,total:0};
+            var reais=entradasReais.filter(function(x){return String(x.mercado||'')===String(cod);});
+            if(reais.length){p={green:reais.filter(function(x){return String(x.resultado||'').toLowerCase()==='green';}).length,red:reais.filter(function(x){return String(x.resultado||'').toLowerCase()==='red';}).length,refund:reais.filter(function(x){return ['refund','reembolso'].indexOf(String(x.resultado||'').toLowerCase())>=0;}).length,total:reais.length};}
             var g=p.green||0,r2=p.red||0,rf=p.refund||0,t=g+r2+rf;
             var pct=(g+r2)>0?(g/(g+r2)*100).toFixed(1):'0.0';
 
