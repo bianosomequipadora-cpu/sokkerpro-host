@@ -245,7 +245,7 @@ async function abrirEntradas(mercado){
         var pend=list.length-green-red-refund;
         var decididos=green+red;
         var assertividade=decididos?((green/decididos)*100).toFixed(1):'0.0';
-        resumo.innerHTML='<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:12px 0;font-size:.66em;line-height:1.15;word-break:break-word;overflow:hidden"><div style="color:#2ecc71"><b>🟢 GREEN</b><br>'+green+'</div><div style="color:#e74c3c"><b>🔴 RED</b><br>'+red+'</div><div style="color:#3498db"><b>🔵 REEMBOLSO</b><br>'+refund+'</div><div style="color:#f1c40f"><b>⏳ PENDENTES</b><br>'+pend+'</div><div><b>📈 ASSERT.</b><br>'+assertividade+'%</div></div>';
+        resumo.innerHTML='<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:12px 0;font-size:.75em;line-height:1.2;word-break:break-word;overflow:hidden"><div style="color:#2ecc71"><b>🟢 GREEN</b><br>'+green+'</div><div style="color:#e74c3c"><b>🔴 RED</b><br>'+red+'</div><div style="color:#3498db"><b>🔵 REEMBOLSO</b><br>'+refund+'</div><div style="color:#f1c40f"><b>⏳ PENDENTES</b><br>'+pend+'</div><div><b>📈 ASSERT.</b><br>'+assertividade+'%</div></div>';
       }
       function renderEntradas(){
         var termo=(busca.value||'').toLowerCase().trim();
