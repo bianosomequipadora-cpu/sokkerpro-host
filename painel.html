@@ -50,7 +50,7 @@ input:focus { border-color:#ffd700; outline:none; }
 .toggle-switch input:checked+.toggle-slider { background:#27ae60; }
 .toggle-switch input:checked+.toggle-slider:before { transform:translateX(22px); }
 .input-nome { flex:1; margin-right:10px; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:10px; color:#fff; font-size:1em; font-weight:bold; min-width:0; }
-</style>
+#entradas-resumo>div>div{white-space:nowrap;display:flex;align-items:center;justify-content:flex-start;min-height:28px}</style>
 </head>
 <body onload="checkLogin()">
 
@@ -249,7 +249,7 @@ async function abrirEntradas(mercado){
         var lucro=0,oddsOk=true;
         list.forEach(function(x){var r=String(x.resultado||'').toLowerCase();if(r!=='green'&&r!=='red')return;var odd=Number(x.odd_b365||x.odd_bano);if(!isFinite(odd)||odd<=1){oddsOk=false;return;}lucro+=r==='green'?stake*(odd-1):-stake;});
         var roi=decididos&&oddsOk?((lucro/(decididos*stake))*100).toFixed(1)+'%':'N/D (odds não salvas)';
-        resumo.innerHTML='<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:12px 0;font-size:.78em;line-height:1.2;word-break:break-word;overflow:hidden"><div style="color:#2ecc71"><b>🟢 GREENS:</b> '+green+'</div><div style="color:#e74c3c"><b>🔴 REDS:</b> '+red+'</div><div style="color:#3498db"><b>🔵 REEMBOLSOS:</b> '+refund+'</div><div style="color:#f1c40f"><b>⏳ PENDENTES:</b> '+pend+'</div><div><b>📈 ASSERTIVIDADE:</b> '+assertividade+'%</div><div><b>💰 VALOR DA APOSTA:</b> <input id="stake-input" type="number" min="0.01" step="0.01" value="'+stake.toFixed(2)+'" style="width:90px;padding:4px"></div><div><b>📊 ROI:</b> <span id="roi-value">'+roi+'</span></div></div>';
+        resumo.innerHTML='<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:12px 0;font-size:.78em;line-height:1.2;word-break:normal;overflow:hidden"><div style="color:#2ecc71"><b>🟢 GREENS:</b> '+green+'</div><div style="color:#e74c3c"><b>🔴 REDS:</b> '+red+'</div><div style="color:#3498db"><b>🔵 REEMBOLSOS:</b> '+refund+'</div><div style="color:#f1c40f"><b>⏳ PENDENTES:</b> '+pend+'</div><div><b>📈 ASSERTIVIDADE:</b> '+assertividade+'%</div><div><b>💰 VALOR DA APOSTA:</b> <input id="stake-input" type="number" min="0.01" step="0.01" value="'+stake.toFixed(2)+'" style="width:90px;padding:4px"></div><div><b>📊 ROI:</b> <span id="roi-value">'+roi+'</span></div></div>';
         var si=document.getElementById('stake-input');if(si)si.addEventListener('input',function(){var v=Number(this.value);if(isFinite(v)&&v>0){localStorage.setItem('stake_'+mercado,String(v));renderResumo();}});
       }
       function renderEntradas(){
