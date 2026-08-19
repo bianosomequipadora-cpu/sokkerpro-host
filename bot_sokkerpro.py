@@ -2136,11 +2136,15 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 if not campo or campo in vistos_api:
                     continue
                 vistos_api.add(campo)
-                if campo not in stats or stats.get(campo) is None or stats.get(campo) == '':
+                if str(campo).startswith('prob_'):
+                    atual_raw = stats.get('prob_mercados', {}).get(str(campo)[5:])
+                else:
+                    atual_raw = stats.get(campo)
+                if atual_raw is None or atual_raw == '':
                     motivos.append(f'{campo}=ausente')
                     continue
                 try:
-                    atual = float(stats[campo])
+                    atual = float(atual_raw)
                     alvo = float(item.get('valor'))
                     op = item.get('operador', 'gte')
                     if op == 'gte': ok_api = atual >= alvo
