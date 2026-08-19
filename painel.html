@@ -27,6 +27,7 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
 .card { background:rgba(255,255,255,0.1); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.1); border-radius:15px; padding:16px; margin-bottom:16px; box-shadow:0 8px 32px rgba(0,0,0,0.3); width:100%; overflow:hidden; }
 .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:8px; }
 .field { display:flex; flex-direction:column; margin-bottom:8px; min-width:0; }
+.legacy-panel{grid-column:1/-1;margin:8px 0;padding:10px;background:rgba(0,0,0,.12);border:1px solid rgba(255,255,255,.1);border-radius:10px}.legacy-panel summary{cursor:pointer;font-weight:700;margin-bottom:8px}.legacy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px}.legacy-grid .field{margin:0}
 .criteria-panel{grid-column:1/-1;background:rgba(0,0,0,.16);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px}.criteria-title{font-weight:700;margin-bottom:8px}.api-criterion{display:grid;grid-template-columns:minmax(180px,2fr) minmax(130px,1fr) minmax(100px,1fr) minmax(100px,1fr) 36px;gap:8px;align-items:end;margin:7px 0}.api-criterion select,.api-criterion input{width:100%}.btn-add-criterion{background:#16803c;color:#fff;border:0;border-radius:8px;padding:9px 12px;font-weight:700;cursor:pointer}.btn-remove-criterion{background:#8b1e2d;color:#fff;border:0;border-radius:8px;padding:9px;cursor:pointer}@media(max-width:700px){.grid{grid-template-columns:1fr!important}.api-criterion{grid-template-columns:1fr 1fr}.api-criterion .api-field{grid-column:1/-1}.api-criterion .btn-remove-criterion{grid-column:2}.criteria-panel{grid-column:1}}
 label { font-size:0.8em; color:#ddd; margin-bottom:3px; font-weight:500; }
 input, select { background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.3); border-radius:8px; padding:9px; color:#fff; font-size:0.95em; width:100%; max-width:100%; }
@@ -114,6 +115,41 @@ function criarCardMercado(key,dados,isCustom){
                    '<span>📊 '+pt+'</span><span style="color:#2ecc71;">🟢 '+pg+'</span><span style="color:#e74c3c;">🔴 '+pr+'</span>'+(isAsianCorner?'<span style="color:#3498db;">🔵 '+pf+'</span>':'')+
                    '<span style="font-weight:bold; '+(parseFloat(pct)>=70?'color:#2ecc71;':'color:#e74c3c;')+'">'+pct+'%</span></div></div>';
 
+    var legacyFields='<details class="legacy-panel" open><summary>Critérios atuais do mercado</summary><div class="legacy-grid">';
+    function lf(suf,ck,label,step){return '<div class="field"><label>'+label+'</label><input type="number" '+(step?'step="'+step+'" ':'')+'id="'+key+'-'+suf+'" value="'+v(ck)+'"></div>';}
+    legacyFields+=lf('appm','appm_min_por_time','APPM — maior valor entre as equipes (mín.)','0.1');
+    legacyFields+=lf('appm-total','appm_total_min','APPM Total — maior valor entre as equipes (mín.)','0.1');
+    legacyFields+=lf('media-gols','media_gols_partida_min','Média de gols da partida (mín.)','0.1');
+    legacyFields+=lf('media-gols-ht','media_gols_ht_min','Média de gols HT (mín.)','0.1');
+    legacyFields+=lf('media-gols-ft','media_gols_ft_min','Média de gols FT (mín.)','0.1');
+    legacyFields+=lf('btts-prob','btts_probabilidade_min','Probabilidade BTTS (mín. %)','1');
+    legacyFields+=lf('diff-gols','diferenca_gols_fav_max','Diferença de gols do favorito (máx.)','1');
+    legacyFields+=lf('chutes-alvo','chutes_alvo_min','Chutes no alvo (mín.)','1');
+    legacyFields+=lf('chutes-tot','chutes_totais_min','Chutes totais (mín.)','1');
+    legacyFields+=lf('atq-perig','ataques_perigosos_min','Ataques perigosos (mín.)','1');
+    legacyFields+=lf('esc-min','escanteios_minimos','Escanteios (mín.)','1');
+    legacyFields+=lf('red-max','max_red_card_fav','Cartões vermelhos (máx.)','1');
+    legacyFields+=lf('posse','posse_bola_min','Posse de bola (mín. %)','1');
+    legacyFields+=lf('media-corners','media_corners_total_min','Média de escanteios total (mín.)','0.1');
+    legacyFields+=lf('media-corners-casa','media_corners_casa_min','Média de escanteios — Mandante (mín.)','0.1');
+    legacyFields+=lf('media-corners-fora','media_corners_fora_min','Média de escanteios — Visitante (mín.)','0.1');
+    legacyFields+=lf('xg-total','xg_total_min','xG total (mín.)','0.1');
+    legacyFields+=lf('xg-casa','xg_casa_min','xG — Mandante (mín.)','0.1');
+    legacyFields+=lf('xg-fora','xg_fora_min','xG — Visitante (mín.)','0.1');
+    legacyFields+=lf('pressure','pressure_bar_min','Pressure Bar (mín.)','1');
+    legacyFields+=lf('chutes-inside','chutes_inside_min','Chutes dentro da área (mín.)','1');
+    legacyFields+=lf('chutes-outside','chutes_outside_min','Chutes fora da área (mín.)','1');
+    legacyFields+=lf('goal-attempts','goal_attempts_min','Tentativas de gol (mín.)','1');
+    legacyFields+=lf('chutes-bloq','chutes_bloq_max','Chutes bloqueados (máx.)','1');
+    legacyFields+=lf('defesas','defesas_min','Defesas (mín.)','1');
+    legacyFields+=lf('faltas','faltas_min','Faltas (mín.)','1');
+    legacyFields+=lf('yellow','yellow_max','Cartões amarelos (máx.)','1');
+    legacyFields+=lf('impedimentos','impedimentos_min','Impedimentos (mín.)','1');
+    legacyFields+=lf('dapm5','dapm_5_min','DAPM últimos 5 min (mín.)','0.1');
+    legacyFields+=lf('dapm-total-orig','dapm_total_orig_min','DAPM Total original (mín.)','0.1');
+    legacyFields+=lf('ball-safe','ball_safe_min','Ball Safe (mín.)','1');
+    legacyFields+='</div></details>';
+
     var entradasHtml = '<button class="btn-entradas" onclick="abrirEntradas(\''+key+'\')">📋 Ver Jogos Enviados Do Mercado</button>';
     var html='<div class="switch-field">'+
         '<input class="input-nome" id="'+key+'-nome" value="'+nome.replace(/"/g,'&quot;')+'" placeholder="NOME MERCADO">'+
@@ -147,6 +183,7 @@ function criarCardMercado(key,dados,isCustom){
         '<option value="escanteio_ft"'+(tp==='escanteio_ft'?' selected':'')+'>•Escanteio Asiático FT</option>'+
         '</select></div>'+
         '<div class="field"><label>Placar Válido (ex: 0x0, 1x0)</label><input type="text" id="'+key+'-placar-valido" value="'+(pv||'')+'" placeholder="0x0">'+'</div>'+
+        legacyFields+
         '<div class="criteria-panel"><div class="criteria-title">Critérios reais da API SokkerPro</div><div id="'+key+'-api-criteria"></div><button type="button" class="btn-add-criterion" onclick="addApiCriterion(\''+key+'\')">+ Adicionar critério</button></div>';
 
     div.innerHTML=html;
