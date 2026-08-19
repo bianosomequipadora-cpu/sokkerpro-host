@@ -149,6 +149,7 @@ function criarCardMercado(key,dados,isCustom){
     legacyFields+=lf('dapm-total-orig','dapm_total_orig_min','DAPM Total original (mín.)','0.1');
     legacyFields+=lf('ball-safe','ball_safe_min','Ball Safe (mín.)','1');
     legacyFields+='</div></details>';
+    legacyFields='';
 
     var entradasHtml = '<button class="btn-entradas" onclick="abrirEntradas(\''+key+'\')">📋 Ver Jogos Enviados Do Mercado</button>';
     var html='<div class="switch-field">'+
