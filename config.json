@@ -145,7 +145,8 @@
         "chutes_alvo_min": 4,
         "chutes_totais_min": 6,
         "escanteios_minimos": 1,
-        "max_red_card_fav": 0
+        "max_red_card_fav": 0,
+        "appm_min_por_time": 1.5
       },
       "criterios_api": [
         {
@@ -175,7 +176,13 @@
         "max_red_card_fav": 0,
         "appm_min_por_time": 1.5
       },
-      "criterios_api": []
+      "criterios_api": [
+        {
+          "campo": "appm_partida_calc",
+          "operador": "gte",
+          "valor": 1.5
+        }
+      ]
     },
     "custom_1786917328719": {
       "ativo": true,
