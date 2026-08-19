@@ -353,12 +353,12 @@ def atualizar_entrada_historico(sinal, resultado):
                 break
     _save_entradas(registros)
 
-def registrar_sinal(fid, mercado, home, away, message_id, extra_val=None, tipo=None, entry_sh=None, entry_sa=None):
+def registrar_sinal(fid, mercado, home, away, message_id, extra_val=None, tipo=None, entry_sh=None, entry_sa=None, odd_b365=None, odd_bano=None):
     sinais = _load_sinais_github()
-    sinais.append({'fixture_id': fid, 'mercado': mercado, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'tipo': tipo, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'timestamp': datetime.now(BRT).isoformat()})
+    sinais.append({'fixture_id': fid, 'mercado': mercado, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'tipo': tipo, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'odd_b365': odd_b365, 'odd_bano': odd_bano, 'timestamp': datetime.now(BRT).isoformat()})
     _save_sinais_github(sinais)
     historico = _load_entradas()
-    historico.append({'fixture_id': fid, 'mercado': mercado, 'tipo': tipo, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'timestamp': datetime.now(BRT).isoformat(), 'resultado': 'pendente'})
+    historico.append({'fixture_id': fid, 'mercado': mercado, 'tipo': tipo, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'odd_b365': odd_b365, 'odd_bano': odd_bano, 'timestamp': datetime.now(BRT).isoformat(), 'resultado': 'pendente'})
     _save_entradas(historico)
 
 def _load_resultados_github():
@@ -2263,7 +2263,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             sent.add(key)
             total_env += 1
             save_sent(sent)
-            registrar_sinal(fid, mk, h, a, mid, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa)
+            registrar_sinal(fid, mk, h, a, mid, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa, odd_b365=ob365, odd_bano=obano)
     try:
         agora_hora = datetime.now(BRT)
         if agora_hora.hour == 23 and agora_hora.minute >= 55:
