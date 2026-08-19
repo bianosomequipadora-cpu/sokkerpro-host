@@ -348,6 +348,27 @@
         "chutes_bloq_max": 2
       },
       "criterios_api": []
+    },
+    "custom_1787173428790": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️💥OVER GOL PRESSURE HT💥⚽️",
+      "minuto_inicio": 10,
+      "minuto_fim": 27,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "placar_valido": "0x0, 1x1, 2x2",
+      "criterios": {
+        "situacao_favorito": "empatando",
+        "diferenca_gols_fav_max": 1,
+        "chutes_alvo_min": 2,
+        "chutes_totais_min": 7,
+        "escanteios_minimos": 1,
+        "max_red_card_fav": 0,
+        "pressure_bar_min": 68,
+        "chutes_bloq_max": 2
+      },
+      "criterios_api": []
     }
   }
 }
