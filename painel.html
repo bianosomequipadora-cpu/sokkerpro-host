@@ -118,7 +118,6 @@ function criarCardMercado(key,dados,isCustom){
     var legacyFields='<details class="legacy-panel" open><summary>Critérios atuais do mercado</summary><div class="legacy-grid">';
     function lf(suf,ck,label,step){return '<div class="field"><label>'+label+'</label><input type="number" '+(step?'step="'+step+'" ':'')+'id="'+key+'-'+suf+'" value="'+v(ck)+'"></div>';}
     legacyFields+=lf('appm','appm_min_por_time','APPM — maior valor entre as equipes (mín.)','0.1');
-    legacyFields+=lf('appm-total','appm_total_min','APPM Total — maior valor entre as equipes (mín.)','0.1');
     legacyFields+=lf('media-gols','media_gols_partida_min','Média de gols da partida (mín.)','0.1');
     legacyFields+=lf('media-gols-ht','media_gols_ht_min','Média de gols HT (mín.)','0.1');
     legacyFields+=lf('media-gols-ft','media_gols_ft_min','Média de gols FT (mín.)','0.1');
