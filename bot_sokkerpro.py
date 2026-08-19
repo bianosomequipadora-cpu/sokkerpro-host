@@ -815,9 +815,18 @@ def _extrair_stats_sokkerpro(fix):
         for key, item in prog.get('mercado_gols', {}).items():
             if isinstance(item, dict) and item.get('res') is not None:
                 prob_mercados['ft_' + key] = item.get('res')
+        for chave_mercado, prefixo in [('mercado_1x2','1x2_'),('mercado_1x2_1t','1x2_1t_')]:
+            for key, item in prog.get(chave_mercado, {}).items():
+                if isinstance(item, dict) and item.get('probabilidade') is not None:
+                    prob_mercados[prefixo + key] = item.get('probabilidade')
+                if isinstance(item, dict) and item.get('probabilidade_original') is not None:
+                    prob_mercados[prefixo + key + '_original'] = item.get('probabilidade_original')
         item = prog.get('mercado_ambos_marcam', {}).get('ambos_sim', {})
         if isinstance(item, dict) and item.get('probabilidade') is not None:
             prob_mercados['btts'] = item.get('probabilidade')
+        item = prog.get('mercado_ambos_marcam', {}).get('ambos_nao', {})
+        if isinstance(item, dict) and item.get('probabilidade') is not None:
+            prob_mercados['btts_nao'] = item.get('probabilidade')
         for key, item in prog.get('mercado_escanteios', {}).items():
             if isinstance(item, dict) and item.get('probabilidade') is not None:
                 prob_mercados['corner_' + key] = item.get('probabilidade')
