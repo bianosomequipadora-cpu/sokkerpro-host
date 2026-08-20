@@ -1684,10 +1684,8 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
         linha_gol_limite = None
     linha_odd = linha if 'escanteio' in tipo else linha_gol_limite
     odd_asiatico, odd_limite = _odds_do_mercado(stats, tipo, linha_odd)
-    if 'escanteio' in tipo:
-        odd_texto = f'<b>💰Odd Asiático — Mais de {linha:.1f}: {odd_asiatico}</b>' + NL + f'<b>💰Odd Limite — Mais de {linha-0.5:.1f}: {odd_limite or "indisponível"}</b>'
-    elif tipo in ('gol_intervalo','over_gol','over_15'):
-        odd_texto = f'<b>💰Odd Asiático — Mais de {int(linha_gol_limite+0.5)}.0: {odd_asiatico}</b>' + NL + f'<b>💰Odd Limite — Mais de {linha_gol_limite:.1f}: {odd_limite or "indisponível"}</b>'
+    if 'escanteio' in tipo or tipo in ('gol_intervalo','over_gol','over_15'):
+        odd_texto = f'<b>💰Odd Asiático Indicada: {odd_asiatico}</b>' + NL + f'<b>💰Odd Limite Indicada: {odd_limite or "indisponível"}</b>'
     else:
         odd_texto = f'<b>💰Odd Ao Vivo : {odd_asiatico}</b>'
     prob_texto = (NL + f'<b>📊 Probabilidade: {probabilidade}%</b>') if probabilidade is not None else ''
