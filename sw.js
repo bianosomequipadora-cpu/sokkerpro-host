@@ -1,22 +1,26 @@
-const CACHE_NAME = 'sokkerpro-v1';
+const CACHE_NAME = 'sokkerpro-v2';
 const assets = [
   'painel.html',
-  'index.html',
-  'config.json'
+  'index.html'
 ];
 
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(assets);
-    })
+    caches.open(CACHE_NAME).then(cache => cache.addAll(assets)).then(() => self.skipWaiting())
+  );
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))).then(() => self.clients.claim())
   );
 });
 
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
-  );
+  const url = new URL(event.request.url);
+  if (url.pathname.endsWith('/config.json')) {
+    event.respondWith(fetch(event.request, {cache: 'no-store'}));
+    return;
+  }
+  event.respondWith(caches.match(event.request).then(response => response || fetch(event.request)));
 });
