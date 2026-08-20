@@ -1674,20 +1674,8 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
         fav_nome = away
     else:
         fav_nome = '—'
-    if tipo == 'gol_intervalo':
-        linha_gol_limite = 0.5
-    elif tipo == 'over_15':
-        linha_gol_limite = 1.5
-    elif tipo == 'over_gol':
-        linha_gol_limite = sh + sa + 0.5
-    else:
-        linha_gol_limite = None
-    linha_odd = linha if 'escanteio' in tipo else linha_gol_limite
-    odd_asiatico, odd_limite = _odds_do_mercado(stats, tipo, linha_odd)
-    if 'escanteio' in tipo or tipo in ('gol_intervalo','over_gol','over_15'):
-        odd_texto = f'<b>💰Odd Asiático Indicada: {odd_asiatico}</b>' + NL + f'<b>💰Odd Limite Indicada: {odd_limite or "indisponível"}</b>'
-    else:
-        odd_texto = f'<b>💰Odd Ao Vivo : {odd_asiatico}</b>'
+    # Valores fixos apenas como recomendação, sem representar a odd ao vivo capturada.
+    odd_texto = '<b>💰Odd Asiático Indicada: 1.90</b>' + NL + '<b>💰Odd Limite Indicada: 1.70</b>'
     prob_texto = (NL + f'<b>📊 Probabilidade: {probabilidade}%</b>') if probabilidade is not None else ''
     sep = '━' * 22
     liga_formatada=nome_liga_exibicao(liga, pais)
