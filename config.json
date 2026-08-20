@@ -376,41 +376,6 @@
         }
       ]
     },
-    "gol_ht_lucy_texto": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽ #005 LUCY / BUSCAR MAIS 0.5HT GOLS 💹",
-      "minuto_inicio": 15,
-      "minuto_fim": 27,
-      "periodo": 1,
-      "tipo": "gol_intervalo",
-      "placar_valido": "0x0",
-      "criterios": {
-        "situacao_favorito": "qualquer",
-        "appm_min_por_time": 0.2,
-        "chutes_totais_min": 8,
-        "chutes_alvo_min": 3,
-        "ataques_perigosos_min": 20,
-        "max_red_card_fav": 0
-      },
-      "criterios_api": [
-        {
-          "campo": "appm_partida_calc",
-          "operador": "gte",
-          "valor": 0.8
-        },
-        {
-          "campo": "ht_over_0_5",
-          "operador": "gte",
-          "valor": 60
-        },
-        {
-          "campo": "ft_over_0_5",
-          "operador": "gte",
-          "valor": 70
-        }
-      ]
-    },
     "gol_ht_lucy_prints": {
       "ativo": true,
       "notificar": true,
@@ -430,13 +395,7 @@
         "media_gols_partida_min": 2.5,
         "btts_probabilidade_min": 50
       },
-      "criterios_api": [
-        {
-          "campo": "appm_partida_calc",
-          "operador": "gte",
-          "valor": 0.7
-        }
-      ]
+      "criterios_api": []
     }
   }
 }
