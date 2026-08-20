@@ -2224,7 +2224,9 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 if not campo or campo in vistos_api:
                     continue
                 vistos_api.add(campo)
-                if campo == 'appm_partida_calc':
+                if campo == 'chutes_bloq_fav':
+                    atual_raw = stats.get('chutes_bloq_h' if fav_final == 'h' else 'chutes_bloq_a')
+                elif campo == 'appm_partida_calc':
                     if not m or float(m) <= 0:
                         motivos.append(f'{campo}=minuto inválido')
                         continue
