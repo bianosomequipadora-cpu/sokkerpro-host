@@ -1670,7 +1670,7 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
         fav_nome = away
     else:
         fav_nome = '—'
-    odd_asiatico, odd_limite = _odds_do_mercado(stats, tipo, cantos_atual if 'escanteio' in tipo else None)
+    odd_asiatico, odd_limite = _odds_do_mercado(stats, tipo, linha if 'escanteio' in tipo else None)
     if 'escanteio' in tipo or tipo in ('gol_intervalo','over_gol','over_15'):
         odd_texto = f'<b>💰Odd Asiático: {odd_asiatico}</b>' + NL + f'<b>💰Odd Limite: {odd_limite or "indisponível"}</b>'
     else:
