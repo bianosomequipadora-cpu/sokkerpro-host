@@ -271,7 +271,7 @@
         "max_red_card_fav": 0,
         "xg_total_min": 0.93,
         "pressure_bar_min": 70,
-        "dapm_total_orig_min": 1
+        "dapm_total_orig_min": 0.9
       },
       "criterios_api": []
     },
@@ -340,6 +340,33 @@
         "max_red_card_fav": 0,
         "pressure_bar_min": 65,
         "dapm_total_orig_min": 0.72
+      },
+      "criterios_api": [
+        {
+          "campo": "escanteios_10m",
+          "operador": "lte",
+          "valor": 0
+        }
+      ]
+    },
+    "custom_1787226713148": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⛳️❤️‍🔥CANTO PRESSÃO HT❤️‍🔥⛳️ ",
+      "minuto_inicio": 32,
+      "minuto_fim": 38,
+      "periodo": 1,
+      "tipo": "escanteio_ht",
+      "placar_valido": "0x0, 1x1, 2x2",
+      "criterios": {
+        "situacao_favorito": "empatando",
+        "diferenca_gols_fav_max": 1,
+        "chutes_alvo_min": 2,
+        "chutes_totais_min": 7,
+        "escanteios_minimos": 1,
+        "max_red_card_fav": 0,
+        "pressure_bar_min": 68,
+        "chutes_bloq_max": 2
       },
       "criterios_api": [
         {
