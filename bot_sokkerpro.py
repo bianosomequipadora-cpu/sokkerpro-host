@@ -1586,11 +1586,12 @@ def _odds_do_mercado(stats, tipo, extra_val=None):
     asiaticos=[prefixo+sufixo+'_LIVE',prefixo+sufixo,prefixo+sufixo.replace('_0','')+'_LIVE',prefixo+sufixo.replace('_0','')]
     limite=[]
     if linha.is_integer():
-        meio=str(int(linha))+'_5'
+        # A linha limite fica meio ponto abaixo da linha asiática:
+        # asiático 4.0 -> limite 3.5; asiático 10.0 -> limite 9.5.
+        meio=str(int(linha)-1)+'_5'
         limite=[prefixo+meio+'_LIVE',prefixo+meio]
     else:
-        inteiro=str(int(linha))
-        limite=[prefixo+inteiro+'_LIVE',prefixo+inteiro]
+        limite=[]
     def achar(lista):
         for nome in lista:
             if nome in odds and odds[nome] > 1:
