@@ -432,11 +432,6 @@
       },
       "criterios_api": [
         {
-          "campo": "ht_over_0_5",
-          "operador": "gte",
-          "valor": 60
-        },
-        {
           "campo": "appm_partida_calc",
           "operador": "gte",
           "valor": 0.7
