@@ -925,7 +925,20 @@ def get_stats_sokkerpro(fid_raw, home='', away=''):
         for cat in data['data']['sortedCategorizedFixtures']:
             for fix in cat['fixtures']:
                 if str(fix.get('fixtureId', '')) == str(fid_raw):
-                    return _extrair_stats_sokkerpro(fix)
+                    stats = _extrair_stats_sokkerpro(fix)
+                    # O endpoint geral traz estatísticas, mas as odds por mercado
+                    # ficam no endpoint individual da partida.
+                    try:
+                        detalhe = requests.get(f'https://m2.sokkerpro.com/fixture/{fid_raw}', headers={'User-Agent': 'Mozilla/5.0'}, timeout=10).json()
+                        if detalhe.get('success') and isinstance(detalhe.get('data'), dict):
+                            detalhe_stats = _extrair_stats_sokkerpro(detalhe['data'])
+                            stats['odds_mercados'] = detalhe_stats.get('odds_mercados', {})
+                            for campo in ('escanteios_5m','escanteios_5m_h','escanteios_5m_a','escanteios_10m','escanteios_10m_h','escanteios_10m_a','escanteios_15m','escanteios_15m_h','escanteios_15m_a'):
+                                if campo in detalhe_stats:
+                                    stats[campo] = detalhe_stats[campo]
+                    except Exception as e:
+                        print(f'[SKP] Odds individuais indisponíveis para {fid_raw}: {e}')
+                    return stats
     except:
         pass
     return {}
