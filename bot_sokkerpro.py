@@ -542,7 +542,9 @@ def get_performance():
     for registro in registros:
         mercado = str(registro.get('mercado', ''))
         if mercado not in resultado:
-            resultado[mercado] = {'nome': mercado, 'green': 0, 'red': 0, 'refund': 0, 'total': 0}
+            # Registros de mercados antigos/removidos não entram no relatório atual.
+            # Assim, aliases e IDs custom antigos não duplicam o total geral.
+            continue
         status = str(registro.get('resultado', '')).lower()
         if status == 'green':
             resultado[mercado]['green'] += 1
