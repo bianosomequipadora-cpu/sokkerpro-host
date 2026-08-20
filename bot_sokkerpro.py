@@ -1554,16 +1554,16 @@ def nome_liga_exibicao(liga, pais):
 def _odd_do_mercado(stats, tipo, extra_val=None):
     odds = (stats or {}).get('odds_mercados', {})
     nomes = []
-    if tipo == 'gol_intervalo': nomes = ['BET365_GOLS1T_OVER_0_5']
-    elif tipo == 'over_gol': nomes = ['BET365_GOLS_OVER_0_5']
-    elif tipo == 'over_15': nomes = ['BET365_GOLS_OVER_1_5']
-    elif tipo == 'ambas_marcam': nomes = ['BET365_AMBAS_YES']
+    if tipo == 'gol_intervalo': nomes = ['BET365_GOLS1T_OVER_0_5_LIVE', 'BET365_GOLS1T_OVER_0_5']
+    elif tipo == 'over_gol': nomes = ['BET365_GOLS_OVER_0_5_LIVE', 'BET365_GOLS_OVER_0_5']
+    elif tipo == 'over_15': nomes = ['BET365_GOLS_OVER_1_5_LIVE', 'BET365_GOLS_OVER_1_5']
+    elif tipo == 'ambas_marcam': nomes = ['BET365_AMBAS_YES_LIVE', 'BET365_AMBAS_YES']
     elif tipo in ('escanteio_ht','escanteio_ft','corner') and extra_val is not None:
         try:
             linha = float(extra_val)
             sufixo = str(linha).replace('.', '_')
             prefixo = 'BET365_CANTO1T_OVER_' if tipo == 'escanteio_ht' else 'BET365_CANTO_OVER_'
-            nomes = [prefixo+sufixo]
+            nomes = [prefixo+sufixo+'_LIVE', prefixo+sufixo, prefixo+sufixo.replace('_0','')+'_LIVE', prefixo+sufixo.replace('_0','')]
         except (TypeError, ValueError):
             nomes = []
     for nome in nomes:
