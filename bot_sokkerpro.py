@@ -1551,28 +1551,35 @@ def nome_liga_exibicao(liga, pais):
         return liga + ' (' + info[0] + ' ' + info[1] + ')'
     return liga
 
-def _odd_do_mercado(stats, tipo, extra_val=None):
+def _odds_do_mercado(stats, tipo, extra_val=None):
     odds = (stats or {}).get('odds_mercados', {})
-    nomes = []
-    if tipo == 'gol_intervalo': nomes = ['BET365_GOLS1T_OVER_0_5_LIVE', 'BET365_GOLS1T_OVER_0_5']
-    elif tipo == 'over_gol': nomes = ['BET365_GOLS_OVER_0_5_LIVE', 'BET365_GOLS_OVER_0_5']
-    elif tipo == 'over_15': nomes = ['BET365_GOLS_OVER_1_5_LIVE', 'BET365_GOLS_OVER_1_5']
-    elif tipo == 'ambas_marcam': nomes = ['BET365_AMBAS_YES_LIVE', 'BET365_AMBAS_YES']
-    elif tipo in ('escanteio_ht','escanteio_ft','corner') and extra_val is not None:
-        try:
-            linha = float(extra_val)
-            sufixo = str(linha).replace('.', '_')
-            prefixo = 'BET365_CANTO1T_OVER_' if tipo == 'escanteio_ht' else 'BET365_CANTO_OVER_'
-            nomes = [prefixo+sufixo+'_LIVE', prefixo+sufixo, prefixo+sufixo.replace('_0','')+'_LIVE', prefixo+sufixo.replace('_0','')]
-            if linha.is_integer():
-                meio = str(int(linha))+ '_5'
-                nomes += [prefixo+meio+'_LIVE', prefixo+meio]
-        except (TypeError, ValueError):
-            nomes = []
-    for nome in nomes:
-        if nome in odds:
-            return f'{odds[nome]:.2f}'
-    return 'indisponível'
+    if tipo not in ('escanteio_ht','escanteio_ft','corner') or extra_val is None:
+        nomes = {'gol_intervalo':['BET365_GOLS1T_OVER_0_5_LIVE','BET365_GOLS1T_OVER_0_5'], 'over_gol':['BET365_GOLS_OVER_0_5_LIVE','BET365_GOLS_OVER_0_5'], 'over_15':['BET365_GOLS_OVER_1_5_LIVE','BET365_GOLS_OVER_1_5'], 'ambas_marcam':['BET365_AMBAS_YES_LIVE','BET365_AMBAS_YES']}.get(tipo, [])
+        for nome in nomes:
+            if nome in odds:
+                return f'{odds[nome]:.2f}', None
+        return 'indisponível', None
+    try:
+        linha=float(extra_val)
+    except (TypeError, ValueError):
+        return 'indisponível','indisponível'
+    prefixo='BET365_CANTO1T_OVER_' if tipo=='escanteio_ht' else 'BET365_CANTO_OVER_'
+    sufixo=str(linha).replace('.','_')
+    asiaticos=[prefixo+sufixo+'_LIVE',prefixo+sufixo,prefixo+sufixo.replace('_0','')+'_LIVE',prefixo+sufixo.replace('_0','')]
+    limite=[]
+    if linha.is_integer():
+        meio=str(int(linha))+'_5'
+        limite=[prefixo+meio+'_LIVE',prefixo+meio]
+    else:
+        inteiro=str(int(linha))
+        limite=[prefixo+inteiro+'_LIVE',prefixo+inteiro]
+    def achar(lista):
+        for nome in lista:
+            if nome in odds and odds[nome] > 1:
+                return f'{odds[nome]:.2f}'
+        return 'indisponível'
+    return achar(asiaticos), achar(limite)
+
 
 def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, extra_val=None, cantos_atual=0, stats=None, sh=0, sa=0, fav_final='h', odd_h=None, odd_a=None, odd_b365=None, odd_bano=None, nome=None, tipo='', probabilidade=None):
     NL = chr(10)
@@ -1647,7 +1654,11 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
         fav_nome = away
     else:
         fav_nome = '—'
-    odd_mercado = _odd_do_mercado(stats, tipo, cantos_atual if 'escanteio' in tipo else None)
+    odd_asiatico, odd_limite = _odds_do_mercado(stats, tipo, cantos_atual if 'escanteio' in tipo else None)
+    if 'escanteio' in tipo:
+        odd_texto = f'<b>💰Odd Asiático: {odd_asiatico}</b>' + NL + f'<b>💰Odd Limite: {odd_limite}</b>'
+    else:
+        odd_texto = f'<b>💰Odd Ao Vivo : {odd_asiatico}</b>'
     prob_texto = (NL + f'<b>📊 Probabilidade: {probabilidade}%</b>') if probabilidade is not None else ''
     sep = '━' * 22
     liga_formatada=nome_liga_exibicao(liga, pais)
@@ -1663,7 +1674,7 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
         pais_texto=''
     liga_texto = '<b>🌍 Liga: ' + liga + '</b>'
     pais_texto_linha = '<b>🗺️País: ' + pais_texto + '</b>' if pais_texto else ''
-    msg = f'{sep}' + NL + f'<b>{title}</b>' + NL + f'{sep}' + NL + f'<b>⚽️ Placar: {placar}</b>' + NL + f'{liga_texto}' + (NL + pais_texto_linha if pais_texto_linha else '') + NL + f'<b>📡 {home} x {away}</b>' + NL + f'<b>👀 ODDs: Casa {(odd_h if odd_h else chr(8212))} / Fora {(odd_a if odd_a else chr(8212))}</b>' + NL + '<b>⏰️ Minuto: ' + str(minuto) + "'</b>" + NL + f'{sep}' + NL + '<b>📊 Estatísticas ao Vivo da Partida:</b>' + NL + f'<b>🚀 Chutes Totais: {chutes_h} | {chutes_a}</b>' + NL + f'<b>🎯 Chutes No Alvo: {alvo_h} | {alvo_a}</b>' + NL + f'<b>⛳️ Escanteios: {cant_h} | {cant_a}</b>' + NL + f'<b>⚔️ Ataques Perigosos: {atq_per_h} | {atq_per_a}</b>' + NL + f'<b>🌋 Pressão Da Partida: {pressao_h} | {pressao_a}</b>' + NL + f'<b>🔥 APPM da Partida: {appm}</b>' + NL + f'<b>🔥 APPM Últ 10 Min: {dapm10}</b>' + NL + f'<b>🔥 APPM Últ 5 Min: {dapm5}</b>' + NL + f'{sep}' + NL + '<b>💡 Análise Técnica da Partida:</b>' + NL + f'<b>🎯 Favorito: {fav_nome}</b>' + NL + f'<b>🚨 Alerta: {alerta}</b>' + NL + f'{sep}' + NL + f'<b>📌 Entrada: {entrada}</b>' + prob_texto + NL + f'<b>💰Odd Ao Vivo : {odd_mercado}</b>' + NL + f'{sep}' + NL + '<b>🔔Jogue com Responsabilidade🔔</b>'
+    msg = f'{sep}' + NL + f'<b>{title}</b>' + NL + f'{sep}' + NL + f'<b>⚽️ Placar: {placar}</b>' + NL + f'{liga_texto}' + (NL + pais_texto_linha if pais_texto_linha else '') + NL + f'<b>📡 {home} x {away}</b>' + NL + f'<b>👀 ODDs: Casa {(odd_h if odd_h else chr(8212))} / Fora {(odd_a if odd_a else chr(8212))}</b>' + NL + '<b>⏰️ Minuto: ' + str(minuto) + "'</b>" + NL + f'{sep}' + NL + '<b>📊 Estatísticas ao Vivo da Partida:</b>' + NL + f'<b>🚀 Chutes Totais: {chutes_h} | {chutes_a}</b>' + NL + f'<b>🎯 Chutes No Alvo: {alvo_h} | {alvo_a}</b>' + NL + f'<b>⛳️ Escanteios: {cant_h} | {cant_a}</b>' + NL + f'<b>⚔️ Ataques Perigosos: {atq_per_h} | {atq_per_a}</b>' + NL + f'<b>🌋 Pressão Da Partida: {pressao_h} | {pressao_a}</b>' + NL + f'<b>🔥 APPM da Partida: {appm}</b>' + NL + f'<b>🔥 APPM Últ 10 Min: {dapm10}</b>' + NL + f'<b>🔥 APPM Últ 5 Min: {dapm5}</b>' + NL + f'{sep}' + NL + '<b>💡 Análise Técnica da Partida:</b>' + NL + f'<b>🎯 Favorito: {fav_nome}</b>' + NL + f'<b>🚨 Alerta: {alerta}</b>' + NL + f'{sep}' + NL + f'<b>📌 Entrada: {entrada}</b>' + prob_texto + NL + odd_texto + NL + f'{sep}' + NL + '<b>🔔Jogue com Responsabilidade🔔</b>'
     keyboard = {'inline_keyboard': [[{'text': '🟣BET365🟣', 'url': 'https://www.bet365.bet.br/#/AZ/'}, {'text': '🟠BETANO🟠', 'url': 'https://www.betano.bet.br/live/'}]]}
     return (msg, keyboard)
 
