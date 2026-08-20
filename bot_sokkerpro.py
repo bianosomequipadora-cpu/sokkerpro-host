@@ -1563,8 +1563,8 @@ def _odds_do_mercado(stats, tipo, extra_val=None):
         prefixo='BET365_GOLS1T_' if tipo=='gol_intervalo' else 'BET365_GOLS_'
         asiatico_linha=str(int(limite_linha+0.5)).replace('.','_')
         limite_txt=str(limite_linha).replace('.','_')
-        asiaticos=[prefixo+'OVER_'+asiatico_linha+'_LIVE',prefixo+'OVER_'+asiatico_linha]
-        limites=[prefixo+'OVER_'+limite_txt+'_LIVE',prefixo+'OVER_'+limite_txt]
+        asiaticos=[prefixo+'OVER_'+asiatico_linha+'_LIVE']
+        limites=[prefixo+'OVER_'+limite_txt+'_LIVE']
         def achar(lista):
             for nome in lista:
                 if nome in odds and odds[nome] > 1:
@@ -1572,7 +1572,7 @@ def _odds_do_mercado(stats, tipo, extra_val=None):
             return 'indisponível'
         return achar(asiaticos), achar(limites)
     if tipo == 'ambas_marcam':
-        for nome in ('BET365_AMBAS_YES_LIVE','BET365_AMBAS_YES'):
+        for nome in ('BET365_AMBAS_YES_LIVE',):
             if nome in odds and odds[nome] > 1:
                 return f'{odds[nome]:.2f}', None
         return 'indisponível', None
@@ -1584,13 +1584,13 @@ def _odds_do_mercado(stats, tipo, extra_val=None):
         return 'indisponível','indisponível'
     prefixo='BET365_CANTO1T_OVER_' if tipo=='escanteio_ht' else 'BET365_CANTO_OVER_'
     sufixo=str(linha).replace('.','_')
-    asiaticos=[prefixo+sufixo+'_LIVE',prefixo+sufixo,prefixo+sufixo.replace('_0','')+'_LIVE',prefixo+sufixo.replace('_0','')]
+    asiaticos=[prefixo+sufixo+'_LIVE',prefixo+sufixo.replace('_0','')+'_LIVE']
     limite=[]
     if linha.is_integer():
         # A linha limite fica meio ponto abaixo da linha asiática:
         # asiático 4.0 -> limite 3.5; asiático 10.0 -> limite 9.5.
         meio=str(int(linha)-1)+'_5'
-        limite=[prefixo+meio+'_LIVE',prefixo+meio]
+        limite=[prefixo+meio+'_LIVE']
     else:
         limite=[]
     def achar(lista):
