@@ -2224,8 +2224,16 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 if not campo or campo in vistos_api:
                     continue
                 vistos_api.add(campo)
+                api_map = {'chutes_alvo_min':('chutes_gol_h','chutes_gol_a','sum'),'chutes_totais_min':('chutes_tot_h','chutes_tot_a','sum'),'ataques_perigosos_min':('ataques_perigosos_h','ataques_perigosos_a','fav'),'escanteios_minimos':('escanteios_h','escanteios_a','sum'),'chutes_inside_min':('chutes_inside_h','chutes_inside_a','fav'),'chutes_outside_min':('chutes_outside_h','chutes_outside_a','fav'),'goal_attempts_min':('goal_attempts_h','goal_attempts_a','fav'),'chutes_bloq_max':('chutes_bloq_h','chutes_bloq_a','fav'),'defesas_min':('defesas_h','defesas_a','fav'),'faltas_min':('faltas_h','faltas_a','fav'),'yellow_max':('yellow_cards_h','yellow_cards_a','fav'),'impedimentos_min':('impedimentos_h','impedimentos_a','fav'),'pressure_bar_min':('pressure_bar_h','pressure_bar_a','fav'),'ball_safe_min':('ball_safe_h','ball_safe_a','fav'),'posse_bola_min':('posse_h','posse_a','fav'),'xg_total_min':('xg_h','xg_a','sum'),'media_gols_partida_min':('medias_goal_h','medias_goal_a','sum'),'media_corners_total_min':('medias_corners_h','medias_corners_a','sum'),'media_corners_casa_min':('medias_corners_h','medias_corners_a','h'),'media_corners_fora_min':('medias_corners_h','medias_corners_a','a'),'appm_min_por_time':('dapm_total_h','dapm_total_a','max'),'appm_total_min':('dapm_total_h','dapm_total_a','max'),'media_gols_ht_min':('media_gols_ht_h','media_gols_ht_a','sum'),'media_gols_ft_min':('media_gols_ft_h','media_gols_ft_a','sum'),'dapm_5_min':('dapm5_h','dapm5_a','fav'),'dapm_total_orig_min':('dapm_total_h','dapm_total_a','fav')}
                 if campo == 'chutes_bloq_fav':
                     atual_raw = stats.get('chutes_bloq_h' if fav_final == 'h' else 'chutes_bloq_a')
+                elif campo in api_map:
+                    h,a,lado=api_map[campo]; vh,va=stats.get(h),stats.get(a)
+                    if lado=='sum': atual_raw=float(vh or 0)+float(va or 0)
+                    elif lado=='max': atual_raw=max(float(vh or 0),float(va or 0))
+                    elif lado=='h': atual_raw=vh
+                    elif lado=='a': atual_raw=va
+                    else: atual_raw=vh if fav_final=='h' else va
                 elif campo == 'appm_partida_calc':
                     if not m or float(m) <= 0:
                         motivos.append(f'{campo}=minuto inválido')
