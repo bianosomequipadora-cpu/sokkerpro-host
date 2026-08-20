@@ -1564,6 +1564,9 @@ def _odd_do_mercado(stats, tipo, extra_val=None):
             sufixo = str(linha).replace('.', '_')
             prefixo = 'BET365_CANTO1T_OVER_' if tipo == 'escanteio_ht' else 'BET365_CANTO_OVER_'
             nomes = [prefixo+sufixo+'_LIVE', prefixo+sufixo, prefixo+sufixo.replace('_0','')+'_LIVE', prefixo+sufixo.replace('_0','')]
+            if linha.is_integer():
+                meio = str(int(linha))+ '_5'
+                nomes += [prefixo+meio+'_LIVE', prefixo+meio]
         except (TypeError, ValueError):
             nomes = []
     for nome in nomes:
