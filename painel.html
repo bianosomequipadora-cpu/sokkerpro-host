@@ -309,40 +309,6 @@ async function salvarConfig(){
                 var bruto=campo.value.trim();
                 if(bruto!=='' && !/^[+-]?(?:\d+)(?:[.,]\d+)?$/.test(bruto)) throw new Error('Valor inválido no campo numérico '+campo.id+'. Use apenas números.');
             });
-            function addIf(keyC, idSuf){var v=gv(key+'-'+idSuf); if(v!==null&&v!=='')criterios[keyC]=v;}
-            addIf('situacao_favorito','sit-fav');
-                        addIf('appm_min_por_time','appm');
-            addIf('appm_total_min','appm-total');
-            addIf('media_gols_partida_min','media-gols');
-            addIf('media_gols_ht_min','media-gols-ht');
-            addIf('media_gols_ft_min','media-gols-ft');
-            addIf('btts_probabilidade_min','btts-prob');
-                                                addIf('diferenca_gols_fav_max','diff-gols');
-            addIf('chutes_alvo_min','chutes-alvo');
-            addIf('chutes_totais_min','chutes-tot');
-            addIf('ataques_perigosos_min','atq-perig');
-            addIf('escanteios_minimos','esc-min');
-            addIf('max_red_card_fav','red-max');
-            addIf('posse_bola_min','posse');
-                        addIf('media_corners_total_min','media-corners');
-            addIf('media_corners_casa_min','media-corners-casa');
-            addIf('media_corners_fora_min','media-corners-fora');
-            addIf('xg_total_min','xg-total');
-            addIf('xg_casa_min','xg-casa');
-            addIf('xg_fora_min','xg-fora');
-            addIf('pressure_bar_min','pressure');
-            addIf('chutes_inside_min','chutes-inside');
-            addIf('chutes_outside_min','chutes-outside');
-            addIf('goal_attempts_min','goal-attempts');
-            addIf('chutes_bloq_max','chutes-bloq');
-            addIf('defesas_min','defesas');
-            addIf('faltas_min','faltas');
-            addIf('yellow_max','yellow');
-            addIf('impedimentos_min','impedimentos');
-            addIf('dapm_5_min','dapm5');
-            addIf('dapm_total_orig_min','dapm-total-orig');
-            addIf('ball_safe_min','ball-safe');
-            
             var sit=document.getElementById(key+'-sit-fav');
             if(sit) criterios.situacao_favorito=sit.value;
             
