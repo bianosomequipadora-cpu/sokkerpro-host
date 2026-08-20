@@ -13,7 +13,6 @@
       "criterios": {
         "situacao_favorito": "perdendo_ou_empatando",
         "media_gols_partida_min": 2.5,
-        "diferenca_gols_fav_max": 1,
         "chutes_alvo_min": 5,
         "chutes_totais_min": 10,
         "escanteios_minimos": 4,
