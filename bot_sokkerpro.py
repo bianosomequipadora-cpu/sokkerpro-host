@@ -38,8 +38,9 @@ def gerar_layout_relatorio(greens, reds, data_str, refunds=0):
 
 def gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos, refunds=0):
     sep = '━' * 22
-    total = greens + reds
-    taxa = greens / total * 100 if total > 0 else 0.0
+    total = greens + reds + refunds
+    avaliados = greens + reds
+    taxa = greens / avaliados * 100 if avaliados > 0 else 0.0
     msg = f'{sep}\n'
     msg += f'<b>📊 RELATÓRIO MENSAL — {mes_nome}</b>\n'
     msg += f'{sep}\n'
@@ -422,22 +423,39 @@ def salvar_resultado(resultado, mercado=None, fixture_id=None):
     registros.append({'data': hoje, 'resultado': resultado, 'mercado': mercado, 'fixture_id': fixture_id, 'timestamp': datetime.now(BRT).isoformat()})
     _save_resultados_github(registros)
 
-def get_relatorio_mensal():
-    hoje = datetime.now(BRT)
-    mes_str = hoje.strftime('%Y-%m')
-    greens, reds, refunds = (0, 0, 0)
-    registros = _load_resultados_github()
+def _agregar_resultados_mensais(mes_str):
+    """Agrega resultados.json uma única vez para os relatórios mensais.
+
+    Essa é a fonte comum dos relatórios geral e por mercado. Registros de
+    mercados que não existem mais continuam contabilizados em OUTROS.
+    """
+    dados = {cod: {'nome': nome, 'green': 0, 'red': 0, 'refund': 0, 'total': 0}
+             for cod, nome in MAPA_MERCADO.items()}
+    dados['__outros__'] = {'nome': 'OUTROS / MERCADOS ANTIGOS', 'green': 0, 'red': 0, 'refund': 0, 'total': 0}
     dias_ativos = set()
-    for r in registros:
-        data_reg = r.get('data', '')
-        if data_reg.startswith(mes_str):
-            dias_ativos.add(data_reg)
-            if r.get('resultado') == 'green':
-                greens += 1
-            elif r.get('resultado') == 'red':
-                reds += 1
-            elif r.get('resultado') == 'refund':
-                refunds += 1
+    for registro in _load_resultados_github():
+        data_reg = str(registro.get('data', ''))
+        if not data_reg.startswith(mes_str):
+            continue
+        resultado = str(registro.get('resultado', '')).strip().lower()
+        if resultado not in ('green', 'red', 'refund', 'reembolso'):
+            continue
+        dias_ativos.add(data_reg)
+        mercado = registro.get('mercado')
+        grupo = dados.get(mercado, dados['__outros__'])
+        grupo['refund' if resultado in ('refund', 'reembolso') else resultado] += 1
+    for grupo in dados.values():
+        grupo['total'] = grupo['green'] + grupo['red'] + grupo['refund']
+        avaliados = grupo['green'] + grupo['red']
+        grupo['pct'] = grupo['green'] / avaliados * 100 if avaliados > 0 else 0.0
+    return dados, dias_ativos
+
+def get_relatorio_mensal():
+    mes_str = datetime.now(BRT).strftime('%Y-%m')
+    dados, dias_ativos = _agregar_resultados_mensais(mes_str)
+    greens = sum(grupo['green'] for grupo in dados.values())
+    reds = sum(grupo['red'] for grupo in dados.values())
+    refunds = sum(grupo['refund'] for grupo in dados.values())
     return (greens, reds, len(dias_ativos), refunds)
 
 def get_relatorio_hoje():
@@ -637,49 +655,10 @@ def gerar_layout_mercados_hoje():
     return f"{sep}\n📊<b>MERCADOS — {data_hoje}</b>📊\n{sep}\n{corpo}\n{sep}\n📌 <b>TOTAL DO DIA: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n{sep}"
 
 def get_performance_mensal():
-    """Retorna performance por mercado somente do mês atual no fuso BRT."""
+    """Retorna performance por mercado no mesmo recorte do relatório mensal."""
     mes_atual = datetime.now(BRT).strftime('%Y-%m')
-    registros = _load_resultados_github()
-    perf = {cod: {'nome': nome, 'green': 0, 'red': 0, 'refund': 0, 'total': 0} for cod, nome in MAPA_MERCADO.items()}
-    for r in registros:
-        if not str(r.get('data', '')).startswith(mes_atual):
-            continue
-        mercado = r.get('mercado', '')
-        resultado = r.get('resultado', '')
-        if mercado not in perf or not resultado:
-            continue
-        perf[mercado]['total'] += 1
-        if resultado == 'green':
-            perf[mercado]['green'] += 1
-        elif resultado == 'refund':
-            perf[mercado]['refund'] += 1
-        else:
-            perf[mercado]['red'] += 1
-    for info in perf.values():
-        g, r, f = info['green'], info['red'], info['refund']
-        info['total'] = g + r + f
-        info['pct'] = g / (g + r) * 100 if (g + r) > 0 else 0
-    return perf
-
-def gerar_layout_mercados_mensal():
-    dados = get_performance_mensal()
-    sep = '━' * 22
-    blocos = []
-    for info in dados.values():
-        if info['total'] == 0:
-            continue
-        blocos.append(f"<b>{info['nome']}</b>\n   Total: {info['total']} | 🟢 {info['green']} | 🔴 {info['red']} | 🔵 {info['refund']}\n   🎯 Acerto: {info['pct']:.1f}%")
-    total_g = sum(d['green'] for d in dados.values())
-    total_r = sum(d['red'] for d in dados.values())
-    total_f = sum(d['refund'] for d in dados.values())
-    total_t = total_g + total_r + total_f
-    avaliados = total_g + total_r
-    pct = total_g / avaliados * 100 if avaliados > 0 else 0
-    corpo = (f"{chr(10)}{sep}{chr(10)}".join(blocos) if blocos else 'Nenhum resultado registrado neste mês.')
-    meses_pt = ['JANEIRO', 'FEVEREIRO', 'MARÇO', 'ABRIL', 'MAIO', 'JUNHO', 'JULHO', 'AGOSTO', 'SETEMBRO', 'OUTUBRO', 'NOVEMBRO', 'DEZEMBRO']
-    agora = datetime.now(BRT)
-    mes = f'{meses_pt[agora.month - 1]}/{agora.year}'
-    return f"{sep}\n📊<b>MERCADOS — {mes}</b>📊\n{sep}\n{corpo}\n{sep}\n📌 <b>TOTAL DO MÊS: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {pct:.1f}%|\n{sep}"
+    dados, _ = _agregar_resultados_mensais(mes_atual)
+    return dados
 
 def get_performance_24h():
     """Retorna performance por mercado nas últimas 24h a partir dos resultados salvos."""
