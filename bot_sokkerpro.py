@@ -1916,24 +1916,6 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
         msg_ts = msg.get('date', 0)
         if agora_ts - msg_ts > 600:
             continue
-        if comando == '/idgrupo':
-            usuario_id = msg.get('from', {}).get('id')
-            try:
-                membro = requests.get(
-                    f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/getChatMember',
-                    params={'chat_id': chat_orig, 'user_id': usuario_id},
-                    timeout=10
-                ).json()
-                status = membro.get('result', {}).get('status')
-                if status in ('administrator', 'creator'):
-                    requests.post(
-                        f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage',
-                        json={'chat_id': chat_orig, 'text': str(chat_orig)},
-                        timeout=10
-                    )
-            except Exception as e:
-                print(f'[CMD] Erro ao processar /idgrupo: {e}')
-            continue
         if comando == '/relatoriomensal' and (not relatorio_respondido):
             msg = enviar_relatorio_mensal()
             requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage', json={'chat_id': chat_orig, 'text': msg, 'parse_mode': 'HTML'})
@@ -2428,7 +2410,6 @@ def configurar_comandos_telegram():
         {'command': 'relatoriomensal', 'description': 'Relatório do mês'},
         {'command': 'relatoriogeral', 'description': 'Relatório geral acumulado'},
         {'command': 'radar', 'description': 'Jogos ao vivo e oportunidades'},
-        {'command': 'idgrupo', 'description': 'Consultar ID do grupo (admin)'},
     ]
     try:
         r = requests.post(
