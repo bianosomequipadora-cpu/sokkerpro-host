@@ -1948,11 +1948,21 @@ def _vip_poll_and_expire(state):
                 status = r.json().get('status', ''); item['status'] = status; changed = True
                 if status in ('RECEIVED', 'CONFIRMED') and not item.get('activated_at'):
                     now = datetime.now(timezone.utc); exp = now + timedelta(days=VIP_DAYS); uid = str(item['chat_id'])
-                    link = requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/createChatInviteLink', json={'chat_id': VIP_CHAT_ID, 'name': f'VIP {uid}', 'member_limit': 1}, timeout=15)
+                    link = requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/createChatInviteLink', json={'chat_id': VIP_CHAT_ID, 'name': f'VIP {uid}', 'creates_join_request': True}, timeout=15)
                     invite = link.json().get('result', {}).get('invite_link') if link.ok and link.json().get('ok') else None
                     item.update({'activated_at': now.isoformat(), 'expires_at': exp.isoformat()}); state['members'][uid] = {'chat_id': item['chat_id'], 'expires_at': exp.isoformat(), 'payment_id': pid}
                     _vip_send(item['chat_id'], f'✅ <b>Pagamento confirmado!</b>\n\nSeu acesso VIP é válido por 30 dias.\n' + (f'\n🔗 Entre pelo convite: {invite}' if invite else '\nConvite pendente; contate o suporte.'))
             except requests.RequestException as e: print(f'[VIP] Poll {pid}: {e}')
+    # Approve only paid users' pending join requests; never approve unknown users.
+    try:
+        pending = requests.get(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/getChatJoinRequests', params={'chat_id': VIP_CHAT_ID, 'limit': 100}, timeout=15)
+        if pending.ok and pending.json().get('ok'):
+            for join in pending.json().get('result', []):
+                uid = str(join.get('from', {}).get('id', ''))
+                if uid in state['members'] and not state['members'][uid].get('removed_at'):
+                    ar = requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/approveChatJoinRequest', json={'chat_id': VIP_CHAT_ID, 'user_id': int(uid)}, timeout=15)
+                    if ar.ok and ar.json().get('ok'): changed = True
+    except requests.RequestException as e: print(f'[VIP] Join requests indisponíveis: {e}')
     now = datetime.now(timezone.utc)
     for uid, m in state['members'].items():
         if m.get('removed_at'): continue
