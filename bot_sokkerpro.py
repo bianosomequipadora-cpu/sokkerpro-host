@@ -423,19 +423,19 @@ def salvar_resultado(resultado, mercado=None, fixture_id=None):
     registros.append({'data': hoje, 'resultado': resultado, 'mercado': mercado, 'fixture_id': fixture_id, 'timestamp': datetime.now(BRT).isoformat()})
     _save_resultados_github(registros)
 
-def _agregar_resultados_mensais(mes_str):
-    """Agrega resultados.json para os relatórios mensal geral e por mercado.
+def _agregar_resultados(filtro_data=None):
+    """Agrega resultados usando somente os códigos do MAPA_MERCADO vigente.
 
-    Os dois relatórios usam a mesma fonte e o mesmo recorte mensal. Somente
-    códigos presentes no mapa atual de mercados são considerados; registros
-    históricos de mercados removidos são excluídos, sem agrupamento legado.
+    ``filtro_data`` recebe uma função que retorna True para os registros a
+    considerar; None significa todas as datas disponíveis. Esta é a fonte
+    compartilhada pelos relatórios mensal e geral, evitando incluir mercados
+    históricos que já não estão no painel ativo.
     """
     dados = {cod: {'nome': nome, 'green': 0, 'red': 0, 'refund': 0, 'total': 0}
              for cod, nome in MAPA_MERCADO.items()}
     dias_ativos = set()
     for registro in _load_resultados_github():
-        data_reg = str(registro.get('data', ''))
-        if not data_reg.startswith(mes_str):
+        if filtro_data is not None and not filtro_data(registro):
             continue
         resultado = str(registro.get('resultado', '')).strip().lower()
         if resultado not in ('green', 'red', 'refund', 'reembolso'):
@@ -443,7 +443,9 @@ def _agregar_resultados_mensais(mes_str):
         mercado = registro.get('mercado')
         if mercado not in dados:
             continue
-        dias_ativos.add(data_reg)
+        data_reg = str(registro.get('data', ''))
+        if data_reg:
+            dias_ativos.add(data_reg)
         campo = 'refund' if resultado in ('refund', 'reembolso') else resultado
         dados[mercado][campo] += 1
     for grupo in dados.values():
@@ -451,6 +453,16 @@ def _agregar_resultados_mensais(mes_str):
         avaliados = grupo['green'] + grupo['red']
         grupo['pct'] = grupo['green'] / avaliados * 100 if avaliados > 0 else 0.0
     return dados, dias_ativos
+
+def _agregar_resultados_mensais(mes_str):
+    """Agrega resultados do mês usando o MAPA_MERCADO vigente."""
+    return _agregar_resultados(
+        lambda registro: str(registro.get('data', '')).startswith(mes_str)
+    )
+
+def _agregar_resultados_gerais():
+    """Agrega resultados de todas as datas disponíveis no arquivo histórico."""
+    return _agregar_resultados()
 
 def get_relatorio_mensal():
     mes_str = datetime.now(BRT).strftime('%Y-%m')
@@ -607,6 +619,37 @@ def gerar_layout_performance():
 def enviar_relatorio_performance():
     """Gera o relatório de performance. Retorna o texto da mensagem (sem enviar)."""
     return gerar_layout_performance()
+
+def gerar_layout_relatorio_geral():
+    """Gera o acumulado histórico, filtrado pelos mercados ativos atuais."""
+    dados, dias_ativos = _agregar_resultados_gerais()
+    sep = '━━━━━━━━━━━━━━━━━━━━━━'
+    blocos = []
+    for info in dados.values():
+        if info['total'] == 0:
+            continue
+        blocos.append(
+            f"<b>{info['nome']}</b>\\n"
+            f"   📈 Total: {info['total']} | 🟢 {info['green']} | 🔴 {info['red']} | 🔵 {info['refund']}\\n"
+            f"   🎯 Assertividade: {info['pct']:.1f}%"
+        )
+    total_g = sum(info['green'] for info in dados.values())
+    total_r = sum(info['red'] for info in dados.values())
+    total_f = sum(info['refund'] for info in dados.values())
+    total_t = total_g + total_r + total_f
+    avaliados = total_g + total_r
+    total_pct = total_g / avaliados * 100 if avaliados > 0 else 0.0
+    corpo = f"\\n{sep}\\n".join(blocos) if blocos else 'Nenhum resultado registrado.'
+    return (
+        f"{sep}\\n📊<b>RELATÓRIO GERAL</b>📊\\n{sep}\\n{corpo}\\n{sep}\\n"
+        f"📌 <b>TOTAL GERAL: {total_t} Sinais</b>\\n"
+        f"      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\\n"
+        f"📅 Dias com entradas: <b>{len(dias_ativos)}</b>\\n{sep}"
+    )
+
+def enviar_relatorio_geral():
+    """Gera o relatório geral acumulado sem enviá-lo diretamente."""
+    return gerar_layout_relatorio_geral()
 
 def get_performance_hoje():
     """Retorna performance por mercado somente dos resultados do dia no fuso BRT."""
@@ -1878,6 +1921,10 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
             msg = enviar_relatorio_mensal()
             requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage', json={'chat_id': chat_orig, 'text': msg, 'parse_mode': 'HTML'})
             relatorio_respondido = True
+        if comando == '/relatoriogeral' and (not relatorio_respondido):
+            msg = enviar_relatorio_geral()
+            requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage', json={'chat_id': chat_orig, 'text': msg, 'parse_mode': 'HTML'})
+            relatorio_respondido = True
         if comando == '/relatoriodiario' and (not relatorio_respondido):
             enviar_relatorio_diario()
             relatorio_respondido = True
@@ -2362,6 +2409,7 @@ def configurar_comandos_telegram():
         {'command': 'mercados24h', 'description': 'Performance do dia atual'},
         {'command': 'relatoriodiario', 'description': 'Relatório do dia'},
         {'command': 'relatoriomensal', 'description': 'Relatório do mês'},
+        {'command': 'relatoriogeral', 'description': 'Relatório geral acumulado'},
         {'command': 'radar', 'description': 'Jogos ao vivo e oportunidades'},
     ]
     try:
