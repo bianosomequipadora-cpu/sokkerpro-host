@@ -21,3 +21,6 @@ jobs:
           TG_GROUP_ID: '-1003843430798'
           GH_PAT: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
+          ASAAS_API_KEY: ${{ secrets.ASAAS_API_KEY }}
+          VIP_ADMIN_IDS: ${{ secrets.VIP_ADMIN_IDS }}
+          VIP_SUPPORT_WHATSAPP: ${{ secrets.VIP_SUPPORT_WHATSAPP }}
