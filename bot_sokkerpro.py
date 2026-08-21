@@ -424,14 +424,14 @@ def salvar_resultado(resultado, mercado=None, fixture_id=None):
     _save_resultados_github(registros)
 
 def _agregar_resultados_mensais(mes_str):
-    """Agrega resultados.json uma única vez para os relatórios mensais.
+    """Agrega resultados.json para os relatórios mensal geral e por mercado.
 
-    Essa é a fonte comum dos relatórios geral e por mercado. Registros de
-    mercados que não existem mais continuam contabilizados em OUTROS.
+    Os dois relatórios usam a mesma fonte e o mesmo recorte mensal. Somente
+    códigos presentes no mapa atual de mercados são considerados; registros
+    históricos de mercados removidos são excluídos, sem agrupamento legado.
     """
     dados = {cod: {'nome': nome, 'green': 0, 'red': 0, 'refund': 0, 'total': 0}
              for cod, nome in MAPA_MERCADO.items()}
-    dados['__outros__'] = {'nome': 'OUTROS / MERCADOS ANTIGOS', 'green': 0, 'red': 0, 'refund': 0, 'total': 0}
     dias_ativos = set()
     for registro in _load_resultados_github():
         data_reg = str(registro.get('data', ''))
@@ -440,10 +440,12 @@ def _agregar_resultados_mensais(mes_str):
         resultado = str(registro.get('resultado', '')).strip().lower()
         if resultado not in ('green', 'red', 'refund', 'reembolso'):
             continue
-        dias_ativos.add(data_reg)
         mercado = registro.get('mercado')
-        grupo = dados.get(mercado, dados['__outros__'])
-        grupo['refund' if resultado in ('refund', 'reembolso') else resultado] += 1
+        if mercado not in dados:
+            continue
+        dias_ativos.add(data_reg)
+        campo = 'refund' if resultado in ('refund', 'reembolso') else resultado
+        dados[mercado][campo] += 1
     for grupo in dados.values():
         grupo['total'] = grupo['green'] + grupo['red'] + grupo['refund']
         avaliados = grupo['green'] + grupo['red']
