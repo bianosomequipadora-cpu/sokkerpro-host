@@ -1883,6 +1883,94 @@ def checar_resultado(sinal):
     except:
         return None
 
+# ========== VIP PIX (ASAAS) — polling phase 1 ==========
+VIP_CHAT_ID = int(os.environ.get('VIP_GROUP_CHAT_ID', '-1003843430798'))
+VIP_PRICE, VIP_DAYS, VIP_GRACE_HOURS = 50.0, 30, 24
+VIP_STATE_FILE = os.path.join(BASE_DIR, 'vip_state.json')
+VIP_ASAAS_BASE = 'https://api.asaas.com/v3'
+
+def _vip_admin_ids():
+    return {int(x.strip()) for x in os.environ.get('VIP_ADMIN_IDS', '').split(',') if x.strip()}
+
+def _vip_state_load():
+    state = {'payments': {}, 'members': {}}
+    if GITHUB_TOKEN and GITHUB_REPO:
+        try:
+            r = requests.get(f'https://api.github.com/repos/{GITHUB_REPO}/contents/vip_state.json', headers={'Authorization': f'Bearer {GITHUB_TOKEN}', 'Accept': 'application/vnd.github+json'}, timeout=10)
+            if r.status_code == 200: state = json.loads(base64.b64decode(r.json()['content']).decode())
+        except Exception as e: print(f'[VIP] Estado remoto indisponível: {e}')
+    elif os.path.exists(VIP_STATE_FILE):
+        try:
+            with open(VIP_STATE_FILE) as f: state = json.load(f)
+        except Exception as e: print(f'[VIP] Estado local inválido: {e}')
+    state.setdefault('payments', {}); state.setdefault('members', {})
+    return state
+
+def _vip_state_save(state):
+    with open(VIP_STATE_FILE, 'w') as f: json.dump(state, f, ensure_ascii=False, indent=2)
+    return _save_json_api('vip_state.json', state, 'state: atualiza VIP Pix [skip ci]') if GITHUB_TOKEN and GITHUB_REPO else True
+
+def _vip_headers():
+    key = os.environ.get('ASAAS_API_KEY') or os.environ.get('ASAAS_TOKEN')
+    return {'access_token': key, 'Content-Type': 'application/json', 'User-Agent': 'sokkerpro-vip/1'} if key else None
+
+def _vip_send(chat_id, text):
+    return requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage', json={'chat_id': chat_id, 'text': text, 'parse_mode': 'HTML', 'disable_web_page_preview': True}, timeout=15)
+
+def _vip_sales_message():
+    phone = os.environ.get('VIP_SUPPORT_WHATSAPP', '').strip()
+    support = f'📱 Suporte WhatsApp: {phone}\n' if phone else ''
+    return ('━━━━━━━━━━━━━━━━━━━━\n<b>🚀 MÁQUINA DE GREENS VIP</b>\n━━━━━━━━━━━━━━━━━━━━\n\n🔥 <b>SINAIS AO VIVO COM ALTA ASSERTIVIDADE</b>\n\n📊 <b>6 MERCADOS:</b>\n⚽️ Over Gol Intervalo\n⚽️ Over Gol Partida\n⚽️ Over 1.5 Gols Partida\n⚽️ Ambas Marcam\n🚩 Escanteio Limite HT\n🚩 Escanteio Limite FT\n\n💰 <b>Investimento: R$ 50,00</b>\n📅 <b>Acesso: 30 dias + 24h de tolerância</b>\n💳 Pagamento via <b>PIX</b> com aprovação automática\n\n👇 Envie <b>/vip</b> no privado para gerar seu PIX.\n👤 Telegram: <b>@maquinadegreensvip</b>\n' + support + 'ℹ️ Comandos: /vip — gerar PIX | /vipstatus — consultar status\n🛟 Em caso de dúvida, procure o suporte.')
+
+def _vip_create_payment(chat_id, user):
+    headers = _vip_headers()
+    if not headers: return None, 'Pagamento temporariamente indisponível. Tente novamente mais tarde.'
+    try:
+        c = requests.post(f'{VIP_ASAAS_BASE}/customers', headers=headers, json={'name': (user.get('first_name') or 'Cliente VIP')[:80], 'externalReference': f'telegram:{chat_id}'}, timeout=15)
+        if c.status_code not in (200, 201): return None, 'Não foi possível iniciar o pagamento.'
+        cid = c.json()['id']
+        p = requests.post(f'{VIP_ASAAS_BASE}/payments', headers=headers, json={'customer': cid, 'billingType': 'PIX', 'value': VIP_PRICE, 'dueDate': datetime.now(BRT).strftime('%Y-%m-%d'), 'description': 'Acesso Máquina de Greens VIP - 30 dias', 'externalReference': f'telegram:{chat_id}'}, timeout=15)
+        if p.status_code not in (200, 201): return None, 'Não foi possível gerar o PIX.'
+        pid = p.json()['id']; q = requests.get(f'{VIP_ASAAS_BASE}/payments/{pid}/pixQrCode', headers=headers, timeout=15)
+        if q.status_code != 200: return None, 'PIX indisponível no momento. Tente novamente.'
+        return {'id': pid, 'customer_id': cid, 'payload': q.json().get('payload', '')}, None
+    except requests.RequestException as e:
+        print(f'[VIP] Asaas indisponível: {e}'); return None, 'Serviço de pagamento indisponível. Tente mais tarde.'
+
+def _vip_poll_and_expire(state):
+    headers = _vip_headers(); changed = False
+    if headers:
+        for pid, item in state['payments'].items():
+            if item.get('status') in ('RECEIVED', 'CONFIRMED', 'EXPIRED'): continue
+            try:
+                r = requests.get(f'{VIP_ASAAS_BASE}/payments/{pid}', headers=headers, timeout=15)
+                if r.status_code != 200: continue
+                status = r.json().get('status', ''); item['status'] = status; changed = True
+                if status in ('RECEIVED', 'CONFIRMED') and not item.get('activated_at'):
+                    now = datetime.now(timezone.utc); exp = now + timedelta(days=VIP_DAYS); uid = str(item['chat_id'])
+                    link = requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/createChatInviteLink', json={'chat_id': VIP_CHAT_ID, 'name': f'VIP {uid}', 'member_limit': 1}, timeout=15)
+                    invite = link.json().get('result', {}).get('invite_link') if link.ok and link.json().get('ok') else None
+                    item.update({'activated_at': now.isoformat(), 'expires_at': exp.isoformat()}); state['members'][uid] = {'chat_id': item['chat_id'], 'expires_at': exp.isoformat(), 'payment_id': pid}
+                    _vip_send(item['chat_id'], f'✅ <b>Pagamento confirmado!</b>\n\nSeu acesso VIP é válido por 30 dias.\n' + (f'\n🔗 Entre pelo convite: {invite}' if invite else '\nConvite pendente; contate o suporte.'))
+            except requests.RequestException as e: print(f'[VIP] Poll {pid}: {e}')
+    now = datetime.now(timezone.utc)
+    for uid, m in state['members'].items():
+        if m.get('removed_at'): continue
+        try: deadline = datetime.fromisoformat(m['expires_at']) + timedelta(hours=VIP_GRACE_HOURS)
+        except (KeyError, ValueError): continue
+        if now >= deadline:
+            r = requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/banChatMember', json={'chat_id': VIP_CHAT_ID, 'user_id': int(uid), 'until_date': int(now.timestamp()) + 60}, timeout=15)
+            if r.ok and r.json().get('ok'):
+                requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/unbanChatMember', json={'chat_id': VIP_CHAT_ID, 'user_id': int(uid), 'only_if_banned': True}, timeout=15); m['removed_at'] = now.isoformat(); changed = True
+    return changed
+
+def _vip_handle(chat_id, msg):
+    if chat_id <= 0: return
+    state = _vip_state_load(); data, err = _vip_create_payment(chat_id, msg.get('from', {}))
+    if err: _vip_send(chat_id, err); return
+    state['payments'][data['id']] = {'chat_id': chat_id, 'status': 'PENDING', 'created_at': datetime.now(timezone.utc).isoformat(), 'customer_id': data['customer_id']}; _vip_state_save(state)
+    _vip_send(chat_id, _vip_sales_message() + f'\n\n<b>PIX COPIA E COLA:</b>\n<code>{data["payload"]}</code>\n\nApós o pagamento, a confirmação e o convite serão enviados automaticamente.')
+
 def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=None):
     last_id = 0
     last_id = 0
@@ -1916,6 +2004,10 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
         msg_ts = msg.get('date', 0)
         if agora_ts - msg_ts > 600:
             continue
+        if comando == '/vip':
+            _vip_handle(chat_orig, msg)
+        elif comando == '/vipstatus' and chat_orig in _vip_admin_ids():
+            st = _vip_state_load(); _vip_send(chat_orig, f'VIP: {len(st["payments"])} pagamentos, {len(st["members"])} membros registrados.')
         if comando == '/relatoriomensal' and (not relatorio_respondido):
             msg = enviar_relatorio_mensal()
             requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage', json={'chat_id': chat_orig, 'text': msg, 'parse_mode': 'HTML'})
@@ -2025,6 +2117,8 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
     jogos_na_janela = filtrar_janelas(jogos_live)
     print(f'[Janela] {len(jogos_na_janela)} jogos nas janelas alvo')
     check_status_command(total_jogos_live=len(jogos_live), jogos_live=jogos_live, jogos_na_janela=jogos_na_janela)
+    vip_state = _vip_state_load()
+    if _vip_poll_and_expire(vip_state): _vip_state_save(vip_state)
     try:
         sinais_p = _load_sinais_github()
         if confirmed_ids is None:
@@ -2410,6 +2504,7 @@ def configurar_comandos_telegram():
         {'command': 'relatoriomensal', 'description': 'Relatório do mês'},
         {'command': 'relatoriogeral', 'description': 'Relatório geral acumulado'},
         {'command': 'radar', 'description': 'Jogos ao vivo e oportunidades'},
+        {'command': 'vip', 'description': 'Assinar acesso VIP via PIX'},
     ]
     try:
         r = requests.post(
