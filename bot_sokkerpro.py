@@ -1909,7 +1909,7 @@ def _vip_state_load():
         try:
             with open(VIP_STATE_FILE) as f: state = json.load(f)
         except Exception as e: print(f'[VIP] Estado local inválido: {e}')
-    state.setdefault('payments', {}); state.setdefault('members', {})
+    state.setdefault('payments', {}); state.setdefault('members', {}); state.setdefault('awaiting_cpf', {})
     return state
 
 def _vip_state_save(state):
@@ -1928,11 +1928,11 @@ def _vip_sales_message():
     support = f'📱 Suporte WhatsApp: {phone}\n' if phone else ''
     return ('━━━━━━━━━━━━━━━━━━━━\n<b>🚀 MÁQUINA DE GREENS VIP</b>\n━━━━━━━━━━━━━━━━━━━━\n\n🔥 <b>SINAIS AO VIVO COM ALTA ASSERTIVIDADE</b>\n\n📊 <b>6 MERCADOS:</b>\n⚽️ Over Gol Intervalo\n⚽️ Over Gol Partida\n⚽️ Over 1.5 Gols Partida\n⚽️ Ambas Marcam\n🚩 Escanteio Limite HT\n🚩 Escanteio Limite FT\n\n💰 <b>Investimento: R$ 50,00</b>\n📅 <b>Acesso: 30 dias + 24h de tolerância</b>\n💳 Pagamento via <b>PIX</b> com aprovação automática\n\n👇 Envie <b>/vip</b> no privado para gerar seu PIX.\n👤 Telegram: <b>@maquinadegreensvip</b>\n' + support + 'ℹ️ Comandos: /vip — gerar PIX | /vipstatus — consultar status\n🛟 Em caso de dúvida, procure o suporte.')
 
-def _vip_create_payment(chat_id, user):
+def _vip_create_payment(chat_id, user, cpf_cnpj):
     headers = _vip_headers()
     if not headers: return None, 'Pagamento temporariamente indisponível. Tente novamente mais tarde.'
     try:
-        c = requests.post(f'{VIP_ASAAS_BASE}/customers', headers=headers, json={'name': (user.get('first_name') or 'Cliente VIP')[:80], 'externalReference': f'telegram:{chat_id}'}, timeout=15)
+        c = requests.post(f'{VIP_ASAAS_BASE}/customers', headers=headers, json={'name': (user.get('first_name') or 'Cliente VIP')[:80], 'cpfCnpj': cpf_cnpj, 'externalReference': f'telegram:{chat_id}'}, timeout=15)
         if c.status_code not in (200, 201): return None, 'Não foi possível iniciar o pagamento.'
         cid = c.json()['id']
         p = requests.post(f'{VIP_ASAAS_BASE}/payments', headers=headers, json={'customer': cid, 'billingType': 'PIX', 'value': VIP_PRICE, 'dueDate': datetime.now(BRT).strftime('%Y-%m-%d'), 'description': 'Acesso Máquina de Greens VIP - 30 dias', 'externalReference': f'telegram:{chat_id}'}, timeout=15)
@@ -1990,10 +1990,28 @@ def _vip_poll_and_expire(state):
 
 def _vip_handle(chat_id, msg):
     if chat_id <= 0: return
-    state = _vip_state_load(); data, err = _vip_create_payment(chat_id, msg.get('from', {}))
-    if err: _vip_send(chat_id, err); return
-    state['payments'][data['id']] = {'chat_id': chat_id, 'status': 'PENDING', 'created_at': datetime.now(timezone.utc).isoformat(), 'customer_id': data['customer_id']}; _vip_state_save(state)
-    _vip_send(chat_id, _vip_sales_message() + f'\n\n<b>PIX COPIA E COLA:</b>\n<code>{data["payload"]}</code>\n\nApós o pagamento, a confirmação e o convite serão enviados automaticamente.')
+    state = _vip_state_load()
+    text = (msg.get('text') or '').strip()
+    uid = str(chat_id)
+    if uid in state.get('awaiting_cpf', {}) and not text.startswith('/'):
+        cpf_cnpj = ''.join(ch for ch in text if ch.isdigit())
+        if len(cpf_cnpj) not in (11, 14):
+            _vip_send(chat_id, 'Envie um CPF com 11 dígitos ou CNPJ com 14 dígitos para gerar o PIX.')
+            return
+        data, err = _vip_create_payment(chat_id, msg.get('from', {}), cpf_cnpj)
+        if err:
+            _vip_send(chat_id, err)
+            return
+        state['awaiting_cpf'].pop(uid, None)
+        state['payments'][data['id']] = {'chat_id': chat_id, 'status': 'PENDING', 'created_at': datetime.now(timezone.utc).isoformat(), 'customer_id': data['customer_id']}
+        _vip_state_save(state)
+        _vip_send(chat_id, _vip_sales_message() + f'\n\n<b>PIX COPIA E COLA:</b>\n<code>{data["payload"]}</code>\n\nApós o pagamento, a confirmação e o convite serão enviados automaticamente.')
+        return
+    if text.partition(' ')[0].partition('@')[0].lower() != '/vip':
+        return
+    state['awaiting_cpf'][uid] = datetime.now(timezone.utc).isoformat()
+    _vip_state_save(state)
+    _vip_send(chat_id, _vip_sales_message() + '\n\nPara gerar sua cobrança Pix, envie agora seu CPF ou CNPJ apenas nesta conversa privada.')
 
 def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=None):
     last_id = 0
@@ -2029,6 +2047,8 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
         if agora_ts - msg_ts > 600:
             continue
         if comando == '/vip':
+            _vip_handle(chat_orig, msg)
+        elif chat_orig > 0 and text and not text.startswith('/'):
             _vip_handle(chat_orig, msg)
         elif comando == '/vipstatus' and chat_orig in _vip_admin_ids():
             st = _vip_state_load(); _vip_send(chat_orig, f'VIP: {len(st["payments"])} pagamentos, {len(st["members"])} membros registrados.')
