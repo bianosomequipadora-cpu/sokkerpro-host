@@ -1697,7 +1697,7 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     else:
         fav_nome = '—'
     # Valores fixos apenas como recomendação, sem representar a odd ao vivo capturada.
-    odd_texto = '<b>💰Odd Asiático Indicada: 1.90</b>' + NL + '<b>💰Odd Limite Indicada: 1.70</b>'
+    odd_texto = '<b>💰Odd Asiático Mínima: 1.90</b>' + NL + '<b>💰Odd Limite Mínima: 1.70</b>'
     prob_texto = (NL + f'<b>📊 Probabilidade: {probabilidade}%</b>') if probabilidade is not None else ''
     sep = '━' * 22
     liga_formatada=nome_liga_exibicao(liga, pais)
