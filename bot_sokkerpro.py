@@ -2188,7 +2188,12 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
         hn = norm_nome_time(h)
         an = norm_nome_time(a)
         dedup_id = hashlib.md5(f'{hn}-{an}'.encode()).hexdigest()[:12]
-        m, p = (j['minuto'], j['period'])
+        m = j['minuto']
+        p_raw = j['period']
+        if isinstance(p_raw, str):
+            p = 2 if '2' in p_raw else 1 if '1' in p_raw else p_raw
+        else:
+            p = p_raw
         sh, sa = (j['sh'], j['sa'])
         liga = str(j['liga'])
         pais = j.get('pais', '')
