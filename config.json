@@ -725,6 +725,41 @@
           "valor": 1
         }
       ]
+    },
+    "custom_1787412825913": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️🥅VEM GOL NO INTERVALO🥅⚽️ — CÓPIA",
+      "minuto_inicio": 10,
+      "minuto_fim": 30,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": "empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "pressure_bar_min",
+          "operador": "gte",
+          "valor": 70
+        },
+        {
+          "campo": "max_red_card_fav",
+          "operador": "lte",
+          "valor": 0
+        },
+        {
+          "campo": "prob_1x2_casa_ou_fora",
+          "operador": "gte",
+          "valor": 70
+        },
+        {
+          "campo": "prob_btts",
+          "operador": "gte",
+          "valor": 70
+        }
+      ]
     }
   }
 }
