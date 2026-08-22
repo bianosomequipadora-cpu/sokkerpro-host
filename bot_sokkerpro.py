@@ -2046,7 +2046,9 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
         msg_ts = msg.get('date', 0)
         if agora_ts - msg_ts > 600:
             continue
-        if comando == '/vip':
+        if comando == '/start' and chat_orig > 0:
+            _vip_send(chat_orig, _vip_sales_message() + '\n\n👇 Para receber sua cobrança Pix, envie /vip.')
+        elif comando == '/vip':
             _vip_handle(chat_orig, msg)
         elif chat_orig > 0 and text and not text.startswith('/'):
             _vip_handle(chat_orig, msg)
