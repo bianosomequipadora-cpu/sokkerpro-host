@@ -1937,6 +1937,14 @@ def _vip_create_payment(chat_id, user):
     except requests.RequestException as e:
         print(f'[VIP] Asaas indisponível: {e}'); return None, 'Serviço de pagamento indisponível. Tente mais tarde.'
 
+VIP_POLL_ENABLED = os.environ.get('VIP_POLL_ENABLED', '').strip().lower() in ('1', 'true', 'yes')
+
+def run_vip_maintenance():
+    """Run VIP payment/member maintenance only when explicitly enabled."""
+    state = _vip_state_load()
+    if _vip_poll_and_expire(state):
+        _vip_state_save(state)
+
 def _vip_poll_and_expire(state):
     headers = _vip_headers(); changed = False
     if headers:
@@ -2127,8 +2135,8 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
     jogos_na_janela = filtrar_janelas(jogos_live)
     print(f'[Janela] {len(jogos_na_janela)} jogos nas janelas alvo')
     check_status_command(total_jogos_live=len(jogos_live), jogos_live=jogos_live, jogos_na_janela=jogos_na_janela)
-    vip_state = _vip_state_load()
-    if _vip_poll_and_expire(vip_state): _vip_state_save(vip_state)
+    if VIP_POLL_ENABLED:
+        run_vip_maintenance()
     try:
         sinais_p = _load_sinais_github()
         if confirmed_ids is None:
