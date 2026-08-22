@@ -686,8 +686,6 @@ def gerar_layout_mercados_hoje():
     sep = '━' * 22
     blocos = []
     for cod, info in dados.items():
-        if info['total'] == 0:
-            continue
         blocos.append(f"<b>{info['nome']}</b>\n   Total: {info['total']} | 🟢 {info['green']} | 🔴 {info['red']} | 🔵 {info['refund']}\n   🎯 Acerto: {info['pct']:.1f}%")
     total_g = sum(d['green'] for d in dados.values())
     total_r = sum(d['red'] for d in dados.values())
