@@ -1926,7 +1926,7 @@ def _vip_send(chat_id, text):
 def _vip_sales_message():
     phone = os.environ.get('VIP_SUPPORT_WHATSAPP', '').strip()
     support = f'📱 Suporte WhatsApp: {phone}\n' if phone else ''
-    return ('━━━━━━━━━━━━━━━━━━━━\n<b>🚀 MÁQUINA DE GREENS VIP</b>\n━━━━━━━━━━━━━━━━━━━━\n\n🔥 <b>SINAIS AO VIVO COM ALTA ASSERTIVIDADE</b>\n\n📊 <b>6 MERCADOS:</b>\n⚽️ Over Gol Intervalo\n⚽️ Over Gol Partida\n⚽️ Over 1.5 Gols Partida\n⚽️ Ambas Marcam\n🚩 Escanteio Limite HT\n🚩 Escanteio Limite FT\n\n💰 <b>Investimento: R$ 50,00</b>\n📅 <b>Acesso: 30 dias + 24h de tolerância</b>\n💳 Pagamento via <b>PIX</b> com aprovação automática\n\n👇 Envie <b>/vip</b> no privado para gerar seu PIX.\n👤 Telegram: <b>@maquinadegreensvip</b>\n' + support + 'ℹ️ Comandos: /vip — gerar PIX | /vipstatus — consultar status\n🛟 Em caso de dúvida, procure o suporte.')
+    return ('━━━━━━━━━━━━━━━━━━━━\n<b>🚀 MÁQUINA DE GREENS VIP</b>\n━━━━━━━━━━━━━━━━━━━━\n\n🔥 <b>SINAIS AO VIVO COM ALTA ASSERTIVIDADE</b>\n\n📊 <b>6 MERCADOS:</b>\n⚽️ Over Gol Intervalo\n⚽️ Over Gol Partida\n⚽️ Over 1.5 Gols Partida\n⚽️ Ambas Marcam\n🚩 Escanteio Limite HT\n🚩 Escanteio Limite FT\n\n💰 <b>Investimento: R$ 50,00</b>\n📅 <b>Acesso: 30 dias + 24h de tolerância</b>\n💳 Pagamento via <b>PIX</b> com aprovação automática\n\n⚠️ Clique aqui👉<b>/vip</b> para gerar seu PIX.\n👤 Telegram: <b>@maquinadegreensvip</b>\n' + support + 'ℹ️ Comandos: /vip — gerar PIX | /vipstatus — consultar status\n🛟 Em caso de dúvida, procure o suporte.')
 
 def _vip_create_payment(chat_id, user, cpf_cnpj):
     headers = _vip_headers()
@@ -2047,7 +2047,7 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
         if agora_ts - msg_ts > 600:
             continue
         if comando == '/start' and chat_orig > 0:
-            _vip_send(chat_orig, _vip_sales_message() + '\n\n👇 Para receber sua cobrança Pix, envie /vip.')
+            _vip_send(chat_orig, _vip_sales_message())
         elif comando == '/vip':
             _vip_handle(chat_orig, msg)
         elif chat_orig > 0 and text and not text.startswith('/'):
