@@ -1753,6 +1753,14 @@ def checar_resultado(sinal):
                 return None
         if not fixture:
             return None
+        # Mercados de escanteio HT sempre usam os escanteios do primeiro tempo.
+        # O /livescores pode trazer o jogo ainda presente com os campos totais;
+        # nesse caso, priorizar explicitamente os campos HT para não classificar
+        # um reembolso como red (ou um green como red).
+        if sinal.get('tipo') == 'escanteio_ht' and fixture.get('localCornersHT') is not None:
+            fixture = dict(fixture)
+            fixture['localCorners'] = fixture.get('localCornersHT')
+            fixture['visitorCorners'] = fixture.get('visitorCornersHT')
         # O status oficial da SokkerPro é a fonte da verdade para o fim do período.
         # Não usar o minuto numérico: em 45+X/90+X ele pode antecipar a auditoria
         # enquanto ainda há acréscimos para jogar.
