@@ -479,7 +479,7 @@
       "minuto_fim": 27,
       "periodo": 1,
       "tipo": "gol_intervalo",
-      "placar_valido": "0x0, 1x1, 2x2",
+      "placar_valido": "0x0",
       "criterios": {
         "situacao_favorito": "empatando"
       },
