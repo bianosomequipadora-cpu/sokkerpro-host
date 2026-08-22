@@ -629,7 +629,7 @@
     "custom_1787278026147": {
       "ativo": true,
       "notificar": true,
-      "nome": "⚽️😈VEM GOL NO INTERVALO😈⚽️",
+      "nome": "⚽️🥅VEM GOL NO INTERVALO🥅⚽️",
       "minuto_inicio": 10,
       "minuto_fim": 30,
       "periodo": 1,
@@ -657,7 +657,7 @@
         {
           "campo": "prob_btts",
           "operador": "gte",
-          "valor": 50
+          "valor": 70
         }
       ]
     },
