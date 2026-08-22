@@ -745,6 +745,26 @@
           "valor": 0
         }
       ]
+    },
+    "custom_1787396671389": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "TESTE MERCADO",
+      "minuto_inicio": 5,
+      "minuto_fim": 40,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": "perdendo_ou_empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 0.3
+        }
+      ]
     }
   }
 }
