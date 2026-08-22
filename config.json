@@ -574,7 +574,7 @@
     "custom_1787226713148": {
       "ativo": true,
       "notificar": true,
-      "nome": "⛳️❤️‍🔥CANTO PRESSÃO HT❤️‍🔥⛳️ ",
+      "nome": "⛳️❤️‍🔥ESCANTEIO PRESSÃO HT❤️‍🔥⛳️ ",
       "minuto_inicio": 32,
       "minuto_fim": 38,
       "periodo": 1,
@@ -694,7 +694,7 @@
     "custom_1787318093917": {
       "ativo": true,
       "notificar": true,
-      "nome": "⛳️⚠️ESCANTEIO ÁSIAT/LMT FT⚠️⛳️ — CÓPIA",
+      "nome": "⛳️⚠️ESCANTEIO ÁSIAT/LMT FT⚠️⛳️",
       "minuto_inicio": 82,
       "minuto_fim": 88,
       "periodo": 2,
@@ -743,26 +743,6 @@
           "campo": "max_red_card_fav",
           "operador": "lte",
           "valor": 0
-        }
-      ]
-    },
-    "custom_1787396671389": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⛳️♨️ESCANTEIO INTERVALO♨️⛳️",
-      "minuto_inicio": 27,
-      "minuto_fim": 40,
-      "periodo": 1,
-      "tipo": "escanteio_ht",
-      "placar_valido": "0x0",
-      "criterios": {
-        "situacao_favorito": "perdendo_ou_empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
-          "valor": 1
         }
       ]
     }
