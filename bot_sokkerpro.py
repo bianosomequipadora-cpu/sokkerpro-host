@@ -921,6 +921,14 @@ def get_jogos_sokkerpro(fids_existentes):
                     oh = _get_float(fix.get('BET365_VENCEDOR_1_LIVE'))
                     oa = _get_float(fix.get('BET365_VENCEDOR_2_LIVE'))
                 pais_fix = fix.get('countryName', '')
+                if isinstance(pais_fix, dict):
+                    pais_fix = pais_fix.get('name') or pais_fix.get('countryName') or pais_fix.get('code') or ''
+                if not pais_fix:
+                    for chave_pais in ('countryCode', 'country_code', 'countryShortCode', 'countryIso'):
+                        valor_pais = fix.get(chave_pais)
+                        if valor_pais:
+                            pais_fix = '__ISO__:' + str(valor_pais).lower()
+                            break
                 if not pais_fix:
                     iso_paises = {
                         'ar':'Argentina','bo':'Bolivia','br':'Brazil','cl':'Chile','co':'Colombia','cr':'Costa Rica','ec':'Ecuador','sv':'El Salvador','gt':'Guatemala','hn':'Honduras','mx':'Mexico','ni':'Nicaragua','pa':'Panama','py':'Paraguay','pe':'Peru','pr':'Puerto Rico','us':'United States','uy':'Uruguay','ve':'Venezuela','ca':'Canada','gb':'England','es':'Spain','pt':'Portugal','it':'Italy','fr':'France','de':'Germany','nl':'Netherlands','be':'Belgium','tr':'Turkey','gr':'Greece','au':'Australia','jp':'Japan','kr':'South Korea','cn':'China','za':'South Africa','ae':'United Arab Emirates','sa':'Saudi Arabia','qa':'Qatar','in':'India','ru':'Russia','ch':'Switzerland','at':'Austria','pl':'Poland','cz':'Czech Republic','dk':'Denmark','se':'Sweden','no':'Norway','fi':'Finland','ua':'Ukraine','il':'Israel','eg':'Egypt','ma':'Morocco','tn':'Tunisia','ng':'Nigeria','gh':'Ghana','az':'Azerbaijan','lt':'Lithuania','bg':'Bulgaria','ee':'Estonia','ro':'Romania','rs':'Serbia','hr':'Croatia','sk':'Slovakia','hu':'Hungary','si':'Slovenia','is':'Iceland','ie':'Ireland','sc':'Scotland','wales':'Wales','al':'Albania','ba':'Bosnia and Herzegovina','me':'Montenegro','mk':'North Macedonia','ge':'Georgia','am':'Armenia','kz':'Kazakhstan','uz':'Uzbekistan','th':'Thailand','my':'Malaysia','id':'Indonesia','vn':'Vietnam','nz':'New Zealand','zw':'Zimbabwe','ke':'Kenya','tz':'Tanzania','ug':'Uganda','dz':'Algeria','cm':'Cameroon','ci':'Ivory Coast','sn':'Senegal','br':'Brazil'
@@ -932,6 +940,8 @@ def get_jogos_sokkerpro(fids_existentes):
                         pais_fix = '__ISO__:' + m_pais.group(1)
                 if not pais_fix and fix.get('leagueName') == 'Premier League' and ({fix.get('localTeamName'), fix.get('visitorTeamName')} & {'Qarabağ', 'Şamaxı FK'}):
                     pais_fix = 'Azerbaijan'
+                if not pais_fix and fix.get('leagueName') == 'Super Liga' and ({fix.get('localTeamName'), fix.get('visitorTeamName')} & {'Sheriff', 'FC Sheriff', 'Sheriff Tiraspol', 'FC Politehnica', 'Politehnica UTM'}):
+                    pais_fix = 'Moldova, Republic of'
                 if not pais_fix and fix.get('leagueName') == 'A Lyga':
                     pais_fix = 'Lithuania'
                 if not pais_fix and fix.get('leagueName') == 'Premiership Development Liga':
