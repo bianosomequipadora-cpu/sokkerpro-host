@@ -43,11 +43,6 @@
           "campo": "pressure_bar_min",
           "operador": "gte",
           "valor": 68
-        },
-        {
-          "campo": "dapm_total_orig_min",
-          "operador": "gte",
-          "valor": 0.7
         }
       ]
     },
@@ -366,56 +361,6 @@
         }
       ]
     },
-    "custom_1786997971499": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️💠OVER 0.5 GOL 1°TEMPO💠⚽️",
-      "minuto_inicio": 14,
-      "minuto_fim": 27,
-      "periodo": 1,
-      "tipo": "gol_intervalo",
-      "placar_valido": "0x0",
-      "criterios": {
-        "situacao_favorito": "empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "media_gols_partida_min",
-          "operador": "gte",
-          "valor": 2.5
-        },
-        {
-          "campo": "chutes_totais_min",
-          "operador": "gte",
-          "valor": 5
-        },
-        {
-          "campo": "escanteios_minimos",
-          "operador": "gte",
-          "valor": 2
-        },
-        {
-          "campo": "max_red_card_fav",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "xg_total_min",
-          "operador": "gte",
-          "valor": 0.7
-        },
-        {
-          "campo": "pressure_bar_min",
-          "operador": "gte",
-          "valor": 70
-        },
-        {
-          "campo": "dapm_total_orig_min",
-          "operador": "gte",
-          "valor": 0.7
-        }
-      ]
-    },
     "custom_1787156064457": {
       "ativo": true,
       "notificar": true,
@@ -524,7 +469,7 @@
     "custom_1787498261093": {
       "ativo": true,
       "notificar": true,
-      "nome": "⚽️🎖OVER GOL HT🎖⚽️",
+      "nome": "⚽️🎖OVER GOL INTERVALO🎖⚽️",
       "minuto_inicio": 5,
       "minuto_fim": 15,
       "periodo": 1,
@@ -553,6 +498,56 @@
           "campo": "pressure_bar_min",
           "operador": "gte",
           "valor": 60
+        }
+      ]
+    },
+    "custom_1787520731132": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️🔥OVER GOL PRESSURE FT🔥⚽️ ",
+      "minuto_inicio": 60,
+      "minuto_fim": 75,
+      "periodo": 1,
+      "tipo": "over_gol",
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": "empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "diferenca_gols_fav_max",
+          "operador": "lte",
+          "valor": 1
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 4
+        },
+        {
+          "campo": "chutes_totais_min",
+          "operador": "gte",
+          "valor": 15
+        },
+        {
+          "campo": "escanteios_minimos",
+          "operador": "gte",
+          "valor": 2
+        },
+        {
+          "campo": "max_red_card_fav",
+          "operador": "lte",
+          "valor": 0
+        },
+        {
+          "campo": "pressure_bar_min",
+          "operador": "gte",
+          "valor": 70
+        },
+        {
+          "campo": "chutes_bloq_max",
+          "operador": "lte",
+          "valor": 2
         }
       ]
     }
