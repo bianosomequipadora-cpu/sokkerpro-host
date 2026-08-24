@@ -2176,7 +2176,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
     global MAPA_MERCADO
     MAPA_MERCADO = _gerar_mapa_mercados()
     'Executa um ciclo completo de coleta, análise e envio.'
-    global _CACHED_DATA
+    global _CACHED_DATA, DATA_UNAVAILABLE
     _CACHED_DATA = None
     DATA_UNAVAILABLE = False
     _repo_atual = os.environ.get('GITHUB_REPOSITORY', '').lower()
