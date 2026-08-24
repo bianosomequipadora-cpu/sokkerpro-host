@@ -761,19 +761,34 @@ def enviar_relatorio_mercados24h():
     """Gera o relatório de mercados 24h. Retorna o texto da mensagem (sem enviar)."""
     return gerar_layout_mercados24h()
 _CACHED_DATA = None
+DATA_UNAVAILABLE = False
 
 def _get_data():
-    """Busca dados do SokkerPro com cache — UMA chamada HTTP por execução."""
-    global _CACHED_DATA
+    """Busca dados do SokkerPro com cache e três tentativas."""
+    global _CACHED_DATA, DATA_UNAVAILABLE
     if _CACHED_DATA is not None:
+        DATA_UNAVAILABLE = False
         return _CACHED_DATA
-    try:
-        r = requests.get(SOKKERPRO_URL, headers={'User-Agent': 'Mozilla/5.0'}, timeout=15)
-        _CACHED_DATA = r.json()
-        return _CACHED_DATA
-    except Exception as e:
-        print(f'[SKP] Erro ao buscar dados: {e}')
-        return None
+    DATA_UNAVAILABLE = False
+    ultimo_erro = None
+    for tentativa in range(1, 4):
+        try:
+            r = requests.get(SOKKERPRO_URL, headers={'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}, timeout=15)
+            r.raise_for_status()
+            dados = r.json()
+            fixtures = dados.get('data', {}).get('sortedCategorizedFixtures') if isinstance(dados, dict) else None
+            if not isinstance(fixtures, list):
+                raise ValueError('resposta sem lista de partidas')
+            _CACHED_DATA = dados
+            return _CACHED_DATA
+        except Exception as e:
+            ultimo_erro = e
+            print(f'[SKP] Tentativa {tentativa}/3 falhou: {e}')
+            if tentativa < 3:
+                time.sleep(2)
+    DATA_UNAVAILABLE = True
+    print(f'[SKP] Fonte indisponível após 3 tentativas: {ultimo_erro}')
+    return None
 
 def _get_float(val, default=0.0):
     if not val or str(val).strip() in ('', 'None'):
@@ -2088,6 +2103,11 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
             except Exception as e:
                 print(f'[PERFORMANCE] Erro: {e}')
         elif comando == '/radar' and (not radar_respondido):
+            if DATA_UNAVAILABLE:
+                msg_radar = f'{sep}\n📡👉<b>RADAR DE JOGOS AO VIVO</b>👈📡\n{sep}\n⚠️ <b>Fonte SokkerPro indisponível neste ciclo.</b>\n🔄 <b>O bot tentou consultar novamente e não recebeu uma resposta válida.</b>\n{sep}'
+                requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage', json={'chat_id': chat_orig, 'text': msg_radar, 'parse_mode': 'HTML'}, timeout=10)
+                radar_respondido = True
+                continue
             jogos_live = jogos_live or []
             jogos_na_janela = jogos_na_janela or []
             if jogos_na_janela:
@@ -2158,6 +2178,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
     'Executa um ciclo completo de coleta, análise e envio.'
     global _CACHED_DATA
     _CACHED_DATA = None
+    DATA_UNAVAILABLE = False
     _repo_atual = os.environ.get('GITHUB_REPOSITORY', '').lower()
     if 'sokkerpro' in _repo_atual:
         BOT_SOURCE = 'sokkerpro'
