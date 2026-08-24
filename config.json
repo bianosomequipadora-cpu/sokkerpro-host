@@ -4,7 +4,7 @@
     "over_gol_partida": {
       "ativo": true,
       "notificar": true,
-      "nome": "⚽️🔰OVER GOLS PARTIDA🔰⚽️",
+      "nome": "⚽️🔰OVER 0.5 GOL PARTIDA🔰⚽️",
       "minuto_inicio": 60,
       "minuto_fim": 75,
       "periodo": 2,
@@ -25,11 +25,6 @@
           "valor": 5
         },
         {
-          "campo": "chutes_totais_min",
-          "operador": "gte",
-          "valor": 10
-        },
-        {
           "campo": "escanteios_minimos",
           "operador": "gte",
           "valor": 4
@@ -42,7 +37,12 @@
         {
           "campo": "pressure_bar_min",
           "operador": "gte",
-          "valor": 68
+          "valor": 65
+        },
+        {
+          "campo": "chutes_inside_total_min",
+          "operador": "gte",
+          "valor": 5
         }
       ]
     },
@@ -93,6 +93,11 @@
           "campo": "dapm_total_orig_min",
           "operador": "gte",
           "valor": 0.7
+        },
+        {
+          "campo": "chutes_inside_total_min",
+          "operador": "gte",
+          "valor": 2
         }
       ]
     },
@@ -419,7 +424,7 @@
     "custom_1787412655338": {
       "ativo": true,
       "notificar": true,
-      "nome": "⚽️💥OVER GOL PRESSURE HT💥⚽️",
+      "nome": "⚽️🔥OVER GOL PRESSURE HT🔥⚽️",
       "minuto_inicio": 10,
       "minuto_fim": 27,
       "periodo": 1,
@@ -527,7 +532,7 @@
         {
           "campo": "chutes_totais_min",
           "operador": "gte",
-          "valor": 15
+          "valor": 10
         },
         {
           "campo": "escanteios_minimos",
@@ -551,40 +556,10 @@
         }
       ]
     },
-    "custom_1787534522289": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️❤️‍🔥OPORTUNIDADE GOL HT❤️‍🔥⚽️",
-      "minuto_inicio": 5,
-      "minuto_fim": 25,
-      "periodo": 1,
-      "tipo": "gol_intervalo",
-      "placar_valido": "0x0",
-      "criterios": {
-        "situacao_favorito": "empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "chutes_inside_total_min",
-          "operador": "gte",
-          "valor": 2
-        },
-        {
-          "campo": "chutes_alvo_min",
-          "operador": "gte",
-          "valor": 2
-        },
-        {
-          "campo": "escanteios_minimos",
-          "operador": "gte",
-          "valor": 2
-        }
-      ]
-    },
     "custom_1787577001547": {
       "ativo": true,
       "notificar": true,
-      "nome": "⚽️♨️GOL DE OURO HT♨️⚽️",
+      "nome": "⚽️♨️GOL DE OURO INTERVALO♨️⚽️",
       "minuto_inicio": 2,
       "minuto_fim": 30,
       "periodo": 1,
@@ -608,6 +583,36 @@
           "campo": "chutes_inside_total_min",
           "operador": "gte",
           "valor": 1
+        }
+      ]
+    },
+    "custom_1787598062908": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️❤️‍🔥OPORTUNIDADE GOL HT❤️‍🔥⚽️ — CÓPIA",
+      "minuto_inicio": 5,
+      "minuto_fim": 25,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": "empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "chutes_inside_total_min",
+          "operador": "gte",
+          "valor": 2
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 2
+        },
+        {
+          "campo": "escanteios_minimos",
+          "operador": "gte",
+          "valor": 2
         }
       ]
     }
