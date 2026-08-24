@@ -892,6 +892,9 @@ def get_jogos_sokkerpro(fids_existentes):
                 if not fid or fid in fids_existentes:
                     continue
                 status = fix.get('status', '')
+                liga_api = str(fix.get('leagueName', ''))
+                if re.search(r"\bwomen(?:'s)?\b|\bfemin(?:ine|ino)?\b|\bfemale\b", liga_api, re.IGNORECASE):
+                    continue
                 minuto = _get_int(fix.get('minute', 0))
                 if status in ('FT', 'PEN'):
                     continue
