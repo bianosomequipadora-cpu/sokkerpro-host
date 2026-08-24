@@ -580,6 +580,36 @@
           "valor": 2
         }
       ]
+    },
+    "custom_1787577001547": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️♨️GOL DE OURO HT♨️⚽️",
+      "minuto_inicio": 2,
+      "minuto_fim": 30,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": ""
+      },
+      "criterios_api": [
+        {
+          "campo": "ataques_perigosos_min",
+          "operador": "gte",
+          "valor": 15
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 1
+        },
+        {
+          "campo": "chutes_inside_total_min",
+          "operador": "gte",
+          "valor": 1
+        }
+      ]
     }
   }
 }
