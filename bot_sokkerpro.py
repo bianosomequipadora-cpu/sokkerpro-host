@@ -621,30 +621,23 @@ def enviar_relatorio_performance():
     return gerar_layout_performance()
 
 def gerar_layout_relatorio_geral():
-    """Gera o acumulado histórico, filtrado pelos mercados ativos atuais."""
+    """Gera o acumulado geral no mesmo formato resumido do relatório mensal."""
     dados, dias_ativos = _agregar_resultados_gerais()
     sep = '━━━━━━━━━━━━━━━━━━━━━━'
-    blocos = []
-    for info in dados.values():
-        if info['total'] == 0:
-            continue
-        blocos.append(
-            f"<b>{info['nome']}</b>\\n"
-            f"   📈 Total: {info['total']} | 🟢 {info['green']} | 🔴 {info['red']} | 🔵 {info['refund']}\\n"
-            f"   🎯 Assertividade: {info['pct']:.1f}%"
-        )
     total_g = sum(info['green'] for info in dados.values())
     total_r = sum(info['red'] for info in dados.values())
     total_f = sum(info['refund'] for info in dados.values())
     total_t = total_g + total_r + total_f
     avaliados = total_g + total_r
     total_pct = total_g / avaliados * 100 if avaliados > 0 else 0.0
-    corpo = f"\\n{sep}\\n".join(blocos) if blocos else 'Nenhum resultado registrado.'
     return (
-        f"{sep}\\n📊<b>RELATÓRIO GERAL</b>📊\\n{sep}\\n{corpo}\\n{sep}\\n"
-        f"📌 <b>TOTAL GERAL: {total_t} Sinais</b>\\n"
-        f"      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\\n"
-        f"📅 Dias com entradas: <b>{len(dias_ativos)}</b>\\n{sep}"
+        f"{sep}\n📊<b>RELATÓRIO GERAL</b>📊\n{sep}\n"
+        f"🟢 GREEN: {total_g}\n"
+        f"🔴 RED: {total_r}\n"
+        f"🔵 REEMBOLSO: {total_f}\n"
+        f"📈 TOTAL GERAL DE ENTRADAS: {total_t}\n"
+        f"🎯 ASSERTIVIDADE: {total_pct:.1f}%\n"
+        f"{sep}\n📅 Dias com entradas: {len(dias_ativos)}\n{sep}"
     )
 
 def enviar_relatorio_geral():
