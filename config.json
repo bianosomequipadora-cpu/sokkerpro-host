@@ -630,12 +630,7 @@
       },
       "criterios_api": [
         {
-          "campo": "ataques_perigosos_min",
-          "operador": "gte",
-          "valor": 10
-        },
-        {
-          "campo": "chutes_inside_total_min",
+          "campo": "chutes_alvo_min",
           "operador": "gte",
           "valor": 1
         }
