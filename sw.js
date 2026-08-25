@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sokkerpro-v2';
+const CACHE_NAME = 'sokkerpro-v3';
 const assets = [
   'painel.html',
   'index.html'
@@ -22,5 +22,5 @@ self.addEventListener('fetch', event => {
     event.respondWith(fetch(event.request, {cache: 'no-store'}));
     return;
   }
-  event.respondWith(caches.match(event.request).then(response => response || fetch(event.request)));
+  event.respondWith(fetch(event.request, {cache: 'no-store'}).then(response => { if (response.ok && new URL(event.request.url).pathname.endsWith('/painel.html')) { const clone=response.clone(); caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone)); } return response; }).catch(() => caches.match(event.request)));
 });
