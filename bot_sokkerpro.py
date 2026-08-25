@@ -108,12 +108,12 @@ TELEGRAM_TOKEN = os.getenv('TG_TOKEN', '')
 TG_TOKEN = TELEGRAM_TOKEN
 CHAT_IDS = [int(id) for id in os.environ.get('TG_GROUP_ID', '').split(',') if id.strip()]
 CHAT_ID = CHAT_IDS[0] if CHAT_IDS else ''
-SOKKERPRO_URL = 'https://m2.sokkerpro.com/livescores'
-SOKKERPRO_URL = 'https://m2.sokkerpro.com/livescores'
-SOKKERPRO_URL = 'https://m2.sokkerpro.com/livescores'
-SOKKERPRO_URL = 'https://m2.sokkerpro.com/livescores'
-SOKKERPRO_URL = 'https://m2.sokkerpro.com/livescores'
-SOKKERPRO_URL = 'https://m2.sokkerpro.com/livescores'
+SOKKERPRO_URL = 'https://r.jina.ai/http://m2.sokkerpro.com/livescores'
+SOKKERPRO_URL = 'https://r.jina.ai/http://m2.sokkerpro.com/livescores'
+SOKKERPRO_URL = 'https://r.jina.ai/http://m2.sokkerpro.com/livescores'
+SOKKERPRO_URL = 'https://r.jina.ai/http://m2.sokkerpro.com/livescores'
+SOKKERPRO_URL = 'https://r.jina.ai/http://m2.sokkerpro.com/livescores'
+SOKKERPRO_URL = 'https://r.jina.ai/http://m2.sokkerpro.com/livescores'
 
 def send_telegram(msg_data, reply_to=None, marca=None, home='', away='', odd_b365_val=None, odd_bano_val=None):
     """Envia mensagem formatada com botões inline."""
@@ -773,9 +773,13 @@ def _get_data():
     ultimo_erro = None
     for tentativa in range(1, 4):
         try:
-            r = requests.get(SOKKERPRO_URL, headers={'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}, timeout=15)
+            r = requests.get(SOKKERPRO_URL, headers={'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}, timeout=30)
             r.raise_for_status()
-            dados = r.json()
+            texto = r.text
+            inicio_json = texto.find('{')
+            if inicio_json < 0:
+                raise ValueError('resposta sem JSON')
+            dados = json.loads(texto[inicio_json:])
             fixtures = dados.get('data', {}).get('sortedCategorizedFixtures') if isinstance(dados, dict) else None
             if not isinstance(fixtures, list):
                 raise ValueError('resposta sem lista de partidas')
@@ -973,11 +977,14 @@ def get_stats_sokkerpro(fid_raw, home='', away=''):
                     # O endpoint geral traz estatísticas, mas as odds por mercado
                     # ficam no endpoint individual da partida.
                     try:
-                        detalhe = requests.get(f'https://m2.sokkerpro.com/fixture/{fid_raw}', headers={'User-Agent': 'Mozilla/5.0'}, timeout=10).json()
+                        detalhe_resp = requests.get(f'https://r.jina.ai/http://m2.sokkerpro.com/fixture/{fid_raw}', headers={'User-Agent': 'Mozilla/5.0'}, timeout=30)
+                        detalhe_texto = detalhe_resp.text
+                        detalhe_inicio = detalhe_texto.find('{')
+                        detalhe = json.loads(detalhe_texto[detalhe_inicio:]) if detalhe_inicio >= 0 else {}
                         if detalhe.get('success') and isinstance(detalhe.get('data'), dict):
                             detalhe_stats = _extrair_stats_sokkerpro(detalhe['data'])
                             stats['odds_mercados'] = detalhe_stats.get('odds_mercados', {})
-                            for campo in ('escanteios_5m','escanteios_5m_h','escanteios_5m_a','escanteios_10m','escanteios_10m_h','escanteios_10m_a','escanteios_15m','escanteios_15m_h','escanteios_15m_a'):
+                            for campo in ('escanteios_5m','escanteios_5m_h','escanteios_5m_a','escanteios_10m','escanteios_10m_h','escanteios_10m_a','escanteios_15m','escanteios_15m_h','escanteios_15m_a','big_chances_h','big_chances_a'):
                                 if campo in detalhe_stats:
                                     stats[campo] = detalhe_stats[campo]
                     except Exception as e:
