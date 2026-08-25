@@ -616,10 +616,10 @@
         }
       ]
     },
-    "custom_1787662389718": {
+    "custom_1787672984278": {
       "ativo": true,
       "notificar": true,
-      "nome": "⚽️🥅OVER GOL HT🥅⚽️",
+      "nome": "⚽️🛜OVER GOL HT🛜⚽️",
       "minuto_inicio": 5,
       "minuto_fim": 25,
       "periodo": 1,
@@ -630,9 +630,19 @@
       },
       "criterios_api": [
         {
-          "campo": "chutes_alvo_min",
+          "campo": "chutes_inside_total_min",
           "operador": "gte",
-          "valor": 1
+          "valor": 2
+        },
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 2
+        },
+        {
+          "campo": "goal_attempts_min",
+          "operador": "gte",
+          "valor": 2
         }
       ]
     }
