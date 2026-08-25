@@ -52,7 +52,6 @@ input:focus { border-color:#ffd700; outline:none; }
 .input-nome { flex:1; margin-right:10px; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:10px; color:#fff; font-size:1em; font-weight:bold; min-width:0; }
 #entradas-resumo>div>div{white-space:nowrap;display:flex;align-items:center;justify-content:flex-start;min-height:0;text-align:left}#entradas-resumo>div>div:nth-child(5){grid-column:1;grid-row:3}.stake-box{display:block!important;grid-column:2;grid-row:3;white-space:normal!important;text-align:left!important;padding-top:2px}.stake-box input{display:block;margin:5px 0 0 26px!important;width:110px;box-sizing:border-box}.roi-inline{margin-top:6px;text-align:center;white-space:nowrap}
 .criterion-modal{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:9999;display:flex;align-items:flex-start;justify-content:center;padding:5vh 14px}.criterion-modal-card{background:#171b22;border:1px solid #394452;border-radius:12px;width:min(620px,96vw);max-height:88vh;display:flex;flex-direction:column;box-shadow:0 10px 35px #000}.criterion-modal-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;color:#fff;font-size:1.05em}.criterion-modal-head button{background:none;border:0;color:#fff;font-size:1.2em}.criterion-modal-card>input{margin:0 14px 10px;padding:12px;border-radius:8px;border:1px solid #536273;background:#0e1218;color:#fff;font-size:1em}.criterion-options{overflow:auto;padding:0 10px 12px}.criterion-option{display:block;width:100%;text-align:left;background:#222a35;color:#fff;border:1px solid #3b4756;border-radius:7px;padding:11px 13px;margin:6px 0;font-size:.95em}.criterion-option:hover{background:#30445a}
-.login-container{display:none!important;}
 </style>
 </head>
 <body onload="checkLogin()">
@@ -75,8 +74,6 @@ var REPO = 'bianosomequipadora-cpu/sokkerpro-host';
 function checkLogin() {
     TOKEN = localStorage.getItem('github_token');
     if(!TOKEN) TOKEN=sessionStorage.getItem('github_token');
-    var principal = document.getElementById('main-content');
-    if(principal) principal.classList.remove('hidden');
     carregarDoGitHub();
 }
 function doLogin() {
