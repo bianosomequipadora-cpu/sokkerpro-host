@@ -38,8 +38,9 @@ def gerar_layout_relatorio(greens, reds, data_str, refunds=0):
 
 def gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos, refunds=0):
     sep = '━' * 22
-    total = greens + reds
-    taxa = greens / total * 100 if total > 0 else 0.0
+    total = greens + reds + refunds
+    avaliados = greens + reds
+    taxa = greens / avaliados * 100 if avaliados > 0 else 0.0
     msg = f'{sep}\n'
     msg += f'<b>📊 RELATÓRIO MENSAL — {mes_nome}</b>\n'
     msg += f'{sep}\n'
@@ -422,22 +423,53 @@ def salvar_resultado(resultado, mercado=None, fixture_id=None):
     registros.append({'data': hoje, 'resultado': resultado, 'mercado': mercado, 'fixture_id': fixture_id, 'timestamp': datetime.now(BRT).isoformat()})
     _save_resultados_github(registros)
 
-def get_relatorio_mensal():
-    hoje = datetime.now(BRT)
-    mes_str = hoje.strftime('%Y-%m')
-    greens, reds, refunds = (0, 0, 0)
-    registros = _load_resultados_github()
+def _agregar_resultados(filtro_data=None):
+    """Agrega resultados usando somente os códigos do MAPA_MERCADO vigente.
+
+    ``filtro_data`` recebe uma função que retorna True para os registros a
+    considerar; None significa todas as datas disponíveis. Esta é a fonte
+    compartilhada pelos relatórios mensal e geral, evitando incluir mercados
+    históricos que já não estão no painel ativo.
+    """
+    dados = {cod: {'nome': nome, 'green': 0, 'red': 0, 'refund': 0, 'total': 0}
+             for cod, nome in MAPA_MERCADO.items()}
     dias_ativos = set()
-    for r in registros:
-        data_reg = r.get('data', '')
-        if data_reg.startswith(mes_str):
+    for registro in _load_resultados_github():
+        if filtro_data is not None and not filtro_data(registro):
+            continue
+        resultado = str(registro.get('resultado', '')).strip().lower()
+        if resultado not in ('green', 'red', 'refund', 'reembolso'):
+            continue
+        mercado = registro.get('mercado')
+        if mercado not in dados:
+            continue
+        data_reg = str(registro.get('data', ''))
+        if data_reg:
             dias_ativos.add(data_reg)
-            if r.get('resultado') == 'green':
-                greens += 1
-            elif r.get('resultado') == 'red':
-                reds += 1
-            elif r.get('resultado') == 'refund':
-                refunds += 1
+        campo = 'refund' if resultado in ('refund', 'reembolso') else resultado
+        dados[mercado][campo] += 1
+    for grupo in dados.values():
+        grupo['total'] = grupo['green'] + grupo['red'] + grupo['refund']
+        avaliados = grupo['green'] + grupo['red']
+        grupo['pct'] = grupo['green'] / avaliados * 100 if avaliados > 0 else 0.0
+    return dados, dias_ativos
+
+def _agregar_resultados_mensais(mes_str):
+    """Agrega resultados do mês usando o MAPA_MERCADO vigente."""
+    return _agregar_resultados(
+        lambda registro: str(registro.get('data', '')).startswith(mes_str)
+    )
+
+def _agregar_resultados_gerais():
+    """Agrega resultados de todas as datas disponíveis no arquivo histórico."""
+    return _agregar_resultados()
+
+def get_relatorio_mensal():
+    mes_str = datetime.now(BRT).strftime('%Y-%m')
+    dados, dias_ativos = _agregar_resultados_mensais(mes_str)
+    greens = sum(grupo['green'] for grupo in dados.values())
+    reds = sum(grupo['red'] for grupo in dados.values())
+    refunds = sum(grupo['refund'] for grupo in dados.values())
     return (greens, reds, len(dias_ativos), refunds)
 
 def get_relatorio_hoje():
@@ -588,6 +620,30 @@ def enviar_relatorio_performance():
     """Gera o relatório de performance. Retorna o texto da mensagem (sem enviar)."""
     return gerar_layout_performance()
 
+def gerar_layout_relatorio_geral():
+    """Gera o acumulado geral no mesmo formato resumido do relatório mensal."""
+    dados, dias_ativos = _agregar_resultados_gerais()
+    sep = '━━━━━━━━━━━━━━━━━━━━━━'
+    total_g = sum(info['green'] for info in dados.values())
+    total_r = sum(info['red'] for info in dados.values())
+    total_f = sum(info['refund'] for info in dados.values())
+    total_t = total_g + total_r + total_f
+    avaliados = total_g + total_r
+    total_pct = total_g / avaliados * 100 if avaliados > 0 else 0.0
+    return (
+        f"{sep}\n📊<b>RELATÓRIO GERAL</b>📊\n{sep}\n"
+        f"🟢 GREEN: {total_g}\n"
+        f"🔴 RED: {total_r}\n"
+        f"🔵 REEMBOLSO: {total_f}\n"
+        f"📈 TOTAL GERAL DE ENTRADAS: {total_t}\n"
+        f"🎯 ASSERTIVIDADE: {total_pct:.1f}%\n"
+        f"{sep}\n📅 Dias com entradas: {len(dias_ativos)}\n{sep}"
+    )
+
+def enviar_relatorio_geral():
+    """Gera o relatório geral acumulado sem enviá-lo diretamente."""
+    return gerar_layout_relatorio_geral()
+
 def get_performance_hoje():
     """Retorna performance por mercado somente dos resultados do dia no fuso BRT."""
     hoje = datetime.now(BRT).strftime('%Y-%m-%d')
@@ -623,8 +679,6 @@ def gerar_layout_mercados_hoje():
     sep = '━' * 22
     blocos = []
     for cod, info in dados.items():
-        if info['total'] == 0:
-            continue
         blocos.append(f"<b>{info['nome']}</b>\n   Total: {info['total']} | 🟢 {info['green']} | 🔴 {info['red']} | 🔵 {info['refund']}\n   🎯 Acerto: {info['pct']:.1f}%")
     total_g = sum(d['green'] for d in dados.values())
     total_r = sum(d['red'] for d in dados.values())
@@ -637,49 +691,10 @@ def gerar_layout_mercados_hoje():
     return f"{sep}\n📊<b>MERCADOS — {data_hoje}</b>📊\n{sep}\n{corpo}\n{sep}\n📌 <b>TOTAL DO DIA: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n{sep}"
 
 def get_performance_mensal():
-    """Retorna performance por mercado somente do mês atual no fuso BRT."""
+    """Retorna performance por mercado no mesmo recorte do relatório mensal."""
     mes_atual = datetime.now(BRT).strftime('%Y-%m')
-    registros = _load_resultados_github()
-    perf = {cod: {'nome': nome, 'green': 0, 'red': 0, 'refund': 0, 'total': 0} for cod, nome in MAPA_MERCADO.items()}
-    for r in registros:
-        if not str(r.get('data', '')).startswith(mes_atual):
-            continue
-        mercado = r.get('mercado', '')
-        resultado = r.get('resultado', '')
-        if mercado not in perf or not resultado:
-            continue
-        perf[mercado]['total'] += 1
-        if resultado == 'green':
-            perf[mercado]['green'] += 1
-        elif resultado == 'refund':
-            perf[mercado]['refund'] += 1
-        else:
-            perf[mercado]['red'] += 1
-    for info in perf.values():
-        g, r, f = info['green'], info['red'], info['refund']
-        info['total'] = g + r + f
-        info['pct'] = g / (g + r) * 100 if (g + r) > 0 else 0
-    return perf
-
-def gerar_layout_mercados_mensal():
-    dados = get_performance_mensal()
-    sep = '━' * 22
-    blocos = []
-    for info in dados.values():
-        if info['total'] == 0:
-            continue
-        blocos.append(f"<b>{info['nome']}</b>\n   Total: {info['total']} | 🟢 {info['green']} | 🔴 {info['red']} | 🔵 {info['refund']}\n   🎯 Acerto: {info['pct']:.1f}%")
-    total_g = sum(d['green'] for d in dados.values())
-    total_r = sum(d['red'] for d in dados.values())
-    total_f = sum(d['refund'] for d in dados.values())
-    total_t = total_g + total_r + total_f
-    avaliados = total_g + total_r
-    pct = total_g / avaliados * 100 if avaliados > 0 else 0
-    corpo = (f"{chr(10)}{sep}{chr(10)}".join(blocos) if blocos else 'Nenhum resultado registrado neste mês.')
-    meses_pt = ['JANEIRO', 'FEVEREIRO', 'MARÇO', 'ABRIL', 'MAIO', 'JUNHO', 'JULHO', 'AGOSTO', 'SETEMBRO', 'OUTUBRO', 'NOVEMBRO', 'DEZEMBRO']
-    agora = datetime.now(BRT)
-    mes = f'{meses_pt[agora.month - 1]}/{agora.year}'
-    return f"{sep}\n📊<b>MERCADOS — {mes}</b>📊\n{sep}\n{corpo}\n{sep}\n📌 <b>TOTAL DO MÊS: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {pct:.1f}%|\n{sep}"
+    dados, _ = _agregar_resultados_mensais(mes_atual)
+    return dados
 
 def get_performance_24h():
     """Retorna performance por mercado nas últimas 24h a partir dos resultados salvos."""
@@ -746,19 +761,34 @@ def enviar_relatorio_mercados24h():
     """Gera o relatório de mercados 24h. Retorna o texto da mensagem (sem enviar)."""
     return gerar_layout_mercados24h()
 _CACHED_DATA = None
+DATA_UNAVAILABLE = False
 
 def _get_data():
-    """Busca dados do SokkerPro com cache — UMA chamada HTTP por execução."""
-    global _CACHED_DATA
+    """Busca dados do SokkerPro com cache e três tentativas."""
+    global _CACHED_DATA, DATA_UNAVAILABLE
     if _CACHED_DATA is not None:
+        DATA_UNAVAILABLE = False
         return _CACHED_DATA
-    try:
-        r = requests.get(SOKKERPRO_URL, headers={'User-Agent': 'Mozilla/5.0'}, timeout=15)
-        _CACHED_DATA = r.json()
-        return _CACHED_DATA
-    except Exception as e:
-        print(f'[SKP] Erro ao buscar dados: {e}')
-        return None
+    DATA_UNAVAILABLE = False
+    ultimo_erro = None
+    for tentativa in range(1, 4):
+        try:
+            r = requests.get(SOKKERPRO_URL, headers={'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}, timeout=15)
+            r.raise_for_status()
+            dados = r.json()
+            fixtures = dados.get('data', {}).get('sortedCategorizedFixtures') if isinstance(dados, dict) else None
+            if not isinstance(fixtures, list):
+                raise ValueError('resposta sem lista de partidas')
+            _CACHED_DATA = dados
+            return _CACHED_DATA
+        except Exception as e:
+            ultimo_erro = e
+            print(f'[SKP] Tentativa {tentativa}/3 falhou: {e}')
+            if tentativa < 3:
+                time.sleep(2)
+    DATA_UNAVAILABLE = True
+    print(f'[SKP] Fonte indisponível após 3 tentativas: {ultimo_erro}')
+    return None
 
 def _get_float(val, default=0.0):
     if not val or str(val).strip() in ('', 'None'):
@@ -862,7 +892,7 @@ def _extrair_stats_sokkerpro(fix):
             valor = _get_float(bruto, None)
             if valor is not None and valor > 1:
                 odds_mercados[str(chave)] = valor
-    return {'chutes_tot_h': g('localShotsTotal'), 'chutes_tot_a': g('visitorShotsTotal'), 'chutes_gol_h': g('localShotsOnGoal'), 'chutes_gol_a': g('visitorShotsOnGoal'), 'escanteios_h': _corners('localCorners'), 'escanteios_a': _corners('visitorCorners'), 'escanteios_5m': g('corners5m'), 'escanteios_5m_h': g('localCorners5m'), 'escanteios_5m_a': g('visitorCorners5m'), 'escanteios_10m': g('corners10m'), 'escanteios_10m_h': g('localCorners10m'), 'escanteios_10m_a': g('visitorCorners10m'), 'escanteios_15m': g('corners15m'), 'escanteios_15m_h': g('localCorners15m'), 'escanteios_15m_a': g('visitorCorners15m'), 'odd_gols_ht_over_0_5': gf('BET365_GOLS1T_OVER_0_5'), 'odd_gols_ht_over_1_5': gf('BET365_GOLS1T_OVER_1_5'), 'odd_gols_ht_over_2_5': gf('BET365_GOLS1T_OVER_2_5'), 'odd_gols_ht_over_3_5': gf('BET365_GOLS1T_OVER_3_5'), 'odd_gols_ft_over_0_5': gf('BET365_GOLS_OVER_0_5'), 'odd_gols_ft_over_1_5': gf('BET365_GOLS_OVER_1_5'), 'odd_gols_ft_over_2_5': gf('BET365_GOLS_OVER_2_5'), 'odd_gols_ft_over_3_5': gf('BET365_GOLS_OVER_3_5'), 'odd_cantos_ht_over_4': gf('BET365_CANTO1T_OVER_4'), 'odd_cantos_ft_over_7': gf('BET365_CANTO_OVER_7'), 'odd_cantos_ft_over_10': gf('BET365_CANTO_OVER_10'), 'odd_btts_ht_sim': gf('BET365_AMBAS1T_YES'), 'odd_btts_ht_nao': gf('BET365_AMBAS1T_NO'), 'odd_vencedor_ht_casa': gf('BET365_VENCEDOR1T_HOME'), 'odd_vencedor_ht_empate': gf('BET365_VENCEDOR1T_DRAW'), 'odd_vencedor_ht_fora': gf('BET365_VENCEDOR1T_AWAY'), 'odd_vencedor_ft_casa': gf('BET365_VENCEDOR_HOME'), 'odd_vencedor_ft_empate': gf('BET365_VENCEDOR_DRAW'), 'odd_vencedor_ft_fora': gf('BET365_VENCEDOR_AWAY'), 'ataques_perigosos_h': g('localAttacksDangerousAttacks'), 'ataques_perigosos_a': g('visitorAttacksDangerousAttacks'), 'red_cards_h': g('localRedCards'), 'red_cards_a': g('visitorRedCards'), 'dapm5_h': gf('localDapm5'), 'dapm5_a': gf('visitorDapm5'), 'dapm10_h': gf('localDapm10'), 'dapm10_a': gf('visitorDapm10'), 'dapm_total_h': gf('localDapmTotal'), 'dapm_total_a': gf('visitorDapmTotal'), 'medias_home_goal': gf('medias_home_goal'), 'medias_away_goal': gf('medias_away_goal'), 'medias_goal_h': gf('medias_home_goal'), 'medias_goal_a': gf('medias_away_goal'), 'medias_home_corners': gf('medias_home_corners'), 'medias_away_corners': gf('medias_away_corners'), 'medias_corners_h': gf('medias_home_corners'), 'medias_corners_a': gf('medias_away_corners'), 'chutes_inside_h': g('localShotsInsideBox'), 'chutes_inside_a': g('visitorShotsInsideBox'), 'chutes_outside_h': g('localShotsOutsideBox'), 'chutes_outside_a': g('visitorShotsOutsideBox'), 'chutes_bloq_h': g('localShotsBlocked'), 'chutes_bloq_a': g('visitorShotsBlocked'), 'goal_attempts_h': g('localGoalAttempts'), 'goal_attempts_a': g('visitorGoalAttempts'), 'grandes_chances_h': g('localBigChancesCreated'), 'grandes_chances_a': g('visitorBigChancesCreated'), 'faltas_h': g('localFouls'), 'faltas_a': g('visitorFouls'), 'yellow_cards_h': g('localYellowCards'), 'yellow_cards_a': g('visitorYellowCards'), 'impedimentos_h': g('localOffsides'), 'impedimentos_a': g('visitorOffsides'), 'defesas_h': g('localSaves'), 'defesas_a': g('visitorSaves'), 'pressure_bar_h': g('localPressureBar'), 'pressure_bar_a': g('visitorPressureBar'), 'ball_safe_h': g('localBallSafe'), 'ball_safe_a': g('visitorBallSafe'), 'xg_h': gf('localXg'), 'xg_a': gf('visitorXg'), 'posse_h': gf('localBallPossession'), 'posse_a': gf('visitorBallPossession'), 'ataques_h': g('localAttacksAttacks'), 'ataques_a': g('visitorAttacksAttacks'), 'btts_probabilidade': btts_prob, 'media_gols_ht_h': media_gols_ht_h, 'media_gols_ht_a': media_gols_ht_a, 'media_gols_ft_h': media_gols_ft_h, 'media_gols_ft_a': media_gols_ft_a, 'dapm_max_h': dapm_max, 'dapm_max_a': dapm_max, 'prob_mercados': prob_mercados, 'odds_mercados': odds_mercados}
+    return {'chutes_tot_h': g('localShotsTotal'), 'chutes_tot_a': g('visitorShotsTotal'), 'chutes_gol_h': g('localShotsOnGoal'), 'chutes_gol_a': g('visitorShotsOnGoal'), 'escanteios_h': _corners('localCorners'), 'escanteios_a': _corners('visitorCorners'), 'escanteios_5m': g('corners5m'), 'escanteios_5m_h': g('localCorners5m'), 'escanteios_5m_a': g('visitorCorners5m'), 'escanteios_10m': g('corners10m'), 'escanteios_10m_h': g('localCorners10m'), 'escanteios_10m_a': g('visitorCorners10m'), 'escanteios_15m': g('corners15m'), 'escanteios_15m_h': g('localCorners15m'), 'escanteios_15m_a': g('visitorCorners15m'), 'odd_gols_ht_over_0_5': gf('BET365_GOLS1T_OVER_0_5'), 'odd_gols_ht_over_1_5': gf('BET365_GOLS1T_OVER_1_5'), 'odd_gols_ht_over_2_5': gf('BET365_GOLS1T_OVER_2_5'), 'odd_gols_ht_over_3_5': gf('BET365_GOLS1T_OVER_3_5'), 'odd_gols_ft_over_0_5': gf('BET365_GOLS_OVER_0_5'), 'odd_gols_ft_over_1_5': gf('BET365_GOLS_OVER_1_5'), 'odd_gols_ft_over_2_5': gf('BET365_GOLS_OVER_2_5'), 'odd_gols_ft_over_3_5': gf('BET365_GOLS_OVER_3_5'), 'odd_cantos_ht_over_4': gf('BET365_CANTO1T_OVER_4'), 'odd_cantos_ft_over_7': gf('BET365_CANTO_OVER_7'), 'odd_cantos_ft_over_10': gf('BET365_CANTO_OVER_10'), 'odd_btts_ht_sim': gf('BET365_AMBAS1T_YES'), 'odd_btts_ht_nao': gf('BET365_AMBAS1T_NO'), 'odd_vencedor_ht_casa': gf('BET365_VENCEDOR1T_HOME'), 'odd_vencedor_ht_empate': gf('BET365_VENCEDOR1T_DRAW'), 'odd_vencedor_ht_fora': gf('BET365_VENCEDOR1T_AWAY'), 'odd_vencedor_ft_casa': gf('BET365_VENCEDOR_HOME'), 'odd_vencedor_ft_empate': gf('BET365_VENCEDOR_DRAW'), 'odd_vencedor_ft_fora': gf('BET365_VENCEDOR_AWAY'), 'ataques_perigosos_h': g('localAttacksDangerousAttacks'), 'ataques_perigosos_a': g('visitorAttacksDangerousAttacks'), 'red_cards_h': g('localRedCards'), 'red_cards_a': g('visitorRedCards'), 'dapm5_h': gf('localDapm5'), 'dapm5_a': gf('visitorDapm5'), 'dapm10_h': gf('localDapm10'), 'dapm10_a': gf('visitorDapm10'), 'dapm_total_h': gf('localDapmTotal'), 'dapm_total_a': gf('visitorDapmTotal'), 'medias_home_goal': gf('medias_home_goal'), 'medias_away_goal': gf('medias_away_goal'), 'medias_goal_h': gf('medias_home_goal'), 'medias_goal_a': gf('medias_away_goal'), 'medias_home_corners': gf('medias_home_corners'), 'medias_away_corners': gf('medias_away_corners'), 'medias_corners_h': gf('medias_home_corners'), 'medias_corners_a': gf('medias_away_corners'), 'chutes_inside_h': g('localShotsInsideBox'), 'chutes_inside_a': g('visitorShotsInsideBox'), 'chutes_outside_h': g('localShotsOutsideBox'), 'chutes_outside_a': g('visitorShotsOutsideBox'), 'chutes_bloq_h': g('localShotsBlocked'), 'chutes_bloq_a': g('visitorShotsBlocked'), 'goal_attempts_h': g('localGoalAttempts'), 'goal_attempts_a': g('visitorGoalAttempts'), 'big_chances_h': g('localBigChancesCreated'), 'big_chances_a': g('visitorBigChancesCreated'), 'faltas_h': g('localFouls'), 'faltas_a': g('visitorFouls'), 'yellow_cards_h': g('localYellowCards'), 'yellow_cards_a': g('visitorYellowCards'), 'impedimentos_h': g('localOffsides'), 'impedimentos_a': g('visitorOffsides'), 'defesas_h': g('localSaves'), 'defesas_a': g('visitorSaves'), 'pressure_bar_h': g('localPressureBar'), 'pressure_bar_a': g('visitorPressureBar'), 'ball_safe_h': g('localBallSafe'), 'ball_safe_a': g('visitorBallSafe'), 'xg_h': gf('localXg'), 'xg_a': gf('visitorXg'), 'posse_h': gf('localBallPossession'), 'posse_a': gf('visitorBallPossession'), 'ataques_h': g('localAttacksAttacks'), 'ataques_a': g('visitorAttacksAttacks'), 'btts_probabilidade': btts_prob, 'media_gols_ht_h': media_gols_ht_h, 'media_gols_ht_a': media_gols_ht_a, 'media_gols_ft_h': media_gols_ft_h, 'media_gols_ft_a': media_gols_ft_a, 'dapm_max_h': dapm_max, 'dapm_max_a': dapm_max, 'prob_mercados': prob_mercados, 'odds_mercados': odds_mercados}
 
 def get_jogos_sokkerpro(fids_existentes):
     """Busca jogos, stats E odds em UMA unica chamada HTTP."""
@@ -877,6 +907,9 @@ def get_jogos_sokkerpro(fids_existentes):
                 if not fid or fid in fids_existentes:
                     continue
                 status = fix.get('status', '')
+                liga_api = str(fix.get('leagueName', ''))
+                if re.search(r"\bwomen(?:'s)?\b|\bfemin(?:ine|ino)?\b|\bfemale\b", liga_api, re.IGNORECASE):
+                    continue
                 minuto = _get_int(fix.get('minute', 0))
                 if status in ('FT', 'PEN'):
                     continue
@@ -898,18 +931,27 @@ def get_jogos_sokkerpro(fids_existentes):
                 if not (oh > 1 and oa > 1):
                     oh = _get_float(fix.get('BET365_VENCEDOR_1_LIVE'))
                     oa = _get_float(fix.get('BET365_VENCEDOR_2_LIVE'))
-                pais_fix = fix.get('countryName', '')
+                pais_fix = fix.get('countryName') or cat.get('countryName', '')
+                if isinstance(pais_fix, dict):
+                    pais_fix = pais_fix.get('name') or pais_fix.get('countryName') or pais_fix.get('code') or ''
+                if not pais_fix:
+                    for chave_pais in ('countryCode', 'country_code', 'countryShortCode', 'countryIso'):
+                        valor_pais = fix.get(chave_pais)
+                        if valor_pais:
+                            pais_fix = '__ISO__:' + str(valor_pais).lower()
+                            break
                 if not pais_fix:
                     iso_paises = {
                         'ar':'Argentina','bo':'Bolivia','br':'Brazil','cl':'Chile','co':'Colombia','cr':'Costa Rica','ec':'Ecuador','sv':'El Salvador','gt':'Guatemala','hn':'Honduras','mx':'Mexico','ni':'Nicaragua','pa':'Panama','py':'Paraguay','pe':'Peru','pr':'Puerto Rico','us':'United States','uy':'Uruguay','ve':'Venezuela','ca':'Canada','gb':'England','es':'Spain','pt':'Portugal','it':'Italy','fr':'France','de':'Germany','nl':'Netherlands','be':'Belgium','tr':'Turkey','gr':'Greece','au':'Australia','jp':'Japan','kr':'South Korea','cn':'China','za':'South Africa','ae':'United Arab Emirates','sa':'Saudi Arabia','qa':'Qatar','in':'India','ru':'Russia','ch':'Switzerland','at':'Austria','pl':'Poland','cz':'Czech Republic','dk':'Denmark','se':'Sweden','no':'Norway','fi':'Finland','ua':'Ukraine','il':'Israel','eg':'Egypt','ma':'Morocco','tn':'Tunisia','ng':'Nigeria','gh':'Ghana','az':'Azerbaijan','lt':'Lithuania','bg':'Bulgaria','ee':'Estonia','ro':'Romania','rs':'Serbia','hr':'Croatia','sk':'Slovakia','hu':'Hungary','si':'Slovenia','is':'Iceland','ie':'Ireland','sc':'Scotland','wales':'Wales','al':'Albania','ba':'Bosnia and Herzegovina','me':'Montenegro','mk':'North Macedonia','ge':'Georgia','am':'Armenia','kz':'Kazakhstan','uz':'Uzbekistan','th':'Thailand','my':'Malaysia','id':'Indonesia','vn':'Vietnam','nz':'New Zealand','zw':'Zimbabwe','ke':'Kenya','tz':'Tanzania','ug':'Uganda','dz':'Algeria','cm':'Cameroon','ci':'Ivory Coast','sn':'Senegal','br':'Brazil'
                     }
-                    import re
                     caminho_pais = str(fix.get('countryImagePath', ''))
                     m_pais = re.search(r'/short/([a-z]{2})\.png', caminho_pais.lower())
                     if m_pais:
                         pais_fix = '__ISO__:' + m_pais.group(1)
                 if not pais_fix and fix.get('leagueName') == 'Premier League' and ({fix.get('localTeamName'), fix.get('visitorTeamName')} & {'Qarabağ', 'Şamaxı FK'}):
                     pais_fix = 'Azerbaijan'
+                if not pais_fix and fix.get('leagueName') == 'Super Liga' and ({fix.get('localTeamName'), fix.get('visitorTeamName')} & {'Sheriff', 'FC Sheriff', 'Sheriff Tiraspol', 'FC Politehnica', 'Politehnica UTM'}):
+                    pais_fix = 'Moldova, Republic of'
                 if not pais_fix and fix.get('leagueName') == 'A Lyga':
                     pais_fix = 'Lithuania'
                 if not pais_fix and fix.get('leagueName') == 'Premiership Development Liga':
@@ -1607,8 +1649,12 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     chutes_a = stats.get('chutes_tot_a', 0) if stats else 0
     alvo_h = stats.get('chutes_gol_h', 0) if stats else 0
     alvo_a = stats.get('chutes_gol_a', 0) if stats else 0
-    grandes_h = stats.get('grandes_chances_h', 0) if stats else 0
-    grandes_a = stats.get('grandes_chances_a', 0) if stats else 0
+    tentativas_h = stats.get('goal_attempts_h', 0) if stats else 0
+    tentativas_a = stats.get('goal_attempts_a', 0) if stats else 0
+    grandes_h = stats.get('big_chances_h', 0) if stats else 0
+    grandes_a = stats.get('big_chances_a', 0) if stats else 0
+    dentro_h = stats.get('chutes_inside_h', 0) if stats else 0
+    dentro_a = stats.get('chutes_inside_a', 0) if stats else 0
     cant_h = max(0, stats.get('escanteios_h', 0) if stats else 0)
     cant_a = max(0, stats.get('escanteios_a', 0) if stats else 0)
     atq_per_h = stats.get('ataques_perigosos_h', 0) if stats else 0
@@ -1677,7 +1723,7 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     else:
         fav_nome = '—'
     # Valores fixos apenas como recomendação, sem representar a odd ao vivo capturada.
-    odd_texto = '<b>💰Odd Asiático Indicada: 1.90</b>' + NL + '<b>💰Odd Limite Indicada: 1.70</b>'
+    odd_texto = '<b>💰Odd Asiático Mínima: 1.90</b>' + NL + '<b>💰Odd Limite Mínima: 1.70</b>'
     prob_texto = (NL + f'<b>📊 Probabilidade: {probabilidade}%</b>') if probabilidade is not None else ''
     sep = '━' * 22
     liga_formatada=nome_liga_exibicao(liga, pais)
@@ -1693,7 +1739,7 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
         pais_texto=''
     liga_texto = '<b>🌍 Liga: ' + liga + '</b>'
     pais_texto_linha = '<b>🗺️País: ' + pais_texto + '</b>' if pais_texto else ''
-    msg = f'{sep}' + NL + f'<b>{title}</b>' + NL + f'{sep}' + NL + f'<b>⚽️ Placar: {placar}</b>' + NL + f'{liga_texto}' + (NL + pais_texto_linha if pais_texto_linha else '') + NL + f'<b>📡 {home} x {away}</b>' + NL + f'<b>👀 ODDs: Casa {(odd_h if odd_h else chr(8212))} / Fora {(odd_a if odd_a else chr(8212))}</b>' + NL + '<b>⏰️ Minuto: ' + str(minuto) + "'</b>" + NL + f'{sep}' + NL + '<b>📊 Estatísticas ao Vivo da Partida:</b>' + NL + f'<b>🚀 Chutes Totais: {chutes_h} | {chutes_a}</b>' + NL + f'<b>🎯 Chutes No Alvo: {alvo_h} | {alvo_a}</b>' + NL + f'<b>⛳️ Escanteios: {cant_h} | {cant_a}</b>' + NL + f'<b>💥 Grandes Chances Criadas: {grandes_h} | {grandes_a}</b>' + NL + f'<b>⚔️ Ataques Perigosos: {atq_per_h} | {atq_per_a}</b>' + NL + f'<b>🌋 Pressão Da Partida: {pressao_h} | {pressao_a}</b>' + NL + f'<b>🔥 APPM da Partida: {appm}</b>' + NL + f'<b>🔥 APPM Últ 10 Min: {dapm10}</b>' + NL + f'<b>🔥 APPM Últ 5 Min: {dapm5}</b>' + NL + f'{sep}' + NL + '<b>💡 Análise Técnica da Partida:</b>' + NL + f'<b>🎯 Favorito: {fav_nome}</b>' + NL + f'<b>🚨 Alerta: {alerta}</b>' + NL + f'{sep}' + NL + f'<b>📌 Entrada: {entrada}</b>' + prob_texto + NL + odd_texto + NL + f'{sep}' + NL + '<b>🔔Jogue com Responsabilidade🔔</b>'
+    msg = f'{sep}' + NL + f'<b>{title}</b>' + NL + f'{sep}' + NL + f'<b>⚽️ Placar: {placar}</b>' + NL + f'{liga_texto}' + (NL + pais_texto_linha if pais_texto_linha else '') + NL + f'<b>📡 {home} x {away}</b>' + NL + f'<b>👀 ODDs: Casa {(odd_h if odd_h else chr(8212))} / Fora {(odd_a if odd_a else chr(8212))}</b>' + NL + '<b>⏰️ Minuto: ' + str(minuto) + "'</b>" + NL + f'{sep}' + NL + '<b>📊 Estatísticas ao Vivo da Partida:</b>' + NL + f'<b>🚀 Chutes totais: {chutes_h} | {chutes_a}</b>' + NL + f'<b>🎯 Chutes no alvo: {alvo_h} | {alvo_a}</b>' + NL + f'<b>⚡️ Tentativas de gol: {tentativas_h} | {tentativas_a}</b>' + NL + f'<b>💥 Grandes chances criadas: {grandes_h} | {grandes_a}</b>' + NL + f'<b>🥅 Chutes na área: {dentro_h} | {dentro_a}</b>' + NL + f'<b>⛳️ Escanteios: {cant_h} | {cant_a}</b>' + NL + f'<b>⚔️ Ataques perigosos: {atq_per_h} | {atq_per_a}</b>' + NL + f'<b>🌋 Pressão da partida: {pressao_h} | {pressao_a}</b>' + NL + f'<b>🔥 APPM da partida: {appm}</b>' + NL + f'<b>🔥 APPM últimos 10 min: {dapm10}</b>' + NL + f'<b>🔥 APPM últimos 5 min: {dapm5}</b>' + NL + f'{sep}' + NL + '<b>💡 Análise Técnica da Partida:</b>' + NL + f'<b>🎯 Favorito: {fav_nome}</b>' + NL + f'<b>🚨 Alerta: {alerta}</b>' + NL + f'{sep}' + NL + f'<b>📌 Entrada: {entrada}</b>' + prob_texto + NL + odd_texto + NL + f'{sep}' + NL + '<b>🔔Jogue com Responsabilidade🔔</b>'
     keyboard = {'inline_keyboard': [[{'text': '🟣BET365🟣', 'url': 'https://www.bet365.bet.br/#/AZ/'}, {'text': '🟠BETANO🟠', 'url': 'https://www.betano.bet.br/live/'}]]}
     return (msg, keyboard)
 
@@ -1733,6 +1779,14 @@ def checar_resultado(sinal):
                 return None
         if not fixture:
             return None
+        # Mercados de escanteio HT sempre usam os escanteios do primeiro tempo.
+        # O /livescores pode trazer o jogo ainda presente com os campos totais;
+        # nesse caso, priorizar explicitamente os campos HT para não classificar
+        # um reembolso como red (ou um green como red).
+        if sinal.get('tipo') == 'escanteio_ht' and fixture.get('localCornersHT') is not None:
+            fixture = dict(fixture)
+            fixture['localCorners'] = fixture.get('localCornersHT')
+            fixture['visitorCorners'] = fixture.get('visitorCornersHT')
         # O status oficial da SokkerPro é a fonte da verdade para o fim do período.
         # Não usar o minuto numérico: em 45+X/90+X ele pode antecipar a auditoria
         # enquanto ainda há acréscimos para jogar.
@@ -1861,6 +1915,130 @@ def checar_resultado(sinal):
     except:
         return None
 
+# ========== VIP PIX (ASAAS) — polling phase 1 ==========
+VIP_CHAT_ID = int(os.environ.get('VIP_GROUP_CHAT_ID', '-1003843430798'))
+VIP_PRICE, VIP_DAYS, VIP_GRACE_HOURS = 50.0, 30, 24
+VIP_STATE_FILE = os.path.join(BASE_DIR, 'vip_state.json')
+VIP_ASAAS_BASE = 'https://api.asaas.com/v3'
+
+def _vip_admin_ids():
+    return {int(x.strip()) for x in os.environ.get('VIP_ADMIN_IDS', '').split(',') if x.strip()}
+
+def _vip_state_load():
+    state = {'payments': {}, 'members': {}}
+    if GITHUB_TOKEN and GITHUB_REPO:
+        try:
+            r = requests.get(f'https://api.github.com/repos/{GITHUB_REPO}/contents/vip_state.json', headers={'Authorization': f'Bearer {GITHUB_TOKEN}', 'Accept': 'application/vnd.github+json'}, timeout=10)
+            if r.status_code == 200: state = json.loads(base64.b64decode(r.json()['content']).decode())
+        except Exception as e: print(f'[VIP] Estado remoto indisponível: {e}')
+    elif os.path.exists(VIP_STATE_FILE):
+        try:
+            with open(VIP_STATE_FILE) as f: state = json.load(f)
+        except Exception as e: print(f'[VIP] Estado local inválido: {e}')
+    state.setdefault('payments', {}); state.setdefault('members', {}); state.setdefault('awaiting_cpf', {})
+    return state
+
+def _vip_state_save(state):
+    with open(VIP_STATE_FILE, 'w') as f: json.dump(state, f, ensure_ascii=False, indent=2)
+    return _save_json_api('vip_state.json', state, 'state: atualiza VIP Pix [skip ci]') if GITHUB_TOKEN and GITHUB_REPO else True
+
+def _vip_headers():
+    key = os.environ.get('ASAAS_API_KEY') or os.environ.get('ASAAS_TOKEN')
+    return {'access_token': key, 'Content-Type': 'application/json', 'User-Agent': 'sokkerpro-vip/1'} if key else None
+
+def _vip_send(chat_id, text):
+    return requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage', json={'chat_id': chat_id, 'text': text, 'parse_mode': 'HTML', 'disable_web_page_preview': True}, timeout=15)
+
+def _vip_sales_message():
+    phone = os.environ.get('VIP_SUPPORT_WHATSAPP', '').strip()
+    support = f'📱 Suporte WhatsApp: {phone}\n' if phone else ''
+    return ('━━━━━━━━━━━━━━━━━━━━\n<b>🚀 MÁQUINA DE GREENS VIP</b>\n━━━━━━━━━━━━━━━━━━━━\n\n🔥 <b>SINAIS AO VIVO COM ALTA ASSERTIVIDADE</b>\n\n📊 <b>6 MERCADOS:</b>\n⚽️ Over Gol Intervalo\n⚽️ Over Gol Partida\n⚽️ Over 1.5 Gols Partida\n⚽️ Ambas Marcam\n🚩 Escanteio Limite HT\n🚩 Escanteio Limite FT\n\n💰 <b>Investimento: R$ 50,00</b>\n📅 <b>Acesso: 30 dias + 24h de tolerância</b>\n💳 Pagamento via <b>PIX</b> com aprovação automática\n\n⚠️ Clique aqui👉<b>/vip</b> para gerar seu PIX.\n👤 Telegram: <b>@maquinadegreensvip</b>\n' + support + 'ℹ️ Comandos: /vip — gerar PIX | /vipstatus — consultar status\n🛟 Em caso de dúvida, procure o suporte.')
+
+def _vip_create_payment(chat_id, user, cpf_cnpj):
+    headers = _vip_headers()
+    if not headers: return None, 'Pagamento temporariamente indisponível. Tente novamente mais tarde.'
+    try:
+        c = requests.post(f'{VIP_ASAAS_BASE}/customers', headers=headers, json={'name': (user.get('first_name') or 'Cliente VIP')[:80], 'cpfCnpj': cpf_cnpj, 'externalReference': f'telegram:{chat_id}'}, timeout=15)
+        if c.status_code not in (200, 201): return None, 'Não foi possível iniciar o pagamento.'
+        cid = c.json()['id']
+        p = requests.post(f'{VIP_ASAAS_BASE}/payments', headers=headers, json={'customer': cid, 'billingType': 'PIX', 'value': VIP_PRICE, 'dueDate': datetime.now(BRT).strftime('%Y-%m-%d'), 'description': 'Acesso Máquina de Greens VIP - 30 dias', 'externalReference': f'telegram:{chat_id}'}, timeout=15)
+        if p.status_code not in (200, 201): return None, 'Não foi possível gerar o PIX.'
+        pid = p.json()['id']; q = requests.get(f'{VIP_ASAAS_BASE}/payments/{pid}/pixQrCode', headers=headers, timeout=15)
+        if q.status_code != 200: return None, 'PIX indisponível no momento. Tente novamente.'
+        return {'id': pid, 'customer_id': cid, 'payload': q.json().get('payload', '')}, None
+    except requests.RequestException as e:
+        print(f'[VIP] Asaas indisponível: {e}'); return None, 'Serviço de pagamento indisponível. Tente mais tarde.'
+
+VIP_POLL_ENABLED = os.environ.get('VIP_POLL_ENABLED', '').strip().lower() in ('1', 'true', 'yes')
+
+def run_vip_maintenance():
+    """Run VIP payment/member maintenance only when explicitly enabled."""
+    state = _vip_state_load()
+    if _vip_poll_and_expire(state):
+        _vip_state_save(state)
+
+def _vip_poll_and_expire(state):
+    headers = _vip_headers(); changed = False
+    if headers:
+        for pid, item in state['payments'].items():
+            if item.get('status') in ('RECEIVED', 'CONFIRMED', 'EXPIRED'): continue
+            try:
+                r = requests.get(f'{VIP_ASAAS_BASE}/payments/{pid}', headers=headers, timeout=15)
+                if r.status_code != 200: continue
+                status = r.json().get('status', ''); item['status'] = status; changed = True
+                if status in ('RECEIVED', 'CONFIRMED') and not item.get('activated_at'):
+                    now = datetime.now(timezone.utc); exp = now + timedelta(days=VIP_DAYS); uid = str(item['chat_id'])
+                    link = requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/createChatInviteLink', json={'chat_id': VIP_CHAT_ID, 'name': f'VIP {uid}', 'creates_join_request': True}, timeout=15)
+                    invite = link.json().get('result', {}).get('invite_link') if link.ok and link.json().get('ok') else None
+                    item.update({'activated_at': now.isoformat(), 'expires_at': exp.isoformat()}); state['members'][uid] = {'chat_id': item['chat_id'], 'expires_at': exp.isoformat(), 'payment_id': pid}
+                    _vip_send(item['chat_id'], f'✅ <b>Pagamento confirmado!</b>\n\nSeu acesso VIP é válido por 30 dias.\n' + (f'\n🔗 Entre pelo convite: {invite}' if invite else '\nConvite pendente; contate o suporte.'))
+            except requests.RequestException as e: print(f'[VIP] Poll {pid}: {e}')
+    # Approve only paid users' pending join requests; never approve unknown users.
+    try:
+        pending = requests.get(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/getChatJoinRequests', params={'chat_id': VIP_CHAT_ID, 'limit': 100}, timeout=15)
+        if pending.ok and pending.json().get('ok'):
+            for join in pending.json().get('result', []):
+                uid = str(join.get('from', {}).get('id', ''))
+                if uid in state['members'] and not state['members'][uid].get('removed_at'):
+                    ar = requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/approveChatJoinRequest', json={'chat_id': VIP_CHAT_ID, 'user_id': int(uid)}, timeout=15)
+                    if ar.ok and ar.json().get('ok'): changed = True
+    except requests.RequestException as e: print(f'[VIP] Join requests indisponíveis: {e}')
+    now = datetime.now(timezone.utc)
+    for uid, m in state['members'].items():
+        if m.get('removed_at'): continue
+        try: deadline = datetime.fromisoformat(m['expires_at']) + timedelta(hours=VIP_GRACE_HOURS)
+        except (KeyError, ValueError): continue
+        if now >= deadline:
+            r = requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/banChatMember', json={'chat_id': VIP_CHAT_ID, 'user_id': int(uid), 'until_date': int(now.timestamp()) + 60}, timeout=15)
+            if r.ok and r.json().get('ok'):
+                requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/unbanChatMember', json={'chat_id': VIP_CHAT_ID, 'user_id': int(uid), 'only_if_banned': True}, timeout=15); m['removed_at'] = now.isoformat(); changed = True
+    return changed
+
+def _vip_handle(chat_id, msg):
+    if chat_id <= 0: return
+    state = _vip_state_load()
+    text = (msg.get('text') or '').strip()
+    uid = str(chat_id)
+    if uid in state.get('awaiting_cpf', {}) and not text.startswith('/'):
+        cpf_cnpj = ''.join(ch for ch in text if ch.isdigit())
+        if len(cpf_cnpj) not in (11, 14):
+            _vip_send(chat_id, 'Envie um CPF com 11 dígitos ou CNPJ com 14 dígitos para gerar o PIX.')
+            return
+        data, err = _vip_create_payment(chat_id, msg.get('from', {}), cpf_cnpj)
+        if err:
+            _vip_send(chat_id, err)
+            return
+        state['awaiting_cpf'].pop(uid, None)
+        state['payments'][data['id']] = {'chat_id': chat_id, 'status': 'PENDING', 'created_at': datetime.now(timezone.utc).isoformat(), 'customer_id': data['customer_id']}
+        _vip_state_save(state)
+        _vip_send(chat_id, _vip_sales_message() + f'\n\n<b>PIX COPIA E COLA:</b>\n<code>{data["payload"]}</code>\n\nApós o pagamento, a confirmação e o convite serão enviados automaticamente.')
+        return
+    if text.partition(' ')[0].partition('@')[0].lower() != '/vip':
+        return
+    state['awaiting_cpf'][uid] = datetime.now(timezone.utc).isoformat()
+    _vip_state_save(state)
+    _vip_send(chat_id, _vip_sales_message() + '\n\nPara gerar sua cobrança Pix, envie agora seu CPF ou CNPJ apenas nesta conversa privada.')
+
 def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=None):
     last_id = 0
     last_id = 0
@@ -1894,9 +2072,20 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
         msg_ts = msg.get('date', 0)
         if agora_ts - msg_ts > 600:
             continue
-        pass
+        if comando == '/start' and chat_orig > 0:
+            _vip_send(chat_orig, _vip_sales_message())
+        elif comando == '/vip':
+            _vip_handle(chat_orig, msg)
+        elif chat_orig > 0 and text and not text.startswith('/'):
+            _vip_handle(chat_orig, msg)
+        elif comando == '/vipstatus' and chat_orig in _vip_admin_ids():
+            st = _vip_state_load(); _vip_send(chat_orig, f'VIP: {len(st["payments"])} pagamentos, {len(st["members"])} membros registrados.')
         if comando == '/relatoriomensal' and (not relatorio_respondido):
             msg = enviar_relatorio_mensal()
+            requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage', json={'chat_id': chat_orig, 'text': msg, 'parse_mode': 'HTML'})
+            relatorio_respondido = True
+        if comando == '/relatoriogeral' and (not relatorio_respondido):
+            msg = enviar_relatorio_geral()
             requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage', json={'chat_id': chat_orig, 'text': msg, 'parse_mode': 'HTML'})
             relatorio_respondido = True
         if comando == '/relatoriodiario' and (not relatorio_respondido):
@@ -1917,6 +2106,11 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
             except Exception as e:
                 print(f'[PERFORMANCE] Erro: {e}')
         elif comando == '/radar' and (not radar_respondido):
+            if DATA_UNAVAILABLE:
+                msg_radar = f'{sep}\n📡👉<b>RADAR DE JOGOS AO VIVO</b>👈📡\n{sep}\n⚠️ <b>Fonte SokkerPro indisponível neste ciclo.</b>\n🔄 <b>O bot tentou consultar novamente e não recebeu uma resposta válida.</b>\n{sep}'
+                requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage', json={'chat_id': chat_orig, 'text': msg_radar, 'parse_mode': 'HTML'}, timeout=10)
+                radar_respondido = True
+                continue
             jogos_live = jogos_live or []
             jogos_na_janela = jogos_na_janela or []
             if jogos_na_janela:
@@ -1985,8 +2179,9 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
     global MAPA_MERCADO
     MAPA_MERCADO = _gerar_mapa_mercados()
     'Executa um ciclo completo de coleta, análise e envio.'
-    global _CACHED_DATA
+    global _CACHED_DATA, DATA_UNAVAILABLE
     _CACHED_DATA = None
+    DATA_UNAVAILABLE = False
     _repo_atual = os.environ.get('GITHUB_REPOSITORY', '').lower()
     if 'sokkerpro' in _repo_atual:
         BOT_SOURCE = 'sokkerpro'
@@ -2000,6 +2195,8 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
     jogos_na_janela = filtrar_janelas(jogos_live)
     print(f'[Janela] {len(jogos_na_janela)} jogos nas janelas alvo')
     check_status_command(total_jogos_live=len(jogos_live), jogos_live=jogos_live, jogos_na_janela=jogos_na_janela)
+    if VIP_POLL_ENABLED:
+        run_vip_maintenance()
     try:
         sinais_p = _load_sinais_github()
         if confirmed_ids is None:
@@ -2051,7 +2248,12 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
         hn = norm_nome_time(h)
         an = norm_nome_time(a)
         dedup_id = hashlib.md5(f'{hn}-{an}'.encode()).hexdigest()[:12]
-        m, p = (j['minuto'], j['period'])
+        m = j['minuto']
+        p_raw = j['period']
+        if isinstance(p_raw, str):
+            p = 2 if '2' in p_raw else 1 if '1' in p_raw else p_raw
+        else:
+            p = p_raw
         sh, sa = (j['sh'], j['sa'])
         liga = str(j['liga'])
         pais = j.get('pais', '')
@@ -2150,7 +2352,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             crit = mkt_cfg.get('criterios', {})
             motivos = []
             fav_prefix = 'h' if fav_final == 'h' else 'a'
-            mapa = {'chutes_alvo_min': ('chutes_gol', 'sum', 'min'), 'chutes_totais_min': ('chutes_tot', 'sum', 'min'), 'escanteios_minimos': ('escanteios', 'sum', 'min'), 'chutes_inside_min': ('chutes_inside', 'fav', 'min'), 'chutes_outside_min': ('chutes_outside', 'fav', 'min'), 'goal_attempts_min': ('goal_attempts', 'fav', 'min'), 'chutes_bloq_max': ('chutes_bloq', 'fav', 'max'), 'defesas_min': ('defesas', 'fav', 'min'), 'faltas_min': ('faltas', 'fav', 'min'), 'yellow_max': ('yellow_cards', 'fav', 'max'), 'impedimentos_min': ('impedimentos', 'fav', 'min'), 'pressure_bar_min': ('pressure_bar', 'fav', 'min'), 'ball_safe_min': ('ball_safe', 'fav', 'min'), 'dapm_5_min': ('dapm5', 'fav', 'min'), 'dapm_total_orig_min': ('dapm_total', 'fav', 'min'), 'xg_total_min': ('xg', 'sum', 'min'), 'xg_casa_min': ('xg', 'h', 'min'), 'xg_fora_min': ('xg', 'a', 'min'), 'posse_bola_min': ('posse', 'fav', 'min'), 'ataques_perigosos_min': ('ataques_perigosos', 'fav', 'min'), 'media_gols_partida_min': ('medias_goal', 'sum', 'min'), 'media_corners_total_min': ('medias_corners', 'sum', 'min'), 'media_corners_casa_min': ('medias_corners', 'h', 'min'), 'media_corners_fora_min': ('medias_corners', 'a', 'min'), 'appm_min_por_time': ('dapm_total', 'max', 'min'), 'appm_total_min': ('dapm_total', 'max', 'min'), 'media_gols_ht_min': ('media_gols_ht', 'sum', 'min'), 'media_gols_ft_min': ('media_gols_ft', 'sum', 'min')}
+            mapa = {'chutes_alvo_min': ('chutes_gol', 'sum', 'min'), 'chutes_totais_min': ('chutes_tot', 'sum', 'min'), 'escanteios_minimos': ('escanteios', 'sum', 'min'), 'chutes_inside_min': ('chutes_inside', 'fav', 'min'), 'chutes_inside_total_min': ('chutes_inside', 'sum', 'min'), 'chutes_outside_min': ('chutes_outside', 'fav', 'min'), 'goal_attempts_min': ('goal_attempts', 'fav', 'min'), 'big_chances_created_min': ('big_chances', 'fav', 'min'), 'chutes_bloq_max': ('chutes_bloq', 'fav', 'max'), 'defesas_min': ('defesas', 'fav', 'min'), 'faltas_min': ('faltas', 'fav', 'min'), 'yellow_max': ('yellow_cards', 'fav', 'max'), 'impedimentos_min': ('impedimentos', 'fav', 'min'), 'pressure_bar_min': ('pressure_bar', 'fav', 'min'), 'ball_safe_min': ('ball_safe', 'fav', 'min'), 'dapm_5_min': ('dapm5', 'fav', 'min'), 'dapm_total_orig_min': ('dapm_total', 'fav', 'min'), 'xg_total_min': ('xg', 'sum', 'min'), 'xg_casa_min': ('xg', 'h', 'min'), 'xg_fora_min': ('xg', 'a', 'min'), 'posse_bola_min': ('posse', 'fav', 'min'), 'ataques_perigosos_min': ('ataques_perigosos', 'fav', 'min'), 'media_gols_partida_min': ('medias_goal', 'sum', 'min'), 'media_corners_total_min': ('medias_corners', 'sum', 'min'), 'media_corners_casa_min': ('medias_corners', 'h', 'min'), 'media_corners_fora_min': ('medias_corners', 'a', 'min'), 'appm_min_por_time': ('dapm_total', 'max', 'min'), 'appm_total_min': ('dapm_total', 'max', 'min'), 'media_gols_ht_min': ('media_gols_ht', 'sum', 'min'), 'media_gols_ft_min': ('media_gols_ft', 'sum', 'min')}
             btts_prob_val = crit.get('btts_probabilidade_min')
             if btts_prob_val is not None and btts_prob_val != '':
                 try:
@@ -2226,9 +2428,13 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 if not campo or campo in vistos_api:
                     continue
                 vistos_api.add(campo)
-                api_map = {'chutes_alvo_min':('chutes_gol_h','chutes_gol_a','sum'),'chutes_totais_min':('chutes_tot_h','chutes_tot_a','sum'),'ataques_perigosos_min':('ataques_perigosos_h','ataques_perigosos_a','fav'),'escanteios_minimos':('escanteios_h','escanteios_a','sum'),'chutes_inside_min':('chutes_inside_h','chutes_inside_a','fav'),'chutes_outside_min':('chutes_outside_h','chutes_outside_a','fav'),'goal_attempts_min':('goal_attempts_h','goal_attempts_a','fav'),'grandes_chances_min':('grandes_chances_h','grandes_chances_a','fav'),'chutes_bloq_max':('chutes_bloq_h','chutes_bloq_a','fav'),'defesas_min':('defesas_h','defesas_a','fav'),'faltas_min':('faltas_h','faltas_a','fav'),'yellow_max':('yellow_cards_h','yellow_cards_a','fav'),'impedimentos_min':('impedimentos_h','impedimentos_a','fav'),'pressure_bar_min':('pressure_bar_h','pressure_bar_a','fav'),'ball_safe_min':('ball_safe_h','ball_safe_a','fav'),'posse_bola_min':('posse_h','posse_a','fav'),'xg_total_min':('xg_h','xg_a','sum'),'media_gols_partida_min':('medias_goal_h','medias_goal_a','sum'),'media_corners_total_min':('medias_corners_h','medias_corners_a','sum'),'media_corners_casa_min':('medias_corners_h','medias_corners_a','h'),'media_corners_fora_min':('medias_corners_h','medias_corners_a','a'),'appm_min_por_time':('dapm_total_h','dapm_total_a','max'),'appm_total_min':('dapm_total_h','dapm_total_a','max'),'media_gols_ht_min':('media_gols_ht_h','media_gols_ht_a','sum'),'media_gols_ft_min':('media_gols_ft_h','media_gols_ft_a','sum'),'dapm_5_min':('dapm5_h','dapm5_a','fav'),'dapm_total_orig_min':('dapm_total_h','dapm_total_a','fav')}
+                api_map = {'chutes_alvo_min':('chutes_gol_h','chutes_gol_a','sum'),'chutes_totais_min':('chutes_tot_h','chutes_tot_a','sum'),'ataques_perigosos_min':('ataques_perigosos_h','ataques_perigosos_a','fav'),'escanteios_minimos':('escanteios_h','escanteios_a','sum'),'chutes_inside_min':('chutes_inside_h','chutes_inside_a','fav'),'chutes_inside_total_min':('chutes_inside_h','chutes_inside_a','sum'),'chutes_outside_min':('chutes_outside_h','chutes_outside_a','fav'),'goal_attempts_min':('goal_attempts_h','goal_attempts_a','fav'),'big_chances_created_min':('big_chances_h','big_chances_a','fav'),'chutes_bloq_max':('chutes_bloq_h','chutes_bloq_a','fav'),'defesas_min':('defesas_h','defesas_a','fav'),'faltas_min':('faltas_h','faltas_a','fav'),'yellow_max':('yellow_cards_h','yellow_cards_a','fav'),'impedimentos_min':('impedimentos_h','impedimentos_a','fav'),'pressure_bar_min':('pressure_bar_h','pressure_bar_a','fav'),'ball_safe_min':('ball_safe_h','ball_safe_a','fav'),'posse_bola_min':('posse_h','posse_a','fav'),'xg_total_min':('xg_h','xg_a','sum'),'media_gols_partida_min':('medias_goal_h','medias_goal_a','sum'),'media_corners_total_min':('medias_corners_h','medias_corners_a','sum'),'media_corners_casa_min':('medias_corners_h','medias_corners_a','h'),'media_corners_fora_min':('medias_corners_h','medias_corners_a','a'),'appm_min_por_time':('dapm_total_h','dapm_total_a','max'),'appm_total_min':('dapm_total_h','dapm_total_a','max'),'media_gols_ht_min':('media_gols_ht_h','media_gols_ht_a','sum'),'media_gols_ft_min':('media_gols_ft_h','media_gols_ft_a','sum'),'dapm_5_min':('dapm5_h','dapm5_a','fav'),'dapm_total_orig_min':('dapm_total_h','dapm_total_a','fav')}
                 if campo == 'chutes_bloq_fav':
                     atual_raw = stats.get('chutes_bloq_h' if fav_final == 'h' else 'chutes_bloq_a')
+                elif campo == 'diferenca_gols_fav_max':
+                    atual_raw = (sa - sh) if fav_final == 'h' else (sh - sa)
+                elif campo == 'max_red_card_fav':
+                    atual_raw = red_fav
                 elif campo in api_map:
                     h,a,lado=api_map[campo]; vh,va=stats.get(h),stats.get(a)
                     if lado=='sum': atual_raw=float(vh or 0)+float(va or 0)
@@ -2383,7 +2589,9 @@ def configurar_comandos_telegram():
         {'command': 'mercados24h', 'description': 'Performance do dia atual'},
         {'command': 'relatoriodiario', 'description': 'Relatório do dia'},
         {'command': 'relatoriomensal', 'description': 'Relatório do mês'},
+        {'command': 'relatoriogeral', 'description': 'Relatório geral acumulado'},
         {'command': 'radar', 'description': 'Jogos ao vivo e oportunidades'},
+        {'command': 'vip', 'description': 'Assinar acesso VIP via PIX'},
     ]
     try:
         r = requests.post(
