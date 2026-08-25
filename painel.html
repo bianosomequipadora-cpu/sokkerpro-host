@@ -75,8 +75,6 @@ var REPO = 'bianosomequipadora-cpu/sokkerpro-host';
 function checkLogin() {
     TOKEN = localStorage.getItem('github_token');
     if(!TOKEN) TOKEN=sessionStorage.getItem('github_token');
-    document.getElementById('login-screen').classList.add('hidden');
-    document.getElementById('main-content').classList.remove('hidden');
     carregarDoGitHub();
 }
 function doLogin() {
