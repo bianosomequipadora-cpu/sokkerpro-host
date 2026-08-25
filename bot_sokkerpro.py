@@ -780,6 +780,12 @@ def _get_data():
             if inicio_json < 0:
                 raise ValueError('resposta sem JSON')
             dados = json.loads(texto[inicio_json:])
+            # O proxy pode devolver um envelope JSON com o conteúdo original em data.content.
+            if isinstance(dados.get('data'), dict) and isinstance(dados['data'].get('content'), str):
+                conteudo = dados['data']['content']
+                conteudo_inicio = conteudo.find('{')
+                if conteudo_inicio >= 0:
+                    dados = json.loads(conteudo[conteudo_inicio:])
             fixtures = dados.get('data', {}).get('sortedCategorizedFixtures') if isinstance(dados, dict) else None
             if not isinstance(fixtures, list):
                 raise ValueError('resposta sem lista de partidas')
@@ -981,6 +987,11 @@ def get_stats_sokkerpro(fid_raw, home='', away=''):
                         detalhe_texto = detalhe_resp.text
                         detalhe_inicio = detalhe_texto.find('{')
                         detalhe = json.loads(detalhe_texto[detalhe_inicio:]) if detalhe_inicio >= 0 else {}
+                        if isinstance(detalhe.get('data'), dict) and isinstance(detalhe['data'].get('content'), str):
+                            detalhe_conteudo = detalhe['data']['content']
+                            detalhe_conteudo_inicio = detalhe_conteudo.find('{')
+                            if detalhe_conteudo_inicio >= 0:
+                                detalhe = json.loads(detalhe_conteudo[detalhe_conteudo_inicio:])
                         if detalhe.get('success') and isinstance(detalhe.get('data'), dict):
                             detalhe_stats = _extrair_stats_sokkerpro(detalhe['data'])
                             stats['odds_mercados'] = detalhe_stats.get('odds_mercados', {})
