@@ -74,7 +74,6 @@ function checkLogin() {
     if(!TOKEN) TOKEN=sessionStorage.getItem('github_token');
     document.getElementById('login-screen').classList.add('hidden');
     document.getElementById('main-content').classList.remove('hidden');
-    renderizarMercados();
     carregarDoGitHub();
 }
 function doLogin() {
