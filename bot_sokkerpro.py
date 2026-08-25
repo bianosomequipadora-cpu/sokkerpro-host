@@ -2196,7 +2196,10 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
         _radar_total, _radar_live, _radar_janela = _LAST_RADAR_DATA
     except NameError:
         _radar_total, _radar_live, _radar_janela = 0, [], []
-    check_status_command(total_jogos_live=_radar_total, jogos_live=_radar_live, jogos_na_janela=_radar_janela)
+    # No primeiro ciclo ainda não há cache: não consumir /radar respondendo 0.
+    # O processamento normal, depois da coleta, responderá com os dados atuais.
+    if _radar_total > 0:
+        check_status_command(total_jogos_live=_radar_total, jogos_live=_radar_live, jogos_na_janela=_radar_janela)
     _repo_atual = os.environ.get('GITHUB_REPOSITORY', '').lower()
     if 'sokkerpro' in _repo_atual:
         BOT_SOURCE = 'sokkerpro'
