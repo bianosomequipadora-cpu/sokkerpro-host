@@ -556,36 +556,6 @@
         }
       ]
     },
-    "custom_1787577001547": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️♨️GOL DE OURO INTERVALO♨️⚽️",
-      "minuto_inicio": 2,
-      "minuto_fim": 30,
-      "periodo": 1,
-      "tipo": "gol_intervalo",
-      "placar_valido": "0x0",
-      "criterios": {
-        "situacao_favorito": ""
-      },
-      "criterios_api": [
-        {
-          "campo": "ataques_perigosos_min",
-          "operador": "gte",
-          "valor": 15
-        },
-        {
-          "campo": "chutes_alvo_min",
-          "operador": "gte",
-          "valor": 1
-        },
-        {
-          "campo": "chutes_inside_total_min",
-          "operador": "gte",
-          "valor": 1
-        }
-      ]
-    },
     "custom_1787598062908": {
       "ativo": true,
       "notificar": true,
@@ -642,6 +612,56 @@
         {
           "campo": "goal_attempts_min",
           "operador": "gte",
+          "valor": 2
+        }
+      ]
+    },
+    "custom_1787678097910": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️🔥OVER GOL PRESSURE FT🔥⚽️ ",
+      "minuto_inicio": 65,
+      "minuto_fim": 75,
+      "periodo": 2,
+      "tipo": "over_gol",
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": "empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "diferenca_gols_fav_max",
+          "operador": "lte",
+          "valor": 1
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 2
+        },
+        {
+          "campo": "chutes_totais_min",
+          "operador": "gte",
+          "valor": 8
+        },
+        {
+          "campo": "escanteios_minimos",
+          "operador": "gte",
+          "valor": 1
+        },
+        {
+          "campo": "max_red_card_fav",
+          "operador": "lte",
+          "valor": 0
+        },
+        {
+          "campo": "pressure_bar_min",
+          "operador": "gte",
+          "valor": 70
+        },
+        {
+          "campo": "chutes_bloq_max",
+          "operador": "lte",
           "valor": 2
         }
       ]
