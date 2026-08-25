@@ -2182,6 +2182,14 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
     global _CACHED_DATA, DATA_UNAVAILABLE
     _CACHED_DATA = None
     DATA_UNAVAILABLE = False
+    # Lê os comandos antes da coleta pesada, usando os dados do ciclo anterior.
+    # Assim /radar não fica bloqueado esperando as consultas detalhadas.
+    global _LAST_RADAR_DATA
+    try:
+        _radar_total, _radar_live, _radar_janela = _LAST_RADAR_DATA
+    except NameError:
+        _radar_total, _radar_live, _radar_janela = 0, [], []
+    check_status_command(total_jogos_live=_radar_total, jogos_live=_radar_live, jogos_na_janela=_radar_janela)
     _repo_atual = os.environ.get('GITHUB_REPOSITORY', '').lower()
     if 'sokkerpro' in _repo_atual:
         BOT_SOURCE = 'sokkerpro'
@@ -2194,6 +2202,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
         print(f'[SokkerPro] {len(jogos_live)} jogos ao vivo')
     jogos_na_janela = filtrar_janelas(jogos_live)
     print(f'[Janela] {len(jogos_na_janela)} jogos nas janelas alvo')
+    _LAST_RADAR_DATA = (len(jogos_live), jogos_live, jogos_na_janela)
     check_status_command(total_jogos_live=len(jogos_live), jogos_live=jogos_live, jogos_na_janela=jogos_na_janela)
     if VIP_POLL_ENABLED:
         run_vip_maintenance()
