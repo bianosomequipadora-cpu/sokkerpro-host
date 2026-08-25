@@ -931,7 +931,7 @@ def get_jogos_sokkerpro(fids_existentes):
                 if not (oh > 1 and oa > 1):
                     oh = _get_float(fix.get('BET365_VENCEDOR_1_LIVE'))
                     oa = _get_float(fix.get('BET365_VENCEDOR_2_LIVE'))
-                pais_fix = fix.get('countryName', '')
+                pais_fix = fix.get('countryName') or cat.get('countryName', '')
                 if isinstance(pais_fix, dict):
                     pais_fix = pais_fix.get('name') or pais_fix.get('countryName') or pais_fix.get('code') or ''
                 if not pais_fix:
