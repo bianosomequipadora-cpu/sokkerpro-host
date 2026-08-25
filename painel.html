@@ -189,7 +189,7 @@ function criarCardMercado(key,dados,isCustom){
         '</select></div>'+
         '<div class="field"><label>Placar da Partida</label><input type="text" id="'+key+'-placar-valido" value="'+(pv||'')+'" placeholder="0x0">'+'</div>'+
         legacyFields+
-        '<div class="criteria-panel" id="'+key+'-criteria-panel"><div class="criteria-title">CRITÉRIOS DO MERCADO<button type="button" class="btn-toggle-criteria" onclick="toggleCriteriaPanel(\''+key+'\')">−</button></div><div class="criteria-body"><div style="display:flex;align-items:center;gap:6px;margin:6px 0 10px"><span style="font-size:1.15em">🔍</span><input type="search" placeholder="Procurar critério..." oninput="filtrarCriterios(\''+key+'\',this.value)" style="flex:1;padding:8px;border-radius:7px;border:1px solid #555;background:#222;color:#fff"></div><div id="'+key+'-api-criteria"></div></div></div>';
+        '<div class="criteria-panel" id="'+key+'-criteria-panel"><div class="criteria-title"><span>CRITÉRIOS DO MERCADO</span><span style="display:flex;align-items:center;gap:5px"><span>🔍</span><input type="search" placeholder="Procurar" oninput="filtrarCriterios(\''+key+'\',this.value)" style="width:120px;padding:6px;border-radius:7px;border:1px solid #555;background:#222;color:#fff"><button type="button" class="btn-toggle-criteria" onclick="toggleCriteriaPanel(\''+key+'\')">−</button></div><div class="criteria-body"><div id="'+key+'-api-criteria"></div></div></div>';
 
     div.innerHTML=html;
     div.setAttribute('data-minimized','0');
