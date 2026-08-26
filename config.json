@@ -720,6 +720,31 @@
           "valor": 4
         }
       ]
+    },
+    "custom_1787720135828": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️TENDÊNCIA OVER GOL HT⚽️",
+      "minuto_inicio": 10,
+      "minuto_fim": 25,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": ""
+      },
+      "criterios_api": [
+        {
+          "campo": "prob_ht_over_0_5",
+          "operador": "gte",
+          "valor": 65
+        },
+        {
+          "campo": "prob_btts",
+          "operador": "gte",
+          "valor": 65
+        }
+      ]
     }
   }
 }
