@@ -685,7 +685,7 @@
       },
       "criterios_api": [
         {
-          "campo": "big_chances_created_min",
+          "campo": "big_chances_total_min",
           "operador": "gte",
           "valor": 2
         },
@@ -710,7 +710,7 @@
       },
       "criterios_api": [
         {
-          "campo": "big_chances_created_min",
+          "campo": "big_chances_total_min",
           "operador": "gte",
           "valor": 4
         },
