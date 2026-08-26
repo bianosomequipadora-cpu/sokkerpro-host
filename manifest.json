@@ -1,18 +1,16 @@
 {
-  "name": "manifest.json",
-  "path": "manifest.json",
-  "sha": "015d4bed11e3fda9dd590af05048a0efa0eb2c60",
-  "size": 602,
-  "url": "https://api.github.com/repos/bianosomequipadora-cpu/sokkerpro-host/contents/manifest.json?ref=main",
-  "html_url": "https://github.com/bianosomequipadora-cpu/sokkerpro-host/blob/main/manifest.json",
-  "git_url": "https://api.github.com/repos/bianosomequipadora-cpu/sokkerpro-host/git/blobs/015d4bed11e3fda9dd590af05048a0efa0eb2c60",
-  "download_url": "https://raw.githubusercontent.com/bianosomequipadora-cpu/sokkerpro-host/main/manifest.json",
-  "type": "file",
-  "content": "ewogICJpZCI6ICIuLyIsCiAgIm5hbWUiOiAi4pq977iP8J+aqVJvYsO0IEFw\nb3N0YSBFc3BvcnRpdmHwn5qp4pq977iPIiwKICAic2hvcnRfbmFtZSI6ICLi\nmr3vuI/wn5qpUm9iw7QgQXBvc3RhIEVzcG9ydGl2YfCfmqnimr3vuI8iLAog\nICJzdGFydF91cmwiOiAiLi9wYWluZWwuaHRtbCIsCiAgInNjb3BlIjogIi4v\nIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9j\nb2xvciI6ICIjMDAwMDAwIiwKICAidGhlbWVfY29sb3IiOiAiI2ZmZDcwMCIs\nCiAgImRlc2NyaXB0aW9uIjogIlBhaW5lbCBkZSBDb250cm9sZSBkbyBSb2LD\ntCBkZSBBcG9zdGFzIiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMi\nOiAiaWNvbi0xOTIucG5nIiwKICAgICAgInNpemVzIjogIjE5MngxOTIiLAog\nICAgICAidHlwZSI6ICJpbWFnZS9wbmciLAogICAgICAicHVycG9zZSI6ICJh\nbnkgbWFza2FibGUiCiAgICB9LAogICAgewogICAgICAic3JjIjogImljb24t\nNTEyLnBuZyIsCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAgICAgInR5\ncGUiOiAiaW1hZ2UvcG5nIiwKICAgICAgInB1cnBvc2UiOiAiYW55IG1hc2th\nYmxlIgogICAgfQogIF0KfQo=\n",
-  "encoding": "base64",
-  "_links": {
-    "self": "https://api.github.com/repos/bianosomequipadora-cpu/sokkerpro-host/contents/manifest.json?ref=main",
-    "git": "https://api.github.com/repos/bianosomequipadora-cpu/sokkerpro-host/git/blobs/015d4bed11e3fda9dd590af05048a0efa0eb2c60",
-    "html": "https://github.com/bianosomequipadora-cpu/sokkerpro-host/blob/main/manifest.json"
-  }
+  "id": "./painel.html",
+  "name": "Robô Aposta Esportiva",
+  "short_name": "Robô Apostas",
+  "start_url": "./painel.html?app=android",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ffd700",
+  "description": "Painel de Controle do Robô de Apostas",
+  "lang": "pt-BR",
+  "icons": [
+    {"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
 }
