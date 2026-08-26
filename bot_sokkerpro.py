@@ -1797,6 +1797,39 @@ def checar_resultado(sinal):
                 return None
         if not fixture:
             return None
+        # Auditoria de escanteio HT deve usar exclusivamente os campos
+        # confirmados do primeiro tempo. Nunca aceitar os campos totais
+        # como substitutos, pois eles podem voltar zerados/inconsistentes
+        # enquanto a partida ainda está no segundo tempo.
+        eh_corner_ht_sinal = (
+            mercado in ('CORNER_HT', 'escanteio_ht')
+            or (mercado and mercado.startswith('custom_') and sinal.get('tipo') == 'escanteio_ht')
+            or sinal.get('tipo') == 'escanteio_ht'
+        )
+        if eh_corner_ht_sinal:
+            raw_ht_h = fixture.get('localCornersHT')
+            raw_ht_a = fixture.get('visitorCornersHT')
+            invalid_ht = (
+                raw_ht_h is None or raw_ht_a is None
+                or str(raw_ht_h).strip() in ('', 'x', 'X', 'None')
+                or str(raw_ht_a).strip() in ('', 'x', 'X', 'None')
+            )
+            if invalid_ht:
+                print(f'[AUDITORIA] {fid_raw}: escanteios HT ainda indisponíveis; aguardando nova leitura')
+                return None
+            total_ht_corners = _get_int(raw_ht_h, default=-1) + _get_int(raw_ht_a, default=-1)
+            if total_ht_corners < 0:
+                return None
+            # Escanteios não podem diminuir. Se a API devolver HT menor que
+            # o total já registrado no momento da entrada, é leitura inválida
+            # e não pode gerar RED.
+            entrada_cantos = sinal.get('extra_val')
+            if entrada_cantos is not None and total_ht_corners < int(entrada_cantos):
+                print(f'[AUDITORIA] {fid_raw}: leitura HT inconsistente ({total_ht_corners} < entrada {entrada_cantos}); aguardando nova leitura')
+                return None
+            fixture = dict(fixture)
+            fixture['localCorners'] = raw_ht_h
+            fixture['visitorCorners'] = raw_ht_a
         # Mercados de escanteio HT sempre usam os escanteios do primeiro tempo.
         # O /livescores pode trazer o jogo ainda presente com os campos totais;
         # nesse caso, priorizar explicitamente os campos HT para não classificar
