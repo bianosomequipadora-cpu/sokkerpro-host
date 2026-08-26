@@ -1661,6 +1661,54 @@ def _odds_do_mercado(stats, tipo, extra_val=None):
     return achar(asiaticos), achar(limite)
 
 
+def _odd_real_disponivel(stats, tipo, extra_val):
+    """Retorna a odd do mercado encontrada pela API; None se a linha não existir."""
+    odds = (stats or {}).get('odds_mercados', {})
+    if not isinstance(odds, dict):
+        return None
+    try:
+        extra = float(extra_val)
+    except (TypeError, ValueError):
+        return None
+    if tipo == 'escanteio_ht':
+        prefix = 'BET365_CANTO1T_OVER_'
+        alvo = extra + 1.0
+        partes = [str(int(alvo)) if alvo.is_integer() else str(alvo).replace('.', '_')]
+    elif tipo == 'escanteio_ft':
+        prefix = 'BET365_CANTO_OVER_'
+        alvo = extra + 1.0
+        partes = [str(int(alvo)) if alvo.is_integer() else str(alvo).replace('.', '_')]
+    elif tipo == 'gol_intervalo':
+        prefix = 'BET365_GOLS1T_OVER_'
+        partes = ['0_5']
+    elif tipo in ('gol_partida', 'over_gol'):
+        prefix = 'BET365_GOLS_OVER_'
+        alvo = extra + 0.5
+        partes = [str(alvo).replace('.', '_')]
+    elif tipo == 'over_15':
+        prefix = 'BET365_GOLS_OVER_'
+        partes = ['1_5']
+    elif tipo == 'ambas_marcam':
+        partes = []
+        prefix = 'BET365_AMBAS_YES'
+    else:
+        return None
+    candidatos = []
+    if tipo == 'ambas_marcam':
+        candidatos = [k for k in odds if k.startswith(prefix) and k.endswith('_LIVE')]
+    else:
+        for parte in partes:
+            candidatos.extend((prefix + parte + '_LIVE', prefix + parte, prefix + parte.replace('_0', '') + '_LIVE'))
+    for chave in candidatos:
+        valor = odds.get(chave)
+        try:
+            if float(valor) > 1:
+                return float(valor)
+        except (TypeError, ValueError):
+            continue
+    return None
+
+
 def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, extra_val=None, cantos_atual=0, stats=None, sh=0, sa=0, fav_final='h', odd_h=None, odd_a=None, odd_b365=None, odd_bano=None, nome=None, tipo='', probabilidade=None):
     NL = chr(10)
     chutes_h = stats.get('chutes_tot_h', 0) if stats else 0
@@ -2613,8 +2661,12 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 linha_str = 'o+1.5'
             elif c_tipo == 'ambas_marcam':
                 linha_str = 'bts_yes'
-            ob365 = j.get('odds_b365', {}).get(linha_str) if j.get('odds_b365') and linha_str else None
-            obano = j.get('odds_bano', {}).get(linha_str) if j.get('odds_bano') and linha_str else None
+            odd_real = _odd_real_disponivel(stats, c_tipo, extra_val)
+            if odd_real is None:
+                print(f'[DIAG-{mk}-ODD] {h} x {a} — mercado/linha não encontrada na API, não enviando')
+                continue
+            ob365 = odd_real
+            obano = None
             if notificar:
                 mid = send_telegram(msg_universal(h, a, m, liga, pais, 5, mk, cnome, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, nome=cnome, tipo=c_tipo, probabilidade=_probabilidade_para_sinal(stats, c_tipo, sh, sa, extra_val if 'escanteio' in c_tipo else 0)), marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
             else:
