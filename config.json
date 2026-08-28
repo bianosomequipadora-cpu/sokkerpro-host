@@ -483,11 +483,6 @@
           "campo": "big_chances_total_min",
           "operador": "gte",
           "valor": 2
-        },
-        {
-          "campo": "chutes_inside_total_min",
-          "operador": "gte",
-          "valor": 2
         }
       ]
     },
@@ -508,43 +503,13 @@
           "campo": "big_chances_total_min",
           "operador": "gte",
           "valor": 3
-        },
-        {
-          "campo": "chutes_inside_total_min",
-          "operador": "gte",
-          "valor": 3
-        }
-      ]
-    },
-    "custom_1787720135828": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️TENDÊNCIA OVER GOL HT⚽️",
-      "minuto_inicio": 10,
-      "minuto_fim": 25,
-      "periodo": 1,
-      "tipo": "gol_intervalo",
-      "placar_valido": "0x0",
-      "criterios": {
-        "situacao_favorito": ""
-      },
-      "criterios_api": [
-        {
-          "campo": "prob_ht_over_0_5",
-          "operador": "gte",
-          "valor": 65
-        },
-        {
-          "campo": "prob_btts",
-          "operador": "gte",
-          "valor": 65
         }
       ]
     },
     "custom_1787886230136": {
       "ativo": true,
       "notificar": true,
-      "nome": "⚽️🔥OVER GOL PRESSURE FT🔥⚽️  — CÓPIA",
+      "nome": "⚽️🔥OVER GOL PRESSURE FT🔥⚽️",
       "minuto_inicio": 65,
       "minuto_fim": 75,
       "periodo": 2,
