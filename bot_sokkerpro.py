@@ -1764,11 +1764,9 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     title = nome if nome else mercado
     atencao_over = ''
     if tipo == 'gol_intervalo':
-        atencao_over = (NL + '<b>          ⚠️ATENÇÃO⚠️</b>' + NL +
-                        '<b>👉Não Saiu o Gol até os 35 minutos, fazer a Proteção em Canto Asiático e Limite HT⛳️</b>')
+        atencao_over = NL + '<b>⚠️Não Saiu o Gol até os 35 minutos, fazer a Proteção em Canto Asiático e Limite HT⛳️</b>'
     elif tipo in ('over_gol', 'gol_partida'):
-        atencao_over = (NL + '<b>          ⚠️ATENÇÃO⚠️</b>' + NL +
-                        '<b>👉Não Saiu o Gol até os 85 minutos, fazer a Proteção em Canto Asiático e Limite FT⛳️</b>')
+        atencao_over = NL + '<b>⚠️Não Saiu o Gol até os 85 minutos, fazer a Proteção em Canto Asiático e Limite FT⛳️</b>'
     if tipo in ('escanteio', 'corner', 'escanteio_ht', 'escanteio_ft'):
         linha = cantos_atual + 1.0
         entrada = 'Mais de ' + f'{linha:.1f}' + ' Asiático⛳️'
