@@ -433,6 +433,11 @@
           "campo": "escanteios_minimos",
           "operador": "gte",
           "valor": 2
+        },
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 0.8
         }
       ]
     },
