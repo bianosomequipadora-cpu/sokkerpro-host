@@ -457,7 +457,7 @@
         {
           "campo": "appm_min_por_time",
           "operador": "gte",
-          "valor": 2
+          "valor": 1
         },
         {
           "campo": "goal_attempts_min",
@@ -482,7 +482,7 @@
         {
           "campo": "big_chances_total_min",
           "operador": "gte",
-          "valor": 2
+          "valor": 1
         }
       ]
     },
@@ -502,7 +502,7 @@
         {
           "campo": "big_chances_total_min",
           "operador": "gte",
-          "valor": 3
+          "valor": 1
         }
       ]
     },
@@ -564,7 +564,7 @@
     "custom_1787931508858": {
       "ativo": true,
       "notificar": true,
-      "nome": "⛳️ESCANTEIO ASIÁTICO E LIMITE  HT⛳️",
+      "nome": "⛳️🌪ESCANTEIO ASIÁTICO HT🌪⛳️",
       "minuto_inicio": 32,
       "minuto_fim": 38,
       "periodo": 1,
