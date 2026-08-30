@@ -321,7 +321,7 @@
       "notificar": true,
       "nome": "⚽️⚠️BIG CHANCES DE GOL HT⚠️⚽️",
       "minuto_inicio": 5,
-      "minuto_fim": 30,
+      "minuto_fim": 27,
       "periodo": 1,
       "tipo": "gol_intervalo",
       "placar_valido": "0x0",
@@ -333,6 +333,11 @@
           "campo": "big_chances_total_min",
           "operador": "gte",
           "valor": 1
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 2
         }
       ]
     },
