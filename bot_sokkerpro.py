@@ -311,15 +311,26 @@ def _claim_signal_slot(chave):
         print(f'[SENT-ATOMIC] Sinal reservado: {chave}')
         return True
     except error.HTTPError as exc:
-        # HTTP 409 significa que outra execução gravou primeiro.
+        # Em conflito, confirma o arquivo atual antes de bloquear o sinal.
         if exc.code == 409:
-            print(f'[SENT-ATOMIC] Concorrência detectada; sinal bloqueado: {chave}')
-            return False
-        print(f'[SENT-ATOMIC] Falha HTTP ao reservar {chave}: {exc.code}')
-        return False
+            try:
+                req = request.Request(url, headers=headers)
+                atual = json.loads(request.urlopen(req, timeout=10).read())
+                atuais = json.loads(base64.b64decode(atual.get('content', '')).decode())
+                bloqueado = chave in atuais
+                print(f'[SENT-ATOMIC] Conflito — já reservado={bloqueado}: {chave}')
+                return not bloqueado
+            except Exception:
+                # Se não foi possível confirmar a reserva, não trava o mercado.
+                print(f'[SENT-ATOMIC] Conflito sem confirmação; permitindo tentativa: {chave}')
+                return True
+        # Indisponibilidade/limite da API não pode parar todos os sinais.
+        print(f'[SENT-ATOMIC] Falha HTTP ao reservar {chave}: {exc.code}; permitindo tentativa')
+        return True
     except Exception as exc:
-        print(f'[SENT-ATOMIC] Falha ao reservar {chave}: {exc}')
-        return False
+        # A trava é proteção contra duplicidade, não pode derrubar o disparo.
+        print(f'[SENT-ATOMIC] Falha ao reservar {chave}: {exc}; permitindo tentativa')
+        return True
 
 def save_sent(sent):
     """Salva sent localmente E no GitHub via API PUT direta (síncrono e instantâneo)."""
