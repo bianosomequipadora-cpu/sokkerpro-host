@@ -275,6 +275,52 @@ def _save_sent_api(sent):
         print(f'[SENT-API] Erro: {e}')
         return False
 
+def _claim_signal_slot(chave):
+    """Reserva atomicamente um sinal antes do Telegram para impedir duplicidade."""
+    if not (GITHUB_TOKEN and GITHUB_REPO):
+        return True
+    url = f'https://api.github.com/repos/{GITHUB_REPO}/{SENT_API_PATH}'
+    headers = {'Authorization': f'Bearer {GITHUB_TOKEN}', 'Accept': 'application/vnd.github+json'}
+    try:
+        sha = None
+        dados = []
+        try:
+            req = request.Request(url, headers=headers)
+            resp = request.urlopen(req, timeout=10)
+            item = json.loads(resp.read())
+            sha = item.get('sha')
+            dados = json.loads(base64.b64decode(item.get('content', '')).decode())
+        except error.HTTPError as exc:
+            if exc.code != 404:
+                return False
+        if chave in dados:
+            print(f'[SENT-ATOMIC] Sinal já reservado: {chave}')
+            return False
+        dados.append(chave)
+        payload = {
+            'message': f'state: reserva sinal {chave} [skip ci]',
+            'content': base64.b64encode(json.dumps(dados).encode()).decode(),
+        }
+        if sha:
+            payload['sha'] = sha
+        req = request.Request(
+            url, data=json.dumps(payload).encode(),
+            headers={**headers, 'Content-Type': 'application/json'}, method='PUT'
+        )
+        request.urlopen(req, timeout=15)
+        print(f'[SENT-ATOMIC] Sinal reservado: {chave}')
+        return True
+    except error.HTTPError as exc:
+        # HTTP 409 significa que outra execução gravou primeiro.
+        if exc.code == 409:
+            print(f'[SENT-ATOMIC] Concorrência detectada; sinal bloqueado: {chave}')
+            return False
+        print(f'[SENT-ATOMIC] Falha HTTP ao reservar {chave}: {exc.code}')
+        return False
+    except Exception as exc:
+        print(f'[SENT-ATOMIC] Falha ao reservar {chave}: {exc}')
+        return False
+
 def save_sent(sent):
     """Salva sent localmente E no GitHub via API PUT direta (síncrono e instantâneo)."""
     with open(SENT_FILE, 'w') as f:
@@ -2639,6 +2685,10 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             key = f'{dedup_id}_{mk}_{hoje}'
             if key in sent:
                 print(f'[DIAG-{mk}-DUP] {h} x {a} — já enviado hoje ({key}), pulando')
+                continue
+            if not _claim_signal_slot(key):
+                print(f'[DIAG-{mk}-DUP] {h} x {a} — reserva atômica já feita por outra execução, pulando')
+                sent.add(key)
                 continue
             cnome = mc.get('nome', mk)
             c_tipo = mc.get('tipo', '')
