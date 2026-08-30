@@ -430,6 +430,26 @@
           "valor": 0
         }
       ]
+    },
+    "custom_1788115935668": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "Teste⛳️",
+      "minuto_inicio": 2,
+      "minuto_fim": 42,
+      "periodo": 1,
+      "tipo": "escanteio_ht",
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": ""
+      },
+      "criterios_api": [
+        {
+          "campo": "chutes_totais_min",
+          "operador": "gte",
+          "valor": 1
+        }
+      ]
     }
   }
 }
