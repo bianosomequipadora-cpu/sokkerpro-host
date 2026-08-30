@@ -433,7 +433,7 @@
     },
     "custom_1788115935668": {
       "ativo": true,
-      "notificar": true,
+      "notificar": false,
       "nome": "Teste⛳️",
       "minuto_inicio": 2,
       "minuto_fim": 42,
@@ -445,7 +445,7 @@
       },
       "criterios_api": [
         {
-          "campo": "chutes_totais_min",
+          "campo": "dapm_total_orig_min",
           "operador": "gte",
           "valor": 1
         }
