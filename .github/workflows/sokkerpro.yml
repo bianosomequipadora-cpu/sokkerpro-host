@@ -5,6 +5,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: sokkerpro-live
+  cancel-in-progress: false
 jobs:
   run:
     runs-on: ubuntu-latest
