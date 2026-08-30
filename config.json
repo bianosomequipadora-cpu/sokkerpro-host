@@ -407,7 +407,7 @@
         {
           "campo": "big_chances_total_min",
           "operador": "gte",
-          "valor": 1
+          "valor": 2
         }
       ]
     },
