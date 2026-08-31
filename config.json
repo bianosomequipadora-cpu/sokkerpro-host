@@ -409,15 +409,25 @@
       "minuto_fim": 39,
       "periodo": 1,
       "tipo": "escanteio_ht",
-      "placar_valido": "0x0",
+      "placar_valido": "0x0, 1x1",
       "criterios": {
         "situacao_favorito": "empatando"
       },
       "criterios_api": [
         {
-          "campo": "appm_min_por_time",
+          "campo": "media_gols_partida_min",
           "operador": "gte",
-          "valor": 0.7
+          "valor": 2.5
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 2
+        },
+        {
+          "campo": "chutes_totais_min",
+          "operador": "gte",
+          "valor": 7
         }
       ]
     }
