@@ -2407,8 +2407,13 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                     continue
                 confirmed_ids.add(uid)
                 emoji = '🟢GREEN CONFIRMADO🟢' if res == 'green' else ('🔵REEMBOLSO CONFIRMADO🔵' if res == 'refund' else '🔴RED CONFIRMADO🔴')
+                confirmacao = f"{emoji}\n<b>Mercado:</b> {s.get('mercado', '—')}\n<b>Jogo:</b> {s.get('home', '—')} x {s.get('away', '—')}"
+                mensagem_original_enviada = False
                 if s.get('message_id'):
-                    send_telegram(emoji, reply_to=s.get('message_id'))
+                    mensagem_original_enviada = send_telegram(emoji, reply_to=s.get('message_id')) is not None
+                if not mensagem_original_enviada:
+                    # Sinais antigos ou sem message_id recebem confirmação independente.
+                    send_telegram(confirmacao)
                 salvar_resultado(res, mercado=s.get('mercado'), fixture_id=s.get('fixture_id'))
                 atualizar_entrada_historico(s, res)
                 registrar_performance(s.get('mercado'), res)
