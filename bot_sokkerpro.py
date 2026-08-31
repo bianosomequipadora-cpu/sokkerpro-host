@@ -1871,6 +1871,29 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     keyboard = {'inline_keyboard': [[{'text': '🟣BET365🟣', 'url': 'https://www.bet365.bet.br/#/AZ/'}, {'text': '🟠BETANO🟠', 'url': 'https://www.betano.bet.br/live/'}]]}
     return (msg, keyboard)
 
+def _buscar_detalhe_fixture(fid_raw):
+    """Busca o resultado final direto e pelo proxy, aceitando o envelope do proxy."""
+    fontes = (
+        f'https://m2.sokkerpro.com/fixture/{fid_raw}',
+        f'https://r.jina.ai/http://m2.sokkerpro.com/fixture/{fid_raw}',
+    )
+    for url in fontes:
+        try:
+            resposta = requests.get(url, headers={'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}, timeout=15)
+            resposta.raise_for_status()
+            dados = resposta.json()
+            if isinstance(dados.get('data'), dict) and isinstance(dados['data'].get('content'), str):
+                conteudo = dados['data']['content']
+                inicio = conteudo.find('{')
+                if inicio >= 0:
+                    dados = json.loads(conteudo[inicio:])
+            fixture = dados.get('data') if isinstance(dados, dict) else None
+            if isinstance(fixture, dict) and fixture:
+                return fixture
+        except (requests.RequestException, ValueError, TypeError) as erro:
+            print(f'[AUDITORIA] Fonte de detalhe indisponível ({url}): {erro}')
+    return None
+
 def checar_resultado(sinal):
     """Verifica se um sinal já enviado deu green ou red usando SokkerPro."""
     try:
@@ -1890,20 +1913,15 @@ def checar_resultado(sinal):
         if not fixture:
             # O jogo pode já ter saído de /livescores. Busca o resultado
             # definitivo diretamente pelo fixtureId na própria SokkerPro.
-            try:
-                detalhe = requests.get(
-                    f'https://m2.sokkerpro.com/fixture/{fid_raw}',
-                    headers={'User-Agent': 'Mozilla/5.0'}, timeout=10
-                ).json()
-                fixture = detalhe.get('data') if detalhe.get('success') else None
-                if fixture:
-                    eh_corner_ht = mercado in ('CORNER_HT', 'escanteio_ht') or sinal.get('tipo') == 'escanteio_ht'
-                    if eh_corner_ht and fixture.get('localCornersHT') is not None:
-                        fixture = dict(fixture)
-                        fixture['localCorners'] = fixture.get('localCornersHT')
-                        fixture['visitorCorners'] = fixture.get('visitorCornersHT')
-            except Exception as e:
-                print(f'[AUDITORIA] Fixture {fid_raw} indisponível: {e}')
+            fixture = _buscar_detalhe_fixture(fid_raw)
+            if fixture:
+                eh_corner_ht = mercado in ('CORNER_HT', 'escanteio_ht') or sinal.get('tipo') == 'escanteio_ht'
+                if eh_corner_ht and fixture.get('localCornersHT') is not None:
+                    fixture = dict(fixture)
+                    fixture['localCorners'] = fixture.get('localCornersHT')
+                    fixture['visitorCorners'] = fixture.get('visitorCornersHT')
+            else:
+                print(f'[AUDITORIA] Fixture {fid_raw} indisponível nas duas fontes')
                 return None
         if not fixture:
             return None
