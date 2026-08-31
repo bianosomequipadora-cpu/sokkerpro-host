@@ -337,7 +337,7 @@
         {
           "campo": "chutes_alvo_min",
           "operador": "gte",
-          "valor": 2
+          "valor": 3
         }
       ]
     },
@@ -358,6 +358,16 @@
           "campo": "big_chances_total_min",
           "operador": "gte",
           "valor": 2
+        },
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 1
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 5
         }
       ]
     },
@@ -388,46 +398,6 @@
           "campo": "escanteios_10m",
           "operador": "lte",
           "valor": 0
-        }
-      ]
-    },
-    "custom_1788184080216": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️🔰AMBAS EQUIPES MARCAM🔰⚽️",
-      "minuto_inicio": 66,
-      "minuto_fim": 78,
-      "periodo": 2,
-      "tipo": "ambas_marcam",
-      "placar_valido": "0x1",
-      "criterios": {
-        "situacao_favorito": "perdendo"
-      },
-      "criterios_api": [
-        {
-          "campo": "big_chances_total_min",
-          "operador": "gte",
-          "valor": 1
-        }
-      ]
-    },
-    "custom_1788184233352": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️🎯OVER 1.5 GOLS PARTIDA🎯⚽️",
-      "minuto_inicio": 66,
-      "minuto_fim": 78,
-      "periodo": 2,
-      "tipo": "over_15",
-      "placar_valido": "0x1, 1x0",
-      "criterios": {
-        "situacao_favorito": "perdendo"
-      },
-      "criterios_api": [
-        {
-          "campo": "big_chances_total_min",
-          "operador": "gte",
-          "valor": 1
         }
       ]
     },
