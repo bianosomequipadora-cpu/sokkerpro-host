@@ -419,6 +419,24 @@ def registrar_sinal(fid, mercado, home, away, message_id, extra_val=None, tipo=N
     historico.append({'fixture_id': fid, 'mercado': mercado, 'tipo': tipo, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'odd_b365': odd_b365, 'odd_bano': odd_bano, 'timestamp': datetime.now(BRT).isoformat(), 'resultado': 'pendente'})
     _save_entradas(historico)
 
+def atualizar_message_id_sinal(fid, mercado, message_id):
+    """Atualiza o ID da mensagem depois do envio, sem perder o sinal já reservado."""
+    try:
+        sinais = _load_sinais_github()
+        for registro in reversed(sinais):
+            if str(registro.get('fixture_id')) == str(fid) and registro.get('mercado') == mercado and not registro.get('message_id'):
+                registro['message_id'] = message_id or 0
+                _save_sinais_github(sinais)
+                break
+        entradas = _load_entradas()
+        for registro in reversed(entradas):
+            if str(registro.get('fixture_id')) == str(fid) and registro.get('mercado') == mercado and not registro.get('message_id'):
+                registro['message_id'] = message_id or 0
+                _save_entradas(entradas)
+                break
+    except Exception as exc:
+        print(f'[SINAIS] Não foi possível atualizar message_id: {exc}')
+
 def _load_resultados_github():
     """Carrega resultados.json do GitHub API (fonte da verdade) com fallback local."""
     if GITHUB_TOKEN and GITHUB_REPO:
@@ -2771,15 +2789,17 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 continue
             ob365 = odd_real
             obano = None
+            # Persiste primeiro para o painel não perder o sinal após o envio.
+            registrar_sinal(fid, mk, h, a, 0, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa, odd_b365=ob365, odd_bano=obano)
             if notificar:
                 mid = send_telegram(msg_universal(h, a, m, liga, pais, 5, mk, cnome, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, nome=cnome, tipo=c_tipo, probabilidade=_probabilidade_para_sinal(stats, c_tipo, sh, sa, extra_val if 'escanteio' in c_tipo else 0)), marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
             else:
                 print(f'[DIAG-{mk}-SILENT] {h} x {a} — notificar=False, registrando sem enviar')
                 mid = 0
+            atualizar_message_id_sinal(fid, mk, mid)
             sent.add(key)
             total_env += 1
             save_sent(sent)
-            registrar_sinal(fid, mk, h, a, mid, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa, odd_b365=ob365, odd_bano=obano)
     try:
         agora_hora = datetime.now(BRT)
         if agora_hora.hour == 23 and agora_hora.minute >= 55:
