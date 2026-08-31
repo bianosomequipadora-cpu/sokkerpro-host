@@ -1925,6 +1925,21 @@ def checar_resultado(sinal):
                 return None
         if not fixture:
             return None
+        # Para qualquer mercado, completa os campos de auditoria pelo detalhe
+        # quando a lista ao vivo não trouxe placar HT ou escanteios por período.
+        tipo_sinal = str(sinal.get('tipo', ''))
+        precisa_ht = tipo_sinal in ('escanteio_ht', 'gol_intervalo')
+        campos_ht_ausentes = (
+            fixture.get('localCornersHT') is None or
+            fixture.get('visitorCornersHT') is None
+        ) if tipo_sinal == 'escanteio_ht' else fixture.get('scoresHT') is None
+        if precisa_ht and campos_ht_ausentes:
+            detalhe_completo = _buscar_detalhe_fixture(fid_raw)
+            if detalhe_completo:
+                fixture = dict(fixture)
+                for campo in ('localCornersHT', 'visitorCornersHT', 'scoresHT', 'scoresLocalTeam', 'scoresVisitorTeam', 'localCorners', 'visitorCorners', 'status'):
+                    if detalhe_completo.get(campo) is not None:
+                        fixture[campo] = detalhe_completo[campo]
         # Auditoria de escanteio HT deve usar exclusivamente os campos
         # confirmados do primeiro tempo. Nunca aceitar os campos totais
         # como substitutos, pois eles podem voltar zerados/inconsistentes
