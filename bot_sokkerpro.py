@@ -1899,7 +1899,12 @@ def _buscar_detalhe_fixture(fid_raw):
         try:
             resposta = requests.get(url, headers={'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}, timeout=15)
             resposta.raise_for_status()
-            dados = resposta.json()
+            # O proxy retorna Markdown antes do JSON; localizar o primeiro objeto.
+            texto = resposta.text
+            inicio = texto.find('{')
+            if inicio < 0:
+                continue
+            dados = json.loads(texto[inicio:])
             if isinstance(dados.get('data'), dict) and isinstance(dados['data'].get('content'), str):
                 conteudo = dados['data']['content']
                 inicio = conteudo.find('{')
