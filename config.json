@@ -316,91 +316,6 @@
         }
       ]
     },
-    "custom_1787701093491": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️⚠️BIG CHANCES DE GOL HT⚠️⚽️",
-      "minuto_inicio": 5,
-      "minuto_fim": 27,
-      "periodo": 1,
-      "tipo": "gol_intervalo",
-      "placar_valido": "0x0",
-      "criterios": {
-        "situacao_favorito": "empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "big_chances_total_min",
-          "operador": "gte",
-          "valor": 2
-        },
-        {
-          "campo": "chutes_alvo_min",
-          "operador": "gte",
-          "valor": 3
-        }
-      ]
-    },
-    "custom_1787701249335": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️⚠️BIG CHANCES DE GOL FT⚠️⚽️",
-      "minuto_inicio": 66,
-      "minuto_fim": 75,
-      "periodo": 2,
-      "tipo": "over_gol",
-      "placar_valido": "0x0, 0x1, 1x0",
-      "criterios": {
-        "situacao_favorito": "perdendo_ou_empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "big_chances_total_min",
-          "operador": "gte",
-          "valor": 2
-        },
-        {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
-          "valor": 1
-        },
-        {
-          "campo": "chutes_alvo_min",
-          "operador": "gte",
-          "valor": 5
-        }
-      ]
-    },
-    "custom_1787931508858": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⛳️🌪ESCANTEIO ASIÁTICO HT🌪⛳️",
-      "minuto_inicio": 32,
-      "minuto_fim": 38,
-      "periodo": 1,
-      "tipo": "escanteio_ht",
-      "placar_valido": "",
-      "criterios": {
-        "situacao_favorito": "perdendo_ou_empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "dapm_total_orig_min",
-          "operador": "gte",
-          "valor": 0.7
-        },
-        {
-          "campo": "posse_bola_min",
-          "operador": "gte",
-          "valor": 58
-        },
-        {
-          "campo": "escanteios_10m",
-          "operador": "lte",
-          "valor": 0
-        }
-      ]
-    },
     "custom_1788203464042": {
       "ativo": true,
       "notificar": true,
@@ -428,9 +343,16 @@
           "campo": "chutes_totais_min",
           "operador": "gte",
           "valor": 7
+        },
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 0.75
         }
       ]
     }
   },
-  "ligas_bloqueadas": []
+  "ligas_bloqueadas": [
+    "Feminino"
+  ]
 }
