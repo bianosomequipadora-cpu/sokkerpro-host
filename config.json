@@ -431,5 +431,6 @@
         }
       ]
     }
-  }
+  },
+  "ligas_bloqueadas": []
 }
