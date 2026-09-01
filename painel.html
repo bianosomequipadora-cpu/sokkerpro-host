@@ -57,7 +57,7 @@ input:focus { border-color:#ffd700; outline:none; }
 <div id="login-screen" class="login-container"><div class="login-card"><h2>PAINEL SOKKERPRO</h2><p>Informe o token do GitHub para editar a configuração.</p><input id="token-field" type="password" placeholder="Token do GitHub" autocomplete="off"><button class="btn" onclick="doLogin()">ENTRAR</button></div></div>
 <div id="main-content" class="container hidden">
     
-    <div id="custom-markets-container"></div>
+    <section style="background:#171b22;border:1px solid #394452;border-radius:12px;padding:16px;margin-bottom:16px"><h2>🚫 Remover Ligas</h2><p>Digite uma liga por linha. Ela ficará em <b>Ligas bloqueadas</b>.</p><textarea id="ligas-bloqueadas" style="width:100%;min-height:90px;box-sizing:border-box;background:#0e1218;color:#fff;border:1px solid #536273;border-radius:8px;padding:10px" placeholder="Ex.: Liga Profesional de Fútbol"></textarea></section><div id="custom-markets-container"></div>
     <div id="status"></div>
     <button class="btn-add" id="btnAdd" onclick="criarMercado()">➕ Criar Novo Mercado</button>
     <button class="btn-save" id="btnSalvar" onclick="salvarConfig()">💾 Salvar Configuração no GitHub</button>
@@ -278,6 +278,7 @@ async function carregarDoGitHub(){
         if(!r.ok) throw new Error('Não foi possível carregar a configuração atual.');
         var configReal=await r.json();
         CONFIG_INLINE=configReal;
+        document.getElementById('ligas-bloqueadas').value=(configReal.ligas_bloqueadas||[]).join('\n');
         st('Dados carregados!','ok');
         renderizarMercados();
         await carregarPerformance();
@@ -347,6 +348,7 @@ async function salvarConfig(){
         });
         var fullConfig=JSON.parse(JSON.stringify(CONFIG_INLINE));
         fullConfig.mercados=merc;
+        fullConfig.ligas_bloqueadas=(document.getElementById('ligas-bloqueadas').value||'').split('\n').map(function(x){return x.trim();}).filter(Boolean);
         
         // Tenta salvar com retry automatico em caso de conflito de SHA
         var maxTentativas=5;
