@@ -84,6 +84,7 @@ def norm_nome_time(nome):
     n = re.sub('\\b(rj|sp|mg|rs|pr|sc|ba|pe|ce|go|mt|ms|df|es|rn|pb|al|se|pi|ma|pa|am|ro|rr|ap|to|fr|ac|ec|se|cf)\\b', '', n)
     return re.sub('\\s+', ' ', n).strip()
 CONFIG_MERCADOS = {}
+LIGAS_BLOQUEADAS = set()
 
 def carregar_config_github():
     """Carrega config.json do GitHub e retorna dict de mercados com critérios."""
@@ -93,6 +94,8 @@ def carregar_config_github():
         resp = request.urlopen(req, timeout=10)
         raw = json.loads(resp.read())['content']
         cfg = json.loads(base64.b64decode(raw).decode())
+        global LIGAS_BLOQUEADAS
+        LIGAS_BLOQUEADAS = {str(x).strip().casefold() for x in cfg.get('ligas_bloqueadas', []) if str(x).strip()}
         return cfg.get('mercados', {})
     except:
         print('[CONFIG] Erro ao carregar config.json do GitHub, usando valores padrão')
@@ -2391,7 +2394,7 @@ def get_media_gols_historica_skp(home, away, stats):
         return -1.0
 
 def run_ciclo(sent, total_env, confirmed_ids=None):
-    global CONFIG_MERCADOS
+    global CONFIG_MERCADOS, LIGAS_BLOQUEADAS
     CONFIG_MERCADOS = carregar_config_github()
     global MAPA_MERCADO
     MAPA_MERCADO = _gerar_mapa_mercados()
@@ -2490,6 +2493,9 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             p = p_raw
         sh, sa = (j['sh'], j['sa'])
         liga = str(j['liga'])
+        if liga.strip().casefold() in LIGAS_BLOQUEADAS:
+            print(f'[LIGAS] Ignorada liga bloqueada: {liga}')
+            continue
         pais = j.get('pais', '')
         stot = sh + sa
         placar = f'{sh}x{sa}'
