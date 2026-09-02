@@ -415,14 +415,9 @@
       },
       "criterios_api": [
         {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
-          "valor": 0.7
-        },
-        {
           "campo": "big_chances_total_min",
           "operador": "gte",
-          "valor": 2
+          "valor": 3
         },
         {
           "campo": "chutes_alvo_min",
