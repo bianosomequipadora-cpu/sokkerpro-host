@@ -400,6 +400,36 @@
           "valor": 0.75
         }
       ]
+    },
+    "custom_1788356796506": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️❤️‍🔥OVER 0.5 GOL HT❤️‍🔥⚽️",
+      "minuto_inicio": 5,
+      "minuto_fim": 27,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": ""
+      },
+      "criterios_api": [
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 0.7
+        },
+        {
+          "campo": "big_chances_total_min",
+          "operador": "gte",
+          "valor": 2
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 3
+        }
+      ]
     }
   },
   "ligas_bloqueadas": [
