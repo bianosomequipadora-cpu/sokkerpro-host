@@ -316,41 +316,6 @@
         }
       ]
     },
-    "custom_1788203464042": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⛳️🧿ESCANTEIO ASIÁTICO HT🧿⛳️",
-      "minuto_inicio": 32,
-      "minuto_fim": 38,
-      "periodo": 1,
-      "tipo": "escanteio_ht",
-      "placar_valido": "0x0, 1x1",
-      "criterios": {
-        "situacao_favorito": "empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "media_gols_partida_min",
-          "operador": "gte",
-          "valor": 2.5
-        },
-        {
-          "campo": "chutes_alvo_min",
-          "operador": "gte",
-          "valor": 2
-        },
-        {
-          "campo": "chutes_totais_min",
-          "operador": "gte",
-          "valor": 7
-        },
-        {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
-          "valor": 0.75
-        }
-      ]
-    },
     "custom_1788315186809": {
       "ativo": true,
       "notificar": true,
@@ -398,6 +363,41 @@
           "campo": "chutes_bloq_max",
           "operador": "lte",
           "valor": 2
+        }
+      ]
+    },
+    "custom_1788356591678": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⛳️🧿ESCANTEIO ASIÁTICO HT🧿⛳️ — CÓPIA",
+      "minuto_inicio": 32,
+      "minuto_fim": 38,
+      "periodo": 1,
+      "tipo": "escanteio_ht",
+      "placar_valido": "0x0, 1x1",
+      "criterios": {
+        "situacao_favorito": "empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "media_gols_partida_min",
+          "operador": "gte",
+          "valor": 2.5
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 2
+        },
+        {
+          "campo": "chutes_totais_min",
+          "operador": "gte",
+          "valor": 7
+        },
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 0.75
         }
       ]
     }
