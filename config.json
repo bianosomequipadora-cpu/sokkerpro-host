@@ -175,14 +175,14 @@
       },
       "criterios_api": [
         {
-          "campo": "escanteios_10m",
+          "campo": "escanteios_5m",
           "operador": "lte",
           "valor": 0
         },
         {
           "campo": "media_gols_partida_min",
           "operador": "gte",
-          "valor": 2.2
+          "valor": 2.5
         },
         {
           "campo": "diferenca_gols_fav_max",
@@ -192,7 +192,7 @@
         {
           "campo": "escanteios_minimos",
           "operador": "gte",
-          "valor": 1
+          "valor": 2
         },
         {
           "campo": "max_red_card_fav",
