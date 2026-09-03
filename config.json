@@ -59,11 +59,11 @@
     "custom_1786917328719": {
       "ativo": true,
       "notificar": true,
-      "nome": "⛳️🚸ESCANTEIO ASIÁT/LMT HT🚸⛳️",
-      "minuto_inicio": 30,
-      "minuto_fim": 38,
-      "periodo": 1,
-      "tipo": "escanteio_ht",
+      "nome": "⛳️🚸ESCANTEIO ASIÁT/LMT FT🚸⛳️",
+      "minuto_inicio": 82,
+      "minuto_fim": 87,
+      "periodo": 2,
+      "tipo": "escanteio_ft",
       "placar_valido": "",
       "criterios": {
         "situacao_favorito": "perdendo_ou_empatando"
@@ -77,7 +77,7 @@
         {
           "campo": "media_gols_partida_min",
           "operador": "gte",
-          "valor": 2.2
+          "valor": 2.5
         },
         {
           "campo": "diferenca_gols_fav_max",
@@ -87,17 +87,17 @@
         {
           "campo": "chutes_alvo_min",
           "operador": "gte",
-          "valor": 2
+          "valor": 4
         },
         {
           "campo": "chutes_totais_min",
           "operador": "gte",
-          "valor": 5
+          "valor": 10
         },
         {
           "campo": "escanteios_minimos",
           "operador": "gte",
-          "valor": 1
+          "valor": 2
         },
         {
           "campo": "max_red_card_fav",
