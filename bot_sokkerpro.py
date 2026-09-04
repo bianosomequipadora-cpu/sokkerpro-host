@@ -1686,6 +1686,9 @@ def nome_liga_exibicao(liga, pais):
         m_codigo = re.match(r'^([a-z]{2})\s+', pais.lower())
         if m_codigo:
             pais = m_codigo.group(1)
+    # Algumas respostas da API trazem V-League sem o país preenchido.
+    if str(liga).strip().casefold() in {'v-league', 'v.league', 'v league'} and not pais:
+        pais = 'Viet Nam'
     info = PAIS_NOME.get(pais) or PAIS_CODIGO.get(pais.lower()) if isinstance(pais, str) else None
     if info:
         return liga + ' (' + info[0] + ' ' + info[1] + ')'
