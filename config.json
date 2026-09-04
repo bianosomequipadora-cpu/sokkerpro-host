@@ -362,7 +362,7 @@
         {
           "campo": "big_chances_total_min",
           "operador": "gte",
-          "valor": 3
+          "valor": 2
         },
         {
           "campo": "chutes_alvo_min",
@@ -393,6 +393,16 @@
           "campo": "media_gols_partida_min",
           "operador": "gte",
           "valor": 3
+        },
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 1
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 2
         }
       ]
     },
