@@ -1689,6 +1689,8 @@ def nome_liga_exibicao(liga, pais):
     # Algumas respostas da API trazem V-League sem o país preenchido.
     if str(liga).strip().casefold() in {'v-league', 'v.league', 'v league'} and not pais:
         pais = 'Viet Nam'
+    if str(liga).strip().casefold() in {'u19 süper lig', 'u19 super lig'} and not pais:
+        pais = 'Türkiye'
     info = PAIS_NOME.get(pais) or PAIS_CODIGO.get(pais.lower()) if isinstance(pais, str) else None
     if info:
         return liga + ' (' + info[0] + ' ' + info[1] + ')'
