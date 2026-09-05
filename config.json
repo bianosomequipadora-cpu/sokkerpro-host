@@ -387,7 +387,7 @@
         {
           "campo": "big_chances_total_min",
           "operador": "gte",
-          "valor": 3
+          "valor": 1
         },
         {
           "campo": "chutes_alvo_min",
