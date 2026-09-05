@@ -440,6 +440,26 @@
           "valor": 70
         }
       ]
+    },
+    "custom_1788605626262": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "Fsgf",
+      "minuto_inicio": 2,
+      "minuto_fim": 30,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": "empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 1
+        }
+      ]
     }
   },
   "ligas_bloqueadas": [
