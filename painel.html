@@ -50,14 +50,14 @@ input:focus { border-color:#ffd700; outline:none; }
 .toggle-switch input:checked+.toggle-slider { background:#27ae60; }
 .toggle-switch input:checked+.toggle-slider:before { transform:translateX(22px); }
 .input-nome { flex:1; margin-right:10px; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:10px; color:#fff; font-size:1em; font-weight:bold; min-width:0; }
-#entradas-resumo>div>div{white-space:nowrap;display:flex;align-items:center;justify-content:flex-start;min-height:0;text-align:left}#entradas-resumo>div>div:nth-child(5){grid-column:1;grid-row:3}.stake-box{display:block!important;grid-column:2;grid-row:3;white-space:normal!important;text-align:left!important;padding-top:2px}.stake-box input{display:block;margin:5px 0 0 26px!important;width:110px;box-sizing:border-box}.roi-inline{margin-top:6px;text-align:center;white-space:nowrap}.criterion-modal{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9999;display:flex;align-items:flex-start;justify-content:center;padding:5vh 14px}.criterion-modal-card{background:#171b22;border:1px solid #394452;border-radius:12px;width:min(620px,96vw);max-height:88vh;display:flex;flex-direction:column}.criterion-modal-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;color:#fff}.criterion-modal-head button{background:none;border:0;color:#fff;font-size:1.2em}.criterion-modal-card>input{display:block;width:calc(100% - 28px);box-sizing:border-box;margin:0 14px 10px;padding:12px;border-radius:8px;border:1px solid #536273;background:#0e1218;color:#fff;font-size:1em}.criterion-options{overflow:auto;padding:0 10px 12px}.criterion-option{display:block;width:100%;text-align:left;background:#222a35;color:#fff;border:1px solid #3b4756;border-radius:7px;padding:11px 13px;margin:6px 0;font-size:.95em}.criterion-option:hover{background:#30445a}.league-box{background:#171b22;border:1px solid #394452;border-radius:12px;margin-bottom:16px}.league-box summary{cursor:pointer;padding:14px 16px;color:#fff;font-size:1.05em;font-weight:bold}.league-inner{padding:0 16px 16px}.league-inner textarea{width:100%;min-height:110px;max-height:220px;box-sizing:border-box;background:#0e1218;color:#fff;border:1px solid #536273;border-radius:8px;padding:10px;resize:vertical}.league-hint{color:#aab4c0;font-size:.9em;margin:0 0 10px}</style>
+#entradas-resumo>div>div{white-space:nowrap;display:flex;align-items:center;justify-content:flex-start;min-height:0;text-align:left}#entradas-resumo>div>div:nth-child(5){grid-column:1;grid-row:3}.stake-box{display:block!important;grid-column:2;grid-row:3;white-space:normal!important;text-align:left!important;padding-top:2px}.stake-box input{display:block;margin:5px 0 0 26px!important;width:110px;box-sizing:border-box}.roi-inline{margin-top:6px;text-align:center;white-space:nowrap}.criterion-modal{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9999;display:flex;align-items:flex-start;justify-content:center;padding:5vh 14px}.criterion-modal-card{background:#171b22;border:1px solid #394452;border-radius:12px;width:min(620px,96vw);max-height:88vh;display:flex;flex-direction:column}.criterion-modal-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;color:#fff}.criterion-modal-head button{background:none;border:0;color:#fff;font-size:1.2em}.criterion-modal-card>input{display:block;width:calc(100% - 28px);box-sizing:border-box;margin:0 14px 10px;padding:12px;border-radius:8px;border:1px solid #536273;background:#0e1218;color:#fff;font-size:1em}.criterion-options{overflow:auto;padding:0 10px 12px}.criterion-option{display:block;width:100%;text-align:left;background:#222a35;color:#fff;border:1px solid #3b4756;border-radius:7px;padding:11px 13px;margin:6px 0;font-size:.95em}.criterion-option:hover{background:#30445a}</style>
 </head>
 <body onload="checkLogin()">
 
 <div id="login-screen" class="login-container"><div class="login-card"><h2>PAINEL SOKKERPRO</h2><p>Informe o token do GitHub para editar a configuração.</p><input id="token-field" type="password" placeholder="Token do GitHub" autocomplete="off"><button class="btn" onclick="doLogin()">ENTRAR</button></div></div>
 <div id="main-content" class="container hidden">
     
-    <details class="league-box"><summary>🚫 Remover Ligas <span id="ligas-count" style="float:right;color:#aab4c0;font-size:.85em;font-weight:normal">0 ligas bloqueadas</span></summary><div class="league-inner"><p class="league-hint">Digite uma liga por linha. A lista fica escondida até você abrir esta seção.</p><textarea id="ligas-bloqueadas" placeholder="Ex.: Liga Profesional de Fútbol"></textarea></div></details><div id="custom-markets-container"></div>
+    <section style="background:#171b22;border:1px solid #394452;border-radius:12px;padding:16px;margin-bottom:16px"><h2>🚫 Remover Ligas</h2><p>Digite uma liga por linha. Ela ficará em <b>Ligas bloqueadas</b>.</p><textarea id="ligas-bloqueadas" style="width:100%;min-height:90px;box-sizing:border-box;background:#0e1218;color:#fff;border:1px solid #536273;border-radius:8px;padding:10px" placeholder="Ex.: Liga Profesional de Fútbol"></textarea></section><div id="custom-markets-container"></div>
     <div id="status"></div>
     <button class="btn-add" id="btnAdd" onclick="criarMercado()">➕ Criar Novo Mercado</button>
     <button class="btn-save" id="btnSalvar" onclick="salvarConfig()">💾 Salvar Configuração no GitHub</button>
@@ -65,8 +65,6 @@ input:focus { border-color:#ffd700; outline:none; }
 <script>
 var CONFIG_INLINE = {"login":{},"mercados":{"over_05_ht":{"ativo":true,"notificar":true,"nome":"⚽️🔥OVER GOL INTERVALO🔥⚽️","minuto_inicio":15,"minuto_fim":27,"periodo":1,"tipo":"gol_intervalo","placar_valido":"0x0","criterios":{"situacao_favorito":"empatando","appm_min_por_time":0.75,"media_gols_partida_min":2.5,"chutes_alvo_min":1,"chutes_totais_min":6,"ataques_perigosos_min":15,"max_red_card_fav":0}},"over_gol_partida":{"ativo":true,"notificar":true,"nome":"⚽️🔥OVER GOL PARTIDA🔥⚽️","minuto_inicio":55,"minuto_fim":75,"periodo":2,"tipo":"over_gol","placar_valido":"","criterios":{"situacao_favorito":"perdendo_ou_empatando","diferenca_gols_fav_max":1,"chutes_alvo_min":3,"chutes_totais_min":10,"max_red_card_fav":0}},"over_15_ft":{"ativo":true,"notificar":true,"nome":"⚽️🔥OVER 1.5 GOLS PARTIDA🔥⚽️","minuto_inicio":55,"minuto_fim":75,"periodo":2,"tipo":"over_15","placar_valido":"","criterios":{"situacao_favorito":"perdendo_ou_empatando","diferenca_gols_fav_max":1,"media_gols_partida_min":2.3,"max_red_card_fav":0}},"ambas_marcam":{"ativo":true,"notificar":true,"nome":"⚽️🔥AMBAS MARCAM🔥⚽️","minuto_inicio":55,"minuto_fim":75,"periodo":2,"tipo":"ambas_marcam","placar_valido":"","criterios":{"situacao_favorito":"perdendo_ou_empatando","diferenca_gols_fav_max":1,"media_gols_partida_min":2.3,"max_red_card_fav":0}},"escanteio_ht":{"ativo":true,"notificar":true,"nome":"🚩🔥ESCANTEIO ÁSIAT/LMT HT🔥🚩","minuto_inicio":32,"minuto_fim":38,"periodo":1,"tipo":"escanteio_ht","placar_valido":"","criterios":{"situacao_favorito":"perdendo_ou_empatando","appm_min_por_time":0.7,"diferenca_gols_fav_max":1,"chutes_totais_min":5,"escanteios_minimos":1,"max_red_card_fav":0}},"escanteio_ft":{"ativo":true,"notificar":true,"nome":"🚩🔥ESCANTEIO ÁSIAT/LMT FT🔥🚩","minuto_inicio":82,"minuto_fim":88,"periodo":2,"tipo":"escanteio_ft","placar_valido":"","criterios":{"situacao_favorito":"perdendo_ou_empatando","appm_min_por_time":0.75,"diferenca_gols_fav_max":1,"chutes_alvo_min":4,"chutes_totais_min":10,"escanteios_minimos":1,"max_red_card_fav":0}}}};
 var cfgSha = null;
-var CONFIG_SNAPSHOT = null;
-var REMOVED_MARKETS = {};
 var TOKEN = localStorage.getItem('github_token');
 if(!TOKEN) TOKEN=sessionStorage.getItem('github_token');
 var REPO = 'bianosomequipadora-cpu/sokkerpro-host';
@@ -87,7 +85,6 @@ function doLogin() {
     checkLogin();
 }
 
-function atualizarContadorLigas(){var e=document.getElementById('ligas-bloqueadas'),c=document.getElementById('ligas-count');if(!e||!c)return;var n=e.value.split('\n').map(function(x){return x.trim();}).filter(Boolean).length;c.textContent=n+' liga'+(n===1?' bloqueada':'s bloqueadas');}
 function st(txt,cl){ var s=document.getElementById('status'); if(!s)return; s.innerHTML=txt; s.style.color=cl==='ok'?'#2ecc71':(cl==='err'?'#e74c3c':'#f1c40f'); }
 
 function gv(id) {
@@ -237,7 +234,7 @@ function clonarMercado(key){
     st('Mercado clonado! Edite e salve para confirmar.','ok');
 }
 
-function removerMercado(key){if(!confirm('Remover este mercado?'))return;REMOVED_MARKETS[key]=true;var el=document.getElementById('card-'+key);if(el){el.remove();st('Mercado removido. Clique em Salvar Configuração no GitHub para confirmar.','ok');}}
+function removerMercado(key){if(!confirm('Remover este mercado?'))return;var el=document.getElementById('card-'+key);if(el){el.remove();st('Mercado removido. Salve para confirmar.','ok');}}
 
 var ENTRADAS_REPO = "sokkerpro-host";
 async function abrirEntradas(mercado){
@@ -281,8 +278,7 @@ async function carregarDoGitHub(){
         if(!r.ok) throw new Error('Não foi possível carregar a configuração atual.');
         var configReal=await r.json();
         CONFIG_INLINE=configReal;
-        CONFIG_SNAPSHOT=JSON.stringify(configReal.mercados||{});
-        document.getElementById('ligas-bloqueadas').value=(configReal.ligas_bloqueadas||[]).join('\n'); atualizarContadorLigas();
+        document.getElementById('ligas-bloqueadas').value=(configReal.ligas_bloqueadas||[]).join('\n');
         st('Dados carregados!','ok');
         renderizarMercados();
         await carregarPerformance();
@@ -350,10 +346,8 @@ async function salvarConfig(){
                 criterios_api:(function(){var todos=readApiCriteria(card,key);return todos;})()
             };
         });
-        Object.keys(REMOVED_MARKETS).forEach(function(k){delete merc[k];});
         var fullConfig=JSON.parse(JSON.stringify(CONFIG_INLINE));
         fullConfig.mercados=merc;
-        atualizarContadorLigas();
         fullConfig.ligas_bloqueadas=(document.getElementById('ligas-bloqueadas').value||'').split('\n').map(function(x){return x.trim();}).filter(Boolean);
         
         // Tenta salvar com retry automatico em caso de conflito de SHA
@@ -367,17 +361,6 @@ async function salvarConfig(){
             });
             if(!r.ok){throw new Error('Falha ao buscar SHA (tentativa '+tentativa+')');}
             var j=await r.json();
-            // Usa a configuração mais recente do GitHub e preserva mercados adicionados
-            // por outra aba/ciclo, evitando que um salvamento antigo os apague.
-            var baseAtual=JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\s/g,'')))));
-            if(CONFIG_SNAPSHOT!==null && JSON.stringify(baseAtual.mercados||{})!==CONFIG_SNAPSHOT){
-                console.warn('Configuração mudou desde a abertura; salvando com merge da versão mais recente.');
-            }
-            var conhecidos=CONFIG_INLINE.mercados||{};
-            Object.keys(conhecidos).forEach(function(k){if(REMOVED_MARKETS[k] || !Object.prototype.hasOwnProperty.call(merc,k)){delete (baseAtual.mercados||{})[k];}});
-            baseAtual.mercados=Object.assign({},baseAtual.mercados||{},merc);
-            baseAtual.ligas_bloqueadas=fullConfig.ligas_bloqueadas;
-            fullConfig=baseAtual;
             var b64=btoa(unescape(encodeURIComponent(JSON.stringify(fullConfig,null,2))));
             var res=await fetch('https://api.github.com/repos/'+REPO+'/contents/config.json',{
                 method:'PUT',
@@ -389,8 +372,6 @@ async function salvarConfig(){
                 var j2=await res.json();
                 if(j2.content&&j2.content.sha){cfgSha=j2.content.sha;}
                 CONFIG_INLINE.mercados=merc;
-                CONFIG_SNAPSHOT=JSON.stringify(merc);
-                REMOVED_MARKETS={};
                 st('SALVO COM SUCESSO!','ok');
             } else {
                 var errMsg='';
@@ -462,8 +443,7 @@ async function carregarPerformance(){
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function(){
-    navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){r.unregister();});});
-    if (window.caches) caches.keys().then(function(ks){ks.forEach(function(k){caches.delete(k);});});
+    navigator.serviceWorker.register('sw.js?v=202608192342');
   });
 }
 </script>
