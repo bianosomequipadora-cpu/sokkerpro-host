@@ -435,6 +435,26 @@
           "valor": 1.5
         }
       ]
+    },
+    "custom_1788616862756": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "",
+      "minuto_inicio": 2,
+      "minuto_fim": 10,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": "empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 0.4
+        }
+      ]
     }
   }
 }
