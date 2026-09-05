@@ -2027,6 +2027,9 @@ def checar_resultado(sinal):
         total_final = gh + ga
         total_ht = int(fixture.get('scoresHT', 0) or 0)
         entry_total = sinal.get('entry_total')
+        # Registros antigos de gol_intervalo não tinham entry_total; extra_val guarda a linha de entrada.
+        if entry_total is None and sinal.get('tipo') in ('gol_intervalo', 'over_15'):
+            entry_total = sinal.get('extra_val')
         if mercado in ('HT', 'over_05_ht', 'gol_intervalo'):
             return 'green' if entry_total is not None and total_ht > entry_total else 'red' if entry_total is not None and (is_2h or is_final) else None
         elif mercado == 'BTTS':
