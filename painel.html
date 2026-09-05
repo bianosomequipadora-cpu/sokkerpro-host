@@ -274,10 +274,12 @@ async function abrirEntradas(mercado){
 async function carregarDoGitHub(){
     st('Carregando dados...','loading');
     try{
-        var r=await fetch('https://raw.githubusercontent.com/bianosomequipadora-cpu/sokkerpro-host/main/config.json?t='+Date.now(),{cache:'no-store'});
+        var r=await fetch('https://api.github.com/repos/bianosomequipadora-cpu/sokkerpro-host/contents/config.json?ref=main&t='+Date.now(),{cache:'no-store',headers:{'Accept':'application/vnd.github+json'}});
         if(!r.ok) throw new Error('Não foi possível carregar a configuração atual.');
-        var configReal=await r.json();
+        var pacote=await r.json();
+        var configReal=JSON.parse(decodeURIComponent(escape(atob((pacote.content||'').replace(/\n/g,'')))));
         CONFIG_INLINE=configReal;
+        cfgSha=pacote.sha;
         st('Dados carregados!','ok');
         renderizarMercados();
         await carregarPerformance();
