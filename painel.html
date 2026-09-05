@@ -440,9 +440,7 @@ async function carregarPerformance(){
 </script>
 <script>
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function(){
-    navigator.serviceWorker.register('sw.js?v=202608192342');
-  });
+  window.addEventListener('load', function(){ navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){r.unregister();});}); if(window.caches)caches.keys().then(function(ks){ks.forEach(function(k){caches.delete(k);});}); });
 }
 </script>
 </body>
