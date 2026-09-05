@@ -371,7 +371,7 @@ async function salvarConfig(){
             // por outra aba/ciclo, evitando que um salvamento antigo os apague.
             var baseAtual=JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\s/g,'')))));
             if(CONFIG_SNAPSHOT!==null && JSON.stringify(baseAtual.mercados||{})!==CONFIG_SNAPSHOT){
-                throw new Error('A configuração mudou em outra aba. Atualize o painel antes de salvar novamente.');
+                console.warn('Configuração mudou desde a abertura; salvando com merge da versão mais recente.');
             }
             var conhecidos=CONFIG_INLINE.mercados||{};
             Object.keys(conhecidos).forEach(function(k){if(REMOVED_MARKETS[k] || !Object.prototype.hasOwnProperty.call(merc,k)){delete (baseAtual.mercados||{})[k];}});
