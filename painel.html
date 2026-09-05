@@ -361,6 +361,11 @@ async function salvarConfig(){
             });
             if(!r.ok){throw new Error('Falha ao buscar SHA (tentativa '+tentativa+')');}
             var j=await r.json();
+            var remoto=JSON.parse(decodeURIComponent(escape(atob((j.content||'').replace(/\n/g,'')))));
+            var chavesRemotas=Object.keys(remoto.mercados||{});
+            var chavesTela=Object.keys(merc);
+            var ausentes=chavesRemotas.filter(function(k){return !Object.prototype.hasOwnProperty.call(merc,k);});
+            if(ausentes.length){ throw new Error('A tela está desatualizada: existem mercados salvos que não estão sendo exibidos. Atualize o painel antes de salvar.'); }
             var b64=btoa(unescape(encodeURIComponent(JSON.stringify(fullConfig,null,2))));
             var res=await fetch('https://api.github.com/repos/'+REPO+'/contents/config.json',{
                 method:'PUT',
