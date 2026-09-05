@@ -2801,7 +2801,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 extra_val = sh + sa
                 linha_str = 'Over 1.5 Limite⚽️'
             elif c_tipo == 'ambas_marcam':
-                linha_str = 'Ambas Marcam Limite⚽️'
+                linha_str = 'Ambas Marcam⚽️'
             odd_real = _odd_real_disponivel(stats, c_tipo, extra_val)
             if odd_real is None:
                 print(f'[DIAG-{mk}-ODD] {h} x {a} — mercado/linha não encontrada na API, não enviando')
