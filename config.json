@@ -446,9 +446,29 @@
       "tipo": "gol_intervalo",
       "placar_valido": "0x0",
       "criterios": {
-        "situacao_favorito": "empatando",
-        "chutes_totais_min": 1
-      }
+        "situacao_favorito": "empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "chutes_totais_min",
+          "operador": "gte",
+          "valor": 1
+        }
+      ]
+    },
+    "custom_1788614628389": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "TESTE BOTAO 1023",
+      "minuto_inicio": 10,
+      "minuto_fim": 20,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": ""
+      },
+      "criterios_api": []
     }
   }
 }
