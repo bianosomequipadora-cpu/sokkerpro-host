@@ -445,7 +445,7 @@
       "ativo": true,
       "notificar": true,
       "nome": "⚽️👑Over 0.5 Gol HT👑⚽️",
-      "minuto_inicio": 2,
+      "minuto_inicio": 10,
       "minuto_fim": 30,
       "periodo": 1,
       "tipo": "gol_intervalo",
