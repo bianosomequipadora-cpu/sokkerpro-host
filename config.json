@@ -449,19 +449,6 @@
         "situacao_favorito": "empatando",
         "chutes_totais_min": 1
       }
-    },
-    "custom_TESTE_TOKEN_1001": {
-      "ativo": true,
-      "notificar": false,
-      "nome": "TESTE TOKEN 1001",
-      "minuto_inicio": 10,
-      "minuto_fim": 20,
-      "periodo": 1,
-      "tipo": "gol_intervalo",
-      "placar_valido": "0x0",
-      "criterios": {
-        "situacao_favorito": "empatando"
-      }
     }
   }
 }
