@@ -2793,15 +2793,15 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 linha_str = f'Mais de {extra_val + 1:.1f} Asiático⛳️'
             elif c_tipo in ('gol_partida', 'over_gol'):
                 extra_val = sh + sa
-                linha_str = f'Over {extra_val + 0.5}⚽️'
+                linha_str = f'Over {extra_val + 0.5:.1f} Limite⚽️'
             elif c_tipo == 'gol_intervalo':
                 extra_val = 0
-                linha_str = 'Over 0.5⚽️'
+                linha_str = 'Over 0.5 Limite⚽️'
             elif c_tipo == 'over_15':
                 extra_val = sh + sa
-                linha_str = 'Over 1.5⚽️'
+                linha_str = 'Over 1.5 Limite⚽️'
             elif c_tipo == 'ambas_marcam':
-                linha_str = 'Ambas Marcam⚽️'
+                linha_str = 'Ambas Marcam Limite⚽️'
             odd_real = _odd_real_disponivel(stats, c_tipo, extra_val)
             if odd_real is None:
                 print(f'[DIAG-{mk}-ODD] {h} x {a} — mercado/linha não encontrada na API, não enviando')
