@@ -356,7 +356,7 @@
       "tipo": "gol_intervalo",
       "placar_valido": "0x0",
       "criterios": {
-        "situacao_favorito": ""
+        "situacao_favorito": "empatando"
       },
       "criterios_api": [
         {
@@ -388,76 +388,6 @@
           "campo": "big_chances_total_min",
           "operador": "gte",
           "valor": 1
-        },
-        {
-          "campo": "chutes_alvo_min",
-          "operador": "gte",
-          "valor": 2
-        },
-        {
-          "campo": "chutes_inside_total_min",
-          "operador": "gte",
-          "valor": 3
-        },
-        {
-          "campo": "prob_ht_over_0_5",
-          "operador": "gte",
-          "valor": 70
-        }
-      ]
-    },
-    "custom_1788583194963": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️🧠OVER 0.5 GOL INTERVALO🧠⚽️ — CÓPIA",
-      "minuto_inicio": 5,
-      "minuto_fim": 30,
-      "periodo": 1,
-      "tipo": "gol_intervalo",
-      "placar_valido": "0x0",
-      "criterios": {
-        "situacao_favorito": "empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "big_chances_total_min",
-          "operador": "gte",
-          "valor": 1
-        },
-        {
-          "campo": "chutes_alvo_min",
-          "operador": "gte",
-          "valor": 2
-        },
-        {
-          "campo": "chutes_inside_total_min",
-          "operador": "gte",
-          "valor": 3
-        },
-        {
-          "campo": "prob_ht_over_0_5",
-          "operador": "gte",
-          "valor": 70
-        }
-      ]
-    },
-    "custom_1788583238891": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️🧠OVER 0.5 GOL INTERVALO🧠⚽️ — CÓPIA",
-      "minuto_inicio": 5,
-      "minuto_fim": 30,
-      "periodo": 1,
-      "tipo": "gol_intervalo",
-      "placar_valido": "0x0",
-      "criterios": {
-        "situacao_favorito": "empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "big_chances_total_min",
-          "operador": "gte",
-          "valor": 2
         },
         {
           "campo": "chutes_alvo_min",
