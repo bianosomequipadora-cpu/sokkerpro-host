@@ -2016,7 +2016,7 @@ def checar_resultado(sinal):
         # enquanto ainda há acréscimos para jogar.
         status = str(fixture.get('status', '')).strip().upper()
         is_final = status in ('FT', 'FTP', 'PEN', 'AET')
-        is_2h = status in ('2ND', 'HT')
+        is_2h = (status == 'HT')
         mercados_ht = ['HT', 'CORNER_HT', 'BTTS', 'escanteio_ht']
         eh_mercado_ht = mercado in mercados_ht or (mercado and mercado.startswith('custom_') and (sinal.get('tipo') in ('escanteio_ht', 'gol_intervalo')))
         if not (is_final or (eh_mercado_ht and is_2h)):
