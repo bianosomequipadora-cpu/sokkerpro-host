@@ -374,7 +374,7 @@
     "custom_1788581626260": {
       "ativo": true,
       "notificar": true,
-      "nome": "⚽️🧠OVER 0.5 GOL INTERVALO🧠⚽️",
+      "nome": "",
       "minuto_inicio": 5,
       "minuto_fim": 30,
       "periodo": 1,
@@ -408,6 +408,8 @@
     }
   },
   "ligas_bloqueadas": [
-    "Feminino"
+    "Feminino",
+    "Women",
+    "W"
   ]
 }
