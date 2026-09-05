@@ -2790,7 +2790,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 cantos_h = max(0, _eh)
                 cantos_a = max(0, _ea)
                 extra_val = cantos_h + cantos_a
-                linha_str = f'Mais de {extra_val + 0.5}⛳️'
+                linha_str = f'Mais de {extra_val + 1:.1f} Asiático⛳️'
             elif c_tipo in ('gol_partida', 'over_gol'):
                 extra_val = sh + sa
                 linha_str = f'Over {extra_val + 0.5}⚽️'
