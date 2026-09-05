@@ -386,7 +386,7 @@
       "notificar": true,
       "nome": "Gol teste",
       "minuto_inicio": 2,
-      "minuto_fim": 10,
+      "minuto_fim": 42,
       "periodo": 1,
       "tipo": "gol_intervalo",
       "placar_valido": "0x0",
@@ -397,7 +397,7 @@
         {
           "campo": "appm_min_por_time",
           "operador": "gte",
-          "valor": 0.4
+          "valor": 0.5
         }
       ]
     }
