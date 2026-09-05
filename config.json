@@ -444,12 +444,12 @@
     "custom_1788605626262": {
       "ativo": true,
       "notificar": true,
-      "nome": "Fsgf",
+      "nome": "⚽️👑Over 0.5 Gol HT👑⚽️",
       "minuto_inicio": 2,
       "minuto_fim": 30,
       "periodo": 1,
       "tipo": "gol_intervalo",
-      "placar_valido": "",
+      "placar_valido": "0x0",
       "criterios": {
         "situacao_favorito": "empatando"
       },
@@ -458,6 +458,16 @@
           "campo": "appm_min_por_time",
           "operador": "gte",
           "valor": 1
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 2
+        },
+        {
+          "campo": "goal_attempts_min",
+          "operador": "gte",
+          "valor": 2
         }
       ]
     }
