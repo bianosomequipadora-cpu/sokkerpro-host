@@ -2790,18 +2790,18 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 cantos_h = max(0, _eh)
                 cantos_a = max(0, _ea)
                 extra_val = cantos_h + cantos_a
-                linha_str = f'o+{extra_val + 0.5}'
+                linha_str = f'Mais de {extra_val + 0.5}⛳️'
             elif c_tipo in ('gol_partida', 'over_gol'):
                 extra_val = sh + sa
-                linha_str = f'o+{extra_val + 0.5}'
+                linha_str = f'Over {extra_val + 0.5}⚽️'
             elif c_tipo == 'gol_intervalo':
                 extra_val = 0
-                linha_str = 'o+0.5'
+                linha_str = 'Over 0.5⚽️'
             elif c_tipo == 'over_15':
                 extra_val = sh + sa
-                linha_str = 'o+1.5'
+                linha_str = 'Over 1.5⚽️'
             elif c_tipo == 'ambas_marcam':
-                linha_str = 'bts_yes'
+                linha_str = 'Ambas Marcam⚽️'
             odd_real = _odd_real_disponivel(stats, c_tipo, extra_val)
             if odd_real is None:
                 print(f'[DIAG-{mk}-ODD] {h} x {a} — mercado/linha não encontrada na API, não enviando')
@@ -2811,7 +2811,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             # Persiste primeiro para o painel não perder o sinal após o envio.
             registrar_sinal(fid, mk, h, a, 0, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa, odd_b365=ob365, odd_bano=obano)
             if notificar:
-                mid = send_telegram(msg_universal(h, a, m, liga, pais, 5, mk, cnome, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, nome=cnome, tipo=c_tipo, probabilidade=_probabilidade_para_sinal(stats, c_tipo, sh, sa, extra_val if 'escanteio' in c_tipo else 0)), marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
+                mid = send_telegram(msg_universal(h, a, m, liga, pais, 5, mk, linha_str, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, nome=cnome, tipo=c_tipo, probabilidade=_probabilidade_para_sinal(stats, c_tipo, sh, sa, extra_val if 'escanteio' in c_tipo else 0)), marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
             else:
                 print(f'[DIAG-{mk}-SILENT] {h} x {a} — notificar=False, registrando sem enviar')
                 mid = 0
