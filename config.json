@@ -374,8 +374,8 @@
     "custom_1788581626260": {
       "ativo": true,
       "notificar": true,
-      "nome": "⚽️🧠OVER 0.5 GOL INTERVALO🧠⚽️",
-      "minuto_inicio": 2,
+      "nome": "",
+      "minuto_inicio": 5,
       "minuto_fim": 30,
       "periodo": 1,
       "tipo": "gol_intervalo",
@@ -398,6 +398,11 @@
           "campo": "chutes_inside_total_min",
           "operador": "gte",
           "valor": 3
+        },
+        {
+          "campo": "prob_ht_over_0_5",
+          "operador": "gte",
+          "valor": 70
         }
       ]
     }
