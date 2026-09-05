@@ -1854,16 +1854,15 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
         linha = cantos_atual + 1.0
         entrada = 'Mais de ' + f'{linha:.1f}' + ' Asiático⛳️'
     elif tipo in ('gol_intervalo', 'over_gol', 'over_15', 'ambas_marcam', 'over', 'gol_partida'):
-        if 'Over' not in str(entrada) and 'Ambas' not in str(entrada):
-            if tipo == 'over_15':
-                entrada = 'Over 1.5'
-            elif tipo == 'ambas_marcam':
-                entrada = 'Ambas Marcam'
-            elif tipo == 'gol_intervalo':
-                entrada = 'Over 0.5'
-            elif tipo in ('over_gol', 'over', 'gol_partida'):
-                linha = sh + sa + 0.5
-                entrada = f'Mais de {linha}'
+        if tipo == 'ambas_marcam':
+            entrada = 'Ambas Marcam'
+        elif tipo == 'over_15':
+            entrada = 'Over 1.5 Limite'
+        elif tipo == 'gol_intervalo':
+            entrada = 'Over 0.5 Limite'
+        elif tipo in ('over_gol', 'over', 'gol_partida'):
+            linha = sh + sa + 0.5
+            entrada = f'Over {linha:.1f} Limite'
         entrada = entrada + '⚽️'
     elif 'CORNER' in mercado or 'ESCANTEIO' in mercado or (nome and 'CANTO' in nome.upper()):
         linha = cantos_atual + 1.0
