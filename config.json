@@ -371,40 +371,19 @@
         }
       ]
     },
-    "custom_1788581354490": {
+    "custom_1788581626260": {
       "ativo": true,
       "notificar": true,
-      "nome": "⚽️🧠OVER GOL INTERVALO🧠⚽️",
-      "minuto_inicio": 5,
-      "minuto_fim": 30,
+      "nome": "",
+      "minuto_inicio": 2,
+      "minuto_fim": 26,
       "periodo": 1,
       "tipo": "gol_intervalo",
-      "placar_valido": "0x0",
+      "placar_valido": "",
       "criterios": {
-        "situacao_favorito": "empatando"
+        "situacao_favorito": ""
       },
-      "criterios_api": [
-        {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
-          "valor": 1
-        },
-        {
-          "campo": "big_chances_total_min",
-          "operador": "gte",
-          "valor": 1
-        },
-        {
-          "campo": "chutes_inside_total_min",
-          "operador": "gte",
-          "valor": 3
-        },
-        {
-          "campo": "chutes_alvo_min",
-          "operador": "gte",
-          "valor": 2
-        }
-      ]
+      "criterios_api": []
     }
   },
   "ligas_bloqueadas": [
