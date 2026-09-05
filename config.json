@@ -381,33 +381,28 @@
         }
       ]
     },
-    "custom_1788616862756": {
+    "custom_1788624129312": {
       "ativo": true,
       "notificar": true,
-      "nome": "⚽️💰OVER GOL TOP HT💰⚽️",
-      "minuto_inicio": 10,
-      "minuto_fim": 27,
+      "nome": "⛳️🧠Escanteio Asiático HT🧠⛳️",
+      "minuto_inicio": 33,
+      "minuto_fim": 37,
       "periodo": 1,
-      "tipo": "gol_intervalo",
-      "placar_valido": "0x0",
+      "tipo": "escanteio_ht",
+      "placar_valido": "",
       "criterios": {
-        "situacao_favorito": "empatando"
+        "situacao_favorito": "perdendo_ou_empatando"
       },
       "criterios_api": [
         {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
-          "valor": 1
+          "campo": "escanteios_10m",
+          "operador": "lte",
+          "valor": 0
         },
         {
           "campo": "chutes_totais_min",
           "operador": "gte",
-          "valor": 3
-        },
-        {
-          "campo": "goal_attempts_min",
-          "operador": "gte",
-          "valor": 2
+          "valor": 7
         }
       ]
     }
