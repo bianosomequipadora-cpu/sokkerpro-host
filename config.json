@@ -384,9 +384,9 @@
     "custom_1788616862756": {
       "ativo": true,
       "notificar": true,
-      "nome": "Gol teste",
-      "minuto_inicio": 2,
-      "minuto_fim": 42,
+      "nome": "⚽️💰OVER GOL TOP HT💰⚽️",
+      "minuto_inicio": 10,
+      "minuto_fim": 27,
       "periodo": 1,
       "tipo": "gol_intervalo",
       "placar_valido": "0x0",
@@ -397,7 +397,17 @@
         {
           "campo": "appm_min_por_time",
           "operador": "gte",
-          "valor": 0.5
+          "valor": 1
+        },
+        {
+          "campo": "chutes_totais_min",
+          "operador": "gte",
+          "valor": 3
+        },
+        {
+          "campo": "goal_attempts_min",
+          "operador": "gte",
+          "valor": 2
         }
       ]
     }
