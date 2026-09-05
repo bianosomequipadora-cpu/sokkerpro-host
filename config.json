@@ -374,16 +374,32 @@
     "custom_1788581626260": {
       "ativo": true,
       "notificar": true,
-      "nome": "",
+      "nome": "⚽️🧠OVER 0.5 GOL INTERVALO🧠⚽️",
       "minuto_inicio": 2,
-      "minuto_fim": 26,
+      "minuto_fim": 30,
       "periodo": 1,
       "tipo": "gol_intervalo",
-      "placar_valido": "",
+      "placar_valido": "0x0",
       "criterios": {
-        "situacao_favorito": ""
+        "situacao_favorito": "empatando"
       },
-      "criterios_api": []
+      "criterios_api": [
+        {
+          "campo": "big_chances_total_min",
+          "operador": "gte",
+          "valor": 1
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 2
+        },
+        {
+          "campo": "chutes_inside_total_min",
+          "operador": "gte",
+          "valor": 3
+        }
+      ]
     }
   },
   "ligas_bloqueadas": [
