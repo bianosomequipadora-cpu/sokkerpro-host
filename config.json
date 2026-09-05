@@ -351,12 +351,12 @@
       "notificar": true,
       "nome": "⚽️❤️‍🔥OVER 0.5 GOL HT❤️‍🔥⚽️",
       "minuto_inicio": 5,
-      "minuto_fim": 27,
+      "minuto_fim": 25,
       "periodo": 1,
       "tipo": "gol_intervalo",
       "placar_valido": "0x0",
       "criterios": {
-        "situacao_favorito": ""
+        "situacao_favorito": "empatando"
       },
       "criterios_api": [
         {
