@@ -428,6 +428,11 @@
           "campo": "chutes_totais_min",
           "operador": "gte",
           "valor": 7
+        },
+        {
+          "campo": "appm_partida_calc",
+          "operador": "gte",
+          "valor": 1.5
         }
       ]
     },
@@ -447,7 +452,7 @@
         {
           "campo": "appm_min_por_time",
           "operador": "gte",
-          "valor": 0.4
+          "valor": 1
         }
       ]
     }
