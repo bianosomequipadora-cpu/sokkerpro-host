@@ -356,7 +356,7 @@
       "tipo": "gol_intervalo",
       "placar_valido": "0x0",
       "criterios": {
-        "situacao_favorito": "empatando"
+        "situacao_favorito": ""
       },
       "criterios_api": [
         {
