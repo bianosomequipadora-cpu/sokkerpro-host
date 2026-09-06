@@ -20,11 +20,6 @@
           "valor": 0
         },
         {
-          "campo": "media_gols_partida_min",
-          "operador": "gte",
-          "valor": 2.2
-        },
-        {
           "campo": "diferenca_gols_fav_max",
           "operador": "lte",
           "valor": 1
@@ -75,19 +70,9 @@
           "valor": 0
         },
         {
-          "campo": "media_gols_partida_min",
-          "operador": "gte",
-          "valor": 2.2
-        },
-        {
           "campo": "diferenca_gols_fav_max",
           "operador": "lte",
           "valor": 1
-        },
-        {
-          "campo": "chutes_totais_min",
-          "operador": "gte",
-          "valor": 5
         },
         {
           "campo": "escanteios_minimos",
@@ -102,7 +87,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 0.72
+          "valor": 1
         }
       ]
     },
@@ -123,11 +108,6 @@
           "campo": "escanteios_10m",
           "operador": "lte",
           "valor": 0
-        },
-        {
-          "campo": "media_gols_partida_min",
-          "operador": "gte",
-          "valor": 2.2
         },
         {
           "campo": "diferenca_gols_fav_max",
@@ -203,11 +183,6 @@
           "campo": "pressure_bar_min",
           "operador": "gte",
           "valor": 68
-        },
-        {
-          "campo": "chutes_bloq_max",
-          "operador": "lte",
-          "valor": 2
         }
       ]
     },
