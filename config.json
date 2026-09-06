@@ -164,9 +164,9 @@
       "minuto_fim": 38,
       "periodo": 1,
       "tipo": "escanteio_ht",
-      "placar_valido": "0x0, 1x1, 2x2",
+      "placar_valido": "",
       "criterios": {
-        "situacao_favorito": "empatando"
+        "situacao_favorito": "perdendo_ou_empatando"
       },
       "criterios_api": [
         {
