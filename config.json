@@ -197,8 +197,48 @@
       "nome": "⛳️🛜ESCANTEIO ASIÁTICO FT🛜⛳️",
       "minuto_inicio": 80,
       "minuto_fim": 87,
-      "periodo": 1,
+      "periodo": 2,
       "tipo": "escanteio_ft",
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": "perdendo_ou_empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "dapm_total_orig_min",
+          "operador": "gte",
+          "valor": 0.8
+        },
+        {
+          "campo": "posse_bola_min",
+          "operador": "gte",
+          "valor": 58
+        },
+        {
+          "campo": "escanteios_5m",
+          "operador": "lte",
+          "valor": 0
+        },
+        {
+          "campo": "diferenca_gols_fav_max",
+          "operador": "lte",
+          "valor": 1
+        },
+        {
+          "campo": "max_red_card_fav",
+          "operador": "lte",
+          "valor": 0
+        }
+      ]
+    },
+    "custom_1788732590599": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⛳️❤️ESCANTEIO ASIÁTICO HT❤️⛳️",
+      "minuto_inicio": 30,
+      "minuto_fim": 37,
+      "periodo": 1,
+      "tipo": "escanteio_ht",
       "placar_valido": "",
       "criterios": {
         "situacao_favorito": "perdendo_ou_empatando"
