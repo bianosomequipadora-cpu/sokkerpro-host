@@ -218,6 +218,16 @@
           "campo": "escanteios_5m",
           "operador": "lte",
           "valor": 0
+        },
+        {
+          "campo": "diferenca_gols_fav_max",
+          "operador": "lte",
+          "valor": 1
+        },
+        {
+          "campo": "max_red_card_fav",
+          "operador": "lte",
+          "valor": 0
         }
       ]
     }
