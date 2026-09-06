@@ -51,51 +51,6 @@
         }
       ]
     },
-    "custom_1786918627335": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⛳️💎ESCANTEIO ÁSIAT/LMT FT💎⛳️",
-      "minuto_inicio": 82,
-      "minuto_fim": 88,
-      "periodo": 2,
-      "tipo": "escanteio_ft",
-      "placar_valido": "",
-      "criterios": {
-        "situacao_favorito": "perdendo_ou_empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "escanteios_10m",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "diferenca_gols_fav_max",
-          "operador": "lte",
-          "valor": 1
-        },
-        {
-          "campo": "escanteios_minimos",
-          "operador": "gte",
-          "valor": 1
-        },
-        {
-          "campo": "max_red_card_fav",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "posse_bola_min",
-          "operador": "gte",
-          "valor": 58
-        },
-        {
-          "campo": "dapm_total_orig_min",
-          "operador": "gte",
-          "valor": 0.9
-        }
-      ]
-    },
     "custom_1786925158726": {
       "ativo": true,
       "notificar": true,
@@ -233,6 +188,36 @@
           "campo": "dapm_total_orig_min",
           "operador": "gte",
           "valor": 1
+        }
+      ]
+    },
+    "custom_1788732235450": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⛳️🛜ESCANTEIO ASIÁTICO FT🛜⛳️",
+      "minuto_inicio": 82,
+      "minuto_fim": 84,
+      "periodo": 1,
+      "tipo": "escanteio_ft",
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": "perdendo_ou_empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "dapm_total_orig_min",
+          "operador": "gte",
+          "valor": 0.9
+        },
+        {
+          "campo": "posse_bola_min",
+          "operador": "gte",
+          "valor": 58
+        },
+        {
+          "campo": "escanteios_5m",
+          "operador": "lte",
+          "valor": 0
         }
       ]
     }
