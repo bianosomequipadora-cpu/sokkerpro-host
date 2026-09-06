@@ -207,7 +207,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 0.9
+          "valor": 0.8
         },
         {
           "campo": "posse_bola_min",
