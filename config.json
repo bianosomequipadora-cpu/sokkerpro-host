@@ -35,11 +35,6 @@
           "valor": 5
         },
         {
-          "campo": "escanteios_minimos",
-          "operador": "gte",
-          "valor": 1
-        },
-        {
           "campo": "max_red_card_fav",
           "operador": "lte",
           "valor": 0
@@ -83,11 +78,6 @@
           "campo": "chutes_totais_min",
           "operador": "gte",
           "valor": 7
-        },
-        {
-          "campo": "escanteios_minimos",
-          "operador": "gte",
-          "valor": 1
         },
         {
           "campo": "max_red_card_fav",
@@ -172,11 +162,6 @@
         {
           "campo": "diferenca_gols_fav_max",
           "operador": "lte",
-          "valor": 1
-        },
-        {
-          "campo": "escanteios_minimos",
-          "operador": "gte",
           "valor": 1
         },
         {
