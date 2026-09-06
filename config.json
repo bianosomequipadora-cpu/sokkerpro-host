@@ -51,46 +51,6 @@
         }
       ]
     },
-    "custom_1786917448806": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⛳️💛ESCANTEIO ÁSIAT/LMT HT💛⛳️",
-      "minuto_inicio": 30,
-      "minuto_fim": 38,
-      "periodo": 1,
-      "tipo": "escanteio_ht",
-      "placar_valido": "",
-      "criterios": {
-        "situacao_favorito": "perdendo_ou_empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "escanteios_10m",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "diferenca_gols_fav_max",
-          "operador": "lte",
-          "valor": 1
-        },
-        {
-          "campo": "escanteios_minimos",
-          "operador": "gte",
-          "valor": 1
-        },
-        {
-          "campo": "max_red_card_fav",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "dapm_total_orig_min",
-          "operador": "gte",
-          "valor": 1
-        }
-      ]
-    },
     "custom_1786918627335": {
       "ativo": true,
       "notificar": true,
@@ -132,7 +92,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 0.7
+          "valor": 0.9
         }
       ]
     },
@@ -233,6 +193,46 @@
           "campo": "chutes_bloq_max",
           "operador": "lte",
           "valor": 2
+        }
+      ]
+    },
+    "custom_1788732124919": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⛳️💛ESCANTEIO ÁSIAT/LMT HT💛⛳️ — CÓPIA",
+      "minuto_inicio": 30,
+      "minuto_fim": 38,
+      "periodo": 1,
+      "tipo": "escanteio_ht",
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": "perdendo_ou_empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "escanteios_10m",
+          "operador": "lte",
+          "valor": 0
+        },
+        {
+          "campo": "diferenca_gols_fav_max",
+          "operador": "lte",
+          "valor": 1
+        },
+        {
+          "campo": "escanteios_minimos",
+          "operador": "gte",
+          "valor": 1
+        },
+        {
+          "campo": "max_red_card_fav",
+          "operador": "lte",
+          "valor": 0
+        },
+        {
+          "campo": "dapm_total_orig_min",
+          "operador": "gte",
+          "valor": 1
         }
       ]
     }
