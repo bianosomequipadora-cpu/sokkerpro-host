@@ -105,14 +105,9 @@
       },
       "criterios_api": [
         {
-          "campo": "diferenca_gols_fav_max",
-          "operador": "lte",
-          "valor": 1
-        },
-        {
           "campo": "chutes_alvo_min",
           "operador": "gte",
-          "valor": 2
+          "valor": 3
         },
         {
           "campo": "chutes_totais_min",
@@ -122,7 +117,7 @@
         {
           "campo": "escanteios_minimos",
           "operador": "gte",
-          "valor": 1
+          "valor": 2
         },
         {
           "campo": "max_red_card_fav",
@@ -135,8 +130,8 @@
           "valor": 70
         },
         {
-          "campo": "chutes_bloq_max",
-          "operador": "lte",
+          "campo": "chutes_inside_total_min",
+          "operador": "gte",
           "valor": 2
         }
       ]
