@@ -91,51 +91,6 @@
         }
       ]
     },
-    "custom_1787412655338": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️🔥OVER GOL PRESSURE HT🔥⚽️",
-      "minuto_inicio": 10,
-      "minuto_fim": 27,
-      "periodo": 1,
-      "tipo": "gol_intervalo",
-      "placar_valido": "0x0",
-      "criterios": {
-        "situacao_favorito": "empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "chutes_alvo_min",
-          "operador": "gte",
-          "valor": 3
-        },
-        {
-          "campo": "chutes_totais_min",
-          "operador": "gte",
-          "valor": 8
-        },
-        {
-          "campo": "escanteios_minimos",
-          "operador": "gte",
-          "valor": 2
-        },
-        {
-          "campo": "max_red_card_fav",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "pressure_bar_min",
-          "operador": "gte",
-          "valor": 70
-        },
-        {
-          "campo": "chutes_inside_total_min",
-          "operador": "gte",
-          "valor": 2
-        }
-      ]
-    },
     "custom_1788732124919": {
       "ativo": true,
       "notificar": true,
@@ -301,6 +256,51 @@
         },
         {
           "campo": "big_chances_total_min",
+          "operador": "gte",
+          "valor": 2
+        }
+      ]
+    },
+    "custom_1788891945325": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️🔥OVER GOL PRESSURE HT🔥⚽️ — CÓPIA",
+      "minuto_inicio": 10,
+      "minuto_fim": 27,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": "empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 3
+        },
+        {
+          "campo": "chutes_totais_min",
+          "operador": "gte",
+          "valor": 8
+        },
+        {
+          "campo": "escanteios_minimos",
+          "operador": "gte",
+          "valor": 2
+        },
+        {
+          "campo": "max_red_card_fav",
+          "operador": "lte",
+          "valor": 0
+        },
+        {
+          "campo": "pressure_bar_min",
+          "operador": "gte",
+          "valor": 70
+        },
+        {
+          "campo": "chutes_inside_total_min",
           "operador": "gte",
           "valor": 2
         }
