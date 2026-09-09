@@ -15,7 +15,7 @@
       },
       "criterios_api": [
         {
-          "campo": "escanteios_10m",
+          "campo": "escanteios_5m",
           "operador": "lte",
           "valor": 0
         },
@@ -60,7 +60,7 @@
       },
       "criterios_api": [
         {
-          "campo": "escanteios_10m",
+          "campo": "escanteios_5m",
           "operador": "lte",
           "valor": 0
         },
@@ -105,7 +105,7 @@
       },
       "criterios_api": [
         {
-          "campo": "escanteios_10m",
+          "campo": "escanteios_5m",
           "operador": "lte",
           "valor": 0
         },
