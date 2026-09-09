@@ -325,11 +325,6 @@
           "valor": 50
         },
         {
-          "campo": "prob_1x2_casa_ou_fora",
-          "operador": "gte",
-          "valor": 60
-        },
-        {
           "campo": "prob_ht_over_0_5",
           "operador": "gte",
           "valor": 70
