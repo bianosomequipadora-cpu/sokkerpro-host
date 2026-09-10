@@ -363,7 +363,7 @@
           "valor": 65
         },
         {
-          "campo": "odd_favorito",
+          "campo": "odd_favorito_prelive",
           "operador": "lte",
           "valor": 1.5
         }
