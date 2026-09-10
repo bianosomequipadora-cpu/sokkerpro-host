@@ -1,51 +1,6 @@
 {
   "login": {},
   "mercados": {
-    "custom_1786917328719": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⛳️🚸ESCANTEIO ASIÁT/LMT HT🚸⛳️",
-      "minuto_inicio": 30,
-      "minuto_fim": 38,
-      "periodo": 1,
-      "tipo": "escanteio_ht",
-      "placar_valido": "",
-      "criterios": {
-        "situacao_favorito": "perdendo_ou_empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "escanteios_5m",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "diferenca_gols_fav_max",
-          "operador": "lte",
-          "valor": 1
-        },
-        {
-          "campo": "chutes_alvo_min",
-          "operador": "gte",
-          "valor": 2
-        },
-        {
-          "campo": "chutes_totais_min",
-          "operador": "gte",
-          "valor": 5
-        },
-        {
-          "campo": "max_red_card_fav",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "dapm_total_orig_min",
-          "operador": "gte",
-          "valor": 0.7
-        }
-      ]
-    },
     "custom_1786925158726": {
       "ativo": true,
       "notificar": true,
@@ -91,41 +46,6 @@
         }
       ]
     },
-    "custom_1788732124919": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⛳️💛ESCANTEIO ÁSIAT/LMT HT💛⛳️",
-      "minuto_inicio": 30,
-      "minuto_fim": 38,
-      "periodo": 1,
-      "tipo": "escanteio_ht",
-      "placar_valido": "",
-      "criterios": {
-        "situacao_favorito": "perdendo_ou_empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "escanteios_5m",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "diferenca_gols_fav_max",
-          "operador": "lte",
-          "valor": 1
-        },
-        {
-          "campo": "max_red_card_fav",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "dapm_total_orig_min",
-          "operador": "gte",
-          "valor": 1
-        }
-      ]
-    },
     "custom_1788732235450": {
       "ativo": true,
       "notificar": true,
@@ -163,6 +83,16 @@
           "campo": "max_red_card_fav",
           "operador": "lte",
           "valor": 0
+        },
+        {
+          "campo": "escanteios_minimos",
+          "operador": "gte",
+          "valor": 2
+        },
+        {
+          "campo": "chutes_totais_min",
+          "operador": "gte",
+          "valor": 10
         }
       ]
     },
@@ -203,13 +133,23 @@
           "campo": "max_red_card_fav",
           "operador": "lte",
           "valor": 0
+        },
+        {
+          "campo": "escanteios_minimos",
+          "operador": "gte",
+          "valor": 1
+        },
+        {
+          "campo": "chutes_totais_min",
+          "operador": "gte",
+          "valor": 5
         }
       ]
     },
     "custom_1788736566714": {
       "ativo": true,
       "notificar": true,
-      "nome": "⚽️🔥OVER 0.5 GOL PRESSURE FT🔥⚽️ ",
+      "nome": "⚽️🔥OVER 0.5 GOL PARTIDA🔥⚽️ ",
       "minuto_inicio": 66,
       "minuto_fim": 75,
       "periodo": 2,
@@ -242,7 +182,7 @@
         {
           "campo": "pressure_bar_min",
           "operador": "gte",
-          "valor": 70
+          "valor": 65
         },
         {
           "campo": "goal_attempts_min",
@@ -252,92 +192,12 @@
         {
           "campo": "chutes_inside_total_min",
           "operador": "gte",
-          "valor": 5
+          "valor": 3
         },
         {
           "campo": "big_chances_total_min",
           "operador": "gte",
           "valor": 2
-        }
-      ]
-    },
-    "custom_1788891945325": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️🔥OVER GOL PRESSURE HT🔥⚽️ ",
-      "minuto_inicio": 10,
-      "minuto_fim": 27,
-      "periodo": 1,
-      "tipo": "gol_intervalo",
-      "placar_valido": "0x0",
-      "criterios": {
-        "situacao_favorito": "empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "chutes_alvo_min",
-          "operador": "gte",
-          "valor": 3
-        },
-        {
-          "campo": "chutes_totais_min",
-          "operador": "gte",
-          "valor": 5
-        },
-        {
-          "campo": "escanteios_minimos",
-          "operador": "gte",
-          "valor": 2
-        },
-        {
-          "campo": "max_red_card_fav",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "pressure_bar_min",
-          "operador": "gte",
-          "valor": 70
-        },
-        {
-          "campo": "chutes_inside_total_min",
-          "operador": "gte",
-          "valor": 2
-        }
-      ]
-    },
-    "custom_1788946258572": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️😈OVER 0.5 GOL INTERVALO😈⚽️",
-      "minuto_inicio": 10,
-      "minuto_fim": 25,
-      "periodo": 1,
-      "tipo": "gol_intervalo",
-      "placar_valido": "",
-      "criterios": {
-        "situacao_favorito": "perdendo_ou_empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "prob_btts",
-          "operador": "gte",
-          "valor": 50
-        },
-        {
-          "campo": "prob_ht_over_0_5",
-          "operador": "gte",
-          "valor": 70
-        },
-        {
-          "campo": "chutes_alvo_min",
-          "operador": "gte",
-          "valor": 2
-        },
-        {
-          "campo": "prob_1x2_1t_casa_ou_fora",
-          "operador": "gte",
-          "valor": 60
         }
       ]
     },
