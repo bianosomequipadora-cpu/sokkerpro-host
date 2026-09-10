@@ -340,6 +340,34 @@
           "valor": 60
         }
       ]
+    },
+    "custom_1788990000000": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️🔥OVER GOL INTERVALO HT🔥⚽️",
+      "minuto_inicio": 10,
+      "minuto_fim": 25,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "placar_valido": "",
+      "criterios": {},
+      "criterios_api": [
+        {
+          "campo": "prob_ft_over_1_5",
+          "operador": "gte",
+          "valor": 75
+        },
+        {
+          "campo": "prob_ht_over_0_5",
+          "operador": "gte",
+          "valor": 65
+        },
+        {
+          "campo": "odd_favorito",
+          "operador": "lte",
+          "valor": 1.5
+        }
+      ]
     }
   }
 }
