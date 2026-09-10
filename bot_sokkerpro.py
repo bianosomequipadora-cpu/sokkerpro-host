@@ -1212,6 +1212,7 @@ def nome_liga_exibicao(liga, pais):
         'Belarus': ('🇧🇾', 'Bielorrússia'),
         'Belize': ('🇧🇿', 'Belize'),
         'Bermuda': ('🇧🇲', 'Bermudas'),
+        'Bolivia': ('🇧🇴', 'Bolívia'),
         'Bolivia, Plurinational State of': ('🇧🇴', 'Bolívia'),
         'Brazil': ('🇧🇷', 'Brasil'),
         'Barbados': ('🇧🇧', 'Barbados'),
