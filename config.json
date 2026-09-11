@@ -25,14 +25,9 @@
           "valor": 1
         },
         {
-          "campo": "chutes_alvo_min",
-          "operador": "gte",
-          "valor": 2
-        },
-        {
           "campo": "chutes_totais_min",
           "operador": "gte",
-          "valor": 7
+          "valor": 5
         },
         {
           "campo": "max_red_card_fav",
@@ -43,6 +38,11 @@
           "campo": "pressure_bar_min",
           "operador": "gte",
           "valor": 68
+        },
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 0.7
         }
       ]
     },
@@ -165,7 +165,7 @@
       },
       "criterios_api": [
         {
-          "campo": "dapm_total_orig_min",
+          "campo": "appm_min_por_time",
           "operador": "gte",
           "valor": 0.8
         },
@@ -222,7 +222,7 @@
         {
           "campo": "chutes_totais_min",
           "operador": "gte",
-          "valor": 7
+          "valor": 5
         },
         {
           "campo": "odd_favorito_prelive",
