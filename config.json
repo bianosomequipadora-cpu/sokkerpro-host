@@ -1,51 +1,6 @@
 {
   "login": {},
   "mercados": {
-    "custom_1786925158726": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⛳️🤯CANTO PRESSURE HT🤯⛳️",
-      "minuto_inicio": 32,
-      "minuto_fim": 38,
-      "periodo": 1,
-      "tipo": "escanteio_ht",
-      "placar_valido": "",
-      "criterios": {
-        "situacao_favorito": "perdendo_ou_empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "escanteios_5m",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "diferenca_gols_fav_max",
-          "operador": "lte",
-          "valor": 1
-        },
-        {
-          "campo": "chutes_totais_min",
-          "operador": "gte",
-          "valor": 5
-        },
-        {
-          "campo": "max_red_card_fav",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "pressure_bar_min",
-          "operador": "gte",
-          "valor": 68
-        },
-        {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
-          "valor": 0.7
-        }
-      ]
-    },
     "custom_1788736566714": {
       "ativo": true,
       "notificar": true,
@@ -117,7 +72,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 0.8
+          "valor": 0.7
         },
         {
           "campo": "posse_bola_min",
@@ -151,10 +106,40 @@
         }
       ]
     },
-    "custom_1789076533231": {
+    "custom_1789082261380": {
       "ativo": true,
       "notificar": true,
-      "nome": "⛳️🛜ESCANTEIO ASIÁTICO FT🛜⛳️ ",
+      "nome": "⛳️😈ESCANTEIO ASIÁTICO HT😈⛳️",
+      "minuto_inicio": 32,
+      "minuto_fim": 38,
+      "periodo": 1,
+      "tipo": "escanteio_ht",
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": "perdendo_ou_empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 1
+        },
+        {
+          "campo": "chutes_totais_min",
+          "operador": "gte",
+          "valor": 5
+        },
+        {
+          "campo": "odd_favorito_prelive",
+          "operador": "lte",
+          "valor": 1.6
+        }
+      ]
+    },
+    "custom_1789096480773": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⛳️🛜ESCANTEIO ASIÁTICO FT🛜⛳️  — CÓPIA",
       "minuto_inicio": 80,
       "minuto_fim": 87,
       "periodo": 2,
@@ -201,10 +186,10 @@
         }
       ]
     },
-    "custom_1789082261380": {
+    "custom_1789096528332": {
       "ativo": true,
       "notificar": true,
-      "nome": "⛳️😈ESCANTEIO ASIÁTICO HT😈⛳️",
+      "nome": "⛳️🤯CANTO PRESSURE HT🤯⛳️ — CÓPIA",
       "minuto_inicio": 32,
       "minuto_fim": 38,
       "periodo": 1,
@@ -215,8 +200,13 @@
       },
       "criterios_api": [
         {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
+          "campo": "escanteios_5m",
+          "operador": "lte",
+          "valor": 0
+        },
+        {
+          "campo": "diferenca_gols_fav_max",
+          "operador": "lte",
           "valor": 1
         },
         {
@@ -225,9 +215,19 @@
           "valor": 5
         },
         {
-          "campo": "odd_favorito_prelive",
+          "campo": "max_red_card_fav",
           "operador": "lte",
-          "valor": 1.6
+          "valor": 0
+        },
+        {
+          "campo": "pressure_bar_min",
+          "operador": "gte",
+          "valor": 68
+        },
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 0.7
         }
       ]
     }
