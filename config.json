@@ -133,6 +133,11 @@
           "campo": "odd_favorito_prelive",
           "operador": "lte",
           "valor": 1.6
+        },
+        {
+          "campo": "diferenca_gols_fav_max",
+          "operador": "lte",
+          "valor": 1
         }
       ]
     },
@@ -208,6 +213,11 @@
           "campo": "odd_favorito_prelive",
           "operador": "lte",
           "valor": 1.6
+        },
+        {
+          "campo": "diferenca_gols_fav_max",
+          "operador": "lte",
+          "valor": 1
         }
       ]
     },
