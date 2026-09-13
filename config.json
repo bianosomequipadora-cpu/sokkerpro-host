@@ -285,7 +285,7 @@
       "ativo": true,
       "notificar": true,
       "nome": "⚽️🔥OVER 0.5 GOL INTERVALO🔥⚽️ ",
-      "minuto_inicio": 15,
+      "minuto_inicio": 1,
       "minuto_fim": 25,
       "periodo": 1,
       "tipo": "gol_intervalo",
@@ -302,7 +302,7 @@
         {
           "campo": "chutes_totais_min",
           "operador": "gte",
-          "valor": 6
+          "valor": 5
         },
         {
           "campo": "escanteios_minimos",
@@ -327,7 +327,7 @@
         {
           "campo": "chutes_inside_total_min",
           "operador": "gte",
-          "valor": 1
+          "valor": 2
         },
         {
           "campo": "big_chances_total_min",
