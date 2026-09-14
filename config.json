@@ -278,11 +278,6 @@
           "campo": "max_red_card_fav",
           "operador": "lt",
           "valor": 0
-        },
-        {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
-          "valor": 0.7
         }
       ]
     },
@@ -323,11 +318,6 @@
           "campo": "max_red_card_fav",
           "operador": "lt",
           "valor": 0
-        },
-        {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
-          "valor": 1
         }
       ]
     }
