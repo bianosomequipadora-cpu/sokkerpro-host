@@ -56,56 +56,6 @@
         }
       ]
     },
-    "custom_1789076528648": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⛳️❤️ESCANTEIO ASIÁTICO HT❤️⛳️",
-      "minuto_inicio": 30,
-      "minuto_fim": 37,
-      "periodo": 1,
-      "tipo": "escanteio_ht",
-      "placar_valido": "",
-      "criterios": {
-        "situacao_favorito": "perdendo_ou_empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "dapm_total_orig_min",
-          "operador": "gte",
-          "valor": 0.7
-        },
-        {
-          "campo": "posse_bola_min",
-          "operador": "gte",
-          "valor": 58
-        },
-        {
-          "campo": "escanteios_5m",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "diferenca_gols_fav_max",
-          "operador": "lte",
-          "valor": 1
-        },
-        {
-          "campo": "max_red_card_fav",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "escanteios_minimos",
-          "operador": "gte",
-          "valor": 1
-        },
-        {
-          "campo": "chutes_totais_min",
-          "operador": "gte",
-          "valor": 5
-        }
-      ]
-    },
     "custom_1789082261380": {
       "ativo": true,
       "notificar": true,
@@ -143,51 +93,6 @@
           "campo": "escanteios_5m",
           "operador": "lte",
           "valor": 0
-        }
-      ]
-    },
-    "custom_1789096528332": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⛳️🤯ESCANTEIO ASIÁTICO HT🤯⛳️",
-      "minuto_inicio": 32,
-      "minuto_fim": 38,
-      "periodo": 1,
-      "tipo": "escanteio_ht",
-      "placar_valido": "",
-      "criterios": {
-        "situacao_favorito": "perdendo_ou_empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "escanteios_5m",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "diferenca_gols_fav_max",
-          "operador": "lte",
-          "valor": 1
-        },
-        {
-          "campo": "chutes_totais_min",
-          "operador": "gte",
-          "valor": 5
-        },
-        {
-          "campo": "max_red_card_fav",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "pressure_bar_min",
-          "operador": "gte",
-          "valor": 68
-        },
-        {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
-          "valor": 0.7
         }
       ]
     },
@@ -327,7 +232,7 @@
         {
           "campo": "chutes_inside_total_min",
           "operador": "gte",
-          "valor": 2
+          "valor": 1
         },
         {
           "campo": "big_chances_total_min",
