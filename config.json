@@ -348,7 +348,7 @@
       "minuto_inicio": 2,
       "minuto_fim": 43,
       "periodo": 1,
-      "tipo": "escanteio_ht",
+      "tipo": "gol_intervalo",
       "placar_valido": "",
       "criterios": {
         "situacao_favorito": "perdendo_ou_empatando"
