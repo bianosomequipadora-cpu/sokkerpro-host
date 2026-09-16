@@ -22,7 +22,7 @@
         {
           "campo": "chutes_totais_min",
           "operador": "gte",
-          "valor": 12
+          "valor": 10
         },
         {
           "campo": "escanteios_minimos",
@@ -233,11 +233,6 @@
           "campo": "chutes_inside_total_min",
           "operador": "gte",
           "valor": 1
-        },
-        {
-          "campo": "big_chances_total_min",
-          "operador": "gte",
-          "valor": 1
         }
       ]
     },
@@ -329,20 +324,20 @@
       "minuto_fim": 75,
       "periodo": 2,
       "tipo": "over_gol",
-      "placar_valido": "0x0 , 1x1",
+      "placar_valido": "0x0 , 1x1, 0x1, 1x0",
       "criterios": {
-        "situacao_favorito": "empatando"
+        "situacao_favorito": "perdendo_ou_empatando"
       },
       "criterios_api": [
         {
           "campo": "pressure_bar_h",
           "operador": "gte",
-          "valor": 65
+          "valor": 70
         },
         {
           "campo": "big_chances_total_min",
           "operador": "gte",
-          "valor": 2
+          "valor": 1
         }
       ]
     }
