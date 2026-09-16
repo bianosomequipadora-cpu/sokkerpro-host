@@ -351,13 +351,13 @@
       "tipo": "escanteio_ht",
       "placar_valido": "",
       "criterios": {
-        "situacao_favorito": ""
+        "situacao_favorito": "perdendo_ou_empatando"
       },
       "criterios_api": [
         {
           "campo": "appm_min_por_time",
           "operador": "gte",
-          "valor": 0.4
+          "valor": 0.5
         }
       ]
     }
