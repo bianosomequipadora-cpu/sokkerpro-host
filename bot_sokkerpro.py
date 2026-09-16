@@ -84,7 +84,6 @@ def norm_nome_time(nome):
     n = re.sub('\\b(rj|sp|mg|rs|pr|sc|ba|pe|ce|go|mt|ms|df|es|rn|pb|al|se|pi|ma|pa|am|ro|rr|ap|to|fr|ac|ec|se|cf)\\b', '', n)
     return re.sub('\\s+', ' ', n).strip()
 CONFIG_MERCADOS = {}
-LIGAS_BLOQUEADAS = set()
 
 def carregar_config_github():
     """Carrega config.json do GitHub e retorna dict de mercados com critérios."""
@@ -94,8 +93,6 @@ def carregar_config_github():
         resp = request.urlopen(req, timeout=10)
         raw = json.loads(resp.read())['content']
         cfg = json.loads(base64.b64decode(raw).decode())
-        global LIGAS_BLOQUEADAS
-        LIGAS_BLOQUEADAS = {str(x).strip().casefold() for x in cfg.get('ligas_bloqueadas', []) if str(x).strip()}
         return cfg.get('mercados', {})
     except:
         print('[CONFIG] Erro ao carregar config.json do GitHub, usando valores padrão')
@@ -980,15 +977,7 @@ def _extrair_stats_sokkerpro(fix):
             valor = _get_float(bruto, None)
             if valor is not None and valor > 1:
                 odds_mercados[str(chave)] = valor
-    odds_prelive = [_get_float(fix.get('XBET_VENCEDOR_HOME'), None), _get_float(fix.get('XBET_VENCEDOR_AWAY'), None)]
-    odds_prelive = [v for v in odds_prelive if v is not None and v > 1]
-    odd_favorito_prelive = min(odds_prelive) if odds_prelive else None
-    resultado = {'chutes_tot_h': g('localShotsTotal'), 'chutes_tot_a': g('visitorShotsTotal'), 'chutes_gol_h': g('localShotsOnGoal'), 'chutes_gol_a': g('visitorShotsOnGoal'), 'escanteios_h': _corners('localCorners'), 'escanteios_a': _corners('visitorCorners'), 'escanteios_5m': g('corners5m'), 'escanteios_5m_h': g('localCorners5m'), 'escanteios_5m_a': g('visitorCorners5m'), 'escanteios_10m': g('corners10m'), 'escanteios_10m_h': g('localCorners10m'), 'escanteios_10m_a': g('visitorCorners10m'), 'escanteios_15m': g('corners15m'), 'escanteios_15m_h': g('localCorners15m'), 'escanteios_15m_a': g('visitorCorners15m'), 'odd_gols_ht_over_0_5': gf('BET365_GOLS1T_OVER_0_5'), 'odd_gols_ht_over_1_5': gf('BET365_GOLS1T_OVER_1_5'), 'odd_gols_ht_over_2_5': gf('BET365_GOLS1T_OVER_2_5'), 'odd_gols_ht_over_3_5': gf('BET365_GOLS1T_OVER_3_5'), 'odd_gols_ft_over_0_5': gf('BET365_GOLS_OVER_0_5'), 'odd_gols_ft_over_1_5': gf('BET365_GOLS_OVER_1_5'), 'odd_gols_ft_over_2_5': gf('BET365_GOLS_OVER_2_5'), 'odd_gols_ft_over_3_5': gf('BET365_GOLS_OVER_3_5'), 'odd_cantos_ht_over_4': gf('BET365_CANTO1T_OVER_4'), 'odd_cantos_ft_over_7': gf('BET365_CANTO_OVER_7'), 'odd_cantos_ft_over_10': gf('BET365_CANTO_OVER_10'), 'odd_btts_ht_sim': gf('BET365_AMBAS1T_YES'), 'odd_btts_ht_nao': gf('BET365_AMBAS1T_NO'), 'odd_vencedor_ht_casa': gf('BET365_VENCEDOR1T_HOME'), 'odd_vencedor_ht_empate': gf('BET365_VENCEDOR1T_DRAW'), 'odd_vencedor_ht_fora': gf('BET365_VENCEDOR1T_AWAY'), 'odd_vencedor_ft_casa': gf('BET365_VENCEDOR_HOME'), 'odd_vencedor_ft_empate': gf('BET365_VENCEDOR_DRAW'), 'odd_vencedor_ft_fora': gf('BET365_VENCEDOR_AWAY'), 'ataques_perigosos_h': g('localAttacksDangerousAttacks'), 'ataques_perigosos_a': g('visitorAttacksDangerousAttacks'), 'red_cards_h': g('localRedCards'), 'red_cards_a': g('visitorRedCards'), 'dapm5_h': gf('localDapm5'), 'dapm5_a': gf('visitorDapm5'), 'dapm10_h': gf('localDapm10'), 'dapm10_a': gf('visitorDapm10'), 'dapm_total_h': gf('localDapmTotal'), 'dapm_total_a': gf('visitorDapmTotal'), 'medias_home_goal': gf('medias_home_goal'), 'medias_away_goal': gf('medias_away_goal'), 'medias_goal_h': gf('medias_home_goal'), 'medias_goal_a': gf('medias_away_goal'), 'medias_home_corners': gf('medias_home_corners'), 'medias_away_corners': gf('medias_away_corners'), 'medias_corners_h': gf('medias_home_corners'), 'medias_corners_a': gf('medias_away_corners'), 'chutes_inside_h': g('localShotsInsideBox'), 'chutes_inside_a': g('visitorShotsInsideBox'), 'chutes_outside_h': g('localShotsOutsideBox'), 'chutes_outside_a': g('visitorShotsOutsideBox'), 'chutes_bloq_h': g('localShotsBlocked'), 'chutes_bloq_a': g('visitorShotsBlocked'), 'goal_attempts_h': g('localGoalAttempts'), 'goal_attempts_a': g('visitorGoalAttempts'), 'big_chances_h': g('localBigChancesCreated'), 'big_chances_a': g('visitorBigChancesCreated'), 'faltas_h': g('localFouls'), 'faltas_a': g('visitorFouls'), 'yellow_cards_h': g('localYellowCards'), 'yellow_cards_a': g('visitorYellowCards'), 'impedimentos_h': g('localOffsides'), 'impedimentos_a': g('visitorOffsides'), 'defesas_h': g('localSaves'), 'defesas_a': g('visitorSaves'), 'pressure_bar_h': g('localPressureBar'), 'pressure_bar_a': g('visitorPressureBar'), 'ball_safe_h': g('localBallSafe'), 'ball_safe_a': g('visitorBallSafe'), 'xg_h': gf('localXg'), 'xg_a': gf('visitorXg'), 'posse_h': gf('localBallPossession'), 'posse_a': gf('visitorBallPossession'), 'ataques_h': g('localAttacksAttacks'), 'ataques_a': g('visitorAttacksAttacks'), 'btts_probabilidade': btts_prob, 'media_gols_ht_h': media_gols_ht_h, 'media_gols_ht_a': media_gols_ht_a, 'media_gols_ft_h': media_gols_ft_h, 'media_gols_ft_a': media_gols_ft_a, 'dapm_max_h': dapm_max, 'dapm_max_a': dapm_max, 'prob_mercados': prob_mercados, 'odds_mercados': odds_mercados, 'odd_favorito_prelive': odd_favorito_prelive}
-    for chave, bruto in fix.items():
-        if chave not in resultado and not isinstance(bruto, (dict, list)):
-            numerico = _get_float(bruto, None)
-            resultado[chave] = numerico if numerico is not None else bruto
-    return resultado
+    return {'chutes_tot_h': g('localShotsTotal'), 'chutes_tot_a': g('visitorShotsTotal'), 'chutes_gol_h': g('localShotsOnGoal'), 'chutes_gol_a': g('visitorShotsOnGoal'), 'escanteios_h': _corners('localCorners'), 'escanteios_a': _corners('visitorCorners'), 'escanteios_5m': g('corners5m'), 'escanteios_5m_h': g('localCorners5m'), 'escanteios_5m_a': g('visitorCorners5m'), 'escanteios_10m': g('corners10m'), 'escanteios_10m_h': g('localCorners10m'), 'escanteios_10m_a': g('visitorCorners10m'), 'escanteios_15m': g('corners15m'), 'escanteios_15m_h': g('localCorners15m'), 'escanteios_15m_a': g('visitorCorners15m'), 'odd_gols_ht_over_0_5': gf('BET365_GOLS1T_OVER_0_5'), 'odd_gols_ht_over_1_5': gf('BET365_GOLS1T_OVER_1_5'), 'odd_gols_ht_over_2_5': gf('BET365_GOLS1T_OVER_2_5'), 'odd_gols_ht_over_3_5': gf('BET365_GOLS1T_OVER_3_5'), 'odd_gols_ft_over_0_5': gf('BET365_GOLS_OVER_0_5'), 'odd_gols_ft_over_1_5': gf('BET365_GOLS_OVER_1_5'), 'odd_gols_ft_over_2_5': gf('BET365_GOLS_OVER_2_5'), 'odd_gols_ft_over_3_5': gf('BET365_GOLS_OVER_3_5'), 'odd_cantos_ht_over_4': gf('BET365_CANTO1T_OVER_4'), 'odd_cantos_ft_over_7': gf('BET365_CANTO_OVER_7'), 'odd_cantos_ft_over_10': gf('BET365_CANTO_OVER_10'), 'odd_btts_ht_sim': gf('BET365_AMBAS1T_YES'), 'odd_btts_ht_nao': gf('BET365_AMBAS1T_NO'), 'odd_vencedor_ht_casa': gf('BET365_VENCEDOR1T_HOME'), 'odd_vencedor_ht_empate': gf('BET365_VENCEDOR1T_DRAW'), 'odd_vencedor_ht_fora': gf('BET365_VENCEDOR1T_AWAY'), 'odd_vencedor_ft_casa': gf('BET365_VENCEDOR_HOME'), 'odd_vencedor_ft_empate': gf('BET365_VENCEDOR_DRAW'), 'odd_vencedor_ft_fora': gf('BET365_VENCEDOR_AWAY'), 'ataques_perigosos_h': g('localAttacksDangerousAttacks'), 'ataques_perigosos_a': g('visitorAttacksDangerousAttacks'), 'red_cards_h': g('localRedCards'), 'red_cards_a': g('visitorRedCards'), 'dapm5_h': gf('localDapm5'), 'dapm5_a': gf('visitorDapm5'), 'dapm10_h': gf('localDapm10'), 'dapm10_a': gf('visitorDapm10'), 'dapm_total_h': gf('localDapmTotal'), 'dapm_total_a': gf('visitorDapmTotal'), 'medias_home_goal': gf('medias_home_goal'), 'medias_away_goal': gf('medias_away_goal'), 'medias_goal_h': gf('medias_home_goal'), 'medias_goal_a': gf('medias_away_goal'), 'medias_home_corners': gf('medias_home_corners'), 'medias_away_corners': gf('medias_away_corners'), 'medias_corners_h': gf('medias_home_corners'), 'medias_corners_a': gf('medias_away_corners'), 'chutes_inside_h': g('localShotsInsideBox'), 'chutes_inside_a': g('visitorShotsInsideBox'), 'chutes_outside_h': g('localShotsOutsideBox'), 'chutes_outside_a': g('visitorShotsOutsideBox'), 'chutes_bloq_h': g('localShotsBlocked'), 'chutes_bloq_a': g('visitorShotsBlocked'), 'goal_attempts_h': g('localGoalAttempts'), 'goal_attempts_a': g('visitorGoalAttempts'), 'big_chances_h': g('localBigChancesCreated'), 'big_chances_a': g('visitorBigChancesCreated'), 'faltas_h': g('localFouls'), 'faltas_a': g('visitorFouls'), 'yellow_cards_h': g('localYellowCards'), 'yellow_cards_a': g('visitorYellowCards'), 'impedimentos_h': g('localOffsides'), 'impedimentos_a': g('visitorOffsides'), 'defesas_h': g('localSaves'), 'defesas_a': g('visitorSaves'), 'pressure_bar_h': g('localPressureBar'), 'pressure_bar_a': g('visitorPressureBar'), 'ball_safe_h': g('localBallSafe'), 'ball_safe_a': g('visitorBallSafe'), 'xg_h': gf('localXg'), 'xg_a': gf('visitorXg'), 'posse_h': gf('localBallPossession'), 'posse_a': gf('visitorBallPossession'), 'ataques_h': g('localAttacksAttacks'), 'ataques_a': g('visitorAttacksAttacks'), 'btts_probabilidade': btts_prob, 'media_gols_ht_h': media_gols_ht_h, 'media_gols_ht_a': media_gols_ht_a, 'media_gols_ft_h': media_gols_ft_h, 'media_gols_ft_a': media_gols_ft_a, 'dapm_max_h': dapm_max, 'dapm_max_a': dapm_max, 'prob_mercados': prob_mercados, 'odds_mercados': odds_mercados}
 
 def get_jogos_sokkerpro(fids_existentes):
     """Busca jogos, stats E odds em UMA unica chamada HTTP."""
@@ -1212,7 +1201,6 @@ def nome_liga_exibicao(liga, pais):
         'Belarus': ('🇧🇾', 'Bielorrússia'),
         'Belize': ('🇧🇿', 'Belize'),
         'Bermuda': ('🇧🇲', 'Bermudas'),
-        'Bolivia': ('🇧🇴', 'Bolívia'),
         'Bolivia, Plurinational State of': ('🇧🇴', 'Bolívia'),
         'Brazil': ('🇧🇷', 'Brasil'),
         'Barbados': ('🇧🇧', 'Barbados'),
@@ -1695,11 +1683,6 @@ def nome_liga_exibicao(liga, pais):
         m_codigo = re.match(r'^([a-z]{2})\s+', pais.lower())
         if m_codigo:
             pais = m_codigo.group(1)
-    # Algumas respostas da API trazem V-League sem o país preenchido.
-    if str(liga).strip().casefold() in {'v-league', 'v.league', 'v league'} and not pais:
-        pais = 'Viet Nam'
-    if str(liga).strip().casefold() in {'u19 süper lig', 'u19 super lig'} and not pais:
-        pais = 'Türkiye'
     info = PAIS_NOME.get(pais) or PAIS_CODIGO.get(pais.lower()) if isinstance(pais, str) else None
     if info:
         return liga + ' (' + info[0] + ' ' + info[1] + ')'
@@ -1863,15 +1846,16 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
         linha = cantos_atual + 1.0
         entrada = 'Mais de ' + f'{linha:.1f}' + ' Asiático⛳️'
     elif tipo in ('gol_intervalo', 'over_gol', 'over_15', 'ambas_marcam', 'over', 'gol_partida'):
-        if tipo == 'ambas_marcam':
-            entrada = 'Ambas Marcam'
-        elif tipo == 'over_15':
-            entrada = 'Over 1.5 Limite'
-        elif tipo == 'gol_intervalo':
-            entrada = 'Over 0.5 Limite'
-        elif tipo in ('over_gol', 'over', 'gol_partida'):
-            linha = sh + sa + 0.5
-            entrada = f'Over {linha:.1f} Limite'
+        if 'Over' not in str(entrada) and 'Ambas' not in str(entrada):
+            if tipo == 'over_15':
+                entrada = 'Over 1.5'
+            elif tipo == 'ambas_marcam':
+                entrada = 'Ambas Marcam'
+            elif tipo == 'gol_intervalo':
+                entrada = 'Over 0.5'
+            elif tipo in ('over_gol', 'over', 'gol_partida'):
+                linha = sh + sa + 0.5
+                entrada = f'Mais de {linha}'
         entrada = entrada + '⚽️'
     elif 'CORNER' in mercado or 'ESCANTEIO' in mercado or (nome and 'CANTO' in nome.upper()):
         linha = cantos_atual + 1.0
@@ -1902,7 +1886,11 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     liga_texto = '<b>🌍 Liga: ' + liga + '</b>'
     pais_texto_linha = '<b>🗺️País: ' + pais_texto + '</b>' if pais_texto else ''
     msg = f'{sep}' + NL + f'<b>{title}</b>' + NL + f'{sep}' + NL + f'<b>⚽️ Placar: {placar}</b>' + NL + f'{liga_texto}' + (NL + pais_texto_linha if pais_texto_linha else '') + NL + f'<b>📡 {home} x {away}</b>' + NL + f'<b>👀 ODDs: Casa {(odd_h if odd_h else chr(8212))} / Fora {(odd_a if odd_a else chr(8212))}</b>' + NL + '<b>⏰️ Minuto: ' + str(minuto) + "'</b>" + NL + f'{sep}' + NL + '<b>📊 Estatísticas ao Vivo da Partida:</b>' + NL + f'<b>🚀 Chutes totais: {chutes_h} | {chutes_a}</b>' + NL + f'<b>🎯 Chutes no alvo: {alvo_h} | {alvo_a}</b>' + NL + f'<b>⚡️ Tentativas de gol: {tentativas_h} | {tentativas_a}</b>' + NL + f'<b>💥 Grandes chances criadas: {grandes_h} | {grandes_a}</b>' + NL + f'<b>🥅 Chutes na área: {dentro_h} | {dentro_a}</b>' + NL + f'<b>⛳️ Escanteios: {cant_h} | {cant_a}</b>' + NL + f'<b>⚔️ Ataques perigosos: {atq_per_h} | {atq_per_a}</b>' + NL + f'<b>🌋 Pressão da partida: {pressao_h} | {pressao_a}</b>' + NL + f'<b>🔥 APPM da partida: {appm}</b>' + NL + f'<b>🔥 APPM últimos 10 min: {dapm10}</b>' + NL + f'<b>🔥 APPM últimos 5 min: {dapm5}</b>' + NL + f'{sep}' + NL + '<b>💡 Análise Técnica da Partida:</b>' + NL + f'<b>🎯 Favorito: {fav_nome}</b>' + NL + f'<b>🚨 Alerta: {alerta}</b>' + NL + f'{sep}' + NL + f'<b>📌 Entrada: {entrada}</b>' + prob_texto + NL + odd_texto + NL + f'{sep}' + atencao_over
-    keyboard = {'inline_keyboard': [[{'text': '🟣BET365🟣', 'url': 'https://www.bet365.bet.br/#/AZ/'}, {'text': '🟠BETANO🟠', 'url': 'https://www.betano.bet.br/live/'}]]}
+    primeiro_nome = str(home).strip().split()[0] if str(home).strip() else ''
+    from urllib.parse import quote
+    nome_busca = quote(primeiro_nome, safe='')
+    url_bet365 = f'https://www.bet365.bet.br/#/AX/K%5E{nome_busca}/'
+    keyboard = {'inline_keyboard': [[{'text': '🟣BET365🟣', 'url': url_bet365}, {'text': '🟠BETANO🟠', 'url': 'https://www.betano.bet.br/live/'}]]}
     return (msg, keyboard)
 
 def _buscar_detalhe_fixture(fid_raw):
@@ -2024,8 +2012,8 @@ def checar_resultado(sinal):
         # Não usar o minuto numérico: em 45+X/90+X ele pode antecipar a auditoria
         # enquanto ainda há acréscimos para jogar.
         status = str(fixture.get('status', '')).strip().upper()
-        is_final = status in ('FT', 'FTP', 'PEN', 'AET')
-        is_2h = (status == 'HT')
+        is_final = status in ('FT', 'PEN', 'AET')
+        is_2h = status in ('2ND', 'HT')
         mercados_ht = ['HT', 'CORNER_HT', 'BTTS', 'escanteio_ht']
         eh_mercado_ht = mercado in mercados_ht or (mercado and mercado.startswith('custom_') and (sinal.get('tipo') in ('escanteio_ht', 'gol_intervalo')))
         if not (is_final or (eh_mercado_ht and is_2h)):
@@ -2035,9 +2023,6 @@ def checar_resultado(sinal):
         total_final = gh + ga
         total_ht = int(fixture.get('scoresHT', 0) or 0)
         entry_total = sinal.get('entry_total')
-        # Registros antigos de gol_intervalo não tinham entry_total; extra_val guarda a linha de entrada.
-        if entry_total is None and sinal.get('tipo') in ('gol_intervalo', 'over_15'):
-            entry_total = sinal.get('extra_val')
         if mercado in ('HT', 'over_05_ht', 'gol_intervalo'):
             return 'green' if entry_total is not None and total_ht > entry_total else 'red' if entry_total is not None and (is_2h or is_final) else None
         elif mercado == 'BTTS':
@@ -2410,7 +2395,7 @@ def get_media_gols_historica_skp(home, away, stats):
         return -1.0
 
 def run_ciclo(sent, total_env, confirmed_ids=None):
-    global CONFIG_MERCADOS, LIGAS_BLOQUEADAS
+    global CONFIG_MERCADOS
     CONFIG_MERCADOS = carregar_config_github()
     global MAPA_MERCADO
     MAPA_MERCADO = _gerar_mapa_mercados()
@@ -2464,13 +2449,13 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                     continue
                 confirmed_ids.add(uid)
                 emoji = '🟢GREEN CONFIRMADO🟢' if res == 'green' else ('🔵REEMBOLSO CONFIRMADO🔵' if res == 'refund' else '🔴RED CONFIRMADO🔴')
-                confirmacao = emoji
+                confirmacao = f"{emoji}\n<b>Mercado:</b> {s.get('mercado', '—')}\n<b>Jogo:</b> {s.get('home', '—')} x {s.get('away', '—')}"
                 mensagem_original_enviada = False
                 if s.get('message_id'):
                     mensagem_original_enviada = send_telegram(emoji, reply_to=s.get('message_id')) is not None
                 if not mensagem_original_enviada:
                     # Sinais antigos ou sem message_id recebem confirmação independente.
-                    send_telegram(emoji)
+                    send_telegram(confirmacao)
                 salvar_resultado(res, mercado=s.get('mercado'), fixture_id=s.get('fixture_id'))
                 atualizar_entrada_historico(s, res)
                 registrar_performance(s.get('mercado'), res)
@@ -2509,9 +2494,6 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             p = p_raw
         sh, sa = (j['sh'], j['sa'])
         liga = str(j['liga'])
-        if liga.strip().casefold() in LIGAS_BLOQUEADAS:
-            print(f'[LIGAS] Ignorada liga bloqueada: {liga}')
-            continue
         pais = j.get('pais', '')
         stot = sh + sa
         placar = f'{sh}x{sa}'
@@ -2798,18 +2780,18 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 cantos_h = max(0, _eh)
                 cantos_a = max(0, _ea)
                 extra_val = cantos_h + cantos_a
-                linha_str = f'Mais de {extra_val + 1:.1f} Asiático⛳️'
+                linha_str = f'o+{extra_val + 0.5}'
             elif c_tipo in ('gol_partida', 'over_gol'):
                 extra_val = sh + sa
-                linha_str = f'Over {extra_val + 0.5:.1f} Limite⚽️'
+                linha_str = f'o+{extra_val + 0.5}'
             elif c_tipo == 'gol_intervalo':
                 extra_val = 0
-                linha_str = 'Over 0.5 Limite⚽️'
+                linha_str = 'o+0.5'
             elif c_tipo == 'over_15':
                 extra_val = sh + sa
-                linha_str = 'Over 1.5 Limite⚽️'
+                linha_str = 'o+1.5'
             elif c_tipo == 'ambas_marcam':
-                linha_str = 'Ambas Marcam⚽️'
+                linha_str = 'bts_yes'
             odd_real = _odd_real_disponivel(stats, c_tipo, extra_val)
             if odd_real is None:
                 print(f'[DIAG-{mk}-ODD] {h} x {a} — mercado/linha não encontrada na API, não enviando')
@@ -2819,7 +2801,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             # Persiste primeiro para o painel não perder o sinal após o envio.
             registrar_sinal(fid, mk, h, a, 0, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa, odd_b365=ob365, odd_bano=obano)
             if notificar:
-                mid = send_telegram(msg_universal(h, a, m, liga, pais, 5, mk, linha_str, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, nome=cnome, tipo=c_tipo, probabilidade=_probabilidade_para_sinal(stats, c_tipo, sh, sa, extra_val if 'escanteio' in c_tipo else 0)), marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
+                mid = send_telegram(msg_universal(h, a, m, liga, pais, 5, mk, cnome, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, nome=cnome, tipo=c_tipo, probabilidade=_probabilidade_para_sinal(stats, c_tipo, sh, sa, extra_val if 'escanteio' in c_tipo else 0)), marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
             else:
                 print(f'[DIAG-{mk}-SILENT] {h} x {a} — notificar=False, registrando sem enviar')
                 mid = 0
