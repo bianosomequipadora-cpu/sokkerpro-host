@@ -357,7 +357,7 @@
         {
           "campo": "appm_min_por_time",
           "operador": "gte",
-          "valor": 0.5
+          "valor": 0.3
         }
       ]
     }
