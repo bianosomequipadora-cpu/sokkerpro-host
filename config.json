@@ -387,7 +387,12 @@
         {
           "campo": "prob_ht_over_0_5",
           "operador": "gte",
-          "valor": 50
+          "valor": 60
+        },
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 1
         }
       ]
     },
