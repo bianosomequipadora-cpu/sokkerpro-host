@@ -333,6 +333,21 @@
           "valor": 1
         }
       ]
+    },
+    "custom_1789608737805": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "",
+      "minuto_inicio": 1,
+      "minuto_fim": 44,
+      "periodo": 1,
+      "tipo": "ambas_marcam",
+      "stake": null,
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": ""
+      },
+      "criterios_api": []
     }
   }
 }
