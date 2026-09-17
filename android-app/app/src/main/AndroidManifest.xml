@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET" />
-    <application android:theme="@style/AppTheme" android:label="SokkerPro" android:icon="@drawable/icon">
+    <application android:theme="@style/AppTheme" android:label="Painel de Robôs" android:icon="@drawable/icon">
         <activity android:name=".MainActivity" android:screenOrientation="portrait" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
