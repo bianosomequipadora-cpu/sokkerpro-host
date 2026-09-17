@@ -343,7 +343,7 @@
       "periodo": 2,
       "tipo": "over_gol",
       "stake": 10,
-      "placar_valido": "",
+      "placar_valido": "0x0",
       "criterios": {
         "situacao_favorito": ""
       },
