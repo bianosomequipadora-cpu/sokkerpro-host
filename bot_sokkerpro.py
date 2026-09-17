@@ -1736,8 +1736,12 @@ def _odds_do_mercado(stats, tipo, extra_val=None):
     return achar(asiaticos), achar(limite)
 
 
+_ULTIMA_ODD_CHAVE = ''
+
 def _odd_real_disponivel(stats, tipo, extra_val):
     """Retorna a odd do mercado encontrada pela API; None se a linha não existir."""
+    global _ULTIMA_ODD_CHAVE
+    _ULTIMA_ODD_CHAVE = ''
     odds = (stats or {}).get('odds_mercados', {})
     if not isinstance(odds, dict):
         return None
@@ -1778,6 +1782,7 @@ def _odd_real_disponivel(stats, tipo, extra_val):
         valor = odds.get(chave)
         try:
             if float(valor) > 1:
+                _ULTIMA_ODD_CHAVE = chave
                 return float(valor)
         except (TypeError, ValueError):
             continue
@@ -2804,6 +2809,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 print(f'[DIAG-{mk}-ODD] {h} x {a} — mercado/linha não encontrada na API, não enviando')
                 continue
             ob365 = odd_real
+            print(f'[AUDITORIA ODD] {h} x {a} | fid={fid} | minuto={m} | tipo={c_tipo} | chave={_ULTIMA_ODD_CHAVE} | odd={ob365:.2f}')
             obano = None
             # Persiste primeiro para o painel não perder o sinal após o envio.
             registrar_sinal(fid, mk, h, a, 0, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa, odd_b365=ob365, odd_bano=obano)
