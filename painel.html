@@ -254,7 +254,10 @@ async function abrirEntradas(mercado){
         var decididos=green+red;
         var assertividade=decididos?((green/decididos)*100).toFixed(1):'0.0';
         var greenFmt=String(green).padStart(2,'0'), redFmt=String(red).padStart(2,'0'), refundFmt=String(refund).padStart(2,'0'), pendFmt=String(pend).padStart(2,'0');
-        resumo.innerHTML='<div style="display:grid;grid-template-columns:1fr;column-gap:0;row-gap:0;margin:6px 0;font-size:.92em;line-height:1.35;word-break:normal;overflow:hidden;align-content:start"><div style="color:#2ecc71"><b>🟢 GREENS:</b>&nbsp;'+greenFmt+'</div><div style="color:#e74c3c"><b>🔴 REDS:</b>&nbsp;'+redFmt+'</div><div style="color:#3498db"><b>🔵 REEMBOLSOS:</b>&nbsp;'+refundFmt+'</div><div style="color:#f1c40f"><b>⏳ PENDENTES:</b>&nbsp;'+pendFmt+'</div><div><b>📈 ASSERTIVIDADE:</b>&nbsp;'+assertividade+'%</div></div>';
+        var mdAtual=(CONFIG_INLINE.mercados||{})[mercado]||{}; var stake=Number(mdAtual.stake||0); var investido=0, lucro=0;
+        list.forEach(function(x){var st=stake; if(st<=0)return; var rs=String(x.resultado||'').toLowerCase(); if(['green','red','refund','reembolso'].indexOf(rs)<0)return; investido+=st; var odd=Number(x.odd_b365); if(rs==='green'&&isFinite(odd))lucro+=st*(odd-1); else if(rs==='red')lucro-=st;});
+        var roi=investido?((lucro/investido)*100).toFixed(1):'0.0';
+        resumo.innerHTML='<div style="display:grid;grid-template-columns:1fr;column-gap:0;row-gap:0;margin:6px 0;font-size:.92em;line-height:1.35;word-break:normal;overflow:hidden;align-content:start"><div style="color:#2ecc71"><b>🟢 GREENS:</b>&nbsp;'+greenFmt+'</div><div style="color:#e74c3c"><b>🔴 REDS:</b>&nbsp;'+redFmt+'</div><div style="color:#3498db"><b>🔵 REEMBOLSOS:</b>&nbsp;'+refundFmt+'</div><div style="color:#f1c40f"><b>⏳ PENDENTES:</b>&nbsp;'+pendFmt+'</div><div><b>📈 ASSERTIVIDADE:</b>&nbsp;'+assertividade+'%</div><div><b>💵 VALOR INVESTIDO:</b>&nbsp;R$ '+investido.toFixed(2).replace('.',',')+'</div><div><b>📈 LUCRO LÍQUIDO:</b>&nbsp;R$ '+lucro.toFixed(2).replace('.',',')+'</div><div><b>📊 ROI:</b>&nbsp;'+roi+'%</div></div>';
       }
       function renderEntradas(){
         var termo=(busca.value||'').toLowerCase().trim();
