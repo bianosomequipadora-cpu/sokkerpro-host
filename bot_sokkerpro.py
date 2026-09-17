@@ -540,7 +540,7 @@ def _agregar_resultados(filtro_data=None):
 
 def _calcular_financeiro_por_mercado(filtro_data=None):
     """Calcula stake, lucro e ROI usando a stake do config e a odd salva no sinal."""
-    dados = {cod: {'stake_total': 0.0, 'lucro': 0.0, 'financeiro_entradas': 0, 'financeiro_incompleto': 0} for cod in MAPA_MERCADO}
+    dados = {cod: {'stake_total': 0.0, 'stake_unit': 0.0, 'lucro': 0.0, 'financeiro_entradas': 0, 'financeiro_incompleto': 0} for cod in MAPA_MERCADO}
     try:
         config = carregar_config_github()
     except Exception:
@@ -552,6 +552,8 @@ def _calcular_financeiro_por_mercado(filtro_data=None):
             stakes[cod] = float(valor) if valor not in (None, '') else 0.0
         except (TypeError, ValueError):
             stakes[cod] = 0.0
+    for cod in dados:
+        dados[cod]['stake_unit'] = stakes.get(cod, 0.0)
     for r in _load_entradas():
         cod = r.get('mercado')
         resultado = str(r.get('resultado', '')).lower()
@@ -576,7 +578,8 @@ def _calcular_financeiro_por_mercado(filtro_data=None):
     return dados
 
 def _linhas_financeiras(info):
-    return (f"   💰 Stake: R$ {info.get('stake_total', 0.0):.2f}".replace('.', ',') + chr(10) +
+    return (f"   💰 Stake por entrada: R$ {info.get('stake_unit', 0.0):.2f}".replace('.', ',') + chr(10) +
+            f"   💵 Valor investido: R$ {info.get('stake_total', 0.0):.2f}".replace('.', ',') + chr(10) +
             f"   📈 Lucro líquido: R$ {info.get('lucro', 0.0):.2f}".replace('.', ',') + chr(10) +
             f"   📊 ROI: {info.get('roi', 0.0):.1f}%")
 
