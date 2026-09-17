@@ -286,13 +286,21 @@ async function abrirEntradas(mercado){
 }
 
 async function carregarDoGitHub(){
-    st('Carregando dados...','loading');
+    st('Carregando dados atuais...','loading');
     try{
-        var r=await fetch('https://raw.githubusercontent.com/bianosomequipadora-cpu/sokkerpro-host/main/config.json?t='+Date.now(),{cache:'no-store'});
-        if(!r.ok) throw new Error('Não foi possível carregar a configuração atual.');
-        var configReal=await r.json();
+        TOKEN=TOKEN||lerTokenSalvo();
+        var configReal=null;
+        if(TOKEN){
+            var api=await fetch('https://api.github.com/repos/'+REPO+'/contents/config.json?ref=main&t='+Date.now(),{cache:'no-store',headers:{'Accept':'application/vnd.github+json','Authorization':'Bearer '+TOKEN}});
+            if(api.ok){var ar=await api.json();configReal=JSON.parse(decodeURIComponent(escape(atob((ar.content||'').replace(/\n/g,'')))));}
+        }
+        if(!configReal){
+            var r=await fetch('https://raw.githubusercontent.com/'+REPO+'/main/config.json?t='+Date.now(),{cache:'no-store'});
+            if(!r.ok) throw new Error('Não foi possível carregar a configuração atual.');
+            configReal=await r.json();
+        }
         CONFIG_INLINE=configReal;
-        st('Dados carregados!','ok');
+        st('Dados atuais carregados do GitHub!','ok');
         renderizarMercados();
         await carregarPerformance();
     }catch(e){
