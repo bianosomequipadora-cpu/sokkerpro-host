@@ -257,7 +257,7 @@ function clonarMercado(key){
     st('Mercado clonado! Edite e salve para confirmar.','ok');
 }
 
-function removerMercado(key){if(!confirm('Remover este mercado?'))return;var el=document.getElementById('card-'+key);if(el){el.remove();st('Mercado removido. Salve para confirmar.','ok');}}
+function removerMercado(key){var el=document.getElementById('card-'+key);if(el){el.remove();st('Mercado removido da tela. Clique em Salvar para confirmar a exclusão.','ok');}}
 
 var ENTRADAS_REPO = "sokkerpro-host";
 async function abrirEntradas(mercado){
