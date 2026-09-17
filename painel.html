@@ -309,11 +309,9 @@ function renderizarMercados(){
 }
 
 async function salvarConfig(){
+    var inlineToken=document.getElementById('token-inline');
+    if(inlineToken && inlineToken.value.trim()){TOKEN=inlineToken.value.trim();guardarTokenSalvo(TOKEN);}
     if(!TOKEN) TOKEN=lerTokenSalvo();
-    if(!TOKEN){
-        var inlineToken=document.getElementById('token-inline');
-        if(inlineToken && inlineToken.value.trim()){TOKEN=inlineToken.value.trim();guardarTokenSalvo(TOKEN);}
-    }
     if(!TOKEN){var boxToken=document.querySelector('.token-inline');if(boxToken)boxToken.style.display='flex';st('Informe o token uma única vez e clique em salvar novamente.','err');return;}
     st('Salvando...','loading');
     try{
