@@ -369,6 +369,32 @@
           "valor": 0
         }
       ]
+    },
+    "custom_1789648108220": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "Gol ht ",
+      "minuto_inicio": 15,
+      "minuto_fim": 26,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "stake": 20,
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": ""
+      },
+      "criterios_api": [
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 0.99
+        },
+        {
+          "campo": "prob_ht_over_0_5",
+          "operador": "gte",
+          "valor": 70
+        }
+      ]
     }
   }
 }
