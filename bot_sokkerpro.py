@@ -375,6 +375,14 @@ ENTRADAS_FILE = os.path.join(BASE_DIR, 'entradas.json')
 ENTRADAS_API_PATH = 'entradas.json'
 
 def _load_entradas():
+    if GITHUB_TOKEN and GITHUB_REPO:
+        try:
+            url = f'https://api.github.com/repos/{GITHUB_REPO}/contents/{ENTRADAS_API_PATH}'
+            r = requests.get(url, headers={'Authorization': f'Bearer {GITHUB_TOKEN}', 'Accept': 'application/vnd.github+json'}, timeout=8)
+            if r.status_code == 200:
+                return json.loads(base64.b64decode(r.json()['content']).decode())
+        except Exception as e:
+            print(f'[ENTRADAS] Erro load GitHub: {e}')
     try:
         if os.path.exists(ENTRADAS_FILE):
             with open(ENTRADAS_FILE, 'r') as f:
