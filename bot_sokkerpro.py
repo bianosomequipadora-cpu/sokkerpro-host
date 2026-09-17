@@ -30,13 +30,15 @@ def analisar_e_disparar(game, stats, p, m, sh, sa, odd_h, odd_a, sent_vistos):
             return ('CORNER_FT', 'Escanteio Limite FT')
     return ((None, None, None), None)
 
-def gerar_layout_relatorio(greens, reds, data_str, refunds=0):
+def gerar_layout_relatorio(greens, reds, data_str, refunds=0, financeiro=None):
     sep = '━━━━━━━━━━━━━━━━━━━━━━'
     total = greens + reds
     taxa = greens / total * 100 if total > 0 else 0.0
-    return f'{sep}\n<b>📊 RELATÓRIO DIÁRIO — {data_str}</b>\n{sep}\n🟢 GREEN: <b>{greens}</b>\n🔴 RED: <b>{reds}</b>\n🔵REEMBOLSO: <b>{refunds}</b>\n📈 TOTAL DE ENTRADAS: <b>{total}</b>\n🎯 ASSERTIVIDADE: <b>{taxa:.1f}%</b>\n{sep}\n⚠️👆Resultados do dia👆⚠️'
+    if financeiro is None: financeiro=(0.0,0.0,0.0)
+    investido,lucro,roi=financeiro
+    return f'{sep}\n<b>📊 RELATÓRIO DIÁRIO — {data_str}</b>\n{sep}\n🟢 GREEN: <b>{greens}</b>\n🔴 RED: <b>{reds}</b>\n🔵REEMBOLSO: <b>{refunds}</b>\n📈 TOTAL DE ENTRADAS: <b>{total}</b>\n🎯 ASSERTIVIDADE: <b>{taxa:.1f}%</b>\n{sep}\n💵 VALOR INVESTIDO: <b>R$ {investido:.2f}</b>\n📈 LUCRO LÍQUIDO: <b>R$ {lucro:.2f}</b>\n📊 ROI: <b>{roi:.1f}%</b>\n{sep}\n⚠️👆Resultados do dia👆⚠️'
 
-def gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos, refunds=0):
+def gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos, refunds=0, financeiro=None):
     sep = '━' * 22
     total = greens + reds + refunds
     avaliados = greens + reds
@@ -49,6 +51,9 @@ def gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos, refunds=0
     msg += f'🔵REEMBOLSO: <b>{refunds}</b>\n'
     msg += f'📈 TOTAL DE ENTRADAS: <b>{total}</b>\n'
     msg += f'🎯 ASSERTIVIDADE: <b>{taxa:.1f}%</b>\n'
+    if financeiro is None: financeiro=(0.0,0.0,0.0)
+    investido,lucro,roi=financeiro
+    msg += f'{sep}\n💵 VALOR INVESTIDO: <b>R$ {investido:.2f}</b>\n📈 LUCRO LÍQUIDO: <b>R$ {lucro:.2f}</b>\n📊 ROI: <b>{roi:.1f}%</b>\n'
     msg += f'{sep}\n'
     msg += f'📅 Dias com entradas: <b>{dias_ativos}</b>\n'
     msg += '⚠️👆Resultados do mês👆⚠️'
@@ -527,7 +532,60 @@ def _agregar_resultados(filtro_data=None):
         grupo['total'] = grupo['green'] + grupo['red'] + grupo['refund']
         avaliados = grupo['green'] + grupo['red']
         grupo['pct'] = grupo['green'] / avaliados * 100 if avaliados > 0 else 0.0
+    financeiro = _calcular_financeiro_por_mercado(filtro_data)
+    for cod, valores in financeiro.items():
+        if cod in dados:
+            dados[cod].update(valores)
     return dados, dias_ativos
+
+def _calcular_financeiro_por_mercado(filtro_data=None):
+    """Calcula stake, lucro e ROI usando a stake do config e a odd salva no sinal."""
+    dados = {cod: {'stake_total': 0.0, 'lucro': 0.0, 'financeiro_entradas': 0, 'financeiro_incompleto': 0} for cod in MAPA_MERCADO}
+    try:
+        config = carregar_config_github()
+    except Exception:
+        config = {}
+    stakes = {}
+    for cod, info in (config or {}).items():
+        try:
+            valor = info.get('stake') if isinstance(info, dict) else None
+            stakes[cod] = float(valor) if valor not in (None, '') else 0.0
+        except (TypeError, ValueError):
+            stakes[cod] = 0.0
+    for r in _load_entradas():
+        cod = r.get('mercado')
+        resultado = str(r.get('resultado', '')).lower()
+        if cod not in dados or resultado not in ('green', 'red', 'refund', 'reembolso'):
+            continue
+        if filtro_data is not None and not filtro_data(r):
+            continue
+        stake = stakes.get(cod, 0.0)
+        if stake <= 0:
+            continue
+        dados[cod]['stake_total'] += stake
+        dados[cod]['financeiro_entradas'] += 1
+        if resultado in ('refund', 'reembolso'):
+            continue
+        try:
+            odd = float(r.get('odd_b365'))
+            dados[cod]['lucro'] += stake * (odd - 1.0) if resultado == 'green' else -stake
+        except (TypeError, ValueError):
+            dados[cod]['financeiro_incompleto'] += 1
+    for info in dados.values():
+        info['roi'] = (info['lucro'] / info['stake_total'] * 100) if info['stake_total'] > 0 else 0.0
+    return dados
+
+def _linhas_financeiras(info):
+    return (f"   💰 Stake: R$ {info.get('stake_total', 0.0):.2f}".replace('.', ',') + chr(10) +
+            f"   📈 Lucro líquido: R$ {info.get('lucro', 0.0):.2f}".replace('.', ',') + chr(10) +
+            f"   📊 ROI: {info.get('roi', 0.0):.1f}%")
+
+def _totais_financeiros(filtro_data=None):
+    valores = _calcular_financeiro_por_mercado(filtro_data)
+    investido = sum(v.get('stake_total', 0.0) for v in valores.values())
+    lucro = sum(v.get('lucro', 0.0) for v in valores.values())
+    roi = lucro / investido * 100 if investido > 0 else 0.0
+    return investido, lucro, roi
 
 def _agregar_resultados_mensais(mes_str):
     """Agrega resultados do mês usando o MAPA_MERCADO vigente."""
@@ -566,14 +624,14 @@ def enviar_relatorio_mensal():
     meses_pt = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
     mes_nome = f'{meses_pt[hoje.month - 1]}/{hoje.year}'
     greens, reds, dias_ativos, refunds = get_relatorio_mensal()
-    msg = gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos, refunds)
+    msg = gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos, refunds, _totais_financeiros(lambda r: str(r.get('data','')).startswith(datetime.now(BRT).strftime('%Y-%m'))))
     return msg
 
 def enviar_relatorio_diario():
     hoje_key = f"relatorio_{datetime.now(BRT).strftime('%Y-%m-%d')}"
     hoje = datetime.now(BRT).strftime('%d/%m/%Y')
     greens, reds, refunds = get_relatorio_hoje()
-    msg = gerar_layout_relatorio(greens, reds, hoje, refunds)
+    msg = gerar_layout_relatorio(greens, reds, hoje, refunds, _totais_financeiros(lambda r: r.get('data') == datetime.now(BRT).strftime('%Y-%m-%d')))
     confirmed_ids = set()
     sent = load_sent()
     if send_telegram(msg):
@@ -667,6 +725,9 @@ def get_performance():
         avaliados = greens + reds
         info['pct'] = greens / avaliados * 100 if avaliados > 0 else 0
         info['valido'] = avaliados >= 1000 and info['pct'] >= 70
+    financeiro=_calcular_financeiro_por_mercado()
+    for cod in resultado:
+        resultado[cod].update(financeiro.get(cod, {}))
     return resultado
 
 def gerar_layout_performance():
@@ -681,14 +742,14 @@ def gerar_layout_performance():
         f = info['refund']
         t = info['total']
         pct = info['pct']
-        blocos.append(f'<b>{nome}</b>\n   ⏳ Total: {t} | 🟢 {g} | 🔴 {r} | 🔵 {f}\n   🎯 Acerto: {pct:.1f}%')
+        blocos.append(f'<b>{nome}</b>\n   ⏳ Total: {t} | 🟢 {g} | 🔴 {r} | 🔵 {f}\n   🎯 Acerto: {pct:.1f}%\n'+_linhas_financeiras(info))
     total_g = sum((d['green'] for d in dados.values()))
     total_r = sum((d['red'] for d in dados.values()))
     total_f = sum((d['refund'] for d in dados.values()))
     total_t = total_g + total_r + total_f
     total_avaliados = total_g + total_r
     total_pct = total_g / total_avaliados * 100 if total_avaliados > 0 else 0
-    msg = f"{sep}\n📊<b>RELATÓRIO DE PERFORMANCE</b>📊\n{sep}\n{f'{chr(10)}{sep}{chr(10)}'.join(blocos)}{chr(10)}{sep}\n📌 <b>TOTAL GERAL: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n{sep}\nRegras de Validação:\n✅ Mínimo 1000 entradas + ≥70%\n{sep}"
+    msg = f"{sep}\n📊<b>RELATÓRIO DE PERFORMANCE</b>📊\n{sep}\n{f'{chr(10)}{sep}{chr(10)}'.join(blocos)}{chr(10)}{sep}\n📌 <b>TOTAL GERAL: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n      | 💵 Investido: R$ {sum(d.get('stake_total',0.0) for d in dados.values()):.2f} | 📈 Lucro: R$ {sum(d.get('lucro',0.0) for d in dados.values()):.2f} | 📊 ROI: {(sum(d.get('lucro',0.0) for d in dados.values())/sum(d.get('stake_total',0.0) for d in dados.values())*100 if sum(d.get('stake_total',0.0) for d in dados.values()) else 0):.1f}%|\n{sep}\nRegras de Validação:\n✅ Mínimo 1000 entradas + ≥70%\n{sep}"
     return msg
 
 def enviar_relatorio_performance():
@@ -705,6 +766,7 @@ def gerar_layout_relatorio_geral():
     total_t = total_g + total_r + total_f
     avaliados = total_g + total_r
     total_pct = total_g / avaliados * 100 if avaliados > 0 else 0.0
+    investido, lucro, roi = _totais_financeiros()
     return (
         f"{sep}\n📊<b>RELATÓRIO GERAL</b>📊\n{sep}\n"
         f"🟢 GREEN: {total_g}\n"
@@ -712,7 +774,7 @@ def gerar_layout_relatorio_geral():
         f"🔵 REEMBOLSO: {total_f}\n"
         f"📈 TOTAL GERAL DE ENTRADAS: {total_t}\n"
         f"🎯 ASSERTIVIDADE: {total_pct:.1f}%\n"
-        f"{sep}\n📅 Dias com entradas: {len(dias_ativos)}\n{sep}"
+        f"{sep}\n💵 VALOR INVESTIDO: R$ {investido:.2f}\n📈 LUCRO LÍQUIDO: R$ {lucro:.2f}\n📊 ROI: {roi:.1f}%\n{sep}\n📅 Dias com entradas: {len(dias_ativos)}\n{sep}"
     )
 
 def enviar_relatorio_geral():
@@ -746,6 +808,9 @@ def get_performance_hoje():
         f = info['refund']
         info['total'] = g + r + f
         info['pct'] = g / (g + r) * 100 if (g + r) > 0 else 0
+    financeiro=_calcular_financeiro_por_mercado(lambda r: r.get('data') == hoje)
+    for cod in perf:
+        perf[cod].update(financeiro.get(cod, {}))
     return perf
 
 def gerar_layout_mercados_hoje():
@@ -754,7 +819,7 @@ def gerar_layout_mercados_hoje():
     sep = '━' * 22
     blocos = []
     for cod, info in dados.items():
-        blocos.append(f"<b>{info['nome']}</b>\n   Total: {info['total']} | 🟢 {info['green']} | 🔴 {info['red']} | 🔵 {info['refund']}\n   🎯 Acerto: {info['pct']:.1f}%")
+        blocos.append(f"<b>{info['nome']}</b>\n   Total: {info['total']} | 🟢 {info['green']} | 🔴 {info['red']} | 🔵 {info['refund']}\n   🎯 Acerto: {info['pct']:.1f}%\n"+_linhas_financeiras(info))
     total_g = sum(d['green'] for d in dados.values())
     total_r = sum(d['red'] for d in dados.values())
     total_f = sum(d['refund'] for d in dados.values())
@@ -763,7 +828,7 @@ def gerar_layout_mercados_hoje():
     total_pct = total_g / avaliados * 100 if avaliados > 0 else 0
     corpo = (f"{chr(10)}{sep}{chr(10)}".join(blocos) if blocos else 'Nenhum resultado registrado hoje.')
     data_hoje = datetime.now(BRT).strftime('%d/%m/%Y')
-    return f"{sep}\n📊<b>MERCADOS — {data_hoje}</b>📊\n{sep}\n{corpo}\n{sep}\n📌 <b>TOTAL DO DIA: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n{sep}"
+    return f"{sep}\n📊<b>MERCADOS — {data_hoje}</b>📊\n{sep}\n{corpo}\n{sep}\n📌 <b>TOTAL DO DIA: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n      | 💵 Investido: R$ {sum(d.get('stake_total',0.0) for d in dados.values()):.2f} | 📈 Lucro: R$ {sum(d.get('lucro',0.0) for d in dados.values()):.2f} | 📊 ROI: {(sum(d.get('lucro',0.0) for d in dados.values())/sum(d.get('stake_total',0.0) for d in dados.values())*100 if sum(d.get('stake_total',0.0) for d in dados.values()) else 0):.1f}%|\n{sep}"
 
 def get_performance_mensal():
     """Retorna performance por mercado no mesmo recorte do relatório mensal."""
@@ -808,6 +873,9 @@ def get_performance_24h():
         f = info['refund']
         info['total'] = g + r + f
         info['pct'] = g / (g + r) * 100 if (g + r) > 0 else 0
+    financeiro=_calcular_financeiro_por_mercado(lambda r: (r.get('timestamp') or "") >= corte.isoformat())
+    for cod in perf:
+        perf[cod].update(financeiro.get(cod, {}))
     return perf
 
 def gerar_layout_mercados24h():
@@ -822,14 +890,14 @@ def gerar_layout_mercados24h():
         f = info['refund']
         t = info['total']
         pct = info['pct']
-        blocos.append(f'<b>{nome}</b>\n   Total: {t} | 🟢 {g} | 🔴 {r} | 🔵 {f}\n   🎯 Acerto: {pct:.1f}%')
+        blocos.append(f'<b>{nome}</b>\n   Total: {t} | 🟢 {g} | 🔴 {r} | 🔵 {f}\n   🎯 Acerto: {pct:.1f}%\n'+_linhas_financeiras(info))
     total_g = sum((d['green'] for d in dados.values()))
     total_r = sum((d['red'] for d in dados.values()))
     total_f = sum((d['refund'] for d in dados.values()))
     total_t = total_g + total_r + total_f
     total_avaliados = total_g + total_r
     total_pct = total_g / total_avaliados * 100 if total_avaliados > 0 else 0
-    msg = f"{sep}\n📊<b>MERCADOS — ÚLTIMAS 24H</b>📊\n{sep}\n{f'{chr(10)}{sep}{chr(10)}'.join(blocos)}{chr(10)}{sep}\n📌 <b>TOTAL GERAL: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n{sep}"
+    msg = f"{sep}\n📊<b>MERCADOS — ÚLTIMAS 24H</b>📊\n{sep}\n{f'{chr(10)}{sep}{chr(10)}'.join(blocos)}{chr(10)}{sep}\n📌 <b>TOTAL GERAL: {total_t} Sinais</b>\n      | 🟢 {total_g} | 🔴 {total_r} | 🔵 {total_f} | {total_pct:.1f}%|\n      | 💵 Investido: R$ {sum(d.get('stake_total',0.0) for d in dados.values()):.2f} | 📈 Lucro: R$ {sum(d.get('lucro',0.0) for d in dados.values()):.2f} | 📊 ROI: {(sum(d.get('lucro',0.0) for d in dados.values())/sum(d.get('stake_total',0.0) for d in dados.values())*100 if sum(d.get('stake_total',0.0) for d in dados.values()) else 0):.1f}%|\n{sep}"
     return msg
 
 def enviar_relatorio_mercados24h():
