@@ -385,11 +385,6 @@
       },
       "criterios_api": [
         {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
-          "valor": 0.5
-        },
-        {
           "campo": "prob_ht_over_0_5",
           "operador": "gte",
           "valor": 50
