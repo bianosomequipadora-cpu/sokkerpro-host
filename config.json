@@ -354,6 +354,21 @@
           "valor": 0.5
         }
       ]
+    },
+    "custom_1789606861370": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "Eggshrvesh c⚽️⚽️❤️‍🔥⚽️🌪🔷️👏👑㊗️🔵♦️㊗️",
+      "minuto_inicio": 1,
+      "minuto_fim": 44,
+      "periodo": 1,
+      "tipo": "escanteio_ht",
+      "stake": 10,
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": ""
+      },
+      "criterios_api": []
     }
   }
 }
