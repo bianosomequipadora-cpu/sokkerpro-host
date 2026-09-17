@@ -172,7 +172,7 @@ function criarCardMercado(key,dados,isCustom){
 
     var entradasHtml = '<div class="market-actions"><button class="btn-entradas" onclick="abrirEntradas(\''+key+'\')">📊 Relatório</button><button class="btn-add-criterion-top" onclick="adicionarCriterioNoMercado(\''+key+'\')">＋ Adicionar critérios</button></div>';
     var html='<div class="switch-field">'+
-        '<input class="input-nome" id="'+key+'-nome" value="'+nome.replace(/"/g,'&quot;')+'" placeholder="NOME MERCADO">'+
+        '<input class="input-nome" id="'+key+'-nome" value="'+nome.replace(/"/g,'&quot;')+'" placeholder="'+(nome?'NOME MERCADO':'MERCADO SEM NOME — '+key)+'">'+
         '<label class="toggle-switch"><input type="checkbox" id="'+key+'-ativo" '+(ativo?'checked':'')+'><span class="toggle-slider"></span></label>'+
         '<label style="font-size:0.7em; color:#999; margin:0 8px;">🔔</label>'+
         '<label class="toggle-switch" title="Notificar no Telegram"><input type="checkbox" id="'+key+'-notificar" '+(notificar?'checked':'')+'><span class="toggle-slider"></span></label>'+
