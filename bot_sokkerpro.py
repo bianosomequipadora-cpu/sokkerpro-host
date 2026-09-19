@@ -1,4 +1,5 @@
 import os, sys, base64, requests as req
+import html
 def analisar_e_disparar(game, stats, p, m, sh, sa, odd_h, odd_a, sent_vistos):
     try:
         oh = float(odd_h) if odd_h else 3.0
@@ -2433,12 +2434,12 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
             if jogos_na_janela:
                 linhas_janela = ''
                 for j in jogos_na_janela:
-                    h = j.get('home', '')
-                    a = j.get('away', '')
+                    h = html.escape(str(j.get('home', '') or ''))
+                    a = html.escape(str(j.get('away', '') or ''))
                     m = j.get('minuto', 0)
                     sh = j.get('sh', 0)
                     sa = j.get('sa', 0)
-                    liga = j.get('liga', '')
+                    liga = html.escape(str(j.get('liga', '') or ''))
                     linhas_janela += f"🎯 <b>{h} x {a}</b> | {m}' | {sh}x{sa} | {liga}\n"
             else:
                 linhas_janela = 'Nenhum jogo na janela no momento.'
@@ -2446,8 +2447,8 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
             if fora_janela:
                 linhas_fora = ''
                 for j in fora_janela[:10]:
-                    h = j.get('home', '')
-                    a = j.get('away', '')
+                    h = html.escape(str(j.get('home', '') or ''))
+                    a = html.escape(str(j.get('away', '') or ''))
                     m = j.get('minuto', 0)
                     sh = j.get('sh', 0)
                     sa = j.get('sa', 0)
@@ -2457,7 +2458,11 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
             else:
                 linhas_fora = '—'
             msg_radar = f'{sep}\n📡👉<b>RADAR DE JOGOS AO VIVO</b>👈📡\n{sep}\n🔴 <b>{total_jogos_live} jogos ao vivo</b>\n🎯 <b>{len(jogos_na_janela)} na janela alvo</b>\n{sep}\n🚨<b>JOGOS NO ALVO:</b>\n{linhas_janela}{sep}\n<b>⏳ FORA DA JANELA:</b>\n{linhas_fora}{sep}'
-            requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage', json={'chat_id': chat_orig, 'text': msg_radar, 'parse_mode': 'HTML'}, timeout=10)
+            resposta_radar = requests.post(f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage', json={'chat_id': chat_orig, 'text': msg_radar, 'parse_mode': 'HTML'}, timeout=10)
+            if not resposta_radar.ok:
+                print(f'[RADAR] Telegram rejeitou a mensagem: HTTP {resposta_radar.status_code} — {resposta_radar.text[:300]}')
+            else:
+                print(f'[RADAR] Resposta enviada para {chat_orig}')
             radar_respondido = True
     if new_last_id > last_id:
         with open(LAST_UPDATE_FILE, 'w') as f:
