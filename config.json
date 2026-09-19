@@ -360,42 +360,6 @@
         }
       ]
     },
-    "custom_1789756244952": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️🟢OVER GOL PARTIDA🟢⚽️",
-      "minuto_inicio": 66,
-      "minuto_fim": 73,
-      "periodo": 2,
-      "tipo": "over_gol",
-      "stake": 20,
-      "placar_valido": "",
-      "criterios": {
-        "situacao_favorito": "perdendo_ou_empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
-          "valor": 1
-        },
-        {
-          "campo": "media_gols_partida_min",
-          "operador": "gte",
-          "valor": 2.5
-        },
-        {
-          "campo": "pressure_bar_min",
-          "operador": "gte",
-          "valor": 70
-        },
-        {
-          "campo": "prob_ft_over_0_5",
-          "operador": "gte",
-          "valor": 70
-        }
-      ]
-    },
     "custom_1789809873168": {
       "ativo": true,
       "notificar": true,
