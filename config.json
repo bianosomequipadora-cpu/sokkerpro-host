@@ -256,11 +256,6 @@
           "valor": 65
         },
         {
-          "campo": "appm_min_por_time",
-          "operador": "lte",
-          "valor": 1.5
-        },
-        {
           "campo": "media_gols_ft_min",
           "operador": "gte",
           "valor": 2.5
