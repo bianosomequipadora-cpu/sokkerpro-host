@@ -2771,6 +2771,13 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                     elif lado=='h': atual_raw=vh
                     elif lado=='a': atual_raw=va
                     else: atual_raw=vh if fav_final=='h' else va
+                elif campo == 'odd_favorito_max':
+                    # Critério derivado: favorito é a menor odd pré-live válida.
+                    # Sem as duas odds, o critério não passa automaticamente.
+                    if odd_h is None or odd_a is None:
+                        atual_raw = None
+                    else:
+                        atual_raw = min(float(odd_h), float(odd_a))
                 elif campo == 'appm_partida_calc':
                     if not m or float(m) <= 0:
                         motivos.append(f'{campo}=minuto inválido')
