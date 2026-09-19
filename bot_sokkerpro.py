@@ -567,8 +567,13 @@ def _calcular_financeiro_por_mercado(filtro_data=None):
         resultado = str(r.get('resultado', '')).lower()
         if cod not in dados or resultado not in ('green', 'red', 'refund', 'reembolso'):
             continue
-        if filtro_data is not None and not filtro_data(r):
-            continue
+        if filtro_data is not None:
+            # Entradas usam timestamp; o recorte dos relatórios usa data.
+            registro_filtro = dict(r)
+            if not registro_filtro.get('data') and registro_filtro.get('timestamp'):
+                registro_filtro['data'] = str(registro_filtro['timestamp'])[:10]
+            if not filtro_data(registro_filtro):
+                continue
         stake = stakes.get(cod, 0.0)
         if stake <= 0:
             continue
