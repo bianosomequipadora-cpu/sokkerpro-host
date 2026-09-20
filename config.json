@@ -359,7 +359,7 @@
           "valor": 58
         },
         {
-          "campo": "appm_min_por_time",
+          "campo": "dapm_total_orig_min",
           "operador": "gte",
           "valor": 0.7
         }
