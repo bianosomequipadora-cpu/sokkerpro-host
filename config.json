@@ -48,7 +48,7 @@
         {
           "campo": "appm_min_por_time",
           "operador": "gte",
-          "valor": 3
+          "valor": 1
         },
         {
           "campo": "diferenca_gols_fav_max",
@@ -264,32 +264,6 @@
           "campo": "max_red_card_fav",
           "operador": "lt",
           "valor": 0
-        }
-      ]
-    },
-    "custom_1789434062843": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️❤️‍🔥OVER GOL PARTIDA(FT)❤️‍🔥⚽️",
-      "minuto_inicio": 66,
-      "minuto_fim": 75,
-      "periodo": 2,
-      "tipo": "over_gol",
-      "stake": 20,
-      "placar_valido": "0x0 , 1x1, 0x1, 1x0",
-      "criterios": {
-        "situacao_favorito": "perdendo_ou_empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "pressure_bar_h",
-          "operador": "gte",
-          "valor": 70
-        },
-        {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
-          "valor": 1
         }
       ]
     },
