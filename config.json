@@ -362,6 +362,11 @@
           "campo": "dapm_total_orig_min",
           "operador": "gte",
           "valor": 0.7
+        },
+        {
+          "campo": "escanteios_5m",
+          "operador": "lte",
+          "valor": 0
         }
       ]
     }
