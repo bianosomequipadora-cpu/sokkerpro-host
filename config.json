@@ -398,13 +398,7 @@
       "criterios": {
         "situacao_favorito": ""
       },
-      "criterios_api": [
-        {
-          "campo": "dapm_10_fav",
-          "operador": "gte",
-          "valor": 0.8
-        }
-      ]
+      "criterios_api": []
     },
     "custom_1790083897250": {
       "ativo": true,
@@ -419,13 +413,7 @@
       "criterios": {
         "situacao_favorito": ""
       },
-      "criterios_api": [
-        {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
-          "valor": 0.3
-        }
-      ]
+      "criterios_api": []
     },
     "custom_1790084023384": {
       "ativo": true,
@@ -440,13 +428,7 @@
       "criterios": {
         "situacao_favorito": ""
       },
-      "criterios_api": [
-        {
-          "campo": "dapm_10_fav",
-          "operador": "gte",
-          "valor": 0.4
-        }
-      ]
+      "criterios_api": []
     },
     "custom_1790087134375": {
       "ativo": true,
