@@ -413,6 +413,11 @@
           "campo": "dapm_10_fav",
           "operador": "gte",
           "valor": 1.1
+        },
+        {
+          "campo": "escanteios_5m",
+          "operador": "lte",
+          "valor": 0
         }
       ]
     }
