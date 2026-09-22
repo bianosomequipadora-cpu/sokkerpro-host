@@ -443,7 +443,13 @@
       "criterios": {
         "situacao_favorito": ""
       },
-      "criterios_api": []
+      "criterios_api": [
+        {
+          "campo": "appm_total_min",
+          "operador": "gte",
+          "valor": 0.1
+        }
+      ]
     }
   }
 }
