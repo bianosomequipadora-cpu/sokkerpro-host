@@ -264,7 +264,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 1
+          "valor": 0.7
         },
         {
           "campo": "chutes_totais_min",
@@ -280,6 +280,11 @@
           "campo": "escanteios_10m",
           "operador": "lte",
           "valor": 0
+        },
+        {
+          "campo": "dapm_5_min",
+          "operador": "gte",
+          "valor": 1.2
         }
       ]
     },
@@ -287,8 +292,8 @@
       "ativo": true,
       "notificar": true,
       "nome": "⛳️😈ESCANTEIO ASIÁTICO HT😈⛳️",
-      "minuto_inicio": 32,
-      "minuto_fim": 38,
+      "minuto_inicio": 30,
+      "minuto_fim": 37,
       "periodo": 1,
       "tipo": "escanteio_ht",
       "stake": 20,
@@ -300,7 +305,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 1
+          "valor": 0.7
         },
         {
           "campo": "chutes_totais_min",
@@ -316,6 +321,11 @@
           "campo": "escanteios_10m",
           "operador": "lte",
           "valor": 0
+        },
+        {
+          "campo": "dapm_5_min",
+          "operador": "gte",
+          "valor": 1.2
         }
       ]
     },
