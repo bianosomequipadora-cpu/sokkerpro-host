@@ -384,6 +384,27 @@
           "valor": 1
         }
       ]
+    },
+    "custom_1790083138887": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "Teste do painel ",
+      "minuto_inicio": 1,
+      "minuto_fim": 44,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "stake": 20,
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": ""
+      },
+      "criterios_api": [
+        {
+          "campo": "dapm_10_fav",
+          "operador": "gte",
+          "valor": 0.8
+        }
+      ]
     }
   }
 }
