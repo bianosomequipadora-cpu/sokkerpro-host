@@ -2840,7 +2840,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             if not mc.get('ativo', True):
                 continue
             cper = int(mc.get('periodo', 0))
-            if cper > 0 and p != cper:
+            if cper in (1, 2) and p != cper:
                 continue
             cini = int(mc.get('minuto_inicio', 0))
             cfim = int(mc.get('minuto_fim', 99))
