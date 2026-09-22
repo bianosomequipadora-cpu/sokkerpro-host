@@ -455,7 +455,7 @@
       "minuto_inicio": 1,
       "minuto_fim": 90,
       "periodo": 3,
-      "tipo": "over_15",
+      "tipo": "escanteio_ht",
       "stake": 20,
       "placar_valido": "",
       "criterios": {
