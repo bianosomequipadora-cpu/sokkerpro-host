@@ -1992,7 +1992,7 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     nome_busca = quote(nome_completo, safe='')
     url_bet365 = f'https://www.bet365.bet.br/#/AX/K%5E{nome_busca}/'
     url_paripesa = f'https://paripesa.com/br/live/football/{game_id}' if game_id not in (None, '') else 'https://paripesa.com/br/live/football/'
-    keyboard = {'inline_keyboard': [[{'text': '🟣BET365🔵', 'url': url_bet365}, {'text': '🟠PARIPESA🟠', 'url': url_paripesa}]]}
+    keyboard = {'inline_keyboard': [[{'text': '🟣BET365🟣', 'url': url_bet365}, {'text': '🟠PARIPESA🟠', 'url': url_paripesa}]]}
     return (msg, keyboard)
 
 def _buscar_detalhe_fixture(fid_raw):
