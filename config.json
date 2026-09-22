@@ -447,6 +447,21 @@
           "valor": 0.4
         }
       ]
+    },
+    "custom_1790087134375": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "TESTE HT+FT 1 A 90",
+      "minuto_inicio": 1,
+      "minuto_fim": 90,
+      "periodo": 3,
+      "tipo": "over_15",
+      "stake": 20,
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": ""
+      },
+      "criterios_api": []
     }
   }
 }
