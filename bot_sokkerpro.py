@@ -1,3 +1,4 @@
+from urllib.parse import unquote
 import os, sys, base64, requests as req
 import html
 def analisar_e_disparar(game, stats, p, m, sh, sa, odd_h, odd_a, sent_vistos):
@@ -1126,7 +1127,10 @@ def get_jogos_sokkerpro(fids_existentes):
                     pais_fix = 'Lithuania'
                 if not pais_fix and fix.get('leagueName') == 'Premiership Development Liga':
                     pais_fix = 'Northern Ireland'
-                jogos.append({'fid': fid, 'home': fix.get('localTeamName', 'Home'), 'away': fix.get('visitorTeamName', 'Away'), 'minuto': minuto or _get_int(fix.get('minutePrimeiroTempo', 0)) or _get_int(fix.get('minuteSegundoTempo', 0)), 'period': period, 'sh': _get_int(fix.get('scoresLocalTeam', 0)), 'sa': _get_int(fix.get('scoresVisitorTeam', 0)), 'liga': fix.get('leagueName', 'Liga'), 'pais': pais_fix, 'source': 'sokkerpro', '_stats': stats, '_odd_h': oh if oh and oh > 1 else None, '_odd_a': oa if oa and oa > 1 else None})
+                link22 = str(fix.get('link22', ''))
+                m_paripesa = re.search(r'%2FFootball%2F([^&]+)', link22, re.IGNORECASE)
+                paripesa_path = unquote(m_paripesa.group(1)) if m_paripesa else ''
+                jogos.append({'fid': fid, 'home': fix.get('localTeamName', 'Home'), 'away': fix.get('visitorTeamName', 'Away'), 'minuto': minuto or _get_int(fix.get('minutePrimeiroTempo', 0)) or _get_int(fix.get('minuteSegundoTempo', 0)), 'period': period, 'sh': _get_int(fix.get('scoresLocalTeam', 0)), 'sa': _get_int(fix.get('scoresVisitorTeam', 0)), 'liga': fix.get('leagueName', 'Liga'), 'pais': pais_fix, 'source': 'sokkerpro', 'paripesa_path': paripesa_path, '_stats': stats, '_odd_h': oh if oh and oh > 1 else None, '_odd_a': oa if oa and oa > 1 else None})
     except:
         pass
     return jogos
@@ -2913,7 +2917,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             # Persiste primeiro para o painel não perder o sinal após o envio.
             registrar_sinal(fid, mk, h, a, 0, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa, odd_b365=ob365, odd_bano=obano)
             if notificar:
-                mid = send_telegram(msg_universal(h, a, m, liga, pais, 5, mk, cnome, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, nome=cnome, tipo=c_tipo, probabilidade=_probabilidade_para_sinal(stats, c_tipo, sh, sa, extra_val if 'escanteio' in c_tipo else 0), game_id=fid), marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
+                mid = send_telegram(msg_universal(h, a, m, liga, pais, 5, mk, cnome, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, nome=cnome, tipo=c_tipo, probabilidade=_probabilidade_para_sinal(stats, c_tipo, sh, sa, extra_val if 'escanteio' in c_tipo else 0), game_id=(j.get('paripesa_path') or fid)), marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
             else:
                 print(f'[DIAG-{mk}-SILENT] {h} x {a} — notificar=False, registrando sem enviar')
                 mid = 0
