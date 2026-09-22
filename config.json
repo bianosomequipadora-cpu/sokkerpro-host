@@ -405,6 +405,27 @@
           "valor": 0.8
         }
       ]
+    },
+    "custom_1790083897250": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "Teste",
+      "minuto_inicio": 2,
+      "minuto_fim": 44,
+      "periodo": 1,
+      "tipo": "escanteio_ht",
+      "stake": 20,
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": ""
+      },
+      "criterios_api": [
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 0.3
+        }
+      ]
     }
   }
 }
