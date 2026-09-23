@@ -369,19 +369,14 @@
           "valor": 65
         },
         {
-          "campo": "goal_attempts_min",
-          "operador": "gte",
-          "valor": 1
-        },
-        {
           "campo": "appm_min_por_time",
           "operador": "gte",
-          "valor": 1
+          "valor": 0.7
         },
         {
-          "campo": "diferenca_gols_fav_max",
+          "campo": "dapm_10_total",
           "operador": "lte",
-          "valor": 1
+          "valor": 1.6
         }
       ]
     },
@@ -457,39 +452,34 @@
         }
       ]
     },
-    "custom_1790175720394": {
+    "custom_1790199213646": {
       "ativo": true,
       "notificar": true,
-      "nome": "⛳️🔞ESCANTEIO ASIÁTICO HT🔞⛳️",
-      "minuto_inicio": 30,
-      "minuto_fim": 37,
+      "nome": "⚽️🔞OVER GOL INTERVALO🔞⚽️",
+      "minuto_inicio": 15,
+      "minuto_fim": 25,
       "periodo": 1,
-      "tipo": "escanteio_ht",
+      "tipo": "gol_intervalo",
       "stake": 20,
-      "placar_valido": "",
+      "placar_valido": "0x0",
       "criterios": {
-        "situacao_favorito": "perdendo_ou_empatando"
+        "situacao_favorito": ""
       },
       "criterios_api": [
         {
-          "campo": "diferenca_gols_fav_max",
-          "operador": "lte",
-          "valor": 1
-        },
-        {
-          "campo": "max_red_card_fav",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "escanteios_5m",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "dapm_10_fav",
+          "campo": "dapm_10_total",
           "operador": "gte",
-          "valor": 1
+          "valor": 2
+        },
+        {
+          "campo": "prob_1x2_casa_ou_fora",
+          "operador": "gte",
+          "valor": 70
+        },
+        {
+          "campo": "prob_ht_over_0_5",
+          "operador": "gte",
+          "valor": 60
         }
       ]
     }
