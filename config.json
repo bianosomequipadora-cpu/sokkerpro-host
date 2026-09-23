@@ -459,7 +459,7 @@
       "minuto_inicio": 2,
       "minuto_fim": 42,
       "periodo": 1,
-      "tipo": "escanteio_ht",
+      "tipo": "gol_intervalo",
       "stake": 20,
       "placar_valido": "",
       "criterios": {
