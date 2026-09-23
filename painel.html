@@ -200,7 +200,6 @@ function criarCardMercado(key,dados,isCustom){
         '<option value="over_gol"'+(tp==='over_gol'?' selected':'')+'>•Over Gol Limite FT</option>'+
         '<option value="ambas_marcam"'+(tp==='ambas_marcam'?' selected':'')+'>•Ambas Marcam</option>'+
         '<option value="over_15"'+(tp==='over_15'?' selected':'')+'>•Over 1.5 Gols Partida</option>'+
-        '<option value="partida_toda"'+(tp==='partida_toda'?' selected':'')+'>•Partida Toda</option>'+
         '<option value="escanteio_ht"'+(tp==='escanteio_ht'||tp==='escanteio'?' selected':'')+'>•Escanteio Asiático HT</option>'+
         '<option value="escanteio_ft"'+(tp==='escanteio_ft'?' selected':'')+'>•Escanteio Asiático FT</option>'+
         '</select></div>'+
@@ -214,22 +213,6 @@ function criarCardMercado(key,dados,isCustom){
     renderApiCriteria(div,key,{criterios_api:md.criterios_api||[],_legacy:cr});
     var chk=div.querySelector('input[type=checkbox]');
     if(chk){chk.addEventListener('change',function(){div.style.opacity=this.checked?'1':'0.5';});}
-    var tipoSelect=div.querySelector('#'+key+'-tipo');
-    var inicioInput=div.querySelector('#'+key+'-inicio');
-    var fimInput=div.querySelector('#'+key+'-fim');
-    var periodoInput=div.querySelector('#'+key+'-periodo');
-    function aplicarPartidaToda(){
-        var partidaToda=tipoSelect&&tipoSelect.value==='partida_toda';
-        if(partidaToda){
-            if(inicioInput)inicioInput.value='1';
-            if(fimInput)fimInput.value='90';
-            if(periodoInput)periodoInput.value='3';
-        }
-        [inicioInput,fimInput,periodoInput].forEach(function(campo){
-            if(campo){campo.readOnly=partidaToda;campo.title=partidaToda?'Fixado em 1–90 minutos e período 3 (HT+FT)':'';}
-        });
-    }
-    if(tipoSelect){tipoSelect.addEventListener('change',aplicarPartidaToda);aplicarPartidaToda();}
     return div;
 }
 
@@ -379,7 +362,6 @@ async function salvarConfig(){
             var minutoInicio=inteiroObrigatorio('inicio','minutagem inicial');
             var minutoFim=inteiroObrigatorio('fim','minutagem final');
             var periodo=inteiroObrigatorio('periodo','período');
-            if(tipoVal==='partida_toda'){minutoInicio=1;minutoFim=90;periodo=3;}
             if(minutoInicio<0 || minutoFim<0 || minutoInicio>minutoFim) throw new Error('Minutagem inválida no mercado '+key+'. Confira início e fim.');
             if(periodo!==1 && periodo!==2 && periodo!==3) throw new Error('Período inválido no mercado '+key+'. Use 1 para HT, 2 para FT ou 3 para 90 minutos.');
             merc[key]={
