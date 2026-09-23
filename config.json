@@ -456,6 +456,32 @@
           "valor": 0
         }
       ]
+    },
+    "custom_1790175720394": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⛳️🔞ESCANTEIO ASIÁTICO HT🔞⛳️",
+      "minuto_inicio": 30,
+      "minuto_fim": 37,
+      "periodo": 1,
+      "tipo": "escanteio_ht",
+      "stake": 20,
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": "perdendo_ou_empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "diferenca_gols_fav_max",
+          "operador": "lte",
+          "valor": 1
+        },
+        {
+          "campo": "max_red_card_fav",
+          "operador": "lte",
+          "valor": 0
+        }
+      ]
     }
   }
 }
