@@ -472,6 +472,27 @@
           "valor": 0.1
         }
       ]
+    },
+    "custom_1790172586629": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "Teste de odd ",
+      "minuto_inicio": 1,
+      "minuto_fim": 44,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "stake": 20,
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": ""
+      },
+      "criterios_api": [
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 0.1
+        }
+      ]
     }
   }
 }
