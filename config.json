@@ -80,11 +80,6 @@
           "campo": "media_gols_partida_min",
           "operador": "gte",
           "valor": 2.5
-        },
-        {
-          "campo": "max_red_card_fav",
-          "operador": "lt",
-          "valor": 0
         }
       ]
     },
