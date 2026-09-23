@@ -1879,54 +1879,124 @@ def _odd_real_disponivel(stats, tipo, extra_val, minute=None):
 
 
 def _odd_paripesa_real(paripesa_path, tipo, extra_val=None, sh=0, sa=0):
-    """Busca apenas odds Paripesa cuja seleção e período estão mapeados com segurança."""
-    if tipo == 'gol_intervalo':
-        # Falha fechada: mapeamento HT ainda não bate com a cotação da interface.
-        # Não exibir uma odd de outro mercado enquanto a seleção exata não for confirmada.
-        return None
+    """Busca odds Paripesa apenas para mercado, período e linha exatos."""
     if not paripesa_path:
         return None
     import re
     ids = re.findall(r'(?:^|/)(\d+)-', paripesa_path)
     if not ids:
         return None
-    if tipo in ('over_gol', 'gol_partida'):
-        group, selection, line = 17, 9, float(sh) + float(sa) + 0.5
-    elif tipo == 'escanteio_ft':
-        # A cotação de escanteios fica em um subevento separado (TG='Escanteios').
-        # O G=17/T=9 do ID principal corresponde a gols, não a escanteios.
-        # Omitir até localizar o subevento e validar a linha/seleção exatas.
-        return None
-    elif tipo == 'over_15':
-        group, selection, line = 43, 504, None
-    else:
-        # Ambas Marcam e escanteios ficam bloqueados até confirmar o código e a seleção.
-        return None
+    competition_id = ids[0] if len(ids) > 1 else None
+    event_id = ids[-1]
+
+    child_market = None
     try:
-        r = requests.get(
+        if tipo == 'gol_intervalo':
+            if competition_id is None:
+                return None
+            line = float(extra_val) + 0.5
+            child_market = 'goals_ht'
+            group, selection = 17, 9
+        elif tipo in ('over_gol', 'gol_partida'):
+            line = float(sh) + float(sa) + 0.5
+            group, selection = 17, 9
+        elif tipo == 'over_15':
+            line = 1.5
+            group, selection = 17, 9
+        elif tipo == 'ambas_marcam':
+            line = None
+            group, selection = 19, 180
+        elif tipo in ('escanteio_ht', 'escanteio_ft'):
+            if competition_id is None:
+                return None
+            line = float(extra_val) + 1.0
+            child_market = tipo
+            group, selection = 17, 9
+        else:
+            return None
+    except (TypeError, ValueError):
+        return None
+
+    headers = {'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}
+    try:
+        if child_market is not None:
+            champ_response = requests.get(
+                'https://paripesa.com/service-api/LiveFeed/GetChampZip',
+                params={'champ': competition_id, 'lng': 'br'},
+                headers=headers,
+                timeout=10,
+            )
+            champ_response.raise_for_status()
+            champ_data = champ_response.json()
+            champ_value = champ_data.get('Value') if isinstance(champ_data, dict) else None
+            games = champ_value.get('G', []) if isinstance(champ_value, dict) else []
+            parent = next((game for game in games if str(game.get('I')) == str(event_id)), None)
+            if not isinstance(parent, dict):
+                return None
+            subgames = parent.get('SG', [])
+            if not isinstance(subgames, list):
+                return None
+
+            def _same_period(value, period):
+                try:
+                    return float(value) == period
+                except (TypeError, ValueError):
+                    return False
+
+            selected = None
+            for subgame in subgames:
+                if not isinstance(subgame, dict):
+                    continue
+                period = subgame.get('P')
+                period_name = str(subgame.get('PN') or '').casefold()
+                group_name = str(subgame.get('TG') or '').casefold()
+                if child_market == 'goals_ht':
+                    is_match = (
+                        not group_name
+                        and _same_period(period, 1)
+                        and ('parte' in period_name or 'tempo' in period_name)
+                    )
+                else:
+                    is_corners = group_name in ('escanteios', 'cantos')
+                    if child_market == 'escanteio_ht':
+                        is_match = (
+                            is_corners
+                            and _same_period(period, 1)
+                            and ('parte' in period_name or 'tempo' in period_name)
+                        )
+                    else:
+                        is_match = is_corners and period is None and not period_name
+                if is_match:
+                    selected = subgame
+                    break
+            if selected is None or selected.get('I') is None:
+                return None
+            quote_event_id = str(selected['I'])
+            is_subgame = 'true'
+        else:
+            quote_event_id = event_id
+            is_subgame = 'false'
+
+        response = requests.get(
             'https://paripesa.com/service-api/LiveFeed/GetGameZip',
-            params={'id': ids[-1], 'lng': 'br', 'isSubGame': 'false'},
-            headers={'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'},
+            params={'id': quote_event_id, 'lng': 'br', 'isSubGame': is_subgame},
+            headers=headers,
             timeout=10,
         )
-        r.raise_for_status()
-        data = r.json()
+        response.raise_for_status()
+        data = response.json()
         value = data.get('Value') if isinstance(data, dict) else None
-        if tipo == 'escanteio_ft':
-            sc = value.get('SC') if isinstance(value, dict) else None
-            try:
-                if not isinstance(sc, dict) or int(sc.get('CP')) != 2:
-                    return None
-            except (TypeError, ValueError):
-                return None
         entries = value.get('E', []) if isinstance(value, dict) else []
-        for e in entries:
+        for entry in entries:
+            if not isinstance(entry, dict):
+                continue
             try:
-                if int(e.get('G')) != group or int(e.get('T')) != selection:
+                if int(entry.get('G')) != group or int(entry.get('T')) != selection:
                     continue
-                if line is not None and (e.get('P') is None or abs(float(e['P']) - line) > 0.001):
-                    continue
-                odd = float(e.get('C'))
+                if line is not None:
+                    if entry.get('P') is None or abs(float(entry['P']) - line) > 0.001:
+                        continue
+                odd = float(entry.get('C'))
                 if odd > 1:
                     return odd
             except (TypeError, ValueError):
