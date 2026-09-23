@@ -2080,7 +2080,7 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
         atencao_over = NL + '<b>⚠️Não Saiu o Gol até os 85 minutos, fazer a Proteção em Canto Asiático e Limite FT⛳️</b>'
     if tipo in ('escanteio', 'corner', 'escanteio_ht', 'escanteio_ft'):
         linha = cantos_atual + 1.0
-        entrada = 'Mais de ' + f'{linha:.1f}' + ' Asiático⛳️'
+        entrada = 'Over ' + f'{linha:.1f}' + ' Asiático⛳️'
     elif tipo in ('gol_intervalo', 'over_gol', 'over_15', 'ambas_marcam', 'over', 'gol_partida'):
         if 'Over' not in str(entrada) and 'Ambas' not in str(entrada):
             if tipo == 'over_15':
@@ -2095,7 +2095,7 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
         entrada = _formatar_entrada_gol(entrada)
     elif 'CORNER' in mercado or 'ESCANTEIO' in mercado or (nome and 'CANTO' in nome.upper()):
         linha = cantos_atual + 1.0
-        entrada = 'Mais de ' + f'{linha:.1f}' + ' Asiático⛳️'
+        entrada = 'Over ' + f'{linha:.1f}' + ' Asiático⛳️'
     elif 'Over' not in str(entrada) and 'Ambas' not in str(entrada):
         entrada = entrada + '⚽️'
     if fav_final == 'h':
