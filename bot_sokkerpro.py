@@ -1880,15 +1880,17 @@ def _odd_real_disponivel(stats, tipo, extra_val, minute=None):
 
 def _odd_paripesa_real(paripesa_path, tipo, extra_val=None, sh=0, sa=0):
     """Busca apenas odds Paripesa cuja seleção e período estão mapeados com segurança."""
+    if tipo == 'gol_intervalo':
+        # Falha fechada: mapeamento HT ainda não bate com a cotação da interface.
+        # Não exibir uma odd de outro mercado enquanto a seleção exata não for confirmada.
+        return None
     if not paripesa_path:
         return None
     import re
     ids = re.findall(r'(?:^|/)(\d+)-', paripesa_path)
     if not ids:
         return None
-    if tipo == 'gol_intervalo':
-        group, selection, line = 15, 11, 0.5
-    elif tipo in ('over_gol', 'gol_partida'):
+    if tipo in ('over_gol', 'gol_partida'):
         group, selection, line = 17, 9, float(sh) + float(sa) + 0.5
     elif tipo == 'escanteio_ft':
         # A interface da Paripesa identifica G=17/T=9 como Total Corners/Over.
@@ -2024,23 +2026,21 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
         fav_nome = away
     else:
         fav_nome = '—'
-    # Valores fixos apenas como recomendação, sem representar a odd ao vivo capturada.
+    # Exibe apenas cotações reais confirmadas; campo sem odd é omitido por completo.
+    odds_linhas = []
     if odd_b365 is not None:
         try:
             odd_mercado_formatada = f'{float(odd_b365):.2f}'
         except (TypeError, ValueError):
             odd_mercado_formatada = str(odd_b365)
-        odd_texto = '<b>💰Odd Ao Vivo do Mercado: ' + odd_mercado_formatada + '</b>'
-    else:
-        odd_texto = '<b>💰Odd Ao Vivo do Mercado: indisponível</b>'
+        odds_linhas.append('<b>💰Odd Ao Vivo do Mercado: ' + odd_mercado_formatada + '</b>')
     if odd_paripesa is not None:
         try:
             odd_paripesa_formatada = f'{float(odd_paripesa):.2f}'
         except (TypeError, ValueError):
             odd_paripesa_formatada = str(odd_paripesa)
-        odd_texto += NL + '<b>💰Odd da Paripesa: ' + odd_paripesa_formatada + '</b>'
-    else:
-        odd_texto += NL + '<b>💰Odd da Paripesa: indisponível</b>'
+        odds_linhas.append('<b>💰Odd da Paripesa: ' + odd_paripesa_formatada + '</b>')
+    odd_texto = (NL + NL.join(odds_linhas)) if odds_linhas else ''
     prob_texto = (NL + f'<b>📊 Probabilidade: {probabilidade}%</b>') if probabilidade is not None else ''
     sep = '━' * 22
     liga_formatada=nome_liga_exibicao(liga, pais)
@@ -2056,7 +2056,7 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
         pais_texto=''
     liga_texto = '<b>🌍 Liga: ' + liga + '</b>'
     pais_texto_linha = '<b>🗺️País: ' + pais_texto + '</b>' if pais_texto else ''
-    msg = f'{sep}' + NL + f'<b>{title}</b>' + NL + f'{sep}' + NL + f'<b>⚽️ Placar: {placar}</b>' + NL + f'{liga_texto}' + (NL + pais_texto_linha if pais_texto_linha else '') + NL + f'<b>📡 {home} x {away}</b>' + NL + f'<b>👀 ODDs: Casa {(odd_h if odd_h else chr(8212))} / Fora {(odd_a if odd_a else chr(8212))}</b>' + NL + '<b>⏰️ Minuto: ' + str(minuto) + "'</b>" + NL + f'{sep}' + NL + '<b>📊 Estatísticas ao Vivo da Partida:</b>' + NL + f'<b>🚀 Chutes totais: {chutes_h} | {chutes_a}</b>' + NL + f'<b>🎯 Chutes no alvo: {alvo_h} | {alvo_a}</b>' + NL + f'<b>⚡️ Tentativas de gol: {tentativas_h} | {tentativas_a}</b>' + NL + f'<b>💥 Grandes chances criadas: {grandes_h} | {grandes_a}</b>' + NL + f'<b>🥅 Chutes na área: {dentro_h} | {dentro_a}</b>' + NL + f'<b>⛳️ Escanteios: {cant_h} | {cant_a}</b>' + NL + f'<b>⚔️ Ataques perigosos: {atq_per_h} | {atq_per_a}</b>' + NL + f'<b>🌋 Pressão da partida: {pressao_h} | {pressao_a}</b>' + NL + f'<b>🔥 APPM da partida: {appm}</b>' + NL + f'<b>🔥 APPM últimos 10 min: {dapm10}</b>' + NL + f'<b>🔥 APPM últimos 5 min: {dapm5}</b>' + NL + f'{sep}' + NL + '<b>💡 Análise Técnica da Partida:</b>' + NL + f'<b>🎯 Favorito: {fav_nome}</b>' + NL + f'<b>🚨 Alerta: {alerta}</b>' + NL + f'{sep}' + NL + f'<b>📌 Entrada: {entrada}</b>' + prob_texto + NL + odd_texto + NL + f'{sep}' + atencao_over
+    msg = f'{sep}' + NL + f'<b>{title}</b>' + NL + f'{sep}' + NL + f'<b>⚽️ Placar: {placar}</b>' + NL + f'{liga_texto}' + (NL + pais_texto_linha if pais_texto_linha else '') + NL + f'<b>📡 {home} x {away}</b>' + NL + f'<b>👀 ODDs: Casa {(odd_h if odd_h else chr(8212))} / Fora {(odd_a if odd_a else chr(8212))}</b>' + NL + '<b>⏰️ Minuto: ' + str(minuto) + "'</b>" + NL + f'{sep}' + NL + '<b>📊 Estatísticas ao Vivo da Partida:</b>' + NL + f'<b>🚀 Chutes totais: {chutes_h} | {chutes_a}</b>' + NL + f'<b>🎯 Chutes no alvo: {alvo_h} | {alvo_a}</b>' + NL + f'<b>⚡️ Tentativas de gol: {tentativas_h} | {tentativas_a}</b>' + NL + f'<b>💥 Grandes chances criadas: {grandes_h} | {grandes_a}</b>' + NL + f'<b>🥅 Chutes na área: {dentro_h} | {dentro_a}</b>' + NL + f'<b>⛳️ Escanteios: {cant_h} | {cant_a}</b>' + NL + f'<b>⚔️ Ataques perigosos: {atq_per_h} | {atq_per_a}</b>' + NL + f'<b>🌋 Pressão da partida: {pressao_h} | {pressao_a}</b>' + NL + f'<b>🔥 APPM da partida: {appm}</b>' + NL + f'<b>🔥 APPM últimos 10 min: {dapm10}</b>' + NL + f'<b>🔥 APPM últimos 5 min: {dapm5}</b>' + NL + f'{sep}' + NL + '<b>💡 Análise Técnica da Partida:</b>' + NL + f'<b>🎯 Favorito: {fav_nome}</b>' + NL + f'<b>🚨 Alerta: {alerta}</b>' + NL + f'{sep}' + NL + f'<b>📌 Entrada: {entrada}</b>' + prob_texto + odd_texto + NL + f'{sep}' + atencao_over
     nome_completo = str(home).strip()
     from urllib.parse import quote
     nome_busca = quote(nome_completo, safe='')
