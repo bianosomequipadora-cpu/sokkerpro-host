@@ -2012,7 +2012,7 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
             odd_mercado_formatada = f'{float(odd_b365):.2f}'
         except (TypeError, ValueError):
             odd_mercado_formatada = str(odd_b365)
-        odd_texto = '<b>💰Odd da Bet365: ' + odd_mercado_formatada + '</b>'
+        odd_texto = '<b>💰Odd Ao Vivo do Mercado: ' + odd_mercado_formatada + '</b>'
         if odd_paripesa is not None:
             try:
                 odd_paripesa_formatada = f'{float(odd_paripesa):.2f}'
