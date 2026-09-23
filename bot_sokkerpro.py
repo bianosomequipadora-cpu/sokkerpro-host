@@ -2011,6 +2011,15 @@ def _odd_paripesa_real(paripesa_path, tipo, extra_val=None, sh=0, sa=0):
         print(f'[PARIPESA-ODD] falha ao consultar {paripesa_path}: {exc}')
         return None
 
+def _formatar_entrada_gol(entrada):
+    texto = str(entrada).strip()
+    simbolo = '⚽️'
+    while texto.endswith(simbolo):
+        texto = texto[:-len(simbolo)].rstrip()
+    if 'gol' not in texto.casefold():
+        texto += ' Gol'
+    return texto + simbolo
+
 def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, extra_val=None, cantos_atual=0, stats=None, sh=0, sa=0, fav_final='h', odd_h=None, odd_a=None, odd_b365=None, odd_bano=None, odd_paripesa=None, nome=None, tipo='', probabilidade=None, game_id=None):
     NL = chr(10)
     chutes_h = stats.get('chutes_tot_h', 0) if stats else 0
@@ -2083,7 +2092,7 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
             elif tipo in ('over_gol', 'over', 'gol_partida'):
                 linha = sh + sa + 0.5
                 entrada = f'Mais de {linha}'
-        entrada = entrada + '⚽️'
+        entrada = _formatar_entrada_gol(entrada)
     elif 'CORNER' in mercado or 'ESCANTEIO' in mercado or (nome and 'CANTO' in nome.upper()):
         linha = cantos_atual + 1.0
         entrada = 'Mais de ' + f'{linha:.1f}' + ' Asiático⛳️'
