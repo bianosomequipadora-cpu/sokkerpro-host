@@ -1258,6 +1258,8 @@ def _probabilidade_para_sinal(stats, tipo, sh, sa, cantos_atual):
     return None
 
 def nome_liga_exibicao(liga, pais):
+    if not pais and str(liga).strip().casefold() == 'czech cup':
+        pais = 'Czechia'
     PAIS_NOME = {
         'Aruba': ('🇦🇼', 'Aruba'),
         'Afghanistan': ('🇦🇫', 'Afeganistão'),
@@ -1318,6 +1320,7 @@ def nome_liga_exibicao(liga, pais):
         'Cayman Islands': ('🇰🇾', 'Ilhas Cayman'),
         'Cyprus': ('🇨🇾', 'Chipre'),
         'Czechia': ('🇨🇿', 'Tchéquia'),
+        'Czech Republic': ('🇨🇿', 'Tchéquia'),
         'Germany': ('🇩🇪', 'Alemanha'),
         'Djibouti': ('🇩🇯', 'Djibuti'),
         'Dominica': ('🇩🇲', 'Dominica'),
