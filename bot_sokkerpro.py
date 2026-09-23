@@ -1893,16 +1893,10 @@ def _odd_paripesa_real(paripesa_path, tipo, extra_val=None, sh=0, sa=0):
     if tipo in ('over_gol', 'gol_partida'):
         group, selection, line = 17, 9, float(sh) + float(sa) + 0.5
     elif tipo == 'escanteio_ft':
-        # A interface da Paripesa identifica G=17/T=9 como Total Corners/Over.
-        # Essa cotação é do jogo (Regular time), não de um tempo isolado.
-        # Exigir 2º tempo em andamento e a linha asiática inteira exata.
-        try:
-            line = float(extra_val) + 1.0
-            if not line.is_integer():
-                return None
-        except (TypeError, ValueError):
-            return None
-        group, selection = 17, 9
+        # A cotação de escanteios fica em um subevento separado (TG='Escanteios').
+        # O G=17/T=9 do ID principal corresponde a gols, não a escanteios.
+        # Omitir até localizar o subevento e validar a linha/seleção exatas.
+        return None
     elif tipo == 'over_15':
         group, selection, line = 43, 504, None
     else:
