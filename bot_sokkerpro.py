@@ -1879,33 +1879,45 @@ def _odd_real_disponivel(stats, tipo, extra_val):
 
 
 def _odd_paripesa_real(paripesa_path, tipo, extra_val=None, sh=0, sa=0):
-    """Busca odd real da Paripesa para mercados FT de gols confirmados."""
-    if not paripesa_path or tipo not in ('over_gol', 'gol_partida', 'over_15'):
+    """Busca apenas odds Paripesa cuja seleção e período estão mapeados com segurança."""
+    if not paripesa_path:
         return None
     import re
     ids = re.findall(r'(?:^|/)(\d+)-', paripesa_path)
     if not ids:
         return None
+    if tipo == 'gol_intervalo':
+        group, selection, line = 15, 11, 0.5
+    elif tipo in ('over_gol', 'gol_partida'):
+        group, selection, line = 17, 9, float(sh) + float(sa) + 0.5
+    elif tipo == 'over_15':
+        group, selection, line = 43, 504, None
+    else:
+        # Ambas Marcam e escanteios ficam bloqueados até confirmar o código e a seleção.
+        return None
     try:
-        event_id = ids[-1]
-        if tipo == 'over_15':
-            linha = 1.5
-        elif tipo in ('over_gol', 'gol_partida'):
-            linha = float(sh) + float(sa) + 0.5
-        else:
-            return None
-        r = requests.get('https://paripesa.com/service-api/LiveFeed/GetGameZip', params={'id': event_id, 'lng': 'br', 'isSubGame': 'false'}, headers={'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}, timeout=10)
-        r.raise_for_status(); data = r.json()
+        r = requests.get(
+            'https://paripesa.com/service-api/LiveFeed/GetGameZip',
+            params={'id': ids[-1], 'lng': 'br', 'isSubGame': 'false'},
+            headers={'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'},
+            timeout=10,
+        )
+        r.raise_for_status()
+        data = r.json()
         value = data.get('Value') if isinstance(data, dict) else None
         entries = value.get('E', []) if isinstance(value, dict) else []
-        candidatos = []
         for e in entries:
             try:
-                if int(e.get('T')) == 12 and abs(float(e.get('P')) - linha) < 0.001 and float(e.get('C')) > 1:
-                    candidatos.append(float(e['C']))
+                if int(e.get('G')) != group or int(e.get('T')) != selection:
+                    continue
+                if line is not None and (e.get('P') is None or abs(float(e['P']) - line) > 0.001):
+                    continue
+                odd = float(e.get('C'))
+                if odd > 1:
+                    return odd
             except (TypeError, ValueError):
                 continue
-        return candidatos[0] if candidatos else None
+        return None
     except Exception as exc:
         print(f'[PARIPESA-ODD] falha ao consultar {paripesa_path}: {exc}')
         return None
