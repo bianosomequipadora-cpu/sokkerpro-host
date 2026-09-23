@@ -1841,11 +1841,11 @@ def _odd_real_disponivel(stats, tipo, extra_val, minute=None):
     if tipo == 'escanteio_ht':
         prefix = 'BET365_CANTO1T_OVER_'
         alvo = extra + 1.0
-        partes = [str(int(alvo)) if alvo.is_integer() else str(alvo).replace('.', '_')]
+        partes = [f'{int(alvo)}_0', str(int(alvo))] if alvo.is_integer() else [str(alvo).replace('.', '_')]
     elif tipo == 'escanteio_ft':
         prefix = 'BET365_CANTO_OVER_'
         alvo = extra + 1.0
-        partes = [str(int(alvo)) if alvo.is_integer() else str(alvo).replace('.', '_')]
+        partes = [f'{int(alvo)}_0', str(int(alvo))] if alvo.is_integer() else [str(alvo).replace('.', '_')]
     elif tipo == 'gol_intervalo':
         prefix = 'BET365_GOLS1T_OVER_'
         partes = ['0_5']
@@ -1866,7 +1866,9 @@ def _odd_real_disponivel(stats, tipo, extra_val, minute=None):
         candidatos = [k for k in odds if k.startswith(prefix) and k.endswith('_LIVE')]
     else:
         for parte in partes:
-            candidatos.extend((prefix + parte + '_LIVE', prefix + parte, prefix + parte.replace('_0', '') + '_LIVE'))
+            for chave_candidata in (prefix + parte + '_LIVE', prefix + parte.replace('_0', '') + '_LIVE'):
+                if chave_candidata not in candidatos:
+                    candidatos.append(chave_candidata)
     for chave in candidatos:
         valor = odds.get(chave)
         try:
@@ -2096,13 +2098,14 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     if re.search(r'(?i)\b(?:U[\s-]?(?:19|20)|Sub[\s-]?(?:19|20)|Under[\s-]?(?:19|20))\b', evento_texto):
         odd_b365 = None
 
-    # A única odd exibida é a Paripesa validada para este mercado/linha; sem valor exato, omitir.
+    # Uma linha: prioriza a Paripesa; usa Bet365 somente se a cotação LIVE exata existir.
     odds_linhas = []
-    if odd_paripesa is not None:
+    odd_mercado = odd_paripesa if odd_paripesa is not None else odd_b365
+    if odd_mercado is not None:
         try:
-            odd_mercado_formatada = f'{float(odd_paripesa):.2f}'
+            odd_mercado_formatada = f'{float(odd_mercado):.2f}'
         except (TypeError, ValueError):
-            odd_mercado_formatada = str(odd_paripesa)
+            odd_mercado_formatada = str(odd_mercado)
         odds_linhas.append('<b>💰Odd Ao Vivo do Mercado: ' + odd_mercado_formatada + '</b>')
     odd_texto = (NL + NL.join(odds_linhas)) if odds_linhas else ''
     prob_texto = (NL + f'<b>📊 Probabilidade: {probabilidade}%</b>') if probabilidade is not None else ''
