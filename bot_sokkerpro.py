@@ -1890,6 +1890,17 @@ def _odd_paripesa_real(paripesa_path, tipo, extra_val=None, sh=0, sa=0):
         group, selection, line = 15, 11, 0.5
     elif tipo in ('over_gol', 'gol_partida'):
         group, selection, line = 17, 9, float(sh) + float(sa) + 0.5
+    elif tipo == 'escanteio_ft':
+        # A interface da Paripesa identifica G=17/T=9 como Total Corners/Over.
+        # Essa cotação é do jogo (Regular time), não de um tempo isolado.
+        # Exigir 2º tempo em andamento e a linha asiática inteira exata.
+        try:
+            line = float(extra_val) + 1.0
+            if not line.is_integer():
+                return None
+        except (TypeError, ValueError):
+            return None
+        group, selection = 17, 9
     elif tipo == 'over_15':
         group, selection, line = 43, 504, None
     else:
@@ -1905,6 +1916,13 @@ def _odd_paripesa_real(paripesa_path, tipo, extra_val=None, sh=0, sa=0):
         r.raise_for_status()
         data = r.json()
         value = data.get('Value') if isinstance(data, dict) else None
+        if tipo == 'escanteio_ft':
+            sc = value.get('SC') if isinstance(value, dict) else None
+            try:
+                if not isinstance(sc, dict) or int(sc.get('CP')) != 2:
+                    return None
+            except (TypeError, ValueError):
+                return None
         entries = value.get('E', []) if isinstance(value, dict) else []
         for e in entries:
             try:
@@ -2967,13 +2985,13 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             if key in sent:
                 print(f'[DIAG-{mk}-DUP] {h} x {a} — já enviado hoje ({key}), pulando')
                 continue
-            if not _claim_signal_slot(key):
-                print(f'[DIAG-{mk}-DUP] {h} x {a} — reserva atômica já feita por outra execução, pulando')
-                sent.add(key)
-                continue
             cnome = mc.get('nome', mk)
             c_tipo = mc.get('tipo', '')
             notificar = mc.get('notificar', True)
+            if c_tipo not in ('escanteio_ht', 'escanteio_ft') and not _claim_signal_slot(key):
+                print(f'[DIAG-{mk}-DUP] {h} x {a} — reserva atômica já feita por outra execução, pulando')
+                sent.add(key)
+                continue
             extra_val = 0
             linha_str = ''
             if c_tipo in ('escanteio_ht', 'escanteio_ft', 'corner', 'escanteio'):
@@ -3005,6 +3023,13 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 print(f'[AUDITORIA ODD] {h} x {a} | fid={fid} | minuto={m} | tipo={c_tipo} | chave={_ULTIMA_ODD_CHAVE} | odd={ob365:.2f}')
             obano = None
             odd_paripesa = _odd_paripesa_real(j.get('paripesa_path'), c_tipo, extra_val=extra_val, sh=sh, sa=sa)
+            if c_tipo in ('escanteio_ht', 'escanteio_ft') and odd_real is None and odd_paripesa is None:
+                print(f'[DIAG-{mk}-ODD] {h} x {a} — Bet365 e Paripesa sem odd da linha asiática exata; aguardando nova leitura na janela')
+                continue
+            if c_tipo in ('escanteio_ht', 'escanteio_ft') and not _claim_signal_slot(key):
+                print(f'[DIAG-{mk}-DUP] {h} x {a} — reserva atômica já feita por outra execução, pulando')
+                sent.add(key)
+                continue
             # Persiste primeiro para o painel não perder o sinal após o envio.
             registrar_sinal(fid, mk, h, a, 0, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa, odd_b365=ob365, odd_bano=obano)
             if notificar:
