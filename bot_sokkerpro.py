@@ -2026,6 +2026,12 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
         fav_nome = away
     else:
         fav_nome = '—'
+    # Não exibir cotação Bet365 em partidas Sub-19/Sub-20/U19/U20: o jogo/mercado pode não existir lá.
+    import re
+    evento_texto = ' '.join(str(valor) for valor in (home, away, liga) if valor is not None)
+    if re.search(r'(?i)\b(?:U[\s-]?(?:19|20)|Sub[\s-]?(?:19|20)|Under[\s-]?(?:19|20))\b', evento_texto):
+        odd_b365 = None
+
     # Exibe apenas cotações reais confirmadas; campo sem odd é omitido por completo.
     odds_linhas = []
     if odd_b365 is not None:
