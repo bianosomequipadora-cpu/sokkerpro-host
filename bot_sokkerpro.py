@@ -2096,20 +2096,14 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     if re.search(r'(?i)\b(?:U[\s-]?(?:19|20)|Sub[\s-]?(?:19|20)|Under[\s-]?(?:19|20))\b', evento_texto):
         odd_b365 = None
 
-    # Exibe apenas cotações reais confirmadas; campo sem odd é omitido por completo.
+    # A única odd exibida é a Paripesa validada para este mercado/linha; sem valor exato, omitir.
     odds_linhas = []
-    if odd_b365 is not None:
-        try:
-            odd_mercado_formatada = f'{float(odd_b365):.2f}'
-        except (TypeError, ValueError):
-            odd_mercado_formatada = str(odd_b365)
-        odds_linhas.append('<b>💰Odd Ao Vivo do Mercado: ' + odd_mercado_formatada + '</b>')
     if odd_paripesa is not None:
         try:
-            odd_paripesa_formatada = f'{float(odd_paripesa):.2f}'
+            odd_mercado_formatada = f'{float(odd_paripesa):.2f}'
         except (TypeError, ValueError):
-            odd_paripesa_formatada = str(odd_paripesa)
-        odds_linhas.append('<b>💰Odd da Paripesa: ' + odd_paripesa_formatada + '</b>')
+            odd_mercado_formatada = str(odd_paripesa)
+        odds_linhas.append('<b>💰Odd Ao Vivo do Mercado: ' + odd_mercado_formatada + '</b>')
     odd_texto = (NL + NL.join(odds_linhas)) if odds_linhas else ''
     prob_texto = (NL + f'<b>📊 Probabilidade: {probabilidade}%</b>') if probabilidade is not None else ''
     sep = '━' * 22
