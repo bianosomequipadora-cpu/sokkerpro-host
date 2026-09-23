@@ -1827,7 +1827,7 @@ def _odds_do_mercado(stats, tipo, extra_val=None):
 
 _ULTIMA_ODD_CHAVE = ''
 
-def _odd_real_disponivel(stats, tipo, extra_val):
+def _odd_real_disponivel(stats, tipo, extra_val, minute=None):
     """Retorna a odd do mercado encontrada pela API; None se a linha não existir."""
     global _ULTIMA_ODD_CHAVE
     _ULTIMA_ODD_CHAVE = ''
@@ -1839,10 +1839,22 @@ def _odd_real_disponivel(stats, tipo, extra_val):
     except (TypeError, ValueError):
         return None
     if tipo == 'escanteio_ht':
+        try:
+            minuto_corrente = int(float(minute))
+        except (TypeError, ValueError):
+            return None
+        if minuto_corrente < 35:
+            return None
         prefix = 'BET365_CANTO1T_OVER_'
         alvo = extra + 1.0
         parte = (str(int(alvo)) + '_0') if alvo.is_integer() else str(alvo).replace('.', '_')
     elif tipo == 'escanteio_ft':
+        try:
+            minuto_corrente = int(float(minute))
+        except (TypeError, ValueError):
+            return None
+        if minuto_corrente < 85:
+            return None
         prefix = 'BET365_CANTO_OVER_'
         alvo = extra + 1.0
         parte = (str(int(alvo)) + '_0') if alvo.is_integer() else str(alvo).replace('.', '_')
@@ -2999,7 +3011,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 linha_str = 'o+1.5'
             elif c_tipo == 'ambas_marcam':
                 linha_str = 'bts_yes'
-            odd_real = _odd_real_disponivel(stats, c_tipo, extra_val)
+            odd_real = _odd_real_disponivel(stats, c_tipo, extra_val, minute=m)
             if odd_real is None:
                 print(f'[DIAG-{mk}-ODD] {h} x {a} — mercado/linha não encontrada na API, não enviando')
                 continue
