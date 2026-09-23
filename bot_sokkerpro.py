@@ -1841,11 +1841,11 @@ def _odd_real_disponivel(stats, tipo, extra_val):
     if tipo == 'escanteio_ht':
         prefix = 'BET365_CANTO1T_OVER_'
         alvo = extra + 1.0
-        partes = [str(int(alvo)) if alvo.is_integer() else str(alvo).replace('.', '_')]
+        parte = (str(int(alvo)) + '_0') if alvo.is_integer() else str(alvo).replace('.', '_')
     elif tipo == 'escanteio_ft':
         prefix = 'BET365_CANTO_OVER_'
         alvo = extra + 1.0
-        partes = [str(int(alvo)) if alvo.is_integer() else str(alvo).replace('.', '_')]
+        parte = (str(int(alvo)) + '_0') if alvo.is_integer() else str(alvo).replace('.', '_')
     elif tipo == 'gol_intervalo':
         prefix = 'BET365_GOLS1T_OVER_'
         partes = ['0_5']
@@ -1864,6 +1864,10 @@ def _odd_real_disponivel(stats, tipo, extra_val):
     candidatos = []
     if tipo == 'ambas_marcam':
         candidatos = [k for k in odds if k.startswith(prefix) and k.endswith('_LIVE')]
+    elif tipo in ('escanteio_ht', 'escanteio_ft'):
+        # Linhas inteiras asiáticas exigem sufixo decimal explícito (ex.: 4_0).
+        # Não aceitar a chave inteira curta (OVER_4), que pode representar O4.5.
+        candidatos = [prefix + parte + '_LIVE']
     else:
         for parte in partes:
             candidatos.extend((prefix + parte + '_LIVE', prefix + parte, prefix + parte.replace('_0', '') + '_LIVE'))
