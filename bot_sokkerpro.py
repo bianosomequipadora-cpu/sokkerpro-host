@@ -1878,7 +1878,39 @@ def _odd_real_disponivel(stats, tipo, extra_val):
     return None
 
 
-def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, extra_val=None, cantos_atual=0, stats=None, sh=0, sa=0, fav_final='h', odd_h=None, odd_a=None, odd_b365=None, odd_bano=None, nome=None, tipo='', probabilidade=None, game_id=None):
+def _odd_paripesa_real(paripesa_path, tipo, extra_val=None, sh=0, sa=0):
+    """Busca odd real da Paripesa para mercados FT de gols confirmados."""
+    if not paripesa_path or tipo not in ('over_gol', 'gol_partida', 'over_15'):
+        return None
+    import re
+    ids = re.findall(r'(?:^|/)(\d+)-', paripesa_path)
+    if not ids:
+        return None
+    try:
+        event_id = ids[-1]
+        if tipo == 'over_15':
+            linha = 1.5
+        elif tipo in ('over_gol', 'gol_partida'):
+            linha = float(sh) + float(sa) + 0.5
+        else:
+            return None
+        r = requests.get('https://paripesa.com/service-api/LiveFeed/GetGameZip', params={'id': event_id, 'lng': 'br', 'isSubGame': 'false'}, headers={'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}, timeout=10)
+        r.raise_for_status(); data = r.json()
+        value = data.get('Value') if isinstance(data, dict) else None
+        entries = value.get('E', []) if isinstance(value, dict) else []
+        candidatos = []
+        for e in entries:
+            try:
+                if int(e.get('T')) == 12 and abs(float(e.get('P')) - linha) < 0.001 and float(e.get('C')) > 1:
+                    candidatos.append(float(e['C']))
+            except (TypeError, ValueError):
+                continue
+        return candidatos[0] if candidatos else None
+    except Exception as exc:
+        print(f'[PARIPESA-ODD] falha ao consultar {paripesa_path}: {exc}')
+        return None
+
+def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, extra_val=None, cantos_atual=0, stats=None, sh=0, sa=0, fav_final='h', odd_h=None, odd_a=None, odd_b365=None, odd_bano=None, odd_paripesa=None, nome=None, tipo='', probabilidade=None, game_id=None):
     NL = chr(10)
     chutes_h = stats.get('chutes_tot_h', 0) if stats else 0
     chutes_a = stats.get('chutes_tot_a', 0) if stats else 0
@@ -1968,7 +2000,13 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
             odd_mercado_formatada = f'{float(odd_b365):.2f}'
         except (TypeError, ValueError):
             odd_mercado_formatada = str(odd_b365)
-        odd_texto = '<b>💰Odd Ao Vivo do Mercado: ' + odd_mercado_formatada + '</b>'
+        odd_texto = '<b>💰Odd da Bet365: ' + odd_mercado_formatada + '</b>'
+        if odd_paripesa is not None:
+            try:
+                odd_paripesa_formatada = f'{float(odd_paripesa):.2f}'
+            except (TypeError, ValueError):
+                odd_paripesa_formatada = str(odd_paripesa)
+            odd_texto += NL + '<b>💰Odd da Paripesa: ' + odd_paripesa_formatada + '</b>'
     else:
         odd_texto = '<b>💰Odd Asiático Mínima: 1.90</b>' + NL + '<b>💰Odd Limite Mínima: 1.70</b>'
     prob_texto = (NL + f'<b>📊 Probabilidade: {probabilidade}%</b>') if probabilidade is not None else ''
@@ -2914,10 +2952,11 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             ob365 = odd_real
             print(f'[AUDITORIA ODD] {h} x {a} | fid={fid} | minuto={m} | tipo={c_tipo} | chave={_ULTIMA_ODD_CHAVE} | odd={ob365:.2f}')
             obano = None
+            odd_paripesa = _odd_paripesa_real(j.get('paripesa_path'), c_tipo, extra_val=extra_val, sh=sh, sa=sa)
             # Persiste primeiro para o painel não perder o sinal após o envio.
             registrar_sinal(fid, mk, h, a, 0, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa, odd_b365=ob365, odd_bano=obano)
             if notificar:
-                mid = send_telegram(msg_universal(h, a, m, liga, pais, 5, mk, cnome, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, nome=cnome, tipo=c_tipo, probabilidade=_probabilidade_para_sinal(stats, c_tipo, sh, sa, extra_val if 'escanteio' in c_tipo else 0), game_id=(j.get('paripesa_path') or fid)), marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
+                mid = send_telegram(msg_universal(h, a, m, liga, pais, 5, mk, cnome, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, odd_paripesa=odd_paripesa, nome=cnome, tipo=c_tipo, probabilidade=_probabilidade_para_sinal(stats, c_tipo, sh, sa, extra_val if 'escanteio' in c_tipo else 0), game_id=(j.get('paripesa_path') or fid)), marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
             else:
                 print(f'[DIAG-{mk}-SILENT] {h} x {a} — notificar=False, registrando sem enviar')
                 mid = 0
