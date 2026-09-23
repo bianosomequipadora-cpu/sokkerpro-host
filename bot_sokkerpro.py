@@ -2416,6 +2416,45 @@ def _vip_handle(chat_id, msg):
     _vip_state_save(state)
     _vip_send(chat_id, _vip_sales_message() + '\n\nPara gerar sua cobrança Pix, envie agora seu CPF ou CNPJ apenas nesta conversa privada.')
 
+def _claim_telegram_update(update_id):
+    """Registra o update do Telegram antes de responder, para impedir duplicidade."""
+    if not (GITHUB_TOKEN and GITHUB_REPO):
+        print('[CMD] Sem credenciais de estado; comando não processado para evitar duplicidade')
+        return False
+    url = f'https://api.github.com/repos/{GITHUB_REPO}/contents/last_update.json'
+    headers = {'Authorization': f'Bearer {GITHUB_TOKEN}', 'Accept': 'application/vnd.github+json'}
+    for tentativa in range(3):
+        sha = None
+        last_saved = 0
+        try:
+            req = request.Request(url, headers=headers)
+            try:
+                resp = request.urlopen(req, timeout=10)
+                item = json.loads(resp.read())
+                sha = item.get('sha')
+                conteudo = base64.b64decode(item.get('content', '')).decode()
+                last_saved = int(json.loads(conteudo).get('last_id', 0))
+            except error.HTTPError as exc:
+                if exc.code != 404:
+                    raise
+            if last_saved >= int(update_id):
+                return False
+            payload = {
+                'message': f'state: consome update Telegram {update_id} [skip ci]',
+                'content': base64.b64encode(json.dumps({'last_id': int(update_id)}).encode()).decode(),
+            }
+            if sha:
+                payload['sha'] = sha
+            put = request.Request(url, data=json.dumps(payload).encode(),
+                                  headers={**headers, 'Content-Type': 'application/json'}, method='PUT')
+            request.urlopen(put, timeout=15)
+            print(f'[CMD] Update reservado antes da resposta: {update_id}')
+            return True
+        except Exception as exc:
+            print(f'[CMD] Tentativa {tentativa + 1}/3 ao reservar update {update_id} falhou: {exc}')
+            if tentativa < 2:
+                time.sleep(0.5 * (tentativa + 1))
+    return False
 def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=None):
     last_id = 0
     last_id = 0
@@ -2436,12 +2475,17 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
     except Exception as e:
         print(f'[CMD] Erro ao consultar Telegram: {e}')
         return
-    new_last_id = last_id
     radar_respondido = False
     relatorio_respondido = False
     agora_ts = datetime.now(timezone.utc).timestamp()
     for update in r.get('result', []):
-        new_last_id = update['update_id']
+        update_id = update['update_id']
+        if update_id <= last_id:
+            continue
+        if not _claim_telegram_update(update_id):
+            print(f'[CMD] Update {update_id} já consumido ou não pôde ser reservado; ignorando')
+            continue
+        last_id = update_id
         msg = update.get('message', {})
         text = msg.get('text', '')
         comando = text.partition(' ')[0].partition('@')[0].lower()
@@ -2523,12 +2567,6 @@ def check_status_command(total_jogos_live=0, jogos_live=None, jogos_na_janela=No
             else:
                 print(f'[RADAR] Resposta enviada para {chat_orig}')
             radar_respondido = True
-    if new_last_id > last_id:
-        with open(LAST_UPDATE_FILE, 'w') as f:
-            json.dump({'last_id': new_last_id}, f)
-        if GITHUB_TOKEN and GITHUB_REPO:
-            _save_json_api('last_update.json', {'last_id': new_last_id}, 'state: last_update [skip ci]')
-        print(f'[CMD] last_id salvo: {new_last_id}')
 _HIST_CACHE = {}
 
 def get_media_gols_historica_skp(home, away, stats):
