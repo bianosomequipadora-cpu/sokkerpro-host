@@ -228,6 +228,135 @@ def _save_json_api(path, data, msg='state: atualiza [skip ci]'):
         print(f'[API-PUT] Erro {path}: {e}')
         return False
 
+CORNER_HISTORY_API_PATH = 'corner_history.json'
+CORNER_HISTORY = {}
+CORNER_HISTORY_WINDOW_SECONDS = 300
+CORNER_HISTORY_MAX_AGE_SECONDS = 48 * 60 * 60
+
+
+def _load_corner_history():
+    """Load persisted cumulative-corner observations; absent data starts fail-closed."""
+    path = os.path.join(BASE_DIR, CORNER_HISTORY_API_PATH)
+    if GITHUB_TOKEN and GITHUB_REPO:
+        url = f'https://api.github.com/repos/{GITHUB_REPO}/contents/{CORNER_HISTORY_API_PATH}'
+        req = request.Request(url, headers={'Authorization': f'Bearer {GITHUB_TOKEN}', 'Accept': 'application/vnd.github+json'})
+        try:
+            resp = request.urlopen(req, timeout=10)
+            payload = json.loads(resp.read())
+            state = json.loads(base64.b64decode(payload['content']).decode())
+            fixtures = state.get('fixtures') if isinstance(state, dict) else None
+            if isinstance(fixtures, dict):
+                print(f'[CORNER] Histórico carregado do GitHub: {len(fixtures)} jogos')
+                return fixtures
+            print('[CORNER] Histórico remoto inválido; inicializando sem histórico confiável')
+        except error.HTTPError as e:
+            if e.code == 404:
+                print('[CORNER] Histórico remoto ainda não existe')
+            else:
+                print(f'[CORNER] Falha ao carregar histórico remoto (HTTP {e.code}); tentando fallback local')
+        except Exception as e:
+            print(f'[CORNER] Falha ao carregar histórico remoto ({e}); tentando fallback local')
+    if os.path.exists(path):
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                state = json.load(f)
+            fixtures = state.get('fixtures') if isinstance(state, dict) else None
+            if isinstance(fixtures, dict):
+                print(f'[CORNER] Histórico carregado do arquivo local: {len(fixtures)} jogos')
+                return fixtures
+        except Exception as e:
+            print(f'[CORNER] Fallback local do histórico inválido: {e}')
+    return {}
+
+
+def _corner_total_from_stats(stats):
+    """Return a validated cumulative total, or None if either side is unreliable."""
+    if not isinstance(stats, dict):
+        return None
+    values = []
+    for field in ('escanteios_h', 'escanteios_a'):
+        raw = stats.get(field)
+        if raw is None or isinstance(raw, bool):
+            return None
+        try:
+            number = float(str(raw).strip())
+            if number < 0 or not number.is_integer():
+                return None
+            values.append(int(number))
+        except (TypeError, ValueError, OverflowError):
+            return None
+    return values[0] + values[1]
+
+
+def _track_corner_history(history, fixture_id, stats, now_ts=None):
+    """Derive corners in the last five minutes from cumulative side totals."""
+    if now_ts is None:
+        now_ts = time.time()
+    total = _corner_total_from_stats(stats)
+    if total is None or fixture_id is None or str(fixture_id).strip() == '':
+        return None
+    fid = str(fixture_id)
+    record = history.get(fid)
+    if not isinstance(record, dict):
+        history[fid] = {'total': total, 'last_seen': now_ts, 'baseline': now_ts, 'complete': total == 0, 'events': []}
+        return 0 if total == 0 else None
+    try:
+        previous = record['total']
+        last_seen = float(record['last_seen'])
+        baseline = float(record['baseline'])
+        events = record.get('events', [])
+        complete = record.get('complete') is True
+        if isinstance(previous, bool) or int(previous) != previous or int(previous) < 0 or not isinstance(events, list):
+            raise ValueError('invalid history record')
+        events = [float(event_ts) for event_ts in events]
+        if any(event_ts > now_ts for event_ts in events) or now_ts < last_seen:
+            raise ValueError('non-monotonic observation time')
+    except (KeyError, TypeError, ValueError, OverflowError):
+        history[fid] = {'total': total, 'last_seen': now_ts, 'baseline': now_ts, 'complete': False, 'events': []}
+        return None
+    if total < int(previous):
+        history[fid] = {'total': total, 'last_seen': now_ts, 'baseline': now_ts, 'complete': False, 'events': []}
+        return None
+    delta = total - int(previous)
+    if delta > 0:
+        events.extend([now_ts] * delta)
+    complete = complete or now_ts - baseline >= CORNER_HISTORY_WINDOW_SECONDS
+    cutoff = now_ts - CORNER_HISTORY_WINDOW_SECONDS
+    events = [event_ts for event_ts in events if event_ts > cutoff]
+    history[fid] = {'total': total, 'last_seen': now_ts, 'baseline': baseline, 'complete': complete, 'events': events}
+    if not complete:
+        return None
+    return len(events)
+
+
+def _save_corner_history(history):
+    """Prune and persist compact observation history once at workflow-run end."""
+    now_ts = time.time()
+    kept = {}
+    for fid, record in history.items():
+        if not isinstance(record, dict):
+            continue
+        try:
+            last_seen = float(record['last_seen'])
+            if now_ts - last_seen <= CORNER_HISTORY_MAX_AGE_SECONDS:
+                kept[str(fid)] = record
+        except (KeyError, TypeError, ValueError):
+            continue
+    history.clear()
+    history.update(kept)
+    payload = {'version': 1, 'fixtures': history}
+    path = os.path.join(BASE_DIR, CORNER_HISTORY_API_PATH)
+    try:
+        with open(path, 'w', encoding='utf-8') as f:
+            json.dump(payload, f, separators=(',', ':'))
+    except Exception as e:
+        print(f'[CORNER] Não foi possível salvar fallback local: {e}')
+    if not (GITHUB_TOKEN and GITHUB_REPO):
+        print('[CORNER] Estado não persistido no GitHub: credencial/repositório ausente')
+        return False
+    return _save_json_api(CORNER_HISTORY_API_PATH, payload, 'state: atualiza corner_history [skip ci]')
+
+
 def _claim_report_slot(chave):
     """Tenta reservar um relatório uma única vez usando PUT condicional no GitHub."""
     if not (GITHUB_TOKEN and GITHUB_REPO):
@@ -2717,6 +2846,12 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
     if BOT_SOURCE == 'sokkerpro':
         jogos_live = get_jogos_sokkerpro(set())
         print(f'[SokkerPro] {len(jogos_live)} jogos ao vivo')
+        for jogo_live in jogos_live:
+            stats_live = jogo_live.get('_stats')
+            derived_5m = _track_corner_history(CORNER_HISTORY, jogo_live.get('fid'), stats_live)
+            jogo_live['_corner_5m_derived'] = derived_5m
+            if isinstance(stats_live, dict):
+                stats_live['escanteios_5m'] = derived_5m
     jogos_na_janela = filtrar_janelas(jogos_live)
     print(f'[Janela] {len(jogos_na_janela)} jogos nas janelas alvo')
     _LAST_RADAR_DATA = (len(jogos_live), jogos_live, jogos_na_janela)
@@ -3054,6 +3189,8 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             if red_max < 99 and red_fav > red_max:
                 print(f'[DIAG-{mk}-BARRA] {h} x {a} — favorito com cartão vermelho ({red_fav} > {red_max}), pulando')
                 continue
+            # Detailed stats may expose raw corners5m; the persisted cumulative-total tracker is authoritative.
+            stats['escanteios_5m'] = j.get('_corner_5m_derived')
             ok, motivos = _validar_criterios_gerais(mk, stats, fav_final)
             if not ok:
                 for motivo in motivos:
@@ -3167,6 +3304,8 @@ def configurar_comandos_telegram():
 
 def run():
     """Executa 3 ciclos de 1 minuto cada para contornar limite de 5 min do cron."""
+    global CORNER_HISTORY
+    CORNER_HISTORY = _load_corner_history()
     configurar_comandos_telegram()
     confirmed_ids = set()
     sent = load_sent()
@@ -3180,6 +3319,8 @@ def run():
         if ciclo < 2:
             print(f'[Aguardando 60s para próximo ciclo...]')
             time.sleep(60)
+    persisted = _save_corner_history(CORNER_HISTORY)
+    print(f'[CORNER] Histórico persistido: {persisted}')
     print(f"\n{'=' * 50}")
     print(f'=== EXECUÇÃO COMPLETA ===')
     print(f'Total de sinais enviados: {total_env}')
