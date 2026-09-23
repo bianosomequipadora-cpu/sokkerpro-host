@@ -2029,14 +2029,16 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
         except (TypeError, ValueError):
             odd_mercado_formatada = str(odd_b365)
         odd_texto = '<b>💰Odd Ao Vivo do Mercado: ' + odd_mercado_formatada + '</b>'
-        if odd_paripesa is not None:
-            try:
-                odd_paripesa_formatada = f'{float(odd_paripesa):.2f}'
-            except (TypeError, ValueError):
-                odd_paripesa_formatada = str(odd_paripesa)
-            odd_texto += NL + '<b>💰Odd da Paripesa: ' + odd_paripesa_formatada + '</b>'
     else:
-        odd_texto = '<b>💰Odd Asiático Mínima: 1.90</b>' + NL + '<b>💰Odd Limite Mínima: 1.70</b>'
+        odd_texto = '<b>💰Odd Ao Vivo do Mercado: indisponível</b>'
+    if odd_paripesa is not None:
+        try:
+            odd_paripesa_formatada = f'{float(odd_paripesa):.2f}'
+        except (TypeError, ValueError):
+            odd_paripesa_formatada = str(odd_paripesa)
+        odd_texto += NL + '<b>💰Odd da Paripesa: ' + odd_paripesa_formatada + '</b>'
+    else:
+        odd_texto += NL + '<b>💰Odd da Paripesa: indisponível</b>'
     prob_texto = (NL + f'<b>📊 Probabilidade: {probabilidade}%</b>') if probabilidade is not None else ''
     sep = '━' * 22
     liga_formatada=nome_liga_exibicao(liga, pais)
@@ -3012,11 +3014,11 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             elif c_tipo == 'ambas_marcam':
                 linha_str = 'bts_yes'
             odd_real = _odd_real_disponivel(stats, c_tipo, extra_val, minute=m)
-            if odd_real is None:
-                print(f'[DIAG-{mk}-ODD] {h} x {a} — mercado/linha não encontrada na API, não enviando')
-                continue
             ob365 = odd_real
-            print(f'[AUDITORIA ODD] {h} x {a} | fid={fid} | minuto={m} | tipo={c_tipo} | chave={_ULTIMA_ODD_CHAVE} | odd={ob365:.2f}')
+            if ob365 is None:
+                print(f'[DIAG-{mk}-ODD] {h} x {a} — odd Bet365 da linha exata indisponível; mantendo o sinal')
+            else:
+                print(f'[AUDITORIA ODD] {h} x {a} | fid={fid} | minuto={m} | tipo={c_tipo} | chave={_ULTIMA_ODD_CHAVE} | odd={ob365:.2f}')
             obano = None
             odd_paripesa = _odd_paripesa_real(j.get('paripesa_path'), c_tipo, extra_val=extra_val, sh=sh, sa=sa)
             # Persiste primeiro para o painel não perder o sinal após o envio.
