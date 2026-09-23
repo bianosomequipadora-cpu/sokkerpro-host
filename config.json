@@ -480,6 +480,16 @@
           "campo": "max_red_card_fav",
           "operador": "lte",
           "valor": 0
+        },
+        {
+          "campo": "escanteios_5m",
+          "operador": "lte",
+          "valor": 0
+        },
+        {
+          "campo": "dapm_10_fav",
+          "operador": "gte",
+          "valor": 1
         }
       ]
     }
