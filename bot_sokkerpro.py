@@ -555,12 +555,12 @@ def atualizar_entrada_historico(sinal, resultado):
                 break
     _save_entradas(registros)
 
-def registrar_sinal(fid, mercado, home, away, message_id, extra_val=None, tipo=None, entry_sh=None, entry_sa=None, odd_b365=None, odd_bano=None):
+def registrar_sinal(fid, mercado, home, away, message_id, extra_val=None, tipo=None, entry_sh=None, entry_sa=None, odd_b365=None, odd_bano=None, odd_mercado=None):
     sinais = _load_sinais_github()
-    sinais.append({'fixture_id': fid, 'mercado': mercado, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'tipo': tipo, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'odd_b365': odd_b365, 'odd_bano': odd_bano, 'timestamp': datetime.now(BRT).isoformat()})
+    sinais.append({'fixture_id': fid, 'mercado': mercado, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'tipo': tipo, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'odd_b365': odd_b365, 'odd_bano': odd_bano, 'odd_mercado': odd_mercado, 'timestamp': datetime.now(BRT).isoformat()})
     _save_sinais_github(sinais)
     historico = _load_entradas()
-    historico.append({'fixture_id': fid, 'mercado': mercado, 'tipo': tipo, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'odd_b365': odd_b365, 'odd_bano': odd_bano, 'timestamp': datetime.now(BRT).isoformat(), 'resultado': 'pendente'})
+    historico.append({'fixture_id': fid, 'mercado': mercado, 'tipo': tipo, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'odd_b365': odd_b365, 'odd_bano': odd_bano, 'odd_mercado': odd_mercado, 'timestamp': datetime.now(BRT).isoformat(), 'resultado': 'pendente'})
     _save_entradas(historico)
 
 def atualizar_message_id_sinal(fid, mercado, message_id):
@@ -2193,6 +2193,15 @@ def _formatar_entrada_gol(entrada):
         texto += ' Gol'
     return texto + simbolo
 
+def _odd_mercado_exibida(home, away, liga, odd_b365, odd_paripesa):
+    """Escolhe exatamente a cotação mostrada na linha Odd Ao Vivo do Mercado."""
+    import re
+    evento_texto = ' '.join(str(valor) for valor in (home, away, liga) if valor is not None)
+    odd_b365_exibida = odd_b365
+    if re.search(r'(?i)\b(?:U[\s-]?(?:19|20)|Sub[\s-]?(?:19|20)|Under[\s-]?(?:19|20))\b', evento_texto):
+        odd_b365_exibida = None
+    return odd_paripesa if odd_paripesa is not None else odd_b365_exibida
+
 def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, extra_val=None, cantos_atual=0, stats=None, sh=0, sa=0, fav_final='h', odd_h=None, odd_a=None, odd_b365=None, odd_bano=None, odd_paripesa=None, nome=None, tipo='', probabilidade=None, game_id=None):
     NL = chr(10)
     chutes_h = stats.get('chutes_tot_h', 0) if stats else 0
@@ -2277,15 +2286,9 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
         fav_nome = away
     else:
         fav_nome = '—'
-    # Não exibir cotação Bet365 em partidas Sub-19/Sub-20/U19/U20: o jogo/mercado pode não existir lá.
-    import re
-    evento_texto = ' '.join(str(valor) for valor in (home, away, liga) if valor is not None)
-    if re.search(r'(?i)\b(?:U[\s-]?(?:19|20)|Sub[\s-]?(?:19|20)|Under[\s-]?(?:19|20))\b', evento_texto):
-        odd_b365 = None
-
     # Uma linha: prioriza a Paripesa; usa Bet365 somente se a cotação LIVE exata existir.
     odds_linhas = []
-    odd_mercado = odd_paripesa if odd_paripesa is not None else odd_b365
+    odd_mercado = _odd_mercado_exibida(home, away, liga, odd_b365, odd_paripesa)
     if odd_mercado is not None:
         try:
             odd_mercado_formatada = f'{float(odd_mercado):.2f}'
@@ -3291,7 +3294,9 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 sent.add(key)
                 continue
             # Persiste primeiro para o painel não perder o sinal após o envio.
-            registrar_sinal(fid, mk, h, a, 0, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa, odd_b365=ob365, odd_bano=obano)
+            # Salva a mesma cotação que a mensagem vai exibir em Odd Ao Vivo do Mercado.
+            odd_mercado_registro = _odd_mercado_exibida(h, a, liga, ob365, odd_paripesa)
+            registrar_sinal(fid, mk, h, a, 0, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa, odd_b365=ob365, odd_bano=obano, odd_mercado=odd_mercado_registro)
             if notificar:
                 mid = send_telegram(msg_universal(h, a, m, liga, pais, 5, mk, cnome, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, odd_paripesa=odd_paripesa, nome=cnome, tipo=c_tipo, probabilidade=_probabilidade_para_sinal(stats, c_tipo, sh, sa, extra_val if 'escanteio' in c_tipo else 0), game_id=(j.get('paripesa_path') or fid)), marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
             else:
