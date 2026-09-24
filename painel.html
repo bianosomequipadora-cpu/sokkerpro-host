@@ -282,7 +282,7 @@ async function abrirEntradas(mercado){
         var greenFmt=String(green).padStart(2,'0'), redFmt=String(red).padStart(2,'0'), refundFmt=String(refund).padStart(2,'0'), pendFmt=String(pend).padStart(2,'0');
         var mdAtual=(CONFIG_INLINE.mercados||{})[mercado]||{}; var stake=Number(mdAtual.stake||0); var investido=0, lucro=0, lucroCompleto=true;
         function oddRelatorio(raw){if(raw===null||raw===undefined||String(raw).trim()==='')return null;var valor=Number(String(raw).replace(',','.'));return isFinite(valor)&&valor>1?valor:null;}
-        list.forEach(function(x){var st=stake; if(st<=0)return; var rs=String(x.resultado||'').toLowerCase(); if(['green','red','refund','reembolso'].indexOf(rs)<0)return; investido+=st; if(rs==='green'){var odd=oddRelatorio(x.odd_bano);if(odd===null)odd=oddRelatorio(x.odd_b365);if(odd===null)lucroCompleto=false;else lucro+=st*(odd-1);} else if(rs==='red')lucro-=st;});
+        list.forEach(function(x){var st=stake; if(st<=0)return; var rs=String(x.resultado||'').toLowerCase(); if(rs!=='green'&&rs!=='red')return; investido+=st; if(rs==='green'){var odd=oddRelatorio(x.odd_bano);if(odd===null)odd=oddRelatorio(x.odd_b365);if(odd===null)lucroCompleto=false;else lucro+=st*(odd-1);} else lucro-=st;});
         var roi=lucroCompleto?(investido?((lucro/investido)*100).toFixed(1):'0.0'):null;
         var lucroFmt=lucro.toFixed(2).replace('.',',');
         var lucroExibido=lucroCompleto?'R$ '+(lucroFmt.charAt(0)==='-'?'':'+')+lucroFmt:'INCOMPLETO — odd ausente';
