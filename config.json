@@ -123,8 +123,8 @@
       "ativo": true,
       "notificar": true,
       "nome": "⛳ ⚠️ESCANTEIO 1°TEMPO⚠️⛳️",
-      "minuto_inicio": 34,
-      "minuto_fim": 38,
+      "minuto_inicio": 30,
+      "minuto_fim": 37,
       "periodo": 1,
       "tipo": "escanteio_ht",
       "stake": 20,
@@ -152,6 +152,11 @@
           "campo": "escanteios_10m",
           "operador": "lte",
           "valor": 0
+        },
+        {
+          "campo": "dapm_10_fav",
+          "operador": "gte",
+          "valor": 0.99
         }
       ]
     },
@@ -172,7 +177,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 1
+          "valor": 0.7
         },
         {
           "campo": "chutes_totais_min",
@@ -188,6 +193,11 @@
           "campo": "escanteios_10m",
           "operador": "lte",
           "valor": 0
+        },
+        {
+          "campo": "dapm_10_fav",
+          "operador": "gte",
+          "valor": 0.99
         }
       ]
     },
@@ -211,16 +221,6 @@
           "valor": 0.9
         },
         {
-          "campo": "posse_bola_min",
-          "operador": "gte",
-          "valor": 58
-        },
-        {
-          "campo": "escanteios_5m",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
           "campo": "diferenca_gols_fav_max",
           "operador": "lte",
           "valor": 1
@@ -236,14 +236,14 @@
           "valor": 2
         },
         {
-          "campo": "chutes_totais_min",
-          "operador": "gte",
-          "valor": 10
-        },
-        {
           "campo": "escanteios_10m",
           "operador": "lte",
           "valor": 0
+        },
+        {
+          "campo": "dapm_5_min",
+          "operador": "gte",
+          "valor": 1.4
         }
       ]
     },
@@ -400,7 +400,7 @@
           "valor": 1
         },
         {
-          "campo": "dapm_total_orig_min",
+          "campo": "appm_min_por_time",
           "operador": "gte",
           "valor": 0.7
         },
@@ -413,6 +413,11 @@
           "campo": "escanteios_5m",
           "operador": "lte",
           "valor": 0
+        },
+        {
+          "campo": "dapm_10_total",
+          "operador": "gte",
+          "valor": 1.5
         }
       ]
     },
