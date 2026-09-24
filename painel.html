@@ -267,7 +267,8 @@ async function abrirEntradas(mercado){
     try{
       var r=await fetch('https://api.github.com/repos/'+REPO+'/contents/entradas.json?x='+Date.now(),{headers:{}});
       var list=[]; if(r.ok){var j=await r.json();list=JSON.parse(decodeURIComponent(escape(atob(j.content))));}
-      list=list.filter(function(x){return x.mercado===mercado;}).reverse();
+      var tipoRelatorio=String((((CONFIG_INLINE.mercados||{})[mercado]||{}).tipo)||'').trim().toLowerCase();
+      list=list.filter(function(x){return x.mercado===mercado && (!tipoRelatorio || String(x.tipo||'').trim().toLowerCase()===tipoRelatorio);}).reverse();
       var el=document.getElementById('entradas-list');
       var busca=document.getElementById('entradas-busca');
       var resumo=document.getElementById('entradas-resumo');
@@ -279,10 +280,13 @@ async function abrirEntradas(mercado){
         var decididos=green+red;
         var assertividade=decididos?((green/decididos)*100).toFixed(1):'0.0';
         var greenFmt=String(green).padStart(2,'0'), redFmt=String(red).padStart(2,'0'), refundFmt=String(refund).padStart(2,'0'), pendFmt=String(pend).padStart(2,'0');
-        var mdAtual=(CONFIG_INLINE.mercados||{})[mercado]||{}; var stake=Number(mdAtual.stake||0); var investido=0, lucro=0;
-        list.forEach(function(x){var st=stake; if(st<=0)return; var rs=String(x.resultado||'').toLowerCase(); if(['green','red','refund','reembolso'].indexOf(rs)<0)return; investido+=st; var odd=Number(x.odd_b365); if(rs==='green'&&isFinite(odd))lucro+=st*(odd-1); else if(rs==='red')lucro-=st;});
-        var roi=investido?((lucro/investido)*100).toFixed(1):'0.0';
-        resumo.innerHTML='<div style="display:grid;grid-template-columns:1fr;column-gap:0;row-gap:0;margin:6px 0;font-size:.92em;line-height:1.35;word-break:normal;overflow:hidden;align-content:start"><div><b>💰 STAKE POR ENTRADA:</b>&nbsp;R$ '+stake.toFixed(2).replace('.',',')+'</div><div style="color:#2ecc71"><b>🟢 GREENS:</b>&nbsp;'+greenFmt+'</div><div style="color:#e74c3c"><b>🔴 REDS:</b>&nbsp;'+redFmt+'</div><div style="color:#3498db"><b>🔵 REEMBOLSOS:</b>&nbsp;'+refundFmt+'</div><div style="color:#f1c40f"><b>⏳ PENDENTES:</b>&nbsp;'+pendFmt+'</div><div><b>📈 ASSERTIVIDADE:</b>&nbsp;'+assertividade+'%</div><div><b>💵 VALOR INVESTIDO:</b>&nbsp;R$ '+investido.toFixed(2).replace('.',',')+'</div><div><b>📈 LUCRO LÍQUIDO:</b>&nbsp;R$ '+lucro.toFixed(2).replace('.',',')+'</div><div><b>📊 ROI:</b>&nbsp;'+roi+'%</div></div>';
+        var mdAtual=(CONFIG_INLINE.mercados||{})[mercado]||{}; var stake=Number(mdAtual.stake||0); var investido=0, lucro=0, lucroCompleto=true;
+        function oddRelatorio(raw){if(raw===null||raw===undefined||String(raw).trim()==='')return null;var valor=Number(String(raw).replace(',','.'));return isFinite(valor)&&valor>1?valor:null;}
+        list.forEach(function(x){var st=stake; if(st<=0)return; var rs=String(x.resultado||'').toLowerCase(); if(['green','red','refund','reembolso'].indexOf(rs)<0)return; investido+=st; if(rs==='green'){var odd=oddRelatorio(x.odd_bano);if(odd===null)odd=oddRelatorio(x.odd_b365);if(odd===null)lucroCompleto=false;else lucro+=st*(odd-1);} else if(rs==='red')lucro-=st;});
+        var roi=lucroCompleto?(investido?((lucro/investido)*100).toFixed(1):'0.0'):null;
+        var lucroExibido=lucroCompleto?'R$ '+lucro.toFixed(2).replace('.',','):'INCOMPLETO — odd ausente';
+        var roiExibido=lucroCompleto?roi+'%':'INCOMPLETO';
+        resumo.innerHTML='<div style="display:grid;grid-template-columns:1fr;column-gap:0;row-gap:0;margin:6px 0;font-size:.92em;line-height:1.35;word-break:normal;overflow:hidden;align-content:start"><div><b>💰 STAKE POR ENTRADA:</b>&nbsp;R$ '+stake.toFixed(2).replace('.',',')+'</div><div style="color:#2ecc71"><b>🟢 GREENS:</b>&nbsp;'+greenFmt+'</div><div style="color:#e74c3c"><b>🔴 REDS:</b>&nbsp;'+redFmt+'</div><div style="color:#3498db"><b>🔵 REEMBOLSOS:</b>&nbsp;'+refundFmt+'</div><div style="color:#f1c40f"><b>⏳ PENDENTES:</b>&nbsp;'+pendFmt+'</div><div><b>📈 ASSERTIVIDADE:</b>&nbsp;'+assertividade+'%</div><div><b>💵 VALOR INVESTIDO:</b>&nbsp;R$ '+investido.toFixed(2).replace('.',',')+'</div><div><b>📈 LUCRO LÍQUIDO:</b>&nbsp;'+lucroExibido+'</div><div><b>📊 ROI:</b>&nbsp;'+roiExibido+'</div></div>';
       }
       function renderEntradas(){
         var termo=(busca.value||'').toLowerCase().trim();
