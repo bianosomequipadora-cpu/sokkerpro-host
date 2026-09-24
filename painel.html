@@ -284,8 +284,9 @@ async function abrirEntradas(mercado){
         function oddRelatorio(raw){if(raw===null||raw===undefined||String(raw).trim()==='')return null;var valor=Number(String(raw).replace(',','.'));return isFinite(valor)&&valor>1?valor:null;}
         list.forEach(function(x){var st=stake; if(st<=0)return; var rs=String(x.resultado||'').toLowerCase(); if(['green','red','refund','reembolso'].indexOf(rs)<0)return; investido+=st; if(rs==='green'){var odd=oddRelatorio(x.odd_bano);if(odd===null)odd=oddRelatorio(x.odd_b365);if(odd===null)lucroCompleto=false;else lucro+=st*(odd-1);} else if(rs==='red')lucro-=st;});
         var roi=lucroCompleto?(investido?((lucro/investido)*100).toFixed(1):'0.0'):null;
-        var lucroExibido=lucroCompleto?'R$ '+lucro.toFixed(2).replace('.',','):'INCOMPLETO — odd ausente';
-        var roiExibido=lucroCompleto?roi+'%':'INCOMPLETO';
+        var lucroFmt=lucro.toFixed(2).replace('.',',');
+        var lucroExibido=lucroCompleto?'R$ '+(lucroFmt.charAt(0)==='-'?'':'+')+lucroFmt:'INCOMPLETO — odd ausente';
+        var roiExibido=lucroCompleto?(String(roi).charAt(0)==='-'?roi:'+'+roi)+'%':'INCOMPLETO';
         resumo.innerHTML='<div style="display:grid;grid-template-columns:1fr;column-gap:0;row-gap:0;margin:6px 0;font-size:.92em;line-height:1.35;word-break:normal;overflow:hidden;align-content:start"><div><b>💰 STAKE POR ENTRADA:</b>&nbsp;R$ '+stake.toFixed(2).replace('.',',')+'</div><div style="color:#2ecc71"><b>🟢 GREENS:</b>&nbsp;'+greenFmt+'</div><div style="color:#e74c3c"><b>🔴 REDS:</b>&nbsp;'+redFmt+'</div><div style="color:#3498db"><b>🔵 REEMBOLSOS:</b>&nbsp;'+refundFmt+'</div><div style="color:#f1c40f"><b>⏳ PENDENTES:</b>&nbsp;'+pendFmt+'</div><div><b>📈 ASSERTIVIDADE:</b>&nbsp;'+assertividade+'%</div><div><b>💵 VALOR INVESTIDO:</b>&nbsp;R$ '+investido.toFixed(2).replace('.',',')+'</div><div><b>📈 LUCRO LÍQUIDO:</b>&nbsp;'+lucroExibido+'</div><div><b>📊 ROI:</b>&nbsp;'+roiExibido+'</div></div>';
       }
       function renderEntradas(){
