@@ -52,73 +52,6 @@
         }
       ]
     },
-    "custom_1789395939599": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️😈OVER GOL INTERVALO😈⚽️ ",
-      "minuto_inicio": 10,
-      "minuto_fim": 27,
-      "periodo": 1,
-      "tipo": "gol_intervalo",
-      "stake": 10,
-      "placar_valido": "0x0",
-      "criterios": {
-        "situacao_favorito": "empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "prob_ft_over_1_5",
-          "operador": "gte",
-          "valor": 75
-        },
-        {
-          "campo": "prob_ht_over_0_5",
-          "operador": "gte",
-          "valor": 65
-        },
-        {
-          "campo": "media_gols_partida_min",
-          "operador": "gte",
-          "valor": 2.5
-        },
-        {
-          "campo": "dapm_10_total",
-          "operador": "gte",
-          "valor": 1.5
-        }
-      ]
-    },
-    "custom_1789754555907": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️💥OVER GOL INTERVALO💥⚽️",
-      "minuto_inicio": 15,
-      "minuto_fim": 26,
-      "periodo": 1,
-      "tipo": "gol_intervalo",
-      "stake": 10,
-      "placar_valido": "0x0",
-      "criterios": {
-        "situacao_favorito": ""
-      },
-      "criterios_api": [
-        {
-          "campo": "prob_ht_over_0_5",
-          "operador": "gte",
-          "valor": 70
-        },
-        {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
-          "valor": 1
-        },
-        {
-          "campo": "media_gols_partida_min",
-          "operador": "gte",
-          "valor": 2.5
-        }
-      ]
-    },
     "custom_1790199213646": {
       "ativo": true,
       "notificar": true,
@@ -465,6 +398,73 @@
           "campo": "escanteios_5m",
           "operador": "lte",
           "valor": 0
+        }
+      ]
+    },
+    "custom_1790220615954": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️😈OVER GOL INTERVALO😈⚽️ ",
+      "minuto_inicio": 10,
+      "minuto_fim": 27,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "stake": 10,
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": "empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "prob_ft_over_1_5",
+          "operador": "gte",
+          "valor": 75
+        },
+        {
+          "campo": "prob_ht_over_0_5",
+          "operador": "gte",
+          "valor": 65
+        },
+        {
+          "campo": "media_gols_partida_min",
+          "operador": "gte",
+          "valor": 2.5
+        },
+        {
+          "campo": "dapm_10_total",
+          "operador": "gte",
+          "valor": 1.5
+        }
+      ]
+    },
+    "custom_1790220625106": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️💥OVER GOL INTERVALO💥⚽️",
+      "minuto_inicio": 15,
+      "minuto_fim": 26,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "stake": 10,
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": ""
+      },
+      "criterios_api": [
+        {
+          "campo": "prob_ht_over_0_5",
+          "operador": "gte",
+          "valor": 70
+        },
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 1
+        },
+        {
+          "campo": "media_gols_partida_min",
+          "operador": "gte",
+          "valor": 2.5
         }
       ]
     }
