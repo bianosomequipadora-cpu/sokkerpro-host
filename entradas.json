@@ -5614,5 +5614,23 @@
     "odd_mercado": 1.685,
     "timestamp": "2026-09-25T15:17:42.851510-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "e15ee2fba38a_custom_1790220625106_20260925",
+    "fixture_id": "19884012",
+    "mercado": "custom_1790220625106",
+    "tipo": "gol_intervalo",
+    "home": "Corinthians U20",
+    "away": "XV de Jaú U20",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.5,
+    "odd_bano": null,
+    "odd_mercado": 1.46,
+    "timestamp": "2026-09-25T15:19:52.226887-03:00",
+    "resultado": "pendente"
   }
 ]
