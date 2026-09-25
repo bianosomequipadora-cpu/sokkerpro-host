@@ -5920,5 +5920,23 @@
     "odd_mercado": 1.645,
     "timestamp": "2026-09-25T17:21:10.073843-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "fbdb29b24e3e_custom_1790215015195_20260925",
+    "fixture_id": "19723147",
+    "mercado": "custom_1790215015195",
+    "tipo": "escanteio_ft",
+    "home": "Ayr United",
+    "away": "Stenhousemuir",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 2.15,
+    "odd_bano": null,
+    "odd_mercado": 2.15,
+    "timestamp": "2026-09-25T17:27:59.420449-03:00",
+    "resultado": "pendente"
   }
 ]
