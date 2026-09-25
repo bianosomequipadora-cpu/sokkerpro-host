@@ -5938,5 +5938,23 @@
     "odd_mercado": 2.15,
     "timestamp": "2026-09-25T17:27:59.420449-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f18275be2f9c_custom_1790215403340_20260925",
+    "fixture_id": "19676739",
+    "mercado": "custom_1790215403340",
+    "tipo": "escanteio_ft",
+    "home": "Poland",
+    "away": "Bosnia and Herzegovina",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.67,
+    "odd_bano": null,
+    "odd_mercado": 1.77,
+    "timestamp": "2026-09-25T17:29:43.096366-03:00",
+    "resultado": "pendente"
   }
 ]
