@@ -5434,5 +5434,23 @@
     "odd_mercado": 1.375,
     "timestamp": "2026-09-25T12:27:40.591881-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "654966bd3fe1_custom_1790215403340_20260925",
+    "fixture_id": "19385347",
+    "mercado": "custom_1790215403340",
+    "tipo": "escanteio_ft",
+    "home": "Azerbaijan U21",
+    "away": "Czech Republic U21",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.375,
+    "timestamp": "2026-09-25T12:27:50.954871-03:00",
+    "resultado": "pendente"
   }
 ]
