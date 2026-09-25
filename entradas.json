@@ -5470,5 +5470,23 @@
     "odd_mercado": 2.26,
     "timestamp": "2026-09-25T13:42:25.471533-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6cd54b5a4984_custom_1790215015195_20260925",
+    "fixture_id": "19886579",
+    "mercado": "custom_1790215015195",
+    "tipo": "escanteio_ft",
+    "home": "Slovakia U19",
+    "away": "Kazakhstan U19",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.25,
+    "odd_bano": null,
+    "odd_mercado": 2.425,
+    "timestamp": "2026-09-25T13:42:33.631220-03:00",
+    "resultado": "pendente"
   }
 ]
