@@ -467,6 +467,37 @@
           "valor": 2.5
         }
       ]
+    },
+    "custom_1790340691499": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️🔞OVER GOL PARTIDA🔞⚽️",
+      "minuto_inicio": 60,
+      "minuto_fim": 75,
+      "periodo": 2,
+      "tipo": "over_gol",
+      "stake": 10,
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": ""
+      },
+      "criterios_api": [
+        {
+          "campo": "dapm_10_total",
+          "operador": "gte",
+          "valor": 1.5
+        },
+        {
+          "campo": "prob_1x2_casa_ou_fora",
+          "operador": "gte",
+          "valor": 70
+        },
+        {
+          "campo": "prob_ft_over_0_5",
+          "operador": "gte",
+          "valor": 80
+        }
+      ]
     }
   }
 }
