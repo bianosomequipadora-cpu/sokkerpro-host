@@ -5272,5 +5272,23 @@
     "odd_mercado": 1.368,
     "timestamp": "2026-09-25T09:18:21.914485-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "4586d29a9be9_custom_1790199213646_20260925",
+    "fixture_id": "19776672",
+    "mercado": "custom_1790199213646",
+    "tipo": "gol_intervalo",
+    "home": "Wisła Płock II",
+    "away": "Jagiellonia II",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.44,
+    "odd_bano": null,
+    "odd_mercado": 1.39,
+    "timestamp": "2026-09-25T11:17:43.589753-03:00",
+    "resultado": "pendente"
   }
 ]
