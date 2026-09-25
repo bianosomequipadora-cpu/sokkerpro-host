@@ -5578,5 +5578,23 @@
     "odd_mercado": 1.75,
     "timestamp": "2026-09-25T14:23:34.049727-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "0201721c87ad_custom_1790213687442_20260925",
+    "fixture_id": "19734857",
+    "mercado": "custom_1790213687442",
+    "tipo": "over_gol",
+    "home": "Velden",
+    "away": "Völkermarkt",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.25,
+    "odd_bano": null,
+    "odd_mercado": 1.225,
+    "timestamp": "2026-09-25T15:17:17.089020-03:00",
+    "resultado": "pendente"
   }
 ]
