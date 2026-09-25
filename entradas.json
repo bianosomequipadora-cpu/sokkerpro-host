@@ -5794,5 +5794,23 @@
     "odd_mercado": 1.655,
     "timestamp": "2026-09-25T15:47:35.759447-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d5d838992397_custom_1790220625106_20260925",
+    "fixture_id": "19740765",
+    "mercado": "custom_1790220625106",
+    "tipo": "gol_intervalo",
+    "home": "Baglan Dragons",
+    "away": "Carmarthen Town",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.655,
+    "timestamp": "2026-09-25T15:47:44.123023-03:00",
+    "resultado": "pendente"
   }
 ]
