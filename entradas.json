@@ -5740,5 +5740,23 @@
     "odd_mercado": 1.736,
     "timestamp": "2026-09-25T15:42:16.278051-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d97901d6ab42_custom_1790215403340_20260925",
+    "fixture_id": "19671682",
+    "mercado": "custom_1790215403340",
+    "tipo": "escanteio_ft",
+    "home": "Räppe",
+    "away": "Växjö Norra",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.755,
+    "timestamp": "2026-09-25T15:42:26.447735-03:00",
+    "resultado": "pendente"
   }
 ]
