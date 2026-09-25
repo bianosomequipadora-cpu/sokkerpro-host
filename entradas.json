@@ -5596,5 +5596,23 @@
     "odd_mercado": 1.225,
     "timestamp": "2026-09-25T15:17:17.089020-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "bb4bdccc0ecb_custom_1790220615954_20260925",
+    "fixture_id": "19884006",
+    "mercado": "custom_1790220615954",
+    "tipo": "gol_intervalo",
+    "home": "Desportivo Brasil U20",
+    "away": "Oeste U20",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.66,
+    "odd_bano": null,
+    "odd_mercado": 1.685,
+    "timestamp": "2026-09-25T15:17:42.851510-03:00",
+    "resultado": "pendente"
   }
 ]
