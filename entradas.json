@@ -5344,5 +5344,23 @@
     "odd_mercado": 1.72,
     "timestamp": "2026-09-25T11:24:03.865974-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "959a8ee881f5_custom_1790199213646_20260925",
+    "fixture_id": "19724797",
+    "mercado": "custom_1790199213646",
+    "tipo": "gol_intervalo",
+    "home": "Pohronie",
+    "away": "Inter Bratislava",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.61,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-09-25T11:47:21.796906-03:00",
+    "resultado": "pendente"
   }
 ]
