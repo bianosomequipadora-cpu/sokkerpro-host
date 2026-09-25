@@ -522,11 +522,137 @@ def _load_entradas():
         print(f'[ENTRADAS] Erro leitura: {e}')
     return []
 
+def _identidade_entrada(registro):
+    """Chave estável para mesclar gravações concorrentes sem duplicar sinais."""
+    fid = str(registro.get('fixture_id', ''))
+    mercado = str(registro.get('mercado', ''))
+    signal_key = registro.get('signal_key')
+    if signal_key:
+        return ('signal_key', str(signal_key))
+    timestamp = registro.get('timestamp')
+    if timestamp:
+        return ('timestamp', fid, mercado, str(timestamp))
+    message_id = registro.get('message_id')
+    if message_id not in (None, '', 0, '0'):
+        return ('message_id', str(message_id))
+    return ('fallback', fid, mercado, str(registro.get('home', '')), str(registro.get('away', '')))
+
+
+def _odd_persistida_valida(valor):
+    try:
+        odd = float(str(valor).replace(',', '.'))
+        return odd > 1.0 and odd != float('inf')
+    except (TypeError, ValueError, OverflowError):
+        return False
+
+
+def _mesclar_entrada(atual, recebida):
+    """Mescla campos sem apagar odd, message_id ou resultado já confirmado."""
+    mesclada = dict(atual)
+    for campo, valor in recebida.items():
+        if campo in ('odd_mercado', 'odd_bano', 'odd_b365') and not _odd_persistida_valida(valor):
+            continue
+        if campo == 'message_id' and valor in (None, '', 0, '0') and mesclada.get(campo) not in (None, '', 0, '0'):
+            continue
+        if campo == 'resultado':
+            resultado_atual = str(mesclada.get(campo, '')).lower()
+            resultado_recebido = str(valor or '').lower()
+            if resultado_atual in ('green', 'red', 'refund', 'reembolso') and resultado_recebido == 'pendente':
+                continue
+        if valor is not None or campo not in mesclada:
+            mesclada[campo] = valor
+    return mesclada
+
+
+def _mesclar_listas_entradas(remotas, locais):
+    if not isinstance(remotas, list) or not isinstance(locais, list):
+        raise ValueError('entradas.json precisa conter uma lista')
+    # Mantém todos os registros remotos existentes, inclusive duplicatas históricas.
+    resultado = [dict(registro) if isinstance(registro, dict) else registro for registro in remotas]
+    indices = {}
+    for idx, registro in enumerate(resultado):
+        if isinstance(registro, dict):
+            indices.setdefault(_identidade_entrada(registro), []).append(idx)
+    for registro in locais:
+        if not isinstance(registro, dict):
+            continue
+        chave = _identidade_entrada(registro)
+        if chave in indices:
+            idx = indices[chave][-1]
+            resultado[idx] = _mesclar_entrada(resultado[idx], registro)
+        else:
+            indices[chave] = [len(resultado)]
+            resultado.append(dict(registro))
+    return resultado
+
+
 def _save_entradas(registros):
-    with open(ENTRADAS_FILE, 'w') as f:
-        json.dump(registros, f, ensure_ascii=False, indent=2)
-    if GITHUB_TOKEN and GITHUB_REPO:
-        _save_json_api(ENTRADAS_API_PATH, registros, 'state: atualiza entradas [skip ci]')
+    """Persiste entradas com merge/retry em conflito, preservando odds e updates paralelos."""
+    if not isinstance(registros, list):
+        print('[ENTRADAS] Gravação recusada: payload não é uma lista')
+        return False
+    if not (GITHUB_TOKEN and GITHUB_REPO):
+        try:
+            with open(ENTRADAS_FILE, 'w', encoding='utf-8') as f:
+                json.dump(registros, f, ensure_ascii=False, indent=2)
+            return True
+        except Exception as exc:
+            print(f'[ENTRADAS] Falha ao salvar localmente: {exc}')
+            return False
+
+    url = f'https://api.github.com/repos/{GITHUB_REPO}/contents/{ENTRADAS_API_PATH}'
+    headers = {'Authorization': f'Bearer {GITHUB_TOKEN}', 'Accept': 'application/vnd.github+json'}
+    for tentativa in range(5):
+        try:
+            req_get = request.Request(url, headers=headers)
+            try:
+                with request.urlopen(req_get, timeout=12) as resp:
+                    arquivo = json.loads(resp.read())
+                sha = arquivo.get('sha')
+                remotas = json.loads(base64.b64decode(arquivo.get('content', '')).decode('utf-8'))
+            except error.HTTPError as exc:
+                if exc.code != 404:
+                    raise
+                sha = None
+                remotas = []
+
+            mescladas = _mesclar_listas_entradas(remotas, registros)
+            conteudo = base64.b64encode(json.dumps(mescladas, ensure_ascii=False, indent=2).encode('utf-8')).decode('ascii')
+            payload = {'message': 'state: atualiza entradas [retry seguro] [skip ci]', 'content': conteudo}
+            if sha:
+                payload['sha'] = sha
+            req_put = request.Request(
+                url, data=json.dumps(payload).encode('utf-8'),
+                headers={**headers, 'Content-Type': 'application/json'}, method='PUT'
+            )
+            with request.urlopen(req_put, timeout=20) as resp:
+                resp.read()
+            with open(ENTRADAS_FILE, 'w', encoding='utf-8') as f:
+                json.dump(mescladas, f, ensure_ascii=False, indent=2)
+            print(f'[ENTRADAS] Salvas no GitHub: {len(mescladas)} registros')
+            return True
+        except error.HTTPError as exc:
+            if exc.code == 409 and tentativa < 4:
+                print(f'[ENTRADAS] Conflito simultâneo; recarregando e mesclando (tentativa {tentativa + 1}/5)')
+                time.sleep(0.2 * (tentativa + 1))
+                continue
+            print(f'[ENTRADAS] Falha GitHub HTTP {exc.code}; não confirmei a gravação')
+            break
+        except Exception as exc:
+            if tentativa < 4:
+                print(f'[ENTRADAS] Falha temporária; repetindo gravação ({tentativa + 1}/5): {exc}')
+                time.sleep(0.2 * (tentativa + 1))
+                continue
+            print(f'[ENTRADAS] Falha ao salvar no GitHub: {exc}')
+            break
+
+    # Guarda o estado recebido localmente para recuperação, sem afirmar que subiu ao GitHub.
+    try:
+        with open(ENTRADAS_FILE, 'w', encoding='utf-8') as f:
+            json.dump(registros, f, ensure_ascii=False, indent=2)
+    except Exception:
+        pass
+    return False
 
 def atualizar_entrada_historico(sinal, resultado):
     registros = _load_entradas()
@@ -553,15 +679,18 @@ def atualizar_entrada_historico(sinal, resultado):
             if str(r.get('fixture_id', '')) == fid and r.get('mercado') == mercado:
                 r['resultado'] = resultado
                 break
-    _save_entradas(registros)
+    if not _save_entradas(registros):
+        print(f'[ENTRADAS] Não confirmei no GitHub a atualização do resultado {fid}/{mercado}')
 
-def registrar_sinal(fid, mercado, home, away, message_id, extra_val=None, tipo=None, entry_sh=None, entry_sa=None, odd_b365=None, odd_bano=None, odd_mercado=None):
+def registrar_sinal(fid, mercado, home, away, message_id, extra_val=None, tipo=None, entry_sh=None, entry_sa=None, odd_b365=None, odd_bano=None, odd_mercado=None, signal_key=None):
+    timestamp_sinal = datetime.now(BRT).isoformat()
     sinais = _load_sinais_github()
-    sinais.append({'fixture_id': fid, 'mercado': mercado, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'tipo': tipo, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'odd_b365': odd_b365, 'odd_bano': odd_bano, 'odd_mercado': odd_mercado, 'timestamp': datetime.now(BRT).isoformat()})
+    sinais.append({'signal_key': signal_key, 'fixture_id': fid, 'mercado': mercado, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'tipo': tipo, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'odd_b365': odd_b365, 'odd_bano': odd_bano, 'odd_mercado': odd_mercado, 'timestamp': timestamp_sinal})
     _save_sinais_github(sinais)
     historico = _load_entradas()
-    historico.append({'fixture_id': fid, 'mercado': mercado, 'tipo': tipo, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'odd_b365': odd_b365, 'odd_bano': odd_bano, 'odd_mercado': odd_mercado, 'timestamp': datetime.now(BRT).isoformat(), 'resultado': 'pendente'})
-    _save_entradas(historico)
+    historico.append({'signal_key': signal_key, 'fixture_id': fid, 'mercado': mercado, 'tipo': tipo, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'odd_b365': odd_b365, 'odd_bano': odd_bano, 'odd_mercado': odd_mercado, 'timestamp': timestamp_sinal, 'resultado': 'pendente'})
+    if not _save_entradas(historico):
+        print(f'[ENTRADAS] Não confirmei no GitHub a nova entrada {fid}/{mercado}; odds={odd_mercado}')
 
 def atualizar_message_id_sinal(fid, mercado, message_id):
     """Atualiza o ID da mensagem depois do envio, sem perder o sinal já reservado."""
@@ -576,7 +705,8 @@ def atualizar_message_id_sinal(fid, mercado, message_id):
         for registro in reversed(entradas):
             if str(registro.get('fixture_id')) == str(fid) and registro.get('mercado') == mercado and not registro.get('message_id'):
                 registro['message_id'] = message_id or 0
-                _save_entradas(entradas)
+                if not _save_entradas(entradas):
+                    print(f'[ENTRADAS] Não confirmei no GitHub o message_id da entrada {fid}/{mercado}')
                 break
     except Exception as exc:
         print(f'[SINAIS] Não foi possível atualizar message_id: {exc}')
@@ -678,54 +808,66 @@ def _agregar_resultados(filtro_data=None):
     return dados, dias_ativos
 
 def _odd_financeira(registro):
-    """Retorna a odd exibida/salva para a entrada, na mesma prioridade do painel."""
-    for campo in ('odd_mercado', 'odd_bano', 'odd_b365'):
-        bruto = registro.get(campo)
-        if bruto is None or str(bruto).strip() == '':
-            continue
-        try:
-            odd = float(str(bruto).replace(',', '.'))
-        except (TypeError, ValueError):
-            continue
-        if odd > 1.0 and odd != float('inf'):
-            return odd
-    return None
+    """Usa somente a cotação exata exibida no alerta; sem substitutos por casa."""
+    bruto = registro.get('odd_mercado')
+    if bruto is None or str(bruto).strip() == '':
+        return None
+    try:
+        odd = float(str(bruto).replace(',', '.'))
+    except (TypeError, ValueError):
+        return None
+    return odd if odd > 1.0 and odd != float('inf') else None
 
 def _calcular_financeiro_por_mercado(filtro_data=None):
-    """Calcula somente GREEN/RED, usando odd_mercado e o tipo atual do mercado."""
+    """Calcula GREEN/RED por ID de mercado e data do resultado confirmado."""
     dados = {cod: {'stake_total': 0.0, 'stake_unit': 0.0, 'lucro': 0.0, 'financeiro_entradas': 0, 'financeiro_incompleto': 0} for cod in MAPA_MERCADO}
     try:
         config = carregar_config_github()
     except Exception:
         config = {}
     stakes = {}
-    tipos = {}
     for cod, info in (config or {}).items():
         try:
             valor = info.get('stake') if isinstance(info, dict) else None
             stakes[cod] = float(valor) if valor not in (None, '') else 0.0
         except (TypeError, ValueError):
             stakes[cod] = 0.0
-        tipo = info.get('tipo') if isinstance(info, dict) else None
-        tipos[cod] = str(tipo or '').strip().lower()
     for cod in dados:
         dados[cod]['stake_unit'] = stakes.get(cod, 0.0)
-    for r in _load_entradas():
-        cod = r.get('mercado')
-        resultado = str(r.get('resultado', '')).lower()
+
+    # Relatórios diários/mensais usam a data em que o resultado foi confirmado,
+    # não o timestamp da entrada (que pode ter ocorrido na noite anterior).
+    datas_resultados = {}
+    indices_datas = {}
+    if filtro_data is not None:
+        for resultado_registro in _load_resultados_github():
+            resultado = str(resultado_registro.get('resultado', '')).strip().lower()
+            if resultado not in ('green', 'red'):
+                continue
+            chave = (str(resultado_registro.get('fixture_id', '')), str(resultado_registro.get('mercado', '')), resultado)
+            data_resultado = str(resultado_registro.get('data') or '')
+            if not data_resultado and resultado_registro.get('timestamp'):
+                data_resultado = str(resultado_registro['timestamp'])[:10]
+            if data_resultado:
+                datas_resultados.setdefault(chave, []).append(data_resultado)
+
+    for registro in _load_entradas():
+        cod = registro.get('mercado')
+        resultado = str(registro.get('resultado', '')).strip().lower()
         if cod not in dados or resultado not in ('green', 'red'):
             continue
-        tipo_atual = tipos.get(cod, '')
-        tipo_registro = str(r.get('tipo') or '').strip().lower()
-        if tipo_atual and tipo_registro != tipo_atual:
-            continue
         if filtro_data is not None:
-            # Entradas usam timestamp; o recorte dos relatórios usa data.
-            registro_filtro = dict(r)
-            if not registro_filtro.get('data') and registro_filtro.get('timestamp'):
-                registro_filtro['data'] = str(registro_filtro['timestamp'])[:10]
-            if not filtro_data(registro_filtro):
+            chave = (str(registro.get('fixture_id', '')), str(cod), resultado)
+            datas = datas_resultados.get(chave, [])
+            indice = indices_datas.get(chave, 0)
+            if indice < len(datas):
+                data_registro = datas[indice]
+                indices_datas[chave] = indice + 1
+            else:
+                data_registro = str(registro.get('data') or registro.get('timestamp') or '')[:10]
+            if not filtro_data({'data': data_registro}):
                 continue
+
         stake = stakes.get(cod, 0.0)
         if stake <= 0:
             continue
@@ -734,7 +876,7 @@ def _calcular_financeiro_por_mercado(filtro_data=None):
         if resultado == 'red':
             dados[cod]['lucro'] -= stake
         else:
-            odd = _odd_financeira(r)
+            odd = _odd_financeira(registro)
             if odd is None:
                 dados[cod]['financeiro_incompleto'] += 1
             else:
@@ -3296,7 +3438,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             # Persiste primeiro para o painel não perder o sinal após o envio.
             # Salva a mesma cotação que a mensagem vai exibir em Odd Ao Vivo do Mercado.
             odd_mercado_registro = _odd_mercado_exibida(h, a, liga, ob365, odd_paripesa)
-            registrar_sinal(fid, mk, h, a, 0, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa, odd_b365=ob365, odd_bano=obano, odd_mercado=odd_mercado_registro)
+            registrar_sinal(fid, mk, h, a, 0, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa, odd_b365=ob365, odd_bano=obano, odd_mercado=odd_mercado_registro, signal_key=key)
             if notificar:
                 mid = send_telegram(msg_universal(h, a, m, liga, pais, 5, mk, cnome, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, odd_paripesa=odd_paripesa, nome=cnome, tipo=c_tipo, probabilidade=_probabilidade_para_sinal(stats, c_tipo, sh, sa, extra_val if 'escanteio' in c_tipo else 0), game_id=(j.get('paripesa_path') or fid)), marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
             else:
