@@ -439,6 +439,11 @@
           "campo": "dapm_10_total",
           "operador": "gte",
           "valor": 1.5
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 2
         }
       ]
     },
