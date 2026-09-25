@@ -5956,5 +5956,23 @@
     "odd_mercado": 1.77,
     "timestamp": "2026-09-25T17:29:43.096366-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "333cbd886ff7_custom_1790215000837_20260925",
+    "fixture_id": "19715945",
+    "mercado": "custom_1790215000837",
+    "tipo": "escanteio_ft",
+    "home": "FC Dordrecht",
+    "away": "Almere City",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": 2.05,
+    "odd_bano": null,
+    "odd_mercado": 2.152,
+    "timestamp": "2026-09-25T17:42:21.289807-03:00",
+    "resultado": "pendente"
   }
 ]
