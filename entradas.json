@@ -5848,5 +5848,23 @@
     "odd_mercado": 1.825,
     "timestamp": "2026-09-25T16:05:00.794244-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "b462c5174101_custom_1790213687442_20260925",
+    "fixture_id": "19763310",
+    "mercado": "custom_1790213687442",
+    "tipo": "over_gol",
+    "home": "Spartans",
+    "away": "Dundee U21",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.215,
+    "timestamp": "2026-09-25T17:00:45.596058-03:00",
+    "resultado": "pendente"
   }
 ]
