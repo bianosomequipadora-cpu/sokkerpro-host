@@ -5758,5 +5758,23 @@
     "odd_mercado": 1.755,
     "timestamp": "2026-09-25T15:42:26.447735-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5141daf3f7f1_custom_1790215000837_20260925",
+    "fixture_id": "19651846",
+    "mercado": "custom_1790215000837",
+    "tipo": "escanteio_ft",
+    "home": "Varhaug",
+    "away": "Staal Jørpeland",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.2,
+    "timestamp": "2026-09-25T15:44:24.166743-03:00",
+    "resultado": "pendente"
   }
 ]
