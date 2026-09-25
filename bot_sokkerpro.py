@@ -868,6 +868,11 @@ def _calcular_financeiro_por_mercado(filtro_data=None):
             if not filtro_data({'data': data_registro}):
                 continue
 
+        # Só entram no financeiro sinais liquidados que tenham a odd exata exibida.
+        # Sem odd, o resultado continua nas contagens, mas não altera stake, lucro ou ROI.
+        odd = _odd_financeira(registro)
+        if odd is None:
+            continue
         stake = stakes.get(cod, 0.0)
         if stake <= 0:
             continue
@@ -876,13 +881,9 @@ def _calcular_financeiro_por_mercado(filtro_data=None):
         if resultado == 'red':
             dados[cod]['lucro'] -= stake
         else:
-            odd = _odd_financeira(registro)
-            if odd is None:
-                dados[cod]['financeiro_incompleto'] += 1
-            else:
-                dados[cod]['lucro'] += stake * (odd - 1.0)
+            dados[cod]['lucro'] += stake * (odd - 1.0)
     for info in dados.values():
-        info['roi'] = None if info['financeiro_incompleto'] else (info['lucro'] / info['stake_total'] * 100 if info['stake_total'] > 0 else 0.0)
+        info['roi'] = info['lucro'] / info['stake_total'] * 100 if info['stake_total'] > 0 else 0.0
     return dados
 
 def _formatar_valor_investido(valor):
