@@ -5884,5 +5884,23 @@
     "odd_mercado": 1.33,
     "timestamp": "2026-09-25T17:05:47.547033-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "e2de03a711c1_custom_1790213687442_20260925",
+    "fixture_id": "19740763",
+    "mercado": "custom_1790213687442",
+    "tipo": "over_gol",
+    "home": "Aberystwyth Town",
+    "away": "Swansea University",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.45,
+    "timestamp": "2026-09-25T17:15:54.042627-03:00",
+    "resultado": "pendente"
   }
 ]
