@@ -5686,5 +5686,23 @@
     "odd_mercado": 2.56,
     "timestamp": "2026-09-25T15:36:46.470888-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "62938e3e6634_custom_1790214989396_20260925",
+    "fixture_id": "19884009",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Sfera U20",
+    "away": "XV de Piracicaba U20",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.3,
+    "odd_bano": null,
+    "odd_mercado": 2.65,
+    "timestamp": "2026-09-25T15:36:55.270328-03:00",
+    "resultado": "pendente"
   }
 ]
