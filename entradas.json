@@ -5506,5 +5506,23 @@
     "odd_mercado": 2.425,
     "timestamp": "2026-09-25T13:42:41.729370-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "10077aaadc3c_custom_1790199213646_20260925",
+    "fixture_id": "19671317",
+    "mercado": "custom_1790199213646",
+    "tipo": "gol_intervalo",
+    "home": "Landvetter IS",
+    "away": "Torslanda",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.44,
+    "odd_bano": null,
+    "odd_mercado": 1.384,
+    "timestamp": "2026-09-25T14:15:51.924601-03:00",
+    "resultado": "pendente"
   }
 ]
