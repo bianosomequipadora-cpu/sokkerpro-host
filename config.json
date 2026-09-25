@@ -80,6 +80,11 @@
           "campo": "prob_ht_over_0_5",
           "operador": "gte",
           "valor": 60
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 3
         }
       ]
     },
