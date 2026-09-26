@@ -6172,5 +6172,23 @@
     "odd_mercado": 1.71,
     "timestamp": "2026-09-26T07:16:53.240052-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "c39279db22cc_custom_1790214989396_20260926",
+    "fixture_id": "19761869",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Osasuna W",
+    "away": "Barcelona II W",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.54,
+    "timestamp": "2026-09-26T07:32:46.280071-03:00",
+    "resultado": "pendente"
   }
 ]
