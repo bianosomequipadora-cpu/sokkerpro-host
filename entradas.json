@@ -6316,5 +6316,23 @@
     "odd_mercado": 2.744,
     "timestamp": "2026-09-26T08:39:33.797022-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "58c346dcc326_custom_1790215023930_20260926",
+    "fixture_id": "19655711",
+    "mercado": "custom_1790215023930",
+    "tipo": "escanteio_ht",
+    "home": "Trollhättan",
+    "away": "Tvååker",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.744,
+    "timestamp": "2026-09-26T08:39:42.635008-03:00",
+    "resultado": "pendente"
   }
 ]
