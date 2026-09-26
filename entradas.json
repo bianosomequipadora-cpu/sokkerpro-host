@@ -6496,5 +6496,23 @@
     "odd_mercado": 1.3,
     "timestamp": "2026-09-26T10:16:04.035166-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "34443ca639b1_custom_1790220625106_20260926",
+    "fixture_id": "19651848",
+    "mercado": "custom_1790220625106",
+    "tipo": "gol_intervalo",
+    "home": "Brodd",
+    "away": "Vindbjart",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.41,
+    "timestamp": "2026-09-26T10:16:16.348380-03:00",
+    "resultado": "pendente"
   }
 ]
