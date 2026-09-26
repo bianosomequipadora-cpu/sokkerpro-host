@@ -8080,5 +8080,23 @@
     "odd_mercado": 1.75,
     "timestamp": "2026-09-26T17:44:10.513070-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "e694e81ef33c_custom_1790448918665_20260926",
+    "fixture_id": "19783541",
+    "mercado": "custom_1790448918665",
+    "tipo": "ambas_marcam",
+    "home": "St. Vincent and the Grenadines",
+    "away": "French Guiana",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.4,
+    "odd_bano": null,
+    "odd_mercado": 1.4,
+    "timestamp": "2026-09-26T18:16:58.333748-03:00",
+    "resultado": "pendente"
   }
 ]
