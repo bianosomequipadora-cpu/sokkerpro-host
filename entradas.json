@@ -6982,5 +6982,23 @@
     "odd_mercado": 1.275,
     "timestamp": "2026-09-26T12:15:55.584820-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f466a0a7c34b_custom_1790340691499_20260926",
+    "fixture_id": "19655708",
+    "mercado": "custom_1790340691499",
+    "tipo": "over_gol",
+    "home": "Skövde AIK",
+    "away": "Olympic",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.36,
+    "timestamp": "2026-09-26T12:21:55.130007-03:00",
+    "resultado": "pendente"
   }
 ]
