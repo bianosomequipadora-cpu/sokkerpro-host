@@ -6946,5 +6946,23 @@
     "odd_mercado": 1.75,
     "timestamp": "2026-09-26T11:42:22.503461-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9adf6731e98d_custom_1790215015195_20260926",
+    "fixture_id": "19885408",
+    "mercado": "custom_1790215015195",
+    "tipo": "escanteio_ft",
+    "home": "Chippa United U23",
+    "away": "Stellenbosch U23",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.79,
+    "timestamp": "2026-09-26T11:42:29.735553-03:00",
+    "resultado": "pendente"
   }
 ]
