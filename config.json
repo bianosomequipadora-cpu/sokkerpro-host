@@ -316,7 +316,7 @@
     },
     "custom_1790448918665": {
       "ativo": true,
-      "notificar": true,
+      "notificar": false,
       "nome": "Teste de casas ",
       "minuto_inicio": 2,
       "minuto_fim": 89,
@@ -325,7 +325,7 @@
       "stake": 10,
       "placar_valido": "",
       "criterios": {
-        "situacao_favorito": ""
+        "situacao_favorito": "perdendo"
       },
       "criterios_api": []
     }
