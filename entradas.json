@@ -6460,5 +6460,23 @@
     "odd_mercado": 2.34,
     "timestamp": "2026-09-26T09:45:23.864143-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9449630c89cb_custom_1790215000837_20260926",
+    "fixture_id": "19885435",
+    "mercado": "custom_1790215000837",
+    "tipo": "escanteio_ft",
+    "home": "Durban City U23",
+    "away": "Mamelodi Sundowns U23",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.29,
+    "timestamp": "2026-09-26T09:45:57.159883-03:00",
+    "resultado": "pendente"
   }
 ]
