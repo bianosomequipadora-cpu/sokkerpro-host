@@ -7252,5 +7252,23 @@
     "odd_mercado": 1.555,
     "timestamp": "2026-09-26T15:19:48.832731-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4e9f4be62319_custom_1790214989396_20260926",
+    "fixture_id": "19884002",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Ferroviária U20",
+    "away": "Flamengo SP U20",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-09-26T15:35:45.577925-03:00",
+    "resultado": "pendente"
   }
 ]
