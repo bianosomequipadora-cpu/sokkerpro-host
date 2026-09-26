@@ -7414,5 +7414,23 @@
     "odd_mercado": null,
     "timestamp": "2026-09-26T15:58:19.346250-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d0df217b1d29_custom_1790448918665_20260926",
+    "fixture_id": "19714736",
+    "mercado": "custom_1790448918665",
+    "tipo": "ambas_marcam",
+    "home": "Goiânia",
+    "away": "Tupy Jussara",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 3.344,
+    "timestamp": "2026-09-26T15:58:28.167362-03:00",
+    "resultado": "pendente"
   }
 ]
