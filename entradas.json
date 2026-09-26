@@ -8026,5 +8026,23 @@
     "odd_mercado": 1.23,
     "timestamp": "2026-09-26T17:23:17.176339-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5adaf9fd1246_custom_1790448918665_20260926",
+    "fixture_id": "19667540",
+    "mercado": "custom_1790448918665",
+    "tipo": "ambas_marcam",
+    "home": "HFX Wanderers",
+    "away": "Atlético Ottawa",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.2,
+    "odd_bano": null,
+    "odd_mercado": 1.2,
+    "timestamp": "2026-09-26T17:27:30.311224-03:00",
+    "resultado": "pendente"
   }
 ]
