@@ -6550,5 +6550,23 @@
     "odd_mercado": 1.715,
     "timestamp": "2026-09-26T10:21:17.240434-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "08b3af277d8c_custom_1790199213646_20260926",
+    "fixture_id": "19880980",
+    "mercado": "custom_1790199213646",
+    "tipo": "gol_intervalo",
+    "home": "TPV",
+    "away": "Jazz",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.54,
+    "timestamp": "2026-09-26T10:23:35.784791-03:00",
+    "resultado": "pendente"
   }
 ]
