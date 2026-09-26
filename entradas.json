@@ -5974,5 +5974,23 @@
     "odd_mercado": 2.152,
     "timestamp": "2026-09-25T17:42:21.289807-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "465854937d03_custom_1790215023930_20260925",
+    "fixture_id": "19783510",
+    "mercado": "custom_1790215023930",
+    "tipo": "escanteio_ht",
+    "home": "Jamaica",
+    "away": "Guatemala",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 3.12,
+    "timestamp": "2026-09-25T21:38:26.329261-03:00",
+    "resultado": "pendente"
   }
 ]
