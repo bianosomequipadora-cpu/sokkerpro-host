@@ -7972,5 +7972,23 @@
     "odd_mercado": 1.79,
     "timestamp": "2026-09-26T17:12:33.720322-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "49e7d9152410_custom_1790448918665_20260926",
+    "fixture_id": "19713149",
+    "mercado": "custom_1790448918665",
+    "tipo": "ambas_marcam",
+    "home": "Tigres",
+    "away": "Real San Andres",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.83,
+    "odd_bano": null,
+    "odd_mercado": 1.825,
+    "timestamp": "2026-09-26T17:21:10.319793-03:00",
+    "resultado": "pendente"
   }
 ]
