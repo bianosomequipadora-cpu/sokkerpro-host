@@ -7450,5 +7450,23 @@
     "odd_mercado": 2.635,
     "timestamp": "2026-09-26T15:58:37.065517-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "1f219779762c_custom_1790448918665_20260926",
+    "fixture_id": "19787163",
+    "mercado": "custom_1790448918665",
+    "tipo": "ambas_marcam",
+    "home": "Sambenedettese",
+    "away": "Campobasso",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.5,
+    "odd_bano": null,
+    "odd_mercado": 2.495,
+    "timestamp": "2026-09-26T15:58:46.260736-03:00",
+    "resultado": "pendente"
   }
 ]
