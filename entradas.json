@@ -7468,5 +7468,23 @@
     "odd_mercado": 2.495,
     "timestamp": "2026-09-26T15:58:46.260736-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c736c89ea9eb_custom_1790448918665_20260926",
+    "fixture_id": "19784113",
+    "mercado": "custom_1790448918665",
+    "tipo": "ambas_marcam",
+    "home": "Cavese",
+    "away": "Savoia",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.61,
+    "odd_bano": null,
+    "odd_mercado": 1.57,
+    "timestamp": "2026-09-26T15:58:55.241875-03:00",
+    "resultado": "pendente"
   }
 ]
