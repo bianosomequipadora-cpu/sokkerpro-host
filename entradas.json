@@ -7666,5 +7666,23 @@
     "odd_mercado": 1.615,
     "timestamp": "2026-09-26T16:14:08.164026-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f5138d1a6f97_custom_1790448918665_20260926",
+    "fixture_id": "19820143",
+    "mercado": "custom_1790448918665",
+    "tipo": "ambas_marcam",
+    "home": "Laguna",
+    "away": "Marino",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.42,
+    "timestamp": "2026-09-26T16:19:36.534700-03:00",
+    "resultado": "pendente"
   }
 ]
