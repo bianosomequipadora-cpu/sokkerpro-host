@@ -7936,5 +7936,23 @@
     "odd_mercado": null,
     "timestamp": "2026-09-26T17:02:31.389758-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d83b770aa153_custom_1790448918665_20260926",
+    "fixture_id": "19733452",
+    "mercado": "custom_1790448918665",
+    "tipo": "ambas_marcam",
+    "home": "Thionville Lusitanos",
+    "away": "La Roche",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 2.25,
+    "odd_bano": null,
+    "odd_mercado": 2.395,
+    "timestamp": "2026-09-26T17:07:20.026158-03:00",
+    "resultado": "pendente"
   }
 ]
