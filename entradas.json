@@ -7954,5 +7954,23 @@
     "odd_mercado": 2.395,
     "timestamp": "2026-09-26T17:07:20.026158-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b58c8a21d145_custom_1790448918665_20260926",
+    "fixture_id": "19745712",
+    "mercado": "custom_1790448918665",
+    "tipo": "ambas_marcam",
+    "home": "Rubio Ñú",
+    "away": "2 de Mayo",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.83,
+    "odd_bano": null,
+    "odd_mercado": 1.79,
+    "timestamp": "2026-09-26T17:12:33.720322-03:00",
+    "resultado": "pendente"
   }
 ]
