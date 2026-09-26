@@ -7918,5 +7918,23 @@
     "odd_mercado": 1.52,
     "timestamp": "2026-09-26T16:50:51.646277-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "72b7609e21ec_custom_1790448918665_20260926",
+    "fixture_id": "19676688",
+    "mercado": "custom_1790448918665",
+    "tipo": "ambas_marcam",
+    "home": "England",
+    "away": "Spain",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-09-26T17:02:31.389758-03:00",
+    "resultado": "pendente"
   }
 ]
