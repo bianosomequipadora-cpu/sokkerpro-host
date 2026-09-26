@@ -6442,5 +6442,23 @@
     "odd_mercado": 2.34,
     "timestamp": "2026-09-26T09:45:13.245981-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "91d37d799e2f_custom_1790215403340_20260926",
+    "fixture_id": "19784299",
+    "mercado": "custom_1790215403340",
+    "tipo": "escanteio_ft",
+    "home": "Burnley W",
+    "away": "Bristol City W",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.05,
+    "odd_bano": null,
+    "odd_mercado": 2.34,
+    "timestamp": "2026-09-26T09:45:23.864143-03:00",
+    "resultado": "pendente"
   }
 ]
