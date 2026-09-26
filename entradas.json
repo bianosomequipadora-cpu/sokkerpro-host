@@ -7108,5 +7108,23 @@
     "odd_mercado": 1.34,
     "timestamp": "2026-09-26T13:47:33.340983-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "56295275ce88_custom_1790213687442_20260926",
+    "fixture_id": "19837533",
+    "mercado": "custom_1790213687442",
+    "tipo": "over_gol",
+    "home": "Don Benito",
+    "away": "Sanluqueño",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.495,
+    "timestamp": "2026-09-26T14:19:20.277074-03:00",
+    "resultado": "pendente"
   }
 ]
