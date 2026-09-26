@@ -6622,5 +6622,23 @@
     "odd_mercado": 1.44,
     "timestamp": "2026-09-26T10:32:03.111075-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "723578b44044_custom_1790214989396_20260926",
+    "fixture_id": "19880739",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Kenya",
+    "away": "Eritrea",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 2.175,
+    "timestamp": "2026-09-26T10:38:53.717225-03:00",
+    "resultado": "pendente"
   }
 ]
