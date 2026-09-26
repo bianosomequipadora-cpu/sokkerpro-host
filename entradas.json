@@ -7846,5 +7846,23 @@
     "odd_mercado": null,
     "timestamp": "2026-09-26T16:40:49.516554-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "85a7b7bfd155_custom_1790215008666_20260926",
+    "fixture_id": "19667669",
+    "mercado": "custom_1790215008666",
+    "tipo": "escanteio_ft",
+    "home": "Cobreloa",
+    "away": "Santiago Wanderers",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.736,
+    "timestamp": "2026-09-26T16:47:44.589883-03:00",
+    "resultado": "pendente"
   }
 ]
