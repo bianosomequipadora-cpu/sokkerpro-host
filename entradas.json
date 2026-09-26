@@ -6820,5 +6820,23 @@
     "odd_mercado": 1.816,
     "timestamp": "2026-09-26T11:36:46.496751-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6f46c57876d4_custom_1790214989396_20260926",
+    "fixture_id": "19727691",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Tranmere Rovers",
+    "away": "Walsall",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.79,
+    "timestamp": "2026-09-26T11:37:01.941323-03:00",
+    "resultado": "pendente"
   }
 ]
