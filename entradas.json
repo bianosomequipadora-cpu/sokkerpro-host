@@ -7702,5 +7702,23 @@
     "odd_mercado": 1.43,
     "timestamp": "2026-09-26T16:23:02.302226-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "fa55f74e716b_custom_1790448918665_20260926",
+    "fixture_id": "19734587",
+    "mercado": "custom_1790448918665",
+    "tipo": "ambas_marcam",
+    "home": "Portuguesa RJ U20",
+    "away": "Bangu U20",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 2,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-09-26T16:23:14.743349-03:00",
+    "resultado": "pendente"
   }
 ]
