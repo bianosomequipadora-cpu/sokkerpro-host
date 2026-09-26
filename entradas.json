@@ -7162,5 +7162,23 @@
     "odd_mercado": 1.248,
     "timestamp": "2026-09-26T15:15:30.683687-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "8602b9c7d849_custom_1790444747806_20260926",
+    "fixture_id": "19637921",
+    "mercado": "custom_1790444747806",
+    "tipo": "gol_intervalo",
+    "home": "Arsenal de Sarandí",
+    "away": "Liniers",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.8,
+    "odd_bano": null,
+    "odd_mercado": 1.784,
+    "timestamp": "2026-09-26T15:17:15.899135-03:00",
+    "resultado": "pendente"
   }
 ]
