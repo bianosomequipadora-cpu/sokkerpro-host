@@ -7774,5 +7774,23 @@
     "odd_mercado": 3.4,
     "timestamp": "2026-09-26T16:26:02.769576-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d9088075de21_custom_1790448918665_20260926",
+    "fixture_id": "19733448",
+    "mercado": "custom_1790448918665",
+    "tipo": "ambas_marcam",
+    "home": "Paris 13 Atletico",
+    "away": "Bastia",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.03,
+    "timestamp": "2026-09-26T16:26:39.659304-03:00",
+    "resultado": "pendente"
   }
 ]
