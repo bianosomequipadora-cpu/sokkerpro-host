@@ -8134,5 +8134,23 @@
     "odd_mercado": 1.035,
     "timestamp": "2026-09-26T18:46:58.676678-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7461b4e4b70a_custom_1790214989396_20260926",
+    "fixture_id": "19813815",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "The Strongest",
+    "away": "Guabirá",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.6,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-09-26T19:05:27.258916-03:00",
+    "resultado": "pendente"
   }
 ]
