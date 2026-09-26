@@ -6874,5 +6874,23 @@
     "odd_mercado": 2.03,
     "timestamp": "2026-09-26T11:38:40.746071-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4ca9b8ba5fdc_custom_1790214989396_20260926",
+    "fixture_id": "19748221",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Worthing",
+    "away": "Halifax Town",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 3.4,
+    "timestamp": "2026-09-26T11:39:11.026138-03:00",
+    "resultado": "pendente"
   }
 ]
