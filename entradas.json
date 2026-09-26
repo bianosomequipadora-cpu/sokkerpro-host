@@ -7828,5 +7828,23 @@
     "odd_mercado": 1.98,
     "timestamp": "2026-09-26T16:37:25.216627-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "caea472aad00_custom_1790448918665_20260926",
+    "fixture_id": "19835848",
+    "mercado": "custom_1790448918665",
+    "tipo": "ambas_marcam",
+    "home": "RCS Brainois",
+    "away": "Union Namur",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-09-26T16:40:49.516554-03:00",
+    "resultado": "pendente"
   }
 ]
