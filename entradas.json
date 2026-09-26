@@ -6712,5 +6712,23 @@
     "odd_mercado": 3.03,
     "timestamp": "2026-09-26T11:14:18.791493-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "106a5824cf97_custom_1790215000837_20260926",
+    "fixture_id": "19789865",
+    "mercado": "custom_1790215000837",
+    "tipo": "escanteio_ft",
+    "home": "Carrarese U19",
+    "away": "Alcione Milano U19",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.3,
+    "timestamp": "2026-09-26T11:20:08.474783-03:00",
+    "resultado": "pendente"
   }
 ]
