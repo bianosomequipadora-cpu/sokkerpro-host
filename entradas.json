@@ -7576,5 +7576,23 @@
     "odd_mercado": null,
     "timestamp": "2026-09-26T16:00:54.163739-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b394dc30577c_custom_1790448918665_20260926",
+    "fixture_id": "19733449",
+    "mercado": "custom_1790448918665",
+    "tipo": "ambas_marcam",
+    "home": "Bourg-en-Bresse",
+    "away": "Concarneau",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.62,
+    "odd_bano": null,
+    "odd_mercado": 2.635,
+    "timestamp": "2026-09-26T16:01:05.476964-03:00",
+    "resultado": "pendente"
   }
 ]
