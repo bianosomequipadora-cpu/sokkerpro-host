@@ -5,7 +5,7 @@
       "ativo": true,
       "notificar": true,
       "nome": "⚽️💥OVER 0.5 GOL PARTIDA💥⚽️ ",
-      "minuto_inicio": 55,
+      "minuto_inicio": 63,
       "minuto_fim": 72,
       "periodo": 2,
       "tipo": "over_gol",
@@ -314,20 +314,36 @@
         }
       ]
     },
-    "custom_1790448918665": {
+    "custom_1790461985356": {
       "ativo": true,
       "notificar": false,
-      "nome": "Teste de casas ",
-      "minuto_inicio": 2,
-      "minuto_fim": 89,
+      "nome": "Teste de casas  — CÓPIA",
+      "minuto_inicio": 60,
+      "minuto_fim": 72,
       "periodo": 3,
       "tipo": "ambas_marcam",
       "stake": 10,
-      "placar_valido": "",
+      "placar_valido": "1x0, 0x1",
       "criterios": {
         "situacao_favorito": "perdendo"
       },
-      "criterios_api": []
+      "criterios_api": [
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 1
+        },
+        {
+          "campo": "media_gols_partida_min",
+          "operador": "gte",
+          "valor": 2.5
+        },
+        {
+          "campo": "prob_1x2_casa_ou_fora",
+          "operador": "gte",
+          "valor": 70
+        }
+      ]
     }
   }
 }
