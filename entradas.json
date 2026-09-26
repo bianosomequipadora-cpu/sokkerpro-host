@@ -7018,5 +7018,23 @@
     "odd_mercado": 1.384,
     "timestamp": "2026-09-26T12:40:50.925257-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6eb60f030d24_custom_1790215008666_20260926",
+    "fixture_id": "19746223",
+    "mercado": "custom_1790215008666",
+    "tipo": "escanteio_ft",
+    "home": "Oxford City",
+    "away": "Morecambe",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.9,
+    "timestamp": "2026-09-26T12:43:40.251968-03:00",
+    "resultado": "pendente"
   }
 ]
