@@ -7540,5 +7540,23 @@
     "odd_mercado": 5.05,
     "timestamp": "2026-09-26T15:59:22.490420-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "119c2a209b14_custom_1790448918665_20260926",
+    "fixture_id": "19738053",
+    "mercado": "custom_1790448918665",
+    "tipo": "ambas_marcam",
+    "home": "Bulle",
+    "away": "FC Schaffhausen",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 2.37,
+    "odd_bano": null,
+    "odd_mercado": 2.28,
+    "timestamp": "2026-09-26T15:59:31.378715-03:00",
+    "resultado": "pendente"
   }
 ]
