@@ -8278,5 +8278,23 @@
     "odd_mercado": 1.45,
     "timestamp": "2026-09-26T20:29:41.981752-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "2cf7d973fb70_custom_1790437034606_20260926",
+    "fixture_id": "19881332",
+    "mercado": "custom_1790437034606",
+    "tipo": "escanteio_ft",
+    "home": "Champ's Guatemala",
+    "away": "AFF Guatemala",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.52,
+    "timestamp": "2026-09-26T20:47:03.007366-03:00",
+    "resultado": "pendente"
   }
 ]
