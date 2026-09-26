@@ -2458,9 +2458,14 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     nome_completo = str(home).strip()
     from urllib.parse import quote
     nome_busca = quote(nome_completo, safe='')
-    url_bet365 = f'https://www.bet365.bet.br/#/AX/K%5E{nome_busca}/'
+    game_path = str(game_id).strip().strip('/') if game_id is not None else ''
+    game_path_parts = game_path.split('/')
+    if len(game_path_parts) == 2 and all('-' in part for part in game_path_parts):
+        url_betwinner = f'https://betwinner-21365.pro/br/live/football/{game_path}'
+    else:
+        url_betwinner = 'https://betwinner-21365.pro/br/live/football/'
     url_paripesa = f'https://paripesa.com/br/live/football/{game_id}' if game_id not in (None, '') else 'https://paripesa.com/br/live/football/'
-    keyboard = {'inline_keyboard': [[{'text': '🟣BET365🟣', 'url': url_bet365}, {'text': '🟠PARIPESA🟠', 'url': url_paripesa}]]}
+    keyboard = {'inline_keyboard': [[{'text': '🟣BETWINNER🟣', 'url': url_betwinner}, {'text': '🟠PARIPESA🟠', 'url': url_paripesa}]]}
     return (msg, keyboard)
 
 def _buscar_detalhe_fixture(fid_raw):
