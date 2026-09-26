@@ -7090,5 +7090,23 @@
     "odd_mercado": 1.975,
     "timestamp": "2026-09-26T13:35:49.287035-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b9e8b0b659f7_custom_1790438667502_20260926",
+    "fixture_id": "19651301",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Lokomotiv Oslo",
+    "away": "Gamle Oslo",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.34,
+    "timestamp": "2026-09-26T13:47:33.340983-03:00",
+    "resultado": "pendente"
   }
 ]
