@@ -7612,5 +7612,23 @@
     "odd_mercado": 1.368,
     "timestamp": "2026-09-26T16:02:55.327153-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7fd3f8ecdeba_custom_1790448918665_20260926",
+    "fixture_id": "19733307",
+    "mercado": "custom_1790448918665",
+    "tipo": "ambas_marcam",
+    "home": "Fleury 91",
+    "away": "SC Aubagne Air Bel",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.25,
+    "odd_bano": null,
+    "odd_mercado": 1.225,
+    "timestamp": "2026-09-26T16:05:46.595029-03:00",
+    "resultado": "pendente"
   }
 ]
