@@ -7360,5 +7360,23 @@
     "odd_mercado": 2.93,
     "timestamp": "2026-09-26T15:57:51.050323-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7eb879461def_custom_1790448918665_20260926",
+    "fixture_id": "19737070",
+    "mercado": "custom_1790448918665",
+    "tipo": "ambas_marcam",
+    "home": "Ninove",
+    "away": "Racing Club Gent",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 6,
+    "entry_sa": 2,
+    "entry_total": 8,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-09-26T15:58:00.459165-03:00",
+    "resultado": "pendente"
   }
 ]
