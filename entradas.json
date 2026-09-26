@@ -6802,5 +6802,23 @@
     "odd_mercado": 1.67,
     "timestamp": "2026-09-26T11:36:19.925351-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "211fbba6676d_custom_1790214989396_20260926",
+    "fixture_id": "19727701",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Bristol Rovers",
+    "away": "Exeter City",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.816,
+    "timestamp": "2026-09-26T11:36:46.496751-03:00",
+    "resultado": "pendente"
   }
 ]
