@@ -8062,5 +8062,23 @@
     "odd_mercado": 1.3,
     "timestamp": "2026-09-26T17:31:06.344019-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c689d765db25_custom_1790437034606_20260926",
+    "fixture_id": "19636873",
+    "mercado": "custom_1790437034606",
+    "tipo": "escanteio_ft",
+    "home": "All Boys",
+    "away": "Club Atletico Colón",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.75,
+    "timestamp": "2026-09-26T17:44:10.513070-03:00",
+    "resultado": "pendente"
   }
 ]
