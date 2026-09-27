@@ -8512,5 +8512,23 @@
     "odd_mercado": 1.408,
     "timestamp": "2026-09-27T08:17:51.208621-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "8ac9278e532b_custom_1790215008666_20260927",
+    "fixture_id": "19650568",
+    "mercado": "custom_1790215008666",
+    "tipo": "escanteio_ft",
+    "home": "Arendal",
+    "away": "Brattvåg",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.47,
+    "timestamp": "2026-09-27T09:40:44.944735-03:00",
+    "resultado": "pendente"
   }
 ]
