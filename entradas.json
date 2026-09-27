@@ -8908,5 +8908,23 @@
     "odd_mercado": 1.67,
     "timestamp": "2026-09-27T13:06:37.428611-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "e4d71cd6e0aa_custom_1790215023930_20260927",
+    "fixture_id": "19787159",
+    "mercado": "custom_1790215023930",
+    "tipo": "escanteio_ht",
+    "home": "Vis Pesaro",
+    "away": "Guidonia Montecelio 1937 FC",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.69,
+    "timestamp": "2026-09-27T13:08:48.838797-03:00",
+    "resultado": "pendente"
   }
 ]
