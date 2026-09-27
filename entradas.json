@@ -8476,5 +8476,23 @@
     "odd_mercado": 1.715,
     "timestamp": "2026-09-27T07:19:34.211521-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "666e339f2e24_custom_1790438667502_20260927",
+    "fixture_id": "19629785",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Brommapojkarna W",
+    "away": "Malmö FF W",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.392,
+    "timestamp": "2026-09-27T08:15:53.026845-03:00",
+    "resultado": "pendente"
   }
 ]
