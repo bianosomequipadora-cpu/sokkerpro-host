@@ -8404,5 +8404,23 @@
     "odd_mercado": 2.0,
     "timestamp": "2026-09-26T23:05:23.509381-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "d11d27ff6cf1_custom_1790438667502_20260927",
+    "fixture_id": "19669477",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Viamaterras Miyazaki W",
+    "away": "Shizuoka SSU Bonita W",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.61,
+    "odd_bano": null,
+    "odd_mercado": 1.625,
+    "timestamp": "2026-09-27T01:16:51.826363-03:00",
+    "resultado": "pendente"
   }
 ]
