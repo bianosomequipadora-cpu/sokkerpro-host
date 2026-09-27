@@ -311,6 +311,21 @@
           "campo": "media_gols_partida_min",
           "operador": "gte",
           "valor": 2.5
+        },
+        {
+          "campo": "chutes_totais_min",
+          "operador": "gte",
+          "valor": 5
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 1
+        },
+        {
+          "campo": "escanteios_minimos",
+          "operador": "gte",
+          "valor": 1
         }
       ]
     },
