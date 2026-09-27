@@ -9106,5 +9106,23 @@
     "odd_mercado": 1.67,
     "timestamp": "2026-09-27T16:45:02.511128-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "9729e6ad847e_custom_1790437034606_20260927",
+    "fixture_id": "19884914",
+    "mercado": "custom_1790437034606",
+    "tipo": "escanteio_ft",
+    "home": "Defensores Belgrano VR",
+    "away": "Alvarado",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 1.77,
+    "odd_bano": null,
+    "odd_mercado": 1.875,
+    "timestamp": "2026-09-27T17:15:31.185929-03:00",
+    "resultado": "pendente"
   }
 ]
