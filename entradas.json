@@ -8998,5 +8998,23 @@
     "odd_mercado": 1.165,
     "timestamp": "2026-09-27T15:15:36.146429-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "ed38fad91659_custom_1790438667502_20260927",
+    "fixture_id": "19676684",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Norway",
+    "away": "Portugal",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.5,
+    "odd_bano": null,
+    "odd_mercado": 1.5,
+    "timestamp": "2026-09-27T16:02:15.880275-03:00",
+    "resultado": "pendente"
   }
 ]
