@@ -8926,5 +8926,23 @@
     "odd_mercado": 2.69,
     "timestamp": "2026-09-27T13:08:48.838797-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "e95bf9aea2de_custom_1790444747806_20260927",
+    "fixture_id": "19676687",
+    "mercado": "custom_1790444747806",
+    "tipo": "gol_intervalo",
+    "home": "Serbia",
+    "away": "Netherlands",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.66,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-09-27T13:22:42.521057-03:00",
+    "resultado": "pendente"
   }
 ]
