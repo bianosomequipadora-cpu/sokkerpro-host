@@ -8728,5 +8728,23 @@
     "odd_mercado": 1.47,
     "timestamp": "2026-09-27T11:18:00.534519-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "3b3d03703f57_custom_1790437034606_20260927",
+    "fixture_id": "19786781",
+    "mercado": "custom_1790437034606",
+    "tipo": "escanteio_ft",
+    "home": "Union Brescia",
+    "away": "Dolomiti Bellunesi",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.47,
+    "timestamp": "2026-09-27T11:18:08.965502-03:00",
+    "resultado": "pendente"
   }
 ]
