@@ -8656,5 +8656,23 @@
     "odd_mercado": 1.89,
     "timestamp": "2026-09-27T10:23:30.326650-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "88df45cf242c_custom_1790215023930_20260927",
+    "fixture_id": "19884001",
+    "mercado": "custom_1790215023930",
+    "tipo": "escanteio_ht",
+    "home": "Novorizontino U20",
+    "away": "Portuguesa Santista U20",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 1.72,
+    "timestamp": "2026-09-27T10:36:56.271143-03:00",
+    "resultado": "pendente"
   }
 ]
