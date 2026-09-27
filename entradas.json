@@ -8980,5 +8980,23 @@
     "odd_mercado": 1.165,
     "timestamp": "2026-09-27T15:15:28.453156-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "edb8fd88bcde_custom_1790444747806_20260927",
+    "fixture_id": "19883997",
+    "mercado": "custom_1790444747806",
+    "tipo": "gol_intervalo",
+    "home": "Bragantino U20",
+    "away": "Bandeirante U20",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.16,
+    "odd_bano": null,
+    "odd_mercado": 1.165,
+    "timestamp": "2026-09-27T15:15:36.146429-03:00",
+    "resultado": "pendente"
   }
 ]
