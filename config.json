@@ -314,14 +314,14 @@
         }
       ]
     },
-    "custom_1790461985356": {
+    "custom_1790471307455": {
       "ativo": true,
       "notificar": true,
-      "nome": "⚽️🥅AMBAS MARCAM SIM🥅⚽️",
+      "nome": "⚽️🔥OVER 1.5 GOLS PARTIDA🔥⚽️",
       "minuto_inicio": 60,
       "minuto_fim": 72,
       "periodo": 3,
-      "tipo": "ambas_marcam",
+      "tipo": "over_15",
       "stake": 10,
       "placar_valido": "1x0, 0x1",
       "criterios": {
