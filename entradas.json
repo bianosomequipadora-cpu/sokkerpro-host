@@ -9070,5 +9070,23 @@
     "odd_mercado": 1.685,
     "timestamp": "2026-09-27T16:29:53.586293-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "bc50e3bff325_custom_1790215023930_20260927",
+    "fixture_id": "19713150",
+    "mercado": "custom_1790215023930",
+    "tipo": "escanteio_ht",
+    "home": "Envigado",
+    "away": "Atlético",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.225,
+    "timestamp": "2026-09-27T16:36:51.589746-03:00",
+    "resultado": "pendente"
   }
 ]
