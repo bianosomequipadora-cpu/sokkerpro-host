@@ -8764,5 +8764,23 @@
     "odd_mercado": 2.11,
     "timestamp": "2026-09-27T11:20:10.727528-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f23d60a0e2f7_custom_1790444747806_20260927",
+    "fixture_id": "19854129",
+    "mercado": "custom_1790444747806",
+    "tipo": "gol_intervalo",
+    "home": "Merelbeke",
+    "away": "KAS Eupen",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.66,
+    "odd_bano": null,
+    "odd_mercado": 1.68,
+    "timestamp": "2026-09-27T11:26:13.931644-03:00",
+    "resultado": "pendente"
   }
 ]
