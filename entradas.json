@@ -8836,5 +8836,23 @@
     "odd_mercado": 1.42,
     "timestamp": "2026-09-27T11:42:53.340780-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "0fe5658d1ca7_custom_1790471307455_20260927",
+    "fixture_id": "19650749",
+    "mercado": "custom_1790471307455",
+    "tipo": "over_15",
+    "home": "Levanger",
+    "away": "Grorud",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.408,
+    "timestamp": "2026-09-27T12:29:55.765826-03:00",
+    "resultado": "pendente"
   }
 ]
