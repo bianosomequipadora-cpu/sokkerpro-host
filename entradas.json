@@ -9034,5 +9034,23 @@
     "odd_mercado": 1.5,
     "timestamp": "2026-09-27T16:02:26.230959-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "ed38fad91659_custom_1790214989396_20260927",
+    "fixture_id": "19676684",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Norway",
+    "away": "Portugal",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.84,
+    "timestamp": "2026-09-27T16:24:32.678756-03:00",
+    "resultado": "pendente"
   }
 ]
