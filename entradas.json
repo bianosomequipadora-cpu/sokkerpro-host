@@ -8350,5 +8350,23 @@
     "odd_mercado": 1.655,
     "timestamp": "2026-09-26T21:57:13.570782-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b3ba486b2bb8_custom_1790444747806_20260926",
+    "fixture_id": "19764422",
+    "mercado": "custom_1790444747806",
+    "tipo": "gol_intervalo",
+    "home": "Árabe Unido II",
+    "away": "Plaza Amador II",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.57,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-09-26T22:16:56.143564-03:00",
+    "resultado": "pendente"
   }
 ]
