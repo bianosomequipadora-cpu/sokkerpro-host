@@ -8854,5 +8854,23 @@
     "odd_mercado": 1.408,
     "timestamp": "2026-09-27T12:29:55.765826-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "38afdd901e0a_custom_1790471307455_20260927",
+    "fixture_id": "19791764",
+    "mercado": "custom_1790471307455",
+    "tipo": "over_15",
+    "home": "Dvůr Králové",
+    "away": "Přepeře",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.31,
+    "timestamp": "2026-09-27T12:52:29.466404-03:00",
+    "resultado": "pendente"
   }
 ]
