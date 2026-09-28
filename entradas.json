@@ -9304,5 +9304,23 @@
     "odd_mercado": 2.02,
     "timestamp": "2026-09-28T16:39:12.031258-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "a858427b786f_custom_1790214981575_20260928",
+    "fixture_id": "19884109",
+    "mercado": "custom_1790214981575",
+    "tipo": "escanteio_ht",
+    "home": "Paysandu FC",
+    "away": "Tacuarembó",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.46,
+    "timestamp": "2026-09-28T19:31:48.159666-03:00",
+    "resultado": "pendente"
   }
 ]
