@@ -9196,5 +9196,23 @@
     "odd_mercado": 1.384,
     "timestamp": "2026-09-28T13:16:59.721154-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "3c9c76f06d28_custom_1790444747806_20260928",
+    "fixture_id": "19637456",
+    "mercado": "custom_1790444747806",
+    "tipo": "gol_intervalo",
+    "home": "Leones de Rosario",
+    "away": "Luján",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.2,
+    "odd_bano": null,
+    "odd_mercado": 2.175,
+    "timestamp": "2026-09-28T15:21:53.799774-03:00",
+    "resultado": "pendente"
   }
 ]
