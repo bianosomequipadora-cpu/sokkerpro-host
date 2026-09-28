@@ -9160,5 +9160,23 @@
     "odd_mercado": 1.6,
     "timestamp": "2026-09-27T18:43:50.938282-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "622f67d17f15_custom_1790438667502_20260928",
+    "fixture_id": "19720843",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Hapoel Kfar Saba",
+    "away": "Bnei Yehuda",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.44,
+    "odd_bano": null,
+    "odd_mercado": 1.384,
+    "timestamp": "2026-09-28T13:16:48.338293-03:00",
+    "resultado": "pendente"
   }
 ]
