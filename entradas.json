@@ -9286,5 +9286,23 @@
     "odd_mercado": 1.744,
     "timestamp": "2026-09-28T16:37:12.244105-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0a04fcb43c54_custom_1790214981575_20260928",
+    "fixture_id": "19880780",
+    "mercado": "custom_1790214981575",
+    "tipo": "escanteio_ht",
+    "home": "Tunisia",
+    "away": "Botswana",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.15,
+    "odd_bano": null,
+    "odd_mercado": 2.02,
+    "timestamp": "2026-09-28T16:39:12.031258-03:00",
+    "resultado": "pendente"
   }
 ]
