@@ -9862,5 +9862,23 @@
     "odd_mercado": 1.38,
     "timestamp": "2026-09-29T17:07:42.411299-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "44e0ff21efc2_custom_1790706998863_20260929",
+    "fixture_id": "19788151",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Uxbridge",
+    "away": "Basingstoke Town",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.45,
+    "odd_bano": null,
+    "odd_mercado": 1.45,
+    "timestamp": "2026-09-29T17:09:59.943922-03:00",
+    "resultado": "pendente"
   }
 ]
