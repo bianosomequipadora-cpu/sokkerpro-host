@@ -9952,5 +9952,23 @@
     "odd_mercado": 1.37,
     "timestamp": "2026-09-29T18:30:26.408927-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5e4b54ce767d_custom_1790214981575_20260929",
+    "fixture_id": "19888411",
+    "mercado": "custom_1790214981575",
+    "tipo": "escanteio_ht",
+    "home": "Puerto Montt",
+    "away": "Colo-Colo",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.95,
+    "odd_bano": null,
+    "odd_mercado": 1.85,
+    "timestamp": "2026-09-29T18:35:23.433672-03:00",
+    "resultado": "pendente"
   }
 ]
