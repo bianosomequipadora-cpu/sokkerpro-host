@@ -9412,5 +9412,23 @@
     "odd_mercado": 1.55,
     "timestamp": "2026-09-29T07:37:15.671657-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "21c09c5c21e9_custom_1790214981575_20260929",
+    "fixture_id": "19724627",
+    "mercado": "custom_1790214981575",
+    "tipo": "escanteio_ht",
+    "home": "Zweigen Kanazawa",
+    "away": "Shimizu S-Pulse",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.75,
+    "odd_bano": null,
+    "odd_mercado": 1.965,
+    "timestamp": "2026-09-29T07:39:09.258194-03:00",
+    "resultado": "pendente"
   }
 ]
