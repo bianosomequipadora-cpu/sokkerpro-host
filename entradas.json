@@ -9790,5 +9790,23 @@
     "odd_mercado": 3.5,
     "timestamp": "2026-09-29T16:24:12.266505-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "3230aa7755cd_custom_1790214981575_20260929",
+    "fixture_id": "19748217",
+    "mercado": "custom_1790214981575",
+    "tipo": "escanteio_ht",
+    "home": "Forest Green Rovers",
+    "away": "Wealdstone",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 3.72,
+    "timestamp": "2026-09-29T16:24:28.256188-03:00",
+    "resultado": "pendente"
   }
 ]
