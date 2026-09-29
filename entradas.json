@@ -9628,5 +9628,23 @@
     "odd_mercado": 1.89,
     "timestamp": "2026-09-29T16:08:28.882110-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "8b8b3a429a0d_custom_1790444747806_20260929",
+    "fixture_id": "19748218",
+    "mercado": "custom_1790444747806",
+    "tipo": "gol_intervalo",
+    "home": "Halifax Town",
+    "away": "Boston United",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.83,
+    "odd_bano": null,
+    "odd_mercado": 1.97,
+    "timestamp": "2026-09-29T16:08:54.316969-03:00",
+    "resultado": "pendente"
   }
 ]
