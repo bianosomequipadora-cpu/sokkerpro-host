@@ -9592,5 +9592,23 @@
     "odd_mercado": null,
     "timestamp": "2026-09-29T13:24:10.044217-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "2541db074b4e_custom_1790213687442_20260929",
+    "fixture_id": "19882521",
+    "mercado": "custom_1790213687442",
+    "tipo": "over_gol",
+    "home": "Huesca W",
+    "away": "Osasuna W",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.39,
+    "timestamp": "2026-09-29T15:20:38.540105-03:00",
+    "resultado": "pendente"
   }
 ]
