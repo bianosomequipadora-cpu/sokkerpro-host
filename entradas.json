@@ -10060,5 +10060,23 @@
     "odd_mercado": 2.184,
     "timestamp": "2026-09-29T20:35:40.617739-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "3128d6cca563_custom_1790214981575_20260929",
+    "fixture_id": "19713151",
+    "mercado": "custom_1790214981575",
+    "tipo": "escanteio_ht",
+    "home": "Unión Magdalena",
+    "away": "Real Cartagena",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.664,
+    "timestamp": "2026-09-29T20:37:16.142579-03:00",
+    "resultado": "pendente"
   }
 ]
