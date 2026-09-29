@@ -9484,5 +9484,23 @@
     "odd_mercado": 1.595,
     "timestamp": "2026-09-29T08:18:53.585853-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "1e17b0d8da7c_custom_1790213687442_20260929",
+    "fixture_id": "19886736",
+    "mercado": "custom_1790213687442",
+    "tipo": "over_gol",
+    "home": "Bangalore City FC",
+    "away": "South United FC",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.4,
+    "odd_bano": null,
+    "odd_mercado": 1.44,
+    "timestamp": "2026-09-29T08:53:33.069683-03:00",
+    "resultado": "pendente"
   }
 ]
