@@ -9826,5 +9826,23 @@
     "odd_mercado": 3.72,
     "timestamp": "2026-09-29T16:24:37.241838-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f260b713fa34_custom_1790707135431_20260929",
+    "fixture_id": "19880747",
+    "mercado": "custom_1790707135431",
+    "tipo": "escanteio_ht",
+    "home": "Somalia",
+    "away": "Côte d'Ivoire",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.4,
+    "timestamp": "2026-09-29T16:34:05.574382-03:00",
+    "resultado": "pendente"
   }
 ]
