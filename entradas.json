@@ -9682,5 +9682,23 @@
     "odd_mercado": 1.44,
     "timestamp": "2026-09-29T16:16:26.961106-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "665f47cc7201_custom_1790214989396_20260929",
+    "fixture_id": "19766820",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "AFC Emley",
+    "away": "Workington",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.01,
+    "timestamp": "2026-09-29T16:19:23.828567-03:00",
+    "resultado": "pendente"
   }
 ]
