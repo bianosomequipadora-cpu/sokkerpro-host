@@ -9610,5 +9610,23 @@
     "odd_mercado": 1.39,
     "timestamp": "2026-09-29T15:20:38.540105-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "146b15266f11_custom_1790444747806_20260929",
+    "fixture_id": "19766827",
+    "mercado": "custom_1790444747806",
+    "tipo": "gol_intervalo",
+    "home": "Alfreton Town",
+    "away": "Guiseley",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.8,
+    "odd_bano": null,
+    "odd_mercado": 1.89,
+    "timestamp": "2026-09-29T16:08:28.882110-03:00",
+    "resultado": "pendente"
   }
 ]
