@@ -10006,5 +10006,23 @@
     "odd_mercado": 1.94,
     "timestamp": "2026-09-29T18:35:36.960625-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "1f2b145d3923_custom_1790437034606_20260929",
+    "fixture_id": "19768463",
+    "mercado": "custom_1790437034606",
+    "tipo": "escanteio_ft",
+    "home": "Atletico Balboa",
+    "away": "Cacahuatique",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 2.15,
+    "odd_bano": null,
+    "odd_mercado": 2.408,
+    "timestamp": "2026-09-29T19:50:28.549637-03:00",
+    "resultado": "pendente"
   }
 ]
