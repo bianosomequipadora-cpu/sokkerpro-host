@@ -9502,5 +9502,23 @@
     "odd_mercado": 1.44,
     "timestamp": "2026-09-29T08:53:33.069683-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "417bbcc3a8bc_custom_1790214989396_20260929",
+    "fixture_id": "19880774",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Lesotho",
+    "away": "Morocco",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.344,
+    "timestamp": "2026-09-29T10:32:03.243270-03:00",
+    "resultado": "pendente"
   }
 ]
