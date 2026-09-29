@@ -9538,5 +9538,23 @@
     "odd_mercado": 1.36,
     "timestamp": "2026-09-29T10:32:14.475977-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "a9b9cf1695fc_custom_1790214981575_20260929",
+    "fixture_id": "19888395",
+    "mercado": "custom_1790214981575",
+    "tipo": "escanteio_ht",
+    "home": "Palm City 365",
+    "away": "Dibba Al Hisn",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.32,
+    "timestamp": "2026-09-29T12:13:19.562039-03:00",
+    "resultado": "pendente"
   }
 ]
