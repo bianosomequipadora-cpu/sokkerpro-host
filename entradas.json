@@ -10276,5 +10276,23 @@
     "odd_mercado": 1.248,
     "timestamp": "2026-09-30T14:01:52.277967-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7c27f00abeeb_custom_1790438667502_20260930",
+    "fixture_id": "19675906",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "TPV II",
+    "away": "Tampere United II",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.33,
+    "odd_bano": null,
+    "odd_mercado": 1.27,
+    "timestamp": "2026-09-30T14:05:27.738734-03:00",
+    "resultado": "pendente"
   }
 ]
