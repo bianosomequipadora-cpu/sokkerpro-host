@@ -10222,5 +10222,23 @@
     "odd_mercado": 1.29,
     "timestamp": "2026-09-30T13:32:17.356627-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "22bd7c400cf4_custom_1790215023930_20260930",
+    "fixture_id": "19385468",
+    "mercado": "custom_1790215023930",
+    "tipo": "escanteio_ht",
+    "home": "Malta U21",
+    "away": "Germany U21",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.29,
+    "timestamp": "2026-09-30T13:32:24.738843-03:00",
+    "resultado": "pendente"
   }
 ]
