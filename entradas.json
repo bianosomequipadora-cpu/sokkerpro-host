@@ -10402,5 +10402,23 @@
     "odd_mercado": 1.575,
     "timestamp": "2026-09-30T16:04:50.985729-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9d40a9213454_custom_1790444747806_20260930",
+    "fixture_id": "19809648",
+    "mercado": "custom_1790444747806",
+    "tipo": "gol_intervalo",
+    "home": "Linfield U20",
+    "away": "Cliftonville U20",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.5,
+    "odd_bano": null,
+    "odd_mercado": 1.45,
+    "timestamp": "2026-09-30T16:21:09.500017-03:00",
+    "resultado": "pendente"
   }
 ]
