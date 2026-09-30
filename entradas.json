@@ -10546,5 +10546,23 @@
     "odd_mercado": 1.655,
     "timestamp": "2026-09-30T19:58:15.960176-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "aea6f10d456c_custom_1790707135431_20260930",
+    "fixture_id": "19622139",
+    "mercado": "custom_1790707135431",
+    "tipo": "escanteio_ht",
+    "home": "Brooklyn FC",
+    "away": "Detroit City",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 1.575,
+    "timestamp": "2026-09-30T20:37:14.224021-03:00",
+    "resultado": "pendente"
   }
 ]
