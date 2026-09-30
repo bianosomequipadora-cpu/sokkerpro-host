@@ -10492,5 +10492,23 @@
     "odd_mercado": 2.288,
     "timestamp": "2026-09-30T17:34:06.988034-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "a603a3e2ba07_custom_1790444747806_20260930",
+    "fixture_id": "19768462",
+    "mercado": "custom_1790444747806",
+    "tipo": "gol_intervalo",
+    "home": "Águila",
+    "away": "Inter",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.0,
+    "odd_bano": null,
+    "odd_mercado": 1.99,
+    "timestamp": "2026-09-30T18:55:27.568821-03:00",
+    "resultado": "pendente"
   }
 ]
