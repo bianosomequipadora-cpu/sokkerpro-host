@@ -10132,5 +10132,23 @@
     "odd_mercado": null,
     "timestamp": "2026-09-30T06:18:02.412231-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "a5608e362cbf_custom_1790707135431_20260930",
+    "fixture_id": "19886739",
+    "mercado": "custom_1790707135431",
+    "tipo": "escanteio_ht",
+    "home": "Technico Football Foundation",
+    "away": "United Stars FC",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.195,
+    "timestamp": "2026-09-30T08:01:52.528297-03:00",
+    "resultado": "pendente"
   }
 ]
