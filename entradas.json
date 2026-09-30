@@ -10096,5 +10096,23 @@
     "odd_mercado": 1.685,
     "timestamp": "2026-09-30T05:38:02.639380-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "595f6203c071_custom_1790706998863_20260930",
+    "fixture_id": "19887233",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Argeş",
+    "away": "CSM Deva",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-09-30T05:40:31.299328-03:00",
+    "resultado": "pendente"
   }
 ]
