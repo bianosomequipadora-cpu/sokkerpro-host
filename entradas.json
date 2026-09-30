@@ -10168,5 +10168,23 @@
     "odd_mercado": 1.36,
     "timestamp": "2026-09-30T11:21:53.780371-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f7f627c4d2bf_custom_1790707135431_20260930",
+    "fixture_id": "19876099",
+    "mercado": "custom_1790707135431",
+    "tipo": "escanteio_ht",
+    "home": "Follo",
+    "away": "Sarpsborg 08",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.38,
+    "timestamp": "2026-09-30T11:33:29.543527-03:00",
+    "resultado": "pendente"
   }
 ]
