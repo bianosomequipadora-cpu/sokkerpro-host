@@ -10456,5 +10456,23 @@
     "odd_mercado": 1.288,
     "timestamp": "2026-09-30T17:10:29.893033-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "80ce214320bc_custom_1790707135431_20260930",
+    "fixture_id": "19882054",
+    "mercado": "custom_1790707135431",
+    "tipo": "escanteio_ht",
+    "home": "Independiente FBC",
+    "away": "Nacional Asunción",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.5,
+    "timestamp": "2026-09-30T17:32:25.808145-03:00",
+    "resultado": "pendente"
   }
 ]
