@@ -10348,5 +10348,23 @@
     "odd_mercado": 1.67,
     "timestamp": "2026-09-30T14:23:09.019663-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "2daa057e18a1_custom_1790437034606_20260930",
+    "fixture_id": "19385380",
+    "mercado": "custom_1790437034606",
+    "tipo": "escanteio_ft",
+    "home": "Faroe Islands U21",
+    "away": "Luxembourg U21",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.87,
+    "odd_bano": null,
+    "odd_mercado": 1.95,
+    "timestamp": "2026-09-30T14:42:06.616400-03:00",
+    "resultado": "pendente"
   }
 ]
