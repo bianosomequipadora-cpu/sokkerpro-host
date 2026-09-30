@@ -10420,5 +10420,23 @@
     "odd_mercado": 1.45,
     "timestamp": "2026-09-30T16:21:09.500017-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5fd2125ae770_custom_1790707135431_20260930",
+    "fixture_id": "19881343",
+    "mercado": "custom_1790707135431",
+    "tipo": "escanteio_ht",
+    "home": "Coatepeque",
+    "away": "Quiché",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.41,
+    "timestamp": "2026-09-30T16:39:43.313700-03:00",
+    "resultado": "pendente"
   }
 ]
