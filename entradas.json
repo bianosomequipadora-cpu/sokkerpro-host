@@ -10384,5 +10384,23 @@
     "odd_mercado": 1.416,
     "timestamp": "2026-09-30T15:21:18.136087-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "d9cb2e245a93_custom_1790438667502_20260930",
+    "fixture_id": "19748210",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Eastleigh",
+    "away": "Southend United",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.53,
+    "odd_bano": null,
+    "odd_mercado": 1.575,
+    "timestamp": "2026-09-30T16:04:50.985729-03:00",
+    "resultado": "pendente"
   }
 ]
