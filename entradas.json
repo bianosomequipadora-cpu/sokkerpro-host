@@ -10366,5 +10366,23 @@
     "odd_mercado": 1.95,
     "timestamp": "2026-09-30T14:42:06.616400-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "9884733b0dc0_custom_1790471307455_20260930",
+    "fixture_id": "19385319",
+    "mercado": "custom_1790471307455",
+    "tipo": "over_15",
+    "home": "Kosovo U21",
+    "away": "Cyprus U21",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.36,
+    "odd_bano": null,
+    "odd_mercado": 1.416,
+    "timestamp": "2026-09-30T15:21:18.136087-03:00",
+    "resultado": "pendente"
   }
 ]
