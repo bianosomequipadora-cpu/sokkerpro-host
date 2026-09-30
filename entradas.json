@@ -10078,5 +10078,23 @@
     "odd_mercado": 2.664,
     "timestamp": "2026-09-29T20:37:16.142579-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "f2fdfc7e00ff_custom_1790707135431_20260930",
+    "fixture_id": "19881435",
+    "mercado": "custom_1790707135431",
+    "tipo": "escanteio_ht",
+    "home": "Khovd",
+    "away": "Ulaanbaatar",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 1.685,
+    "timestamp": "2026-09-30T05:38:02.639380-03:00",
+    "resultado": "pendente"
   }
 ]
