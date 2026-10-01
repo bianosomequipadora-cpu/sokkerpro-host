@@ -10744,5 +10744,23 @@
     "odd_mercado": 1.56,
     "timestamp": "2026-10-01T11:32:08.532162-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "2ec09f2ef2dd_custom_1790438667502_20261001",
+    "fixture_id": "19877886",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Bærum",
+    "away": "Lillestrøm",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.235,
+    "timestamp": "2026-10-01T13:17:33.459263-03:00",
+    "resultado": "pendente"
   }
 ]
