@@ -10654,5 +10654,23 @@
     "odd_mercado": 2.44,
     "timestamp": "2026-09-30T21:37:37.667080-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "c6851be21dec_custom_1790438667502_20261001",
+    "fixture_id": "19881424",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Khovd Western",
+    "away": "Deren",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.245,
+    "timestamp": "2026-10-01T02:20:27.237356-03:00",
+    "resultado": "pendente"
   }
 ]
