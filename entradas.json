@@ -10672,5 +10672,23 @@
     "odd_mercado": 1.245,
     "timestamp": "2026-10-01T02:20:27.237356-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "e029a24f9b28_custom_1790214981575_20261001",
+    "fixture_id": "19886742",
+    "mercado": "custom_1790214981575",
+    "tipo": "escanteio_ht",
+    "home": "Parikrma FC",
+    "away": "ASC And Center FC",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.795,
+    "timestamp": "2026-10-01T08:05:33.140953-03:00",
+    "resultado": "pendente"
   }
 ]
