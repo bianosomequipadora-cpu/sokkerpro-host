@@ -10762,5 +10762,23 @@
     "odd_mercado": 1.235,
     "timestamp": "2026-10-01T13:17:33.459263-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9b0248327726_custom_1790215023930_20261001",
+    "fixture_id": "19676799",
+    "mercado": "custom_1790215023930",
+    "tipo": "escanteio_ht",
+    "home": "Azerbaijan",
+    "away": "Liechtenstein",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.5,
+    "timestamp": "2026-10-01T13:37:16.402350-03:00",
+    "resultado": "pendente"
   }
 ]
