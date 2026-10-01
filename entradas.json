@@ -10618,5 +10618,23 @@
     "odd_mercado": 1.77,
     "timestamp": "2026-09-30T20:39:10.954280-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "88a9a9b5e875_custom_1790214981575_20260930",
+    "fixture_id": "19731471",
+    "mercado": "custom_1790214981575",
+    "tipo": "escanteio_ht",
+    "home": "DC United",
+    "away": "Paderborn",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.135,
+    "timestamp": "2026-09-30T21:15:35.291156-03:00",
+    "resultado": "pendente"
   }
 ]
