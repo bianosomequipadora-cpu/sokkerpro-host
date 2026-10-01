@@ -10636,5 +10636,23 @@
     "odd_mercado": 2.135,
     "timestamp": "2026-09-30T21:15:35.291156-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "520359803edf_custom_1790214989396_20260930",
+    "fixture_id": "19768461",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Alianza",
+    "away": "CD Platense",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.44,
+    "timestamp": "2026-09-30T21:37:37.667080-03:00",
+    "resultado": "pendente"
   }
 ]
