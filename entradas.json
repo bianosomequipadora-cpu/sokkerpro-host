@@ -10798,5 +10798,23 @@
     "odd_mercado": 3.304,
     "timestamp": "2026-10-01T13:39:11.122277-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "93492e723d6d_custom_1790215008666_20261001",
+    "fixture_id": "19385440",
+    "mercado": "custom_1790215008666",
+    "tipo": "escanteio_ft",
+    "home": "FYR Macedonia U21",
+    "away": "Montenegro U21",
+    "message_id": 0,
+    "extra_val": 10,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.565,
+    "timestamp": "2026-10-01T14:39:05.508893-03:00",
+    "resultado": "pendente"
   }
 ]
