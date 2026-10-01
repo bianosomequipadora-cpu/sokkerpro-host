@@ -10834,5 +10834,23 @@
     "odd_mercado": 1.565,
     "timestamp": "2026-10-01T14:39:15.406345-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a42d9cb611a5_custom_1790706998863_20261001",
+    "fixture_id": "19385439",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Armenia U21",
+    "away": "Italy U21",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.22,
+    "timestamp": "2026-10-01T14:48:45.310201-03:00",
+    "resultado": "pendente"
   }
 ]
