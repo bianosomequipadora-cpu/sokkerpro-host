@@ -10906,5 +10906,23 @@
     "odd_mercado": 1.32,
     "timestamp": "2026-10-01T17:18:38.323326-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5e710e503053_custom_1790214981575_20261001",
+    "fixture_id": "19783554",
+    "mercado": "custom_1790214981575",
+    "tipo": "escanteio_ht",
+    "home": "US Virgin Islands",
+    "away": "Saint Martin",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.9,
+    "odd_bano": null,
+    "odd_mercado": 1.87,
+    "timestamp": "2026-10-01T17:38:11.360760-03:00",
+    "resultado": "pendente"
   }
 ]
