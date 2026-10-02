@@ -11194,5 +11194,23 @@
     "odd_mercado": 1.44,
     "timestamp": "2026-10-02T16:04:22.517672-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "2688d85297a3_custom_1790706998863_20261002",
+    "fixture_id": "19795336",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Dollingstown",
+    "away": "Ballymacash Rangers",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.28,
+    "odd_bano": null,
+    "odd_mercado": 1.275,
+    "timestamp": "2026-10-02T17:04:09.468428-03:00",
+    "resultado": "pendente"
   }
 ]
