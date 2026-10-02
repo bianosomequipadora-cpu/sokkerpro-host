@@ -11284,5 +11284,23 @@
     "odd_mercado": 1.368,
     "timestamp": "2026-10-02T17:30:57.541057-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "3d648df9bdb5_custom_1790214989396_20261002",
+    "fixture_id": "19783499",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Suriname",
+    "away": "Guatemala",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.87,
+    "odd_bano": null,
+    "odd_mercado": 1.77,
+    "timestamp": "2026-10-02T19:33:28.621360-03:00",
+    "resultado": "pendente"
   }
 ]
