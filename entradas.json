@@ -10924,5 +10924,23 @@
     "odd_mercado": 1.87,
     "timestamp": "2026-10-01T17:38:11.360760-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "76d3fb47da9e_custom_1790215008666_20261001",
+    "fixture_id": "19768458",
+    "mercado": "custom_1790215008666",
+    "tipo": "escanteio_ft",
+    "home": "INCA-Aruba",
+    "away": "Municipal Limeño",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": 1.77,
+    "odd_bano": null,
+    "odd_mercado": 1.83,
+    "timestamp": "2026-10-01T22:50:30.459392-03:00",
+    "resultado": "pendente"
   }
 ]
