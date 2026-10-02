@@ -11320,5 +11320,23 @@
     "odd_mercado": 1.816,
     "timestamp": "2026-10-02T19:33:38.999299-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9a9dafcc63bf_custom_1790215023930_20261002",
+    "fixture_id": "19713136",
+    "mercado": "custom_1790215023930",
+    "tipo": "escanteio_ht",
+    "home": "Atlético",
+    "away": "Real Cundinamarca",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.44,
+    "timestamp": "2026-10-02T19:38:27.103561-03:00",
+    "resultado": "pendente"
   }
 ]
