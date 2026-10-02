@@ -11158,5 +11158,23 @@
     "odd_mercado": 1.304,
     "timestamp": "2026-10-02T16:00:55.480428-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "dc5f76d778ff_custom_1790215023930_20261002",
+    "fixture_id": "19740756",
+    "mercado": "custom_1790215023930",
+    "tipo": "escanteio_ht",
+    "home": "Llanelli Town",
+    "away": "Baglan Dragons",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.32,
+    "timestamp": "2026-10-02T16:01:03.030927-03:00",
+    "resultado": "pendente"
   }
 ]
