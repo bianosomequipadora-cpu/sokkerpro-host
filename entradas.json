@@ -10942,5 +10942,23 @@
     "odd_mercado": 1.83,
     "timestamp": "2026-10-01T22:50:30.459392-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "a47bc2e41005_custom_1790438667502_20261002",
+    "fixture_id": "19889264",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Lugano",
+    "away": "Hellas Verona",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.66,
+    "odd_bano": null,
+    "odd_mercado": 1.64,
+    "timestamp": "2026-10-02T06:47:03.438935-03:00",
+    "resultado": "pendente"
   }
 ]
