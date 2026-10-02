@@ -11104,5 +11104,23 @@
     "odd_mercado": 2.112,
     "timestamp": "2026-10-02T15:04:03.546397-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "13d4b677e6fa_custom_1790706998863_20261002",
+    "fixture_id": "19763670",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Bayer Leverkusen W",
+    "away": "Werder Bremen W",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.432,
+    "timestamp": "2026-10-02T15:05:29.439476-03:00",
+    "resultado": "pendente"
   }
 ]
