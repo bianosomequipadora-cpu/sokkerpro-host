@@ -10996,5 +10996,23 @@
     "odd_mercado": 1.775,
     "timestamp": "2026-10-02T07:42:11.812477-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "3900ea3b1877_custom_1790437034606_20261002",
+    "fixture_id": "19883696",
+    "mercado": "custom_1790437034606",
+    "tipo": "escanteio_ft",
+    "home": "PWD Sports Club",
+    "away": "Brothers Union",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.7,
+    "odd_bano": null,
+    "odd_mercado": 1.775,
+    "timestamp": "2026-10-02T07:42:24.275270-03:00",
+    "resultado": "pendente"
   }
 ]
