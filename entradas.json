@@ -11122,5 +11122,23 @@
     "odd_mercado": 1.432,
     "timestamp": "2026-10-02T15:05:29.439476-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c21a903f5bcf_custom_1790214981575_20261002",
+    "fixture_id": "19775364",
+    "mercado": "custom_1790214981575",
+    "tipo": "escanteio_ht",
+    "home": "Krems / Getzersdorf",
+    "away": "Wiener Sport-Club",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 3,
+    "entry_sa": 2,
+    "entry_total": 5,
+    "odd_b365": 2.0,
+    "odd_bano": null,
+    "odd_mercado": 2.075,
+    "timestamp": "2026-10-02T15:10:31.234205-03:00",
+    "resultado": "pendente"
   }
 ]
