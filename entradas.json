@@ -10960,5 +10960,23 @@
     "odd_mercado": 1.64,
     "timestamp": "2026-10-02T06:47:03.438935-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "601f24effd01_custom_1790438667502_20261002",
+    "fixture_id": "19889272",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Sparta Praha",
+    "away": "Vysočina Jihlava",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.4,
+    "odd_bano": null,
+    "odd_mercado": 1.352,
+    "timestamp": "2026-10-02T07:18:58.257169-03:00",
+    "resultado": "pendente"
   }
 ]
