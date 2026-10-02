@@ -11050,5 +11050,23 @@
     "odd_mercado": 1.24,
     "timestamp": "2026-10-02T14:20:38.212785-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "13ffc83ec6ce_custom_1790706998863_20261002",
+    "fixture_id": "19651475",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Molde II",
+    "away": "Herd",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.13,
+    "timestamp": "2026-10-02T14:47:52.361369-03:00",
+    "resultado": "pendente"
   }
 ]
