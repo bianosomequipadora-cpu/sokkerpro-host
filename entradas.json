@@ -11248,5 +11248,23 @@
     "odd_mercado": 2.35,
     "timestamp": "2026-10-02T17:30:39.100467-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "181e808c6126_custom_1790437034606_20261002",
+    "fixture_id": "19385410",
+    "mercado": "custom_1790437034606",
+    "tipo": "escanteio_ft",
+    "home": "England U21",
+    "away": "Slovakia U21",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.35,
+    "odd_bano": null,
+    "odd_mercado": 2.35,
+    "timestamp": "2026-10-02T17:30:47.191201-03:00",
+    "resultado": "pendente"
   }
 ]
