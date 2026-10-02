@@ -11086,5 +11086,23 @@
     "odd_mercado": 2.07,
     "timestamp": "2026-10-02T15:03:55.312429-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "27d469380e2e_custom_1790215023930_20261002",
+    "fixture_id": "19385409",
+    "mercado": "custom_1790215023930",
+    "tipo": "escanteio_ht",
+    "home": "Andorra U21",
+    "away": "Moldova U21",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.07,
+    "odd_bano": null,
+    "odd_mercado": 2.112,
+    "timestamp": "2026-10-02T15:04:03.546397-03:00",
+    "resultado": "pendente"
   }
 ]
