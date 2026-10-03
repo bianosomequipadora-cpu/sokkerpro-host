@@ -12112,5 +12112,23 @@
     "odd_mercado": 3.125,
     "timestamp": "2026-10-03T12:09:04.738635-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "a31c6fcb9844_custom_1790438667502_20261003",
+    "fixture_id": "19775482",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Mattersburg 2020",
+    "away": "Parndorf",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-03T12:21:36.688838-03:00",
+    "resultado": "pendente"
   }
 ]
