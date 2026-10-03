@@ -12292,5 +12292,23 @@
     "odd_mercado": 1.575,
     "timestamp": "2026-10-03T13:18:17.860589-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d7c9b372ad10_custom_1790706998863_20261003",
+    "fixture_id": "19854355",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Kano Pillars",
+    "away": "Sporting Lagos",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.392,
+    "timestamp": "2026-10-03T13:28:32.172814-03:00",
+    "resultado": "pendente"
   }
 ]
