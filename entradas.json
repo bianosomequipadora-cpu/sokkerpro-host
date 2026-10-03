@@ -11752,5 +11752,23 @@
     "odd_mercado": 1.27,
     "timestamp": "2026-10-03T11:19:23.061191-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7544ba1e79dd_custom_1790706998863_20261003",
+    "fixture_id": "19833140",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Lokomotíva Košice",
+    "away": "Vranov nad Topľou",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.26,
+    "timestamp": "2026-10-03T11:19:40.296460-03:00",
+    "resultado": "pendente"
   }
 ]
