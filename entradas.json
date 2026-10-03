@@ -11878,5 +11878,23 @@
     "odd_mercado": 1.6,
     "timestamp": "2026-10-03T11:33:18.796111-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "60f5f7d7bfc4_custom_1790215023930_20261003",
+    "fixture_id": "19887076",
+    "mercado": "custom_1790215023930",
+    "tipo": "escanteio_ht",
+    "home": "Kettering Town",
+    "away": "Worcester City",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.552,
+    "timestamp": "2026-10-03T11:35:54.669903-03:00",
+    "resultado": "pendente"
   }
 ]
