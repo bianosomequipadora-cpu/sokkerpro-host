@@ -12346,5 +12346,23 @@
     "odd_mercado": 1.755,
     "timestamp": "2026-10-03T14:16:08.502022-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "44eeb57ab8b8_custom_1790706998863_20261003",
+    "fixture_id": "19760799",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Sandecja Nowy Sącz",
+    "away": "Falubaz Zielona Góra",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.288,
+    "timestamp": "2026-10-03T14:21:12.290533-03:00",
+    "resultado": "pendente"
   }
 ]
