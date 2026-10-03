@@ -12166,5 +12166,23 @@
     "odd_mercado": 1.504,
     "timestamp": "2026-10-03T12:33:22.155038-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f76d4da4b4a8_custom_1790214989396_20261003",
+    "fixture_id": "19840901",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Leganés U19",
+    "away": "Unión Adarve U19",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.9,
+    "timestamp": "2026-10-03T12:35:59.266776-03:00",
+    "resultado": "pendente"
   }
 ]
