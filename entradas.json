@@ -11374,5 +11374,23 @@
     "odd_mercado": 1.416,
     "timestamp": "2026-10-02T22:16:50.255035-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "0e8951f7b6d2_custom_1790214989396_20261002",
+    "fixture_id": "19783498",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "El Salvador",
+    "away": "Jamaica",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 3.21,
+    "timestamp": "2026-10-02T23:38:17.998538-03:00",
+    "resultado": "pendente"
   }
 ]
