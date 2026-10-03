@@ -12184,5 +12184,23 @@
     "odd_mercado": 1.9,
     "timestamp": "2026-10-03T12:35:59.266776-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6a58c7786b4c_custom_1790215008666_20261003",
+    "fixture_id": "19727682",
+    "mercado": "custom_1790215008666",
+    "tipo": "escanteio_ft",
+    "home": "Grimsby Town",
+    "away": "Shrewsbury Town",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.344,
+    "timestamp": "2026-10-03T12:38:20.349503-03:00",
+    "resultado": "pendente"
   }
 ]
