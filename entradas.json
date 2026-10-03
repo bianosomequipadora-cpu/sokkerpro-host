@@ -12418,5 +12418,23 @@
     "odd_mercado": 1.625,
     "timestamp": "2026-10-03T15:05:32.521411-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a5387c4e4713_custom_1790983421364_20261003",
+    "fixture_id": "19757796",
+    "mercado": "custom_1790983421364",
+    "tipo": "gol_intervalo",
+    "home": "Niteroiense",
+    "away": "São Cristóvão RJ",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.83,
+    "odd_bano": null,
+    "odd_mercado": 1.944,
+    "timestamp": "2026-10-03T15:18:57.013511-03:00",
+    "resultado": "pendente"
   }
 ]
