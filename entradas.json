@@ -11644,5 +11644,23 @@
     "odd_mercado": 1.655,
     "timestamp": "2026-10-03T10:48:04.893688-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f77e6a14662d_custom_1790706998863_20261003",
+    "fixture_id": "19784105",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Cavese",
+    "away": "Casertana",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.45,
+    "timestamp": "2026-10-03T10:52:58.388715-03:00",
+    "resultado": "pendente"
   }
 ]
