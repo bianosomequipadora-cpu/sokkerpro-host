@@ -11500,5 +11500,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-03T08:29:56.299420-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "6520bcd6a8d5_custom_1790214989396_20261003",
+    "fixture_id": "19650746",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Ullensaker / Kisa",
+    "away": "Kjelsås",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 4.22,
+    "timestamp": "2026-10-03T09:39:33.044865-03:00",
+    "resultado": "pendente"
   }
 ]
