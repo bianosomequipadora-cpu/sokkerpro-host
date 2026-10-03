@@ -12724,5 +12724,23 @@
     "odd_mercado": 1.95,
     "timestamp": "2026-10-03T19:15:15.061014-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "3d020140e22e_custom_1790214989396_20261003",
+    "fixture_id": "19681898",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Paysandu",
+    "away": "Ferroviária",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.4,
+    "timestamp": "2026-10-03T20:03:37.388626-03:00",
+    "resultado": "pendente"
   }
 ]
