@@ -11428,5 +11428,23 @@
     "odd_mercado": 1.384,
     "timestamp": "2026-10-03T08:15:48.362333-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f91e47850e6a_custom_1790438667502_20261003",
+    "fixture_id": "19629776",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Vittsjo W",
+    "away": "Eskilstuna United W",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-10-03T08:17:49.067624-03:00",
+    "resultado": "pendente"
   }
 ]
