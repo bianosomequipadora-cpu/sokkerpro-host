@@ -11392,5 +11392,23 @@
     "odd_mercado": 3.21,
     "timestamp": "2026-10-02T23:38:17.998538-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "4ffaf92dc6cd_custom_1790438667502_20261003",
+    "fixture_id": "19760848",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Vratimov",
+    "away": "Břidličná",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.5,
+    "odd_bano": null,
+    "odd_mercado": 1.47,
+    "timestamp": "2026-10-03T05:38:40.093003-03:00",
+    "resultado": "pendente"
   }
 ]
