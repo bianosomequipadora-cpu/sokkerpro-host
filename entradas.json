@@ -12382,5 +12382,23 @@
     "odd_mercado": 1.425,
     "timestamp": "2026-10-03T14:21:23.571788-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "48594e71c6c4_custom_1790706998863_20261003",
+    "fixture_id": "19722373",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Hamilton Academical",
+    "away": "Peterhead",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.45,
+    "odd_bano": null,
+    "odd_mercado": 1.416,
+    "timestamp": "2026-10-03T14:52:24.244650-03:00",
+    "resultado": "pendente"
   }
 ]
