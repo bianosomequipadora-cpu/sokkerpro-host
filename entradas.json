@@ -11410,5 +11410,23 @@
     "odd_mercado": 1.47,
     "timestamp": "2026-10-03T05:38:40.093003-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "0a86c06df51c_custom_1790438667502_20261003",
+    "fixture_id": "19889305",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Genk",
+    "away": "Fortuna Sittard",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.384,
+    "timestamp": "2026-10-03T08:15:48.362333-03:00",
+    "resultado": "pendente"
   }
 ]
