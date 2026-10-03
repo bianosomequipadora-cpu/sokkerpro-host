@@ -12436,5 +12436,23 @@
     "odd_mercado": 1.944,
     "timestamp": "2026-10-03T15:18:57.013511-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "18f08780ea28_custom_1790215023930_20261003",
+    "fixture_id": "19636851",
+    "mercado": "custom_1790215023930",
+    "tipo": "escanteio_ht",
+    "home": "Club Atletico Colón",
+    "away": "Estudiantes de Buenos Aires",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-10-03T15:35:24.558481-03:00",
+    "resultado": "pendente"
   }
 ]
