@@ -11482,5 +11482,23 @@
     "odd_mercado": 1.31,
     "timestamp": "2026-10-03T08:20:56.916628-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a469eaebbf88_custom_1790706998863_20261003",
+    "fixture_id": "19737684",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "NoPS U21",
+    "away": "JäPS U21",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-03T08:29:56.299420-03:00",
+    "resultado": "pendente"
   }
 ]
