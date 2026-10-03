@@ -11986,5 +11986,23 @@
     "odd_mercado": 2.07,
     "timestamp": "2026-10-03T11:38:00.875139-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "2a43aa3bafe3_custom_1790214989396_20261003",
+    "fixture_id": "19748205",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Eastleigh",
+    "away": "Woking",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.56,
+    "timestamp": "2026-10-03T11:38:15.886045-03:00",
+    "resultado": "pendente"
   }
 ]
