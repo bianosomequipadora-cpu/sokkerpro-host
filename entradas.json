@@ -11806,5 +11806,23 @@
     "odd_mercado": 1.75,
     "timestamp": "2026-10-03T11:22:10.198193-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "68f09ed81bff_custom_1790438667502_20261003",
+    "fixture_id": "19671489",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Lidköping",
+    "away": "Vänersborgs FK",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.13,
+    "timestamp": "2026-10-03T11:28:12.744885-03:00",
+    "resultado": "pendente"
   }
 ]
