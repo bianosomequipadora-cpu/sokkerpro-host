@@ -11932,5 +11932,23 @@
     "odd_mercado": 1.9,
     "timestamp": "2026-10-03T11:36:25.400398-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "cf20bf90d7d3_custom_1790215023930_20261003",
+    "fixture_id": "19748203",
+    "mercado": "custom_1790215023930",
+    "tipo": "escanteio_ht",
+    "home": "Harrogate Town",
+    "away": "AFC Hornchurch",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.98,
+    "timestamp": "2026-10-03T11:36:34.484096-03:00",
+    "resultado": "pendente"
   }
 ]
