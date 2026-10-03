@@ -11626,5 +11626,23 @@
     "odd_mercado": 1.9,
     "timestamp": "2026-10-03T10:42:28.268891-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "11c79c8cd07b_custom_1790438667502_20261003",
+    "fixture_id": "19735653",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Briton Ferry",
+    "away": "Colwyn Bay",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.655,
+    "timestamp": "2026-10-03T10:48:04.893688-03:00",
+    "resultado": "pendente"
   }
 ]
