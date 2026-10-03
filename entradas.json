@@ -12454,5 +12454,23 @@
     "odd_mercado": 1.7,
     "timestamp": "2026-10-03T15:35:24.558481-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "36138645f4ff_custom_1790214989396_20261003",
+    "fixture_id": "19637914",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "San Martín Burzaco",
+    "away": "Argentino Merlo",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.3,
+    "odd_bano": null,
+    "odd_mercado": 2.392,
+    "timestamp": "2026-10-03T15:39:10.070103-03:00",
+    "resultado": "pendente"
   }
 ]
