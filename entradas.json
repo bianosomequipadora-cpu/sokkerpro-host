@@ -12274,5 +12274,23 @@
     "odd_mercado": 2.03,
     "timestamp": "2026-10-03T13:12:43.871595-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f16e8d55f539_custom_1790438667502_20261003",
+    "fixture_id": "19724783",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Tatran Prešov",
+    "away": "Baník Lehota p.Vtáčnikom",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.575,
+    "timestamp": "2026-10-03T13:18:17.860589-03:00",
+    "resultado": "pendente"
   }
 ]
