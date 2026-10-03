@@ -11770,5 +11770,23 @@
     "odd_mercado": 1.26,
     "timestamp": "2026-10-03T11:19:40.296460-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "396e60ffd3a1_custom_1790706998863_20261003",
+    "fixture_id": "19629775",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Växjö W",
+    "away": "Kristianstads W",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.62,
+    "timestamp": "2026-10-03T11:19:50.024796-03:00",
+    "resultado": "pendente"
   }
 ]
