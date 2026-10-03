@@ -11860,5 +11860,23 @@
     "odd_mercado": 1.344,
     "timestamp": "2026-10-03T11:32:44.868665-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7a730bf7c430_custom_1790438667502_20261003",
+    "fixture_id": "19745054",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Almería",
+    "away": "Burgos",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-10-03T11:33:18.796111-03:00",
+    "resultado": "pendente"
   }
 ]
