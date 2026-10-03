@@ -12508,5 +12508,23 @@
     "odd_mercado": 1.33,
     "timestamp": "2026-10-03T15:55:33.498418-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "d7e650f6c048_custom_1790214989396_20261003",
+    "fixture_id": "19714729",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Grêmio Anápolis",
+    "away": "Rio Verde GO",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.685,
+    "timestamp": "2026-10-03T16:35:22.660483-03:00",
+    "resultado": "pendente"
   }
 ]
