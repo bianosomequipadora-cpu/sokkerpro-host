@@ -12526,5 +12526,23 @@
     "odd_mercado": 1.685,
     "timestamp": "2026-10-03T16:35:22.660483-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d418057396f9_custom_1790437034606_20261003",
+    "fixture_id": "19636843",
+    "mercado": "custom_1790437034606",
+    "tipo": "escanteio_ft",
+    "home": "Tristán Suárez",
+    "away": "Quilmes Atlético Club",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.7,
+    "odd_bano": null,
+    "odd_mercado": 1.77,
+    "timestamp": "2026-10-03T16:41:38.234555-03:00",
+    "resultado": "pendente"
   }
 ]
