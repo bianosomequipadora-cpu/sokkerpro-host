@@ -12094,5 +12094,23 @@
     "odd_mercado": 2.08,
     "timestamp": "2026-10-03T12:06:05.791991-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0d09dace5d2b_custom_1790214989396_20261003",
+    "fixture_id": "19754934",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Mendrisio",
+    "away": "Tuggen",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 3.125,
+    "timestamp": "2026-10-03T12:09:04.738635-03:00",
+    "resultado": "pendente"
   }
 ]
