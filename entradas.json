@@ -12130,5 +12130,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-03T12:21:36.688838-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7d814e127832_custom_1790706998863_20261003",
+    "fixture_id": "19738046",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Cham",
+    "away": "Bulle",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 2,
+    "entry_sa": 3,
+    "entry_total": 5,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.31,
+    "timestamp": "2026-10-03T12:27:49.748739-03:00",
+    "resultado": "pendente"
   }
 ]
