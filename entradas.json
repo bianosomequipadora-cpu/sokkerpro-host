@@ -12004,5 +12004,23 @@
     "odd_mercado": 2.56,
     "timestamp": "2026-10-03T11:38:15.886045-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7d814e127832_custom_1790214989396_20261003",
+    "fixture_id": "19738046",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Cham",
+    "away": "Bulle",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 3.4,
+    "timestamp": "2026-10-03T11:41:10.790375-03:00",
+    "resultado": "pendente"
   }
 ]
