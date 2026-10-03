@@ -12742,5 +12742,23 @@
     "odd_mercado": 1.4,
     "timestamp": "2026-10-03T20:03:37.388626-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "87741c6947f6_custom_1790438667502_20261003",
+    "fixture_id": "19622765",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Westchester SC",
+    "away": "Alta",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.61,
+    "odd_bano": null,
+    "odd_mercado": 1.655,
+    "timestamp": "2026-10-03T20:25:44.689757-03:00",
+    "resultado": "pendente"
   }
 ]
