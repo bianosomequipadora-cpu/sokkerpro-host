@@ -12400,5 +12400,23 @@
     "odd_mercado": 1.416,
     "timestamp": "2026-10-03T14:52:24.244650-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9c0d29ccd570_custom_1790214989396_20261003",
+    "fixture_id": "19737525",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Dessel Sport",
+    "away": "Harelbeke",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.6,
+    "odd_bano": null,
+    "odd_mercado": 1.625,
+    "timestamp": "2026-10-03T15:05:32.521411-03:00",
+    "resultado": "pendente"
   }
 ]
