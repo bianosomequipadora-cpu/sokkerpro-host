@@ -11608,5 +11608,23 @@
     "odd_mercado": 1.645,
     "timestamp": "2026-10-03T10:32:05.702485-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "010f30211b9a_custom_1790214989396_20261003",
+    "fixture_id": "19740207",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Katwijk",
+    "away": "Kozakken Boys",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.9,
+    "timestamp": "2026-10-03T10:42:28.268891-03:00",
+    "resultado": "pendente"
   }
 ]
