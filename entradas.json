@@ -11842,5 +11842,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-03T11:30:37.149549-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "eb581d7eddfe_custom_1790215023930_20261003",
+    "fixture_id": "19728232",
+    "mercado": "custom_1790215023930",
+    "tipo": "escanteio_ht",
+    "home": "Reading",
+    "away": "Bradford City",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.344,
+    "timestamp": "2026-10-03T11:32:44.868665-03:00",
+    "resultado": "pendente"
   }
 ]
