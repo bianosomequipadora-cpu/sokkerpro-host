@@ -12058,5 +12058,23 @@
     "odd_mercado": 1.77,
     "timestamp": "2026-10-03T11:48:37.069326-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "99b0a9fafd9d_custom_1790215023930_20261003",
+    "fixture_id": "19887083",
+    "mercado": "custom_1790215023930",
+    "tipo": "escanteio_ht",
+    "home": "Worksop Town",
+    "away": "United of Manchester",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.81,
+    "timestamp": "2026-10-03T11:48:44.031147-03:00",
+    "resultado": "pendente"
   }
 ]
