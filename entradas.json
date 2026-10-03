@@ -12616,5 +12616,23 @@
     "odd_mercado": 1.41,
     "timestamp": "2026-10-03T17:34:14.431470-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c848c4f98d39_custom_1790215023930_20261003",
+    "fixture_id": "19681899",
+    "mercado": "custom_1790215023930",
+    "tipo": "escanteio_ht",
+    "home": "Santa Cruz",
+    "away": "Maringá",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.85,
+    "odd_bano": null,
+    "odd_mercado": 1.816,
+    "timestamp": "2026-10-03T17:37:19.545231-03:00",
+    "resultado": "pendente"
   }
 ]
