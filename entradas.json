@@ -13264,5 +13264,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-04T13:26:29.256073-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "22ba5fd839a2_custom_1791116290747_20261004",
+    "fixture_id": "19676719",
+    "mercado": "custom_1791116290747",
+    "tipo": "escanteio_ft",
+    "home": "Kosovo",
+    "away": "Austria",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.485,
+    "timestamp": "2026-10-04T14:40:33.366385-03:00",
+    "resultado": "pendente"
   }
 ]
