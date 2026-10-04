@@ -12850,5 +12850,23 @@
     "odd_mercado": 1.45,
     "timestamp": "2026-10-04T03:22:19.506977-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "4842bb73bf7e_custom_1790706998863_20261004",
+    "fixture_id": "19864651",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Rayong United",
+    "away": "Marines Eureka",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.43,
+    "timestamp": "2026-10-04T07:27:34.016047-03:00",
+    "resultado": "pendente"
   }
 ]
