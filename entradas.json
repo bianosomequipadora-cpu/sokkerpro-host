@@ -13084,5 +13084,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-04T10:21:37.619599-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b2c05b371245_custom_1790706998863_20261004",
+    "fixture_id": "19754449",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Servette II",
+    "away": "Lausanne II",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.19,
+    "timestamp": "2026-10-04T10:23:59.083337-03:00",
+    "resultado": "pendente"
   }
 ]
