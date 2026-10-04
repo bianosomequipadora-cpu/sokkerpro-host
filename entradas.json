@@ -13156,5 +13156,23 @@
     "odd_mercado": 2.425,
     "timestamp": "2026-10-04T10:46:29.736228-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "eb513521edf1_custom_1790706998863_20261004",
+    "fixture_id": "19791881",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Znojmo",
+    "away": "Humpolec",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.304,
+    "timestamp": "2026-10-04T11:20:52.400884-03:00",
+    "resultado": "pendente"
   }
 ]
