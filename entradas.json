@@ -12886,5 +12886,23 @@
     "odd_mercado": 1.33,
     "timestamp": "2026-10-04T08:24:37.517382-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "aa867b91a929_custom_1790706998863_20261004",
+    "fixture_id": "19885296",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Kaizer Chiefs U23",
+    "away": "Mamelodi Sundowns U23",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.45,
+    "timestamp": "2026-10-04T08:29:39.179486-03:00",
+    "resultado": "pendente"
   }
 ]
