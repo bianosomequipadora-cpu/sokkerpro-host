@@ -13120,5 +13120,23 @@
     "odd_mercado": 1.9,
     "timestamp": "2026-10-04T10:36:03.483836-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "05f32d80ff15_custom_1790437034606_20261004",
+    "fixture_id": "19651295",
+    "mercado": "custom_1790437034606",
+    "tipo": "escanteio_ft",
+    "home": "Bærum",
+    "away": "IF Ready",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.795,
+    "timestamp": "2026-10-04T10:44:30.304274-03:00",
+    "resultado": "pendente"
   }
 ]
