@@ -13372,5 +13372,23 @@
     "odd_mercado": 1.6,
     "timestamp": "2026-10-04T15:52:26.124507-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "2e2a069e4612_custom_1790214989396_20261004",
+    "fixture_id": "19636845",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Club Atlético Chacarita Juniors",
+    "away": "Patronato",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 1.68,
+    "timestamp": "2026-10-04T16:08:56.887108-03:00",
+    "resultado": "pendente"
   }
 ]
