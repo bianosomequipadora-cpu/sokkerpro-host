@@ -13210,5 +13210,23 @@
     "odd_mercado": 1.99,
     "timestamp": "2026-10-04T11:28:26.581398-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "99f5b7b8d0a9_custom_1791123920663_20261004",
+    "fixture_id": "19889832",
+    "mercado": "custom_1791123920663",
+    "tipo": "gol_intervalo",
+    "home": "RC de Kadiogo",
+    "away": "US Forces Armees",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.1,
+    "odd_bano": null,
+    "odd_mercado": 2.13,
+    "timestamp": "2026-10-04T12:49:11.269255-03:00",
+    "resultado": "pendente"
   }
 ]
