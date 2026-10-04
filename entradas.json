@@ -12814,5 +12814,23 @@
     "odd_mercado": 1.288,
     "timestamp": "2026-10-03T22:00:39.874983-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "53e9ac24df1b_custom_1790706998863_20261003",
+    "fixture_id": "19742553",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Cancún",
+    "away": "Tapatío",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.325,
+    "timestamp": "2026-10-03T23:25:30.665597-03:00",
+    "resultado": "pendente"
   }
 ]
