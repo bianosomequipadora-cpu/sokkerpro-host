@@ -13354,5 +13354,23 @@
     "odd_mercado": 1.62,
     "timestamp": "2026-10-04T15:32:42.181880-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9608cfbe7a59_custom_1791123920663_20261004",
+    "fixture_id": "19888098",
+    "mercado": "custom_1791123920663",
+    "tipo": "gol_intervalo",
+    "home": "Midleton",
+    "away": "Blarney United",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.57,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-10-04T15:52:26.124507-03:00",
+    "resultado": "pendente"
   }
 ]
