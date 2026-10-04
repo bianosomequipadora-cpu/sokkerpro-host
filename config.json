@@ -308,9 +308,9 @@
           "valor": 2
         },
         {
-          "campo": "dapm_10_total",
+          "campo": "dapm_10_fav",
           "operador": "gte",
-          "valor": 1.3
+          "valor": 1
         },
         {
           "campo": "escanteios_5m",
