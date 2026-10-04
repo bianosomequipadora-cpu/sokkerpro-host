@@ -13102,5 +13102,23 @@
     "odd_mercado": 1.19,
     "timestamp": "2026-10-04T10:23:59.083337-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9df8c46e7245_custom_1790214989396_20261004",
+    "fixture_id": "19852698",
+    "mercado": "custom_1790214989396",
+    "tipo": "escanteio_ht",
+    "home": "Villa d'Almè",
+    "away": "Fiorenzuola",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.9,
+    "timestamp": "2026-10-04T10:36:03.483836-03:00",
+    "resultado": "pendente"
   }
 ]
