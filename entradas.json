@@ -12796,5 +12796,23 @@
     "odd_mercado": 2.01,
     "timestamp": "2026-10-03T20:30:32.156917-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "bed336f20b00_custom_1790706998863_20261003",
+    "fixture_id": "19622123",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Tampa Bay Rowdies",
+    "away": "Miami FC II",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.33,
+    "odd_bano": null,
+    "odd_mercado": 1.288,
+    "timestamp": "2026-10-03T22:00:39.874983-03:00",
+    "resultado": "pendente"
   }
 ]
