@@ -375,7 +375,7 @@
       },
       "criterios_api": [
         {
-          "campo": "prob_ft_over_0_5",
+          "campo": "prob_ht_over_0_5",
           "operador": "gte",
           "valor": 90
         },
