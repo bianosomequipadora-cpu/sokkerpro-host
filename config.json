@@ -310,7 +310,7 @@
         {
           "campo": "dapm_10_fav",
           "operador": "gte",
-          "valor": 1
+          "valor": 0.9
         },
         {
           "campo": "escanteios_5m",
