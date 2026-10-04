@@ -13246,5 +13246,23 @@
     "odd_mercado": 1.855,
     "timestamp": "2026-10-04T13:10:50.987774-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "7d4f4ea89641_custom_1790706998863_20261004",
+    "fixture_id": "19835243",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Logroñés II",
+    "away": "Olot",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-04T13:25:13.513637-03:00",
+    "resultado": "pendente"
   }
 ]
