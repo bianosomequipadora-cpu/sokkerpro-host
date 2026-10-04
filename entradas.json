@@ -13426,5 +13426,23 @@
     "odd_mercado": 1.432,
     "timestamp": "2026-10-04T16:18:54.472896-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d59a2f4436aa_custom_1790215023930_20261004",
+    "fixture_id": "19676671",
+    "mercado": "custom_1790215023930",
+    "tipo": "escanteio_ht",
+    "home": "Greece",
+    "away": "Germany",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.432,
+    "timestamp": "2026-10-04T16:19:02.200900-03:00",
+    "resultado": "pendente"
   }
 ]
