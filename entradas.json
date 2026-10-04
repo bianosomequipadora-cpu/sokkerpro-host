@@ -12940,5 +12940,23 @@
     "odd_mercado": 3.15,
     "timestamp": "2026-10-04T09:39:56.193275-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "3db47cf03921_custom_1790438667502_20261004",
+    "fixture_id": "19631127",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Bryne",
+    "away": "Lyn",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.44,
+    "odd_bano": null,
+    "odd_mercado": 1.405,
+    "timestamp": "2026-10-04T09:47:47.986766-03:00",
+    "resultado": "pendente"
   }
 ]
