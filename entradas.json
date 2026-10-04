@@ -13444,5 +13444,23 @@
     "odd_mercado": 1.432,
     "timestamp": "2026-10-04T16:19:02.200900-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "5f317fc6f6bf_custom_1791116290747_20261004",
+    "fixture_id": "19637913",
+    "mercado": "custom_1791116290747",
+    "tipo": "escanteio_ft",
+    "home": "Sportivo Italiano",
+    "away": "Talleres Remedios de Escalada",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 2.15,
+    "odd_bano": null,
+    "odd_mercado": 2.15,
+    "timestamp": "2026-10-04T16:46:06.959034-03:00",
+    "resultado": "pendente"
   }
 ]
