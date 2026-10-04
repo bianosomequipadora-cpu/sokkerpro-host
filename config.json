@@ -293,11 +293,6 @@
           "valor": 1
         },
         {
-          "campo": "chutes_totais_min",
-          "operador": "gte",
-          "valor": 12
-        },
-        {
           "campo": "escanteios_minimos",
           "operador": "gte",
           "valor": 4
@@ -308,9 +303,9 @@
           "valor": 2
         },
         {
-          "campo": "dapm_10_fav",
+          "campo": "appm_min_por_time",
           "operador": "gte",
-          "valor": 1
+          "valor": 0.9
         },
         {
           "campo": "escanteios_5m",
@@ -354,9 +349,9 @@
           "valor": 1
         },
         {
-          "campo": "dapm_10_fav",
+          "campo": "appm_min_por_time",
           "operador": "gte",
-          "valor": 1
+          "valor": 0.9
         },
         {
           "campo": "escanteios_5m",
