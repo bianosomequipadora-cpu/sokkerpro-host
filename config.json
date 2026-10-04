@@ -364,6 +364,42 @@
           "valor": 0
         }
       ]
+    },
+    "custom_1791123920663": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️🛜OVER GOL 1°TEMPO🛜⚽️",
+      "minuto_inicio": 13,
+      "minuto_fim": 26,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "stake": 10,
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": "perdendo_ou_empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "prob_ft_over_0_5",
+          "operador": "gte",
+          "valor": 90
+        },
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 1
+        },
+        {
+          "campo": "media_gols_partida_min",
+          "operador": "gte",
+          "valor": 2.5
+        },
+        {
+          "campo": "diferenca_gols_fav_max",
+          "operador": "lte",
+          "valor": 1
+        }
+      ]
     }
   }
 }
