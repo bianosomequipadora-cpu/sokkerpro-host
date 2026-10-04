@@ -13282,5 +13282,23 @@
     "odd_mercado": 1.485,
     "timestamp": "2026-10-04T14:40:33.366385-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "d266997bae37_custom_1791123920663_20261004",
+    "fixture_id": "19636842",
+    "mercado": "custom_1791123920663",
+    "tipo": "gol_intervalo",
+    "home": "Agropecuario Argentino",
+    "away": "Midland",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.83,
+    "odd_bano": null,
+    "odd_mercado": 1.86,
+    "timestamp": "2026-10-04T15:20:31.463010-03:00",
+    "resultado": "pendente"
   }
 ]
