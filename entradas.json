@@ -13588,5 +13588,23 @@
     "odd_mercado": 1.72,
     "timestamp": "2026-10-05T15:38:47.472651-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "a73ea0f297b1_custom_1790706998863_20261005",
+    "fixture_id": "19676667",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "France",
+    "away": "Belgium",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.33,
+    "odd_bano": null,
+    "odd_mercado": 1.408,
+    "timestamp": "2026-10-05T17:13:30.243142-03:00",
+    "resultado": "pendente"
   }
 ]
