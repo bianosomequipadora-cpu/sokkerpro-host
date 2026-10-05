@@ -325,7 +325,7 @@
       "stake": 10,
       "placar_valido": "",
       "criterios": {
-        "situacao_favorito": "perdendo"
+        "situacao_favorito": "empatando"
       },
       "criterios_api": [
         {
@@ -351,7 +351,7 @@
         {
           "campo": "appm_min_por_time",
           "operador": "gte",
-          "valor": 0.9
+          "valor": 0.7
         },
         {
           "campo": "escanteios_5m",
