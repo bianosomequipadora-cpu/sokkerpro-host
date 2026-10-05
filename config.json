@@ -323,16 +323,11 @@
       "periodo": 1,
       "tipo": "escanteio_ht",
       "stake": 10,
-      "placar_valido": "",
+      "placar_valido": "0x0 , 1x1, 2x2, 3x3 ",
       "criterios": {
-        "situacao_favorito": "empatando"
+        "situacao_favorito": ""
       },
       "criterios_api": [
-        {
-          "campo": "diferenca_gols_fav_max",
-          "operador": "lte",
-          "valor": 1
-        },
         {
           "campo": "chutes_totais_min",
           "operador": "gte",
