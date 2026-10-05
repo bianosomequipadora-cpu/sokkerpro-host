@@ -13606,5 +13606,23 @@
     "odd_mercado": 1.408,
     "timestamp": "2026-10-05T17:13:30.243142-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "64646499b6bb_custom_1791203748430_20261005",
+    "fixture_id": "19637911",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Deportivo Merlo",
+    "away": "Brown de Adrogué",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.7,
+    "odd_bano": null,
+    "odd_mercado": 1.68,
+    "timestamp": "2026-10-05T19:36:54.879500-03:00",
+    "resultado": "pendente"
   }
 ]
