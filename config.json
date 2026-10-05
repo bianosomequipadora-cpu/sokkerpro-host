@@ -115,7 +115,7 @@
         {
           "campo": "dapm_5_min",
           "operador": "gte",
-          "valor": 1.4
+          "valor": 1
         }
       ]
     },
@@ -371,13 +371,13 @@
       "stake": 10,
       "placar_valido": "0x0",
       "criterios": {
-        "situacao_favorito": "perdendo_ou_empatando"
+        "situacao_favorito": ""
       },
       "criterios_api": [
         {
           "campo": "prob_ht_over_0_5",
           "operador": "gte",
-          "valor": 90
+          "valor": 80
         },
         {
           "campo": "appm_min_por_time",
