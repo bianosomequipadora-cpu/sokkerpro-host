@@ -13534,5 +13534,23 @@
     "odd_mercado": 1.384,
     "timestamp": "2026-10-04T21:41:51.327057-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "620450da81d6_custom_1791119445508_20261005",
+    "fixture_id": "19889845",
+    "mercado": "custom_1791119445508",
+    "tipo": "escanteio_ht",
+    "home": "Japan",
+    "away": "New Zealand",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 1.565,
+    "timestamp": "2026-10-05T08:08:02.250191-03:00",
+    "resultado": "pendente"
   }
 ]
