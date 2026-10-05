@@ -13552,5 +13552,23 @@
     "odd_mercado": 1.565,
     "timestamp": "2026-10-05T08:08:02.250191-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "db160b245beb_custom_1791203748430_20261005",
+    "fixture_id": "19783613",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Campos AA",
+    "away": "Búzios",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 1.736,
+    "timestamp": "2026-10-05T15:37:06.742317-03:00",
+    "resultado": "pendente"
   }
 ]
