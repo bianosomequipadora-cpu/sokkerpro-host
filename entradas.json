@@ -13480,5 +13480,23 @@
     "odd_mercado": 1.336,
     "timestamp": "2026-10-04T19:32:16.513693-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "5fd98ab9e500_custom_1790706998863_20261004",
+    "fixture_id": "19652562",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Houston Dash W",
+    "away": "Washington Spirit W",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 1.42,
+    "odd_bano": null,
+    "odd_mercado": 1.416,
+    "timestamp": "2026-10-04T21:28:07.355106-03:00",
+    "resultado": "pendente"
   }
 ]
