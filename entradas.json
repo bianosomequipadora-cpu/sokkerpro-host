@@ -14128,5 +14128,23 @@
     "odd_mercado": 1.696,
     "timestamp": "2026-10-06T16:40:40.296048-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "562b7d3c8711_custom_1791296417966_20261006",
+    "fixture_id": "19888518",
+    "mercado": "custom_1791296417966",
+    "tipo": "escanteio_ft",
+    "home": "Gimnasia Esgrima Res.",
+    "away": "Rosario Central Res.",
+    "message_id": 0,
+    "extra_val": 10,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 2.07,
+    "odd_bano": null,
+    "odd_mercado": 2.405,
+    "timestamp": "2026-10-06T16:41:30.495592-03:00",
+    "resultado": "pendente"
   }
 ]
