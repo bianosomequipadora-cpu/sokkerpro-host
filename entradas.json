@@ -13840,5 +13840,23 @@
     "odd_mercado": 1.37,
     "timestamp": "2026-10-06T14:18:49.170785-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "8b2b42a943bd_custom_1791203748430_20261006",
+    "fixture_id": "19385493",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Norway U21",
+    "away": "Israel U21",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.785,
+    "timestamp": "2026-10-06T14:19:03.077092-03:00",
+    "resultado": "pendente"
   }
 ]
