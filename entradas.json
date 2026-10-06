@@ -13768,5 +13768,23 @@
     "odd_mercado": 2.184,
     "timestamp": "2026-10-06T12:37:07.898834-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "fda0fdeb98c0_custom_1791296417966_20261006",
+    "fixture_id": "19676765",
+    "mercado": "custom_1791296417966",
+    "tipo": "escanteio_ft",
+    "home": "Kazakhstan",
+    "away": "Faroe Islands",
+    "message_id": 0,
+    "extra_val": 10,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.33,
+    "timestamp": "2026-10-06T12:41:58.787360-03:00",
+    "resultado": "pendente"
   }
 ]
