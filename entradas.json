@@ -13642,5 +13642,23 @@
     "odd_mercado": 2.416,
     "timestamp": "2026-10-05T21:36:54.057375-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d6e371ea5b9e_custom_1791203748430_20261005",
+    "fixture_id": "19783518",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Grenada",
+    "away": "Bonaire",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.25,
+    "odd_bano": null,
+    "odd_mercado": 2.208,
+    "timestamp": "2026-10-05T21:38:26.653781-03:00",
+    "resultado": "pendente"
   }
 ]
