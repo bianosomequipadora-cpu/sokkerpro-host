@@ -14218,5 +14218,23 @@
     "odd_mercado": 1.68,
     "timestamp": "2026-10-06T18:40:29.169839-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "de7013b5a78f_custom_1791203698501_20261006",
+    "fixture_id": "19745721",
+    "mercado": "custom_1791203698501",
+    "tipo": "escanteio_ht",
+    "home": "Olimpia",
+    "away": "Nacional Asunción",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.82,
+    "odd_bano": null,
+    "odd_mercado": 1.736,
+    "timestamp": "2026-10-06T19:50:29.473783-03:00",
+    "resultado": "pendente"
   }
 ]
