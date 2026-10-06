@@ -13894,5 +13894,23 @@
     "odd_mercado": 2.365,
     "timestamp": "2026-10-06T14:29:30.185698-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6e9e627d769b_custom_1791203748430_20261006",
+    "fixture_id": "19637442",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Claypole",
+    "away": "Deportivo Español",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.67,
+    "odd_bano": null,
+    "odd_mercado": 1.68,
+    "timestamp": "2026-10-06T14:37:10.143662-03:00",
+    "resultado": "pendente"
   }
 ]
