@@ -13678,5 +13678,23 @@
     "odd_mercado": 1.625,
     "timestamp": "2026-10-06T08:31:53.580265-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "c506cb0dc6ad_custom_1791203689122_20261006",
+    "fixture_id": "19880427",
+    "mercado": "custom_1791203689122",
+    "tipo": "escanteio_ht",
+    "home": "Guizhou Zhucheng Athletic",
+    "away": "Shanghai Port B",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.705,
+    "timestamp": "2026-10-06T09:05:38.553560-03:00",
+    "resultado": "pendente"
   }
 ]
