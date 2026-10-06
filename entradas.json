@@ -13984,5 +13984,23 @@
     "odd_mercado": 1.685,
     "timestamp": "2026-10-06T15:37:37.624803-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a7250e17615d_custom_1791203694704_20261006",
+    "fixture_id": "19385323",
+    "mercado": "custom_1791203694704",
+    "tipo": "escanteio_ft",
+    "home": "Kosovo U21",
+    "away": "Finland U21",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 3,
+    "entry_sa": 3,
+    "entry_total": 6,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.55,
+    "timestamp": "2026-10-06T15:38:10.780295-03:00",
+    "resultado": "pendente"
   }
 ]
