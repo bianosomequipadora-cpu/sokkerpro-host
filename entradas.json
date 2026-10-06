@@ -13732,5 +13732,23 @@
     "odd_mercado": 2.01,
     "timestamp": "2026-10-06T09:40:34.610326-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7dacea046531_custom_1791278944457_20261006",
+    "fixture_id": "19684087",
+    "mercado": "custom_1791278944457",
+    "tipo": "escanteio_ft",
+    "home": "Changchun Yatai",
+    "away": "Yanbian Longding",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.0,
+    "odd_bano": null,
+    "odd_mercado": 2.01,
+    "timestamp": "2026-10-06T09:40:45.626357-03:00",
+    "resultado": "pendente"
   }
 ]
