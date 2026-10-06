@@ -14164,5 +14164,23 @@
     "odd_mercado": 2.24,
     "timestamp": "2026-10-06T16:43:33.118611-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f891ecf1a98b_custom_1791296417966_20261006",
+    "fixture_id": "19809152",
+    "mercado": "custom_1791296417966",
+    "tipo": "escanteio_ft",
+    "home": "Grimsby Town",
+    "away": "Burton Albion",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.2,
+    "odd_bano": null,
+    "odd_mercado": 2.2,
+    "timestamp": "2026-10-06T16:43:50.111094-03:00",
+    "resultado": "pendente"
   }
 ]
