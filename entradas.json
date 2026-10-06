@@ -13624,5 +13624,23 @@
     "odd_mercado": 1.68,
     "timestamp": "2026-10-05T19:36:54.879500-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "0907d17b3a5e_custom_1791203748430_20261005",
+    "fixture_id": "19783520",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Bermuda",
+    "away": "Barbados",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.416,
+    "timestamp": "2026-10-05T21:36:54.057375-03:00",
+    "resultado": "pendente"
   }
 ]
