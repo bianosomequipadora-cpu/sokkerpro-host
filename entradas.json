@@ -13912,5 +13912,23 @@
     "odd_mercado": 1.68,
     "timestamp": "2026-10-06T14:37:10.143662-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "ed337d94e639_custom_1791203748430_20261006",
+    "fixture_id": "19385321",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Spain U21",
+    "away": "Romania U21",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.1,
+    "odd_bano": null,
+    "odd_mercado": 2.112,
+    "timestamp": "2026-10-06T14:40:35.547633-03:00",
+    "resultado": "pendente"
   }
 ]
