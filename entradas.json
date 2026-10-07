@@ -14398,5 +14398,23 @@
     "odd_mercado": 1.34,
     "timestamp": "2026-10-07T12:43:27.146635-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "1211f8c4c791_custom_1791296417966_20261007",
+    "fixture_id": "19672883",
+    "mercado": "custom_1791296417966",
+    "tipo": "escanteio_ft",
+    "home": "Neftchi",
+    "away": "Xorazm",
+    "message_id": 0,
+    "extra_val": 13,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.504,
+    "timestamp": "2026-10-07T12:45:34.686628-03:00",
+    "resultado": "pendente"
   }
 ]
