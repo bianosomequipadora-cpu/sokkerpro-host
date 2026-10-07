@@ -14290,5 +14290,23 @@
     "odd_mercado": 1.995,
     "timestamp": "2026-10-06T21:06:43.406261-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "5ae3013786e7_custom_1791296417966_20261006",
+    "fixture_id": "19609606",
+    "mercado": "custom_1791296417966",
+    "tipo": "escanteio_ft",
+    "home": "Chicago Fire",
+    "away": "Vancouver Whitecaps",
+    "message_id": 0,
+    "extra_val": 10,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": 2.0,
+    "odd_bano": null,
+    "odd_mercado": 1.304,
+    "timestamp": "2026-10-06T23:23:07.931525-03:00",
+    "resultado": "pendente"
   }
 ]
