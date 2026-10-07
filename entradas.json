@@ -14614,5 +14614,23 @@
     "odd_mercado": 1.664,
     "timestamp": "2026-10-07T16:39:03.304067-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "4f8603a9f5d5_custom_1791296417966_20261007",
+    "fixture_id": "19714726",
+    "mercado": "custom_1791296417966",
+    "tipo": "escanteio_ft",
+    "home": "Bom Jesus",
+    "away": "Morrinhos",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 1.65,
+    "odd_bano": null,
+    "odd_mercado": 1.685,
+    "timestamp": "2026-10-07T17:15:37.405784-03:00",
+    "resultado": "pendente"
   }
 ]
