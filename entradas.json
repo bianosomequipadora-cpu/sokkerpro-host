@@ -14650,5 +14650,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-07T17:15:58.162222-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "bca1433dbcc5_custom_1791278944457_20261007",
+    "fixture_id": "19881706",
+    "mercado": "custom_1791278944457",
+    "tipo": "escanteio_ft",
+    "home": "Nocerina",
+    "away": "Turris",
+    "message_id": 0,
+    "extra_val": 10,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.7,
+    "odd_bano": null,
+    "odd_mercado": 1.62,
+    "timestamp": "2026-10-07T17:30:49.147001-03:00",
+    "resultado": "pendente"
   }
 ]
