@@ -14506,5 +14506,23 @@
     "odd_mercado": 1.432,
     "timestamp": "2026-10-07T14:50:30.532019-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b78f6cae3bfd_custom_1790438667502_20261007",
+    "fixture_id": "19754933",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Freienbach",
+    "away": "Eschen / Mauren",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.4,
+    "odd_bano": null,
+    "odd_mercado": 1.408,
+    "timestamp": "2026-10-07T15:02:12.548131-03:00",
+    "resultado": "pendente"
   }
 ]
