@@ -14344,5 +14344,23 @@
     "odd_mercado": 1.54,
     "timestamp": "2026-10-07T10:20:52.940438-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "1123ca91ea34_custom_1791203748430_20261007",
+    "fixture_id": "19866979",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Lee Man U22",
+    "away": "Rangers U22",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.35,
+    "odd_bano": null,
+    "odd_mercado": 2.616,
+    "timestamp": "2026-10-07T10:24:25.415814-03:00",
+    "resultado": "pendente"
   }
 ]
