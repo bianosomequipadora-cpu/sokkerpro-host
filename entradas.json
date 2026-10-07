@@ -14596,5 +14596,23 @@
     "odd_mercado": 1.752,
     "timestamp": "2026-10-07T16:34:19.721953-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "fbda93bdfa83_custom_1791278944457_20261007",
+    "fixture_id": "19888524",
+    "mercado": "custom_1791278944457",
+    "tipo": "escanteio_ft",
+    "home": "Ferro Carril Reserves",
+    "away": "Independiente Res.",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.67,
+    "odd_bano": null,
+    "odd_mercado": 1.664,
+    "timestamp": "2026-10-07T16:39:03.304067-03:00",
+    "resultado": "pendente"
   }
 ]
