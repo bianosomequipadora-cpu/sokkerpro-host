@@ -14452,5 +14452,23 @@
     "odd_mercado": 1.264,
     "timestamp": "2026-10-07T13:33:25.284351-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "ec66918518a6_custom_1791278944457_20261007",
+    "fixture_id": "19854316",
+    "mercado": "custom_1791278944457",
+    "tipo": "escanteio_ft",
+    "home": "Shooting Stars",
+    "away": "Kano Pillars",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.0,
+    "odd_bano": null,
+    "odd_mercado": 2.075,
+    "timestamp": "2026-10-07T13:50:36.698446-03:00",
+    "resultado": "pendente"
   }
 ]
