@@ -14488,5 +14488,23 @@
     "odd_mercado": 1.288,
     "timestamp": "2026-10-07T14:44:03.442686-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "072289e78607_custom_1790706998863_20261007",
+    "fixture_id": "19881685",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Seravezza",
+    "away": "Lucchese",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.52,
+    "odd_bano": null,
+    "odd_mercado": 1.432,
+    "timestamp": "2026-10-07T14:50:30.532019-03:00",
+    "resultado": "pendente"
   }
 ]
