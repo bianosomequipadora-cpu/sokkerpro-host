@@ -14722,5 +14722,23 @@
     "odd_mercado": 1.496,
     "timestamp": "2026-10-07T19:11:54.687421-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "f63118d3673d_custom_1791203748430_20261007",
+    "fixture_id": "19880917",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Coquimbo Unido",
+    "away": "Cobreloa",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.62,
+    "timestamp": "2026-10-07T19:35:36.012590-03:00",
+    "resultado": "pendente"
   }
 ]
