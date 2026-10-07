@@ -14740,5 +14740,23 @@
     "odd_mercado": 1.62,
     "timestamp": "2026-10-07T19:35:36.012590-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "56d2e99a3a66_custom_1791203748430_20261007",
+    "fixture_id": "19890259",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Plaza Colonia",
+    "away": "Juventud",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.432,
+    "timestamp": "2026-10-07T20:37:10.714985-03:00",
+    "resultado": "pendente"
   }
 ]
