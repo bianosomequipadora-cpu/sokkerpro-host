@@ -14524,5 +14524,23 @@
     "odd_mercado": 1.408,
     "timestamp": "2026-10-07T15:02:12.548131-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "6b382c2310de_custom_1791278944457_20261007",
+    "fixture_id": "19881703",
+    "mercado": "custom_1791278944457",
+    "tipo": "escanteio_ft",
+    "home": "Vigor Lamezia",
+    "away": "Gelbison",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 1.82,
+    "odd_bano": null,
+    "odd_mercado": 1.755,
+    "timestamp": "2026-10-07T15:47:53.984617-03:00",
+    "resultado": "pendente"
   }
 ]
