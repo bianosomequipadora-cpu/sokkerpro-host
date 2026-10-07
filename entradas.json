@@ -14326,5 +14326,23 @@
     "odd_mercado": 2.56,
     "timestamp": "2026-10-07T09:37:02.488698-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "157fbe5f370d_custom_1790438667502_20261007",
+    "fixture_id": "19881696",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Real Calepina",
+    "away": "Leon",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.53,
+    "odd_bano": null,
+    "odd_mercado": 1.54,
+    "timestamp": "2026-10-07T10:20:52.940438-03:00",
+    "resultado": "pendente"
   }
 ]
