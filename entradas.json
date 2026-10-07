@@ -14470,5 +14470,23 @@
     "odd_mercado": 2.075,
     "timestamp": "2026-10-07T13:50:36.698446-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "785da10c37dd_custom_1791278944457_20261007",
+    "fixture_id": "19785529",
+    "mercado": "custom_1791278944457",
+    "tipo": "escanteio_ft",
+    "home": "Busaiteen",
+    "away": "Qalali",
+    "message_id": 0,
+    "extra_val": 13,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.288,
+    "timestamp": "2026-10-07T14:44:03.442686-03:00",
+    "resultado": "pendente"
   }
 ]
