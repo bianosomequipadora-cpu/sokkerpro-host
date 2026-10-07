@@ -14686,5 +14686,23 @@
     "odd_mercado": 1.795,
     "timestamp": "2026-10-07T17:37:07.495502-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "e6dbdcfd30f1_custom_1791296417966_20261007",
+    "fixture_id": "19868257",
+    "mercado": "custom_1791296417966",
+    "tipo": "escanteio_ft",
+    "home": "Vinotinto FC",
+    "away": "Deportivo Cuenca Juniors",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.38,
+    "timestamp": "2026-10-07T19:10:29.450775-03:00",
+    "resultado": "pendente"
   }
 ]
