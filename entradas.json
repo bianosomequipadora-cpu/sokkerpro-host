@@ -15424,5 +15424,23 @@
     "odd_mercado": 1.7,
     "timestamp": "2026-10-08T19:12:08.840029-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "816b8d6c6c4c_custom_1791203748430_20261008",
+    "fixture_id": "19621797",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Santos",
+    "away": "Flamengo",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.02,
+    "odd_bano": null,
+    "odd_mercado": 1.91,
+    "timestamp": "2026-10-08T20:08:02.070409-03:00",
+    "resultado": "pendente"
   }
 ]
