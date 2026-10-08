@@ -15406,5 +15406,23 @@
     "odd_mercado": 1.7,
     "timestamp": "2026-10-08T19:11:55.781613-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "012786ddc464_custom_1791296417966_20261008",
+    "fixture_id": "19713197",
+    "mercado": "custom_1791296417966",
+    "tipo": "escanteio_ft",
+    "home": "Atlético",
+    "away": "Real Cartagena",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-10-08T19:12:08.840029-03:00",
+    "resultado": "pendente"
   }
 ]
