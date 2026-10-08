@@ -15334,5 +15334,23 @@
     "odd_mercado": 2.07,
     "timestamp": "2026-10-08T16:15:36.691059-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "04e841cc4ab7_custom_1790706998863_20261008",
+    "fixture_id": "19881076",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Gremio U20",
+    "away": "Operário PR U20",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-08T16:19:27.929916-03:00",
+    "resultado": "pendente"
   }
 ]
