@@ -15136,5 +15136,23 @@
     "odd_mercado": 1.736,
     "timestamp": "2026-10-08T14:12:04.056825-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7a0e637e8b70_custom_1791296417966_20261008",
+    "fixture_id": "19767550",
+    "mercado": "custom_1791296417966",
+    "tipo": "escanteio_ft",
+    "home": "Namungo",
+    "away": "TRA United SC",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 1.736,
+    "timestamp": "2026-10-08T14:12:19.280336-03:00",
+    "resultado": "pendente"
   }
 ]
