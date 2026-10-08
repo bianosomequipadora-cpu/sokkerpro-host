@@ -14776,5 +14776,23 @@
     "odd_mercado": 1.77,
     "timestamp": "2026-10-08T09:15:33.429752-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "218817c342ea_custom_1791203748430_20261008",
+    "fixture_id": "19724530",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Otrant-Olympic",
+    "away": "Mladost DG",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.82,
+    "timestamp": "2026-10-08T09:38:26.050350-03:00",
+    "resultado": "pendente"
   }
 ]
