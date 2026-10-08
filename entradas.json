@@ -15280,5 +15280,23 @@
     "odd_mercado": 3.304,
     "timestamp": "2026-10-08T15:39:06.382644-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "999a8d6ffb7c_custom_1791278944457_20261008",
+    "fixture_id": "19764617",
+    "mercado": "custom_1791278944457",
+    "tipo": "escanteio_ft",
+    "home": "Al Wakrah",
+    "away": "Al Gharafa",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.38,
+    "timestamp": "2026-10-08T15:50:49.750989-03:00",
+    "resultado": "pendente"
   }
 ]
