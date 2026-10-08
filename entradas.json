@@ -14884,5 +14884,23 @@
     "odd_mercado": 1.565,
     "timestamp": "2026-10-08T10:35:37.652396-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "70af1e3f93b5_custom_1791203748430_20261008",
+    "fixture_id": "19886666",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Sama Al Sarhan",
+    "away": "Ittihad Al Ramtha",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.67,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-10-08T10:37:26.330192-03:00",
+    "resultado": "pendente"
   }
 ]
