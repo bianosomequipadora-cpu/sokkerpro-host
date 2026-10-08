@@ -15082,5 +15082,23 @@
     "odd_mercado": 1.456,
     "timestamp": "2026-10-08T13:34:15.263096-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "cd82cb6b4291_custom_1791296408624_20261008",
+    "fixture_id": "19785526",
+    "mercado": "custom_1791296408624",
+    "tipo": "escanteio_ht",
+    "home": "Al Hala",
+    "away": "Al Tadamun Buri",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.92,
+    "odd_bano": null,
+    "odd_mercado": 1.98,
+    "timestamp": "2026-10-08T13:37:37.949691-03:00",
+    "resultado": "pendente"
   }
 ]
