@@ -15262,5 +15262,23 @@
     "odd_mercado": 2.48,
     "timestamp": "2026-10-08T15:37:17.050270-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "2caa2fae2d51_custom_1791296408624_20261008",
+    "fixture_id": "19888530",
+    "mercado": "custom_1791296408624",
+    "tipo": "escanteio_ht",
+    "home": "Godoy Cruz Res.",
+    "away": "Barracas Central Res.",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 3.304,
+    "timestamp": "2026-10-08T15:39:06.382644-03:00",
+    "resultado": "pendente"
   }
 ]
