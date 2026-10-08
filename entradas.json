@@ -15352,5 +15352,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-08T16:19:27.929916-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6f39d702d130_custom_1791203748430_20261008",
+    "fixture_id": "19789087",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "MC Oran",
+    "away": "ES Sétif",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.67,
+    "odd_bano": null,
+    "odd_mercado": 1.655,
+    "timestamp": "2026-10-08T16:34:04.814099-03:00",
+    "resultado": "pendente"
   }
 ]
