@@ -14974,5 +14974,23 @@
     "odd_mercado": 1.53,
     "timestamp": "2026-10-08T11:34:17.841170-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "52bd1775d334_custom_1791203698501_20261008",
+    "fixture_id": "19847708",
+    "mercado": "custom_1791203698501",
+    "tipo": "escanteio_ht",
+    "home": "Arab Contractors FC",
+    "away": "El Gounah",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.584,
+    "timestamp": "2026-10-08T11:35:32.052339-03:00",
+    "resultado": "pendente"
   }
 ]
