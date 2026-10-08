@@ -14758,5 +14758,23 @@
     "odd_mercado": 1.432,
     "timestamp": "2026-10-07T20:37:10.714985-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "5266a5904315_custom_1790438667502_20261008",
+    "fixture_id": "19720476",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Port FC",
+    "away": "Persib",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 1.77,
+    "timestamp": "2026-10-08T09:15:33.429752-03:00",
+    "resultado": "pendente"
   }
 ]
