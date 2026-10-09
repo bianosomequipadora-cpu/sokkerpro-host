@@ -15946,5 +15946,23 @@
     "odd_mercado": 1.645,
     "timestamp": "2026-10-09T11:41:26.550273-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6d75ee181c1f_custom_1791278944457_20261009",
+    "fixture_id": "19720827",
+    "mercado": "custom_1791278944457",
+    "tipo": "escanteio_ft",
+    "home": "Ironi Kiryat Gat",
+    "away": "Kiryat Yam SC",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 2.05,
+    "odd_bano": null,
+    "odd_mercado": 2.08,
+    "timestamp": "2026-10-09T11:43:25.333096-03:00",
+    "resultado": "pendente"
   }
 ]
