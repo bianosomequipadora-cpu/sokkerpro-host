@@ -16504,5 +16504,23 @@
     "odd_mercado": 1.43,
     "timestamp": "2026-10-09T15:22:33.296666-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f39fa8624f05_custom_1791278944457_20261009",
+    "fixture_id": "19734848",
+    "mercado": "custom_1791278944457",
+    "tipo": "escanteio_ft",
+    "home": "Wolfsberg",
+    "away": "Velden",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-10-09T15:43:12.246606-03:00",
+    "resultado": "pendente"
   }
 ]
