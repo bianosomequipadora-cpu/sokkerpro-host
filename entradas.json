@@ -16720,5 +16720,23 @@
     "odd_mercado": 1.31,
     "timestamp": "2026-10-09T16:22:55.433332-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6cf33a865573_custom_1791203748430_20261009",
+    "fixture_id": "19748196",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Sutton United",
+    "away": "Boreham Wood",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 3.125,
+    "timestamp": "2026-10-09T16:23:28.356495-03:00",
+    "resultado": "pendente"
   }
 ]
