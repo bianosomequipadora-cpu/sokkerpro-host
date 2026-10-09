@@ -15694,5 +15694,23 @@
     "odd_mercado": 2.2,
     "timestamp": "2026-10-09T09:45:28.694499-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "bf743dca1a91_custom_1791203748430_20261009",
+    "fixture_id": "19774190",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Sesvete",
+    "away": "Jadran LP",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.95,
+    "odd_bano": null,
+    "odd_mercado": 1.98,
+    "timestamp": "2026-10-09T10:32:32.869875-03:00",
+    "resultado": "pendente"
   }
 ]
