@@ -16702,5 +16702,23 @@
     "odd_mercado": 1.98,
     "timestamp": "2026-10-09T16:20:19.893341-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "70ca6ca10943_custom_1790706998863_20261009",
+    "fixture_id": "19890201",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Flamengo SP U20",
+    "away": "Bragantino U20",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.31,
+    "timestamp": "2026-10-09T16:22:55.433332-03:00",
+    "resultado": "pendente"
   }
 ]
