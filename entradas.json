@@ -16990,5 +16990,23 @@
     "odd_mercado": 1.44,
     "timestamp": "2026-10-09T20:16:46.395470-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "5ef54d25ec8a_custom_1790438667502_20261009",
+    "fixture_id": "19622122",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Lexington",
+    "away": "Tulsa Roughnecks",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-10-09T20:55:31.630299-03:00",
+    "resultado": "pendente"
   }
 ]
