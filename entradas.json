@@ -16000,5 +16000,23 @@
     "odd_mercado": 2.15,
     "timestamp": "2026-10-09T12:04:54.806066-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d6756d87df39_custom_1791203748430_20261009",
+    "fixture_id": "19721675",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Be1 NFA",
+    "away": "Dainava",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.535,
+    "timestamp": "2026-10-09T12:05:47.401294-03:00",
+    "resultado": "pendente"
   }
 ]
