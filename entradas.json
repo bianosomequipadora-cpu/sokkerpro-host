@@ -16468,5 +16468,23 @@
     "odd_mercado": 1.495,
     "timestamp": "2026-10-09T15:17:45.333415-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5571b783901b_custom_1790438667502_20261009",
+    "fixture_id": "19778730",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Al Nassr",
+    "away": "Al Diraiyah FC",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.512,
+    "timestamp": "2026-10-09T15:20:55.428000-03:00",
+    "resultado": "pendente"
   }
 ]
