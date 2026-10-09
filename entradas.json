@@ -15604,5 +15604,23 @@
     "odd_mercado": 2.34,
     "timestamp": "2026-10-09T05:08:04.342731-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "70f847617c03_custom_1791203748430_20261009",
+    "fixture_id": "19883189",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Sakura",
+    "away": "Taipei Bear W",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.35,
+    "odd_bano": null,
+    "odd_mercado": 2.35,
+    "timestamp": "2026-10-09T06:37:02.408000-03:00",
+    "resultado": "pendente"
   }
 ]
