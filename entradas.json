@@ -16324,5 +16324,23 @@
     "odd_mercado": 2.15,
     "timestamp": "2026-10-09T13:44:00.783955-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "308fda665a8d_custom_1791500183637_20261009",
+    "fixture_id": "19668258",
+    "mercado": "custom_1791500183637",
+    "tipo": "escanteio_ft",
+    "home": "Nõmme United II",
+    "away": "Levadia II",
+    "message_id": 0,
+    "extra_val": 10,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.92,
+    "odd_bano": null,
+    "odd_mercado": 2.2,
+    "timestamp": "2026-10-09T13:45:37.841075-03:00",
+    "resultado": "pendente"
   }
 ]
