@@ -15712,5 +15712,23 @@
     "odd_mercado": 1.98,
     "timestamp": "2026-10-09T10:32:32.869875-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "1cb8dfc72139_custom_1791534270147_20261009",
+    "fixture_id": "19720829",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Maccabi Herzliya",
+    "away": "Maccabi Ahi Nazareth",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.57,
+    "odd_bano": null,
+    "odd_mercado": 1.736,
+    "timestamp": "2026-10-09T10:32:53.789909-03:00",
+    "resultado": "pendente"
   }
 ]
