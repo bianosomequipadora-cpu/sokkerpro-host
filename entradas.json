@@ -15586,5 +15586,23 @@
     "odd_mercado": 2.35,
     "timestamp": "2026-10-09T04:37:20.939672-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "18550418c9c1_custom_1791203748430_20261009",
+    "fixture_id": "19676319",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Gimpo",
+    "away": "Seoul E.",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.3,
+    "odd_bano": null,
+    "odd_mercado": 2.34,
+    "timestamp": "2026-10-09T05:08:04.342731-03:00",
+    "resultado": "pendente"
   }
 ]
