@@ -15982,5 +15982,23 @@
     "odd_mercado": 1.888,
     "timestamp": "2026-10-09T12:03:06.554048-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9fb3dacbe6b8_custom_1791534260012_20261009",
+    "fixture_id": "19745206",
+    "mercado": "custom_1791534260012",
+    "tipo": "escanteio_ft",
+    "home": "Ittifaq",
+    "away": "Al Thaid",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 2.15,
+    "odd_bano": null,
+    "odd_mercado": 2.15,
+    "timestamp": "2026-10-09T12:04:54.806066-03:00",
+    "resultado": "pendente"
   }
 ]
