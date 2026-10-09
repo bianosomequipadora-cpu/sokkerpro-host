@@ -16252,5 +16252,23 @@
     "odd_mercado": 1.98,
     "timestamp": "2026-10-09T13:35:34.522225-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9afb133f2665_custom_1791203748430_20261009",
+    "fixture_id": "19760776",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Chojniczanka Chojnice",
+    "away": "NKP Podhale",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.85,
+    "timestamp": "2026-10-09T13:37:40.613890-03:00",
+    "resultado": "pendente"
   }
 ]
