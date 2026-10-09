@@ -16684,5 +16684,23 @@
     "odd_mercado": 1.95,
     "timestamp": "2026-10-09T16:20:00.410777-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "8e41fd7ddceb_custom_1791203748430_20261009",
+    "fixture_id": "19627951",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "UCD",
+    "away": "Longford Town",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.98,
+    "timestamp": "2026-10-09T16:20:19.893341-03:00",
+    "resultado": "pendente"
   }
 ]
