@@ -15730,5 +15730,23 @@
     "odd_mercado": 1.736,
     "timestamp": "2026-10-09T10:32:53.789909-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "44df27c6688b_custom_1791203748430_20261009",
+    "fixture_id": "19720826",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Kafr Qasim",
+    "away": "Bnei Yehuda",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 1.75,
+    "timestamp": "2026-10-09T10:33:05.368113-03:00",
+    "resultado": "pendente"
   }
 ]
