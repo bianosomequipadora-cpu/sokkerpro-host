@@ -16054,5 +16054,23 @@
     "odd_mercado": 1.504,
     "timestamp": "2026-10-09T12:12:27.088106-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "71d229a70bd2_custom_1791203748430_20261009",
+    "fixture_id": "19651832",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Flekkerøy",
+    "away": "Odd II",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.405,
+    "timestamp": "2026-10-09T12:34:37.060198-03:00",
+    "resultado": "pendente"
   }
 ]
