@@ -16954,5 +16954,23 @@
     "odd_mercado": 2.135,
     "timestamp": "2026-10-09T17:36:40.424052-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "53399d27f089_custom_1791500183637_20261009",
+    "fixture_id": "19713195",
+    "mercado": "custom_1791500183637",
+    "tipo": "escanteio_ft",
+    "home": "Real Cundinamarca",
+    "away": "Real Santander",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.384,
+    "timestamp": "2026-10-09T18:43:32.918761-03:00",
+    "resultado": "pendente"
   }
 ]
