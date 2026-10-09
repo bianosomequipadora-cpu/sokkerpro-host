@@ -15496,5 +15496,23 @@
     "odd_mercado": 1.52,
     "timestamp": "2026-10-09T03:41:42.606263-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "8da3b27e8229_custom_1791500183637_20261009",
+    "fixture_id": "19648052",
+    "mercado": "custom_1791500183637",
+    "tipo": "escanteio_ft",
+    "home": "Daejeon Citizen",
+    "away": "Jeonbuk Motors",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.552,
+    "timestamp": "2026-10-09T03:41:50.071317-03:00",
+    "resultado": "pendente"
   }
 ]
