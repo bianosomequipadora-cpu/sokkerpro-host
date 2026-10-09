@@ -15442,5 +15442,23 @@
     "odd_mercado": 1.91,
     "timestamp": "2026-10-08T20:08:02.070409-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "a16d7f65f9bf_custom_1791203748430_20261009",
+    "fixture_id": "19676321",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Suwon",
+    "away": "Hwaseong",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.432,
+    "timestamp": "2026-10-09T02:31:53.129662-03:00",
+    "resultado": "pendente"
   }
 ]
