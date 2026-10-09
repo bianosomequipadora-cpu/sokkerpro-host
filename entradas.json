@@ -16594,5 +16594,23 @@
     "odd_mercado": 1.485,
     "timestamp": "2026-10-09T16:03:35.647848-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0915fb2aa166_custom_1791203748430_20261009",
+    "fixture_id": "19716333",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Raków Częstochowa",
+    "away": "Katowice",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-10-09T16:03:48.436445-03:00",
+    "resultado": "pendente"
   }
 ]
