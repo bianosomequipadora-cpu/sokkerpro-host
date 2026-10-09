@@ -16774,5 +16774,23 @@
     "odd_mercado": 1.83,
     "timestamp": "2026-10-09T16:34:14.189484-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "142bafbe1998_custom_1791203748430_20261009",
+    "fixture_id": "19885224",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "La Fiorita",
+    "away": "Murata",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.07,
+    "odd_bano": null,
+    "odd_mercado": 2.85,
+    "timestamp": "2026-10-09T16:51:10.265661-03:00",
+    "resultado": "pendente"
   }
 ]
