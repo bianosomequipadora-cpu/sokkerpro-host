@@ -15658,5 +15658,23 @@
     "odd_mercado": 1.8,
     "timestamp": "2026-10-09T08:05:32.533438-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "29ba964397b3_custom_1790706998863_20261009",
+    "fixture_id": "19692843",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Jaiyq",
+    "away": "FC Turan",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.315,
+    "timestamp": "2026-10-09T09:25:53.800371-03:00",
+    "resultado": "pendente"
   }
 ]
