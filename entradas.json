@@ -16828,5 +16828,23 @@
     "odd_mercado": 1.32,
     "timestamp": "2026-10-09T16:55:25.577743-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "137b20cf0ac4_custom_1791534260012_20261009",
+    "fixture_id": "19735161",
+    "mercado": "custom_1791534260012",
+    "tipo": "escanteio_ft",
+    "home": "Borussia Dortmund",
+    "away": "Werder Bremen",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.28,
+    "timestamp": "2026-10-09T17:11:01.252764-03:00",
+    "resultado": "pendente"
   }
 ]
