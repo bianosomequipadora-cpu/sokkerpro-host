@@ -16198,5 +16198,23 @@
     "odd_mercado": 1.408,
     "timestamp": "2026-10-09T13:17:17.898740-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "24e928682dd6_custom_1790438667502_20261009",
+    "fixture_id": "19767542",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Dodoma Jiji",
+    "away": "Singida Black Stars",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-09T13:19:39.286453-03:00",
+    "resultado": "pendente"
   }
 ]
