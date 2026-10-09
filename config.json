@@ -213,12 +213,12 @@
         {
           "campo": "escanteios_minimos",
           "operador": "gte",
-          "valor": 2
+          "valor": 1
         },
         {
           "campo": "chutes_alvo_min",
           "operador": "gte",
-          "valor": 1
+          "valor": 2
         },
         {
           "campo": "appm_min_por_time",
@@ -303,14 +303,14 @@
           "valor": 1
         },
         {
-          "campo": "escanteios_5m",
+          "campo": "escanteios_10m",
           "operador": "lte",
           "valor": 0
         },
         {
-          "campo": "dapm_5_min",
+          "campo": "dapm_10_fav",
           "operador": "gte",
-          "valor": 1.2
+          "valor": 1
         }
       ]
     },
@@ -344,14 +344,14 @@
           "valor": 1
         },
         {
-          "campo": "escanteios_5m",
+          "campo": "escanteios_10m",
           "operador": "lte",
           "valor": 0
         },
         {
           "campo": "dapm_10_fav",
           "operador": "gte",
-          "valor": 0.99
+          "valor": 1
         }
       ]
     },
@@ -400,7 +400,7 @@
       "periodo": 2,
       "tipo": "ambas_marcam",
       "stake": 10,
-      "placar_valido": "",
+      "placar_valido": "1x0, 0x1",
       "criterios": {
         "situacao_favorito": "perdendo_ou_empatando"
       },
