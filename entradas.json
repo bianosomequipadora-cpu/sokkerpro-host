@@ -16342,5 +16342,23 @@
     "odd_mercado": 2.2,
     "timestamp": "2026-10-09T13:45:37.841075-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "e642310a2a9f_custom_1791534270147_20261009",
+    "fixture_id": "19726781",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Rostov",
+    "away": "Akron",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.485,
+    "timestamp": "2026-10-09T14:09:08.753485-03:00",
+    "resultado": "pendente"
   }
 ]
