@@ -15838,5 +15838,23 @@
     "odd_mercado": 1.685,
     "timestamp": "2026-10-09T11:31:07.102035-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c9ce38301fa7_custom_1791203748430_20261009",
+    "fixture_id": "19890904",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Sidi M’hamed Benali",
+    "away": "NA Hussein Dey",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.67,
+    "odd_bano": null,
+    "odd_mercado": 1.685,
+    "timestamp": "2026-10-09T11:34:38.976997-03:00",
+    "resultado": "pendente"
   }
 ]
