@@ -15820,5 +15820,23 @@
     "odd_mercado": 1.515,
     "timestamp": "2026-10-09T11:28:46.625396-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6d75ee181c1f_custom_1790706998863_20261009",
+    "fixture_id": "19720827",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Ironi Kiryat Gat",
+    "away": "Kiryat Yam SC",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": 1.7,
+    "odd_bano": null,
+    "odd_mercado": 1.685,
+    "timestamp": "2026-10-09T11:31:07.102035-03:00",
+    "resultado": "pendente"
   }
 ]
