@@ -16756,5 +16756,23 @@
     "odd_mercado": 1.392,
     "timestamp": "2026-10-09T16:28:02.000376-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "95a7f91e744f_custom_1790706998863_20261009",
+    "fixture_id": "19815717",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Santa Amalia",
+    "away": "Villafranca",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.83,
+    "timestamp": "2026-10-09T16:34:14.189484-03:00",
+    "resultado": "pendente"
   }
 ]
