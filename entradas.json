@@ -16450,5 +16450,23 @@
     "odd_mercado": 1.67,
     "timestamp": "2026-10-09T14:41:49.154960-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "69dad41843d3_custom_1790438667502_20261009",
+    "fixture_id": "19715920",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Roda JC Kerkrade",
+    "away": "Jong PSV",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.495,
+    "timestamp": "2026-10-09T15:17:45.333415-03:00",
+    "resultado": "pendente"
   }
 ]
