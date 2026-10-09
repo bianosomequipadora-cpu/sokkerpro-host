@@ -15784,5 +15784,23 @@
     "odd_mercado": 1.475,
     "timestamp": "2026-10-09T11:05:40.927988-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "44df27c6688b_custom_1790213687442_20261009",
+    "fixture_id": "19720826",
+    "mercado": "custom_1790213687442",
+    "tipo": "over_gol",
+    "home": "Kafr Qasim",
+    "away": "Bnei Yehuda",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.52,
+    "odd_bano": null,
+    "odd_mercado": 1.515,
+    "timestamp": "2026-10-09T11:28:33.899174-03:00",
+    "resultado": "pendente"
   }
 ]
