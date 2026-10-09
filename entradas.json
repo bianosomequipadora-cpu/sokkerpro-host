@@ -16558,5 +16558,23 @@
     "odd_mercado": 1.79,
     "timestamp": "2026-10-09T15:47:03.972206-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "29d453f6a22a_custom_1790438667502_20261009",
+    "fixture_id": "19627952",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Cork City",
+    "away": "Finn Harps",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.28,
+    "odd_bano": null,
+    "odd_mercado": 1.31,
+    "timestamp": "2026-10-09T16:01:39.140091-03:00",
+    "resultado": "pendente"
   }
 ]
