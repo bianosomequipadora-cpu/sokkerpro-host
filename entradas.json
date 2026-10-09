@@ -16666,5 +16666,23 @@
     "odd_mercado": 1.85,
     "timestamp": "2026-10-09T16:19:49.514889-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4bc18883dea0_custom_1791534270147_20261009",
+    "fixture_id": "19726475",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Portadown",
+    "away": "Glentoran",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.95,
+    "timestamp": "2026-10-09T16:20:00.410777-03:00",
+    "resultado": "pendente"
   }
 ]
