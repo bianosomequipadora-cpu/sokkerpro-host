@@ -19744,5 +19744,23 @@
     "odd_mercado": 1.62,
     "timestamp": "2026-10-10T16:45:28.141558-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "fca01c258f6f_custom_1791278944457_20261010",
+    "fixture_id": "19714633",
+    "mercado": "custom_1791278944457",
+    "tipo": "escanteio_ft",
+    "home": "Fortuna Sittard",
+    "away": "FC Twente",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-10-10T16:45:58.735147-03:00",
+    "resultado": "pendente"
   }
 ]
