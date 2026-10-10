@@ -19888,5 +19888,23 @@
     "odd_mercado": 1.18,
     "timestamp": "2026-10-10T17:35:45.515695-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f21cd6988274_custom_1791203748430_20261010",
+    "fixture_id": "19681894",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Ferroviária",
+    "away": "Inter de Limeira",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.82,
+    "odd_bano": null,
+    "odd_mercado": 1.87,
+    "timestamp": "2026-10-10T17:40:41.154484-03:00",
+    "resultado": "pendente"
   }
 ]
