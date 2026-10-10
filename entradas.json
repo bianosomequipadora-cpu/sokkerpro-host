@@ -18772,5 +18772,23 @@
     "odd_mercado": 1.75,
     "timestamp": "2026-10-10T12:10:58.296840-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c9ef968e89fb_custom_1791534260012_20261010",
+    "fixture_id": "19757672",
+    "mercado": "custom_1791534260012",
+    "tipo": "escanteio_ft",
+    "home": "Arka Gdynia",
+    "away": "Polonia Warszawa",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.112,
+    "timestamp": "2026-10-10T12:12:14.048851-03:00",
+    "resultado": "pendente"
   }
 ]
