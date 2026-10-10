@@ -19060,5 +19060,23 @@
     "odd_mercado": 1.4,
     "timestamp": "2026-10-10T13:47:53.602536-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "03b145d382f0_custom_1791203694704_20261010",
+    "fixture_id": "19854371",
+    "mercado": "custom_1791203694704",
+    "tipo": "escanteio_ft",
+    "home": "Ranchers Bees",
+    "away": "Niger Tornadoes",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.575,
+    "timestamp": "2026-10-10T13:48:20.925548-03:00",
+    "resultado": "pendente"
   }
 ]
