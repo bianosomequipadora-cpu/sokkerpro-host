@@ -18952,5 +18952,23 @@
     "odd_mercado": 1.72,
     "timestamp": "2026-10-10T13:04:55.089547-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "c804bc2af704_custom_1791278944457_20261010",
+    "fixture_id": "19714156",
+    "mercado": "custom_1791278944457",
+    "tipo": "escanteio_ft",
+    "home": "Lokomotiv Sofia 1929",
+    "away": "Lokomotiv Plovdiv",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.57,
+    "odd_bano": null,
+    "odd_mercado": 1.736,
+    "timestamp": "2026-10-10T13:17:46.645596-03:00",
+    "resultado": "pendente"
   }
 ]
