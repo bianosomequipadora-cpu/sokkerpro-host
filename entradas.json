@@ -19474,5 +19474,23 @@
     "odd_mercado": 2.04,
     "timestamp": "2026-10-10T15:30:13.297230-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a76b61c5a216_custom_1791534270147_20261010",
+    "fixture_id": "19786405",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Figueirense",
+    "away": "Hercílio Luz",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 1.656,
+    "timestamp": "2026-10-10T15:32:44.384052-03:00",
+    "resultado": "pendente"
   }
 ]
