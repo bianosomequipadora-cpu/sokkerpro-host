@@ -18664,5 +18664,23 @@
     "odd_mercado": 1.575,
     "timestamp": "2026-10-10T11:36:36.508086-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b5e39e9d9815_custom_1791534260012_20261010",
+    "fixture_id": "19766160",
+    "mercado": "custom_1791534260012",
+    "tipo": "escanteio_ft",
+    "home": "Zvijezda '09 Brgule",
+    "away": "Drina Zvornik",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.9,
+    "timestamp": "2026-10-10T11:40:57.782820-03:00",
+    "resultado": "pendente"
   }
 ]
