@@ -20068,5 +20068,23 @@
     "odd_mercado": 2.34,
     "timestamp": "2026-10-10T19:58:30.437283-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "435e757ffd48_custom_1791500183637_20261010",
+    "fixture_id": "19889651",
+    "mercado": "custom_1791500183637",
+    "tipo": "escanteio_ft",
+    "home": "Peñarol",
+    "away": "Atlético Progreso",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.47,
+    "timestamp": "2026-10-10T20:10:32.976264-03:00",
+    "resultado": "pendente"
   }
 ]
