@@ -17278,5 +17278,23 @@
     "odd_mercado": 1.655,
     "timestamp": "2026-10-10T05:01:58.259825-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6c34d69163ea_custom_1791203748430_20261010",
+    "fixture_id": "19676316",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Cheonan City",
+    "away": "Gyeongnam",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.9,
+    "odd_bano": null,
+    "odd_mercado": 1.84,
+    "timestamp": "2026-10-10T05:03:31.388471-03:00",
+    "resultado": "pendente"
   }
 ]
