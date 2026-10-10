@@ -19510,5 +19510,23 @@
     "odd_mercado": 1.944,
     "timestamp": "2026-10-10T15:34:35.121818-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "94aa37ecd257_custom_1791278944457_20261010",
+    "fixture_id": "19736789",
+    "mercado": "custom_1791278944457",
+    "tipo": "escanteio_ft",
+    "home": "Marítimo",
+    "away": "Porto",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.496,
+    "timestamp": "2026-10-10T15:43:10.973469-03:00",
+    "resultado": "pendente"
   }
 ]
