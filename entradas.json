@@ -20086,5 +20086,23 @@
     "odd_mercado": 1.47,
     "timestamp": "2026-10-10T20:10:32.976264-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f2626d9a81b5_custom_1790438667502_20261010",
+    "fixture_id": "19742545",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Venados",
+    "away": "Universidad Guadalajara",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.495,
+    "timestamp": "2026-10-10T20:18:17.638245-03:00",
+    "resultado": "pendente"
   }
 ]
