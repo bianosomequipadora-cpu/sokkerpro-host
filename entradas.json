@@ -19582,5 +19582,23 @@
     "odd_mercado": 3.03,
     "timestamp": "2026-10-10T15:54:41.034414-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "232bc1a908d2_custom_1791534270147_20261010",
+    "fixture_id": "19716330",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Jagiellonia Białystok",
+    "away": "Górnik Zabrze",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 3.12,
+    "timestamp": "2026-10-10T15:54:51.330800-03:00",
+    "resultado": "pendente"
   }
 ]
