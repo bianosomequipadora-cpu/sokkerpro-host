@@ -18574,5 +18574,23 @@
     "odd_mercado": 1.23,
     "timestamp": "2026-10-10T11:18:41.715736-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "779ed347ecce_custom_1791534270147_20261010",
+    "fixture_id": "19728223",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Milton Keynes Dons",
+    "away": "Reading",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.456,
+    "timestamp": "2026-10-10T11:33:21.988792-03:00",
+    "resultado": "pendente"
   }
 ]
