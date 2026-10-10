@@ -18376,5 +18376,23 @@
     "odd_mercado": 1.77,
     "timestamp": "2026-10-10T10:38:03.041092-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4ca9c60768b0_custom_1791534270147_20261010",
+    "fixture_id": "19724430",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Radomlje",
+    "away": "Koper",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.77,
+    "timestamp": "2026-10-10T10:38:12.815371-03:00",
+    "resultado": "pendente"
   }
 ]
