@@ -19870,5 +19870,23 @@
     "odd_mercado": 1.95,
     "timestamp": "2026-10-10T17:22:31.730688-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6523dbfa2f99_custom_1790706998863_20261010",
+    "fixture_id": "19880198",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Fram",
+    "away": "KR Reykjavík",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.14,
+    "odd_bano": null,
+    "odd_mercado": 1.18,
+    "timestamp": "2026-10-10T17:35:45.515695-03:00",
+    "resultado": "pendente"
   }
 ]
