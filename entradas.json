@@ -17404,5 +17404,23 @@
     "odd_mercado": 1.425,
     "timestamp": "2026-10-10T06:39:53.577150-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0378a7917cae_custom_1791203694704_20261010",
+    "fixture_id": "19788591",
+    "mercado": "custom_1791203694704",
+    "tipo": "escanteio_ft",
+    "home": "Wofoo Tai Po",
+    "away": "Kowloon City",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.315,
+    "timestamp": "2026-10-10T06:44:32.170590-03:00",
+    "resultado": "pendente"
   }
 ]
