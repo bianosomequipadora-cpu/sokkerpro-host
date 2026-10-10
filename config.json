@@ -275,7 +275,7 @@
     },
     "custom_1791499929953": {
       "ativo": true,
-      "notificar": true,
+      "notificar": false,
       "nome": "⚽️🛜OVER 1.5 GOL PARTIDA🛜⚽️",
       "minuto_inicio": 56,
       "minuto_fim": 74,
@@ -311,7 +311,7 @@
     },
     "custom_1791499932057": {
       "ativo": true,
-      "notificar": true,
+      "notificar": false,
       "nome": "⚽️🛜AMBAS MARCAM(BTTS)🛜⚽️ ",
       "minuto_inicio": 65,
       "minuto_fim": 75,
