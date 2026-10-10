@@ -18736,5 +18736,23 @@
     "odd_mercado": 1.93,
     "timestamp": "2026-10-10T12:10:37.719112-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "903aa94f2ca3_custom_1791203694704_20261010",
+    "fixture_id": "19721340",
+    "mercado": "custom_1791203694704",
+    "tipo": "escanteio_ft",
+    "home": "Trenčín",
+    "away": "Banská Bystrica",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.75,
+    "timestamp": "2026-10-10T12:10:50.805032-03:00",
+    "resultado": "pendente"
   }
 ]
