@@ -19780,5 +19780,23 @@
     "odd_mercado": 1.736,
     "timestamp": "2026-10-10T16:46:05.805054-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "74a0e283dfe3_custom_1791203694704_20261010",
+    "fixture_id": "19636837",
+    "mercado": "custom_1791203694704",
+    "tipo": "escanteio_ft",
+    "home": "Colegiales",
+    "away": "Tristán Suárez",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.07,
+    "odd_bano": null,
+    "odd_mercado": 2.07,
+    "timestamp": "2026-10-10T16:48:23.163397-03:00",
+    "resultado": "pendente"
   }
 ]
