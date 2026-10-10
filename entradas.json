@@ -17674,5 +17674,23 @@
     "odd_mercado": 1.565,
     "timestamp": "2026-10-10T08:19:15.932921-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5e9541fd4222_custom_1790706998863_20261010",
+    "fixture_id": "19837176",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Roda U19",
+    "away": "Elche U19",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.31,
+    "timestamp": "2026-10-10T08:21:05.507981-03:00",
+    "resultado": "pendente"
   }
 ]
