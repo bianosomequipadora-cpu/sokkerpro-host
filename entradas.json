@@ -18052,5 +18052,23 @@
     "odd_mercado": 1.29,
     "timestamp": "2026-10-10T09:49:51.038897-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7c67e3f4bedf_custom_1791203748430_20261010",
+    "fixture_id": "19721680",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "TransINVEST Vilnius II",
+    "away": "Ekranas",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.975,
+    "timestamp": "2026-10-10T09:50:04.808799-03:00",
+    "resultado": "pendente"
   }
 ]
