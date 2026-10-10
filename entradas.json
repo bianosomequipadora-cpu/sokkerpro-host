@@ -17188,5 +17188,23 @@
     "odd_mercado": 1.696,
     "timestamp": "2026-10-09T23:53:20.295743-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "fad7c10e4408_custom_1790706998863_20261010",
+    "fixture_id": "19715064",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Sporting San José",
+    "away": "Cartaginés",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.5,
+    "odd_bano": null,
+    "odd_mercado": 1.415,
+    "timestamp": "2026-10-10T00:20:25.563017-03:00",
+    "resultado": "pendente"
   }
 ]
