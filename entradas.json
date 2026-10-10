@@ -17242,5 +17242,23 @@
     "odd_mercado": 1.655,
     "timestamp": "2026-10-10T02:38:41.822933-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "c3d4dfef61d7_custom_1790438667502_20261010",
+    "fixture_id": "19719096",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "FC Tokyo",
+    "away": "Urawa Reds",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.66,
+    "odd_bano": null,
+    "odd_mercado": 1.72,
+    "timestamp": "2026-10-10T03:20:33.419486-03:00",
+    "resultado": "pendente"
   }
 ]
