@@ -18142,5 +18142,23 @@
     "odd_mercado": 2.744,
     "timestamp": "2026-10-10T10:09:58.915029-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "3c340831f9d3_custom_1791534260012_20261010",
+    "fixture_id": "19748195",
+    "mercado": "custom_1791534260012",
+    "tipo": "escanteio_ft",
+    "home": "Altrincham",
+    "away": "Aldershot Town",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.52,
+    "timestamp": "2026-10-10T10:11:01.739498-03:00",
+    "resultado": "pendente"
   }
 ]
