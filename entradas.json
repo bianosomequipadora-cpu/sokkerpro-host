@@ -19096,5 +19096,23 @@
     "odd_mercado": 1.575,
     "timestamp": "2026-10-10T13:48:27.917724-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "60d43700611c_custom_1791203748430_20261010",
+    "fixture_id": "19726049",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "La Louvière",
+    "away": "Club Brugge",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.5,
+    "timestamp": "2026-10-10T13:49:20.190953-03:00",
+    "resultado": "pendente"
   }
 ]
