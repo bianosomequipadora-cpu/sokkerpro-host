@@ -18502,5 +18502,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-10T10:56:35.552133-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "05e90f646871_custom_1791203694704_20261010",
+    "fixture_id": "19699080",
+    "mercado": "custom_1791203694704",
+    "tipo": "escanteio_ft",
+    "home": "Mitundu Baptist",
+    "away": "Red Lions",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-10-10T11:11:16.539390-03:00",
+    "resultado": "pendente"
   }
 ]
