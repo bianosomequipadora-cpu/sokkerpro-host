@@ -19996,5 +19996,23 @@
     "odd_mercado": 1.408,
     "timestamp": "2026-10-10T19:33:37.487528-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c34b830ef5b1_custom_1791203748430_20261010",
+    "fixture_id": "19775188",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Deportes Linares",
+    "away": "Trasandino",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 1.6,
+    "odd_bano": null,
+    "odd_mercado": 1.584,
+    "timestamp": "2026-10-10T19:37:00.987085-03:00",
+    "resultado": "pendente"
   }
 ]
