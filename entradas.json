@@ -19798,5 +19798,23 @@
     "odd_mercado": 2.07,
     "timestamp": "2026-10-10T16:48:23.163397-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6523dbfa2f99_custom_1791534270147_20261010",
+    "fixture_id": "19880198",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Fram",
+    "away": "KR Reykjavík",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.17,
+    "timestamp": "2026-10-10T16:48:48.695520-03:00",
+    "resultado": "pendente"
   }
 ]
