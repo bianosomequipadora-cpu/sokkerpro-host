@@ -17710,5 +17710,23 @@
     "odd_mercado": 1.48,
     "timestamp": "2026-10-10T08:31:29.067653-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "1ff053a40483_custom_1791534270147_20261010",
+    "fixture_id": "19655693",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Hässleholms IF",
+    "away": "Jönköpings Södra",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.48,
+    "timestamp": "2026-10-10T08:31:38.767462-03:00",
+    "resultado": "pendente"
   }
 ]
