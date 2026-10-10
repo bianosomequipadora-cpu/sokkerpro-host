@@ -19132,5 +19132,23 @@
     "odd_mercado": 1.29,
     "timestamp": "2026-10-10T13:51:38.366457-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "175e3f3e9e9f_custom_1790706998863_20261010",
+    "fixture_id": "19786764",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Lumezzane",
+    "away": "AlbinoLeffe",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 3,
+    "entry_sa": 3,
+    "entry_total": 6,
+    "odd_b365": 3.75,
+    "odd_bano": null,
+    "odd_mercado": 3.98,
+    "timestamp": "2026-10-10T13:52:06.283374-03:00",
+    "resultado": "pendente"
   }
 ]
