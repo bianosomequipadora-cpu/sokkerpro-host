@@ -17800,5 +17800,23 @@
     "odd_mercado": 1.75,
     "timestamp": "2026-10-10T08:36:27.268397-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b84ae7d49f01_custom_1791203748430_20261010",
+    "fixture_id": "19735441",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Osnabrück",
+    "away": "Dynamo Dresden",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.07,
+    "odd_bano": null,
+    "odd_mercado": 2.34,
+    "timestamp": "2026-10-10T08:38:33.914215-03:00",
+    "resultado": "pendente"
   }
 ]
