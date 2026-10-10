@@ -19654,5 +19654,23 @@
     "odd_mercado": 2.33,
     "timestamp": "2026-10-10T16:16:11.679776-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4033dc31f53a_custom_1791534270147_20261010",
+    "fixture_id": "19715589",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Lorient",
+    "away": "Paris",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.87,
+    "timestamp": "2026-10-10T16:22:44.693574-03:00",
+    "resultado": "pendente"
   }
 ]
