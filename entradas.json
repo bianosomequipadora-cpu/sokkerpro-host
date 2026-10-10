@@ -17116,5 +17116,23 @@
     "odd_mercado": 1.77,
     "timestamp": "2026-10-09T22:15:34.377068-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5ef54d25ec8a_custom_1791203694704_20261009",
+    "fixture_id": "19622122",
+    "mercado": "custom_1791203694704",
+    "tipo": "escanteio_ft",
+    "home": "Lexington",
+    "away": "Tulsa Roughnecks",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.97,
+    "odd_bano": null,
+    "odd_mercado": 1.93,
+    "timestamp": "2026-10-09T22:17:06.899268-03:00",
+    "resultado": "pendente"
   }
 ]
