@@ -18610,5 +18610,23 @@
     "odd_mercado": 1.7,
     "timestamp": "2026-10-10T11:35:43.449252-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "795591115b4f_custom_1791534270147_20261010",
+    "fixture_id": "19748192",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Boston United",
+    "away": "Southend United",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.75,
+    "timestamp": "2026-10-10T11:35:53.202850-03:00",
+    "resultado": "pendente"
   }
 ]
