@@ -17890,5 +17890,23 @@
     "odd_mercado": 1.715,
     "timestamp": "2026-10-10T08:55:20.540887-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5a7c0a530b1c_custom_1791203748430_20261010",
+    "fixture_id": "19728221",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Plymouth Argyle",
+    "away": "AFC Wimbledon",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.48,
+    "timestamp": "2026-10-10T09:02:34.454862-03:00",
+    "resultado": "pendente"
   }
 ]
