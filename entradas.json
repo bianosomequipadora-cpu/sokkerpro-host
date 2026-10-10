@@ -19942,5 +19942,23 @@
     "odd_mercado": 2.03,
     "timestamp": "2026-10-10T18:35:33.583672-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c8efa9d1585b_custom_1791534270147_20261010",
+    "fixture_id": "19715067",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Inter San Carlos",
+    "away": "Pérez Zeledón",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.0,
+    "odd_bano": null,
+    "odd_mercado": 2.07,
+    "timestamp": "2026-10-10T18:35:43.724561-03:00",
+    "resultado": "pendente"
   }
 ]
