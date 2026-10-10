@@ -19672,5 +19672,23 @@
     "odd_mercado": 2.87,
     "timestamp": "2026-10-10T16:22:44.693574-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "aef299c8b71a_custom_1790706998863_20261010",
+    "fixture_id": "19734575",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Sampaio Corrêa RJ U20",
+    "away": "Madureira U20",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.43,
+    "timestamp": "2026-10-10T16:27:18.485580-03:00",
+    "resultado": "pendente"
   }
 ]
