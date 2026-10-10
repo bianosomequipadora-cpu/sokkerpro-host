@@ -19384,5 +19384,23 @@
     "odd_mercado": 1.736,
     "timestamp": "2026-10-10T14:51:34.330805-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9969e607f501_custom_1790213687442_20261010",
+    "fixture_id": "19838653",
+    "mercado": "custom_1790213687442",
+    "tipo": "over_gol",
+    "home": "Sestao River",
+    "away": "Gimnástica Torrelavega",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.89,
+    "timestamp": "2026-10-10T14:56:54.478435-03:00",
+    "resultado": "pendente"
   }
 ]
