@@ -18016,5 +18016,23 @@
     "odd_mercado": 1.295,
     "timestamp": "2026-10-10T09:18:49.209586-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "33b0f0ab9abe_custom_1791534270147_20261010",
+    "fixture_id": "19668260",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Tallinna Kalev",
+    "away": "Viimsi",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.85,
+    "odd_bano": null,
+    "odd_mercado": 2.25,
+    "timestamp": "2026-10-10T09:38:27.059259-03:00",
+    "resultado": "pendente"
   }
 ]
