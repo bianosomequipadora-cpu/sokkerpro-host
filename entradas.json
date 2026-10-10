@@ -17962,5 +17962,23 @@
     "odd_mercado": 1.49,
     "timestamp": "2026-10-10T09:05:40.159058-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "2cc11fc319df_custom_1791203748430_20261010",
+    "fixture_id": "19778326",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Geylang International",
+    "away": "Albirex Niigata S",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.112,
+    "timestamp": "2026-10-10T09:08:15.907751-03:00",
+    "resultado": "pendente"
   }
 ]
