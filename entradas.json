@@ -19168,5 +19168,23 @@
     "odd_mercado": 1.344,
     "timestamp": "2026-10-10T14:09:19.908347-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f17692994dc7_custom_1791500183637_20261010",
+    "fixture_id": "19787146",
+    "mercado": "custom_1791500183637",
+    "tipo": "escanteio_ft",
+    "home": "Ostia Mare Lidocalcio",
+    "away": "Pianese",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.344,
+    "timestamp": "2026-10-10T14:09:28.093571-03:00",
+    "resultado": "pendente"
   }
 ]
