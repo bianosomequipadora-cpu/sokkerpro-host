@@ -18178,5 +18178,23 @@
     "odd_mercado": 1.285,
     "timestamp": "2026-10-10T10:11:18.888328-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "cd5bca049c07_custom_1791499929953_20261010",
+    "fixture_id": "19865417",
+    "mercado": "custom_1791499929953",
+    "tipo": "over_15",
+    "home": "Zebbug Rangers",
+    "away": "Swieqi",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.2,
+    "timestamp": "2026-10-10T10:13:21.831843-03:00",
+    "resultado": "pendente"
   }
 ]
