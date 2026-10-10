@@ -17026,5 +17026,23 @@
     "odd_mercado": 2.26,
     "timestamp": "2026-10-09T21:11:51.327836-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "408cd9b07609_custom_1790706998863_20261009",
+    "fixture_id": "19884102",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Palmeiras U20",
+    "away": "Santos U20",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-09T21:26:46.104485-03:00",
+    "resultado": "pendente"
   }
 ]
