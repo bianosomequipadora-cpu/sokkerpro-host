@@ -19258,5 +19258,23 @@
     "odd_mercado": 2.24,
     "timestamp": "2026-10-10T14:16:41.893258-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "ecc45a28a7cf_custom_1790706998863_20261010",
+    "fixture_id": "19842356",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Almería U19",
+    "away": "Real Betis U19",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.31,
+    "timestamp": "2026-10-10T14:21:43.093687-03:00",
+    "resultado": "pendente"
   }
 ]
