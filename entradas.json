@@ -18484,5 +18484,23 @@
     "odd_mercado": 2.832,
     "timestamp": "2026-10-10T10:56:14.346040-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "dcd538528576_custom_1790706998863_20261010",
+    "fixture_id": "19833279",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Arnavutköy Belediyespor",
+    "away": "Isparta Davrazspor",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-10T10:56:35.552133-03:00",
+    "resultado": "pendente"
   }
 ]
