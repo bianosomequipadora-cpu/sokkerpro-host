@@ -18034,5 +18034,23 @@
     "odd_mercado": 2.25,
     "timestamp": "2026-10-10T09:38:27.059259-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "e960c915a7b6_custom_1790706998863_20261010",
+    "fixture_id": "19668086",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Nõmme Kalju",
+    "away": "Harju Jalgpallikool",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.29,
+    "timestamp": "2026-10-10T09:49:51.038897-03:00",
+    "resultado": "pendente"
   }
 ]
