@@ -20014,5 +20014,23 @@
     "odd_mercado": 1.584,
     "timestamp": "2026-10-10T19:37:00.987085-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7a82131f9e7c_custom_1791203748430_20261010",
+    "fixture_id": "19867605",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Real Refineros",
+    "away": "Halcones Negros",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.65,
+    "odd_bano": null,
+    "odd_mercado": 1.685,
+    "timestamp": "2026-10-10T19:42:10.488396-03:00",
+    "resultado": "pendente"
   }
 ]
