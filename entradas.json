@@ -19960,5 +19960,23 @@
     "odd_mercado": 2.07,
     "timestamp": "2026-10-10T18:35:43.724561-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a628cd2e1078_custom_1791534260012_20261010",
+    "fixture_id": "19775187",
+    "mercado": "custom_1791534260012",
+    "tipo": "escanteio_ft",
+    "home": "Concón National",
+    "away": "Provincial Osorno",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 2.15,
+    "odd_bano": null,
+    "odd_mercado": 2.34,
+    "timestamp": "2026-10-10T18:47:03.727316-03:00",
+    "resultado": "pendente"
   }
 ]
