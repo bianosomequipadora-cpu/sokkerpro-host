@@ -19294,5 +19294,23 @@
     "odd_mercado": 1.285,
     "timestamp": "2026-10-10T14:37:31.762004-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "99b539ca5c53_custom_1791534270147_20261010",
+    "fixture_id": "19890031",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Al Salmiyah",
+    "away": "Al Shabab",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.304,
+    "timestamp": "2026-10-10T14:37:44.652815-03:00",
+    "resultado": "pendente"
   }
 ]
