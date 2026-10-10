@@ -17494,5 +17494,23 @@
     "odd_mercado": 2.36,
     "timestamp": "2026-10-10T07:08:58.858044-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b5c6af36f018_custom_1791203698501_20261010",
+    "fixture_id": "19668261",
+    "mercado": "custom_1791203698501",
+    "tipo": "escanteio_ht",
+    "home": "Flora II",
+    "away": "FC Tallinn",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 3.06,
+    "timestamp": "2026-10-10T07:10:38.863470-03:00",
+    "resultado": "pendente"
   }
 ]
