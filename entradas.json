@@ -18466,5 +18466,23 @@
     "odd_mercado": 1.685,
     "timestamp": "2026-10-10T10:51:23.933083-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d7c1dc1553f9_custom_1791499932057_20261010",
+    "fixture_id": "19699078",
+    "mercado": "custom_1791499932057",
+    "tipo": "ambas_marcam",
+    "home": "Silver Strikers",
+    "away": "Mighty Mukuru Wanderers",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.832,
+    "timestamp": "2026-10-10T10:56:14.346040-03:00",
+    "resultado": "pendente"
   }
 ]
