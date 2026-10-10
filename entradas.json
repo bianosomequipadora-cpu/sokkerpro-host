@@ -17224,5 +17224,23 @@
     "odd_mercado": 1.432,
     "timestamp": "2026-10-10T02:32:29.316117-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "81110f008d42_custom_1791203748430_20261010",
+    "fixture_id": "19719541",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Sagan Tosu",
+    "away": "Fujieda MYFC",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.6,
+    "odd_bano": null,
+    "odd_mercado": 1.655,
+    "timestamp": "2026-10-10T02:38:41.822933-03:00",
+    "resultado": "pendente"
   }
 ]
