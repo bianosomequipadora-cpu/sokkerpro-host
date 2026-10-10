@@ -17206,5 +17206,23 @@
     "odd_mercado": 1.415,
     "timestamp": "2026-10-10T00:20:25.563017-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "47de0a5b46a4_custom_1791203748430_20261010",
+    "fixture_id": "19648049",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Seoul",
+    "away": "Jeju United",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.432,
+    "timestamp": "2026-10-10T02:32:29.316117-03:00",
+    "resultado": "pendente"
   }
 ]
