@@ -18106,5 +18106,23 @@
     "odd_mercado": 1.288,
     "timestamp": "2026-10-10T09:54:08.220739-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9a45a64a0971_custom_1791203748430_20261010",
+    "fixture_id": "19875831",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Chiangmai United",
+    "away": "Kasetsart",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.915,
+    "timestamp": "2026-10-10T10:06:03.895716-03:00",
+    "resultado": "pendente"
   }
 ]
