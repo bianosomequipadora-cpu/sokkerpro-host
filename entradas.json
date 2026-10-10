@@ -19348,5 +19348,23 @@
     "odd_mercado": 1.975,
     "timestamp": "2026-10-10T14:46:06.465862-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "3e0793c6f232_custom_1790438667502_20261010",
+    "fixture_id": "19725307",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Paksi SE",
+    "away": "MTK",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.5,
+    "odd_bano": null,
+    "odd_mercado": 1.44,
+    "timestamp": "2026-10-10T14:48:07.179689-03:00",
+    "resultado": "pendente"
   }
 ]
