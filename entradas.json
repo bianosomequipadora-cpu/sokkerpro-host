@@ -17764,5 +17764,23 @@
     "odd_mercado": 1.775,
     "timestamp": "2026-10-10T08:34:09.229285-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "88d15fdd499b_custom_1791203748430_20261010",
+    "fixture_id": "19872913",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Nam Định",
+    "away": "Ninh Bình",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.645,
+    "timestamp": "2026-10-10T08:34:23.300870-03:00",
+    "resultado": "pendente"
   }
 ]
