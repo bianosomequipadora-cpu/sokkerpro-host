@@ -18880,5 +18880,23 @@
     "odd_mercado": 1.552,
     "timestamp": "2026-10-10T12:41:14.846576-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "1a5ed9dbbe6c_custom_1791534260012_20261010",
+    "fixture_id": "19727675",
+    "mercado": "custom_1791534260012",
+    "tipo": "escanteio_ft",
+    "home": "Crawley Town",
+    "away": "Chesterfield",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.552,
+    "timestamp": "2026-10-10T12:44:05.531414-03:00",
+    "resultado": "pendente"
   }
 ]
