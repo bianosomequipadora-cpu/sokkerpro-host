@@ -19240,5 +19240,23 @@
     "odd_mercado": 2.24,
     "timestamp": "2026-10-10T14:16:31.057971-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "995fb071c39d_custom_1791500183637_20261010",
+    "fixture_id": "19635866",
+    "mercado": "custom_1791500183637",
+    "tipo": "escanteio_ft",
+    "home": "Mjällby",
+    "away": "Degerfors",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.24,
+    "timestamp": "2026-10-10T14:16:41.893258-03:00",
+    "resultado": "pendente"
   }
 ]
