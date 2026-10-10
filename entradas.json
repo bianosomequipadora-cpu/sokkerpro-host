@@ -18538,5 +18538,23 @@
     "odd_mercado": 2.3,
     "timestamp": "2026-10-10T11:14:20.929616-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6fa2ff96310b_custom_1790438667502_20261010",
+    "fixture_id": "19791322",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Králův Dvůr",
+    "away": "Motorlet Praha",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-10-10T11:18:15.298496-03:00",
+    "resultado": "pendente"
   }
 ]
