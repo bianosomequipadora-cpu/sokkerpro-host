@@ -17944,5 +17944,23 @@
     "odd_mercado": 1.37,
     "timestamp": "2026-10-10T09:03:42.805730-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7f463a0034c4_custom_1791203748430_20261010",
+    "fixture_id": "19722153",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Arsenal",
+    "away": "Leeds United",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.49,
+    "timestamp": "2026-10-10T09:05:40.159058-03:00",
+    "resultado": "pendente"
   }
 ]
