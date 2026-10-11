@@ -21616,5 +21616,23 @@
     "odd_mercado": 1.47,
     "timestamp": "2026-10-11T12:22:40.135641-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7e91327681db_custom_1790706998863_20261011",
+    "fixture_id": "19811980",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Fátima",
+    "away": "Gd Nazarenos",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.336,
+    "timestamp": "2026-10-11T12:22:54.966132-03:00",
+    "resultado": "pendente"
   }
 ]
