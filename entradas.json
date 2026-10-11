@@ -21976,5 +21976,23 @@
     "odd_mercado": 1.44,
     "timestamp": "2026-10-11T13:34:22.335540-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "185eb26cdbdc_custom_1791203748430_20261011",
+    "fixture_id": "19713920",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Slaven Koprivnica",
+    "away": "Rijeka",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.65,
+    "timestamp": "2026-10-11T13:36:13.953563-03:00",
+    "resultado": "pendente"
   }
 ]
