@@ -21184,5 +21184,23 @@
     "odd_mercado": 1.61,
     "timestamp": "2026-10-11T10:42:25.478143-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "85381837995d_custom_1791534260012_20261011",
+    "fixture_id": "19714154",
+    "mercado": "custom_1791534260012",
+    "tipo": "escanteio_ft",
+    "home": "Septemvri Sofia",
+    "away": "Dunav 2010",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 1.7,
+    "odd_bano": null,
+    "odd_mercado": 1.93,
+    "timestamp": "2026-10-11T10:44:39.955744-03:00",
+    "resultado": "pendente"
   }
 ]
