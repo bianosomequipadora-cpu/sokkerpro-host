@@ -20518,5 +20518,23 @@
     "odd_mercado": 1.13,
     "timestamp": "2026-10-11T07:44:00.056212-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "fa3b94893451_custom_1791203748430_20261011",
+    "fixture_id": "19790747",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "HNK Gorica U19",
+    "away": "Kustošija U19",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.6,
+    "odd_bano": null,
+    "odd_mercado": 1.625,
+    "timestamp": "2026-10-11T07:47:19.417486-03:00",
+    "resultado": "pendente"
   }
 ]
