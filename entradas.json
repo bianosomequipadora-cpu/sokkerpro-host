@@ -22624,5 +22624,23 @@
     "odd_mercado": 1.64,
     "timestamp": "2026-10-11T17:28:26.337527-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "e3021d0e00bd_custom_1791278944457_20261011",
+    "fixture_id": "19886782",
+    "mercado": "custom_1791278944457",
+    "tipo": "escanteio_ft",
+    "home": "Sportivo Las Parejas",
+    "away": "Defensores Belgrano VR",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.2,
+    "odd_bano": null,
+    "odd_mercado": 2.57,
+    "timestamp": "2026-10-11T17:48:56.703816-03:00",
+    "resultado": "pendente"
   }
 ]
