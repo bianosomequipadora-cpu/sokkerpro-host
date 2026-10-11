@@ -22210,5 +22210,23 @@
     "odd_mercado": 1.584,
     "timestamp": "2026-10-11T14:33:24.406843-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a9fe7f60d0de_custom_1791733338122_20261011",
+    "fixture_id": "19881373",
+    "mercado": "custom_1791733338122",
+    "tipo": "escanteio_ht",
+    "home": "Amatitlán",
+    "away": "Gomerano",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.504,
+    "timestamp": "2026-10-11T14:33:38.286790-03:00",
+    "resultado": "pendente"
   }
 ]
