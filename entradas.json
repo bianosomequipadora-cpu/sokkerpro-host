@@ -20266,5 +20266,23 @@
     "odd_mercado": 1.72,
     "timestamp": "2026-10-11T06:06:00.548485-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4501bc7fd856_custom_1791534270147_20261011",
+    "fixture_id": "19863225",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Raj Pracha",
+    "away": "Phetchaburi",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.7,
+    "odd_bano": null,
+    "odd_mercado": 1.72,
+    "timestamp": "2026-10-11T06:06:12.159566-03:00",
+    "resultado": "pendente"
   }
 ]
