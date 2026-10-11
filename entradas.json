@@ -21202,5 +21202,23 @@
     "odd_mercado": 1.93,
     "timestamp": "2026-10-11T10:44:39.955744-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "8456b4cc7eb9_custom_1791534260012_20261011",
+    "fixture_id": "19886387",
+    "mercado": "custom_1791534260012",
+    "tipo": "escanteio_ft",
+    "home": "Ethiopia Bunna",
+    "away": "Sheger Ketema",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.35,
+    "odd_bano": null,
+    "odd_mercado": 2.35,
+    "timestamp": "2026-10-11T10:47:02.324706-03:00",
+    "resultado": "pendente"
   }
 ]
