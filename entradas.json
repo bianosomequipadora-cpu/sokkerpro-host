@@ -21472,5 +21472,23 @@
     "odd_mercado": 1.6,
     "timestamp": "2026-10-11T11:36:03.962465-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c1cb06ecdc3a_custom_1791534260012_20261011",
+    "fixture_id": "19716069",
+    "mercado": "custom_1791534260012",
+    "tipo": "escanteio_ft",
+    "home": "Skopje",
+    "away": "Vardar",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.775,
+    "timestamp": "2026-10-11T11:43:09.926381-03:00",
+    "resultado": "pendente"
   }
 ]
