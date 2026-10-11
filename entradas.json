@@ -21508,5 +21508,23 @@
     "odd_mercado": 1.464,
     "timestamp": "2026-10-11T11:45:52.090068-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "edce7d8860a8_custom_1791534260012_20261011",
+    "fixture_id": "19764333",
+    "mercado": "custom_1791534260012",
+    "tipo": "escanteio_ft",
+    "home": "Vitória Guimarães II",
+    "away": "Paços de Ferreira",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.696,
+    "timestamp": "2026-10-11T11:48:32.861194-03:00",
+    "resultado": "pendente"
   }
 ]
