@@ -20626,5 +20626,23 @@
     "odd_mercado": 2.28,
     "timestamp": "2026-10-11T08:21:20.503465-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "26faaed86dd4_custom_1790706998863_20261011",
+    "fixture_id": "19823304",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Gijon Industrial",
+    "away": "Astur",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.43,
+    "timestamp": "2026-10-11T08:21:53.971148-03:00",
+    "resultado": "pendente"
   }
 ]
