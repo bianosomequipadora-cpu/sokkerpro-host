@@ -22516,5 +22516,23 @@
     "odd_mercado": 1.37,
     "timestamp": "2026-10-11T16:47:31.137250-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "baf802e53139_custom_1791733338122_20261011",
+    "fixture_id": "19667112",
+    "mercado": "custom_1791733338122",
+    "tipo": "escanteio_ht",
+    "home": "Atlético GO",
+    "away": "Sport Recife",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.384,
+    "timestamp": "2026-10-11T16:47:41.099037-03:00",
+    "resultado": "pendente"
   }
 ]
