@@ -22012,5 +22012,23 @@
     "odd_mercado": 1.344,
     "timestamp": "2026-10-11T13:41:19.658862-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "23c5add6d6cf_custom_1790213687442_20261011",
+    "fixture_id": "19846397",
+    "mercado": "custom_1790213687442",
+    "tipo": "over_gol",
+    "home": "Boiro",
+    "away": "Viveiro",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.336,
+    "timestamp": "2026-10-11T13:46:23.498631-03:00",
+    "resultado": "pendente"
   }
 ]
