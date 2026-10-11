@@ -21004,5 +21004,23 @@
     "odd_mercado": 2.96,
     "timestamp": "2026-10-11T10:08:10.799711-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c71f94c1d3e7_custom_1791203748430_20261011",
+    "fixture_id": "19699077",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Creck",
+    "away": "Moyale Barracks",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 3.5,
+    "timestamp": "2026-10-11T10:10:31.952631-03:00",
+    "resultado": "pendente"
   }
 ]
