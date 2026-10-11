@@ -21724,5 +21724,23 @@
     "odd_mercado": 1.625,
     "timestamp": "2026-10-11T12:40:29.550978-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "17b2a5a6e09a_custom_1791534260012_20261011",
+    "fixture_id": "19812004",
+    "mercado": "custom_1791534260012",
+    "tipo": "escanteio_ft",
+    "home": "Os Marialvas",
+    "away": "Sertanense",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.685,
+    "timestamp": "2026-10-11T12:43:24.156162-03:00",
+    "resultado": "pendente"
   }
 ]
