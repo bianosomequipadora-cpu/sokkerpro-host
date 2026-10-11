@@ -21796,5 +21796,23 @@
     "odd_mercado": 2.42,
     "timestamp": "2026-10-11T12:53:33.102458-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "833798c5f938_custom_1791203748430_20261011",
+    "fixture_id": "19786765",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Lecco",
+    "away": "Alcione",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.6,
+    "odd_bano": null,
+    "odd_mercado": 1.75,
+    "timestamp": "2026-10-11T13:03:37.805157-03:00",
+    "resultado": "pendente"
   }
 ]
