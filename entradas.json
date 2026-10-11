@@ -21364,5 +21364,23 @@
     "odd_mercado": 1.87,
     "timestamp": "2026-10-11T11:16:46.883964-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "ff9c8f1d7f5b_custom_1790438667502_20261011",
+    "fixture_id": "19723552",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "ND Slovan Ljubljana",
+    "away": "Bistrica",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-11T11:17:24.159003-03:00",
+    "resultado": "pendente"
   }
 ]
