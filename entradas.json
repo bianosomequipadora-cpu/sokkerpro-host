@@ -20824,5 +20824,23 @@
     "odd_mercado": 2.075,
     "timestamp": "2026-10-11T09:06:33.329385-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a8b35b66be2f_custom_1791203748430_20261011",
+    "fixture_id": "19668084",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Levadia",
+    "away": "Paide",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.82,
+    "odd_bano": null,
+    "odd_mercado": 2.05,
+    "timestamp": "2026-10-11T09:07:23.186822-03:00",
+    "resultado": "pendente"
   }
 ]
