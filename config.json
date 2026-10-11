@@ -43,13 +43,13 @@
       "stake": 10,
       "placar_valido": "0x0",
       "criterios": {
-        "situacao_favorito": "perdendo_ou_empatando"
+        "situacao_favorito": ""
       },
       "criterios_api": [
         {
-          "campo": "prob_ht_over_0_5",
+          "campo": "prob_ft_over_0_5",
           "operador": "gte",
-          "valor": 70
+          "valor": 90
         },
         {
           "campo": "dapm_total_orig_min",
