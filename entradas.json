@@ -22570,5 +22570,23 @@
     "odd_mercado": 2.57,
     "timestamp": "2026-10-11T17:20:28.757670-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b4fbea53568f_custom_1791534260012_20261011",
+    "fixture_id": "19713566",
+    "mercado": "custom_1791534260012",
+    "tipo": "escanteio_ft",
+    "home": "Cagliari",
+    "away": "Juventus",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.33,
+    "timestamp": "2026-10-11T17:25:59.085969-03:00",
+    "resultado": "pendente"
   }
 ]
