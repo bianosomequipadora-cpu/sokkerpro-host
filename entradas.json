@@ -22696,5 +22696,23 @@
     "odd_mercado": 1.736,
     "timestamp": "2026-10-11T18:00:43.603974-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "3781804cbfc9_custom_1791500183637_20261011",
+    "fixture_id": "19881833",
+    "mercado": "custom_1791500183637",
+    "tipo": "escanteio_ft",
+    "home": "Dunbeholden",
+    "away": "Molynes United",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-10-11T18:42:31.098958-03:00",
+    "resultado": "pendente"
   }
 ]
