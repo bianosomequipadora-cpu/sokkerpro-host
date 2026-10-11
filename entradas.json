@@ -21562,5 +21562,23 @@
     "odd_mercado": 1.275,
     "timestamp": "2026-10-11T12:12:18.398732-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0e9ca51eb3cf_custom_1790438667502_20261011",
+    "fixture_id": "19631113",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Stabæk",
+    "away": "Strømmen",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.375,
+    "timestamp": "2026-10-11T12:17:12.288715-03:00",
+    "resultado": "pendente"
   }
 ]
