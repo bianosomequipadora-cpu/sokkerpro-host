@@ -22174,5 +22174,23 @@
     "odd_mercado": 1.495,
     "timestamp": "2026-10-11T14:23:05.415008-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "1b28290da314_custom_1791733338122_20261011",
+    "fixture_id": "19765668",
+    "mercado": "custom_1791733338122",
+    "tipo": "escanteio_ht",
+    "home": "Rayo Majadahonda",
+    "away": "Real Murcia",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.115,
+    "timestamp": "2026-10-11T14:23:29.164819-03:00",
+    "resultado": "pendente"
   }
 ]
