@@ -20842,5 +20842,23 @@
     "odd_mercado": 2.05,
     "timestamp": "2026-10-11T09:07:23.186822-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "6aa6e048d2c6_custom_1790706998863_20261011",
+    "fixture_id": "19761140",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Hajdúnánás",
+    "away": "Tiszaújváros",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.336,
+    "timestamp": "2026-10-11T09:19:07.408272-03:00",
+    "resultado": "pendente"
   }
 ]
