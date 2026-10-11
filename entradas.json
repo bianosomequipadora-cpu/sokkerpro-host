@@ -20212,5 +20212,23 @@
     "odd_mercado": 1.43,
     "timestamp": "2026-10-10T23:42:06.151118-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "92891923c332_custom_1791203748430_20261011",
+    "fixture_id": "19871261",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Yuen Long",
+    "away": "Lucky Mile",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.555,
+    "timestamp": "2026-10-11T05:11:48.833962-03:00",
+    "resultado": "pendente"
   }
 ]
