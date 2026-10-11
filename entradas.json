@@ -20752,5 +20752,23 @@
     "odd_mercado": 2.2,
     "timestamp": "2026-10-11T08:42:27.248367-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9031b8289673_custom_1791278944457_20261011",
+    "fixture_id": "19764327",
+    "mercado": "custom_1791278944457",
+    "tipo": "escanteio_ft",
+    "home": "Mafra",
+    "away": "CF Os Belenenses",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 1.75,
+    "odd_bano": null,
+    "odd_mercado": 1.77,
+    "timestamp": "2026-10-11T08:47:11.161691-03:00",
+    "resultado": "pendente"
   }
 ]
