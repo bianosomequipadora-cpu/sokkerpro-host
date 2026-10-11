@@ -20968,5 +20968,23 @@
     "odd_mercado": 1.255,
     "timestamp": "2026-10-11T09:51:28.197927-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0de34dcccbf7_custom_1790438667502_20261011",
+    "fixture_id": "19791991",
+    "mercado": "custom_1790438667502",
+    "tipo": "gol_intervalo",
+    "home": "Kroměříž II",
+    "away": "Strani",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.83,
+    "odd_bano": null,
+    "odd_mercado": 1.855,
+    "timestamp": "2026-10-11T09:59:25.327415-03:00",
+    "resultado": "pendente"
   }
 ]
