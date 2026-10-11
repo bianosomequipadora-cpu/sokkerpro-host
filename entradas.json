@@ -21292,5 +21292,23 @@
     "odd_mercado": 1.685,
     "timestamp": "2026-10-11T11:13:35.179073-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a5b2c5154ceb_custom_1790213687442_20261011",
+    "fixture_id": "19651831",
+    "mercado": "custom_1790213687442",
+    "tipo": "over_gol",
+    "home": "Mandalskameratene",
+    "away": "Stabæk II",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.14,
+    "timestamp": "2026-10-11T11:13:54.083062-03:00",
+    "resultado": "pendente"
   }
 ]
