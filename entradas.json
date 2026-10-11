@@ -20356,5 +20356,23 @@
     "odd_mercado": 1.75,
     "timestamp": "2026-10-11T06:41:00.285996-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "98b6ee5dbe0d_custom_1791278944457_20261011",
+    "fixture_id": "19880493",
+    "mercado": "custom_1791278944457",
+    "tipo": "escanteio_ft",
+    "home": "Lanzhou Longyuan",
+    "away": "Guangdong Mingtu",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 1.925,
+    "timestamp": "2026-10-11T06:42:30.425614-03:00",
+    "resultado": "pendente"
   }
 ]
