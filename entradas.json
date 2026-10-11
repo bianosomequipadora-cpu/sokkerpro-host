@@ -21544,5 +21544,23 @@
     "odd_mercado": 1.37,
     "timestamp": "2026-10-11T11:50:32.701973-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "4c01e23f21d8_custom_1790213687442_20261011",
+    "fixture_id": "19723549",
+    "mercado": "custom_1790213687442",
+    "tipo": "over_gol",
+    "home": "Krško",
+    "away": "Triglav",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.275,
+    "timestamp": "2026-10-11T12:12:18.398732-03:00",
+    "resultado": "pendente"
   }
 ]
