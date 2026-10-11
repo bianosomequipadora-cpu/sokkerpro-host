@@ -20986,5 +20986,23 @@
     "odd_mercado": 1.855,
     "timestamp": "2026-10-11T09:59:25.327415-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "23eb8a433544_custom_1791534270147_20261011",
+    "fixture_id": "19754680",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Münsingen",
+    "away": "Zug",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.96,
+    "timestamp": "2026-10-11T10:08:10.799711-03:00",
+    "resultado": "pendente"
   }
 ]
