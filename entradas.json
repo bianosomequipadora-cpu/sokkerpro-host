@@ -20662,5 +20662,23 @@
     "odd_mercado": 1.555,
     "timestamp": "2026-10-11T08:33:16.791044-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "dc002d660f05_custom_1791534270147_20261011",
+    "fixture_id": "19670082",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Ogre United",
+    "away": "FC Daugavpils",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.55,
+    "timestamp": "2026-10-11T08:33:26.456641-03:00",
+    "resultado": "pendente"
   }
 ]
