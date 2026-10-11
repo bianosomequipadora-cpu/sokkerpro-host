@@ -20878,5 +20878,23 @@
     "odd_mercado": 1.6,
     "timestamp": "2026-10-11T09:35:22.197686-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "268c1880b94d_custom_1791534260012_20261011",
+    "fixture_id": "19725034",
+    "mercado": "custom_1791534260012",
+    "tipo": "escanteio_ft",
+    "home": "Slovan Liberec",
+    "away": "Slovácko",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.288,
+    "timestamp": "2026-10-11T09:41:08.519190-03:00",
+    "resultado": "pendente"
   }
 ]
