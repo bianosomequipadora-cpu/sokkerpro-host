@@ -21634,5 +21634,23 @@
     "odd_mercado": 1.336,
     "timestamp": "2026-10-11T12:22:54.966132-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0839bafc0265_custom_1791534270147_20261011",
+    "fixture_id": "19890032",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Al Sahel",
+    "away": "Al Fahaheel",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.77,
+    "timestamp": "2026-10-11T12:25:16.249615-03:00",
+    "resultado": "pendente"
   }
 ]
