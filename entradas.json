@@ -21148,5 +21148,23 @@
     "odd_mercado": 2.65,
     "timestamp": "2026-10-11T10:39:20.400125-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "eeda68ce2c3a_custom_1791534270147_20261011",
+    "fixture_id": "19851316",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Atletico Lodigiani",
+    "away": "Sarnese",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.85,
+    "timestamp": "2026-10-11T10:42:03.380581-03:00",
+    "resultado": "pendente"
   }
 ]
