@@ -21166,5 +21166,23 @@
     "odd_mercado": 2.85,
     "timestamp": "2026-10-11T10:42:03.380581-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c90e7bb8ed1d_custom_1790706998863_20261011",
+    "fixture_id": "19872915",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Hà Nội",
+    "away": "Bac Ninh",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.61,
+    "timestamp": "2026-10-11T10:42:25.478143-03:00",
+    "resultado": "pendente"
   }
 ]
