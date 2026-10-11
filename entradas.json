@@ -22282,5 +22282,23 @@
     "odd_mercado": 1.8,
     "timestamp": "2026-10-11T15:30:21.529783-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5a5867a2cb2b_custom_1791733338122_20261011",
+    "fixture_id": "19783607",
+    "mercado": "custom_1791733338122",
+    "tipo": "escanteio_ht",
+    "home": "Búzios",
+    "away": "Friburguense",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.8,
+    "odd_bano": null,
+    "odd_mercado": 1.89,
+    "timestamp": "2026-10-11T15:40:42.232838-03:00",
+    "resultado": "pendente"
   }
 ]
