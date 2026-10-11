@@ -21958,5 +21958,23 @@
     "odd_mercado": 1.99,
     "timestamp": "2026-10-11T13:30:09.309737-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "e346944a587f_custom_1791534270147_20261011",
+    "fixture_id": "19887914",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Universidad San Martín",
+    "away": "Bentín Tacna Heroica",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.44,
+    "timestamp": "2026-10-11T13:34:22.335540-03:00",
+    "resultado": "pendente"
   }
 ]
