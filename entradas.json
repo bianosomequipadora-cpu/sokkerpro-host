@@ -21598,5 +21598,23 @@
     "odd_mercado": 1.83,
     "timestamp": "2026-10-11T12:19:22.546194-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "60f5f0d00e4b_custom_1790706998863_20261011",
+    "fixture_id": "19811357",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Brito",
+    "away": "Chaves II",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.47,
+    "timestamp": "2026-10-11T12:22:40.135641-03:00",
+    "resultado": "pendente"
   }
 ]
