@@ -20788,5 +20788,23 @@
     "odd_mercado": 1.77,
     "timestamp": "2026-10-11T08:47:18.930459-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "b4e7766d9bd0_custom_1791203748430_20261011",
+    "fixture_id": "19650736",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Lørenskog",
+    "away": "Trygg/Lade",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.77,
+    "odd_bano": null,
+    "odd_mercado": 2.01,
+    "timestamp": "2026-10-11T09:04:25.041760-03:00",
+    "resultado": "pendente"
   }
 ]
