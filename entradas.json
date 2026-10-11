@@ -20500,5 +20500,23 @@
     "odd_mercado": 1.575,
     "timestamp": "2026-10-11T07:32:50.985978-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "1f1a56657e03_custom_1791499929953_20261011",
+    "fixture_id": "19667898",
+    "mercado": "custom_1791499929953",
+    "tipo": "over_15",
+    "home": "Tallinna Kalev II",
+    "away": "Vaprus II",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.13,
+    "timestamp": "2026-10-11T07:44:00.056212-03:00",
+    "resultado": "pendente"
   }
 ]
