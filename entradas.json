@@ -21490,5 +21490,23 @@
     "odd_mercado": 1.775,
     "timestamp": "2026-10-11T11:43:09.926381-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "fb5ca6f20ad1_custom_1791534260012_20261011",
+    "fixture_id": "19722781",
+    "mercado": "custom_1791534260012",
+    "tipo": "escanteio_ft",
+    "home": "Aberdeen",
+    "away": "St. Johnstone",
+    "message_id": 0,
+    "extra_val": 15,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.464,
+    "timestamp": "2026-10-11T11:45:52.090068-03:00",
+    "resultado": "pendente"
   }
 ]
