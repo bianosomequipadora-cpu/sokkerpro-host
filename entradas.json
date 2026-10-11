@@ -20302,5 +20302,23 @@
     "odd_mercado": 1.37,
     "timestamp": "2026-10-11T06:32:42.884716-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "2a9a191cb844_custom_1791203694704_20261011",
+    "fixture_id": "19871357",
+    "mercado": "custom_1791203694704",
+    "tipo": "escanteio_ft",
+    "home": "AC Taipei",
+    "away": "Taichung Rock",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.552,
+    "timestamp": "2026-10-11T06:39:19.453564-03:00",
+    "resultado": "pendente"
   }
 ]
