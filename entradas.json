@@ -21040,5 +21040,23 @@
     "odd_mercado": 3.72,
     "timestamp": "2026-10-11T10:10:43.966720-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "a98f59d16317_custom_1791534260012_20261011",
+    "fixture_id": "19790751",
+    "mercado": "custom_1791534260012",
+    "tipo": "escanteio_ft",
+    "home": "Osijek U19",
+    "away": "Hajduk Split U19",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.85,
+    "odd_bano": null,
+    "odd_mercado": 2.3,
+    "timestamp": "2026-10-11T10:31:47.991567-03:00",
+    "resultado": "pendente"
   }
 ]
