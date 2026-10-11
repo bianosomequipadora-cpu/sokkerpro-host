@@ -21994,5 +21994,23 @@
     "odd_mercado": 2.65,
     "timestamp": "2026-10-11T13:36:13.953563-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0e9ca51eb3cf_custom_1791534260012_20261011",
+    "fixture_id": "19631113",
+    "mercado": "custom_1791534260012",
+    "tipo": "escanteio_ft",
+    "home": "Stabæk",
+    "away": "Strømmen",
+    "message_id": 0,
+    "extra_val": 15,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.344,
+    "timestamp": "2026-10-11T13:41:19.658862-03:00",
+    "resultado": "pendente"
   }
 ]
