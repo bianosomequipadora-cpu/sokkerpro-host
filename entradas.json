@@ -20158,5 +20158,23 @@
     "odd_mercado": 1.42,
     "timestamp": "2026-10-10T20:44:14.069462-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "7813f551cbfa_custom_1791534270147_20261010",
+    "fixture_id": "19609856",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Philadelphia Union",
+    "away": "Real Salt Lake",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.41,
+    "timestamp": "2026-10-10T21:11:52.610773-03:00",
+    "resultado": "pendente"
   }
 ]
