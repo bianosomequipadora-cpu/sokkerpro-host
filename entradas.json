@@ -20176,5 +20176,23 @@
     "odd_mercado": 1.41,
     "timestamp": "2026-10-10T21:11:52.610773-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "c2cc08e3d928_custom_1791203694704_20261010",
+    "fixture_id": "19768446",
+    "mercado": "custom_1791203694704",
+    "tipo": "escanteio_ft",
+    "home": "Municipal Limeño",
+    "away": "Firpo",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.43,
+    "timestamp": "2026-10-10T23:41:55.884100-03:00",
+    "resultado": "pendente"
   }
 ]
