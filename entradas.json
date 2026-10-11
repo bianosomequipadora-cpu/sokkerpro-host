@@ -22714,5 +22714,23 @@
     "odd_mercado": 1.7,
     "timestamp": "2026-10-11T18:42:31.098958-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5883b46043e7_custom_1791278944457_20261011",
+    "fixture_id": "19636834",
+    "mercado": "custom_1791278944457",
+    "tipo": "escanteio_ft",
+    "home": "Deportivo Maipú",
+    "away": "San Martín San Juan",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.92,
+    "odd_bano": null,
+    "odd_mercado": 2.24,
+    "timestamp": "2026-10-11T18:48:45.567259-03:00",
+    "resultado": "pendente"
   }
 ]
