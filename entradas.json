@@ -22444,5 +22444,23 @@
     "odd_mercado": 1.77,
     "timestamp": "2026-10-11T16:36:18.358324-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0d39e4858a4d_custom_1791733338122_20261011",
+    "fixture_id": "19732666",
+    "mercado": "custom_1791733338122",
+    "tipo": "escanteio_ht",
+    "home": "Racing Santander",
+    "away": "Valencia",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.775,
+    "timestamp": "2026-10-11T16:36:28.951101-03:00",
+    "resultado": "pendente"
   }
 ]
