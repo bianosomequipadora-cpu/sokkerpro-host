@@ -21922,5 +21922,23 @@
     "odd_mercado": 1.416,
     "timestamp": "2026-10-11T13:20:10.182925-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "3359783e30af_custom_1790706998863_20261011",
+    "fixture_id": "19854373",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Barau",
+    "away": "Enugu Rangers",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.47,
+    "timestamp": "2026-10-11T13:25:13.894359-03:00",
+    "resultado": "pendente"
   }
 ]
