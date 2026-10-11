@@ -244,7 +244,7 @@
         {
           "campo": "appm_min_por_time",
           "operador": "gte",
-          "valor": 0.7
+          "valor": 0.9
         },
         {
           "campo": "chutes_totais_min",
@@ -285,7 +285,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 0.7
+          "valor": 0.9
         },
         {
           "campo": "chutes_totais_min",
