@@ -20680,5 +20680,23 @@
     "odd_mercado": 1.55,
     "timestamp": "2026-10-11T08:33:26.456641-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b11f76707137_custom_1791203748430_20261011",
+    "fixture_id": "19764854",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Lamphun Warrior",
+    "away": "True Bangkok United",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.98,
+    "timestamp": "2026-10-11T08:36:52.098624-03:00",
+    "resultado": "pendente"
   }
 ]
