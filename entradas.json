@@ -21130,5 +21130,23 @@
     "odd_mercado": 1.29,
     "timestamp": "2026-10-11T10:34:48.467543-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "361c7ffb5aa9_custom_1791534270147_20261011",
+    "fixture_id": "19737510",
+    "mercado": "custom_1791534270147",
+    "tipo": "escanteio_ht",
+    "home": "Spouwen-Mopertingen",
+    "away": "Tienen",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.3,
+    "odd_bano": null,
+    "odd_mercado": 2.65,
+    "timestamp": "2026-10-11T10:39:20.400125-03:00",
+    "resultado": "pendente"
   }
 ]
