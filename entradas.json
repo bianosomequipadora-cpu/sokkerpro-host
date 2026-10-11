@@ -20482,5 +20482,23 @@
     "odd_mercado": 1.664,
     "timestamp": "2026-10-11T07:14:14.797921-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c514c749f46e_custom_1791203748430_20261011",
+    "fixture_id": "19736491",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Lusitania FC Lourosa",
+    "away": "Chaves",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.575,
+    "timestamp": "2026-10-11T07:32:50.985978-03:00",
+    "resultado": "pendente"
   }
 ]
