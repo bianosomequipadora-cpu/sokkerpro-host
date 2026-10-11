@@ -21850,5 +21850,23 @@
     "odd_mercado": 1.95,
     "timestamp": "2026-10-11T13:04:00.996337-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9875c5f8e14d_custom_1791203748430_20261011",
+    "fixture_id": "19787145",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Perugia",
+    "away": "Vado",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.555,
+    "timestamp": "2026-10-11T13:06:08.182730-03:00",
+    "resultado": "pendente"
   }
 ]
