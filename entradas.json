@@ -22102,5 +22102,23 @@
     "odd_mercado": 1.95,
     "timestamp": "2026-10-11T14:12:41.814206-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b5004c14592e_custom_1791278944457_20261011",
+    "fixture_id": "19787147",
+    "mercado": "custom_1791278944457",
+    "tipo": "escanteio_ft",
+    "home": "Forlì",
+    "away": "Livorno",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.2,
+    "odd_bano": null,
+    "odd_mercado": 2.34,
+    "timestamp": "2026-10-11T14:14:45.084628-03:00",
+    "resultado": "pendente"
   }
 ]
