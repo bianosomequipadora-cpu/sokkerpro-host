@@ -21760,5 +21760,23 @@
     "odd_mercado": 1.736,
     "timestamp": "2026-10-11T12:50:48.821592-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f4fc2a167ddf_custom_1791203748430_20261011",
+    "fixture_id": "19715585",
+    "mercado": "custom_1791203748430",
+    "tipo": "escanteio_ht",
+    "home": "Rennes",
+    "away": "Auxerre",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.0,
+    "odd_bano": null,
+    "odd_mercado": 2.34,
+    "timestamp": "2026-10-11T12:53:24.996959-03:00",
+    "resultado": "pendente"
   }
 ]
