@@ -23650,5 +23650,23 @@
     "odd_mercado": 1.48,
     "timestamp": "2026-10-12T13:19:08.429744-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f9391dd2b8df_custom_1791763136789_20261012",
+    "fixture_id": "19887916",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Molinos El Pirata",
+    "away": "Unión Minas Volcán",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.8,
+    "odd_bano": null,
+    "odd_mercado": 1.75,
+    "timestamp": "2026-10-12T13:19:47.696627-03:00",
+    "resultado": "pendente"
   }
 ]
