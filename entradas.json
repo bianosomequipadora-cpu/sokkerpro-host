@@ -23416,5 +23416,23 @@
     "odd_mercado": 1.33,
     "timestamp": "2026-10-12T12:17:46.033678-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4d94dac508b1_custom_1791763136789_20261012",
+    "fixture_id": "19670080",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Liepāja",
+    "away": "Auda",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.66,
+    "odd_bano": null,
+    "odd_mercado": 1.736,
+    "timestamp": "2026-10-12T12:18:03.955849-03:00",
+    "resultado": "pendente"
   }
 ]
