@@ -23632,5 +23632,23 @@
     "odd_mercado": 1.59,
     "timestamp": "2026-10-12T13:17:32.064372-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a8765820b78f_custom_1791763136789_20261012",
+    "fixture_id": "19867120",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Al Wasl",
+    "away": "Al Ahli",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.5,
+    "odd_bano": null,
+    "odd_mercado": 1.48,
+    "timestamp": "2026-10-12T13:19:08.429744-03:00",
+    "resultado": "pendente"
   }
 ]
