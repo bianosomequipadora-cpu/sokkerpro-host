@@ -23218,5 +23218,23 @@
     "odd_mercado": 2.3,
     "timestamp": "2026-10-12T10:37:23.192156-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "8e571e8a3a2c_custom_1791763136789_20261012",
+    "fixture_id": "19867133",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Pakhtakor",
+    "away": "Al-Qadsiah",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.53,
+    "odd_bano": null,
+    "odd_mercado": 1.58,
+    "timestamp": "2026-10-12T11:02:19.734177-03:00",
+    "resultado": "pendente"
   }
 ]
