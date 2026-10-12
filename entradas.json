@@ -23452,5 +23452,23 @@
     "odd_mercado": 1.485,
     "timestamp": "2026-10-12T12:18:20.677234-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "e15e8833c1a7_custom_1790213687442_20261012",
+    "fixture_id": "19786085",
+    "mercado": "custom_1790213687442",
+    "tipo": "over_gol",
+    "home": "Spartak Subotica U19",
+    "away": "IMT Novi Beograd U19",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.216,
+    "timestamp": "2026-10-12T12:20:14.629291-03:00",
+    "resultado": "pendente"
   }
 ]
