@@ -23542,5 +23542,23 @@
     "odd_mercado": 3.24,
     "timestamp": "2026-10-12T12:40:44.845391-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "94c0c6ce3f49_custom_1791762189183_20261012",
+    "fixture_id": "19888227",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "NorthEast United",
+    "away": "ATK Mohun Bagan",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.67,
+    "odd_bano": null,
+    "odd_mercado": 1.656,
+    "timestamp": "2026-10-12T12:47:27.136293-03:00",
+    "resultado": "pendente"
   }
 ]
