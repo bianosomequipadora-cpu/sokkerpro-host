@@ -400,6 +400,37 @@
           "valor": 0
         }
       ]
+    },
+    "custom_1791763136789": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️🌋OVERGOL INTERVALO🌋⚽️",
+      "minuto_inicio": 15,
+      "minuto_fim": 26,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "stake": 10,
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": ""
+      },
+      "criterios_api": [
+        {
+          "campo": "prob_ht_over_0_5",
+          "operador": "gte",
+          "valor": 50
+        },
+        {
+          "campo": "prob_ft_over_2_5",
+          "operador": "gte",
+          "valor": 50
+        },
+        {
+          "campo": "prob_1x2_casa_ou_fora",
+          "operador": "gte",
+          "valor": 72
+        }
+      ]
     }
   }
 }
