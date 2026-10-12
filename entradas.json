@@ -23182,5 +23182,23 @@
     "odd_mercado": 1.235,
     "timestamp": "2026-10-12T10:18:51.023279-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "fb03af4cdd9e_custom_1791762177973_20261012",
+    "fixture_id": "19716071",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "FK Bashkimi Kumanovo",
+    "away": "Struga",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.3,
+    "odd_bano": null,
+    "odd_mercado": 2.3,
+    "timestamp": "2026-10-12T10:37:11.236493-03:00",
+    "resultado": "pendente"
   }
 ]
