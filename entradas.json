@@ -23236,5 +23236,23 @@
     "odd_mercado": 1.58,
     "timestamp": "2026-10-12T11:02:19.734177-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "94c0c6ce3f49_custom_1791763136789_20261012",
+    "fixture_id": "19888227",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "NorthEast United",
+    "away": "ATK Mohun Bagan",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.57,
+    "odd_bano": null,
+    "odd_mercado": 1.575,
+    "timestamp": "2026-10-12T11:17:00.650004-03:00",
+    "resultado": "pendente"
   }
 ]
