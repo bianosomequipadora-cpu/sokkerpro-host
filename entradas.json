@@ -23992,5 +23992,23 @@
     "odd_mercado": 1.555,
     "timestamp": "2026-10-12T15:15:29.361165-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0d19207cccdb_custom_1791763136789_20261012",
+    "fixture_id": "19890195",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Ponte Preta U20",
+    "away": "Santos U20",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.5,
+    "odd_bano": null,
+    "odd_mercado": 1.52,
+    "timestamp": "2026-10-12T15:17:16.833431-03:00",
+    "resultado": "pendente"
   }
 ]
