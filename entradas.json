@@ -22840,5 +22840,23 @@
     "odd_mercado": 1.52,
     "timestamp": "2026-10-11T21:46:54.496568-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d03dd7593db8_custom_1791761808552_20261011",
+    "fixture_id": "19725411",
+    "mercado": "custom_1791761808552",
+    "tipo": "escanteio_ft",
+    "home": "Municipal",
+    "away": "Marquense",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.65,
+    "odd_bano": null,
+    "odd_mercado": 1.736,
+    "timestamp": "2026-10-11T21:48:33.253547-03:00",
+    "resultado": "pendente"
   }
 ]
