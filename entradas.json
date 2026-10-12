@@ -23038,5 +23038,23 @@
     "odd_mercado": 1.5,
     "timestamp": "2026-10-12T08:25:37.436193-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "a0c1fda49aac_custom_1791762177973_20261012",
+    "fixture_id": "19786088",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Vojvodina U19",
+    "away": "Jedinstvo Ub U19",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.432,
+    "timestamp": "2026-10-12T08:40:40.608434-03:00",
+    "resultado": "pendente"
   }
 ]
