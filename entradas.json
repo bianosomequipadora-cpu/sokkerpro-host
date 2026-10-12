@@ -23128,5 +23128,23 @@
     "odd_mercado": 1.575,
     "timestamp": "2026-10-12T09:15:40.131781-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "b68aac3f1f40_custom_1791762199194_20261012",
+    "fixture_id": "19880437",
+    "mercado": "custom_1791762199194",
+    "tipo": "escanteio_ft",
+    "home": "Xiamen Feilu",
+    "away": "Tai'an Tiankuang",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.05,
+    "odd_bano": null,
+    "odd_mercado": 2.08,
+    "timestamp": "2026-10-12T10:13:18.235274-03:00",
+    "resultado": "pendente"
   }
 ]
