@@ -22948,5 +22948,23 @@
     "odd_mercado": 1.46,
     "timestamp": "2026-10-12T07:50:40.483137-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "88728538c52a_custom_1791762177973_20261012",
+    "fixture_id": "19887644",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Pannaxiakos",
+    "away": "Nea Ionia",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.33,
+    "timestamp": "2026-10-12T08:03:18.408590-03:00",
+    "resultado": "pendente"
   }
 ]
