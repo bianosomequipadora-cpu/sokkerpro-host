@@ -23758,5 +23758,23 @@
     "odd_mercado": 2.016,
     "timestamp": "2026-10-12T13:44:05.048620-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4d94dac508b1_custom_1791762199194_20261012",
+    "fixture_id": "19670080",
+    "mercado": "custom_1791762199194",
+    "tipo": "escanteio_ft",
+    "home": "Liepāja",
+    "away": "Auda",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 2.0,
+    "odd_bano": null,
+    "odd_mercado": 2.016,
+    "timestamp": "2026-10-12T13:44:16.875537-03:00",
+    "resultado": "pendente"
   }
 ]
