@@ -23578,5 +23578,23 @@
     "odd_mercado": 1.656,
     "timestamp": "2026-10-12T12:47:36.565973-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "62bfb5f1e94d_custom_1791762189183_20261012",
+    "fixture_id": "19745042",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "Burgos",
+    "away": "Granada",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.8,
+    "odd_bano": null,
+    "odd_mercado": 1.85,
+    "timestamp": "2026-10-12T12:59:13.492020-03:00",
+    "resultado": "pendente"
   }
 ]
