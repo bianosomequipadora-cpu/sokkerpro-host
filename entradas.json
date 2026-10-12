@@ -24100,5 +24100,23 @@
     "odd_mercado": 2.65,
     "timestamp": "2026-10-12T15:42:23.827715-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "934e5aceea08_custom_1791762204509_20261012",
+    "fixture_id": "19637427",
+    "mercado": "custom_1791762204509",
+    "tipo": "escanteio_ht",
+    "home": "Leones de Rosario",
+    "away": "Fénix",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.745,
+    "timestamp": "2026-10-12T15:42:38.317833-03:00",
+    "resultado": "pendente"
   }
 ]
