@@ -23956,5 +23956,23 @@
     "odd_mercado": 1.432,
     "timestamp": "2026-10-12T15:02:09.164143-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f7fcf34ca4ba_custom_1791761873738_20261012",
+    "fixture_id": "19721194",
+    "mercado": "custom_1791761873738",
+    "tipo": "escanteio_ht",
+    "home": "Hapoel Jerusalem",
+    "away": "Maccabi Haifa",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 2.02,
+    "odd_bano": null,
+    "odd_mercado": 1.995,
+    "timestamp": "2026-10-12T15:07:05.622327-03:00",
+    "resultado": "pendente"
   }
 ]
