@@ -23326,5 +23326,23 @@
     "odd_mercado": 2.03,
     "timestamp": "2026-10-12T11:37:29.389114-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "3bfd77998249_custom_1791762204509_20261012",
+    "fixture_id": "19789080",
+    "mercado": "custom_1791762204509",
+    "tipo": "escanteio_ht",
+    "home": "USM Khenchela",
+    "away": "CS Constantine",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.07,
+    "timestamp": "2026-10-12T11:37:41.149902-03:00",
+    "resultado": "pendente"
   }
 ]
