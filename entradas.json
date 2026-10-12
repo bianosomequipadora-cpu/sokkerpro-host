@@ -24298,5 +24298,23 @@
     "odd_mercado": 1.552,
     "timestamp": "2026-10-12T17:15:35.906182-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f681b1cf49e6_custom_1791762199194_20261012",
+    "fixture_id": "19784090",
+    "mercado": "custom_1791762199194",
+    "tipo": "escanteio_ft",
+    "home": "Picerno",
+    "away": "Cosenza",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.55,
+    "timestamp": "2026-10-12T17:15:50.369618-03:00",
+    "resultado": "pendente"
   }
 ]
