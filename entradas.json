@@ -22804,5 +22804,23 @@
     "odd_mercado": 1.456,
     "timestamp": "2026-10-11T20:32:28.359478-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "a6d350e9b391_custom_1791762189183_20261011",
+    "fixture_id": "19715066",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "Escorpiones Belén",
+    "away": "Deportivo Saprissa",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.42,
+    "timestamp": "2026-10-11T21:40:34.173645-03:00",
+    "resultado": "pendente"
   }
 ]
