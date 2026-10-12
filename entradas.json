@@ -24028,5 +24028,23 @@
     "odd_mercado": 1.408,
     "timestamp": "2026-10-12T15:17:31.731118-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9a787213e5b7_custom_1791763136789_20261012",
+    "fixture_id": "19814701",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "AFC Bournemouth U21",
+    "away": "Plymouth Argyle U21",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.4,
+    "odd_bano": null,
+    "odd_mercado": 1.375,
+    "timestamp": "2026-10-12T15:17:44.222800-03:00",
+    "resultado": "pendente"
   }
 ]
