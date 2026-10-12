@@ -24064,5 +24064,23 @@
     "odd_mercado": 1.6,
     "timestamp": "2026-10-12T15:22:43.243825-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d778cd67b95b_custom_1791763136789_20261012",
+    "fixture_id": "19867092",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Al Gharafa",
+    "away": "Esteghlal",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.8,
+    "odd_bano": null,
+    "odd_mercado": 1.805,
+    "timestamp": "2026-10-12T15:32:48.919004-03:00",
+    "resultado": "pendente"
   }
 ]
