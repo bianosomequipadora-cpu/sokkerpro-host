@@ -24406,5 +24406,23 @@
     "odd_mercado": 1.64,
     "timestamp": "2026-10-12T19:36:50.289235-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "b7bda70a3f39_custom_1791762204509_20261012",
+    "fixture_id": "19636831",
+    "mercado": "custom_1791762204509",
+    "tipo": "escanteio_ht",
+    "home": "All Boys",
+    "away": "Godoy Cruz",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 4.59,
+    "timestamp": "2026-10-12T20:11:54.573695-03:00",
+    "resultado": "pendente"
   }
 ]
