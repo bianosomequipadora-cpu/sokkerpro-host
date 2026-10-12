@@ -24172,5 +24172,23 @@
     "odd_mercado": 1.7,
     "timestamp": "2026-10-12T16:17:13.894835-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c5033d233377_custom_1791763136789_20261012",
+    "fixture_id": "19867100",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Al Nassr",
+    "away": "Neftchi",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.365,
+    "timestamp": "2026-10-12T16:32:37.861639-03:00",
+    "resultado": "pendente"
   }
 ]
