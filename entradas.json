@@ -24334,5 +24334,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-12T17:17:50.791348-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a97f1c8ae60e_custom_1791762189183_20261012",
+    "fixture_id": "19772638",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "Carshalton Athletic",
+    "away": "Enfield Town",
+    "message_id": 0,
+    "extra_val": 10,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 1.584,
+    "timestamp": "2026-10-12T17:27:12.353165-03:00",
+    "resultado": "pendente"
   }
 ]
