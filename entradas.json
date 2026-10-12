@@ -24370,5 +24370,23 @@
     "odd_mercado": 1.584,
     "timestamp": "2026-10-12T17:27:20.764094-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "f652343873f9_custom_1791763136789_20261012",
+    "fixture_id": "19809605",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Always Ready",
+    "away": "Independiente Petrolero",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.22,
+    "odd_bano": null,
+    "odd_mercado": 1.2,
+    "timestamp": "2026-10-12T18:31:49.144954-03:00",
+    "resultado": "pendente"
   }
 ]
