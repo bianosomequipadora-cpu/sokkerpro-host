@@ -24262,5 +24262,23 @@
     "odd_mercado": 1.6,
     "timestamp": "2026-10-12T16:56:44.327446-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "359fe62cd5ac_custom_1790213687442_20261012",
+    "fixture_id": "19809661",
+    "mercado": "custom_1790213687442",
+    "tipo": "over_gol",
+    "home": "Limavady United U20",
+    "away": "Glentoran U20",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-12T17:12:18.977627-03:00",
+    "resultado": "pendente"
   }
 ]
