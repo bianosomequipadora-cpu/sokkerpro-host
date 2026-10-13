@@ -24550,5 +24550,23 @@
     "odd_mercado": 1.432,
     "timestamp": "2026-10-13T07:35:30.154821-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "467bcea83000_custom_1791762204509_20261013",
+    "fixture_id": "19867076",
+    "mercado": "custom_1791762204509",
+    "tipo": "escanteio_ht",
+    "home": "Kyoto Sanga",
+    "away": "Ratchaburi Mitrphol FC",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.432,
+    "timestamp": "2026-10-13T07:35:42.209115-03:00",
+    "resultado": "pendente"
   }
 ]
