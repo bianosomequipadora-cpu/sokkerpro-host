@@ -24838,5 +24838,23 @@
     "odd_mercado": 1.752,
     "timestamp": "2026-10-13T09:48:51.536145-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c222e08a4249_custom_1791762204509_20261013",
+    "fixture_id": "19867048",
+    "mercado": "custom_1791762204509",
+    "tipo": "escanteio_ht",
+    "home": "Công an Hà Nội",
+    "away": "Kashima Antlers",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.82,
+    "odd_bano": null,
+    "odd_mercado": 1.79,
+    "timestamp": "2026-10-13T09:49:03.940589-03:00",
+    "resultado": "pendente"
   }
 ]
