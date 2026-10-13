@@ -24442,5 +24442,23 @@
     "odd_mercado": 2.225,
     "timestamp": "2026-10-12T21:13:10.298332-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "a38c69689b60_custom_1791763136789_20261013",
+    "fixture_id": "19867083",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Newcastle Jets",
+    "away": "Gamba Osaka",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.44,
+    "odd_bano": null,
+    "odd_mercado": 1.445,
+    "timestamp": "2026-10-13T05:01:47.277955-03:00",
+    "resultado": "pendente"
   }
 ]
