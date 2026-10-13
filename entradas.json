@@ -25054,5 +25054,23 @@
     "odd_mercado": 2.13,
     "timestamp": "2026-10-13T11:20:53.584158-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "30aab72d8dd2_custom_1791763136789_20261013",
+    "fixture_id": "19668082",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Vaprus",
+    "away": "Nõmme Kalju",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.57,
+    "odd_bano": null,
+    "odd_mercado": 1.575,
+    "timestamp": "2026-10-13T12:19:41.280857-03:00",
+    "resultado": "pendente"
   }
 ]
