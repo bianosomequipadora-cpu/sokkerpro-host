@@ -308,7 +308,7 @@
           "valor": 0.7
         },
         {
-          "campo": "escanteios_5m",
+          "campo": "escanteios_10m",
           "operador": "lte",
           "valor": 0
         },
@@ -354,7 +354,7 @@
           "valor": 0.7
         },
         {
-          "campo": "escanteios_5m",
+          "campo": "escanteios_10m",
           "operador": "lte",
           "valor": 0
         }
@@ -395,7 +395,7 @@
           "valor": 0.7
         },
         {
-          "campo": "escanteios_5m",
+          "campo": "escanteios_10m",
           "operador": "lte",
           "valor": 0
         }
