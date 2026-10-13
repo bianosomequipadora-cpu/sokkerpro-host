@@ -24622,5 +24622,23 @@
     "odd_mercado": 1.2,
     "timestamp": "2026-10-13T08:20:36.225471-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d4dd965df315_custom_1791763136789_20261013",
+    "fixture_id": "19748640",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Bandırmaspor",
+    "away": "Sivasspor",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 1.715,
+    "timestamp": "2026-10-13T08:45:36.394822-03:00",
+    "resultado": "pendente"
   }
 ]
