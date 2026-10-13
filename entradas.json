@@ -25072,5 +25072,23 @@
     "odd_mercado": 1.575,
     "timestamp": "2026-10-13T12:19:41.280857-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "abefb4aa7a41_custom_1791935650567_20261013",
+    "fixture_id": "19667115",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Athletic Club",
+    "away": "Londrina",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.6,
+    "odd_bano": null,
+    "odd_mercado": 1.565,
+    "timestamp": "2026-10-13T20:55:20.427752-03:00",
+    "resultado": "pendente"
   }
 ]
