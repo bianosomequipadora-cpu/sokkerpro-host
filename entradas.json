@@ -25018,5 +25018,23 @@
     "odd_mercado": 3.304,
     "timestamp": "2026-10-13T10:38:43.682867-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "14652b849d20_custom_1791763136789_20261013",
+    "fixture_id": "19890912",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "GC Mascara",
+    "away": "Sidi M’hamed Benali",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.83,
+    "odd_bano": null,
+    "odd_mercado": 1.82,
+    "timestamp": "2026-10-13T11:17:55.989803-03:00",
+    "resultado": "pendente"
   }
 ]
