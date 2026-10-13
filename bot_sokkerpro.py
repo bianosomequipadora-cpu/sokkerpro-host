@@ -77,8 +77,10 @@ def gerar_layout_radar(jogos_ao_vivo, jogos_na_janela):
     corpo = f'{sep}\n📡 RADAR — JOGOS AO VIVO\n{sep}\n🔴 Jogos na Janela:\n{texto_jan}{sep}\n🟢 Ao Vivo: <b>{len(jogos_ao_vivo)}</b>'
     return corpo
 import requests
-import os, json, requests, time
+import os, json, requests, time, socket
 from urllib import request, error
+from urllib3.util import connection as urllib3_connection
+from sokkerpro_m4_session import M4Error, M4Session, is_auth_rejection
 import base64
 from datetime import datetime, timezone, timedelta
 import hashlib, re, unicodedata
@@ -115,12 +117,7 @@ TELEGRAM_TOKEN = os.getenv('TG_TOKEN', '')
 TG_TOKEN = TELEGRAM_TOKEN
 CHAT_IDS = [int(id) for id in os.environ.get('TG_GROUP_ID', '').split(',') if id.strip()]
 CHAT_ID = CHAT_IDS[0] if CHAT_IDS else ''
-SOKKERPRO_URL = 'https://r.jina.ai/http://m2.sokkerpro.com/livescores'
-SOKKERPRO_URL = 'https://r.jina.ai/http://m2.sokkerpro.com/livescores'
-SOKKERPRO_URL = 'https://r.jina.ai/http://m2.sokkerpro.com/livescores'
-SOKKERPRO_URL = 'https://r.jina.ai/http://m2.sokkerpro.com/livescores'
-SOKKERPRO_URL = 'https://r.jina.ai/http://m2.sokkerpro.com/livescores'
-SOKKERPRO_URL = 'https://r.jina.ai/http://m2.sokkerpro.com/livescores'
+SOKKERPRO_BASE_URL = 'https://m4.sokkerpro.com'
 
 def send_telegram(msg_data, reply_to=None, marca=None, home='', away='', odd_b365_val=None, odd_bano_val=None):
     """Envia mensagem formatada com botões inline."""
@@ -1240,8 +1237,86 @@ def enviar_relatorio_mercados24h():
 _CACHED_DATA = None
 DATA_UNAVAILABLE = False
 
+class _SokkerProM4HTTPError(RuntimeError):
+    def __init__(self, method, response):
+        self.status_code = response.status_code
+        self.cf_ray = response.headers.get('CF-Ray')
+        self.retry_after = response.headers.get('Retry-After')
+        super().__init__(f"M4 {method} HTTP {self.status_code}; CF-Ray={self.cf_ray or 'none'}; Retry-After={self.retry_after or 'none'}")
+
+
+urllib3_connection.allowed_gai_family = lambda: socket.AF_INET
+_M4_HTTP = requests.Session()
+_M4_HTTP.headers.update({
+    'Accept': 'application/json, text/plain, */*',
+    'Origin': 'https://sokkerpro.com',
+    'Referer': 'https://sokkerpro.com/',
+    'User-Agent': 'sokkerpro-monitor/0.1',
+})
+_M4_SESSION = M4Session(SOKKERPRO_BASE_URL)
+
+
+def _m4_post_json(url, payload):
+    response = _M4_HTTP.post(url, json=payload, timeout=30)
+    if not response.ok:
+        raise _SokkerProM4HTTPError('POST', response)
+    return response.json()
+
+
+def _m4_handshake(force=False):
+    try:
+        _M4_SESSION.handshake(_m4_post_json, force=force)
+    except M4Error as exc:
+        # M4Session wraps callback failures; unwrap only our HTTP metadata error.
+        if isinstance(exc.__cause__, _SokkerProM4HTTPError):
+            raise exc.__cause__ from exc
+        raise
+
+
+def _m4_get_json(path):
+    url = SOKKERPRO_BASE_URL + path
+    for tentativa in range(2):
+        _m4_handshake(force=(tentativa == 1))
+        response = _M4_HTTP.get(
+            url,
+            headers=_M4_SESSION.headers_for('GET', url),
+            timeout=30,
+        )
+        if response.status_code == 401 and tentativa == 0:
+            continue
+        if not response.ok:
+            # Não repetir 403/1006: o bloqueio ocorre antes da aplicação.
+            raise _SokkerProM4HTTPError('GET', response)
+        payload = _M4_SESSION.decrypt(response.json())
+        if is_auth_rejection(payload) and tentativa == 0:
+            continue
+        if is_auth_rejection(payload):
+            raise M4Error(f'm4 recusou autenticação em {path}')
+        return payload
+    raise M4Error(f'm4 não aceitou a sessão em {path} após renovar o handshake')
+
+
+def _adaptar_livescores_m4(payload):
+    """Preserva o envelope de dicionários que o bot atual espera."""
+    root = payload
+    if isinstance(root, dict) and isinstance(root.get('data'), dict):
+        root = root['data']
+        if isinstance(root.get('content'), str):
+            content = root['content']
+            inicio = content.find('{')
+            if inicio >= 0:
+                root = json.loads(content[inicio:])
+    if isinstance(root, dict) and isinstance(root.get('data'), dict):
+        root = root['data']
+    if isinstance(root, dict) and isinstance(root.get('sortedCategorizedFixtures'), list):
+        return {'data': root}
+    if isinstance(root, list):
+        return {'data': {'sortedCategorizedFixtures': [{'fixtures': root}]}}
+    raise ValueError('resposta M4 sem lista sortedCategorizedFixtures')
+
+
 def _get_data():
-    """Busca dados do SokkerPro com cache e três tentativas."""
+    """Busca livescores pelo M4 e mantém o formato consumido pelo bot legado."""
     global _CACHED_DATA, DATA_UNAVAILABLE
     if _CACHED_DATA is not None:
         DATA_UNAVAILABLE = False
@@ -1250,20 +1325,8 @@ def _get_data():
     ultimo_erro = None
     for tentativa in range(1, 4):
         try:
-            r = requests.get(SOKKERPRO_URL, headers={'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}, timeout=30)
-            r.raise_for_status()
-            texto = r.text
-            inicio_json = texto.find('{')
-            if inicio_json < 0:
-                raise ValueError('resposta sem JSON')
-            dados = json.loads(texto[inicio_json:])
-            # O proxy pode devolver um envelope JSON com o conteúdo original em data.content.
-            if isinstance(dados.get('data'), dict) and isinstance(dados['data'].get('content'), str):
-                conteudo = dados['data']['content']
-                conteudo_inicio = conteudo.find('{')
-                if conteudo_inicio >= 0:
-                    dados = json.loads(conteudo[conteudo_inicio:])
-            fixtures = dados.get('data', {}).get('sortedCategorizedFixtures') if isinstance(dados, dict) else None
+            dados = _adaptar_livescores_m4(_m4_get_json('/livescores'))
+            fixtures = dados.get('data', {}).get('sortedCategorizedFixtures')
             if not isinstance(fixtures, list):
                 raise ValueError('resposta sem lista de partidas')
             _CACHED_DATA = dados
@@ -1271,10 +1334,15 @@ def _get_data():
         except Exception as e:
             ultimo_erro = e
             print(f'[SKP] Tentativa {tentativa}/3 falhou: {e}')
+            # Resposta 4xx não melhora repetindo a chamada; o ciclo seguinte
+            # tentará novamente, sem insistir contra um bloqueio Cloudflare.
+            status = getattr(e, 'status_code', None)
+            if status is not None and 400 <= status < 500:
+                break
             if tentativa < 3:
                 time.sleep(2)
     DATA_UNAVAILABLE = True
-    print(f'[SKP] Fonte indisponível após 3 tentativas: {ultimo_erro}')
+    print(f'[SKP] Fonte indisponível após tentativas M4: {ultimo_erro}')
     return None
 
 def _get_float(val, default=0.0):
