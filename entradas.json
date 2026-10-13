@@ -24424,5 +24424,23 @@
     "odd_mercado": 4.59,
     "timestamp": "2026-10-12T20:11:54.573695-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "d23fa7c0270a_custom_1791762189183_20261012",
+    "fixture_id": "19894245",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "Deportivo Capiatá",
+    "away": "Benjamin Aceval",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": 2.05,
+    "odd_bano": null,
+    "odd_mercado": 2.225,
+    "timestamp": "2026-10-12T21:13:10.298332-03:00",
+    "resultado": "pendente"
   }
 ]
