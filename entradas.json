@@ -24928,5 +24928,23 @@
     "odd_mercado": 1.47,
     "timestamp": "2026-10-13T10:15:36.657262-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "edade6a0df9d_custom_1791763136789_20261013",
+    "fixture_id": "19786089",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Crvena Zvezda U19",
+    "away": "Novi Pazar U19",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.355,
+    "timestamp": "2026-10-13T10:19:44.459409-03:00",
+    "resultado": "pendente"
   }
 ]
