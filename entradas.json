@@ -24802,5 +24802,23 @@
     "odd_mercado": 1.7,
     "timestamp": "2026-10-13T09:42:10.176225-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4faa89594713_custom_1791762189183_20261013",
+    "fixture_id": "19875897",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "SCG Muangthong United",
+    "away": "Phrae United",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.65,
+    "odd_bano": null,
+    "odd_mercado": 1.72,
+    "timestamp": "2026-10-13T09:42:28.850855-03:00",
+    "resultado": "pendente"
   }
 ]
