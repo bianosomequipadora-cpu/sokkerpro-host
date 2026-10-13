@@ -1,0 +1,74 @@
+name: M4 Detail Integration Readonly Test
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  readonly-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install requests cryptography
+      - name: Test production M4 detail and audit functions without sending
+        run: |
+          python - <<'PY'
+          import bot_sokkerpro as bot
+
+          def all_live_fixtures(data):
+              result = []
+              for category in data['data']['sortedCategorizedFixtures']:
+                  result.extend(category.get('fixtures', []))
+              return result
+
+          data = bot._get_data()
+          assert data, 'M4 livescores unavailable'
+          live = all_live_fixtures(data)
+          live_ids = {str(f.get('fixtureId')) for f in live if f.get('fixtureId') is not None}
+          print(f'M4_INTEGRATION livescores_count={len(live)}')
+
+          if live:
+              live_id = str(live[0]['fixtureId'])
+              detail = bot._buscar_detalhe_fixture(live_id)
+              assert detail and str(detail.get('fixtureId')) == live_id, f'detail lookup failed for live fixture {live_id}'
+              print(f'M4_INTEGRATION live_detail=OK id={live_id} teams={detail.get("localTeamName")}|{detail.get("visitorTeamName")} status={detail.get("status")} scoresHT={detail.get("scoresHT")} cornersHT={detail.get("localCornersHT")}-{detail.get("visitorCornersHT")}')
+              stats = bot.get_stats_sokkerpro(live_id)
+              assert isinstance(stats, dict) and 'odds_mercados' in stats, 'get_stats_sokkerpro did not return stats with odds map'
+              print(f'M4_INTEGRATION get_stats=OK id={live_id} odds_count={len(stats["odds_mercados"])} corners_5m={stats.get("escanteios_5m")} big_chances={stats.get("big_chances_h")}-{stats.get("big_chances_a")}')
+          else:
+              print('M4_INTEGRATION get_stats=SKIPPED no live fixtures')
+
+          historical = {
+              '19766419': {'extra_val': 0, 'expected': 'red'},
+              '19668082': {'extra_val': 2, 'expected': 'green'},
+          }
+          original_detail = bot._buscar_detalhe_fixture
+          for fixture_id, check in historical.items():
+              detail = original_detail(fixture_id)
+              assert detail and str(detail.get('fixtureId')) == fixture_id, f'M4 historical detail failed for {fixture_id}'
+              for field in ('scoresHT', 'localCornersHT', 'visitorCornersHT', 'status'):
+                  assert detail.get(field) is not None, f'{field} missing for {fixture_id}'
+              if fixture_id not in live_ids:
+                  calls = []
+                  def tracked(fid):
+                      calls.append(str(fid))
+                      return original_detail(fid)
+                  bot._buscar_detalhe_fixture = tracked
+                  result = bot.checar_resultado({
+                      'fixture_id': 'skp_' + fixture_id,
+                      'mercado': 'CORNER_HT',
+                      'tipo': 'escanteio_ht',
+                      'extra_val': check['extra_val'],
+                  })
+                  bot._buscar_detalhe_fixture = original_detail
+                  assert calls == [fixture_id], f'audit did not use M4 detail for {fixture_id}: {calls}'
+                  assert result == check['expected'], f'audit result mismatch for {fixture_id}: {result}'
+                  print(f'M4_INTEGRATION audit_detail=OK id={fixture_id} result={result}')
+              else:
+                  print(f'M4_INTEGRATION audit_detail=SKIPPED id={fixture_id} already in livescores')
+
+          print('M4_INTEGRATION complete=PASS no_telegram=true no_state_writes=true')
+          PY
