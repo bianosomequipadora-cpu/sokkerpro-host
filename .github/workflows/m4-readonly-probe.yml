@@ -1,0 +1,20 @@
+name: Temporary M4 read-only probe
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: zapia-m4-probe-20261013-1954
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install probe dependencies
+        run: python -m pip install --disable-pip-version-check requests cryptography
+      - name: One handshake and one livescores request, no retries
+        run: python m4_live_probe.py
