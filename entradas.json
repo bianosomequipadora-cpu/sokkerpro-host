@@ -24496,5 +24496,23 @@
     "odd_mercado": 1.67,
     "timestamp": "2026-10-13T06:26:51.034259-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "34c1e0c1ffb2_custom_1791763136789_20261013",
+    "fixture_id": "19867070",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Pohang Steelers",
+    "away": "Johor Darul Ta'zim",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.61,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-10-13T07:16:45.910032-03:00",
+    "resultado": "pendente"
   }
 ]
