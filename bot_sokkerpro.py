@@ -1528,28 +1528,22 @@ def get_stats_sokkerpro(fid_raw, home='', away=''):
             for fix in cat['fixtures']:
                 if str(fix.get('fixtureId', '')) == str(fid_raw):
                     stats = _extrair_stats_sokkerpro(fix)
-                    # O endpoint geral traz estatísticas, mas as odds por mercado
-                    # ficam no endpoint individual da partida.
+                    # Completa odds e estatísticas individuais usando o detalhe M4.
+                    # Se o detalhe falhar, preserva o que já veio em /livescores.
                     try:
-                        detalhe_resp = requests.get(f'https://r.jina.ai/http://m2.sokkerpro.com/fixture/{fid_raw}', headers={'User-Agent': 'Mozilla/5.0'}, timeout=30)
-                        detalhe_texto = detalhe_resp.text
-                        detalhe_inicio = detalhe_texto.find('{')
-                        detalhe = json.loads(detalhe_texto[detalhe_inicio:]) if detalhe_inicio >= 0 else {}
-                        if isinstance(detalhe.get('data'), dict) and isinstance(detalhe['data'].get('content'), str):
-                            detalhe_conteudo = detalhe['data']['content']
-                            detalhe_conteudo_inicio = detalhe_conteudo.find('{')
-                            if detalhe_conteudo_inicio >= 0:
-                                detalhe = json.loads(detalhe_conteudo[detalhe_conteudo_inicio:])
-                        if detalhe.get('success') and isinstance(detalhe.get('data'), dict):
-                            detalhe_stats = _extrair_stats_sokkerpro(detalhe['data'])
+                        detalhe = _buscar_detalhe_fixture(fid_raw)
+                        if detalhe is None:
+                            print(f'[SKP] Detalhe M4 indisponível para {fid_raw}; mantendo stats de livescores')
+                        else:
+                            detalhe_stats = _extrair_stats_sokkerpro(detalhe)
                             stats['odds_mercados'] = detalhe_stats.get('odds_mercados', {})
                             for campo in ('escanteios_5m','escanteios_5m_h','escanteios_5m_a','escanteios_10m','escanteios_10m_h','escanteios_10m_a','escanteios_15m','escanteios_15m_h','escanteios_15m_a','big_chances_h','big_chances_a'):
                                 if campo in detalhe_stats:
                                     stats[campo] = detalhe_stats[campo]
                     except Exception as e:
-                        print(f'[SKP] Odds individuais indisponíveis para {fid_raw}: {e}')
+                        print(f'[SKP] Detalhes individuais M4 indisponíveis para {fid_raw}: {e}')
                     return stats
-    except:
+    except Exception:
         pass
     return {}
 
@@ -2537,32 +2531,46 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     return (msg, keyboard)
 
 def _buscar_detalhe_fixture(fid_raw):
-    """Busca o resultado final direto e pelo proxy, aceitando o envelope do proxy."""
-    fontes = (
-        f'https://m2.sokkerpro.com/fixture/{fid_raw}',
-        f'https://r.jina.ai/http://m2.sokkerpro.com/fixture/{fid_raw}',
-    )
-    for url in fontes:
-        try:
-            resposta = requests.get(url, headers={'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}, timeout=15)
-            resposta.raise_for_status()
-            # O proxy retorna Markdown antes do JSON; localizar o primeiro objeto.
-            texto = resposta.text
-            inicio = texto.find('{')
-            if inicio < 0:
+    """Busca e valida o detalhe da partida pelo endpoint M4 assinado."""
+    fixture_id = str(fid_raw).strip()
+    if not fixture_id.isdigit():
+        print(f'[AUDITORIA] ID de fixture inválido para detalhe M4: {fixture_id!r}')
+        return None
+    try:
+        detalhe = _m4_get_json(f'/fixture/{fixture_id}')
+        # O M4 normalmente retorna o objeto da fixture direto; também aceita
+        # os envelopes data/fixture/content sem assumir formato não validado.
+        for _ in range(4):
+            if isinstance(detalhe, dict) and detalhe.get('fixtureId') not in (None, ''):
+                break
+            if isinstance(detalhe, dict):
+                if isinstance(detalhe.get('data'), dict):
+                    detalhe = detalhe['data']
+                    continue
+                if isinstance(detalhe.get('fixture'), dict):
+                    detalhe = detalhe['fixture']
+                    continue
+                if isinstance(detalhe.get('content'), str):
+                    detalhe = detalhe['content']
+                    continue
+                return None
+            if isinstance(detalhe, str):
+                inicio = detalhe.find('{')
+                if inicio < 0:
+                    return None
+                detalhe = json.loads(detalhe[inicio:])
                 continue
-            dados = json.loads(texto[inicio:])
-            if isinstance(dados.get('data'), dict) and isinstance(dados['data'].get('content'), str):
-                conteudo = dados['data']['content']
-                inicio = conteudo.find('{')
-                if inicio >= 0:
-                    dados = json.loads(conteudo[inicio:])
-            fixture = dados.get('data') if isinstance(dados, dict) else None
-            if isinstance(fixture, dict) and fixture:
-                return fixture
-        except (requests.RequestException, ValueError, TypeError) as erro:
-            print(f'[AUDITORIA] Fonte de detalhe indisponível ({url}): {erro}')
-    return None
+            return None
+        if not isinstance(detalhe, dict):
+            return None
+        id_retornado = str(detalhe.get('fixtureId', '')).strip()
+        if id_retornado != fixture_id:
+            print(f'[AUDITORIA] M4 retornou fixtureId {id_retornado!r} para o pedido {fixture_id}')
+            return None
+        return detalhe
+    except Exception as erro:
+        print(f'[AUDITORIA] Detalhe M4 indisponível para {fixture_id}: {erro}')
+        return None
 
 def checar_resultado(sinal):
     """Verifica se um sinal já enviado deu green ou red usando SokkerPro."""
