@@ -24658,5 +24658,23 @@
     "odd_mercado": 1.915,
     "timestamp": "2026-10-13T09:06:54.513796-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "641c2c927ca4_custom_1791762204509_20261013",
+    "fixture_id": "19875875",
+    "mercado": "custom_1791762204509",
+    "tipo": "escanteio_ht",
+    "home": "Kanchanaburi",
+    "away": "Police Tero FC",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.9,
+    "odd_bano": null,
+    "odd_mercado": 1.975,
+    "timestamp": "2026-10-13T09:07:08.694413-03:00",
+    "resultado": "pendente"
   }
 ]
