@@ -24478,5 +24478,23 @@
     "odd_mercado": 1.32,
     "timestamp": "2026-10-13T05:18:07.099243-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "95b80a92e59b_custom_1791762177973_20261013",
+    "fixture_id": "19883762",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Brothers Union",
+    "away": "Fakirerpool",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.67,
+    "timestamp": "2026-10-13T06:26:51.034259-03:00",
+    "resultado": "pendente"
   }
 ]
