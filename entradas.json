@@ -26800,5 +26800,23 @@
     "odd_mercado": 1.355,
     "timestamp": "2026-10-14T10:21:07.960724-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "575ba01be55a_custom_1791935650567_20261014",
+    "fixture_id": "19776655",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Jagiellonia II",
+    "away": "Troszyn",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.02,
+    "odd_bano": null,
+    "odd_mercado": 1.02,
+    "timestamp": "2026-10-14T10:22:43.783238-03:00",
+    "resultado": "pendente"
   }
 ]
