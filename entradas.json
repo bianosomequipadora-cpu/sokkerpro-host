@@ -25774,5 +25774,23 @@
     "odd_mercado": 2.16,
     "timestamp": "2026-10-14T07:40:32.200683-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5a6b1ffb4c04_custom_1791762204509_20261014",
+    "fixture_id": "19877258",
+    "mercado": "custom_1791762204509",
+    "tipo": "escanteio_ht",
+    "home": "Sagan Tosu",
+    "away": "Avispa Fukuoka",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.25,
+    "odd_bano": null,
+    "odd_mercado": 2.16,
+    "timestamp": "2026-10-14T07:40:46.729668-03:00",
+    "resultado": "pendente"
   }
 ]
