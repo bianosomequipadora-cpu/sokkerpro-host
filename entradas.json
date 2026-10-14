@@ -27250,5 +27250,23 @@
     "odd_mercado": 1.136,
     "timestamp": "2026-10-14T11:20:44.637554-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "2159e85ac3ec_custom_1791763136789_20261014",
+    "fixture_id": "19877536",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Real Betis U19",
+    "away": "Porto U19",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.44,
+    "odd_bano": null,
+    "odd_mercado": 1.48,
+    "timestamp": "2026-10-14T11:22:50.974960-03:00",
+    "resultado": "pendente"
   }
 ]
