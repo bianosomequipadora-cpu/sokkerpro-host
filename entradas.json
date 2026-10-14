@@ -27772,5 +27772,23 @@
     "odd_mercado": 1.384,
     "timestamp": "2026-10-14T14:27:05.627200-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "aa8187709022_custom_1791935650567_20261014",
+    "fixture_id": "19789082",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "ES Sétif",
+    "away": "JS Kabylie",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.28,
+    "odd_bano": null,
+    "odd_mercado": 1.275,
+    "timestamp": "2026-10-14T14:33:29.920259-03:00",
+    "resultado": "pendente"
   }
 ]
