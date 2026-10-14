@@ -25144,5 +25144,23 @@
     "odd_mercado": 1.035,
     "timestamp": "2026-10-13T21:15:40.830901-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "36f81f408b21_custom_1791935650567_20261013",
+    "fixture_id": "19742558",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Tapatío",
+    "away": "Tepatitlán de Morelos",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 3,
+    "entry_sa": 1,
+    "entry_total": 4,
+    "odd_b365": 1.22,
+    "odd_bano": null,
+    "odd_mercado": 1.22,
+    "timestamp": "2026-10-13T21:25:24.990750-03:00",
+    "resultado": "pendente"
   }
 ]
