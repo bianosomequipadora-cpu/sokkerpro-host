@@ -26134,5 +26134,23 @@
     "odd_mercado": 2.152,
     "timestamp": "2026-10-14T08:46:08.775110-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f6b947b129f7_custom_1791762199194_20261014",
+    "fixture_id": "19877257",
+    "mercado": "custom_1791762199194",
+    "tipo": "escanteio_ft",
+    "home": "Gainare Tottori",
+    "away": "Cerezo Osaka",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 2.05,
+    "odd_bano": null,
+    "odd_mercado": 2.152,
+    "timestamp": "2026-10-14T08:46:20.428353-03:00",
+    "resultado": "pendente"
   }
 ]
