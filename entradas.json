@@ -25324,5 +25324,23 @@
     "odd_mercado": 3.18,
     "timestamp": "2026-10-14T05:17:55.656672-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "230b19786500_custom_1791935650567_20261014",
+    "fixture_id": "19881760",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "SKA Khabarovsk",
+    "away": "Dinamo Kirov",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.075,
+    "timestamp": "2026-10-14T05:46:44.021300-03:00",
+    "resultado": "pendente"
   }
 ]
