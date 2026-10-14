@@ -26980,5 +26980,23 @@
     "odd_mercado": 1.6,
     "timestamp": "2026-10-14T10:41:46.531224-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "82f92d74c0b6_custom_1791935650567_20261014",
+    "fixture_id": "19882505",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Spartak Myjava",
+    "away": "Ružomberok",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-14T10:43:19.283057-03:00",
+    "resultado": "pendente"
   }
 ]
