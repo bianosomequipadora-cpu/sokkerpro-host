@@ -26350,5 +26350,23 @@
     "odd_mercado": 1.68,
     "timestamp": "2026-10-14T09:17:29.455712-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "caf577b1d857_custom_1791935650567_20261014",
+    "fixture_id": "19760455",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Dinamo Moskva II",
+    "away": "Dinamo Stavropol'",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.37,
+    "timestamp": "2026-10-14T09:17:48.815164-03:00",
+    "resultado": "pendente"
   }
 ]
