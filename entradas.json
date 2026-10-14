@@ -25828,5 +25828,23 @@
     "odd_mercado": 1.056,
     "timestamp": "2026-10-14T08:08:09.584118-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f114f6f9342b_custom_1791935650567_20261014",
+    "fixture_id": "19877546",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Feyenoord U19",
+    "away": "Como U19",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-14T08:15:31.377337-03:00",
+    "resultado": "pendente"
   }
 ]
