@@ -27178,5 +27178,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-14T11:17:04.319926-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6d00eac6af01_custom_1791935650567_20261014",
+    "fixture_id": "19877538",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Manchester City U19",
+    "away": "Paris SG U19",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.01,
+    "odd_bano": null,
+    "odd_mercado": 1.025,
+    "timestamp": "2026-10-14T11:18:59.331841-03:00",
+    "resultado": "pendente"
   }
 ]
