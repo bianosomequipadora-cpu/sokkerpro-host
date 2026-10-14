@@ -25792,5 +25792,23 @@
     "odd_mercado": 2.16,
     "timestamp": "2026-10-14T07:40:46.729668-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "1e628fc3f72d_custom_1791935650567_20261014",
+    "fixture_id": "19896564",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Bangalore Dream United FC",
+    "away": "SC Bengaluru",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 2,
+    "entry_total": 2,
+    "odd_b365": 1.07,
+    "odd_bano": null,
+    "odd_mercado": 1.07,
+    "timestamp": "2026-10-14T08:05:26.157229-03:00",
+    "resultado": "pendente"
   }
 ]
