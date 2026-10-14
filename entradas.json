@@ -28186,5 +28186,23 @@
     "odd_mercado": 1.575,
     "timestamp": "2026-10-14T16:20:37.217820-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "fb9cc7102964_custom_1791935650567_20261014",
+    "fixture_id": "19808059",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Lower Breck",
+    "away": "Mossley AFC",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 2,
+    "entry_total": 2,
+    "odd_b365": 1.11,
+    "odd_bano": null,
+    "odd_mercado": 1.105,
+    "timestamp": "2026-10-14T16:25:39.180247-03:00",
+    "resultado": "pendente"
   }
 ]
