@@ -352,6 +352,11 @@
           "campo": "prob_1x2_casa_ou_fora",
           "operador": "gte",
           "valor": 72
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 3
         }
       ]
     },
