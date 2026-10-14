@@ -27304,5 +27304,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-14T11:25:57.100680-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c7891df92024_custom_1791935650567_20261014",
+    "fixture_id": "19792773",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Maccabi Herzliya U19",
+    "away": "Ashdod U19",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.1,
+    "odd_bano": null,
+    "odd_mercado": 1.08,
+    "timestamp": "2026-10-14T11:30:38.543405-03:00",
+    "resultado": "pendente"
   }
 ]
