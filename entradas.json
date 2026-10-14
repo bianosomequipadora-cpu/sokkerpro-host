@@ -26026,5 +26026,23 @@
     "odd_mercado": 2.3,
     "timestamp": "2026-10-14T08:38:46.274423-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c4b399736268_custom_1791762177973_20261014",
+    "fixture_id": "19792774",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Beitar Jerusalem U19",
+    "away": "Hapoel Be'er Sheva U19",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.25,
+    "timestamp": "2026-10-14T08:40:29.518977-03:00",
+    "resultado": "pendente"
   }
 ]
