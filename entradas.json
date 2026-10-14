@@ -27664,5 +27664,23 @@
     "odd_mercado": 1.275,
     "timestamp": "2026-10-14T13:32:34.831728-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "51bae43c3ec2_custom_1791935650567_20261014",
+    "fixture_id": "19831647",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Radunia Stężyca",
+    "away": "Jaguar Gdańsk",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.01,
+    "odd_bano": null,
+    "odd_mercado": 1.01,
+    "timestamp": "2026-10-14T14:00:30.842865-03:00",
+    "resultado": "pendente"
   }
 ]
