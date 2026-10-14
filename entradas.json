@@ -25216,5 +25216,23 @@
     "odd_mercado": 1.605,
     "timestamp": "2026-10-13T21:51:53.474996-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "c31c93bdc7c8_custom_1791935650567_20261013",
+    "fixture_id": "19715063",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "San Carlos",
+    "away": "Inter San Carlos",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.1,
+    "odd_bano": null,
+    "odd_mercado": 1.07,
+    "timestamp": "2026-10-13T23:16:46.621837-03:00",
+    "resultado": "pendente"
   }
 ]
