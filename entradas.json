@@ -25126,5 +25126,23 @@
     "odd_mercado": 1.565,
     "timestamp": "2026-10-13T21:15:28.259428-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "79ea61554cb2_custom_1791935650567_20261013",
+    "fixture_id": "19715062",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Cartaginés",
+    "away": "Puntarenas",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.07,
+    "odd_bano": null,
+    "odd_mercado": 1.035,
+    "timestamp": "2026-10-13T21:15:40.830901-03:00",
+    "resultado": "pendente"
   }
 ]
