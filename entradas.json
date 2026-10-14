@@ -27880,5 +27880,23 @@
     "odd_mercado": 2.045,
     "timestamp": "2026-10-14T14:42:37.971521-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4981e1e6cc81_custom_1791762199194_20261014",
+    "fixture_id": "19668080",
+    "mercado": "custom_1791762199194",
+    "tipo": "escanteio_ft",
+    "home": "Paide",
+    "away": "Tammeka",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.02,
+    "odd_bano": null,
+    "odd_mercado": 2.045,
+    "timestamp": "2026-10-14T14:42:50.827091-03:00",
+    "resultado": "pendente"
   }
 ]
