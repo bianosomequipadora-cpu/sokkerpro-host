@@ -28024,5 +28024,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-14T15:25:39.376861-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "ed40e8da896a_custom_1791935650567_20261014",
+    "fixture_id": "19744573",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Preußen Münster",
+    "away": "Fortuna Düsseldorf",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.85,
+    "odd_bano": null,
+    "odd_mercado": 1.88,
+    "timestamp": "2026-10-14T15:28:52.923253-03:00",
+    "resultado": "pendente"
   }
 ]
