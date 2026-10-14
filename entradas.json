@@ -27844,5 +27844,23 @@
     "odd_mercado": 1.77,
     "timestamp": "2026-10-14T14:42:05.998570-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "492a6976fa4c_custom_1791762199194_20261014",
+    "fixture_id": "19862328",
+    "mercado": "custom_1791762199194",
+    "tipo": "escanteio_ft",
+    "home": "Al Jazira",
+    "away": "Arkadag",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.77,
+    "odd_bano": null,
+    "odd_mercado": 1.77,
+    "timestamp": "2026-10-14T14:42:20.107479-03:00",
+    "resultado": "pendente"
   }
 ]
