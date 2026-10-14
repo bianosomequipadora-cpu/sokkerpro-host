@@ -28168,5 +28168,23 @@
     "odd_mercado": 2.34,
     "timestamp": "2026-10-14T15:50:48.358616-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "97edb1cab0b7_custom_1791763136789_20261014",
+    "fixture_id": "19723635",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Bolívar SC",
+    "away": "Mineros de Guayana",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.57,
+    "odd_bano": null,
+    "odd_mercado": 1.575,
+    "timestamp": "2026-10-14T16:20:37.217820-03:00",
+    "resultado": "pendente"
   }
 ]
