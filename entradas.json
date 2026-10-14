@@ -25666,5 +25666,23 @@
     "odd_mercado": 1.07,
     "timestamp": "2026-10-14T07:21:51.714333-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6513c6d43bcb_custom_1791763136789_20261014",
+    "fixture_id": "19760801",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Śląsk Wrocław II",
+    "away": "Legia Warszawa II",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-10-14T07:22:04.369939-03:00",
+    "resultado": "pendente"
   }
 ]
