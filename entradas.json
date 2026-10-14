@@ -26638,5 +26638,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-14T10:07:13.320981-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "8e02e694f86d_custom_1791935650567_20261014",
+    "fixture_id": "19877534",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Slovan Bratislava U19",
+    "away": "Stuttgart U19",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.16,
+    "odd_bano": null,
+    "odd_mercado": 1.21,
+    "timestamp": "2026-10-14T10:15:31.174516-03:00",
+    "resultado": "pendente"
   }
 ]
