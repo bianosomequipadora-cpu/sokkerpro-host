@@ -27142,5 +27142,23 @@
     "odd_mercado": 1.416,
     "timestamp": "2026-10-14T11:14:33.270688-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "093b2168c274_custom_1791763136789_20261014",
+    "fixture_id": "19769494",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Escola Varsovia U19",
+    "away": "Zaglebie U19",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.36,
+    "odd_bano": null,
+    "odd_mercado": 1.31,
+    "timestamp": "2026-10-14T11:16:50.617065-03:00",
+    "resultado": "pendente"
   }
 ]
