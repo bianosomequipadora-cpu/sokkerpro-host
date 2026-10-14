@@ -26872,5 +26872,23 @@
     "odd_mercado": 1.504,
     "timestamp": "2026-10-14T10:32:47.334299-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "cd09904a0eb4_custom_1791762204509_20261014",
+    "fixture_id": "19852904",
+    "mercado": "custom_1791762204509",
+    "tipo": "escanteio_ht",
+    "home": "Milan II",
+    "away": "Piacenza",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.53,
+    "timestamp": "2026-10-14T10:33:04.617279-03:00",
+    "resultado": "pendente"
   }
 ]
