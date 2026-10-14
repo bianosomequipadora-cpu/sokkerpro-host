@@ -28492,5 +28492,23 @@
     "odd_mercado": 1.368,
     "timestamp": "2026-10-14T18:13:15.370626-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "0030163cd807_custom_1791762177973_20261014",
+    "fixture_id": "19636608",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Sarmiento",
+    "away": "River Plate",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 2.07,
+    "odd_bano": null,
+    "odd_mercado": 1.975,
+    "timestamp": "2026-10-14T19:40:29.672594-03:00",
+    "resultado": "pendente"
   }
 ]
