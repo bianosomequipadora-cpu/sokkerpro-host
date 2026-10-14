@@ -27214,5 +27214,23 @@
     "odd_mercado": 1.28,
     "timestamp": "2026-10-14T11:19:15.413406-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "129de975b495_custom_1791935650567_20261014",
+    "fixture_id": "19888226",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Minerva Punjab",
+    "away": "Odisha FC",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.07,
+    "timestamp": "2026-10-14T11:19:31.131143-03:00",
+    "resultado": "pendente"
   }
 ]
