@@ -26188,5 +26188,23 @@
     "odd_mercado": 1.035,
     "timestamp": "2026-10-14T08:53:37.996032-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "cf02cef69a6b_custom_1791935650567_20261014",
+    "fixture_id": "19875769",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Chanthaburi",
+    "away": "Nakhon Pathom",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.11,
+    "odd_bano": null,
+    "odd_mercado": 1.085,
+    "timestamp": "2026-10-14T08:57:37.751455-03:00",
+    "resultado": "pendente"
   }
 ]
