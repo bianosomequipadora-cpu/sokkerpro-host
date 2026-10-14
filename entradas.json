@@ -25468,5 +25468,23 @@
     "odd_mercado": 1.01,
     "timestamp": "2026-10-14T07:17:28.450299-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "dd835d5b9b7d_custom_1791763136789_20261014",
+    "fixture_id": "19877263",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Matsumoto Yamaga",
+    "away": "Sanfrecce Hiroshima",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.44,
+    "odd_bano": null,
+    "odd_mercado": 1.44,
+    "timestamp": "2026-10-14T07:19:04.306115-03:00",
+    "resultado": "pendente"
   }
 ]
