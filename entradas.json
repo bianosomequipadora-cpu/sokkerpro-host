@@ -25162,5 +25162,23 @@
     "odd_mercado": 1.22,
     "timestamp": "2026-10-13T21:25:24.990750-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "31faf6759d8c_custom_1791935650567_20261013",
+    "fixture_id": "19884926",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Portmore United",
+    "away": "Violette AC",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.16,
+    "odd_bano": null,
+    "odd_mercado": 1.18,
+    "timestamp": "2026-10-13T21:25:38.308009-03:00",
+    "resultado": "pendente"
   }
 ]
