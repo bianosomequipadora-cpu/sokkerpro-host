@@ -25540,5 +25540,23 @@
     "odd_mercado": 1.736,
     "timestamp": "2026-10-14T07:19:46.464775-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "e4e2dd66b6e3_custom_1791935650567_20261014",
+    "fixture_id": "19877260",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Nagoya Grampus",
+    "away": "Fagiano Okayama",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.08,
+    "odd_bano": null,
+    "odd_mercado": 1.06,
+    "timestamp": "2026-10-14T07:20:00.851091-03:00",
+    "resultado": "pendente"
   }
 ]
