@@ -25252,5 +25252,23 @@
     "odd_mercado": 2.095,
     "timestamp": "2026-10-13T23:36:40.997780-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "c31c93bdc7c8_custom_1791935650567_20261014",
+    "fixture_id": "19715063",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "San Carlos",
+    "away": "Inter San Carlos",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.33,
+    "odd_bano": null,
+    "odd_mercado": 1.405,
+    "timestamp": "2026-10-14T00:17:54.132448-03:00",
+    "resultado": "pendente"
   }
 ]
