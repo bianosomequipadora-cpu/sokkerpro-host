@@ -27484,5 +27484,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-14T12:23:15.778295-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "8420dd6598b8_custom_1791935650567_20261014",
+    "fixture_id": "19726308",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Dynamo Makhachkala",
+    "away": "Zenit",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.1,
+    "timestamp": "2026-10-14T13:00:19.312157-03:00",
+    "resultado": "pendente"
   }
 ]
