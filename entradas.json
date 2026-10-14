@@ -27088,5 +27088,23 @@
     "odd_mercado": 1.6,
     "timestamp": "2026-10-14T11:12:25.839533-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7c5ad4ed4636_custom_1791935650567_20261014",
+    "fixture_id": "19869184",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Police",
+    "away": "SC Villa",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 4,
+    "entry_total": 4,
+    "odd_b365": 1.4,
+    "odd_bano": null,
+    "odd_mercado": 1.392,
+    "timestamp": "2026-10-14T11:12:43.509949-03:00",
+    "resultado": "pendente"
   }
 ]
