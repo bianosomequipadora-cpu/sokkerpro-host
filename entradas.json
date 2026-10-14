@@ -28060,5 +28060,23 @@
     "odd_mercado": 1.715,
     "timestamp": "2026-10-14T15:30:38.564021-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b31ca1ac225e_custom_1791935650567_20261014",
+    "fixture_id": "19888542",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Estudiantes La Plata Res",
+    "away": "Lanús Res.",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.16,
+    "odd_bano": null,
+    "odd_mercado": 1.18,
+    "timestamp": "2026-10-14T15:38:22.165707-03:00",
+    "resultado": "pendente"
   }
 ]
