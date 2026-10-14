@@ -25198,5 +25198,23 @@
     "odd_mercado": 1.205,
     "timestamp": "2026-10-13T21:46:51.470062-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f79aff0b9666_custom_1791935650567_20261013",
+    "fixture_id": "19713043",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Atlético Bucaramanga",
+    "away": "Rionegro Águilas",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.57,
+    "odd_bano": null,
+    "odd_mercado": 1.605,
+    "timestamp": "2026-10-13T21:51:53.474996-03:00",
+    "resultado": "pendente"
   }
 ]
