@@ -434,7 +434,7 @@
     },
     "custom_1791935650567": {
       "ativo": true,
-      "notificar": true,
+      "notificar": false,
       "nome": "Teste",
       "minuto_inicio": 2,
       "minuto_fim": 89,
