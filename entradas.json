@@ -27898,5 +27898,23 @@
     "odd_mercado": 2.045,
     "timestamp": "2026-10-14T14:42:50.827091-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "7fca69c56e13_custom_1791761873738_20261014",
+    "fixture_id": "19877896",
+    "mercado": "custom_1791761873738",
+    "tipo": "escanteio_ht",
+    "home": "UNA Strassen U19",
+    "away": "Cardiff MU U19",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.34,
+    "timestamp": "2026-10-14T15:05:26.984175-03:00",
+    "resultado": "pendente"
   }
 ]
