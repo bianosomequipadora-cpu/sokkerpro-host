@@ -25504,5 +25504,23 @@
     "odd_mercado": 1.02,
     "timestamp": "2026-10-14T07:19:17.462493-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6be0734108ec_custom_1791935650567_20261014",
+    "fixture_id": "19877259",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Júbilo Iwata",
+    "away": "Kawasaki Frontale",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.06,
+    "odd_bano": null,
+    "odd_mercado": 1.025,
+    "timestamp": "2026-10-14T07:19:31.975881-03:00",
+    "resultado": "pendente"
   }
 ]
