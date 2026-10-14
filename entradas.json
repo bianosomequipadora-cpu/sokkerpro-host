@@ -28402,5 +28402,23 @@
     "odd_mercado": 1.66,
     "timestamp": "2026-10-14T17:13:21.809039-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "283bf4ac35c6_custom_1791935650567_20261014",
+    "fixture_id": "19873672",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Shakhtar Donetsk",
+    "away": "AEK Athens",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.47,
+    "odd_bano": null,
+    "odd_mercado": 1.44,
+    "timestamp": "2026-10-14T17:15:34.692688-03:00",
+    "resultado": "pendente"
   }
 ]
