@@ -27790,5 +27790,23 @@
     "odd_mercado": 1.275,
     "timestamp": "2026-10-14T14:33:29.920259-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f91c0e464d11_custom_1791935650567_20261014",
+    "fixture_id": "19881758",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Chertanovo",
+    "away": "Tekstilshchik",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.784,
+    "timestamp": "2026-10-14T14:33:50.478784-03:00",
+    "resultado": "pendente"
   }
 ]
