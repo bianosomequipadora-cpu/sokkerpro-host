@@ -26962,5 +26962,23 @@
     "odd_mercado": 1.175,
     "timestamp": "2026-10-14T10:37:37.643406-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "cff80c70f68d_custom_1791935650567_20261014",
+    "fixture_id": "19862348",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Persib",
+    "away": "Thể Công - Viettel",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.75,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-10-14T10:41:46.531224-03:00",
+    "resultado": "pendente"
   }
 ]
