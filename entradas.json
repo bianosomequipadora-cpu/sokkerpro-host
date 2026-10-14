@@ -25558,5 +25558,23 @@
     "odd_mercado": 1.06,
     "timestamp": "2026-10-14T07:20:00.851091-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5a6b1ffb4c04_custom_1791935650567_20261014",
+    "fixture_id": "19877258",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Sagan Tosu",
+    "away": "Avispa Fukuoka",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.88,
+    "timestamp": "2026-10-14T07:20:15.000928-03:00",
+    "resultado": "pendente"
   }
 ]
