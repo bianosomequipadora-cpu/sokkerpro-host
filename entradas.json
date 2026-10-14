@@ -27106,5 +27106,23 @@
     "odd_mercado": 1.392,
     "timestamp": "2026-10-14T11:12:43.509949-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "8d23fe5b3ae9_custom_1791761808552_20261014",
+    "fixture_id": "19866990",
+    "mercado": "custom_1791761808552",
+    "tipo": "escanteio_ft",
+    "home": "Eastern District U22",
+    "away": "Shatin U22",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.25,
+    "odd_bano": null,
+    "odd_mercado": 2.096,
+    "timestamp": "2026-10-14T11:14:15.655757-03:00",
+    "resultado": "pendente"
   }
 ]
