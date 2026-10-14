@@ -26728,5 +26728,23 @@
     "odd_mercado": 1.136,
     "timestamp": "2026-10-14T10:17:44.762854-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "1a71beed2469_custom_1791935650567_20261014",
+    "fixture_id": "19882496",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Vranov nad Topľou",
+    "away": "Banská Bystrica",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-14T10:17:58.860592-03:00",
+    "resultado": "pendente"
   }
 ]
