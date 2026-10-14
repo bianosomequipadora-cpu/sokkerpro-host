@@ -25810,5 +25810,23 @@
     "odd_mercado": 1.07,
     "timestamp": "2026-10-14T08:05:26.157229-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "117bd4b1c4d8_custom_1791935650567_20261014",
+    "fixture_id": "19866991",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Eastern U22",
+    "away": "Southern U22",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.056,
+    "timestamp": "2026-10-14T08:08:09.584118-03:00",
+    "resultado": "pendente"
   }
 ]
