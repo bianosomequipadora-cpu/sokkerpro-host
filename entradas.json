@@ -27016,5 +27016,23 @@
     "odd_mercado": 1.18,
     "timestamp": "2026-10-14T10:51:24.775357-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "94fe7b1be450_custom_1791935650567_20261014",
+    "fixture_id": "19882500",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "TJ Slavoj Boleráz",
+    "away": "Námestovo",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.392,
+    "timestamp": "2026-10-14T10:51:39.407638-03:00",
+    "resultado": "pendente"
   }
 ]
