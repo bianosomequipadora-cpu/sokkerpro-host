@@ -25306,5 +25306,23 @@
     "odd_mercado": 1.08,
     "timestamp": "2026-10-14T05:01:58.026823-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "25a99b5c3ee0_custom_1791762204509_20261014",
+    "fixture_id": "19862342",
+    "mercado": "custom_1791762204509",
+    "tipo": "escanteio_ht",
+    "home": "Melbourne Victory",
+    "away": "Seoul",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 3.18,
+    "timestamp": "2026-10-14T05:17:55.656672-03:00",
+    "resultado": "pendente"
   }
 ]
