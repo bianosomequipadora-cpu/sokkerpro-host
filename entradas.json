@@ -27682,5 +27682,23 @@
     "odd_mercado": 1.01,
     "timestamp": "2026-10-14T14:00:30.842865-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "33a7d7cca86d_custom_1791935650567_20261014",
+    "fixture_id": "19668256",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Levadia II",
+    "away": "Nõmme Kalju U21",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.2,
+    "odd_bano": null,
+    "odd_mercado": 1.19,
+    "timestamp": "2026-10-14T14:11:48.331322-03:00",
+    "resultado": "pendente"
   }
 ]
