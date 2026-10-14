@@ -28078,5 +28078,23 @@
     "odd_mercado": 1.18,
     "timestamp": "2026-10-14T15:38:22.165707-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "aa8187709022_custom_1791762199194_20261014",
+    "fixture_id": "19789082",
+    "mercado": "custom_1791762199194",
+    "tipo": "escanteio_ft",
+    "home": "ES Sétif",
+    "away": "JS Kabylie",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.02,
+    "odd_bano": null,
+    "odd_mercado": 2.288,
+    "timestamp": "2026-10-14T15:43:37.630674-03:00",
+    "resultado": "pendente"
   }
 ]
