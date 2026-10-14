@@ -26152,5 +26152,23 @@
     "odd_mercado": 2.152,
     "timestamp": "2026-10-14T08:46:20.428353-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "31856eff50dd_custom_1791763136789_20261014",
+    "fixture_id": "19748636",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Batman Petrolspor",
+    "away": "İstanbulspor",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.57,
+    "odd_bano": null,
+    "odd_mercado": 1.575,
+    "timestamp": "2026-10-14T08:46:34.232826-03:00",
+    "resultado": "pendente"
   }
 ]
