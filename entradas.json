@@ -28114,5 +28114,23 @@
     "odd_mercado": 1.125,
     "timestamp": "2026-10-14T15:43:55.179977-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b31cdad8c423_custom_1791935650567_20261014",
+    "fixture_id": "19744568",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Viktoria Köln",
+    "away": "Sonnenhof Großaspach",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 4.1,
+    "odd_bano": null,
+    "odd_mercado": 4.56,
+    "timestamp": "2026-10-14T15:46:52.809677-03:00",
+    "resultado": "pendente"
   }
 ]
