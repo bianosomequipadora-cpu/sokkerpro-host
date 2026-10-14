@@ -27538,5 +27538,23 @@
     "odd_mercado": 1.032,
     "timestamp": "2026-10-14T13:21:50.184931-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "154471e75314_custom_1791763136789_20261014",
+    "fixture_id": "19710055",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Rodelindo Román",
+    "away": "Municipal Puente Alto",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 1.75,
+    "timestamp": "2026-10-14T13:25:27.378973-03:00",
+    "resultado": "pendente"
   }
 ]
