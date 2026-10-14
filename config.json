@@ -434,7 +434,7 @@
     },
     "custom_1791935650567": {
       "ativo": true,
-      "notificar": false,
+      "notificar": true,
       "nome": "Teste",
       "minuto_inicio": 2,
       "minuto_fim": 89,
@@ -443,7 +443,7 @@
       "stake": 10,
       "placar_valido": "",
       "criterios": {
-        "situacao_favorito": ""
+        "situacao_favorito": "perdendo_ou_empatando"
       },
       "criterios_api": [
         {
