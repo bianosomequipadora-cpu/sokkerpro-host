@@ -28150,5 +28150,23 @@
     "odd_mercado": 2.24,
     "timestamp": "2026-10-14T15:50:31.835601-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "e55b0e2238e6_custom_1791762199194_20261014",
+    "fixture_id": "19631109",
+    "mercado": "custom_1791762199194",
+    "tipo": "escanteio_ft",
+    "home": "Hødd",
+    "away": "Ranheim",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.1,
+    "odd_bano": null,
+    "odd_mercado": 2.34,
+    "timestamp": "2026-10-14T15:50:48.358616-03:00",
+    "resultado": "pendente"
   }
 ]
