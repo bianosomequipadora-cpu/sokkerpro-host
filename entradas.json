@@ -26278,5 +26278,23 @@
     "odd_mercado": 1.192,
     "timestamp": "2026-10-14T09:11:58.384742-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "879c88016de8_custom_1791935650567_20261014",
+    "fixture_id": "19875820",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Pattaya United",
+    "away": "Songkhla",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 2,
+    "entry_sa": 0,
+    "entry_total": 2,
+    "odd_b365": 1.33,
+    "odd_bano": null,
+    "odd_mercado": 1.295,
+    "timestamp": "2026-10-14T09:13:26.088838-03:00",
+    "resultado": "pendente"
   }
 ]
