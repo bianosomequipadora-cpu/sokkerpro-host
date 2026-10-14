@@ -365,7 +365,7 @@
       "notificar": true,
       "nome": "⚽️👽OVER GOL PARTIDA(FT)👽⚽️",
       "minuto_inicio": 15,
-      "minuto_fim": 89,
+      "minuto_fim": 77,
       "periodo": 3,
       "tipo": "over_gol",
       "stake": 10,
@@ -377,7 +377,7 @@
         {
           "campo": "appm_min_por_time",
           "operador": "gte",
-          "valor": 0.4
+          "valor": 1
         },
         {
           "campo": "chutes_alvo_min",
