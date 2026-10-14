@@ -28384,5 +28384,23 @@
     "odd_mercado": 1.845,
     "timestamp": "2026-10-14T17:04:55.168952-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "8828d0ea5c3b_custom_1791935650567_20261014",
+    "fixture_id": "19729048",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Portsmouth",
+    "away": "Sheffield United",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 1.55,
+    "odd_bano": null,
+    "odd_mercado": 1.66,
+    "timestamp": "2026-10-14T17:13:21.809039-03:00",
+    "resultado": "pendente"
   }
 ]
