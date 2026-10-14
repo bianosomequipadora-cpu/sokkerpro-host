@@ -25846,5 +25846,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-14T08:15:31.377337-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "db9f5741053a_custom_1791763136789_20261014",
+    "fixture_id": "19875836",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Nongbua Pitchaya FC",
+    "away": "Chiangmai United",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.53,
+    "odd_bano": null,
+    "odd_mercado": 1.47,
+    "timestamp": "2026-10-14T08:17:06.646890-03:00",
+    "resultado": "pendente"
   }
 ]
