@@ -26908,5 +26908,23 @@
     "odd_mercado": 1.98,
     "timestamp": "2026-10-14T10:33:20.199300-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5c714301330a_custom_1791935650567_20261014",
+    "fixture_id": "19881761",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Leningradets",
+    "away": "Luki-Energiya",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.192,
+    "timestamp": "2026-10-14T10:35:02.316920-03:00",
+    "resultado": "pendente"
   }
 ]
