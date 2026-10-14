@@ -26926,5 +26926,23 @@
     "odd_mercado": 2.192,
     "timestamp": "2026-10-14T10:35:02.316920-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "be9ce0d89d3c_custom_1791935650567_20261014",
+    "fixture_id": "19883781",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Leopards",
+    "away": "Bandari",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.4,
+    "odd_bano": null,
+    "odd_mercado": 1.37,
+    "timestamp": "2026-10-14T10:37:17.229206-03:00",
+    "resultado": "pendente"
   }
 ]
