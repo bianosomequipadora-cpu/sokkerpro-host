@@ -27340,5 +27340,23 @@
     "odd_mercado": 1.245,
     "timestamp": "2026-10-14T11:33:46.740837-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "057a9bbe0b21_custom_1791935650567_20261014",
+    "fixture_id": "19896201",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "AD Pemba",
+    "away": "Songo",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 2.5,
+    "odd_bano": null,
+    "odd_mercado": 2.65,
+    "timestamp": "2026-10-14T11:35:34.939339-03:00",
+    "resultado": "pendente"
   }
 ]
