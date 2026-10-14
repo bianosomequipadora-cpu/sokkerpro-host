@@ -25414,5 +25414,23 @@
     "odd_mercado": 1.085,
     "timestamp": "2026-10-14T07:16:44.086769-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "76ddfdc3dddf_custom_1791935650567_20261014",
+    "fixture_id": "19867021",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Kashiwa Reysol",
+    "away": "Port FC",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 3,
+    "entry_sa": 0,
+    "entry_total": 3,
+    "odd_b365": 1.01,
+    "odd_bano": null,
+    "odd_mercado": 1.016,
+    "timestamp": "2026-10-14T07:16:59.700693-03:00",
+    "resultado": "pendente"
   }
 ]
