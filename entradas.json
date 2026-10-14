@@ -28420,5 +28420,23 @@
     "odd_mercado": 1.44,
     "timestamp": "2026-10-14T17:15:34.692688-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b228942935bb_custom_1791935650567_20261014",
+    "fixture_id": "19710053",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Lautaro de Buin",
+    "away": "Aguará",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.25,
+    "odd_bano": null,
+    "odd_mercado": 1.225,
+    "timestamp": "2026-10-14T17:17:03.999925-03:00",
+    "resultado": "pendente"
   }
 ]
