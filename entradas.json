@@ -28006,5 +28006,23 @@
     "odd_mercado": 1.2,
     "timestamp": "2026-10-14T15:20:34.111297-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "25797f1d2429_custom_1791935650567_20261014",
+    "fixture_id": "19887201",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "América RN U20",
+    "away": "Paysandu U20",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-14T15:25:39.376861-03:00",
+    "resultado": "pendente"
   }
 ]
