@@ -25738,5 +25738,23 @@
     "odd_mercado": 1.336,
     "timestamp": "2026-10-14T07:33:06.313595-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0e7f66a26a8b_custom_1791762204509_20261014",
+    "fixture_id": "19877256",
+    "mercado": "custom_1791762204509",
+    "tipo": "escanteio_ht",
+    "home": "Mito Hollyhock",
+    "away": "FC Tokyo",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.62,
+    "timestamp": "2026-10-14T07:35:36.155101-03:00",
+    "resultado": "pendente"
   }
 ]
