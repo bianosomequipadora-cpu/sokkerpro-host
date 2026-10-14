@@ -26602,5 +26602,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-14T10:03:34.228870-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "de0407db4f63_custom_1791935650567_20261014",
+    "fixture_id": "19882275",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Olympiakos Piraeus II",
+    "away": "Kallithea",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.4,
+    "odd_bano": null,
+    "odd_mercado": 1.344,
+    "timestamp": "2026-10-14T10:06:59.484881-03:00",
+    "resultado": "pendente"
   }
 ]
