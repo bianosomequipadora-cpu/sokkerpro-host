@@ -382,7 +382,7 @@
         {
           "campo": "chutes_alvo_min",
           "operador": "gte",
-          "valor": 3
+          "valor": 5
         },
         {
           "campo": "media_gols_partida_min",
