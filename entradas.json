@@ -27412,5 +27412,23 @@
     "odd_mercado": 1.095,
     "timestamp": "2026-10-14T11:54:47.931089-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "615d054d86e0_custom_1791763136789_20261014",
+    "fixture_id": "19894287",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Yarmouk",
+    "away": "Burgan",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.61,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-10-14T12:01:59.319578-03:00",
+    "resultado": "pendente"
   }
 ]
