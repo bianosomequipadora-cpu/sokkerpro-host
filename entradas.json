@@ -29320,5 +29320,23 @@
     "odd_mercado": 1.33,
     "timestamp": "2026-10-15T17:40:30.997558-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "8290db472215_custom_1791762199194_20261015",
+    "fixture_id": "19873845",
+    "mercado": "custom_1791762199194",
+    "tipo": "escanteio_ft",
+    "home": "Rennes",
+    "away": "OFI",
+    "message_id": 0,
+    "extra_val": 15,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.304,
+    "timestamp": "2026-10-15T17:40:47.285301-03:00",
+    "resultado": "pendente"
   }
 ]
