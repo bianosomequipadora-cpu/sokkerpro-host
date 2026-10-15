@@ -28906,5 +28906,23 @@
     "odd_mercado": 3.304,
     "timestamp": "2026-10-15T12:40:45.473347-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "20d29e6f3c39_custom_1791763136789_20261015",
+    "fixture_id": "19679624",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Dinamo Minsk",
+    "away": "Slavia",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.11,
+    "timestamp": "2026-10-15T12:58:03.103736-03:00",
+    "resultado": "pendente"
   }
 ]
