@@ -28780,5 +28780,23 @@
     "odd_mercado": 2.95,
     "timestamp": "2026-10-15T07:38:13.914560-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "34d4df470ba2_custom_1791935650567_20261015",
+    "fixture_id": "19692842",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Arys",
+    "away": "Akademiya Ontustik",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.65,
+    "timestamp": "2026-10-15T08:33:07.651125-03:00",
+    "resultado": "pendente"
   }
 ]
