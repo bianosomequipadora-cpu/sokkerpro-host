@@ -29104,5 +29104,23 @@
     "odd_mercado": 1.24,
     "timestamp": "2026-10-15T16:35:38.507971-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6fc1f643771b_custom_1791762177973_20261015",
+    "fixture_id": "19873860",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "NEC Nijmegen",
+    "away": "Levski Sofia",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.85,
+    "odd_bano": null,
+    "odd_mercado": 1.79,
+    "timestamp": "2026-10-15T16:37:12.895659-03:00",
+    "resultado": "pendente"
   }
 ]
