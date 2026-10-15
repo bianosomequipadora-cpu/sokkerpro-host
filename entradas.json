@@ -28600,5 +28600,23 @@
     "odd_mercado": 1.77,
     "timestamp": "2026-10-14T22:52:56.392547-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "b1ba2d36ee72_custom_1791762189183_20261015",
+    "fixture_id": "19715060",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "Alajuelense",
+    "away": "Herediano",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.46,
+    "timestamp": "2026-10-15T00:50:23.881519-03:00",
+    "resultado": "pendente"
   }
 ]
