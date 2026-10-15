@@ -29140,5 +29140,23 @@
     "odd_mercado": 1.89,
     "timestamp": "2026-10-15T16:37:31.238833-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "e471f227220b_custom_1791762177973_20261015",
+    "fixture_id": "19728213",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Mansfield Town",
+    "away": "Oxford United",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.95,
+    "odd_bano": null,
+    "odd_mercado": 2.42,
+    "timestamp": "2026-10-15T16:39:04.965098-03:00",
+    "resultado": "pendente"
   }
 ]
