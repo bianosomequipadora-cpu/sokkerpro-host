@@ -341,17 +341,17 @@
         {
           "campo": "prob_ht_over_0_5",
           "operador": "gte",
-          "valor": 50
+          "valor": 70
         },
         {
-          "campo": "prob_ft_over_2_5",
+          "campo": "media_gols_partida_min",
           "operador": "gte",
-          "valor": 50
+          "valor": 2.5
         },
         {
           "campo": "prob_1x2_casa_ou_fora",
           "operador": "gte",
-          "valor": 72
+          "valor": 70
         },
         {
           "campo": "chutes_alvo_min",
