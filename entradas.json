@@ -28708,5 +28708,23 @@
     "odd_mercado": 1.552,
     "timestamp": "2026-10-15T07:15:34.101800-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d9fe538a4a7c_custom_1791762199194_20261015",
+    "fixture_id": "19883971",
+    "mercado": "custom_1791762199194",
+    "tipo": "escanteio_ft",
+    "home": "Preston Lions",
+    "away": "Wollongong Wolves",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.496,
+    "timestamp": "2026-10-15T07:15:45.319292-03:00",
+    "resultado": "pendente"
   }
 ]
