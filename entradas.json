@@ -28924,5 +28924,23 @@
     "odd_mercado": 2.11,
     "timestamp": "2026-10-15T12:58:03.103736-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "76c5bc14f795_custom_1791761873738_20261015",
+    "fixture_id": "19668078",
+    "mercado": "custom_1791761873738",
+    "tipo": "escanteio_ht",
+    "home": "Flora",
+    "away": "Levadia",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.504,
+    "timestamp": "2026-10-15T13:33:08.956681-03:00",
+    "resultado": "pendente"
   }
 ]
