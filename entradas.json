@@ -29212,5 +29212,23 @@
     "odd_mercado": 1.62,
     "timestamp": "2026-10-15T16:45:29.211633-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "daeb27fed603_custom_1791762199194_20261015",
+    "fixture_id": "19888547",
+    "mercado": "custom_1791762199194",
+    "tipo": "escanteio_ft",
+    "home": "Gimnasia Mendoza Res.",
+    "away": "Godoy Cruz Res.",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 1.62,
+    "timestamp": "2026-10-15T16:45:42.085761-03:00",
+    "resultado": "pendente"
   }
 ]
