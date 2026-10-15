@@ -29230,5 +29230,23 @@
     "odd_mercado": 1.62,
     "timestamp": "2026-10-15T16:45:42.085761-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "8290db472215_custom_1790706998863_20261015",
+    "fixture_id": "19873845",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Rennes",
+    "away": "OFI",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.3,
+    "odd_bano": null,
+    "odd_mercado": 1.29,
+    "timestamp": "2026-10-15T17:23:07.818893-03:00",
+    "resultado": "pendente"
   }
 ]
