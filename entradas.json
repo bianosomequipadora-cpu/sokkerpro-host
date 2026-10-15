@@ -28816,5 +28816,23 @@
     "odd_mercado": 1.245,
     "timestamp": "2026-10-15T10:30:35.204992-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "190cfc10220f_custom_1790706998863_20261015",
+    "fixture_id": "19862272",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Tampines Rovers",
+    "away": "Machida Zelvia",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.36,
+    "odd_bano": null,
+    "odd_mercado": 1.315,
+    "timestamp": "2026-10-15T10:35:27.190594-03:00",
+    "resultado": "pendente"
   }
 ]
