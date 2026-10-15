@@ -28636,5 +28636,23 @@
     "odd_mercado": 1.46,
     "timestamp": "2026-10-15T00:50:34.262992-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "54b7fc3e1cc7_custom_1791763136789_20261015",
+    "fixture_id": "19881421",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Hunters",
+    "away": "Khovd",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-15T02:17:53.789827-03:00",
+    "resultado": "pendente"
   }
 ]
