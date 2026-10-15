@@ -28582,5 +28582,23 @@
     "odd_mercado": 1.264,
     "timestamp": "2026-10-14T22:40:51.295859-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "ba86e84c6436_custom_1791763136789_20261014",
+    "fixture_id": "19895019",
+    "mercado": "custom_1791763136789",
+    "tipo": "gol_intervalo",
+    "home": "Atlético Nacional",
+    "away": "Independiente Medellín",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.77,
+    "timestamp": "2026-10-14T22:52:56.392547-03:00",
+    "resultado": "pendente"
   }
 ]
