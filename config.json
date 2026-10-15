@@ -324,42 +324,6 @@
         }
       ]
     },
-    "custom_1791763136789": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️🌋OVERGOL INTERVALO🌋⚽️",
-      "minuto_inicio": 15,
-      "minuto_fim": 26,
-      "periodo": 1,
-      "tipo": "gol_intervalo",
-      "stake": 10,
-      "placar_valido": "0x0",
-      "criterios": {
-        "situacao_favorito": ""
-      },
-      "criterios_api": [
-        {
-          "campo": "prob_ht_over_0_5",
-          "operador": "gte",
-          "valor": 70
-        },
-        {
-          "campo": "media_gols_partida_min",
-          "operador": "gte",
-          "valor": 2.5
-        },
-        {
-          "campo": "prob_1x2_casa_ou_fora",
-          "operador": "gte",
-          "valor": 70
-        },
-        {
-          "campo": "chutes_alvo_min",
-          "operador": "gte",
-          "valor": 3
-        }
-      ]
-    },
     "custom_1791935650567": {
       "ativo": true,
       "notificar": true,
@@ -393,6 +357,37 @@
           "campo": "max_red_card_fav",
           "operador": "lte",
           "valor": 0
+        }
+      ]
+    },
+    "custom_1792083627865": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️🌋OVERGOL INTERVALO🌋⚽️ — CÓPIA",
+      "minuto_inicio": 15,
+      "minuto_fim": 26,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "stake": 10,
+      "placar_valido": "0x0",
+      "criterios": {
+        "situacao_favorito": "empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "prob_ht_over_0_5",
+          "operador": "gte",
+          "valor": 70
+        },
+        {
+          "campo": "prob_1x2_casa_ou_fora",
+          "operador": "gte",
+          "valor": 70
+        },
+        {
+          "campo": "pressure_bar_min",
+          "operador": "gte",
+          "valor": 70
         }
       ]
     }
