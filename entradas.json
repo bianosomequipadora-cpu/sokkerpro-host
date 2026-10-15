@@ -28870,5 +28870,23 @@
     "odd_mercado": 1.13,
     "timestamp": "2026-10-15T10:45:29.662529-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "f5bd1779bccf_custom_1791762177973_20261015",
+    "fixture_id": "19889948",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Al Arabi",
+    "away": "Shabab Al Ordon",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.65,
+    "timestamp": "2026-10-15T12:40:33.095727-03:00",
+    "resultado": "pendente"
   }
 ]
