@@ -29122,5 +29122,23 @@
     "odd_mercado": 1.79,
     "timestamp": "2026-10-15T16:37:12.895659-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "fe78c98005c8_custom_1791761873738_20261015",
+    "fixture_id": "19874035",
+    "mercado": "custom_1791761873738",
+    "tipo": "escanteio_ht",
+    "home": "Brann",
+    "away": "Lincoln Red Imps",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 1.89,
+    "timestamp": "2026-10-15T16:37:31.238833-03:00",
+    "resultado": "pendente"
   }
 ]
