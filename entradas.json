@@ -31210,5 +31210,23 @@
     "odd_mercado": 1.97,
     "timestamp": "2026-10-16T17:42:26.112844-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "fe0f1a0c9284_custom_1791762177973_20261016",
+    "fixture_id": "19636585",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Defensa y Justicia",
+    "away": "Instituto",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.97,
+    "odd_bano": null,
+    "odd_mercado": 1.825,
+    "timestamp": "2026-10-16T19:36:42.971878-03:00",
+    "resultado": "pendente"
   }
 ]
