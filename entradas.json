@@ -30940,5 +30940,23 @@
     "odd_mercado": 1.37,
     "timestamp": "2026-10-16T16:42:09.123729-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5dbb94733d7b_custom_1791762189183_20261016",
+    "fixture_id": "19757789",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "Artsul",
+    "away": "Nova Cidade",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.625,
+    "timestamp": "2026-10-16T16:45:32.300404-03:00",
+    "resultado": "pendente"
   }
 ]
