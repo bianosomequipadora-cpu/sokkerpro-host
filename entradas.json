@@ -29500,5 +29500,23 @@
     "odd_mercado": 1.456,
     "timestamp": "2026-10-16T06:08:10.381355-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "18ce971c6742_custom_1790706998863_20261016",
+    "fixture_id": "19883960",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Adelaide City",
+    "away": "Avondale Heights",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.36,
+    "odd_bano": null,
+    "odd_mercado": 1.315,
+    "timestamp": "2026-10-16T07:00:35.422567-03:00",
+    "resultado": "pendente"
   }
 ]
