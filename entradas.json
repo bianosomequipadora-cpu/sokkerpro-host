@@ -29752,5 +29752,23 @@
     "odd_mercado": 2.155,
     "timestamp": "2026-10-16T11:45:32.594922-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7af2d0a2b66f_custom_1791762189183_20261016",
+    "fixture_id": "19699071",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "Kamuzu Barracks",
+    "away": "Mitundu Baptist",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.2,
+    "odd_bano": null,
+    "odd_mercado": 2.2,
+    "timestamp": "2026-10-16T11:45:42.067960-03:00",
+    "resultado": "pendente"
   }
 ]
