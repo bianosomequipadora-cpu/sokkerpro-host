@@ -30076,5 +30076,23 @@
     "odd_mercado": 2.112,
     "timestamp": "2026-10-16T13:37:37.942227-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "b9f841f73117_custom_1790213687442_20261016",
+    "fixture_id": "19723542",
+    "mercado": "custom_1790213687442",
+    "tipo": "over_gol",
+    "home": "Triglav",
+    "away": "Dekani",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-16T14:13:03.257461-03:00",
+    "resultado": "pendente"
   }
 ]
