@@ -31156,5 +31156,23 @@
     "odd_mercado": 1.14,
     "timestamp": "2026-10-16T17:36:45.175112-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6ecfe47f87e1_custom_1792149487218_20261016",
+    "fixture_id": "19880202",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Breidablik",
+    "away": "Víkingur Reykjavík",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.14,
+    "odd_bano": null,
+    "odd_mercado": 1.14,
+    "timestamp": "2026-10-16T17:36:55.224202-03:00",
+    "resultado": "pendente"
   }
 ]
