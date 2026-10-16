@@ -29860,5 +29860,23 @@
     "odd_mercado": 1.26,
     "timestamp": "2026-10-16T12:51:55.005183-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0dd9a313df25_custom_1791762177973_20261016",
+    "fixture_id": "19724425",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Aluminij",
+    "away": "Olimpija",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-10-16T13:06:55.106141-03:00",
+    "resultado": "pendente"
   }
 ]
