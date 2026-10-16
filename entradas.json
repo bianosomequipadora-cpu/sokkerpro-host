@@ -30166,5 +30166,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-16T14:21:49.825134-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "807e1140b74f_custom_1792149487218_20261016",
+    "fixture_id": "19829878",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Edelweiß / Neue Heimat",
+    "away": "St. Valentin",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.01,
+    "odd_bano": null,
+    "odd_mercado": 1.01,
+    "timestamp": "2026-10-16T14:22:00.878144-03:00",
+    "resultado": "pendente"
   }
 ]
