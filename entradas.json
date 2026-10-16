@@ -30202,5 +30202,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-16T14:23:33.711890-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "22735f2608f0_custom_1792149487218_20261016",
+    "fixture_id": "19732278",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Prostějov",
+    "away": "Ústí nad Labem",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": 1.47,
+    "odd_bano": null,
+    "odd_mercado": 1.45,
+    "timestamp": "2026-10-16T14:25:27.668276-03:00",
+    "resultado": "pendente"
   }
 ]
