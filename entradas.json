@@ -30634,5 +30634,23 @@
     "odd_mercado": 2.1,
     "timestamp": "2026-10-16T15:39:14.322307-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a676053449bf_custom_1791762189183_20261016",
+    "fixture_id": "19713894",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "Horsens",
+    "away": "Randers FC",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.52,
+    "timestamp": "2026-10-16T15:40:32.702985-03:00",
+    "resultado": "pendente"
   }
 ]
