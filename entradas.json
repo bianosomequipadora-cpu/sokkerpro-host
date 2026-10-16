@@ -30058,5 +30058,23 @@
     "odd_mercado": 2.112,
     "timestamp": "2026-10-16T13:37:27.282802-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "08d8d9aecf54_custom_1791762204509_20261016",
+    "fixture_id": "19716328",
+    "mercado": "custom_1791762204509",
+    "tipo": "escanteio_ht",
+    "home": "Wieczysta Kraków",
+    "away": "Raków Częstochowa",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.85,
+    "odd_bano": null,
+    "odd_mercado": 2.112,
+    "timestamp": "2026-10-16T13:37:37.942227-03:00",
+    "resultado": "pendente"
   }
 ]
