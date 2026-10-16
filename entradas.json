@@ -31102,5 +31102,23 @@
     "odd_mercado": 1.62,
     "timestamp": "2026-10-16T17:14:19.793048-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "0ef859b86a71_custom_1791762189183_20261016",
+    "fixture_id": "19889036",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "Airbus UK",
+    "away": "The New Saints",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.712,
+    "timestamp": "2026-10-16T17:26:27.237731-03:00",
+    "resultado": "pendente"
   }
 ]
