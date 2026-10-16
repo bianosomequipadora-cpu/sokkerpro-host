@@ -30454,5 +30454,23 @@
     "odd_mercado": 1.79,
     "timestamp": "2026-10-16T14:42:15.278102-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "22735f2608f0_custom_1791762199194_20261016",
+    "fixture_id": "19732278",
+    "mercado": "custom_1791762199194",
+    "tipo": "escanteio_ft",
+    "home": "Prostějov",
+    "away": "Ústí nad Labem",
+    "message_id": 0,
+    "extra_val": 16,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 1.75,
+    "odd_bano": null,
+    "odd_mercado": 1.888,
+    "timestamp": "2026-10-16T14:42:26.636689-03:00",
+    "resultado": "pendente"
   }
 ]
