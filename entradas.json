@@ -29932,5 +29932,23 @@
     "odd_mercado": 1.36,
     "timestamp": "2026-10-16T13:17:13.295783-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f95da2803c1b_custom_1792149487218_20261016",
+    "fixture_id": "19877402",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Amman",
+    "away": "Al Sareeh",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.4,
+    "odd_bano": null,
+    "odd_mercado": 1.392,
+    "timestamp": "2026-10-16T13:17:27.135461-03:00",
+    "resultado": "pendente"
   }
 ]
