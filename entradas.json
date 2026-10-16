@@ -31174,5 +31174,23 @@
     "odd_mercado": 1.14,
     "timestamp": "2026-10-16T17:36:55.224202-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "e3f37b03207b_custom_1791761808552_20261016",
+    "fixture_id": "19621531",
+    "mercado": "custom_1791761808552",
+    "tipo": "escanteio_ft",
+    "home": "St Patrick's",
+    "away": "Shelbourne",
+    "message_id": 0,
+    "extra_val": 13,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.97,
+    "odd_bano": null,
+    "odd_mercado": 1.97,
+    "timestamp": "2026-10-16T17:42:12.566233-03:00",
+    "resultado": "pendente"
   }
 ]
