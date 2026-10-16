@@ -30688,5 +30688,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-16T15:48:46.723652-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d893c8674729_custom_1790706998863_20261016",
+    "fixture_id": "19775469",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Wiener Sport-Club",
+    "away": "FC Marchfeld Donauauen",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.36,
+    "odd_bano": null,
+    "odd_mercado": 1.336,
+    "timestamp": "2026-10-16T15:53:44.336389-03:00",
+    "resultado": "pendente"
   }
 ]
