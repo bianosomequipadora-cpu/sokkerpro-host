@@ -30148,5 +30148,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-16T14:18:51.176920-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a359056e4a3f_custom_1790706998863_20261016",
+    "fixture_id": "19894996",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Senegal U20",
+    "away": "Mauritania U20",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-16T14:21:49.825134-03:00",
+    "resultado": "pendente"
   }
 ]
