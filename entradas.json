@@ -29572,5 +29572,23 @@
     "odd_mercado": 1.736,
     "timestamp": "2026-10-16T08:33:08.375171-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "3112036d4a9b_custom_1792083627865_20261016",
+    "fixture_id": "19692836",
+    "mercado": "custom_1792083627865",
+    "tipo": "gol_intervalo",
+    "home": "FC Turan",
+    "away": "Shakhter Karagandy",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-10-16T09:18:04.337260-03:00",
+    "resultado": "pendente"
   }
 ]
