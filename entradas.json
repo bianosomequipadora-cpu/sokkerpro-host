@@ -30886,5 +30886,23 @@
     "odd_mercado": 1.432,
     "timestamp": "2026-10-16T16:32:20.081660-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "512bdc1aad1c_custom_1791762177973_20261016",
+    "fixture_id": "19729044",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Burnley",
+    "away": "Wolverhampton Wanderers",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.448,
+    "timestamp": "2026-10-16T16:34:12.499690-03:00",
+    "resultado": "pendente"
   }
 ]
