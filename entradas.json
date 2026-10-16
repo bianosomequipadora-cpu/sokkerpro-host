@@ -30796,5 +30796,23 @@
     "odd_mercado": 1.27,
     "timestamp": "2026-10-16T16:20:41.792138-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b709d7b23cc3_custom_1790706998863_20261016",
+    "fixture_id": "19788458",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Beerschot-Wilrijk U21",
+    "away": "Lierse Kempenzonen U21",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.2,
+    "odd_bano": null,
+    "odd_mercado": 1.175,
+    "timestamp": "2026-10-16T16:22:29.641846-03:00",
+    "resultado": "pendente"
   }
 ]
