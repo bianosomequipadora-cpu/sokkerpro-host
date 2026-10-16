@@ -30004,5 +30004,23 @@
     "odd_mercado": 1.944,
     "timestamp": "2026-10-16T13:20:53.696506-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "50fe595ad6af_custom_1792149487218_20261016",
+    "fixture_id": "19723540",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Dravinja",
+    "away": "Jesenice",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.11,
+    "odd_bano": null,
+    "odd_mercado": 1.105,
+    "timestamp": "2026-10-16T13:35:36.002992-03:00",
+    "resultado": "pendente"
   }
 ]
