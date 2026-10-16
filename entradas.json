@@ -30472,5 +30472,23 @@
     "odd_mercado": 1.888,
     "timestamp": "2026-10-16T14:42:26.636689-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "0a40a3c8b0cc_custom_1791761808552_20261016",
+    "fixture_id": "19721687",
+    "mercado": "custom_1791761808552",
+    "tipo": "escanteio_ft",
+    "home": "Kauno Žalgiris II",
+    "away": "TransINVEST Vilnius II",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.656,
+    "timestamp": "2026-10-16T14:55:51.446933-03:00",
+    "resultado": "pendente"
   }
 ]
