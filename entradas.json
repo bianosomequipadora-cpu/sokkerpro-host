@@ -30346,5 +30346,23 @@
     "odd_mercado": 1.496,
     "timestamp": "2026-10-16T14:34:18.974881-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0a40a3c8b0cc_custom_1790706998863_20261016",
+    "fixture_id": "19721687",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Kauno Žalgiris II",
+    "away": "TransINVEST Vilnius II",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.3,
+    "odd_bano": null,
+    "odd_mercado": 1.27,
+    "timestamp": "2026-10-16T14:34:40.110589-03:00",
+    "resultado": "pendente"
   }
 ]
