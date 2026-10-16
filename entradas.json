@@ -30490,5 +30490,23 @@
     "odd_mercado": 1.656,
     "timestamp": "2026-10-16T14:55:51.446933-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "aeb9145c76bb_custom_1792083627865_20261016",
+    "fixture_id": "19729669",
+    "mercado": "custom_1792083627865",
+    "tipo": "gol_intervalo",
+    "home": "Dinamo Bucureşti",
+    "away": "Botoşani",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.57,
+    "odd_bano": null,
+    "odd_mercado": 1.66,
+    "timestamp": "2026-10-16T15:20:50.148803-03:00",
+    "resultado": "pendente"
   }
 ]
