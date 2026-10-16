@@ -30922,5 +30922,23 @@
     "odd_mercado": 1.37,
     "timestamp": "2026-10-16T16:41:58.184639-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "8cf33342cbef_custom_1791762199194_20261016",
+    "fixture_id": "19741200",
+    "mercado": "custom_1791762199194",
+    "tipo": "escanteio_ft",
+    "home": "Sport Huancayo",
+    "away": "Cusco FC",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.37,
+    "timestamp": "2026-10-16T16:42:09.123729-03:00",
+    "resultado": "pendente"
   }
 ]
