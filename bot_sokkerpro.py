@@ -1557,8 +1557,6 @@ def get_odds_sokkerpro(fid_raw):
                 oa = _get_float(fix.get('XBET_VENCEDOR_AWAY'))
                 if oh > 1 and oa > 1:
                     return (oh, oa)
-                if oh > 1 and oa > 1:
-                    return (oh, oa)
                 return (None, None)
     except Exception:
         return (None, None)
