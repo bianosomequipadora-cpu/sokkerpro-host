@@ -29896,5 +29896,23 @@
     "odd_mercado": 1.9,
     "timestamp": "2026-10-16T13:07:08.304126-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "1f657d380efa_custom_1792083627865_20261016",
+    "fixture_id": "19732277",
+    "mercado": "custom_1792083627865",
+    "tipo": "gol_intervalo",
+    "home": "Opava",
+    "away": "Vysočina Jihlava",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.57,
+    "odd_bano": null,
+    "odd_mercado": 1.575,
+    "timestamp": "2026-10-16T13:15:34.100507-03:00",
+    "resultado": "pendente"
   }
 ]
