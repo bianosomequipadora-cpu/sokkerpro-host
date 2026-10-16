@@ -31228,5 +31228,23 @@
     "odd_mercado": 1.825,
     "timestamp": "2026-10-16T19:36:42.971878-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "ca33eab9f845_custom_1790706998863_20261016",
+    "fixture_id": "19890440",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Inter U20",
+    "away": "Municipal Limeño U20",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.2,
+    "odd_bano": null,
+    "odd_mercado": 1.175,
+    "timestamp": "2026-10-16T19:52:53.311266-03:00",
+    "resultado": "pendente"
   }
 ]
