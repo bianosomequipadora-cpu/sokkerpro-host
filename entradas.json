@@ -29716,5 +29716,23 @@
     "odd_mercado": 1.29,
     "timestamp": "2026-10-16T11:32:30.906164-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "950e1feb233a_custom_1792149487218_20261016",
+    "fixture_id": "19657171",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Dinamo Tbilisi II",
+    "away": "WIT Georgia",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-16T11:34:51.452415-03:00",
+    "resultado": "pendente"
   }
 ]
