@@ -29446,5 +29446,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-15T17:51:51.866757-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "18ce971c6742_custom_1791935650567_20261016",
+    "fixture_id": "19883960",
+    "mercado": "custom_1791935650567",
+    "tipo": "over_gol",
+    "home": "Adelaide City",
+    "away": "Avondale Heights",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.07,
+    "odd_bano": null,
+    "odd_mercado": 1.08,
+    "timestamp": "2026-10-16T06:03:08.061301-03:00",
+    "resultado": "pendente"
   }
 ]
