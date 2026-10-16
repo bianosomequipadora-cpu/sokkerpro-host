@@ -30400,5 +30400,23 @@
     "odd_mercado": 2.192,
     "timestamp": "2026-10-16T14:37:11.168840-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "e1d41d7b18b6_custom_1791761873738_20261016",
+    "fixture_id": "19753131",
+    "mercado": "custom_1791761873738",
+    "tipo": "escanteio_ht",
+    "home": "Aarhus Fremad",
+    "away": "Esbjerg",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.25,
+    "odd_bano": null,
+    "odd_mercado": 2.26,
+    "timestamp": "2026-10-16T14:38:48.403894-03:00",
+    "resultado": "pendente"
   }
 ]
