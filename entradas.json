@@ -30544,5 +30544,23 @@
     "odd_mercado": 1.62,
     "timestamp": "2026-10-16T15:33:36.852780-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9681e826f50d_custom_1791762177973_20261016",
+    "fixture_id": "19890191",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Guarani U20",
+    "away": "Sfera U20",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.7,
+    "odd_bano": null,
+    "odd_mercado": 1.62,
+    "timestamp": "2026-10-16T15:33:48.627494-03:00",
+    "resultado": "pendente"
   }
 ]
