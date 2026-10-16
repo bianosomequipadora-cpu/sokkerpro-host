@@ -29842,5 +29842,23 @@
     "odd_mercado": 1.175,
     "timestamp": "2026-10-16T12:36:58.278450-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b89922a8f4ee_custom_1790706998863_20261016",
+    "fixture_id": "19764613",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Al-Ahli Doha",
+    "away": "Al Wakrah",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.28,
+    "odd_bano": null,
+    "odd_mercado": 1.26,
+    "timestamp": "2026-10-16T12:51:55.005183-03:00",
+    "resultado": "pendente"
   }
 ]
