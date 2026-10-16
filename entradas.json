@@ -29986,5 +29986,23 @@
     "odd_mercado": 1.47,
     "timestamp": "2026-10-16T13:20:41.726385-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "68f189e80967_custom_1792083627865_20261016",
+    "fixture_id": "19742224",
+    "mercado": "custom_1792083627865",
+    "tipo": "gol_intervalo",
+    "home": "Rotor Volgograd",
+    "away": "Sochi",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.944,
+    "timestamp": "2026-10-16T13:20:53.696506-03:00",
+    "resultado": "pendente"
   }
 ]
