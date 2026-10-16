@@ -30112,5 +30112,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-16T14:16:48.223621-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c742659c140b_custom_1790213687442_20261016",
+    "fixture_id": "19760804",
+    "mercado": "custom_1790213687442",
+    "tipo": "over_gol",
+    "home": "Hlučín",
+    "away": "Kravaře",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.296,
+    "timestamp": "2026-10-16T14:17:03.209984-03:00",
+    "resultado": "pendente"
   }
 ]
