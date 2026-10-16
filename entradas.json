@@ -30022,5 +30022,23 @@
     "odd_mercado": 1.105,
     "timestamp": "2026-10-16T13:35:36.002992-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "2dcc1f130eab_custom_1791761873738_20261016",
+    "fixture_id": "19631335",
+    "mercado": "custom_1791761873738",
+    "tipo": "escanteio_ht",
+    "home": "Bodø / Glimt W",
+    "away": "Lyn W",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.635,
+    "timestamp": "2026-10-16T13:37:13.652258-03:00",
+    "resultado": "pendente"
   }
 ]
