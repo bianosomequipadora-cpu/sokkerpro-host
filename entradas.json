@@ -29518,5 +29518,23 @@
     "odd_mercado": 1.315,
     "timestamp": "2026-10-16T07:00:35.422567-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "54d6f163560e_custom_1791762189183_20261016",
+    "fixture_id": "19813501",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "PSIM Yogyakarta",
+    "away": "PSM",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.47,
+    "timestamp": "2026-10-16T07:10:30.023158-03:00",
+    "resultado": "pendente"
   }
 ]
