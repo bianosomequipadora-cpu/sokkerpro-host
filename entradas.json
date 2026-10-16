@@ -29608,5 +29608,23 @@
     "odd_mercado": 1.91,
     "timestamp": "2026-10-16T09:18:15.075819-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4ab742d73ef3_custom_1791762177973_20261016",
+    "fixture_id": "19732275",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Banik Ostrava B",
+    "away": "Slavia Praha B",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.75,
+    "odd_bano": null,
+    "odd_mercado": 1.75,
+    "timestamp": "2026-10-16T10:36:57.641425-03:00",
+    "resultado": "pendente"
   }
 ]
