@@ -1483,9 +1483,6 @@ def get_jogos_sokkerpro(fids_existentes):
                 stats = _extrair_stats_sokkerpro(fix)
                 oh = _get_float(fix.get('XBET_VENCEDOR_HOME'))
                 oa = _get_float(fix.get('XBET_VENCEDOR_AWAY'))
-                if not (oh > 1 and oa > 1):
-                    oh = _get_float(fix.get('BET365_VENCEDOR_1_LIVE'))
-                    oa = _get_float(fix.get('BET365_VENCEDOR_2_LIVE'))
                 pais_fix = fix.get('countryName') or cat.get('countryName', '')
                 if isinstance(pais_fix, dict):
                     pais_fix = pais_fix.get('name') or pais_fix.get('countryName') or pais_fix.get('code') or ''
@@ -1560,8 +1557,6 @@ def get_odds_sokkerpro(fid_raw):
                 oa = _get_float(fix.get('XBET_VENCEDOR_AWAY'))
                 if oh > 1 and oa > 1:
                     return (oh, oa)
-                oh = _get_float(fix.get('BET365_VENCEDOR_1_LIVE'))
-                oa = _get_float(fix.get('BET365_VENCEDOR_2_LIVE'))
                 if oh > 1 and oa > 1:
                     return (oh, oa)
                 return (None, None)
