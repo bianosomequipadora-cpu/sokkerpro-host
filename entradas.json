@@ -29464,5 +29464,23 @@
     "odd_mercado": 1.08,
     "timestamp": "2026-10-16T06:03:08.061301-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "18ce971c6742_custom_1791761873738_20261016",
+    "fixture_id": "19883960",
+    "mercado": "custom_1791761873738",
+    "tipo": "escanteio_ht",
+    "home": "Adelaide City",
+    "away": "Avondale Heights",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.456,
+    "timestamp": "2026-10-16T06:07:59.231080-03:00",
+    "resultado": "pendente"
   }
 ]
