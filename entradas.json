@@ -32848,5 +32848,23 @@
     "odd_mercado": 1.54,
     "timestamp": "2026-10-17T10:50:50.090128-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "078cd9095647_custom_1790706998863_20261017",
+    "fixture_id": "19782043",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Spartakos Kitiou",
+    "away": "Anagennisi Deryneia",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.288,
+    "timestamp": "2026-10-17T10:51:05.018186-03:00",
+    "resultado": "pendente"
   }
 ]
