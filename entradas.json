@@ -34594,5 +34594,23 @@
     "odd_mercado": 1.35,
     "timestamp": "2026-10-17T19:35:37.319624-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "1e62fafe1392_custom_1791761873738_20261017",
+    "fixture_id": "19867529",
+    "mercado": "custom_1791761873738",
+    "tipo": "escanteio_ht",
+    "home": "Real Refineros",
+    "away": "Guerreros del Pacífico",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.6,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-10-17T19:41:53.190695-03:00",
+    "resultado": "pendente"
   }
 ]
