@@ -33964,5 +33964,23 @@
     "odd_mercado": 2.03,
     "timestamp": "2026-10-17T13:40:52.466174-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "3e140a4f5663_custom_1790213687442_20261017",
+    "fixture_id": "19888792",
+    "mercado": "custom_1790213687442",
+    "tipo": "over_gol",
+    "home": "Albert Quévy-Mons",
+    "away": "Sporting Charleroi",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.3,
+    "odd_bano": null,
+    "odd_mercado": 1.29,
+    "timestamp": "2026-10-17T13:42:29.483250-03:00",
+    "resultado": "pendente"
   }
 ]
