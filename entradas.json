@@ -34378,5 +34378,23 @@
     "odd_mercado": 1.504,
     "timestamp": "2026-10-17T16:02:49.109427-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "25d5df0891a3_custom_1791762177973_20261017",
+    "fixture_id": "19888796",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Club Brugge",
+    "away": "KSC Lokeren",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.48,
+    "timestamp": "2026-10-17T16:20:26.341527-03:00",
+    "resultado": "pendente"
   }
 ]
