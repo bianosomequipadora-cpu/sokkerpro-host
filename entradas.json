@@ -31444,5 +31444,23 @@
     "odd_mercado": 2.05,
     "timestamp": "2026-10-16T23:46:50.473746-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "47df3c75792c_custom_1791762189183_20261017",
+    "fixture_id": "19742539",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "CA La Paz",
+    "away": "Tlaxcala",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 1.95,
+    "odd_bano": null,
+    "odd_mercado": 2.288,
+    "timestamp": "2026-10-17T01:46:39.531403-03:00",
+    "resultado": "pendente"
   }
 ]
