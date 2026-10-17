@@ -34180,5 +34180,23 @@
     "odd_mercado": 1.392,
     "timestamp": "2026-10-17T14:25:46.065875-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d7fcb1fbfdee_custom_1791761873738_20261017",
+    "fixture_id": "19726471",
+    "mercado": "custom_1791761873738",
+    "tipo": "escanteio_ht",
+    "home": "Cliftonville",
+    "away": "Portadown",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 1.75,
+    "timestamp": "2026-10-17T14:37:12.384931-03:00",
+    "resultado": "pendente"
   }
 ]
