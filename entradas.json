@@ -32038,5 +32038,23 @@
     "odd_mercado": 1.02,
     "timestamp": "2026-10-17T08:15:24.479787-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d5d6f6de0403_custom_1792083627865_20261017",
+    "fixture_id": "19631331",
+    "mercado": "custom_1792083627865",
+    "tipo": "gol_intervalo",
+    "home": "Stabæk W",
+    "away": "Hønefoss W",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.61,
+    "odd_bano": null,
+    "odd_mercado": 1.75,
+    "timestamp": "2026-10-17T08:18:35.342866-03:00",
+    "resultado": "pendente"
   }
 ]
