@@ -32326,5 +32326,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-17T09:31:37.319752-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d6619fe32cef_custom_1792149487218_20261017",
+    "fixture_id": "19795171",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "CFFA",
+    "away": "Young Africans",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.1,
+    "odd_bano": null,
+    "odd_mercado": 1.08,
+    "timestamp": "2026-10-17T09:35:05.537863-03:00",
+    "resultado": "pendente"
   }
 ]
