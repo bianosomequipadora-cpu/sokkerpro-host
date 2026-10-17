@@ -33730,5 +33730,23 @@
     "odd_mercado": 1.44,
     "timestamp": "2026-10-17T13:03:37.777143-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6bb77f817bcf_custom_1791762177973_20261017",
+    "fixture_id": "19784085",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Potenza Calcio",
+    "away": "Catania",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.6,
+    "odd_bano": null,
+    "odd_mercado": 1.75,
+    "timestamp": "2026-10-17T13:05:33.202312-03:00",
+    "resultado": "pendente"
   }
 ]
