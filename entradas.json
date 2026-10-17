@@ -34558,5 +34558,23 @@
     "odd_mercado": 2.48,
     "timestamp": "2026-10-17T18:06:44.117603-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "cc034f2ea02e_custom_1791761873738_20261017",
+    "fixture_id": "19637890",
+    "mercado": "custom_1791761873738",
+    "tipo": "escanteio_ht",
+    "home": "Deportivo Merlo",
+    "away": "Talleres Remedios de Escalada",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.365,
+    "timestamp": "2026-10-17T19:35:26.574899-03:00",
+    "resultado": "pendente"
   }
 ]
