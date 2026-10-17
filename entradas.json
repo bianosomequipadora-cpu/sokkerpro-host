@@ -34306,5 +34306,23 @@
     "odd_mercado": 2.112,
     "timestamp": "2026-10-17T15:39:57.811671-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d368305fe3d6_custom_1791761873738_20261017",
+    "fixture_id": "19637894",
+    "mercado": "custom_1791761873738",
+    "tipo": "escanteio_ht",
+    "home": "Villa San Carlos",
+    "away": "Villa Dálmine",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.896,
+    "timestamp": "2026-10-17T15:42:19.804078-03:00",
+    "resultado": "pendente"
   }
 ]
