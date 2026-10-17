@@ -31498,5 +31498,23 @@
     "odd_mercado": 1.456,
     "timestamp": "2026-10-17T02:35:38.143276-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "aa7fd0bd68db_custom_1791762177973_20261017",
+    "fixture_id": "19719555",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Fujieda MYFC",
+    "away": "Montedio Yamagata",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.32,
+    "timestamp": "2026-10-17T02:35:50.155431-03:00",
+    "resultado": "pendente"
   }
 ]
