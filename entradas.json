@@ -31696,5 +31696,23 @@
     "odd_mercado": 1.57,
     "timestamp": "2026-10-17T04:53:03.635255-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b28988942e8b_custom_1791762177973_20261017",
+    "fixture_id": "19676311",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Yongin City",
+    "away": "Ansan Greeners",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.85,
+    "odd_bano": null,
+    "odd_mercado": 1.87,
+    "timestamp": "2026-10-17T05:06:46.670727-03:00",
+    "resultado": "pendente"
   }
 ]
