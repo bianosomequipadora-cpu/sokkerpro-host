@@ -31750,5 +31750,23 @@
     "odd_mercado": 1.256,
     "timestamp": "2026-10-17T05:20:26.408573-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0dd6be638e59_custom_1790706998863_20261017",
+    "fixture_id": "19719109",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Mito Hollyhock",
+    "away": "Urawa Reds",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.33,
+    "odd_bano": null,
+    "odd_mercado": 1.32,
+    "timestamp": "2026-10-17T05:25:26.944655-03:00",
+    "resultado": "pendente"
   }
 ]
