@@ -32488,5 +32488,23 @@
     "odd_mercado": 1.77,
     "timestamp": "2026-10-17T09:39:46.725908-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c332b06fe9b6_custom_1791762199194_20261017",
+    "fixture_id": "19655684",
+    "mercado": "custom_1791762199194",
+    "tipo": "escanteio_ft",
+    "home": "Tvååker",
+    "away": "Rosengård",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.75,
+    "odd_bano": null,
+    "odd_mercado": 1.81,
+    "timestamp": "2026-10-17T09:39:55.173228-03:00",
+    "resultado": "pendente"
   }
 ]
