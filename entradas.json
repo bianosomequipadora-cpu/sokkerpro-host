@@ -33028,5 +33028,23 @@
     "odd_mercado": 1.345,
     "timestamp": "2026-10-17T11:18:33.838268-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a1135778d5be_custom_1792149487218_20261017",
+    "fixture_id": "19776640",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Mławianka Mława",
+    "away": "Polonia Lidzbark Warm.",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 1.22,
+    "odd_bano": null,
+    "odd_mercado": 1.205,
+    "timestamp": "2026-10-17T11:19:19.011679-03:00",
+    "resultado": "pendente"
   }
 ]
