@@ -31588,5 +31588,23 @@
     "odd_mercado": 1.344,
     "timestamp": "2026-10-17T02:37:54.850862-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f9b9480a2861_custom_1791762177973_20261017",
+    "fixture_id": "19720134",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Gifu",
+    "away": "Fukushima United",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.9,
+    "odd_bano": null,
+    "odd_mercado": 2.01,
+    "timestamp": "2026-10-17T02:41:50.104929-03:00",
+    "resultado": "pendente"
   }
 ]
