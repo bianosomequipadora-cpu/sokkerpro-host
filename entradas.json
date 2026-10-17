@@ -33208,5 +33208,23 @@
     "odd_mercado": 1.245,
     "timestamp": "2026-10-17T11:47:58.767603-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a5ec74ddd322_custom_1790706998863_20261017",
+    "fixture_id": "19734232",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Schwarz-Weiß Bregenz",
+    "away": "Amstetten",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.36,
+    "odd_bano": null,
+    "odd_mercado": 1.416,
+    "timestamp": "2026-10-17T11:49:38.647277-03:00",
+    "resultado": "pendente"
   }
 ]
