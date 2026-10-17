@@ -34540,5 +34540,23 @@
     "odd_mercado": 2.3,
     "timestamp": "2026-10-17T17:47:53.662558-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "f46055157e17_custom_1791762177973_20261017",
+    "fixture_id": "19636574",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Independiente Rivadavia",
+    "away": "Tigre",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.35,
+    "odd_bano": null,
+    "odd_mercado": 2.48,
+    "timestamp": "2026-10-17T18:06:44.117603-03:00",
+    "resultado": "pendente"
   }
 ]
