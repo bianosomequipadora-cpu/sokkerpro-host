@@ -32596,5 +32596,23 @@
     "odd_mercado": 3.208,
     "timestamp": "2026-10-17T09:57:37.476004-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "585c0698d10f_custom_1792083627865_20261017",
+    "fixture_id": "19755981",
+    "mercado": "custom_1792083627865",
+    "tipo": "gol_intervalo",
+    "home": "Unie Hlubina",
+    "away": "Blansko",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.66,
+    "odd_bano": null,
+    "odd_mercado": 1.755,
+    "timestamp": "2026-10-17T09:59:10.808372-03:00",
+    "resultado": "pendente"
   }
 ]
