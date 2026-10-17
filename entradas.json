@@ -32758,5 +32758,23 @@
     "odd_mercado": 1.09,
     "timestamp": "2026-10-17T10:32:35.747365-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "927df2b50303_custom_1790706998863_20261017",
+    "fixture_id": "19760772",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Górnik Łęczna",
+    "away": "Stal Stalowa Wola",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.4,
+    "odd_bano": null,
+    "odd_mercado": 1.416,
+    "timestamp": "2026-10-17T10:34:54.856181-03:00",
+    "resultado": "pendente"
   }
 ]
