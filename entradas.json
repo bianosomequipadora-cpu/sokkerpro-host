@@ -32884,5 +32884,23 @@
     "odd_mercado": 1.52,
     "timestamp": "2026-10-17T10:55:54.454298-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "cd9d96ada9d3_custom_1791762177973_20261017",
+    "fixture_id": "19774199",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Dubrava Zagreb",
+    "away": "Vukovar",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.65,
+    "odd_bano": null,
+    "odd_mercado": 1.736,
+    "timestamp": "2026-10-17T11:04:15.529461-03:00",
+    "resultado": "pendente"
   }
 ]
