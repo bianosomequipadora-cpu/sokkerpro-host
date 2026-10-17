@@ -73,7 +73,7 @@
       "notificar": true,
       "nome": "⛳️😈ESCANTEIO ASIÁTICO FT😈⛳️",
       "minuto_inicio": 81,
-      "minuto_fim": 88,
+      "minuto_fim": 87,
       "periodo": 2,
       "tipo": "escanteio_ft",
       "stake": 10,
@@ -85,7 +85,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 0.9
+          "valor": 0.8
         },
         {
           "campo": "chutes_totais_min",
@@ -114,7 +114,7 @@
       "notificar": true,
       "nome": "⛳️😈ESCANTEIO ASIÁTICO HT😈⛳️",
       "minuto_inicio": 31,
-      "minuto_fim": 38,
+      "minuto_fim": 37,
       "periodo": 1,
       "tipo": "escanteio_ht",
       "stake": 10,
@@ -126,7 +126,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 0.9
+          "valor": 0.8
         },
         {
           "campo": "chutes_totais_min",
@@ -155,7 +155,7 @@
       "notificar": true,
       "nome": "⛳️🔔ESCANTEIO ASIÁTICO HT 🔔⛳️",
       "minuto_inicio": 31,
-      "minuto_fim": 38,
+      "minuto_fim": 37,
       "periodo": 1,
       "tipo": "escanteio_ht",
       "stake": 10,
@@ -201,7 +201,7 @@
       "notificar": true,
       "nome": "⛳️🔔ESCANTEIO ASIÁTICO FT🔔⛳️",
       "minuto_inicio": 81,
-      "minuto_fim": 88,
+      "minuto_fim": 87,
       "periodo": 2,
       "tipo": "escanteio_ft",
       "stake": 10,
@@ -247,19 +247,19 @@
       "notificar": true,
       "nome": "⛳️❤️‍🔥ESCANTEIO ASIÁTICO FT❤️‍🔥⛳️",
       "minuto_inicio": 81,
-      "minuto_fim": 88,
+      "minuto_fim": 87,
       "periodo": 2,
       "tipo": "escanteio_ft",
       "stake": 10,
       "placar_valido": "0x0 , 1x1, 2x2, 3x3, 4x4",
       "criterios": {
-        "situacao_favorito": ""
+        "situacao_favorito": "empatando"
       },
       "criterios_api": [
         {
           "campo": "chutes_totais_min",
           "operador": "gte",
-          "valor": 12
+          "valor": 10
         },
         {
           "campo": "escanteios_minimos",
@@ -274,7 +274,7 @@
         {
           "campo": "appm_min_por_time",
           "operador": "gte",
-          "valor": 0.7
+          "valor": 0.9
         },
         {
           "campo": "escanteios_5m",
@@ -288,13 +288,13 @@
       "notificar": true,
       "nome": "⛳️❤️‍🔥ESCANTEIO ASIÁTICO HT❤️‍🔥⛳️",
       "minuto_inicio": 31,
-      "minuto_fim": 38,
+      "minuto_fim": 37,
       "periodo": 1,
       "tipo": "escanteio_ht",
       "stake": 10,
       "placar_valido": "0x0 , 1x1, 2x2, 3x3 ",
       "criterios": {
-        "situacao_favorito": ""
+        "situacao_favorito": "empatando"
       },
       "criterios_api": [
         {
@@ -349,9 +349,9 @@
           "valor": 70
         },
         {
-          "campo": "pressure_bar_min",
+          "campo": "appm_min_por_time",
           "operador": "gte",
-          "valor": 70
+          "valor": 1
         }
       ]
     },
