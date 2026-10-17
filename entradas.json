@@ -34216,5 +34216,23 @@
     "odd_mercado": 1.77,
     "timestamp": "2026-10-17T14:37:24.768254-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b4279dee7edc_custom_1791762177973_20261017",
+    "fixture_id": "19867593",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Mineros de Fresnillo",
+    "away": "Guerreros de Autlán",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-10-17T14:39:11.691179-03:00",
+    "resultado": "pendente"
   }
 ]
