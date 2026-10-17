@@ -33874,5 +33874,23 @@
     "odd_mercado": 1.85,
     "timestamp": "2026-10-17T13:22:40.939512-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "ae3599aa65a2_custom_1790706998863_20261017",
+    "fixture_id": "19715576",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Strasbourg",
+    "away": "Paris Saint Germain",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.2,
+    "odd_bano": null,
+    "odd_mercado": 1.184,
+    "timestamp": "2026-10-17T13:34:10.914314-03:00",
+    "resultado": "pendente"
   }
 ]
