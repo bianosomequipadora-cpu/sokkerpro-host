@@ -33406,5 +33406,23 @@
     "odd_mercado": 1.43,
     "timestamp": "2026-10-17T12:16:11.495526-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "026a7fd4d911_custom_1790706998863_20261017",
+    "fixture_id": "19866913",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Al Nejmeh",
+    "away": "Istiqlol Dushanbe",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.495,
+    "timestamp": "2026-10-17T12:19:10.766864-03:00",
+    "resultado": "pendente"
   }
 ]
