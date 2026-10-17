@@ -33532,5 +33532,23 @@
     "odd_mercado": 1.245,
     "timestamp": "2026-10-17T12:22:41.659716-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "792ff61a99c2_custom_1792149487218_20261017",
+    "fixture_id": "19772595",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "AFC Whyteleafe",
+    "away": "Dartford",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.25,
+    "odd_bano": null,
+    "odd_mercado": 1.275,
+    "timestamp": "2026-10-17T12:24:56.036691-03:00",
+    "resultado": "pendente"
   }
 ]
