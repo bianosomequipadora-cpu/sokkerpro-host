@@ -34396,5 +34396,23 @@
     "odd_mercado": 1.48,
     "timestamp": "2026-10-17T16:20:26.341527-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "ba0af23b466c_custom_1790706998863_20261017",
+    "fixture_id": "19890189",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Ibrachina U20",
+    "away": "Capivariano U20",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.28,
+    "odd_bano": null,
+    "odd_mercado": 1.27,
+    "timestamp": "2026-10-17T16:22:02.545899-03:00",
+    "resultado": "pendente"
   }
 ]
