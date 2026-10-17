@@ -33640,5 +33640,23 @@
     "odd_mercado": 2.07,
     "timestamp": "2026-10-17T12:53:56.386771-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "ae3599aa65a2_custom_1791761873738_20261017",
+    "fixture_id": "19715576",
+    "mercado": "custom_1791761873738",
+    "tipo": "escanteio_ht",
+    "home": "Strasbourg",
+    "away": "Paris Saint Germain",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 2.0,
+    "odd_bano": null,
+    "odd_mercado": 2.48,
+    "timestamp": "2026-10-17T12:54:08.623262-03:00",
+    "resultado": "pendente"
   }
 ]
