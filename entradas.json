@@ -32056,5 +32056,23 @@
     "odd_mercado": 1.75,
     "timestamp": "2026-10-17T08:18:35.342866-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9e172b3a5da8_custom_1792149487218_20261017",
+    "fixture_id": "19763139",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Karvina U19",
+    "away": "Sparta Praha U19",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.195,
+    "timestamp": "2026-10-17T08:22:08.496967-03:00",
+    "resultado": "pendente"
   }
 ]
