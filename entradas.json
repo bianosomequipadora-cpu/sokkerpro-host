@@ -32938,5 +32938,23 @@
     "odd_mercado": 1.645,
     "timestamp": "2026-10-17T11:04:56.249490-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "23bf92a0d431_custom_1791762204509_20261017",
+    "fixture_id": "19760768",
+    "mercado": "custom_1791762204509",
+    "tipo": "escanteio_ht",
+    "home": "Świt Skolwin",
+    "away": "Olimpia Grudziądz",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.645,
+    "timestamp": "2026-10-17T11:05:07.055014-03:00",
+    "resultado": "pendente"
   }
 ]
