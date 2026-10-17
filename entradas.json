@@ -33892,5 +33892,23 @@
     "odd_mercado": 1.184,
     "timestamp": "2026-10-17T13:34:10.914314-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a3ee134feb08_custom_1791762177973_20261017",
+    "fixture_id": "19777883",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Apollon",
+    "away": "Nea Salamis",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 1.92,
+    "odd_bano": null,
+    "odd_mercado": 1.925,
+    "timestamp": "2026-10-17T13:35:30.208087-03:00",
+    "resultado": "pendente"
   }
 ]
