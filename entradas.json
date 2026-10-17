@@ -31894,5 +31894,23 @@
     "odd_mercado": 1.74,
     "timestamp": "2026-10-17T06:19:40.994161-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "af38a05f1acf_custom_1792149487218_20261017",
+    "fixture_id": "19791507",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Petřín Plzeň",
+    "away": "Rokycany",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.21,
+    "timestamp": "2026-10-17T06:33:34.003765-03:00",
+    "resultado": "pendente"
   }
 ]
