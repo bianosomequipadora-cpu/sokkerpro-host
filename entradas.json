@@ -32344,5 +32344,23 @@
     "odd_mercado": 1.08,
     "timestamp": "2026-10-17T09:35:05.537863-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5053da843d39_custom_1791762177973_20261017",
+    "fixture_id": "19785791",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Qabala",
+    "away": "Sabah",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.77,
+    "odd_bano": null,
+    "odd_mercado": 2.112,
+    "timestamp": "2026-10-17T09:35:18.213685-03:00",
+    "resultado": "pendente"
   }
 ]
