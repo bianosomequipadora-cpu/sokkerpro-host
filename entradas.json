@@ -32704,5 +32704,23 @@
     "odd_mercado": 1.1,
     "timestamp": "2026-10-17T10:14:51.596562-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5ae7fd2ac519_custom_1791762189183_20261017",
+    "fixture_id": "19778321",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "Balestier Khalsa",
+    "away": "Geylang International",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.67,
+    "odd_bano": null,
+    "odd_mercado": 2.152,
+    "timestamp": "2026-10-17T10:16:31.778937-03:00",
+    "resultado": "pendente"
   }
 ]
