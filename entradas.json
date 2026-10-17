@@ -31948,5 +31948,23 @@
     "odd_mercado": 1.34,
     "timestamp": "2026-10-17T06:40:30.735364-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "90c43d63a8ba_custom_1792149487218_20261017",
+    "fixture_id": "19777257",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Zagłębie Lubin II",
+    "away": "Zagłębie Sosnowiec",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.08,
+    "odd_bano": null,
+    "odd_mercado": 1.064,
+    "timestamp": "2026-10-17T07:33:35.517996-03:00",
+    "resultado": "pendente"
   }
 ]
