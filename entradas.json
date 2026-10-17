@@ -32560,5 +32560,23 @@
     "odd_mercado": 1.295,
     "timestamp": "2026-10-17T09:50:03.707173-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "75da841da10b_custom_1792149487218_20261017",
+    "fixture_id": "19854177",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Pogradeci",
+    "away": "Sopoti Librazhd",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.195,
+    "timestamp": "2026-10-17T09:54:23.737824-03:00",
+    "resultado": "pendente"
   }
 ]
