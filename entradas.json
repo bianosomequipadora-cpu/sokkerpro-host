@@ -33838,5 +33838,23 @@
     "odd_mercado": 1.245,
     "timestamp": "2026-10-17T13:19:18.209643-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "654e4b0c66e8_custom_1790706998863_20261017",
+    "fixture_id": "19725302",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Paksi SE",
+    "away": "Győri ETO",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.25,
+    "odd_bano": null,
+    "odd_mercado": 1.245,
+    "timestamp": "2026-10-17T13:22:31.813298-03:00",
+    "resultado": "pendente"
   }
 ]
