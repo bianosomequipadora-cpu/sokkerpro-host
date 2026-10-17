@@ -33946,5 +33946,23 @@
     "odd_mercado": 1.685,
     "timestamp": "2026-10-17T13:37:56.918789-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4390d9f093c8_custom_1791761873738_20261017",
+    "fixture_id": "19746585",
+    "mercado": "custom_1791761873738",
+    "tipo": "escanteio_ht",
+    "home": "Fenerbahçe",
+    "away": "Alanyaspor",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.92,
+    "odd_bano": null,
+    "odd_mercado": 2.03,
+    "timestamp": "2026-10-17T13:40:52.466174-03:00",
+    "resultado": "pendente"
   }
 ]
