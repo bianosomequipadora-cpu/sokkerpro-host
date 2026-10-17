@@ -34486,5 +34486,23 @@
     "odd_mercado": 3.432,
     "timestamp": "2026-10-17T16:39:06.141657-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4ca2ddcbdc13_custom_1791761808552_20261017",
+    "fixture_id": "19737274",
+    "mercado": "custom_1791761808552",
+    "tipo": "escanteio_ft",
+    "home": "Tubize",
+    "away": "Meux",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 2.1,
+    "odd_bano": null,
+    "odd_mercado": 2.075,
+    "timestamp": "2026-10-17T16:45:27.473584-03:00",
+    "resultado": "pendente"
   }
 ]
