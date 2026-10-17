@@ -34144,5 +34144,23 @@
     "odd_mercado": 2.85,
     "timestamp": "2026-10-17T14:23:36.001870-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "76142dd61ec5_custom_1790706998863_20261017",
+    "fixture_id": "19888637",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Al-Najma",
+    "away": "Al-Hidd",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.45,
+    "odd_bano": null,
+    "odd_mercado": 1.45,
+    "timestamp": "2026-10-17T14:25:24.458544-03:00",
+    "resultado": "pendente"
   }
 ]
