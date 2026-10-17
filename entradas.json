@@ -34054,5 +34054,23 @@
     "odd_mercado": 1.405,
     "timestamp": "2026-10-17T14:05:42.139011-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7d14478fa21d_custom_1791762177973_20261017",
+    "fixture_id": "19722136",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Newcastle United",
+    "away": "Aston Villa",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 2.07,
+    "odd_bano": null,
+    "odd_mercado": 2.07,
+    "timestamp": "2026-10-17T14:08:53.717564-03:00",
+    "resultado": "pendente"
   }
 ]
