@@ -31372,5 +31372,23 @@
     "odd_mercado": 1.496,
     "timestamp": "2026-10-16T23:20:23.964089-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "cc0d813c9d4b_custom_1790706998863_20261016",
+    "fixture_id": "19742541",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Correcaminos UAT",
+    "away": "Dorados",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.25,
+    "odd_bano": null,
+    "odd_mercado": 1.245,
+    "timestamp": "2026-10-16T23:20:35.196767-03:00",
+    "resultado": "pendente"
   }
 ]
