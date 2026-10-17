@@ -33676,5 +33676,23 @@
     "odd_mercado": 2.765,
     "timestamp": "2026-10-17T12:54:19.391162-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "65b75e88d764_custom_1790706998863_20261017",
+    "fixture_id": "19842190",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Córdoba U19",
+    "away": "Cádiz U19",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.45,
+    "odd_bano": null,
+    "odd_mercado": 1.495,
+    "timestamp": "2026-10-17T12:56:49.672872-03:00",
+    "resultado": "pendente"
   }
 ]
