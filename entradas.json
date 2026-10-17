@@ -32524,5 +32524,23 @@
     "odd_mercado": 1.89,
     "timestamp": "2026-10-17T09:43:47.820220-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "698d7ddecb7e_custom_1792149487218_20261017",
+    "fixture_id": "19711717",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Panevėžys",
+    "away": "Banga",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.77,
+    "odd_bano": null,
+    "odd_mercado": 1.97,
+    "timestamp": "2026-10-17T09:44:00.580552-03:00",
+    "resultado": "pendente"
   }
 ]
