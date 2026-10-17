@@ -31318,5 +31318,23 @@
     "odd_mercado": 1.464,
     "timestamp": "2026-10-16T20:41:53.106147-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "c3533b3868d3_custom_1792083627865_20261016",
+    "fixture_id": "19667100",
+    "mercado": "custom_1792083627865",
+    "tipo": "gol_intervalo",
+    "home": "Sport Recife",
+    "away": "Fortaleza",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.1,
+    "odd_bano": null,
+    "odd_mercado": 2.064,
+    "timestamp": "2026-10-16T21:02:58.575662-03:00",
+    "resultado": "pendente"
   }
 ]
