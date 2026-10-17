@@ -32956,5 +32956,23 @@
     "odd_mercado": 1.645,
     "timestamp": "2026-10-17T11:05:07.055014-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b0477bcd0132_custom_1791762189183_20261017",
+    "fixture_id": "19725298",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "Nyíregyháza Spartacus",
+    "away": "Honvéd",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.67,
+    "timestamp": "2026-10-17T11:10:15.415313-03:00",
+    "resultado": "pendente"
   }
 ]
