@@ -34126,5 +34126,23 @@
     "odd_mercado": 1.495,
     "timestamp": "2026-10-17T14:18:21.917465-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "96d1aca8b118_custom_1791762177973_20261017",
+    "fixture_id": "19765665",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Águilas CF",
+    "away": "UD Ibiza",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.85,
+    "timestamp": "2026-10-17T14:23:36.001870-03:00",
+    "resultado": "pendente"
   }
 ]
