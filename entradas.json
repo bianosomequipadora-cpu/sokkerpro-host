@@ -34702,5 +34702,23 @@
     "odd_mercado": 1.93,
     "timestamp": "2026-10-17T20:38:16.781453-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "977e3bdd42f9_custom_1791762177973_20261017",
+    "fixture_id": "19878279",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "UNAN Managua",
+    "away": "San Marcos",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 3.77,
+    "timestamp": "2026-10-17T20:40:27.540205-03:00",
+    "resultado": "pendente"
   }
 ]
