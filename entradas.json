@@ -31354,5 +31354,23 @@
     "odd_mercado": 1.46,
     "timestamp": "2026-10-16T22:35:24.683043-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "1eb7b2a5864a_custom_1790706998863_20261016",
+    "fixture_id": "19768445",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Inter",
+    "away": "Municipal Limeño",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.47,
+    "odd_bano": null,
+    "odd_mercado": 1.496,
+    "timestamp": "2026-10-16T23:20:23.964089-03:00",
+    "resultado": "pendente"
   }
 ]
