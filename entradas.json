@@ -32722,5 +32722,23 @@
     "odd_mercado": 2.152,
     "timestamp": "2026-10-17T10:16:31.778937-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "3a334245f376_custom_1790706998863_20261017",
+    "fixture_id": "19880192",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Keflavík",
+    "away": "KR Reykjavík",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 1.12,
+    "odd_bano": null,
+    "odd_mercado": 1.165,
+    "timestamp": "2026-10-17T10:18:58.678277-03:00",
+    "resultado": "pendente"
   }
 ]
