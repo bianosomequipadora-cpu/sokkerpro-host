@@ -31336,5 +31336,23 @@
     "odd_mercado": 2.064,
     "timestamp": "2026-10-16T21:02:58.575662-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "cc0d813c9d4b_custom_1791762177973_20261016",
+    "fixture_id": "19742541",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Correcaminos UAT",
+    "away": "Dorados",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.46,
+    "timestamp": "2026-10-16T22:35:24.683043-03:00",
+    "resultado": "pendente"
   }
 ]
