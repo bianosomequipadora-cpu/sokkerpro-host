@@ -33856,5 +33856,23 @@
     "odd_mercado": 1.245,
     "timestamp": "2026-10-17T13:22:31.813298-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b121c8970a73_custom_1791762177973_20261017",
+    "fixture_id": "19721191",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Hapoel Tel Aviv",
+    "away": "Ironi Tiberias",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.67,
+    "odd_bano": null,
+    "odd_mercado": 1.85,
+    "timestamp": "2026-10-17T13:22:40.939512-03:00",
+    "resultado": "pendente"
   }
 ]
