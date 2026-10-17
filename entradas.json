@@ -31858,5 +31858,23 @@
     "odd_mercado": 1.395,
     "timestamp": "2026-10-17T06:17:54.143228-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0ad6c38b27a4_custom_1792083627865_20261017",
+    "fixture_id": "19763140",
+    "mercado": "custom_1792083627865",
+    "tipo": "gol_intervalo",
+    "home": "Slovacko U19",
+    "away": "Sigma Olomouc U19",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.35,
+    "timestamp": "2026-10-17T06:19:29.251758-03:00",
+    "resultado": "pendente"
   }
 ]
