@@ -31570,5 +31570,23 @@
     "odd_mercado": 1.344,
     "timestamp": "2026-10-17T02:37:43.914671-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4987ea093863_custom_1791762204509_20261017",
+    "fixture_id": "19719106",
+    "mercado": "custom_1791762204509",
+    "tipo": "escanteio_ht",
+    "home": "Tokyo Verdy",
+    "away": "FC Tokyo",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.344,
+    "timestamp": "2026-10-17T02:37:54.850862-03:00",
+    "resultado": "pendente"
   }
 ]
