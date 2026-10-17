@@ -32236,5 +32236,23 @@
     "odd_mercado": 1.416,
     "timestamp": "2026-10-17T09:21:08.842737-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0e71341e56b7_custom_1792149487218_20261017",
+    "fixture_id": "19786081",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Mladost Lučani U19",
+    "away": "Cukaricki U19",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.256,
+    "timestamp": "2026-10-17T09:21:23.286920-03:00",
+    "resultado": "pendente"
   }
 ]
