@@ -33190,5 +33190,23 @@
     "odd_mercado": 1.31,
     "timestamp": "2026-10-17T11:46:27.220760-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "02313a3af4df_custom_1792149487218_20261017",
+    "fixture_id": "19738028",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Basel II",
+    "away": "Bavois",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.22,
+    "odd_bano": null,
+    "odd_mercado": 1.245,
+    "timestamp": "2026-10-17T11:47:58.767603-03:00",
+    "resultado": "pendente"
   }
 ]
