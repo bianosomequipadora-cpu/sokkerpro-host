@@ -31660,5 +31660,23 @@
     "odd_mercado": 2.045,
     "timestamp": "2026-10-17T02:46:55.654185-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "beb153959757_custom_1791762189183_20261017",
+    "fixture_id": "19719559",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "Vegalta Sendai",
+    "away": "Tokushima Vortis",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 1.645,
+    "timestamp": "2026-10-17T03:45:23.829933-03:00",
+    "resultado": "pendente"
   }
 ]
