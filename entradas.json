@@ -33604,5 +33604,23 @@
     "odd_mercado": 2.01,
     "timestamp": "2026-10-17T12:34:18.465056-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f8be0f29d735_custom_1792083627865_20261017",
+    "fixture_id": "19734240",
+    "mercado": "custom_1792083627865",
+    "tipo": "gol_intervalo",
+    "home": "Blau-Weiß Linz",
+    "away": "Liefering",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.36,
+    "odd_bano": null,
+    "odd_mercado": 1.375,
+    "timestamp": "2026-10-17T12:47:53.957108-03:00",
+    "resultado": "pendente"
   }
 ]
