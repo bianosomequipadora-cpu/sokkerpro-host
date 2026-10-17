@@ -246,6 +246,27 @@
           "valor": 58
         }
       ]
+    },
+    "custom_1792278458579": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⛳️🔥CANTO PRESSÃO🔥⛳️",
+      "minuto_inicio": 31,
+      "minuto_fim": 37,
+      "periodo": 1,
+      "tipo": "escanteio_ht",
+      "stake": 10,
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": "perdendo_ou_empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "dapm_total_orig_min",
+          "operador": "gte",
+          "valor": 1
+        }
+      ]
     }
   }
 }
