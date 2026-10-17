@@ -32740,5 +32740,23 @@
     "odd_mercado": 1.165,
     "timestamp": "2026-10-17T10:18:58.678277-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "60017f3845ef_custom_1792149487218_20261017",
+    "fixture_id": "19724423",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Bravo",
+    "away": "Radomlje",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.1,
+    "odd_bano": null,
+    "odd_mercado": 1.09,
+    "timestamp": "2026-10-17T10:32:35.747365-03:00",
+    "resultado": "pendente"
   }
 ]
