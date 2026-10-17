@@ -34360,5 +34360,23 @@
     "odd_mercado": 1.535,
     "timestamp": "2026-10-17T16:02:33.368938-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c545099959fd_custom_1791762177973_20261017",
+    "fixture_id": "19765657",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Villarreal II",
+    "away": "Teruel",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.504,
+    "timestamp": "2026-10-17T16:02:49.109427-03:00",
+    "resultado": "pendente"
   }
 ]
