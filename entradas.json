@@ -33334,5 +33334,23 @@
     "odd_mercado": 1.75,
     "timestamp": "2026-10-17T12:10:13.857569-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "714247341945_custom_1792149487218_20261017",
+    "fixture_id": "19766752",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Lancaster City",
+    "away": "Leek Town",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.25,
+    "odd_bano": null,
+    "odd_mercado": 1.245,
+    "timestamp": "2026-10-17T12:14:26.409212-03:00",
+    "resultado": "pendente"
   }
 ]
