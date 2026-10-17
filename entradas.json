@@ -34108,5 +34108,23 @@
     "odd_mercado": 2.25,
     "timestamp": "2026-10-17T14:12:06.959994-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "25ea8965b645_custom_1790706998863_20261017",
+    "fixture_id": "19774207",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Cibalia",
+    "away": "Segesta Sisak",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.5,
+    "odd_bano": null,
+    "odd_mercado": 1.495,
+    "timestamp": "2026-10-17T14:18:21.917465-03:00",
+    "resultado": "pendente"
   }
 ]
