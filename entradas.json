@@ -32092,5 +32092,23 @@
     "odd_mercado": 1.425,
     "timestamp": "2026-10-17T08:22:36.016918-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "2ecf37d245e7_custom_1790706998863_20261017",
+    "fixture_id": "19822111",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Aurrerá Vitoria",
+    "away": "Real Sociedad III",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.42,
+    "odd_bano": null,
+    "odd_mercado": 1.43,
+    "timestamp": "2026-10-17T08:22:49.496174-03:00",
+    "resultado": "pendente"
   }
 ]
