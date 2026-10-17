@@ -34162,5 +34162,23 @@
     "odd_mercado": 1.45,
     "timestamp": "2026-10-17T14:25:24.458544-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "35c979ff9aa1_custom_1790706998863_20261017",
+    "fixture_id": "19842955",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Orduspor 1967",
+    "away": "Karadeniz Ereğli BSK",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.4,
+    "odd_bano": null,
+    "odd_mercado": 1.392,
+    "timestamp": "2026-10-17T14:25:46.065875-03:00",
+    "resultado": "pendente"
   }
 ]
