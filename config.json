@@ -359,7 +359,7 @@
       "ativo": true,
       "notificar": true,
       "nome": "⚽️👽OVER GOL PARTIDA(FT)👽⚽️",
-      "minuto_inicio": 15,
+      "minuto_inicio": 30,
       "minuto_fim": 77,
       "periodo": 3,
       "tipo": "over_gol",
