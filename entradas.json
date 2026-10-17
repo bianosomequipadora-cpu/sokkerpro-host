@@ -34000,5 +34000,23 @@
     "odd_mercado": 1.45,
     "timestamp": "2026-10-17T13:49:04.084509-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "ea5b35275c8b_custom_1791762177973_20261017",
+    "fixture_id": "19721190",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Maccabi Netanya",
+    "away": "Ironi Kiryat Shmona",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.555,
+    "timestamp": "2026-10-17T13:49:20.624868-03:00",
+    "resultado": "pendente"
   }
 ]
