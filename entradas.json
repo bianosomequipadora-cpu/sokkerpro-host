@@ -32182,5 +32182,23 @@
     "odd_mercado": 1.29,
     "timestamp": "2026-10-17T09:15:45.056223-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d533afd4816a_custom_1792149487218_20261017",
+    "fixture_id": "19866916",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Al Arabi SC",
+    "away": "Homs Al Fidaa",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.45,
+    "timestamp": "2026-10-17T09:17:27.861281-03:00",
+    "resultado": "pendente"
   }
 ]
