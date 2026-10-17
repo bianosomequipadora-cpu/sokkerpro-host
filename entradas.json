@@ -34414,5 +34414,23 @@
     "odd_mercado": 1.27,
     "timestamp": "2026-10-17T16:22:02.545899-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f7cf4ec22be1_custom_1790706998863_20261017",
+    "fixture_id": "19890439",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Cacahuatique U20",
+    "away": "Alianza U20",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.25,
+    "timestamp": "2026-10-17T16:25:33.620182-03:00",
+    "resultado": "pendente"
   }
 ]
