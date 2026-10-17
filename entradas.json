@@ -33622,5 +33622,23 @@
     "odd_mercado": 1.375,
     "timestamp": "2026-10-17T12:47:53.957108-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "621b3f57bc94_custom_1791762189183_20261017",
+    "fixture_id": "19722142",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "Brentford",
+    "away": "Liverpool",
+    "message_id": 0,
+    "extra_val": 13,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 2.07,
+    "timestamp": "2026-10-17T12:53:56.386771-03:00",
+    "resultado": "pendente"
   }
 ]
