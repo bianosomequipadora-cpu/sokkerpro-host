@@ -32020,5 +32020,23 @@
     "odd_mercado": 1.47,
     "timestamp": "2026-10-17T07:35:42.872340-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "d9f86678a828_custom_1792149487218_20261017",
+    "fixture_id": "19854673",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Levadiakos U19",
+    "away": "Volos NFC U19",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.02,
+    "timestamp": "2026-10-17T08:15:24.479787-03:00",
+    "resultado": "pendente"
   }
 ]
