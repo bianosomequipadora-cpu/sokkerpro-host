@@ -32578,5 +32578,23 @@
     "odd_mercado": 1.195,
     "timestamp": "2026-10-17T09:54:23.737824-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4419d31fa651_custom_1790706998863_20261017",
+    "fixture_id": "19844433",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Silifke Belediyespor",
+    "away": "Karaköprü Belediyespor",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 3.4,
+    "odd_bano": null,
+    "odd_mercado": 3.208,
+    "timestamp": "2026-10-17T09:57:37.476004-03:00",
+    "resultado": "pendente"
   }
 ]
