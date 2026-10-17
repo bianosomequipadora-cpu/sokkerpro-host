@@ -31624,5 +31624,23 @@
     "odd_mercado": 2.01,
     "timestamp": "2026-10-17T02:42:00.879932-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4b3532850ce8_custom_1791762189183_20261017",
+    "fixture_id": "19883947",
+    "mercado": "custom_1791762189183",
+    "tipo": "escanteio_ft",
+    "home": "Broadmeadow Magic",
+    "away": "APIA Leichhardt Tigers",
+    "message_id": 0,
+    "extra_val": 13,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.85,
+    "timestamp": "2026-10-17T02:45:28.819468-03:00",
+    "resultado": "pendente"
   }
 ]
