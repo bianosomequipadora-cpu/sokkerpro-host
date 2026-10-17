@@ -32272,5 +32272,23 @@
     "odd_mercado": 1.47,
     "timestamp": "2026-10-17T09:23:12.579508-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "cb02071268e1_custom_1792149487218_20261017",
+    "fixture_id": "19771381",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Szegedi VSE",
+    "away": "Hódmezővásárhely",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": 1.3,
+    "odd_bano": null,
+    "odd_mercado": 1.336,
+    "timestamp": "2026-10-17T09:23:22.112328-03:00",
+    "resultado": "pendente"
   }
 ]
