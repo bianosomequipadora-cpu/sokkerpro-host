@@ -31768,5 +31768,23 @@
     "odd_mercado": 1.32,
     "timestamp": "2026-10-17T05:25:26.944655-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f205f32c5e52_custom_1791761873738_20261017",
+    "fixture_id": "19792767",
+    "mercado": "custom_1791761873738",
+    "tipo": "escanteio_ht",
+    "home": "Ashdod U19",
+    "away": "Hapoel Kfar Saba U19",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.555,
+    "timestamp": "2026-10-17T05:31:42.385016-03:00",
+    "resultado": "pendente"
   }
 ]
