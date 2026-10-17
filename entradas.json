@@ -33154,5 +33154,23 @@
     "odd_mercado": 1.3,
     "timestamp": "2026-10-17T11:33:18.270507-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "bf1870f277d2_custom_1792149487218_20261017",
+    "fixture_id": "19882509",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Dubai United U23",
+    "away": "Al Dhafra U23",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.3,
+    "odd_bano": null,
+    "odd_mercado": 1.3,
+    "timestamp": "2026-10-17T11:33:28.935661-03:00",
+    "resultado": "pendente"
   }
 ]
