@@ -32452,5 +32452,23 @@
     "odd_mercado": 2.25,
     "timestamp": "2026-10-17T09:38:52.814794-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b79c279b4f7a_custom_1791762177973_20261017",
+    "fixture_id": "19724526",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Arsenal Tivat",
+    "away": "Mornar",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 2.3,
+    "odd_bano": null,
+    "odd_mercado": 3.04,
+    "timestamp": "2026-10-17T09:39:25.413222-03:00",
+    "resultado": "pendente"
   }
 ]
