@@ -34504,5 +34504,23 @@
     "odd_mercado": 2.075,
     "timestamp": "2026-10-17T16:45:27.473584-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "a27a22f9b6dc_custom_1791762177973_20261017",
+    "fixture_id": "19745732",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Guaraní",
+    "away": "Nacional Asunción",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.3,
+    "odd_bano": null,
+    "odd_mercado": 2.69,
+    "timestamp": "2026-10-17T17:38:13.092871-03:00",
+    "resultado": "pendente"
   }
 ]
