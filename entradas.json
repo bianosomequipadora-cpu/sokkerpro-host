@@ -32128,5 +32128,23 @@
     "odd_mercado": 1.256,
     "timestamp": "2026-10-17T08:24:22.635276-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0d298cc5b5ef_custom_1790706998863_20261017",
+    "fixture_id": "19771378",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Vasas II",
+    "away": "Békéscsaba",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 1.33,
+    "odd_bano": null,
+    "odd_mercado": 1.336,
+    "timestamp": "2026-10-17T08:25:29.058871-03:00",
+    "resultado": "pendente"
   }
 ]
