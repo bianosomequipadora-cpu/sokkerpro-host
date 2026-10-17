@@ -31678,5 +31678,23 @@
     "odd_mercado": 1.645,
     "timestamp": "2026-10-17T03:45:23.829933-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "05abdad6d172_custom_1792083627865_20261017",
+    "fixture_id": "19854650",
+    "mercado": "custom_1792083627865",
+    "tipo": "gol_intervalo",
+    "home": "Kifisia U19",
+    "away": "Aris U19",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.61,
+    "odd_bano": null,
+    "odd_mercado": 1.57,
+    "timestamp": "2026-10-17T04:53:03.635255-03:00",
+    "resultado": "pendente"
   }
 ]
