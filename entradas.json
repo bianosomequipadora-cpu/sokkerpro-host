@@ -32308,5 +32308,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-17T09:26:32.967432-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "76c7a84697e8_custom_1792149487218_20261017",
+    "fixture_id": "19869700",
+    "mercado": "custom_1792149487218",
+    "tipo": "over_gol",
+    "home": "Axiopolis",
+    "away": "Sporting Lieşti",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-17T09:31:37.319752-03:00",
+    "resultado": "pendente"
   }
 ]
