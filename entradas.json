@@ -34936,5 +34936,23 @@
     "odd_mercado": 1.195,
     "timestamp": "2026-10-17T23:16:47.638872-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4b0a4d24fbc1_custom_1790706998863_20261017",
+    "fixture_id": "19715210",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Toluca",
+    "away": "Atlético San Luis",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-17T23:21:53.407317-03:00",
+    "resultado": "pendente"
   }
 ]
