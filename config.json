@@ -5,7 +5,7 @@
       "ativo": true,
       "notificar": true,
       "nome": "⚽️💥OVER 0.5 GOL PARTIDA💥⚽️ ",
-      "minuto_inicio": 55,
+      "minuto_inicio": 65,
       "minuto_fim": 72,
       "periodo": 2,
       "tipo": "over_gol",
@@ -36,7 +36,7 @@
       "ativo": true,
       "notificar": true,
       "nome": "⚽️🛜OVER GOL 2°TEMPO🛜⚽️",
-      "minuto_inicio": 60,
+      "minuto_inicio": 66,
       "minuto_fim": 72,
       "periodo": 2,
       "tipo": "over_gol",
@@ -208,42 +208,6 @@
           "campo": "posse_bola_min",
           "operador": "gte",
           "valor": 58
-        }
-      ]
-    },
-    "custom_1792278458579": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⛳️🔥ESCANTEIO PRESSÃO HT🔥⛳️",
-      "minuto_inicio": 31,
-      "minuto_fim": 37,
-      "periodo": 1,
-      "tipo": "escanteio_ht",
-      "stake": 10,
-      "placar_valido": "",
-      "criterios": {
-        "situacao_favorito": "perdendo_ou_empatando"
-      },
-      "criterios_api": [
-        {
-          "campo": "dapm_total_orig_min",
-          "operador": "gte",
-          "valor": 1
-        },
-        {
-          "campo": "diferenca_gols_fav_max",
-          "operador": "lte",
-          "valor": 1
-        },
-        {
-          "campo": "max_red_card_fav",
-          "operador": "lte",
-          "valor": 0
-        },
-        {
-          "campo": "escanteios_5m",
-          "operador": "lte",
-          "valor": 0
         }
       ]
     },
