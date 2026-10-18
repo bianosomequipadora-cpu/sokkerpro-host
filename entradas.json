@@ -35440,5 +35440,23 @@
     "odd_mercado": 1.625,
     "timestamp": "2026-10-18T08:30:39.919571-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "58d1439593b0_custom_1792289705970_20261018",
+    "fixture_id": "19674595",
+    "mercado": "custom_1792289705970",
+    "tipo": "escanteio_ht",
+    "home": "Beijing Guoan",
+    "away": "Qingdao West Coast",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.455,
+    "timestamp": "2026-10-18T08:35:26.909521-03:00",
+    "resultado": "pendente"
   }
 ]
