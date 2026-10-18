@@ -36142,5 +36142,23 @@
     "odd_mercado": 1.75,
     "timestamp": "2026-10-18T13:47:15.036444-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "2836ba3180d3_custom_1792289705970_20261018",
+    "fixture_id": "19888790",
+    "mercado": "custom_1792289705970",
+    "tipo": "escanteio_ht",
+    "home": "Sint-Truiden",
+    "away": "Lommel SK",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.85,
+    "odd_bano": null,
+    "odd_mercado": 2.192,
+    "timestamp": "2026-10-18T14:07:08.784128-03:00",
+    "resultado": "pendente"
   }
 ]
