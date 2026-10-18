@@ -35620,5 +35620,23 @@
     "odd_mercado": 1.456,
     "timestamp": "2026-10-18T09:47:25.099216-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "0428ebdcb82f_custom_1790213687442_20261018",
+    "fixture_id": "19888084",
+    "mercado": "custom_1790213687442",
+    "tipo": "over_gol",
+    "home": "Nesebar",
+    "away": "CSKA Sofia",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.28,
+    "odd_bano": null,
+    "odd_mercado": 1.27,
+    "timestamp": "2026-10-18T10:26:34.763677-03:00",
+    "resultado": "pendente"
   }
 ]
