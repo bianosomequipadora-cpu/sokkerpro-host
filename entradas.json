@@ -36340,5 +36340,23 @@
     "odd_mercado": 2.48,
     "timestamp": "2026-10-18T16:40:31.678519-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "26a463174bf9_custom_1791761808552_20261018",
+    "fixture_id": "19636806",
+    "mercado": "custom_1791761808552",
+    "tipo": "escanteio_ft",
+    "home": "Deportivo Morón",
+    "away": "CA Mitre",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.82,
+    "odd_bano": null,
+    "odd_mercado": 1.83,
+    "timestamp": "2026-10-18T16:58:26.460330-03:00",
+    "resultado": "pendente"
   }
 ]
