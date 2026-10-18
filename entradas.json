@@ -36070,5 +36070,23 @@
     "odd_mercado": 2.24,
     "timestamp": "2026-10-18T13:08:25.988017-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "7ce293690c39_custom_1790706998863_20261018",
+    "fixture_id": "19650727",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Hønefoss",
+    "away": "Junkeren",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.28,
+    "odd_bano": null,
+    "odd_mercado": 1.29,
+    "timestamp": "2026-10-18T13:24:11.308665-03:00",
+    "resultado": "pendente"
   }
 ]
