@@ -35458,5 +35458,23 @@
     "odd_mercado": 1.455,
     "timestamp": "2026-10-18T08:35:26.909521-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b8b6396e629a_custom_1791761808552_20261018",
+    "fixture_id": "19765284",
+    "mercado": "custom_1791761808552",
+    "tipo": "escanteio_ft",
+    "home": "CD Coria",
+    "away": "Athletic Club II",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": 1.85,
+    "odd_bano": null,
+    "odd_mercado": 1.82,
+    "timestamp": "2026-10-18T08:42:05.879574-03:00",
+    "resultado": "pendente"
   }
 ]
