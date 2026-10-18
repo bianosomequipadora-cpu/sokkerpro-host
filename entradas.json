@@ -35224,5 +35224,23 @@
     "odd_mercado": 1.464,
     "timestamp": "2026-10-18T05:48:44.458503-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5c7438b210ad_custom_1792289705970_20261018",
+    "fixture_id": "19732276",
+    "mercado": "custom_1792289705970",
+    "tipo": "escanteio_ht",
+    "home": "Viktoria Žižkov",
+    "away": "Táborsko",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.408,
+    "timestamp": "2026-10-18T05:48:58.139366-03:00",
+    "resultado": "pendente"
   }
 ]
