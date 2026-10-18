@@ -35746,5 +35746,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-18T11:29:35.238283-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7ddb83288a0d_custom_1791761808552_20261018",
+    "fixture_id": "19716323",
+    "mercado": "custom_1791761808552",
+    "tipo": "escanteio_ft",
+    "home": "Zagłębie Lubin",
+    "away": "Jagiellonia Białystok",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 2.25,
+    "odd_bano": null,
+    "odd_mercado": 2.25,
+    "timestamp": "2026-10-18T11:33:52.408169-03:00",
+    "resultado": "pendente"
   }
 ]
