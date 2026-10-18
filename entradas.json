@@ -36178,5 +36178,23 @@
     "odd_mercado": 1.525,
     "timestamp": "2026-10-18T14:16:48.754134-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "b5c2de7df31a_custom_1792289705970_20261018",
+    "fixture_id": "19744558",
+    "mercado": "custom_1792289705970",
+    "tipo": "escanteio_ht",
+    "home": "Meppen",
+    "away": "Havelse",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.285,
+    "timestamp": "2026-10-18T15:03:19.325481-03:00",
+    "resultado": "pendente"
   }
 ]
