@@ -35242,5 +35242,23 @@
     "odd_mercado": 1.408,
     "timestamp": "2026-10-18T05:48:58.139366-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "b2f5ff2afe7e_custom_1792289705970_20261018",
+    "fixture_id": "19734233",
+    "mercado": "custom_1792289705970",
+    "tipo": "escanteio_ht",
+    "home": "Sturm Graz II",
+    "away": "Kapfenberger SV",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.395,
+    "timestamp": "2026-10-18T06:03:46.702806-03:00",
+    "resultado": "pendente"
   }
 ]
