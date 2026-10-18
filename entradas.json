@@ -35386,5 +35386,23 @@
     "odd_mercado": 1.525,
     "timestamp": "2026-10-18T07:51:59.060320-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "9409c9b28307_custom_1792289705970_20261018",
+    "fixture_id": "19890155",
+    "mercado": "custom_1792289705970",
+    "tipo": "escanteio_ht",
+    "home": "Olimpia Res.",
+    "away": "2 de Mayo Res.",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 1.635,
+    "timestamp": "2026-10-18T08:05:37.201383-03:00",
+    "resultado": "pendente"
   }
 ]
