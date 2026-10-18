@@ -34990,5 +34990,23 @@
     "odd_mercado": 1.31,
     "timestamp": "2026-10-18T02:25:22.766059-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6b8fa111012b_custom_1791761873738_20261018",
+    "fixture_id": "19719102",
+    "mercado": "custom_1791761873738",
+    "tipo": "escanteio_ht",
+    "home": "Fagiano Okayama",
+    "away": "Vissel Kobe",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.36,
+    "timestamp": "2026-10-18T02:33:07.720153-03:00",
+    "resultado": "pendente"
   }
 ]
