@@ -34774,5 +34774,23 @@
     "odd_mercado": 1.87,
     "timestamp": "2026-10-17T21:45:29.078052-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0663def00ab1_custom_1792278039737_20261017",
+    "fixture_id": "19715213",
+    "mercado": "custom_1792278039737",
+    "tipo": "escanteio_ft",
+    "home": "Guadalajara",
+    "away": "Tigres UANL",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.304,
+    "timestamp": "2026-10-17T21:55:26.624036-03:00",
+    "resultado": "pendente"
   }
 ]
