@@ -35728,5 +35728,23 @@
     "odd_mercado": 1.495,
     "timestamp": "2026-10-18T11:26:47.466272-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a7f323b2c04d_custom_1790706998863_20261018",
+    "fixture_id": "19748630",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Kayserispor",
+    "away": "Batman Petrolspor",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-18T11:29:35.238283-03:00",
+    "resultado": "pendente"
   }
 ]
