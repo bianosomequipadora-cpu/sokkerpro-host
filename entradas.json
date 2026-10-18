@@ -35890,5 +35890,23 @@
     "odd_mercado": 1.715,
     "timestamp": "2026-10-18T12:22:34.986093-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "cd6b8caae0c7_custom_1792289705970_20261018",
+    "fixture_id": "19715911",
+    "mercado": "custom_1792289705970",
+    "tipo": "escanteio_ht",
+    "home": "MVV Maastricht",
+    "away": "Heracles Almelo",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.81,
+    "timestamp": "2026-10-18T12:22:43.077252-03:00",
+    "resultado": "pendente"
   }
 ]
