@@ -35926,5 +35926,23 @@
     "odd_mercado": 1.89,
     "timestamp": "2026-10-18T12:22:54.863234-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9f6c60a9ecd0_custom_1790706998863_20261018",
+    "fixture_id": "19888009",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Fátima",
+    "away": "Academico Viseu",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.75,
+    "odd_bano": null,
+    "odd_mercado": 1.89,
+    "timestamp": "2026-10-18T12:23:03.203514-03:00",
+    "resultado": "pendente"
   }
 ]
