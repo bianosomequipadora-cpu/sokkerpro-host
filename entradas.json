@@ -35080,5 +35080,23 @@
     "odd_mercado": 1.655,
     "timestamp": "2026-10-18T04:42:07.067415-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "fab87705dccc_custom_1791761808552_20261018",
+    "fixture_id": "19720136",
+    "mercado": "custom_1791761808552",
+    "tipo": "escanteio_ft",
+    "home": "Parceiro Nagano",
+    "away": "Matsumoto Yamaga",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.568,
+    "timestamp": "2026-10-18T04:46:44.281495-03:00",
+    "resultado": "pendente"
   }
 ]
