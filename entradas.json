@@ -36106,5 +36106,23 @@
     "odd_mercado": 1.43,
     "timestamp": "2026-10-18T13:35:01.505417-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "83e9e3294ae1_custom_1792289705970_20261018",
+    "fixture_id": "19888787",
+    "mercado": "custom_1792289705970",
+    "tipo": "escanteio_ht",
+    "home": "K. Beerschot V.A.",
+    "away": "Anderlecht",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 2.3,
+    "odd_bano": null,
+    "odd_mercado": 2.96,
+    "timestamp": "2026-10-18T13:43:00.906162-03:00",
+    "resultado": "pendente"
   }
 ]
