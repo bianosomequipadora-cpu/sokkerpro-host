@@ -34810,5 +34810,23 @@
     "odd_mercado": 1.565,
     "timestamp": "2026-10-17T21:58:22.254780-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "75635967b608_custom_1792278458579_20261017",
+    "fixture_id": "19875283",
+    "mercado": "custom_1792278458579",
+    "tipo": "escanteio_ht",
+    "home": "Irapuato",
+    "away": "Zacatepec",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.02,
+    "odd_bano": null,
+    "odd_mercado": 1.975,
+    "timestamp": "2026-10-17T22:36:49.070492-03:00",
+    "resultado": "pendente"
   }
 ]
