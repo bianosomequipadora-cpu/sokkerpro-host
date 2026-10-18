@@ -36160,5 +36160,23 @@
     "odd_mercado": 2.192,
     "timestamp": "2026-10-18T14:07:08.784128-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f83cbb201181_custom_1792289705970_20261018",
+    "fixture_id": "19789071",
+    "mercado": "custom_1792289705970",
+    "tipo": "escanteio_ht",
+    "home": "JS Kabylie",
+    "away": "US Biskra",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.525,
+    "timestamp": "2026-10-18T14:16:48.754134-03:00",
+    "resultado": "pendente"
   }
 ]
