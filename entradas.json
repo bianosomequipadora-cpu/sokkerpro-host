@@ -36322,5 +36322,23 @@
     "odd_mercado": 1.37,
     "timestamp": "2026-10-18T16:33:19.171744-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "7a0f471d791a_custom_1791761873738_20261018",
+    "fixture_id": "19886768",
+    "mercado": "custom_1791761873738",
+    "tipo": "escanteio_ht",
+    "home": "Douglas Haig",
+    "away": "El Linqueño",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.48,
+    "timestamp": "2026-10-18T16:40:31.678519-03:00",
+    "resultado": "pendente"
   }
 ]
