@@ -36304,5 +36304,23 @@
     "odd_mercado": 1.352,
     "timestamp": "2026-10-18T16:26:55.736420-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f2cb1f920056_custom_1791761873738_20261018",
+    "fixture_id": "19667106",
+    "mercado": "custom_1791761873738",
+    "tipo": "escanteio_ht",
+    "home": "São Bernardo",
+    "away": "Criciúma",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.37,
+    "timestamp": "2026-10-18T16:33:19.171744-03:00",
+    "resultado": "pendente"
   }
 ]
