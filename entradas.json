@@ -35656,5 +35656,23 @@
     "odd_mercado": 1.27,
     "timestamp": "2026-10-18T10:26:44.727311-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "aa7f412e33e2_custom_1790706998863_20261018",
+    "fixture_id": "19880961",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "SalPa",
+    "away": "OLS",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.304,
+    "timestamp": "2026-10-18T10:29:41.250198-03:00",
+    "resultado": "pendente"
   }
 ]
