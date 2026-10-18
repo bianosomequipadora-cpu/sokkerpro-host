@@ -36232,5 +36232,23 @@
     "odd_mercado": 1.77,
     "timestamp": "2026-10-18T15:49:10.159759-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f93d1188a8f2_custom_1792278039737_20261018",
+    "fixture_id": "19721192",
+    "mercado": "custom_1792278039737",
+    "tipo": "escanteio_ft",
+    "home": "Hapoel Be'er Sheva",
+    "away": "Hapoel Jerusalem",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.645,
+    "timestamp": "2026-10-18T16:00:33.674910-03:00",
+    "resultado": "pendente"
   }
 ]
