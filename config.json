@@ -3,7 +3,7 @@
   "mercados": {
     "custom_1790213687442": {
       "ativo": true,
-      "notificar": false,
+      "notificar": true,
       "nome": "⚽️💥OVER 0.5 GOL PARTIDA💥⚽️ ",
       "minuto_inicio": 65,
       "minuto_fim": 72,
@@ -34,7 +34,7 @@
     },
     "custom_1790706998863": {
       "ativo": true,
-      "notificar": false,
+      "notificar": true,
       "nome": "⚽️🛜OVER GOL 2°TEMPO🛜⚽️",
       "minuto_inicio": 66,
       "minuto_fim": 72,
