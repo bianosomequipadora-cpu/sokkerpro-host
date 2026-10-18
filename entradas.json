@@ -35350,5 +35350,23 @@
     "odd_mercado": 1.544,
     "timestamp": "2026-10-18T07:28:33.732074-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "d1ecf79a6d09_custom_1792289705970_20261018",
+    "fixture_id": "19790729",
+    "mercado": "custom_1792289705970",
+    "tipo": "escanteio_ht",
+    "home": "Rudeš U19",
+    "away": "Trnje U19",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.625,
+    "timestamp": "2026-10-18T07:35:28.501999-03:00",
+    "resultado": "pendente"
   }
 ]
