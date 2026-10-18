@@ -34882,5 +34882,23 @@
     "odd_mercado": 2.112,
     "timestamp": "2026-10-17T22:40:27.028838-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f4cc2a517a1a_custom_1791762177973_20261017",
+    "fixture_id": "19875251",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Lobos ULMX",
+    "away": "Cordobés",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 2.0,
+    "odd_bano": null,
+    "odd_mercado": 2.075,
+    "timestamp": "2026-10-17T22:41:55.083315-03:00",
+    "resultado": "pendente"
   }
 ]
