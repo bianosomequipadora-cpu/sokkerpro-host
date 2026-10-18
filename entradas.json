@@ -36358,5 +36358,23 @@
     "odd_mercado": 1.83,
     "timestamp": "2026-10-18T16:58:26.460330-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "bcf1566343c8_custom_1791761808552_20261018",
+    "fixture_id": "19888018",
+    "mercado": "custom_1791761808552",
+    "tipo": "escanteio_ft",
+    "home": "Paredes",
+    "away": "Famalicão",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.65,
+    "odd_bano": null,
+    "odd_mercado": 1.68,
+    "timestamp": "2026-10-18T17:13:17.100381-03:00",
+    "resultado": "pendente"
   }
 ]
