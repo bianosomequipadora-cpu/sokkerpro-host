@@ -35098,5 +35098,23 @@
     "odd_mercado": 1.568,
     "timestamp": "2026-10-18T04:46:44.281495-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "302e5a47c441_custom_1792278458579_20261018",
+    "fixture_id": "19648041",
+    "mercado": "custom_1792278458579",
+    "tipo": "escanteio_ht",
+    "home": "Pohang Steelers",
+    "away": "Anyang",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 3.21,
+    "timestamp": "2026-10-18T05:08:01.260388-03:00",
+    "resultado": "pendente"
   }
 ]
