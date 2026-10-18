@@ -36016,5 +36016,23 @@
     "odd_mercado": 1.475,
     "timestamp": "2026-10-18T12:47:37.224969-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "de740b150b8b_custom_1791761808552_20261018",
+    "fixture_id": "19888021",
+    "mercado": "custom_1791761808552",
+    "tipo": "escanteio_ft",
+    "home": "Salgueiros",
+    "away": "Estoril",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 2.3,
+    "odd_bano": null,
+    "odd_mercado": 2.225,
+    "timestamp": "2026-10-18T12:49:27.406170-03:00",
+    "resultado": "pendente"
   }
 ]
