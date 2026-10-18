@@ -35710,5 +35710,23 @@
     "odd_mercado": 1.43,
     "timestamp": "2026-10-18T10:57:43.754238-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "3160f24af3ef_custom_1790706998863_20261018",
+    "fixture_id": "19896375",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Benjamin Aceval",
+    "away": "Sol de América",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.45,
+    "odd_bano": null,
+    "odd_mercado": 1.495,
+    "timestamp": "2026-10-18T11:26:47.466272-03:00",
+    "resultado": "pendente"
   }
 ]
