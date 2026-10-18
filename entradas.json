@@ -34900,5 +34900,23 @@
     "odd_mercado": 2.075,
     "timestamp": "2026-10-17T22:41:55.083315-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "8cf1c0d55022_custom_1791762177973_20261017",
+    "fixture_id": "19759276",
+    "mercado": "custom_1791762177973",
+    "tipo": "escanteio_ht",
+    "home": "Plaza Amador",
+    "away": "Árabe Unido",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.896,
+    "timestamp": "2026-10-17T23:07:55.060681-03:00",
+    "resultado": "pendente"
   }
 ]
