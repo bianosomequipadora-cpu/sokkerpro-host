@@ -36484,5 +36484,23 @@
     "odd_mercado": 1.67,
     "timestamp": "2026-10-18T17:50:45.423257-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "59b2feb7c536_custom_1792355596919_20261018",
+    "fixture_id": "19622099",
+    "mercado": "custom_1792355596919",
+    "tipo": "escanteio_ht",
+    "home": "Birmingham Legion",
+    "away": "Loudoun United",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.6,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-10-18T18:40:27.163936-03:00",
+    "resultado": "pendente"
   }
 ]
