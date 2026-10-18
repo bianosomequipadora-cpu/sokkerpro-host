@@ -35602,5 +35602,23 @@
     "odd_mercado": 2.85,
     "timestamp": "2026-10-18T09:38:05.782537-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f841797298d3_custom_1792289705970_20261018",
+    "fixture_id": "19872921",
+    "mercado": "custom_1792289705970",
+    "tipo": "escanteio_ht",
+    "home": "Công an Hà Nội",
+    "away": "Hà Nội",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.456,
+    "timestamp": "2026-10-18T09:47:25.099216-03:00",
+    "resultado": "pendente"
   }
 ]
