@@ -34954,5 +34954,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-17T23:21:53.407317-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "3ce12f2696d2_custom_1792278458579_20261018",
+    "fixture_id": "19883934",
+    "mercado": "custom_1792278458579",
+    "tipo": "escanteio_ht",
+    "home": "Sydney United 58 FC",
+    "away": "Canberra FC",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.525,
+    "timestamp": "2026-10-18T01:38:06.329258-03:00",
+    "resultado": "pendente"
   }
 ]
