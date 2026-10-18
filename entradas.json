@@ -36088,5 +36088,23 @@
     "odd_mercado": 1.29,
     "timestamp": "2026-10-18T13:24:11.308665-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "e77c963d9889_custom_1790706998863_20261018",
+    "fixture_id": "19854375",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Plateau United",
+    "away": "Sporting Lagos",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 1.42,
+    "odd_bano": null,
+    "odd_mercado": 1.43,
+    "timestamp": "2026-10-18T13:35:01.505417-03:00",
+    "resultado": "pendente"
   }
 ]
