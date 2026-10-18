@@ -36124,5 +36124,23 @@
     "odd_mercado": 2.96,
     "timestamp": "2026-10-18T13:43:00.906162-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "2ef097a2fdc3_custom_1792289705970_20261018",
+    "fixture_id": "19777885",
+    "mercado": "custom_1792289705970",
+    "tipo": "escanteio_ht",
+    "home": "Omonia 29is Maiou",
+    "away": "Anorthosis",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 1.75,
+    "timestamp": "2026-10-18T13:47:15.036444-03:00",
+    "resultado": "pendente"
   }
 ]
