@@ -35116,5 +35116,23 @@
     "odd_mercado": 3.21,
     "timestamp": "2026-10-18T05:08:01.260388-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "bff8f6c73965_custom_1790706998863_20261018",
+    "fixture_id": "19883927",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Queensland Lions",
+    "away": "South Hobart",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.14,
+    "odd_bano": null,
+    "odd_mercado": 1.15,
+    "timestamp": "2026-10-18T05:26:40.894707-03:00",
+    "resultado": "pendente"
   }
 ]
