@@ -36394,5 +36394,23 @@
     "odd_mercado": 1.41,
     "timestamp": "2026-10-18T17:35:29.339530-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9a21b0f706af_custom_1792289705970_20261018",
+    "fixture_id": "19667655",
+    "mercado": "custom_1792289705970",
+    "tipo": "escanteio_ht",
+    "home": "Deportes Santa Cruz",
+    "away": "Antofagasta",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.504,
+    "timestamp": "2026-10-18T17:36:57.061739-03:00",
+    "resultado": "pendente"
   }
 ]
