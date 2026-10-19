@@ -36826,5 +36826,23 @@
     "odd_mercado": 1.9,
     "timestamp": "2026-10-19T13:35:36.122410-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "578f656c130d_custom_1792355591468_20261019",
+    "fixture_id": "19668251",
+    "mercado": "custom_1792355591468",
+    "tipo": "escanteio_ft",
+    "home": "Tallinna Kalev",
+    "away": "Levadia II",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.7,
+    "odd_bano": null,
+    "odd_mercado": 1.685,
+    "timestamp": "2026-10-19T13:40:41.852944-03:00",
+    "resultado": "pendente"
   }
 ]
