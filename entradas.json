@@ -36610,5 +36610,23 @@
     "odd_mercado": 1.62,
     "timestamp": "2026-10-18T19:47:10.054319-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "cccdab0410ee_custom_1792355596919_20261018",
+    "fixture_id": "19725402",
+    "mercado": "custom_1792355596919",
+    "tipo": "escanteio_ht",
+    "home": "Municipal",
+    "away": "Guastatoya",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.416,
+    "timestamp": "2026-10-18T21:45:32.925124-03:00",
+    "resultado": "pendente"
   }
 ]
