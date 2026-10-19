@@ -36898,5 +36898,23 @@
     "odd_mercado": 1.53,
     "timestamp": "2026-10-19T15:35:32.492844-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "04a98ce17b63_custom_1792355596919_20261019",
+    "fixture_id": "19767837",
+    "mercado": "custom_1792355596919",
+    "tipo": "escanteio_ht",
+    "home": "Leixões U23",
+    "away": "Estoril U23",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.82,
+    "odd_bano": null,
+    "odd_mercado": 1.9,
+    "timestamp": "2026-10-19T15:37:06.665180-03:00",
+    "resultado": "pendente"
   }
 ]
