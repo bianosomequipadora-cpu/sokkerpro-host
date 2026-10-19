@@ -37006,5 +37006,23 @@
     "odd_mercado": 1.86,
     "timestamp": "2026-10-19T17:11:49.820514-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "30a09b45f3c8_custom_1790706998863_20261019",
+    "fixture_id": "19880197",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Fram",
+    "away": "ÍA",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 1.4,
+    "odd_bano": null,
+    "odd_mercado": 1.38,
+    "timestamp": "2026-10-19T17:43:06.444144-03:00",
+    "resultado": "pendente"
   }
 ]
