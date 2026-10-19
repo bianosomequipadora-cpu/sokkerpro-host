@@ -36790,5 +36790,23 @@
     "odd_mercado": 1.86,
     "timestamp": "2026-10-19T13:06:51.970008-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "97ce3fb23531_custom_1792355610445_20261019",
+    "fixture_id": "19720818",
+    "mercado": "custom_1792355610445",
+    "tipo": "escanteio_ht",
+    "home": "Hapoel Kfar Shalem",
+    "away": "Hapoel Acre",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.53,
+    "timestamp": "2026-10-19T13:33:17.580612-03:00",
+    "resultado": "pendente"
   }
 ]
