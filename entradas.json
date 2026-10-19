@@ -36754,5 +36754,23 @@
     "odd_mercado": 1.395,
     "timestamp": "2026-10-19T11:31:50.103707-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "093c65a15f17_custom_1792356965229_20261019",
+    "fixture_id": "19896135",
+    "mercado": "custom_1792356965229",
+    "tipo": "escanteio_ht",
+    "home": "Azazga",
+    "away": "CR Béni Thour",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 3.04,
+    "timestamp": "2026-10-19T11:41:50.327095-03:00",
+    "resultado": "pendente"
   }
 ]
