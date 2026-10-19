@@ -36718,5 +36718,23 @@
     "odd_mercado": 1.7,
     "timestamp": "2026-10-19T09:40:28.929137-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "093c65a15f17_custom_1792357237393_20261019",
+    "fixture_id": "19896135",
+    "mercado": "custom_1792357237393",
+    "tipo": "gol_intervalo",
+    "home": "Azazga",
+    "away": "CR Béni Thour",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.66,
+    "odd_bano": null,
+    "odd_mercado": 1.685,
+    "timestamp": "2026-10-19T11:20:33.939245-03:00",
+    "resultado": "pendente"
   }
 ]
