@@ -36808,5 +36808,23 @@
     "odd_mercado": 1.53,
     "timestamp": "2026-10-19T13:33:17.580612-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "98475bded841_custom_1792356965229_20261019",
+    "fixture_id": "19670078",
+    "mercado": "custom_1792356965229",
+    "tipo": "escanteio_ht",
+    "home": "Rīgas FS",
+    "away": "Tukums",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.85,
+    "odd_bano": null,
+    "odd_mercado": 1.9,
+    "timestamp": "2026-10-19T13:35:36.122410-03:00",
+    "resultado": "pendente"
   }
 ]
