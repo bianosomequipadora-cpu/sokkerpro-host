@@ -36916,5 +36916,23 @@
     "odd_mercado": 1.9,
     "timestamp": "2026-10-19T15:37:06.665180-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9b8e4e11fce2_custom_1792355596919_20261019",
+    "fixture_id": "19778751",
+    "mercado": "custom_1792355596919",
+    "tipo": "escanteio_ht",
+    "home": "Al Hilal",
+    "away": "Al Hazm",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.67,
+    "odd_bano": null,
+    "odd_mercado": 1.685,
+    "timestamp": "2026-10-19T15:38:41.732037-03:00",
+    "resultado": "pendente"
   }
 ]
