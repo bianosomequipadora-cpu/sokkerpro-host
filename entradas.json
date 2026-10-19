@@ -36970,5 +36970,23 @@
     "odd_mercado": 1.415,
     "timestamp": "2026-10-19T15:56:57.143682-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "39528f559b29_custom_1792355596919_20261019",
+    "fixture_id": "19784087",
+    "mercado": "custom_1792355596919",
+    "tipo": "escanteio_ht",
+    "home": "SSC Giugliano",
+    "away": "Foggia",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.77,
+    "odd_bano": null,
+    "odd_mercado": 1.79,
+    "timestamp": "2026-10-19T16:03:07.130327-03:00",
+    "resultado": "pendente"
   }
 ]
