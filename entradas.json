@@ -37042,5 +37042,23 @@
     "odd_mercado": 2.24,
     "timestamp": "2026-10-19T17:43:23.632508-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "31005db23a12_custom_1792355610445_20261019",
+    "fixture_id": "19883645",
+    "mercado": "custom_1792355610445",
+    "tipo": "escanteio_ht",
+    "home": "Mushuc Runa",
+    "away": "Orense",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.504,
+    "timestamp": "2026-10-19T18:06:46.794050-03:00",
+    "resultado": "pendente"
   }
 ]
