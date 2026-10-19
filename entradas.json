@@ -36682,5 +36682,23 @@
     "odd_mercado": 2.056,
     "timestamp": "2026-10-19T09:38:01.581236-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "80350e88b25b_custom_1792355596919_20261019",
+    "fixture_id": "19896244",
+    "mercado": "custom_1792355596919",
+    "tipo": "escanteio_ht",
+    "home": "KF Ballkani",
+    "away": "Prishtina",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.2,
+    "odd_bano": null,
+    "odd_mercado": 2.056,
+    "timestamp": "2026-10-19T09:38:13.814776-03:00",
+    "resultado": "pendente"
   }
 ]
