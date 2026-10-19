@@ -36772,5 +36772,23 @@
     "odd_mercado": 3.04,
     "timestamp": "2026-10-19T11:41:50.327095-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "991d1b2a4055_custom_1792357237393_20261019",
+    "fixture_id": "19711719",
+    "mercado": "custom_1792357237393",
+    "tipo": "gol_intervalo",
+    "home": "Sūduva",
+    "away": "Kauno Žalgiris",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.83,
+    "odd_bano": null,
+    "odd_mercado": 1.86,
+    "timestamp": "2026-10-19T13:06:51.970008-03:00",
+    "resultado": "pendente"
   }
 ]
