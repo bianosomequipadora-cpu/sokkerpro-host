@@ -36988,5 +36988,23 @@
     "odd_mercado": 1.79,
     "timestamp": "2026-10-19T16:03:07.130327-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "78823aa38e69_custom_1792355596919_20261019",
+    "fixture_id": "19896376",
+    "mercado": "custom_1792355596919",
+    "tipo": "escanteio_ht",
+    "home": "12 de Junio VH",
+    "away": "Guaireña",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.95,
+    "odd_bano": null,
+    "odd_mercado": 1.86,
+    "timestamp": "2026-10-19T17:11:49.820514-03:00",
+    "resultado": "pendente"
   }
 ]
