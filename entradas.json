@@ -37078,5 +37078,23 @@
     "odd_mercado": 1.775,
     "timestamp": "2026-10-19T20:40:28.906337-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "383d5c4804e7_custom_1792355610445_20261019",
+    "fixture_id": "19621776",
+    "mercado": "custom_1792355610445",
+    "tipo": "escanteio_ht",
+    "home": "Corinthians",
+    "away": "Vitória",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.8,
+    "odd_bano": null,
+    "odd_mercado": 1.775,
+    "timestamp": "2026-10-19T20:40:43.886341-03:00",
+    "resultado": "pendente"
   }
 ]
