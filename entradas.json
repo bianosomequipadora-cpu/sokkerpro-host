@@ -37168,5 +37168,23 @@
     "odd_mercado": 1.62,
     "timestamp": "2026-10-20T06:20:41.786422-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "db1ec150c57f_custom_1790706998863_20261020",
+    "fixture_id": "19813527",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Adhyaksa",
+    "away": "Malut United",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.6,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-10-20T07:00:31.485359-03:00",
+    "resultado": "pendente"
   }
 ]
