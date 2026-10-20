@@ -37384,5 +37384,23 @@
     "odd_mercado": 1.21,
     "timestamp": "2026-10-20T09:23:19.175322-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "e1b0172ad06f_custom_1790706998863_20261020",
+    "fixture_id": "19866915",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Homs Al Fidaa",
+    "away": "Al Nejmeh",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.64,
+    "timestamp": "2026-10-20T09:25:24.593332-03:00",
+    "resultado": "pendente"
   }
 ]
