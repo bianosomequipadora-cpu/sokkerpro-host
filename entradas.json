@@ -37204,5 +37204,23 @@
     "odd_mercado": 1.65,
     "timestamp": "2026-10-20T07:12:33.001355-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "672995cd6fe0_custom_1792372958139_20261020",
+    "fixture_id": "19887984",
+    "mercado": "custom_1792372958139",
+    "tipo": "over_gol",
+    "home": "Mohammedan Dhaka",
+    "away": "PWD Sports Club",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.456,
+    "timestamp": "2026-10-20T07:20:25.672965-03:00",
+    "resultado": "pendente"
   }
 ]
