@@ -37186,5 +37186,23 @@
     "odd_mercado": 1.6,
     "timestamp": "2026-10-20T07:00:31.485359-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "db1ec150c57f_custom_1792278039737_20261020",
+    "fixture_id": "19813527",
+    "mercado": "custom_1792278039737",
+    "tipo": "escanteio_ft",
+    "home": "Adhyaksa",
+    "away": "Malut United",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.65,
+    "odd_bano": null,
+    "odd_mercado": 1.65,
+    "timestamp": "2026-10-20T07:12:33.001355-03:00",
+    "resultado": "pendente"
   }
 ]
