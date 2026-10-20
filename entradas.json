@@ -37564,5 +37564,23 @@
     "odd_mercado": 1.565,
     "timestamp": "2026-10-20T12:47:09.445438-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "1feb83fb59ae_custom_1792355190672_20261020",
+    "fixture_id": "19881267",
+    "mercado": "custom_1792355190672",
+    "tipo": "escanteio_ht",
+    "home": "Isa Town",
+    "away": "Alhassam",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.67,
+    "odd_bano": null,
+    "odd_mercado": 1.77,
+    "timestamp": "2026-10-20T13:36:48.565050-03:00",
+    "resultado": "pendente"
   }
 ]
