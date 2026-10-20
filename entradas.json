@@ -37654,5 +37654,23 @@
     "odd_mercado": 1.155,
     "timestamp": "2026-10-20T13:50:41.638378-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "7ef858fa81a9_custom_1792357237393_20261020",
+    "fixture_id": "19900016",
+    "mercado": "custom_1792357237393",
+    "tipo": "gol_intervalo",
+    "home": "United of Manchester",
+    "away": "Altrincham",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-10-20T16:05:21.989989-03:00",
+    "resultado": "pendente"
   }
 ]
