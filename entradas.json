@@ -37708,5 +37708,23 @@
     "odd_mercado": 1.77,
     "timestamp": "2026-10-20T16:26:26.463949-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "411923c38f74_custom_1790706998863_20261020",
+    "fixture_id": "19772213",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Ebbsfleet United",
+    "away": "Horsham",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.42,
+    "odd_bano": null,
+    "odd_mercado": 1.415,
+    "timestamp": "2026-10-20T17:13:57.348095-03:00",
+    "resultado": "pendente"
   }
 ]
