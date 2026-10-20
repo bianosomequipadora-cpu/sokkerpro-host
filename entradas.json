@@ -37096,5 +37096,23 @@
     "odd_mercado": 1.775,
     "timestamp": "2026-10-19T20:40:43.886341-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "68c7a9562c39_custom_1792355591468_20261019",
+    "fixture_id": "19667102",
+    "mercado": "custom_1792355591468",
+    "tipo": "escanteio_ft",
+    "home": "Goiás",
+    "away": "Náutico",
+    "message_id": 0,
+    "extra_val": 16,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.05,
+    "odd_bano": null,
+    "odd_mercado": 1.94,
+    "timestamp": "2026-10-19T21:18:08.154354-03:00",
+    "resultado": "pendente"
   }
 ]
