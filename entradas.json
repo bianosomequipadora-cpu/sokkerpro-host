@@ -37672,5 +37672,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-20T16:05:21.989989-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "0b344d909ed4_custom_1792357237393_20261020",
+    "fixture_id": "19873685",
+    "mercado": "custom_1792357237393",
+    "tipo": "gol_intervalo",
+    "home": "Roma",
+    "away": "Slovan Bratislava",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.28,
+    "odd_bano": null,
+    "odd_mercado": 1.28,
+    "timestamp": "2026-10-20T16:17:39.422676-03:00",
+    "resultado": "pendente"
   }
 ]
