@@ -37492,5 +37492,23 @@
     "odd_mercado": 1.256,
     "timestamp": "2026-10-20T11:11:50.402629-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "06ee1858ff21_custom_1792355596919_20261020",
+    "fixture_id": "19792748",
+    "mercado": "custom_1792355596919",
+    "tipo": "escanteio_ht",
+    "home": "Hapoel Rishon LeZion U19",
+    "away": "Maccabi Haifa U19",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.8,
+    "odd_bano": null,
+    "odd_mercado": 1.68,
+    "timestamp": "2026-10-20T11:31:58.397083-03:00",
+    "resultado": "pendente"
   }
 ]
