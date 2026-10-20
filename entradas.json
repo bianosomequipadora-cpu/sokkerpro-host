@@ -37600,5 +37600,23 @@
     "odd_mercado": 1.352,
     "timestamp": "2026-10-20T13:37:03.552001-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "12329c1c5299_custom_1790706998863_20261020",
+    "fixture_id": "19778748",
+    "mercado": "custom_1790706998863",
+    "tipo": "over_gol",
+    "home": "Al Taawoun",
+    "away": "Al-Qadsiah",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.42,
+    "odd_bano": null,
+    "odd_mercado": 1.408,
+    "timestamp": "2026-10-20T13:38:37.244062-03:00",
+    "resultado": "pendente"
   }
 ]
