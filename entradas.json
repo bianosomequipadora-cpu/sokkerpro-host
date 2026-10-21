@@ -38176,5 +38176,23 @@
     "odd_mercado": 1.43,
     "timestamp": "2026-10-21T15:48:16.617436-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "d297b5eff4df_custom_1792610073652_20261021",
+    "fixture_id": "19873691",
+    "mercado": "custom_1792610073652",
+    "tipo": "gol_intervalo",
+    "home": "Real Betis",
+    "away": "Feyenoord",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.4,
+    "odd_bano": null,
+    "odd_mercado": 1.408,
+    "timestamp": "2026-10-21T16:17:15.334836-03:00",
+    "resultado": "pendente"
   }
 ]
