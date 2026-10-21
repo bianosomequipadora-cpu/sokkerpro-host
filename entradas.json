@@ -38248,5 +38248,23 @@
     "odd_mercado": 1.495,
     "timestamp": "2026-10-21T20:30:34.726172-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b5d3acec3d1d_custom_1792610105251_20261021",
+    "fixture_id": "19896486",
+    "mercado": "custom_1792610105251",
+    "tipo": "over_gol",
+    "home": "Deportivo Táchira",
+    "away": "Monagas",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.495,
+    "timestamp": "2026-10-21T20:30:43.785380-03:00",
+    "resultado": "pendente"
   }
 ]
