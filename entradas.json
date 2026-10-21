@@ -37798,5 +37798,23 @@
     "odd_mercado": 1.42,
     "timestamp": "2026-10-20T17:31:04.543287-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "76c14f335b03_custom_1792355610445_20261021",
+    "fixture_id": "19715205",
+    "mercado": "custom_1792355610445",
+    "tipo": "escanteio_ht",
+    "home": "Tigres UANL",
+    "away": "León",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.65,
+    "odd_bano": null,
+    "odd_mercado": 1.685,
+    "timestamp": "2026-10-21T00:50:33.375544-03:00",
+    "resultado": "pendente"
   }
 ]
