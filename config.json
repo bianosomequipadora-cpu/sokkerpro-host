@@ -3,7 +3,7 @@
   "mercados": {
     "custom_1790213687442": {
       "ativo": true,
-      "notificar": false,
+      "notificar": true,
       "nome": "⚽️💥OVER 0.5 GOL PARTIDA💥⚽️ ",
       "minuto_inicio": 65,
       "minuto_fim": 72,
@@ -29,6 +29,11 @@
           "campo": "media_gols_partida_min",
           "operador": "gte",
           "valor": 2.5
+        },
+        {
+          "campo": "prob_1x2_casa_ou_fora",
+          "operador": "gte",
+          "valor": 70
         }
       ]
     },
@@ -65,6 +70,11 @@
           "campo": "diferenca_gols_fav_max",
           "operador": "lte",
           "valor": 1
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 4
         }
       ]
     },
