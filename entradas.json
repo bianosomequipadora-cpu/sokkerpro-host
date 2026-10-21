@@ -37834,5 +37834,23 @@
     "odd_mercado": 1.59,
     "timestamp": "2026-10-21T07:20:29.573386-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "ccb52a7082ad_custom_1792357237393_20261021",
+    "fixture_id": "19719567",
+    "mercado": "custom_1792357237393",
+    "tipo": "gol_intervalo",
+    "home": "Omiya Ardija",
+    "away": "Kataller Toyama",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.5,
+    "odd_bano": null,
+    "odd_mercado": 1.44,
+    "timestamp": "2026-10-21T07:20:43.266503-03:00",
+    "resultado": "pendente"
   }
 ]
