@@ -38140,5 +38140,23 @@
     "odd_mercado": 2.135,
     "timestamp": "2026-10-21T12:45:32.573631-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "5f787a49fbd7_custom_1792357237393_20261021",
+    "fixture_id": "19887189",
+    "mercado": "custom_1792357237393",
+    "tipo": "gol_intervalo",
+    "home": "Nautico U20",
+    "away": "Operário PR U20",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.61,
+    "odd_bano": null,
+    "odd_mercado": 1.625,
+    "timestamp": "2026-10-21T15:16:49.183382-03:00",
+    "resultado": "pendente"
   }
 ]
