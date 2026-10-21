@@ -37960,5 +37960,23 @@
     "odd_mercado": 2.96,
     "timestamp": "2026-10-21T08:38:14.056523-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "943b033261a3_custom_1792355610445_20261021",
+    "fixture_id": "19895073",
+    "mercado": "custom_1792355610445",
+    "tipo": "escanteio_ht",
+    "home": "Thap Luang United",
+    "away": "Rayong",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.816,
+    "timestamp": "2026-10-21T08:38:22.490821-03:00",
+    "resultado": "pendente"
   }
 ]
