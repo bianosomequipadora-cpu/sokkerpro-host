@@ -38086,5 +38086,23 @@
     "odd_mercado": 1.736,
     "timestamp": "2026-10-21T09:41:58.224383-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "2e3878e2dc52_custom_1792356965229_20261021",
+    "fixture_id": "19877496",
+    "mercado": "custom_1792356965229",
+    "tipo": "escanteio_ht",
+    "home": "Sporting CP U19",
+    "away": "LASK UEFA U19",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.41,
+    "timestamp": "2026-10-21T10:33:17.747359-03:00",
+    "resultado": "pendente"
   }
 ]
