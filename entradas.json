@@ -37852,5 +37852,23 @@
     "odd_mercado": 1.44,
     "timestamp": "2026-10-21T07:20:43.266503-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "8e46610f8437_custom_1792355190672_20261021",
+    "fixture_id": "19719568",
+    "mercado": "custom_1792355190672",
+    "tipo": "escanteio_ht",
+    "home": "Tochigi City",
+    "away": "Fujieda MYFC",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.456,
+    "timestamp": "2026-10-21T07:36:51.262926-03:00",
+    "resultado": "pendente"
   }
 ]
