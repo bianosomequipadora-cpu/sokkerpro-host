@@ -38104,5 +38104,23 @@
     "odd_mercado": 1.41,
     "timestamp": "2026-10-21T10:33:17.747359-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "5a1473bfed6e_custom_1792420050351_20261021",
+    "fixture_id": "19877503",
+    "mercado": "custom_1792420050351",
+    "tipo": "escanteio_ht",
+    "home": "Inter U19",
+    "away": "Shakhtar Donetsk U19",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.18,
+    "timestamp": "2026-10-21T11:27:03.544932-03:00",
+    "resultado": "pendente"
   }
 ]
