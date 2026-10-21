@@ -37816,5 +37816,23 @@
     "odd_mercado": 1.685,
     "timestamp": "2026-10-21T00:50:33.375544-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "05064f645fb2_custom_1792357237393_20261021",
+    "fixture_id": "19719111",
+    "mercado": "custom_1792357237393",
+    "tipo": "gol_intervalo",
+    "home": "V-Varen Nagasaki",
+    "away": "Sanfrecce Hiroshima",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.57,
+    "odd_bano": null,
+    "odd_mercado": 1.59,
+    "timestamp": "2026-10-21T07:20:29.573386-03:00",
+    "resultado": "pendente"
   }
 ]
