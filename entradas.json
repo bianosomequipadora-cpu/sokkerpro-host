@@ -38068,5 +38068,23 @@
     "odd_mercado": 1.315,
     "timestamp": "2026-10-21T09:35:35.701976-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b42c7e9edda1_custom_1792278039737_20261021",
+    "fixture_id": "19877514",
+    "mercado": "custom_1792278039737",
+    "tipo": "escanteio_ft",
+    "home": "Como U19",
+    "away": "Manchester United U19",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.736,
+    "timestamp": "2026-10-21T09:41:58.224383-03:00",
+    "resultado": "pendente"
   }
 ]
