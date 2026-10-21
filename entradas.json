@@ -38014,5 +38014,23 @@
     "odd_mercado": 1.54,
     "timestamp": "2026-10-21T09:25:45.995048-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "dd5e69ad1b4b_custom_1792356965229_20261021",
+    "fixture_id": "19795172",
+    "mercado": "custom_1792356965229",
+    "tipo": "escanteio_ht",
+    "home": "15 de Agosto",
+    "away": "Simba",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.712,
+    "timestamp": "2026-10-21T09:33:27.491424-03:00",
+    "resultado": "pendente"
   }
 ]
