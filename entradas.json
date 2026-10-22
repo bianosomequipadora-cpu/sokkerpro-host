@@ -38284,5 +38284,23 @@
     "odd_mercado": 1.18,
     "timestamp": "2026-10-21T23:46:47.518986-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "dec610e12073_custom_1792420050351_20261022",
+    "fixture_id": "19872923",
+    "mercado": "custom_1792420050351",
+    "tipo": "escanteio_ht",
+    "home": "Công an Hà Nội",
+    "away": "Thanh Hoa FC",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.41,
+    "timestamp": "2026-10-22T09:41:48.417058-03:00",
+    "resultado": "pendente"
   }
 ]
