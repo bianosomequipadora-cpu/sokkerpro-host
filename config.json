@@ -265,7 +265,7 @@
     "custom_1792420200981": {
       "ativo": true,
       "notificar": true,
-      "nome": "⛳️♨️ESCANTEIO PARTIDA(HT)♨️⛳️",
+      "nome": "⛳️♨️ESCANTEIO PARTIDA(FT)♨️⛳️",
       "minuto_inicio": 77,
       "minuto_fim": 89,
       "periodo": 2,
@@ -506,7 +506,7 @@
     "custom_1792676117843": {
       "ativo": true,
       "notificar": true,
-      "nome": "⛳️⚠️OVER CANTO 1° TEMPO(HT)⚠️⛳️",
+      "nome": "⛳️⚠️ESCANTEIO 1° TEMPO(HT)⚠️⛳️",
       "minuto_inicio": 32,
       "minuto_fim": 37,
       "periodo": 1,
@@ -562,7 +562,7 @@
     "custom_1792676521136": {
       "ativo": true,
       "notificar": true,
-      "nome": "⛳️⚠️OVER CANTO 2° TEMPO(FT)⚠️⛳️",
+      "nome": "⛳️⚠️ESCANTEIO 2° TEMPO(FT)⚠️⛳️",
       "minuto_inicio": 82,
       "minuto_fim": 87,
       "periodo": 2,
