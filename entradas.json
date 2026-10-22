@@ -38644,5 +38644,23 @@
     "odd_mercado": 1.97,
     "timestamp": "2026-10-22T15:27:48.297345-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "0c31e63ec549_custom_1792610073652_20261022",
+    "fixture_id": "19874003",
+    "mercado": "custom_1792610073652",
+    "tipo": "gol_intervalo",
+    "home": "Lincoln Red Imps",
+    "away": "FC Twente",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.36,
+    "odd_bano": null,
+    "odd_mercado": 1.365,
+    "timestamp": "2026-10-22T16:18:48.995632-03:00",
+    "resultado": "pendente"
   }
 ]
