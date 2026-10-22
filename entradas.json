@@ -38410,5 +38410,23 @@
     "odd_mercado": 1.125,
     "timestamp": "2026-10-22T14:13:13.664050-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "34e771661fb3_custom_1792355190672_20261022",
+    "fixture_id": "19874025",
+    "mercado": "custom_1792355190672",
+    "tipo": "escanteio_ht",
+    "home": "Jablonec",
+    "away": "Brighton & Hove Albion",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.57,
+    "odd_bano": null,
+    "odd_mercado": 1.575,
+    "timestamp": "2026-10-22T14:20:31.472110-03:00",
+    "resultado": "pendente"
   }
 ]
