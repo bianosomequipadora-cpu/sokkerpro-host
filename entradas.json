@@ -38266,5 +38266,23 @@
     "odd_mercado": 1.495,
     "timestamp": "2026-10-21T20:30:43.785380-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "ca1fc4f6f8dc_custom_1792278039737_20261021",
+    "fixture_id": "19715201",
+    "mercado": "custom_1792278039737",
+    "tipo": "escanteio_ft",
+    "home": "Toluca",
+    "away": "Tijuana",
+    "message_id": 0,
+    "extra_val": 16,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.18,
+    "timestamp": "2026-10-21T23:46:47.518986-03:00",
+    "resultado": "pendente"
   }
 ]
