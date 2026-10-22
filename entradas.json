@@ -38734,5 +38734,23 @@
     "odd_mercado": 1.84,
     "timestamp": "2026-10-22T16:42:03.294567-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "194cd1b78733_custom_1792587566699_20261022",
+    "fixture_id": "19874014",
+    "mercado": "custom_1792587566699",
+    "tipo": "over_gol",
+    "home": "Ajax",
+    "away": "Atalanta",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.36,
+    "odd_bano": null,
+    "odd_mercado": 1.365,
+    "timestamp": "2026-10-22T17:25:33.865065-03:00",
+    "resultado": "pendente"
   }
 ]
