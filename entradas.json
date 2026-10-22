@@ -38338,5 +38338,23 @@
     "odd_mercado": 1.475,
     "timestamp": "2026-10-22T10:40:27.946779-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "6921ea56fe97_custom_1792610105251_20261022",
+    "fixture_id": "19897308",
+    "mercado": "custom_1792610105251",
+    "tipo": "over_gol",
+    "home": "Al Wasl",
+    "away": "Kalba",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.5,
+    "odd_bano": null,
+    "odd_mercado": 1.432,
+    "timestamp": "2026-10-22T11:38:02.954614-03:00",
+    "resultado": "pendente"
   }
 ]
