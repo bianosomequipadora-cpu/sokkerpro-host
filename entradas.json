@@ -38374,5 +38374,23 @@
     "odd_mercado": null,
     "timestamp": "2026-10-22T13:25:30.662200-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "623b8eb8199b_custom_1792420050351_20261022",
+    "fixture_id": "19668257",
+    "mercado": "custom_1792420050351",
+    "tipo": "escanteio_ht",
+    "home": "Flora II",
+    "away": "FC Nomme United U21",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.175,
+    "timestamp": "2026-10-22T13:30:32.534701-03:00",
+    "resultado": "pendente"
   }
 ]
