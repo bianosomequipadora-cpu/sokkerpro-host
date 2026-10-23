@@ -39580,5 +39580,23 @@
     "odd_mercado": 1.82,
     "timestamp": "2026-10-23T16:43:14.590908-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "43aa68dba825_custom_1792357160638_20261023",
+    "fixture_id": "19795159",
+    "mercado": "custom_1792357160638",
+    "tipo": "escanteio_ft",
+    "home": "Mamelodi Sundowns",
+    "away": "Wiliete",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.82,
+    "odd_bano": null,
+    "odd_mercado": 1.82,
+    "timestamp": "2026-10-23T16:43:23.238303-03:00",
+    "resultado": "pendente"
   }
 ]
