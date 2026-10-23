@@ -39040,5 +39040,23 @@
     "odd_mercado": 1.336,
     "timestamp": "2026-10-23T12:43:11.100266-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "54f2d95edacc_custom_1792676521136_20261023",
+    "fixture_id": "19672864",
+    "mercado": "custom_1792676521136",
+    "tipo": "escanteio_ft",
+    "home": "Pakhtakor",
+    "away": "Neftchi",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.6,
+    "odd_bano": null,
+    "odd_mercado": 1.512,
+    "timestamp": "2026-10-23T12:45:34.536644-03:00",
+    "resultado": "pendente"
   }
 ]
