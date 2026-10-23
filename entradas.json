@@ -38914,5 +38914,23 @@
     "odd_mercado": 1.625,
     "timestamp": "2026-10-23T10:40:44.249370-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "edaefff5a338_custom_1792587566699_20261023",
+    "fixture_id": "19897304",
+    "mercado": "custom_1792587566699",
+    "tipo": "over_gol",
+    "home": "Al Fujairah",
+    "away": "Al Wahda",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.45,
+    "odd_bano": null,
+    "odd_mercado": 1.408,
+    "timestamp": "2026-10-23T11:22:13.396400-03:00",
+    "resultado": "pendente"
   }
 ]
