@@ -39076,5 +39076,23 @@
     "odd_mercado": 1.344,
     "timestamp": "2026-10-23T13:15:30.356178-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "47a2b61fc302_custom_1792676521136_20261023",
+    "fixture_id": "19764606",
+    "mercado": "custom_1792676521136",
+    "tipo": "escanteio_ft",
+    "home": "Al Shamal SC",
+    "away": "Qatar SC",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 2,
+    "entry_sa": 3,
+    "entry_total": 5,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.344,
+    "timestamp": "2026-10-23T13:15:41.869325-03:00",
+    "resultado": "pendente"
   }
 ]
