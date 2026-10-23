@@ -39292,5 +39292,23 @@
     "odd_mercado": 1.57,
     "timestamp": "2026-10-23T14:28:00.499656-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "59ed22079ba0_custom_1792587562086_20261023",
+    "fixture_id": "19900831",
+    "mercado": "custom_1792587562086",
+    "tipo": "over_gol",
+    "home": "Gjilani",
+    "away": "KF Llapi",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.55,
+    "odd_bano": null,
+    "odd_mercado": 1.55,
+    "timestamp": "2026-10-23T14:32:23.416961-03:00",
+    "resultado": "pendente"
   }
 ]
