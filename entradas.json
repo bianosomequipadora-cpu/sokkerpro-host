@@ -38842,5 +38842,23 @@
     "odd_mercado": 1.43,
     "timestamp": "2026-10-23T06:28:13.708917-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "437d2d8922e0_custom_1792356965229_20261023",
+    "fixture_id": "19720811",
+    "mercado": "custom_1792356965229",
+    "tipo": "escanteio_ht",
+    "home": "Kafr Qasim",
+    "away": "Ashdod",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.35,
+    "odd_bano": null,
+    "odd_mercado": 2.392,
+    "timestamp": "2026-10-23T10:35:33.641612-03:00",
+    "resultado": "pendente"
   }
 ]
