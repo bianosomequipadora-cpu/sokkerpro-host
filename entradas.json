@@ -38788,5 +38788,23 @@
     "odd_mercado": 2.235,
     "timestamp": "2026-10-22T21:08:08.429371-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "740febcc62e3_custom_1792676117843_20261023",
+    "fixture_id": "19860631",
+    "mercado": "custom_1792676117843",
+    "tipo": "escanteio_ht",
+    "home": "Beitar Ramat Gan",
+    "away": "Hakoah Ramat Gan",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.52,
+    "timestamp": "2026-10-23T03:41:41.802231-03:00",
+    "resultado": "pendente"
   }
 ]
