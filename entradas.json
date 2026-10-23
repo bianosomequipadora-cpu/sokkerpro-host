@@ -39544,5 +39544,23 @@
     "odd_mercado": 1.4,
     "timestamp": "2026-10-23T16:26:54.767195-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c993dde6965e_custom_1792676117843_20261023",
+    "fixture_id": "19621525",
+    "mercado": "custom_1792676117843",
+    "tipo": "escanteio_ht",
+    "home": "Shamrock Rovers",
+    "away": "Sligo Rovers",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.7,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-10-23T16:37:09.270596-03:00",
+    "resultado": "pendente"
   }
 ]
