@@ -38752,5 +38752,23 @@
     "odd_mercado": 1.365,
     "timestamp": "2026-10-22T17:25:33.865065-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "29b30e32634d_custom_1792355190672_20261022",
+    "fixture_id": "19896487",
+    "mercado": "custom_1792355190672",
+    "tipo": "escanteio_ht",
+    "home": "UCV",
+    "away": "Atlético Barinas",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.35,
+    "odd_bano": null,
+    "odd_mercado": 2.26,
+    "timestamp": "2026-10-22T21:07:57.172531-03:00",
+    "resultado": "pendente"
   }
 ]
