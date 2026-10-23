@@ -39184,5 +39184,23 @@
     "odd_mercado": 1.41,
     "timestamp": "2026-10-23T13:37:02.338237-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "03c02dda081b_custom_1792587562086_20261023",
+    "fixture_id": "19887106",
+    "mercado": "custom_1792587562086",
+    "tipo": "over_gol",
+    "home": "Triglav",
+    "away": "Nafta",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.6,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-10-23T13:52:17.055968-03:00",
+    "resultado": "pendente"
   }
 ]
