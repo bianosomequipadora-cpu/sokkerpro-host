@@ -39094,5 +39094,23 @@
     "odd_mercado": 1.344,
     "timestamp": "2026-10-23T13:15:41.869325-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "6787fda13096_custom_1792610073652_20261023",
+    "fixture_id": "19887108",
+    "mercado": "custom_1792610073652",
+    "tipo": "gol_intervalo",
+    "home": "Brežice",
+    "away": "Aluminij",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.53,
+    "odd_bano": null,
+    "odd_mercado": 1.485,
+    "timestamp": "2026-10-23T13:18:41.805221-03:00",
+    "resultado": "pendente"
   }
 ]
