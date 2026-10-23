@@ -39004,5 +39004,23 @@
     "odd_mercado": 1.475,
     "timestamp": "2026-10-23T12:03:23.400195-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "c5202f3fa972_custom_1792356965229_20261023",
+    "fixture_id": "19888643",
+    "mercado": "custom_1792356965229",
+    "tipo": "escanteio_ht",
+    "home": "East Riffa",
+    "away": "Muharraq",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.504,
+    "timestamp": "2026-10-23T12:05:28.332227-03:00",
+    "resultado": "pendente"
   }
 ]
