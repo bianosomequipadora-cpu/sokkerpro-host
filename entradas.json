@@ -39238,5 +39238,23 @@
     "odd_mercado": 1.82,
     "timestamp": "2026-10-23T14:10:45.779249-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "201b01f6e8b5_custom_1792587566699_20261023",
+    "fixture_id": "19732270",
+    "mercado": "custom_1792587566699",
+    "tipo": "over_gol",
+    "home": "Vysočina Jihlava",
+    "away": "Vlašim",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.52,
+    "odd_bano": null,
+    "odd_mercado": 1.52,
+    "timestamp": "2026-10-23T14:23:54.110721-03:00",
+    "resultado": "pendente"
   }
 ]
