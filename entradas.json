@@ -39202,5 +39202,23 @@
     "odd_mercado": 1.6,
     "timestamp": "2026-10-23T13:52:17.055968-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "cbf9e45edf40_custom_1792355190672_20261023",
+    "fixture_id": "19734212",
+    "mercado": "custom_1792355190672",
+    "tipo": "escanteio_ht",
+    "home": "Kapfenberger SV",
+    "away": "St. Pölten",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.82,
+    "odd_bano": null,
+    "odd_mercado": 1.82,
+    "timestamp": "2026-10-23T14:10:35.037317-03:00",
+    "resultado": "pendente"
   }
 ]
