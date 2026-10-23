@@ -39634,5 +39634,23 @@
     "odd_mercado": 1.82,
     "timestamp": "2026-10-23T16:43:40.463548-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "2750fd8d9d3b_custom_1792278039737_20261023",
+    "fixture_id": "19794693",
+    "mercado": "custom_1792278039737",
+    "tipo": "escanteio_ft",
+    "home": "Raja Casablanca",
+    "away": "El Kanemi Warriors",
+    "message_id": 0,
+    "extra_val": 10,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.67,
+    "odd_bano": null,
+    "odd_mercado": 1.67,
+    "timestamp": "2026-10-23T18:40:28.706993-03:00",
+    "resultado": "pendente"
   }
 ]
