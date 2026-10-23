@@ -39256,5 +39256,23 @@
     "odd_mercado": 1.52,
     "timestamp": "2026-10-23T14:23:54.110721-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9c0fd35f672f_custom_1792587562086_20261023",
+    "fixture_id": "19897302",
+    "mercado": "custom_1792587562086",
+    "tipo": "over_gol",
+    "home": "Al Nasr",
+    "away": "Bani Yas",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.6,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-10-23T14:26:10.184954-03:00",
+    "resultado": "pendente"
   }
 ]
