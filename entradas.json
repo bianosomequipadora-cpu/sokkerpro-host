@@ -38896,5 +38896,23 @@
     "odd_mercado": 1.6,
     "timestamp": "2026-10-23T10:40:30.908650-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "dd0e9bb5c5ad_custom_1792676521136_20261023",
+    "fixture_id": "19866914",
+    "mercado": "custom_1792676521136",
+    "tipo": "escanteio_ft",
+    "home": "Ahal",
+    "away": "Al Ansar",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": 1.6,
+    "odd_bano": null,
+    "odd_mercado": 1.625,
+    "timestamp": "2026-10-23T10:40:44.249370-03:00",
+    "resultado": "pendente"
   }
 ]
