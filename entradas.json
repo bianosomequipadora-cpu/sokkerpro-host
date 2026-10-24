@@ -39886,5 +39886,23 @@
     "odd_mercado": 1.84,
     "timestamp": "2026-10-24T06:03:32.201940-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "836c431e838d_custom_1792676117843_20261024",
+    "fixture_id": "19867891",
+    "mercado": "custom_1792676117843",
+    "tipo": "escanteio_ht",
+    "home": "Yangon City",
+    "away": "Sagaing United",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.7,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-10-24T06:37:02.055710-03:00",
+    "resultado": "pendente"
   }
 ]
