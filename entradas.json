@@ -39670,5 +39670,23 @@
     "odd_mercado": 3.73,
     "timestamp": "2026-10-24T01:47:56.912753-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "308def938194_custom_1792817213295_20261024",
+    "fixture_id": "19715197",
+    "mercado": "custom_1792817213295",
+    "tipo": "over_gol",
+    "home": "Atlante",
+    "away": "Atlético San Luis",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 2.75,
+    "odd_bano": null,
+    "odd_mercado": 2.856,
+    "timestamp": "2026-10-24T01:48:07.957102-03:00",
+    "resultado": "pendente"
   }
 ]
