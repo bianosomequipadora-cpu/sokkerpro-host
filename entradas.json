@@ -39724,5 +39724,23 @@
     "odd_mercado": 1.912,
     "timestamp": "2026-10-24T02:33:22.044942-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "a04a3adb7198_custom_1792356965229_20261024",
+    "fixture_id": "19648036",
+    "mercado": "custom_1792356965229",
+    "tipo": "escanteio_ht",
+    "home": "Incheon United",
+    "away": "Jeju United",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.07,
+    "odd_bano": null,
+    "odd_mercado": 2.545,
+    "timestamp": "2026-10-24T02:35:28.291067-03:00",
+    "resultado": "pendente"
   }
 ]
