@@ -39742,5 +39742,23 @@
     "odd_mercado": 2.545,
     "timestamp": "2026-10-24T02:35:28.291067-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "0bf194bdf739_custom_1792676521136_20261024",
+    "fixture_id": "19883948",
+    "mercado": "custom_1792676521136",
+    "tipo": "escanteio_ft",
+    "home": "Avondale Heights",
+    "away": "Broadmeadow Magic",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.47,
+    "timestamp": "2026-10-24T02:50:26.303886-03:00",
+    "resultado": "pendente"
   }
 ]
