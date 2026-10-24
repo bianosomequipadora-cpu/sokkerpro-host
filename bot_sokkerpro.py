@@ -1512,7 +1512,7 @@ def get_jogos_sokkerpro(fids_existentes):
                 # completo da partida. Nunca usa o fixtureId como substituto.
                 link22 = str(fix.get('link22') or '').strip()
                 link22_decodificado = unquote(link22)
-                m_paripesa = re.search(r'(?:^|/)football/([^?#&]+)', link22_decodificado, re.IGNORECASE)
+                m_paripesa = re.search(r'(?:^|/)live/football/([^?#&]+)', link22_decodificado, re.IGNORECASE)
                 paripesa_path = ''
                 if m_paripesa:
                     candidato = unquote(m_paripesa.group(1)).strip('/')
