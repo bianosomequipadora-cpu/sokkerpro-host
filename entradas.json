@@ -39688,5 +39688,23 @@
     "odd_mercado": 2.856,
     "timestamp": "2026-10-24T01:48:07.957102-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "5905f23567c3_custom_1792817213295_20261024",
+    "fixture_id": "19896260",
+    "mercado": "custom_1792817213295",
+    "tipo": "over_gol",
+    "home": "Malaita Kingz",
+    "away": "Central Coast",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.3,
+    "odd_bano": null,
+    "odd_mercado": 2.31,
+    "timestamp": "2026-10-24T01:48:19.515981-03:00",
+    "resultado": "pendente"
   }
 ]
