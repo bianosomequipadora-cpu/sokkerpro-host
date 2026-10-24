@@ -537,27 +537,6 @@
           "valor": 0
         }
       ]
-    },
-    "custom_1792817213295": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "Teste",
-      "minuto_inicio": 2,
-      "minuto_fim": 89,
-      "periodo": 3,
-      "tipo": "over_gol",
-      "stake": 10,
-      "placar_valido": "",
-      "criterios": {
-        "situacao_favorito": ""
-      },
-      "criterios_api": [
-        {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
-          "valor": 0.3
-        }
-      ]
     }
   }
 }
