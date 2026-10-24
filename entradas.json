@@ -39850,5 +39850,23 @@
     "odd_mercado": 1.9,
     "timestamp": "2026-10-24T05:06:42.707648-03:00",
     "resultado": "refund"
+  },
+  {
+    "signal_key": "56d0f7372eb0_custom_1792610073652_20261024",
+    "fixture_id": "19792455",
+    "mercado": "custom_1792610073652",
+    "tipo": "gol_intervalo",
+    "home": "MTK U19",
+    "away": "Honved U19",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.44,
+    "odd_bano": null,
+    "odd_mercado": 1.43,
+    "timestamp": "2026-10-24T05:20:54.156034-03:00",
+    "resultado": "pendente"
   }
 ]
