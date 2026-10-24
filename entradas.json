@@ -39760,5 +39760,23 @@
     "odd_mercado": 1.47,
     "timestamp": "2026-10-24T02:50:26.303886-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "a4b1b663a3b0_custom_1792676521136_20261024",
+    "fixture_id": "19648040",
+    "mercado": "custom_1792676521136",
+    "tipo": "escanteio_ft",
+    "home": "Ulsan HD",
+    "away": "Pohang Steelers",
+    "message_id": 0,
+    "extra_val": 13,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.47,
+    "timestamp": "2026-10-24T03:41:48.320848-03:00",
+    "resultado": "pendente"
   }
 ]
