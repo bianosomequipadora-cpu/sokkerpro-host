@@ -2524,15 +2524,12 @@ def msg_universal(home, away, minuto, liga, pais, n, mercado, entrada, placar, e
     game_path = str(game_id or '').strip().strip('/')
     game_path_parts = [part for part in game_path.split('/') if part]
     caminho_valido = len(game_path_parts) == 2 and all('-' in part for part in game_path_parts)
-    if caminho_valido:
-        game_path = '/'.join(game_path_parts)
-        url_betwinner = f'https://betwinner-21365.pro/br/live/football/{game_path}'
-        url_paripesa = f'https://paripesa.com/br/live/football/{game_path}'
-    else:
-        # Mantém os dois botões clicáveis em toda notificação; usa os destinos
-        # de contingência anteriores apenas quando a API não fornece o path exato.
-        url_betwinner = 'https://betwinner-21365.pro/br/live/football/'
-        url_paripesa = f'https://paripesa.com/br/live/football/{game_id}' if game_id not in (None, '') else 'https://paripesa.com/br/live/football/'
+    if not caminho_valido:
+        # Nunca gerar destinos genéricos nem substituir o caminho pelo ID SokkerPro.
+        return (msg, None)
+    game_path = '/'.join(game_path_parts)
+    url_betwinner = f'https://betwinner-21365.pro/br/live/football/{game_path}'
+    url_paripesa = f'https://paripesa.com/br/live/football/{game_path}'
     keyboard = {'inline_keyboard': [[{'text': '🟣BETWINNER🟣', 'url': url_betwinner}, {'text': '🟠PARIPESA🟠', 'url': url_paripesa}]]}
     return (msg, keyboard)
 
@@ -3528,7 +3525,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
             odd_mercado_registro = _odd_mercado_exibida(h, a, liga, ob365, odd_paripesa)
             registrar_sinal(fid, mk, h, a, 0, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa, odd_b365=ob365, odd_bano=obano, odd_mercado=odd_mercado_registro, signal_key=key)
             if notificar:
-                mid = send_telegram(msg_universal(h, a, m, liga, pais, 5, mk, cnome, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, odd_paripesa=odd_paripesa, nome=cnome, tipo=c_tipo, probabilidade=_probabilidade_para_sinal(stats, c_tipo, sh, sa, extra_val if 'escanteio' in c_tipo else 0), game_id=(j.get('paripesa_path') or fid)), marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
+                mid = send_telegram(msg_universal(h, a, m, liga, pais, 5, mk, cnome, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, odd_paripesa=odd_paripesa, nome=cnome, tipo=c_tipo, probabilidade=_probabilidade_para_sinal(stats, c_tipo, sh, sa, extra_val if 'escanteio' in c_tipo else 0), game_id=j.get('paripesa_path')), marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
             else:
                 print(f'[DIAG-{mk}-SILENT] {h} x {a} — notificar=False, registrando sem enviar')
                 mid = 0
