@@ -265,8 +265,10 @@ async function abrirEntradas(mercado){
     var nomeRelatorio=String(((CONFIG_INLINE.mercados||{})[mercado]||{}).nome||mercado).replace(/[<>]/g,'');
     modal.innerHTML='<div style="max-width:760px;margin:auto;background:#151525;border-radius:14px;padding:16px"><button onclick="document.getElementById(\'entradas-modal\').remove()" style="float:right;background:#e74c3c;color:#fff;border:0;border-radius:8px;padding:7px 12px">Fechar</button><h2 style="margin:0 35px 10px 0;font-size:1.15em;line-height:1.2;font-weight:700">'+nomeRelatorio+'</h2><div id="entradas-resumo" style="border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:8px;text-align:center">Calculando...</div><div style="display:flex;align-items:center;gap:8px;margin:12px 0"><span style="font-size:1.25em">🔍</span><input id="entradas-busca" type="search" placeholder="Digite o nome do jogo ou time..." style="flex:1;padding:11px;border-radius:9px;border:1px solid #555;background:#222;color:#fff"></div><div id="entradas-list">Carregando...</div></div>';
     try{
-      var r=await fetch('https://api.github.com/repos/'+REPO+'/contents/entradas.json?x='+Date.now(),{headers:{}});
-      var list=[]; if(r.ok){var j=await r.json();list=JSON.parse(decodeURIComponent(escape(atob(j.content))));}
+      var r=await fetch('https://raw.githubusercontent.com/'+REPO+'/main/entradas.json?t='+Date.now(),{cache:'no-store'});
+      if(!r.ok) throw new Error('Não foi possível carregar entradas.json ('+r.status+').');
+      var list=await r.json();
+      if(!Array.isArray(list)) throw new Error('Formato inválido em entradas.json.');
       var tipoRelatorio=String((((CONFIG_INLINE.mercados||{})[mercado]||{}).tipo)||'').trim().toLowerCase();
       list=list.filter(function(x){return x.mercado===mercado && (!tipoRelatorio || String(x.tipo||'').trim().toLowerCase()===tipoRelatorio);}).reverse();
       var el=document.getElementById('entradas-list');
