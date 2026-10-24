@@ -39904,5 +39904,23 @@
     "odd_mercado": 1.7,
     "timestamp": "2026-10-24T06:37:02.055710-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "2db9e3c057e9_custom_1792587566699_20261024",
+    "fixture_id": "19761398",
+    "mercado": "custom_1792587566699",
+    "tipo": "over_gol",
+    "home": "Prešov U19",
+    "away": "DAC U19",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.75,
+    "odd_bano": null,
+    "odd_mercado": 1.755,
+    "timestamp": "2026-10-24T07:30:39.351371-03:00",
+    "resultado": "pendente"
   }
 ]
