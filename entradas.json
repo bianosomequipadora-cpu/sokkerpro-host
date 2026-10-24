@@ -39976,5 +39976,23 @@
     "odd_mercado": 1.6,
     "timestamp": "2026-10-24T08:32:58.790608-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "1e0946fa7dbc_custom_1792676117843_20261024",
+    "fixture_id": "19864863",
+    "mercado": "custom_1792676117843",
+    "tipo": "escanteio_ht",
+    "home": "Maejo United",
+    "away": "Nakhon Mae Sot United",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.736,
+    "timestamp": "2026-10-24T08:33:12.666276-03:00",
+    "resultado": "pendente"
   }
 ]
