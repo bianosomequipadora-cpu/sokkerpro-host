@@ -39652,5 +39652,23 @@
     "odd_mercado": 1.67,
     "timestamp": "2026-10-23T18:40:28.706993-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "e9e27c9ad664_custom_1792817213295_20261024",
+    "fixture_id": "19725773",
+    "mercado": "custom_1792817213295",
+    "tipo": "over_gol",
+    "home": "NTV Beleza W",
+    "away": "Elfen Saitama W",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 4,
+    "entry_sa": 1,
+    "entry_total": 5,
+    "odd_b365": 3.55,
+    "odd_bano": null,
+    "odd_mercado": 3.73,
+    "timestamp": "2026-10-24T01:47:56.912753-03:00",
+    "resultado": "pendente"
   }
 ]
