@@ -39868,5 +39868,23 @@
     "odd_mercado": 1.43,
     "timestamp": "2026-10-24T05:20:54.156034-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "694a23ef4af3_custom_1792676117843_20261024",
+    "fixture_id": "19860279",
+    "mercado": "custom_1792676117843",
+    "tipo": "escanteio_ht",
+    "home": "Surin",
+    "away": "Roi Et",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.85,
+    "odd_bano": null,
+    "odd_mercado": 1.84,
+    "timestamp": "2026-10-24T06:03:32.201940-03:00",
+    "resultado": "pendente"
   }
 ]
