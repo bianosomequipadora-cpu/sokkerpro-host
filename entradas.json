@@ -39814,5 +39814,23 @@
     "odd_mercado": 1.85,
     "timestamp": "2026-10-24T03:42:11.087058-03:00",
     "resultado": "red"
+  },
+  {
+    "signal_key": "837440a9de06_custom_1792676117843_20261024",
+    "fixture_id": "19676304",
+    "mercado": "custom_1792676117843",
+    "tipo": "escanteio_ht",
+    "home": "Gimpo",
+    "away": "Gimhae City",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 1.625,
+    "timestamp": "2026-10-24T05:03:08.073340-03:00",
+    "resultado": "pendente"
   }
 ]
