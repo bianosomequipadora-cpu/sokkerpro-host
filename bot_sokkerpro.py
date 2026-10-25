@@ -502,53 +502,21 @@ def _save_sinais_github(sinais):
 ENTRADAS_FILE = os.path.join(BASE_DIR, 'entradas.json')
 ENTRADAS_API_PATH = 'entradas.json'
 
-def _ler_entradas_github():
-    """Lê entradas.json mesmo quando o endpoint Contents omite blobs >1 MB."""
-    url = f'https://api.github.com/repos/{GITHUB_REPO}/contents/{ENTRADAS_API_PATH}'
-    headers = {'Authorization': f'Bearer {GITHUB_TOKEN}', 'Accept': 'application/vnd.github+json'}
-    req = request.Request(url, headers=headers)
-    try:
-        with request.urlopen(req, timeout=20) as resp:
-            arquivo = json.loads(resp.read())
-    except error.HTTPError as exc:
-        if exc.code == 404:
-            return [], None
-        raise
-    raw = arquivo.get('content') or ''
-    if raw and arquivo.get('encoding') == 'base64':
-        conteudo = base64.b64decode(raw, validate=True).decode('utf-8')
-    else:
-        blob_sha = arquivo.get('sha')
-        if not blob_sha:
-            raise ValueError('GitHub retornou entradas.json sem conteúdo nem SHA do blob')
-        blob_url = f'https://api.github.com/repos/{GITHUB_REPO}/git/blobs/{blob_sha}'
-        with request.urlopen(request.Request(blob_url, headers=headers), timeout=30) as resp:
-            blob = json.loads(resp.read())
-        if blob.get('encoding') != 'base64' or not blob.get('content'):
-            raise ValueError('GitHub não retornou o blob completo de entradas.json em Base64')
-        conteudo = base64.b64decode(blob['content'], validate=True).decode('utf-8')
-    registros = json.loads(conteudo)
-    if not isinstance(registros, list):
-        raise ValueError('entradas.json precisa conter uma lista')
-    return registros, arquivo.get('sha')
-
-
 def _load_entradas():
     if GITHUB_TOKEN and GITHUB_REPO:
         try:
-            registros, _ = _ler_entradas_github()
-            return registros
+            url = f'https://api.github.com/repos/{GITHUB_REPO}/contents/{ENTRADAS_API_PATH}'
+            r = requests.get(url, headers={'Authorization': f'Bearer {GITHUB_TOKEN}', 'Accept': 'application/vnd.github+json'}, timeout=8)
+            if r.status_code == 200:
+                return json.loads(base64.b64decode(r.json()['content']).decode())
         except Exception as e:
-            print(f'[ENTRADAS] Erro load GitHub/blob: {e}')
+            print(f'[ENTRADAS] Erro load GitHub: {e}')
     try:
         if os.path.exists(ENTRADAS_FILE):
-            with open(ENTRADAS_FILE, 'r', encoding='utf-8') as f:
-                registros = json.load(f)
-            if isinstance(registros, list):
-                return registros
-            print('[ENTRADAS] Cache local inválido: esperado lista')
+            with open(ENTRADAS_FILE, 'r') as f:
+                return json.load(f)
     except Exception as e:
-        print(f'[ENTRADAS] Erro leitura local: {e}')
+        print(f'[ENTRADAS] Erro leitura: {e}')
     return []
 
 def _identidade_entrada(registro):
@@ -616,7 +584,7 @@ def _mesclar_listas_entradas(remotas, locais):
 
 
 def _save_entradas(registros):
-    """Grava entradas via Git Database API, sem o limite de 1 MB do Contents API."""
+    """Persiste entradas com merge/retry em conflito, preservando odds e updates paralelos."""
     if not isinstance(registros, list):
         print('[ENTRADAS] Gravação recusada: payload não é uma lista')
         return False
@@ -628,55 +596,59 @@ def _save_entradas(registros):
         except Exception as exc:
             print(f'[ENTRADAS] Falha ao salvar localmente: {exc}')
             return False
-    api = f'https://api.github.com/repos/{GITHUB_REPO}'
+
+    url = f'https://api.github.com/repos/{GITHUB_REPO}/contents/{ENTRADAS_API_PATH}'
     headers = {'Authorization': f'Bearer {GITHUB_TOKEN}', 'Accept': 'application/vnd.github+json'}
-    branch = os.environ.get('GITHUB_REF_NAME', 'main')
-    ref_url = f'{api}/git/ref/heads/{branch}'
-    def github_json(url, method='GET', payload=None, timeout=30):
-        data = json.dumps(payload, ensure_ascii=False).encode('utf-8') if payload is not None else None
-        hdrs = dict(headers)
-        if data is not None: hdrs['Content-Type'] = 'application/json'
-        req = request.Request(url, data=data, headers=hdrs, method=method)
-        with request.urlopen(req, timeout=timeout) as resp: body=resp.read()
-        return json.loads(body) if body else {}
     for tentativa in range(5):
         try:
+            req_get = request.Request(url, headers=headers)
             try:
-                arquivo=github_json(f'{api}/contents/{ENTRADAS_API_PATH}')
-                raw=arquivo.get('content') or ''; blob_sha=arquivo.get('sha')
-                if raw and arquivo.get('encoding')=='base64':
-                    remotas=json.loads(base64.b64decode(raw,validate=True).decode('utf-8'))
-                elif blob_sha:
-                    blob=github_json(f'{api}/git/blobs/{blob_sha}')
-                    if blob.get('encoding')!='base64' or not blob.get('content'): raise ValueError('blob remoto de entradas.json veio incompleto')
-                    remotas=json.loads(base64.b64decode(blob['content'],validate=True).decode('utf-8'))
-                else: raise ValueError('GitHub retornou entradas.json sem conteúdo nem SHA')
+                with request.urlopen(req_get, timeout=12) as resp:
+                    arquivo = json.loads(resp.read())
+                sha = arquivo.get('sha')
+                remotas = json.loads(base64.b64decode(arquivo.get('content', '')).decode('utf-8'))
             except error.HTTPError as exc:
-                if exc.code!=404: raise
-                remotas=[]
-            if not isinstance(remotas,list): raise ValueError('entradas.json remoto precisa conter uma lista')
-            mescladas=_mesclar_listas_entradas(remotas,registros)
-            conteudo=json.dumps(mescladas,ensure_ascii=False,indent=2)
-            ref=github_json(ref_url); parent_sha=ref['object']['sha']
-            commit_atual=github_json(f'{api}/git/commits/{parent_sha}');base_tree=commit_atual['tree']['sha']
-            blob_novo=github_json(f'{api}/git/blobs','POST',{'content':conteudo,'encoding':'utf-8'})
-            tree_nova=github_json(f'{api}/git/trees','POST',{'base_tree':base_tree,'tree':[{'path':ENTRADAS_API_PATH,'mode':'100644','type':'blob','sha':blob_novo['sha']}]})
-            commit_novo=github_json(f'{api}/git/commits','POST',{'message':'state: atualiza entradas [skip ci]','tree':tree_nova['sha'],'parents':[parent_sha]})
-            github_json(ref_url,'PATCH',{'sha':commit_novo['sha'],'force':False})
-            with open(ENTRADAS_FILE,'w',encoding='utf-8') as f: json.dump(mescladas,f,ensure_ascii=False,indent=2)
-            print(f'[ENTRADAS] Salvas no Git Database API: {len(mescladas)} registros; blob {blob_novo["sha"]}')
+                if exc.code != 404:
+                    raise
+                sha = None
+                remotas = []
+
+            mescladas = _mesclar_listas_entradas(remotas, registros)
+            conteudo = base64.b64encode(json.dumps(mescladas, ensure_ascii=False, indent=2).encode('utf-8')).decode('ascii')
+            payload = {'message': 'state: atualiza entradas [retry seguro] [skip ci]', 'content': conteudo}
+            if sha:
+                payload['sha'] = sha
+            req_put = request.Request(
+                url, data=json.dumps(payload).encode('utf-8'),
+                headers={**headers, 'Content-Type': 'application/json'}, method='PUT'
+            )
+            with request.urlopen(req_put, timeout=20) as resp:
+                resp.read()
+            with open(ENTRADAS_FILE, 'w', encoding='utf-8') as f:
+                json.dump(mescladas, f, ensure_ascii=False, indent=2)
+            print(f'[ENTRADAS] Salvas no GitHub: {len(mescladas)} registros')
             return True
         except error.HTTPError as exc:
-            if exc.code in (409,422) and tentativa<4:
-                print(f'[ENTRADAS] Conflito simultâneo no ref; recarregando e mesclando ({tentativa+1}/5)');time.sleep(.3*(tentativa+1));continue
-            print(f'[ENTRADAS] Falha GitHub HTTP {exc.code}; não confirmei a gravação');break
+            if exc.code == 409 and tentativa < 4:
+                print(f'[ENTRADAS] Conflito simultâneo; recarregando e mesclando (tentativa {tentativa + 1}/5)')
+                time.sleep(0.2 * (tentativa + 1))
+                continue
+            print(f'[ENTRADAS] Falha GitHub HTTP {exc.code}; não confirmei a gravação')
+            break
         except Exception as exc:
-            if tentativa<4:
-                print(f'[ENTRADAS] Falha temporária; repetindo gravação ({tentativa+1}/5): {exc}');time.sleep(.3*(tentativa+1));continue
-            print(f'[ENTRADAS] Falha ao salvar no Git Database API: {exc}');break
+            if tentativa < 4:
+                print(f'[ENTRADAS] Falha temporária; repetindo gravação ({tentativa + 1}/5): {exc}')
+                time.sleep(0.2 * (tentativa + 1))
+                continue
+            print(f'[ENTRADAS] Falha ao salvar no GitHub: {exc}')
+            break
+
+    # Guarda o estado recebido localmente para recuperação, sem afirmar que subiu ao GitHub.
     try:
-        with open(ENTRADAS_FILE,'w',encoding='utf-8') as f: json.dump(registros,f,ensure_ascii=False,indent=2)
-    except Exception: pass
+        with open(ENTRADAS_FILE, 'w', encoding='utf-8') as f:
+            json.dump(registros, f, ensure_ascii=False, indent=2)
+    except Exception:
+        pass
     return False
 
 def atualizar_entrada_historico(sinal, resultado):
