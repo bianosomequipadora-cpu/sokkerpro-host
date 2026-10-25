@@ -2,6 +2,7 @@ name: SokkerPro Live Bot
 on:
   schedule:
     - cron: '*/5 * * * *'
+    # Keep the original five-minute automatic cadence.
   workflow_dispatch:
 permissions:
   contents: write
