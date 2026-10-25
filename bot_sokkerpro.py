@@ -1246,18 +1246,14 @@ class _SokkerProM4HTTPError(RuntimeError):
 
 
 urllib3_connection.allowed_gai_family = lambda: socket.AF_INET
-_M4_HTTP = requests.Session()
-_M4_HTTP.headers.update({
-    'Accept': 'application/json, text/plain, */*',
-    'Origin': 'https://sokkerpro.com',
-    'Referer': 'https://sokkerpro.com/',
-    'User-Agent': 'sokkerpro-monitor/0.1',
-})
+# Reproduz o transporte usado pelo script Termux enviado pelo usuário:
+# POST e GET diretos do módulo requests, sem sessão/cookies compartilhados.
+_M4_HTTP = requests
 _M4_SESSION = M4Session(SOKKERPRO_BASE_URL)
 
 
 def _m4_post_json(url, payload):
-    response = _M4_HTTP.post(url, json=payload, timeout=30)
+    response = _M4_HTTP.post(url, json=payload, timeout=15)
     if not response.ok:
         raise _SokkerProM4HTTPError('POST', response)
     return response.json()
@@ -1276,16 +1272,25 @@ def _m4_handshake(force=False):
 def _m4_get_json(path):
     url = SOKKERPRO_BASE_URL + path
     for tentativa in range(2):
-        _m4_handshake(force=(tentativa == 1))
+        _m4_handshake(force=False)
+        headers = _M4_SESSION.headers_for('GET', url)
+        headers.update({
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+            'Accept': 'application/json, text/plain, */*',
+        })
         response = _M4_HTTP.get(
             url,
-            headers=_M4_SESSION.headers_for('GET', url),
-            timeout=30,
+            headers=headers,
+            timeout=15,
         )
         if response.status_code == 401 and tentativa == 0:
+            _m4_handshake(force=True)
+            continue
+        if response.status_code == 403 and tentativa == 0:
+            # O cliente Termux repete uma vez com nonce/assinatura novos,
+            # mantendo a mesma sessão M4.
             continue
         if not response.ok:
-            # Não repetir 403/1006: o bloqueio ocorre antes da aplicação.
             raise _SokkerProM4HTTPError('GET', response)
         payload = _M4_SESSION.decrypt(response.json())
         if is_auth_rejection(payload) and tentativa == 0:
