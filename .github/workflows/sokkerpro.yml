@@ -22,6 +22,7 @@ jobs:
         env:
           TG_TOKEN: ${{ secrets.TG_SOKKERPRO_TOKEN }}
           TG_GROUP_ID: '-1003843430798'
+          SOKKERPRO_SINGLE_CYCLE: '1'
           GH_PAT: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           ASAAS_API_KEY: ${{ secrets.ASAAS_API_KEY }}
