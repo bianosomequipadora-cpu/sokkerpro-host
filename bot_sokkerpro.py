@@ -516,7 +516,7 @@ def _ler_entradas_github():
         raise
     raw = arquivo.get('content') or ''
     if raw and arquivo.get('encoding') == 'base64':
-        conteudo = base64.b64decode(''.join(raw.split()), validate=True).decode('utf-8')
+        conteudo = base64.b64decode(raw, validate=True).decode('utf-8')
     else:
         blob_sha = arquivo.get('sha')
         if not blob_sha:
@@ -526,7 +526,7 @@ def _ler_entradas_github():
             blob = json.loads(resp.read())
         if blob.get('encoding') != 'base64' or not blob.get('content'):
             raise ValueError('GitHub não retornou o blob completo de entradas.json em Base64')
-        conteudo = base64.b64decode(''.join(blob['content'].split()), validate=True).decode('utf-8')
+        conteudo = base64.b64decode(blob['content'], validate=True).decode('utf-8')
     registros = json.loads(conteudo)
     if not isinstance(registros, list):
         raise ValueError('entradas.json precisa conter uma lista')
@@ -645,11 +645,11 @@ def _save_entradas(registros):
                 arquivo=github_json(f'{api}/contents/{ENTRADAS_API_PATH}')
                 raw=arquivo.get('content') or ''; blob_sha=arquivo.get('sha')
                 if raw and arquivo.get('encoding')=='base64':
-                    remotas=json.loads(base64.b64decode(''.join(raw.split()),validate=True).decode('utf-8'))
+                    remotas=json.loads(base64.b64decode(raw,validate=True).decode('utf-8'))
                 elif blob_sha:
                     blob=github_json(f'{api}/git/blobs/{blob_sha}')
                     if blob.get('encoding')!='base64' or not blob.get('content'): raise ValueError('blob remoto de entradas.json veio incompleto')
-                    remotas=json.loads(base64.b64decode(''.join(blob['content'].split()),validate=True).decode('utf-8'))
+                    remotas=json.loads(base64.b64decode(blob['content'],validate=True).decode('utf-8'))
                 else: raise ValueError('GitHub retornou entradas.json sem conteúdo nem SHA')
             except error.HTTPError as exc:
                 if exc.code!=404: raise
