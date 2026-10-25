@@ -1,7 +1,7 @@
 name: SokkerPro Live Bot
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '2-57/5 * * * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -11,7 +11,7 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
