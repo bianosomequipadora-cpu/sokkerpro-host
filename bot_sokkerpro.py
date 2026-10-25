@@ -3614,18 +3614,13 @@ def run():
     confirmed_ids = set()
     sent = load_sent()
     total_env = 0
-    # No GitHub Actions, cada schedule deve concluir um único ciclo e liberar
-    # o grupo de concorrência antes da próxima execução; os demais ambientes
-    # preservam o modo original de três ciclos.
-    ciclo_unico = os.environ.get('SOKKERPRO_SINGLE_CYCLE') == '1'
-    total_ciclos = 1 if ciclo_unico else 3
-    print(f'[Iniciando] Monitoramento com {total_ciclos} ciclo(s) por execução')
-    for ciclo in range(total_ciclos):
+    print(f'[Iniciando] Monitoramento com 3 ciclos de 1 minuto cada')
+    for ciclo in range(3):
         print(f"\n{'=' * 50}")
         print(f'=== CICLO {ciclo + 1}/3 ===')
         print(f"{'=' * 50}")
         sent, total_env = run_ciclo(sent, total_env, confirmed_ids)
-        if ciclo < total_ciclos - 1:
+        if ciclo < 2:
             print(f'[Aguardando 60s para próximo ciclo...]')
             time.sleep(60)
     persisted = _save_corner_history(CORNER_HISTORY)
