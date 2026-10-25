@@ -272,16 +272,26 @@ async function abrirEntradas(mercado){
       if(!Array.isArray(list)) throw new Error('Formato inválido em entradas.json.');
       var tipoRelatorio=String((((CONFIG_INLINE.mercados||{})[mercado]||{}).tipo)||'').trim().toLowerCase();
       list=list.filter(function(x){return x.mercado===mercado && (!tipoRelatorio || String(x.tipo||'').trim().toLowerCase()===tipoRelatorio);});
-      // Incorpora resultados confirmados mesmo quando a entrada correspondente não foi gravada.
+      // Recupera somente registros históricos com dados da entrada verificados.
+      var ar=await fetch('https://raw.githubusercontent.com/'+REPO+'/main/relatorio_entradas_arquivo.json?t='+Date.now(),{cache:'no-store'});
+      if(ar.ok){
+        var arquivo=await ar.json();
+        if(Array.isArray(arquivo)) arquivo.forEach(function(x){
+          if(!x || String(x.mercado)!==String(mercado)) return;
+          if(tipoRelatorio && String(x.tipo||'').trim().toLowerCase()!==tipoRelatorio) return;
+          var fid=String(x.fixture_id==null?'':x.fixture_id);
+          if(!list.some(function(e){return String(e.mercado)===String(x.mercado) && String(e.fixture_id)===fid;})) list.push(Object.assign({},x,{_financeiro_incompleto:true}));
+        });
+      }
+      // Associa o resultado apenas a uma entrada com detalhes; nunca usa horário da liquidação como horário do sinal.
       var rr=await fetch('https://raw.githubusercontent.com/'+REPO+'/main/resultados.json?t='+Date.now(),{cache:'no-store'});
       if(rr.ok){
         var resultados=await rr.json();
         if(Array.isArray(resultados)) resultados.forEach(function(r){
-          if(!r || r.mercado!==mercado) return;
+          if(!r || String(r.mercado)!==String(mercado)) return;
           var fid=String(r.fixture_id==null?'':r.fixture_id);
           var existente=list.find(function(x){return String(x.mercado)===String(r.mercado) && String(x.fixture_id)===fid;});
-          if(existente){existente.resultado=r.resultado;return;}
-          list.push({mercado:r.mercado,fixture_id:fid,timestamp:r.timestamp||r.data||'',resultado:r.resultado,_sem_dados_entrada:true});
+          if(existente) existente.resultado=r.resultado;
         });
       }
       list.reverse();
@@ -298,7 +308,7 @@ async function abrirEntradas(mercado){
         var greenFmt=String(green).padStart(2,'0'), redFmt=String(red).padStart(2,'0'), refundFmt=String(refund).padStart(2,'0'), pendFmt=String(pend).padStart(2,'0');
         var mdAtual=(CONFIG_INLINE.mercados||{})[mercado]||{}; var stake=Number(mdAtual.stake||0); var investido=0, lucro=0, lucroCompleto=true;
         function oddRelatorio(raw){if(raw===null||raw===undefined||String(raw).trim()==='')return null;var valor=Number(String(raw).replace(',','.'));return isFinite(valor)&&valor>1?valor:null;}
-        list.forEach(function(x){var st=stake; if(st<=0)return; var rs=String(x.resultado||'').toLowerCase(); if(rs!=='green'&&rs!=='red')return; if(x._sem_dados_entrada){lucroCompleto=false;return;} investido+=st; if(rs==='green'){var odd=oddRelatorio(x.odd_mercado);if(odd===null)odd=oddRelatorio(x.odd_bano);if(odd===null)odd=oddRelatorio(x.odd_b365);if(odd===null)lucroCompleto=false;else lucro+=st*(odd-1);} else lucro-=st;});
+        list.forEach(function(x){var st=stake; if(st<=0)return; var rs=String(x.resultado||'').toLowerCase(); if(rs!=='green'&&rs!=='red')return; if(x._sem_dados_entrada||x._financeiro_incompleto){lucroCompleto=false;return;} investido+=st; if(rs==='green'){var odd=oddRelatorio(x.odd_mercado);if(odd===null)odd=oddRelatorio(x.odd_bano);if(odd===null)odd=oddRelatorio(x.odd_b365);if(odd===null)lucroCompleto=false;else lucro+=st*(odd-1);} else lucro-=st;});
         var roi=lucroCompleto?(investido?((lucro/investido)*100).toFixed(1):'0.0'):null;
         var lucroFmt=lucro.toFixed(2).replace('.',',');
         var lucroExibido=lucroCompleto?'R$ '+(lucroFmt.charAt(0)==='-'?'':'+')+lucroFmt:'INCOMPLETO — odd ausente';
@@ -312,8 +322,8 @@ async function abrirEntradas(mercado){
         function escaparHtml(v){return String(v==null?'':v).replace(/[&<>\"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[c];});}
         function rotuloEntrada(x){var md=(CONFIG_INLINE.mercados||{})[x.mercado]||{},tipo=String(x.tipo||md.tipo||'').toLowerCase(),n=Number(x.extra_val),periodo=Number(md.periodo),sufixo=periodo===1?'HT':(periodo===3?'HT+FT':'FT');if(tipo.indexOf('escanteio')>=0||tipo==='corner'){var tempo=tipo.indexOf('_ht')>=0?'HT':(tipo.indexOf('_ft')>=0?'FT':(mercadoNome.indexOf('ht')>=0?'HT':(mercadoNome.indexOf('ft')>=0?'FT':sufixo))); return 'Over '+(Number.isFinite(n)?(n+1).toFixed(1):'?')+' Cantos '+tempo+'⛳️';}if(tipo==='gol_intervalo')return 'Over 0.5 Gols HT⚽️';if(tipo==='over_gol'||tipo==='gol_partida')return 'Over '+(Number.isFinite(n)?(n+0.5).toFixed(1):'?')+' Gols '+(mercadoNome.indexOf('ht')>=0?'HT':(mercadoNome.indexOf('ft')>=0?'FT':sufixo))+'⚽️';if(tipo==='over_15')return 'Over 1.5 Gols '+(mercadoNome.indexOf('ht')>=0?'HT':(mercadoNome.indexOf('ft')>=0?'FT':sufixo))+'⚽️';if(tipo==='ambas_marcam')return 'Ambas Marcam '+(mercadoNome.indexOf('ht')>=0?'HT':(mercadoNome.indexOf('ft')>=0?'FT':sufixo))+'⚽️';return escaparHtml(md.nome||x.mercado||'Entrada');}
         function escaparHtml(v){return String(v==null?'':v).replace(/[&<>\"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[c];});}
-        function rotuloEntrada(x){if(x._sem_dados_entrada)return 'Resultado confirmado';var md=(CONFIG_INLINE.mercados||{})[x.mercado]||{},tipo=String(x.tipo||md.tipo||'').toLowerCase(),n=Number(x.extra_val),periodo=Number(md.periodo),mercadoNome=String(md.nome||'').toLowerCase(),sufixo=periodo===1?'HT':(periodo===3?'HT+FT':'FT');if(tipo.indexOf('escanteio')>=0||tipo==='corner'){var tempo=tipo.indexOf('_ht')>=0?'HT':(tipo.indexOf('_ft')>=0?'FT':(mercadoNome.indexOf('ht')>=0?'HT':(mercadoNome.indexOf('ft')>=0?'FT':sufixo)));return 'Over '+(Number.isFinite(n)?(n+1).toFixed(1):'?')+' Cantos '+tempo+'⛳️';}if(tipo==='gol_intervalo')return 'Over 0.5 Gols HT⚽️';if(tipo==='over_gol'||tipo==='gol_partida')return 'Over '+(Number.isFinite(n)?(n+0.5).toFixed(1):'?')+' Gols '+(mercadoNome.indexOf('ht')>=0?'HT':(mercadoNome.indexOf('ft')>=0?'FT':sufixo))+'⚽️';if(tipo==='over_15')return 'Over 1.5 Gols '+(mercadoNome.indexOf('ht')>=0?'HT':(mercadoNome.indexOf('ft')>=0?'FT':sufixo))+'⚽️';if(tipo==='ambas_marcam')return 'Ambas Marcam '+(mercadoNome.indexOf('ht')>=0?'HT':(mercadoNome.indexOf('ft')>=0?'FT':sufixo))+'⚽️';return escaparHtml(md.nome||x.mercado||'Entrada');}
-        el.innerHTML=filtradas.map(function(x){var dt=x.timestamp?new Date(x.timestamp).toLocaleString('pt-BR'):'';var rs=String(x.resultado||'pendente').toLowerCase();var cor=rs==='green'?'#2ecc71':(rs==='red'?'#e74c3c':(['refund','reembolso'].indexOf(rs)>=0?'#3498db':'#f1c40f'));var status=rs==='green'?'Green🟢':(rs==='red'?'Red🔴':(['refund','reembolso'].indexOf(rs)>=0?'Reembolso🔵':'Pendente🟡'));var jogo=x._sem_dados_entrada?'Confronto não registrado':escaparHtml((x.home||'')+' x '+(x.away||''));var horario=x.timestamp?new Date(x.timestamp).toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'}):(x.data?new Date(x.data).toLocaleDateString('pt-BR')+' — horário não registrado':'Data e horário não registrados');return '<div style="border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:11px;margin:8px 0"><b>📑 Entrada: '+rotuloEntrada(x)+'</b><br><b>⚽️ '+jogo+'</b><br><small>📅 '+escaparHtml(horario)+'</small><br><span style="color:'+cor+';font-weight:bold">⚠️Resultado: '+status+'</span></div>';}).join('');
+        function rotuloEntrada(x){var md=(CONFIG_INLINE.mercados||{})[x.mercado]||{},tipo=String(x.tipo||md.tipo||'').toLowerCase(),n=Number(x.extra_val),periodo=Number(md.periodo),mercadoNome=String(md.nome||'').toLowerCase(),sufixo=periodo===1?'HT':(periodo===3?'HT+FT':'FT');if(tipo.indexOf('escanteio')>=0||tipo==='corner'){var tempo=tipo.indexOf('_ht')>=0?'HT':(tipo.indexOf('_ft')>=0?'FT':(mercadoNome.indexOf('ht')>=0?'HT':(mercadoNome.indexOf('ft')>=0?'FT':sufixo)));return 'Over '+(Number.isFinite(n)?(n+1).toFixed(1):'?')+' Cantos '+tempo+'⛳️';}if(tipo==='gol_intervalo')return 'Over 0.5 Gols HT⚽️';if(tipo==='over_gol'||tipo==='gol_partida')return 'Over '+(Number.isFinite(n)?(n+0.5).toFixed(1):'?')+' Gols '+(mercadoNome.indexOf('ht')>=0?'HT':(mercadoNome.indexOf('ft')>=0?'FT':sufixo))+'⚽️';if(tipo==='over_15')return 'Over 1.5 Gols '+(mercadoNome.indexOf('ht')>=0?'HT':(mercadoNome.indexOf('ft')>=0?'FT':sufixo))+'⚽️';if(tipo==='ambas_marcam')return 'Ambas Marcam '+(mercadoNome.indexOf('ht')>=0?'HT':(mercadoNome.indexOf('ft')>=0?'FT':sufixo))+'⚽️';return escaparHtml(md.nome||x.mercado||'Entrada');}
+        el.innerHTML=filtradas.map(function(x){var dt=x.timestamp?new Date(x.timestamp).toLocaleString('pt-BR'):'';var rs=String(x.resultado||'pendente').toLowerCase();var cor=rs==='green'?'#2ecc71':(rs==='red'?'#e74c3c':(['refund','reembolso'].indexOf(rs)>=0?'#3498db':'#f1c40f'));var status=rs==='green'?'Green🟢':(rs==='red'?'Red🔴':(['refund','reembolso'].indexOf(rs)>=0?'Reembolso🔵':'Pendente🟡'));var jogo=escaparHtml((x.home||'')+' x '+(x.away||''));var horario=x.timestamp?new Date(x.timestamp).toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'}):'Data e horário não registrados';return '<div style="border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:11px;margin:8px 0"><b>📑 Entrada: '+rotuloEntrada(x)+'</b><br><b>⚽️ '+jogo+'</b><br><small>📅 '+escaparHtml(horario)+'</small><br><span style="color:'+cor+';font-weight:bold">⚠️Resultado: '+status+'</span></div>';}).join('');
       }
       renderResumo();
       busca.addEventListener('input',renderEntradas);

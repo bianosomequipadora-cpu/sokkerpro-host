@@ -1,0 +1,86 @@
+[
+  {
+    "fixture_id": "19871269",
+    "mercado": "custom_1792919363948",
+    "tipo": "escanteio_ft",
+    "home": "Hoi King",
+    "away": "WSE",
+    "extra_val": 6,
+    "odd_mercado": 1.525,
+    "timestamp": "2026-10-25T06:16:40.659567-03:00",
+    "resultado": "refund",
+    "_financeiro_incompleto": true
+  },
+  {
+    "fixture_id": "19871258",
+    "mercado": "custom_1792919363948",
+    "tipo": "escanteio_ft",
+    "home": "Leaper",
+    "away": "Supreme",
+    "extra_val": 5,
+    "odd_mercado": 1.245,
+    "timestamp": "2026-10-25T06:17:03.407588-03:00",
+    "resultado": "green",
+    "_financeiro_incompleto": true
+  },
+  {
+    "fixture_id": "19676299",
+    "mercado": "custom_1792919363948",
+    "tipo": "escanteio_ft",
+    "home": "Cheongju",
+    "away": "Yongin City",
+    "extra_val": 12,
+    "odd_mercado": 2.392,
+    "timestamp": "2026-10-25T06:17:31.482199-03:00",
+    "resultado": "red",
+    "_financeiro_incompleto": true
+  },
+  {
+    "fixture_id": "19881629",
+    "mercado": "custom_1792919363948",
+    "tipo": "escanteio_ft",
+    "home": "Azkals",
+    "away": "Aguilas",
+    "extra_val": 9,
+    "odd_mercado": 1.62,
+    "timestamp": "2026-10-25T08:25:12.590059-03:00",
+    "resultado": "green",
+    "_financeiro_incompleto": true
+  },
+  {
+    "fixture_id": "19811698",
+    "mercado": "custom_1792919363948",
+    "tipo": "escanteio_ft",
+    "home": "Estrela Calheta",
+    "away": "Uniao Lamas",
+    "extra_val": 14,
+    "odd_mercado": 1.11,
+    "timestamp": "2026-10-25T09:05:45.973822-03:00",
+    "resultado": "green",
+    "_financeiro_incompleto": true
+  },
+  {
+    "fixture_id": "19748622",
+    "mercado": "custom_1792919363948",
+    "tipo": "escanteio_ft",
+    "home": "Pendikspor",
+    "away": "Kayserispor",
+    "extra_val": 7,
+    "odd_mercado": 1.125,
+    "timestamp": "2026-10-25T09:02:59.712171-03:00",
+    "resultado": "green",
+    "_financeiro_incompleto": true
+  },
+  {
+    "fixture_id": "19748616",
+    "mercado": "custom_1792919363948",
+    "tipo": "escanteio_ft",
+    "home": "Batman Petrolspor",
+    "away": "Esenler Erokspor",
+    "extra_val": 16,
+    "odd_mercado": 1.144,
+    "timestamp": "2026-10-25T09:06:19.340719-03:00",
+    "resultado": "green",
+    "_financeiro_incompleto": true
+  }
+]
