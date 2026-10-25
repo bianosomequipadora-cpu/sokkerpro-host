@@ -504,7 +504,7 @@
       "minuto_inicio": 2,
       "minuto_fim": 89,
       "periodo": 3,
-      "tipo": "over_gol",
+      "tipo": "escanteio_ft",
       "stake": 10,
       "placar_valido": "",
       "criterios": {
