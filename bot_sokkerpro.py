@@ -958,11 +958,73 @@ def enviar_relatorio_mensal():
     msg = gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos, refunds, _totais_financeiros(lambda r: str(r.get('data','')).startswith(datetime.now(BRT).strftime('%Y-%m'))))
     return msg
 
+def _totais_financeiros_relatorio_diario(data_relatorio):
+    """Calcula o financeiro diário usando stakes configuradas e odds exatas vinculadas."""
+    try:
+        config = carregar_config_github()
+    except Exception:
+        config = {}
+    stakes = {}
+    for cod, info in (config or {}).items():
+        try:
+            valor = info.get('stake') if isinstance(info, dict) else None
+            stakes[cod] = float(valor) if valor not in (None, '') else 0.0
+        except (TypeError, ValueError):
+            stakes[cod] = 0.0
+
+    entradas_por_chave = {}
+    for entrada in _load_entradas():
+        chave = (str(entrada.get('fixture_id', '')), entrada.get('mercado'),
+                 str(entrada.get('resultado', '')).strip().lower())
+        entradas_por_chave.setdefault(chave, []).append(entrada)
+
+    resultados = [r for r in _load_resultados_github()
+                  if r.get('data') == data_relatorio
+                  and str(r.get('resultado', '')).strip().lower() in ('green', 'red')]
+    investido = 0.0
+    lucro = 0.0
+    financeiro_incompleto = False
+    usados = set()
+    for resultado in resultados:
+        cod = resultado.get('mercado')
+        if cod not in MAPA_MERCADO:
+            continue
+        stake = stakes.get(cod, 0.0)
+        if stake <= 0:
+            financeiro_incompleto = True
+            continue
+        investido += stake
+
+        chave = (str(resultado.get('fixture_id', '')), cod,
+                 str(resultado.get('resultado', '')).strip().lower())
+        entrada_correspondente = None
+        for indice, entrada in enumerate(entradas_por_chave.get(chave, [])):
+            chave_usada = (chave, indice)
+            if chave_usada not in usados:
+                usados.add(chave_usada)
+                entrada_correspondente = entrada
+                break
+        odd = _odd_financeira(entrada_correspondente) if entrada_correspondente else None
+        if odd is None:
+            financeiro_incompleto = True
+            continue
+        if chave[2] == 'red':
+            lucro -= stake
+        else:
+            lucro += stake * (odd - 1.0)
+
+    roi = lucro / investido * 100 if investido > 0 else 0.0
+    if financeiro_incompleto:
+        return investido, None, None
+    return investido, lucro, roi
+
+
 def enviar_relatorio_diario():
     hoje_key = f"relatorio_{datetime.now(BRT).strftime('%Y-%m-%d')}"
+    hoje_data = datetime.now(BRT).strftime('%Y-%m-%d')
     hoje = datetime.now(BRT).strftime('%d/%m/%Y')
     greens, reds, refunds = get_relatorio_hoje()
-    msg = gerar_layout_relatorio(greens, reds, hoje, refunds, _totais_financeiros(lambda r: r.get('data') == datetime.now(BRT).strftime('%Y-%m-%d')))
+    msg = gerar_layout_relatorio(greens, reds, hoje, refunds, _totais_financeiros_relatorio_diario(hoje_data))
     confirmed_ids = set()
     sent = load_sent()
     if send_telegram(msg):
