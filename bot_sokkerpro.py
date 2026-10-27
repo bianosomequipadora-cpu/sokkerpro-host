@@ -763,10 +763,13 @@ def _claim_auditoria_slot(chave):
         print(f'[AUDITORIA] Falha ao reservar {chave}: {e}')
         return False
 
-def salvar_resultado(resultado, mercado=None, fixture_id=None):
+def salvar_resultado(resultado, mercado=None, fixture_id=None, odd_mercado=None, signal_key=None):
     hoje = datetime.now(BRT).strftime('%Y-%m-%d')
     registros = _load_resultados_github()
-    registros.append({'data': hoje, 'resultado': resultado, 'mercado': mercado, 'fixture_id': fixture_id, 'timestamp': datetime.now(BRT).isoformat()})
+    registro = {'data': hoje, 'resultado': resultado, 'mercado': mercado, 'fixture_id': fixture_id, 'signal_key': signal_key, 'timestamp': datetime.now(BRT).isoformat()}
+    if _odd_financeira({'odd_mercado': odd_mercado}) is not None:
+        registro['odd_mercado'] = float(str(odd_mercado).replace(',', '.'))
+    registros.append(registro)
     _save_resultados_github(registros)
 
 def _agregar_resultados(filtro_data=None):
@@ -816,7 +819,7 @@ def _odd_financeira(registro):
     return odd if odd > 1.0 and odd != float('inf') else None
 
 def _calcular_financeiro_por_mercado(filtro_data=None):
-    """Calcula GREEN/RED por ID de mercado e data do resultado confirmado."""
+    """Calcula valores por mercado usando a stake configurada e a odd exata do sinal liquidado."""
     dados = {cod: {'stake_total': 0.0, 'stake_unit': 0.0, 'lucro': 0.0, 'financeiro_entradas': 0, 'financeiro_incompleto': 0} for cod in MAPA_MERCADO}
     try:
         config = carregar_config_github()
@@ -832,53 +835,56 @@ def _calcular_financeiro_por_mercado(filtro_data=None):
     for cod in dados:
         dados[cod]['stake_unit'] = stakes.get(cod, 0.0)
 
-    # Relatórios diários/mensais usam a data em que o resultado foi confirmado,
-    # não o timestamp da entrada (que pode ter ocorrido na noite anterior).
-    datas_resultados = {}
-    indices_datas = {}
-    if filtro_data is not None:
-        for resultado_registro in _load_resultados_github():
-            resultado = str(resultado_registro.get('resultado', '')).strip().lower()
-            if resultado not in ('green', 'red'):
-                continue
-            chave = (str(resultado_registro.get('fixture_id', '')), str(resultado_registro.get('mercado', '')), resultado)
-            data_resultado = str(resultado_registro.get('data') or '')
-            if not data_resultado and resultado_registro.get('timestamp'):
-                data_resultado = str(resultado_registro['timestamp'])[:10]
-            if data_resultado:
-                datas_resultados.setdefault(chave, []).append(data_resultado)
+    # Resultados são a fonte da data de liquidação. O odds field é salvo no próprio
+    # resultado; registros anteriores podem recuperar a odd da entrada exata.
+    entradas = _load_entradas()
+    entradas_por_signal_key = {}
+    entradas_por_chave = {}
+    for entrada in entradas:
+        signal_key = entrada.get('signal_key')
+        if signal_key:
+            entradas_por_signal_key[str(signal_key)] = entrada
+        chave = (str(entrada.get('fixture_id', '')), entrada.get('mercado'),
+                 str(entrada.get('resultado', '')).strip().lower())
+        entradas_por_chave.setdefault(chave, []).append(entrada)
+    indices_usados = {}
 
-    for registro in _load_entradas():
+    for registro in _load_resultados_github():
         cod = registro.get('mercado')
         resultado = str(registro.get('resultado', '')).strip().lower()
         if cod not in dados or resultado not in ('green', 'red'):
             continue
-        if filtro_data is not None:
-            chave = (str(registro.get('fixture_id', '')), str(cod), resultado)
-            datas = datas_resultados.get(chave, [])
-            indice = indices_datas.get(chave, 0)
-            if indice < len(datas):
-                data_registro = datas[indice]
-                indices_datas[chave] = indice + 1
-            else:
-                data_registro = str(registro.get('data') or registro.get('timestamp') or '')[:10]
-            if not filtro_data({'data': data_registro}):
-                continue
-
-        # Só entram no financeiro sinais liquidados que tenham a odd exata exibida.
-        # Sem odd, o resultado continua nas contagens, mas não altera stake, lucro ou ROI.
-        odd = _odd_financeira(registro)
-        if odd is None:
+        if filtro_data is not None and not filtro_data(registro):
             continue
         stake = stakes.get(cod, 0.0)
         if stake <= 0:
             continue
+
+        odd = _odd_financeira(registro)
+        if odd is None:
+            entrada_exata = entradas_por_signal_key.get(str(registro.get('signal_key', '')))
+            odd = _odd_financeira(entrada_exata) if entrada_exata else None
+        if odd is None:
+            chave = (str(registro.get('fixture_id', '')), cod, resultado)
+            candidatos = [entrada for entrada in entradas_por_chave.get(chave, [])
+                          if _odd_financeira(entrada) is not None]
+            indice = indices_usados.get(chave, 0)
+            # Sem uma chave individual, só usar a associação se houver um único
+            # candidato elegível para esse jogo/mercado/resultado.
+            if len(candidatos) == 1 and indice == 0:
+                odd = _odd_financeira(candidatos[0])
+                indices_usados[chave] = 1
+        # Only count a wager if its exact displayed market odd is verified.
+        if odd is None:
+            continue
+
         dados[cod]['stake_total'] += stake
         dados[cod]['financeiro_entradas'] += 1
         if resultado == 'red':
             dados[cod]['lucro'] -= stake
         else:
             dados[cod]['lucro'] += stake * (odd - 1.0)
+
     for info in dados.values():
         info['roi'] = info['lucro'] / info['stake_total'] * 100 if info['stake_total'] > 0 else 0.0
     return dados
@@ -887,18 +893,15 @@ def _formatar_valor_investido(valor):
     return f"R$ {valor:.2f}".replace('.', ',')
 
 def _formatar_lucro(valor):
-    if valor is None:
-        return 'INCOMPLETO — odd ausente'
+    valor = 0.0 if valor is None else valor
     return f"R$ {valor:+.2f}".replace('.', ',')
 
 def _formatar_roi(valor):
-    return 'INCOMPLETO' if valor is None else f'{valor:+.1f}%'
+    valor = 0.0 if valor is None else valor
+    return f'{valor:+.1f}%'
 
 def _resumir_financeiro(valores):
     investido = sum(info['stake_total'] for info in valores.values())
-    incompleto = any(info['financeiro_incompleto'] > 0 for info in valores.values())
-    if incompleto:
-        return investido, None, None
     lucro = sum(info['lucro'] for info in valores.values())
     roi = lucro / investido * 100 if investido > 0 else 0.0
     return investido, lucro, roi
@@ -908,10 +911,9 @@ def _resumo_financeiro_texto(valores):
     return f"💵 Investido: {_formatar_valor_investido(investido)} | 📈 Lucro: {_formatar_lucro(lucro)} | 📊 ROI: {_formatar_roi(roi)}"
 
 def _linhas_financeiras(info):
-    lucro = None if info['financeiro_incompleto'] else info['lucro']
     return (f"   💰 Stake por entrada: {_formatar_valor_investido(info['stake_unit'])}" + chr(10) +
             f"   💵 Valor investido: {_formatar_valor_investido(info['stake_total'])}" + chr(10) +
-            f"   📈 Lucro líquido: {_formatar_lucro(lucro)}" + chr(10) +
+            f"   📈 Lucro líquido: {_formatar_lucro(info['lucro'])}" + chr(10) +
             f"   📊 ROI: {_formatar_roi(info['roi'])}")
 
 def _totais_financeiros(filtro_data=None):
@@ -958,73 +960,11 @@ def enviar_relatorio_mensal():
     msg = gerar_layout_relatorio_mensal(greens, reds, mes_nome, dias_ativos, refunds, _totais_financeiros(lambda r: str(r.get('data','')).startswith(datetime.now(BRT).strftime('%Y-%m'))))
     return msg
 
-def _totais_financeiros_relatorio_diario(data_relatorio):
-    """Calcula o financeiro diário usando stakes configuradas e odds exatas vinculadas."""
-    try:
-        config = carregar_config_github()
-    except Exception:
-        config = {}
-    stakes = {}
-    for cod, info in (config or {}).items():
-        try:
-            valor = info.get('stake') if isinstance(info, dict) else None
-            stakes[cod] = float(valor) if valor not in (None, '') else 0.0
-        except (TypeError, ValueError):
-            stakes[cod] = 0.0
-
-    entradas_por_chave = {}
-    for entrada in _load_entradas():
-        chave = (str(entrada.get('fixture_id', '')), entrada.get('mercado'),
-                 str(entrada.get('resultado', '')).strip().lower())
-        entradas_por_chave.setdefault(chave, []).append(entrada)
-
-    resultados = [r for r in _load_resultados_github()
-                  if r.get('data') == data_relatorio
-                  and str(r.get('resultado', '')).strip().lower() in ('green', 'red')]
-    investido = 0.0
-    lucro = 0.0
-    financeiro_incompleto = False
-    usados = set()
-    for resultado in resultados:
-        cod = resultado.get('mercado')
-        if cod not in MAPA_MERCADO:
-            continue
-        stake = stakes.get(cod, 0.0)
-        if stake <= 0:
-            financeiro_incompleto = True
-            continue
-        investido += stake
-
-        chave = (str(resultado.get('fixture_id', '')), cod,
-                 str(resultado.get('resultado', '')).strip().lower())
-        entrada_correspondente = None
-        for indice, entrada in enumerate(entradas_por_chave.get(chave, [])):
-            chave_usada = (chave, indice)
-            if chave_usada not in usados:
-                usados.add(chave_usada)
-                entrada_correspondente = entrada
-                break
-        odd = _odd_financeira(entrada_correspondente) if entrada_correspondente else None
-        if odd is None:
-            financeiro_incompleto = True
-            continue
-        if chave[2] == 'red':
-            lucro -= stake
-        else:
-            lucro += stake * (odd - 1.0)
-
-    roi = lucro / investido * 100 if investido > 0 else 0.0
-    if financeiro_incompleto:
-        return investido, None, None
-    return investido, lucro, roi
-
-
 def enviar_relatorio_diario():
     hoje_key = f"relatorio_{datetime.now(BRT).strftime('%Y-%m-%d')}"
-    hoje_data = datetime.now(BRT).strftime('%Y-%m-%d')
     hoje = datetime.now(BRT).strftime('%d/%m/%Y')
     greens, reds, refunds = get_relatorio_hoje()
-    msg = gerar_layout_relatorio(greens, reds, hoje, refunds, _totais_financeiros_relatorio_diario(hoje_data))
+    msg = gerar_layout_relatorio(greens, reds, hoje, refunds, _totais_financeiros(lambda r: r.get('data') == datetime.now(BRT).strftime('%Y-%m-%d')))
     confirmed_ids = set()
     sent = load_sent()
     if send_telegram(msg):
@@ -3225,7 +3165,7 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 if not mensagem_original_enviada:
                     # Sinais antigos ou sem message_id recebem confirmação independente.
                     send_telegram(emoji)
-                salvar_resultado(res, mercado=s.get('mercado'), fixture_id=s.get('fixture_id'))
+                salvar_resultado(res, mercado=s.get('mercado'), fixture_id=s.get('fixture_id'), odd_mercado=s.get('odd_mercado'), signal_key=s.get('signal_key'))
                 atualizar_entrada_historico(s, res)
                 registrar_performance(s.get('mercado'), res)
             else:
