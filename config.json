@@ -535,21 +535,18 @@
     "custom_1793229205694": {
       "ativo": true,
       "notificar": true,
-      "nome": "⚽️🔥AMBAS MARCAM — FILTRO 80%🔥⚽️",
-      "minuto_inicio": 15,
+      "nome": "⚽️🔥AMBAS MARCAM — FAVORITO PERDENDO🔥⚽️",
+      "minuto_inicio": 10,
       "minuto_fim": 70,
-      "periodo": 3,
+      "periodo": 2,
       "tipo": "ambas_marcam",
       "stake": 10,
-      "placar_valido": "",
-      "criterios": {},
-      "criterios_api": [
-        {
-          "campo": "prob_btts",
-          "operador": "gte",
-          "valor": 80
-        }
-      ]
+      "placar_valido": "1x0,0x1",
+      "criterios": {
+        "situacao_favorito": "perdendo",
+        "btts_probabilidade_min": 50
+      },
+      "criterios_api": []
     },
     "custom_1793229205695": {
       "ativo": true,
