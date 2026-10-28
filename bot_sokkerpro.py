@@ -2673,7 +2673,11 @@ def checar_resultado(sinal):
         # Não usar o minuto numérico: em 45+X/90+X ele pode antecipar a auditoria
         # enquanto ainda há acréscimos para jogar.
         status = str(fixture.get('status', '')).strip().upper()
-        is_final = status in ('FT', 'PEN', 'AET')
+        # FT significa término do tempo regulamentar, já com os acréscimos
+        # concluídos. AET/PEN podem incluir dados da prorrogação e não podem
+        # liquidar mercados FT; nesses estados aguardamos estatísticas FT
+        # regulamentares confirmadas, em vez de gerar GREEN/RED/reembolso falso.
+        is_final = status == 'FT'
         is_2h = status in ('2ND', 'HT')
         mercados_ht = ['HT', 'CORNER_HT', 'BTTS', 'escanteio_ht']
         eh_mercado_ht = mercado in mercados_ht or (mercado and mercado.startswith('custom_') and (sinal.get('tipo') in ('escanteio_ht', 'gol_intervalo')))
