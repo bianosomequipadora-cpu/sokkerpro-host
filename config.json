@@ -531,6 +531,44 @@
           "valor": 0
         }
       ]
+    },
+    "custom_1793229205694": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️🔥AMBAS MARCAM — FILTRO 80%🔥⚽️",
+      "minuto_inicio": 15,
+      "minuto_fim": 70,
+      "periodo": 3,
+      "tipo": "ambas_marcam",
+      "stake": 10,
+      "placar_valido": "",
+      "criterios": {},
+      "criterios_api": [
+        {
+          "campo": "prob_btts",
+          "operador": "gte",
+          "valor": 80
+        }
+      ]
+    },
+    "custom_1793229205695": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⚽️🔥OVER 0.5 GOL HT — FILTRO 80%🔥⚽️",
+      "minuto_inicio": 15,
+      "minuto_fim": 35,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "stake": 10,
+      "placar_valido": "0x0",
+      "criterios": {},
+      "criterios_api": [
+        {
+          "campo": "prob_ht_over_0_5",
+          "operador": "gte",
+          "valor": 80
+        }
+      ]
     }
   }
 }
