@@ -419,6 +419,62 @@
           "valor": 4
         }
       ]
+    },
+    "custom_1793205000000": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⛳️🔥ESCANTEIO HT — FAVORITO SOB PRESSÃO🔥⛳️",
+      "minuto_inicio": 30,
+      "minuto_fim": 37,
+      "periodo": 1,
+      "tipo": "escanteio_ht",
+      "stake": 10,
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": "perdendo_ou_empatando"
+      },
+      "criterios_api": [
+        {
+          "campo": "diferenca_gols_fav_max",
+          "operador": "lte",
+          "valor": 1
+        },
+        {
+          "campo": "max_red_card_fav",
+          "operador": "lte",
+          "valor": 0
+        },
+        {
+          "campo": "pressure_bar_min",
+          "operador": "gte",
+          "valor": 70
+        },
+        {
+          "campo": "dapm_total_orig_min",
+          "operador": "gte",
+          "valor": 1
+        },
+        {
+          "campo": "chutes_totais_min",
+          "operador": "gte",
+          "valor": 5
+        },
+        {
+          "campo": "chutes_alvo_min",
+          "operador": "gte",
+          "valor": 2
+        },
+        {
+          "campo": "escanteios_minimos",
+          "operador": "gte",
+          "valor": 2
+        },
+        {
+          "campo": "escanteios_5m",
+          "operador": "lte",
+          "valor": 0
+        }
+      ]
     }
   }
 }
