@@ -41871,7 +41871,7 @@
     "tipo": "escanteio_ft",
     "home": "Fiorentina",
     "away": "Atalanta",
-    "message_id": 0,
+    "message_id": 18299,
     "extra_val": 8,
     "entry_sh": 2,
     "entry_sa": 2,
@@ -41880,6 +41880,7 @@
     "odd_bano": null,
     "odd_mercado": 1.736,
     "timestamp": "2026-10-29T18:36:51.890542-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
