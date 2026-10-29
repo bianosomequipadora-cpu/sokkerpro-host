@@ -40932,5 +40932,23 @@
     "timestamp": "2026-10-29T01:43:27.449946-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "31aab4ace2e9_custom_1793244041203_20261029",
+    "fixture_id": "19901748",
+    "mercado": "custom_1793244041203",
+    "tipo": "escanteio_ht",
+    "home": "Megt & Centre",
+    "away": "Bangalore City FC",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.17,
+    "timestamp": "2026-10-29T03:00:38.613180-03:00",
+    "resultado": "pendente"
   }
 ]
