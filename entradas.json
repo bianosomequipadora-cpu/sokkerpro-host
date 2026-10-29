@@ -41198,5 +41198,23 @@
     "timestamp": "2026-10-29T08:28:19.687474-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "79ee6c7515f3_custom_1793244041203_20261029",
+    "fixture_id": "19887996",
+    "mercado": "custom_1793244041203",
+    "tipo": "escanteio_ht",
+    "home": "Olympia",
+    "away": "Ararat-Armenia",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.29,
+    "timestamp": "2026-10-29T09:00:34.562544-03:00",
+    "resultado": "pendente"
   }
 ]
