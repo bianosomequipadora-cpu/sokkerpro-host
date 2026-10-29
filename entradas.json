@@ -41605,7 +41605,7 @@
     "tipo": "escanteio_ht",
     "home": "Odra Opole",
     "away": "Śląsk Wrocław",
-    "message_id": 0,
+    "message_id": 18285,
     "extra_val": 2,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -41614,6 +41614,7 @@
     "odd_bano": null,
     "odd_mercado": 1.995,
     "timestamp": "2026-10-29T17:07:09.766112-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
