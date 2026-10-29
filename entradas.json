@@ -40516,5 +40516,23 @@
     "odd_mercado": 1.165,
     "timestamp": "2026-10-28T23:36:12.049139-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "139b85827ffc_custom_1793241474533_20261028",
+    "fixture_id": "19713070",
+    "mercado": "custom_1793241474533",
+    "tipo": "escanteio_ft",
+    "home": "Internacional de Bogotá",
+    "away": "Independiente Medellín",
+    "message_id": 0,
+    "extra_val": 10,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.25,
+    "timestamp": "2026-10-28T23:41:01.345855-03:00",
+    "resultado": "pendente"
   }
 ]
