@@ -40030,5 +40030,23 @@
     "odd_mercado": 1.135,
     "timestamp": "2026-10-28T22:05:02.878108-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "bf62832b07ab_custom_1793235001869_20261028",
+    "fixture_id": "19609963",
+    "mercado": "custom_1793235001869",
+    "tipo": "escanteio_ft",
+    "home": "Inter Miami",
+    "away": "Cincinnati",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.11,
+    "timestamp": "2026-10-28T22:06:49.334647-03:00",
+    "resultado": "pendente"
   }
 ]
