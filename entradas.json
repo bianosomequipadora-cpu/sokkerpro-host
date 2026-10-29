@@ -41225,7 +41225,7 @@
     "tipo": "escanteio_ht",
     "home": "Olympia",
     "away": "Ararat-Armenia",
-    "message_id": 0,
+    "message_id": 18264,
     "extra_val": 2,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -41234,6 +41234,7 @@
     "odd_bano": null,
     "odd_mercado": 1.675,
     "timestamp": "2026-10-29T09:05:35.486748-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
