@@ -40676,7 +40676,7 @@
     "tipo": "escanteio_ht",
     "home": "Olimpia",
     "away": "Cartaginés",
-    "message_id": 0,
+    "message_id": 18233,
     "extra_val": 2,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -40685,6 +40685,7 @@
     "odd_bano": null,
     "odd_mercado": 2.208,
     "timestamp": "2026-10-29T00:43:17.504335-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
