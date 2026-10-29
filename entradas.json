@@ -41008,5 +41008,23 @@
     "timestamp": "2026-10-29T05:35:28.296874-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "5014cab9be99_custom_1793240352537_20261029",
+    "fixture_id": "19901251",
+    "mercado": "custom_1793240352537",
+    "tipo": "escanteio_ht",
+    "home": "Ulaanbaatar",
+    "away": "Deren",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.8,
+    "odd_bano": null,
+    "odd_mercado": 1.81,
+    "timestamp": "2026-10-29T05:35:48.251281-03:00",
+    "resultado": "pendente"
   }
 ]
