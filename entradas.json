@@ -40300,5 +40300,23 @@
     "odd_mercado": 1.115,
     "timestamp": "2026-10-28T22:46:47.454180-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "98ee36612784_custom_1793235001869_20261028",
+    "fixture_id": "19621751",
+    "mercado": "custom_1793235001869",
+    "tipo": "escanteio_ft",
+    "home": "Bahia",
+    "away": "São Paulo",
+    "message_id": 0,
+    "extra_val": 17,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.104,
+    "timestamp": "2026-10-28T23:02:24.337861-03:00",
+    "resultado": "pendente"
   }
 ]
