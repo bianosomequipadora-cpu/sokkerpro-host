@@ -41749,5 +41749,23 @@
     "timestamp": "2026-10-29T17:37:30.505182-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "db842dc5de6d_custom_1793240373682_20261029",
+    "fixture_id": "19888289",
+    "mercado": "custom_1793240373682",
+    "tipo": "escanteio_ft",
+    "home": "De Treffers",
+    "away": "Heracles Almelo",
+    "message_id": 0,
+    "extra_val": 14,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.344,
+    "timestamp": "2026-10-29T17:43:21.849646-03:00",
+    "resultado": "pendente"
   }
 ]
