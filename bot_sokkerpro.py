@@ -119,8 +119,11 @@ CHAT_IDS = [int(id) for id in os.environ.get('TG_GROUP_ID', '').split(',') if id
 CHAT_ID = CHAT_IDS[0] if CHAT_IDS else ''
 SOKKERPRO_BASE_URL = 'https://m4.sokkerpro.com'
 
+_ULTIMA_REFERENCIA_TELEGRAM = None
+
 def send_telegram(msg_data, reply_to=None, marca=None, home='', away='', odd_b365_val=None, odd_bano_val=None):
-    """Envia mensagem formatada com botões inline."""
+    """Envia mensagem formatada com botões inline e registra a referência do último envio."""
+    global _ULTIMA_REFERENCIA_TELEGRAM
     if isinstance(msg_data, tuple):
         text, keyboard = msg_data
     else:
@@ -128,6 +131,7 @@ def send_telegram(msg_data, reply_to=None, marca=None, home='', away='', odd_b36
         keyboard = None
     url_send = f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage'
     last_mid = None
+    last_ref = None
     for chat_id in CHAT_IDS:
         payload = {'chat_id': chat_id, 'text': text, 'parse_mode': 'HTML', 'disable_web_page_preview': False}
         if reply_to:
@@ -139,9 +143,34 @@ def send_telegram(msg_data, reply_to=None, marca=None, home='', away='', odd_b36
             res = r.json()
             if res.get('ok'):
                 last_mid = res.get('result', {}).get('message_id')
+                last_ref = {'chat_id': chat_id, 'message_id': last_mid}
         except:
             pass
+    _ULTIMA_REFERENCIA_TELEGRAM = last_ref
     return last_mid
+
+def editar_sinal_telegram(chat_id, message_id, texto_original, teclado_original, emoji_resultado):
+    """Acrescenta o resultado ao sinal original, reenviando o teclado inline sem alterá-lo."""
+    if not (chat_id and message_id and texto_original):
+        return False
+    url = f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/editMessageText'
+    texto = str(texto_original).rstrip() + '\n' + emoji_resultado
+    if len(texto) > 4096:
+        print(f'[SINAIS] Texto do sinal {message_id} excede o limite para edição; enviando confirmação separada')
+        return False
+    payload = {'chat_id': chat_id, 'message_id': message_id, 'text': texto, 'parse_mode': 'HTML'}
+    if teclado_original:
+        payload['reply_markup'] = teclado_original
+    try:
+        resposta = requests.post(url, json=payload, timeout=10)
+        resultado = resposta.json()
+        if resultado.get('ok'):
+            return True
+        print(f'[SINAIS] Telegram não editou o sinal {message_id}: {resultado.get("description", "erro sem descrição")}')
+    except Exception as exc:
+        print(f'[SINAIS] Erro ao editar o sinal {message_id}: {exc}')
+    return False
+
 GITHUB_TOKEN = os.environ.get('GH_PAT', '')
 GITHUB_REPO = os.environ.get('GITHUB_REPOSITORY', 'cleubianodasilva-png/boot-ia-inteligente-bot')
 SENT_API_PATH = 'sent_live_signals.json'
@@ -768,10 +797,15 @@ def atualizar_entrada_historico(sinal, resultado):
     if not _save_entradas(registros):
         print(f'[ENTRADAS] Não confirmei no GitHub a atualização do resultado {fid}/{mercado}')
 
-def registrar_sinal(fid, mercado, home, away, message_id, extra_val=None, tipo=None, entry_sh=None, entry_sa=None, odd_b365=None, odd_bano=None, odd_mercado=None, signal_key=None):
+def registrar_sinal(fid, mercado, home, away, message_id, extra_val=None, tipo=None, entry_sh=None, entry_sa=None, odd_b365=None, odd_bano=None, odd_mercado=None, signal_key=None, mensagem_original=None, teclado_original=None):
     timestamp_sinal = datetime.now(BRT).isoformat()
     sinais = _load_sinais_github()
-    sinais.append({'signal_key': signal_key, 'fixture_id': fid, 'mercado': mercado, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'tipo': tipo, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'odd_b365': odd_b365, 'odd_bano': odd_bano, 'odd_mercado': odd_mercado, 'timestamp': timestamp_sinal})
+    registro_sinal = {'signal_key': signal_key, 'fixture_id': fid, 'mercado': mercado, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'tipo': tipo, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'odd_b365': odd_b365, 'odd_bano': odd_bano, 'odd_mercado': odd_mercado, 'timestamp': timestamp_sinal}
+    if mensagem_original:
+        registro_sinal['mensagem_original'] = mensagem_original
+    if teclado_original:
+        registro_sinal['teclado_original'] = teclado_original
+    sinais.append(registro_sinal)
     _save_sinais_github(sinais)
     historico = _load_entradas()
     historico.append({'signal_key': signal_key, 'fixture_id': fid, 'mercado': mercado, 'tipo': tipo, 'home': home, 'away': away, 'message_id': message_id, 'extra_val': extra_val, 'entry_sh': entry_sh, 'entry_sa': entry_sa, 'entry_total': (entry_sh + entry_sa) if entry_sh is not None and entry_sa is not None else None, 'odd_b365': odd_b365, 'odd_bano': odd_bano, 'odd_mercado': odd_mercado, 'timestamp': timestamp_sinal, 'resultado': 'pendente'})
@@ -779,18 +813,24 @@ def registrar_sinal(fid, mercado, home, away, message_id, extra_val=None, tipo=N
         print(f'[ENTRADAS] Não confirmei no GitHub a nova entrada {fid}/{mercado}; odds={odd_mercado}')
 
 def atualizar_message_id_sinal(fid, mercado, message_id):
-    """Atualiza o ID da mensagem depois do envio, sem perder o sinal já reservado."""
+    """Atualiza a referência da mensagem depois do envio, sem perder o sinal reservado."""
     try:
+        referencia = _ULTIMA_REFERENCIA_TELEGRAM if isinstance(_ULTIMA_REFERENCIA_TELEGRAM, dict) and str(_ULTIMA_REFERENCIA_TELEGRAM.get('message_id')) == str(message_id) else None
+        chat_id = referencia.get('chat_id') if referencia else None
         sinais = _load_sinais_github()
         for registro in reversed(sinais):
             if str(registro.get('fixture_id')) == str(fid) and registro.get('mercado') == mercado and not registro.get('message_id'):
                 registro['message_id'] = message_id or 0
+                if chat_id is not None:
+                    registro['message_chat_id'] = chat_id
                 _save_sinais_github(sinais)
                 break
         entradas = _load_entradas()
         for registro in reversed(entradas):
             if str(registro.get('fixture_id')) == str(fid) and registro.get('mercado') == mercado and not registro.get('message_id'):
                 registro['message_id'] = message_id or 0
+                if chat_id is not None:
+                    registro['message_chat_id'] = chat_id
                 if not _save_entradas(entradas):
                     print(f'[ENTRADAS] Não confirmei no GitHub o message_id da entrada {fid}/{mercado}')
                 break
@@ -3253,10 +3293,21 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 emoji = '🟢GREEN CONFIRMADO🟢' if res == 'green' else ('🔵REEMBOLSO CONFIRMADO🔵' if res == 'refund' else '🔴RED CONFIRMADO🔴')
                 confirmacao = f"{emoji}\n<b>Mercado:</b> {s.get('mercado', '—')}\n<b>Jogo:</b> {s.get('home', '—')} x {s.get('away', '—')}"
                 mensagem_original_enviada = False
-                if s.get('message_id'):
+                if s.get('message_id') and s.get('message_chat_id') and s.get('mensagem_original'):
+                    mensagem_original_enviada = editar_sinal_telegram(
+                        s.get('message_chat_id'), s.get('message_id'), s.get('mensagem_original'),
+                        s.get('teclado_original'), emoji
+                    )
+                elif s.get('message_id') and len(CHAT_IDS) == 1 and s.get('mensagem_original'):
+                    # Compatibilidade para sinais gravados antes da persistência do chat_id.
+                    mensagem_original_enviada = editar_sinal_telegram(
+                        CHAT_IDS[0], s.get('message_id'), s.get('mensagem_original'),
+                        s.get('teclado_original'), emoji
+                    )
+                if not mensagem_original_enviada and s.get('message_id'):
                     mensagem_original_enviada = send_telegram(emoji, reply_to=s.get('message_id')) is not None
                 if not mensagem_original_enviada:
-                    # Sinais antigos ou sem message_id recebem confirmação independente.
+                    # Sinais antigos ou sem mensagem editável recebem confirmação independente.
                     send_telegram(emoji)
                 salvar_resultado(res, mercado=s.get('mercado'), fixture_id=s.get('fixture_id'), odd_mercado=s.get('odd_mercado'), signal_key=s.get('signal_key'))
                 atualizar_entrada_historico(s, res)
@@ -3620,12 +3671,17 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                 print(f'[DIAG-{mk}-DUP] {h} x {a} — reserva atômica já feita por outra execução, pulando')
                 sent.add(key)
                 continue
-            # Persiste primeiro para o painel não perder o sinal após o envio.
-            # Salva a mesma cotação que a mensagem vai exibir em Odd Ao Vivo do Mercado.
+            # Prepara uma única mensagem; persiste o texto e os botões exatos enviados,
+            # para que a auditoria possa acrescentar o resultado sem reconstruir o layout.
             odd_mercado_registro = _odd_mercado_exibida(h, a, liga, ob365, odd_paripesa)
-            registrar_sinal(fid, mk, h, a, 0, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa, odd_b365=ob365, odd_bano=obano, odd_mercado=odd_mercado_registro, signal_key=key)
+            mensagem_sinal = msg_universal(h, a, m, liga, pais, 5, mk, cnome, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, odd_paripesa=odd_paripesa, nome=cnome, tipo=c_tipo, probabilidade=_probabilidade_para_sinal(stats, c_tipo, sh, sa, extra_val if 'escanteio' in c_tipo else 0), game_id=j.get('paripesa_path')) if notificar else None
+            if isinstance(mensagem_sinal, tuple):
+                texto_original, teclado_original = mensagem_sinal
+            else:
+                texto_original, teclado_original = mensagem_sinal, None
+            registrar_sinal(fid, mk, h, a, 0, extra_val=extra_val, tipo=c_tipo, entry_sh=sh, entry_sa=sa, odd_b365=ob365, odd_bano=obano, odd_mercado=odd_mercado_registro, signal_key=key, mensagem_original=texto_original, teclado_original=teclado_original)
             if notificar:
-                mid = send_telegram(msg_universal(h, a, m, liga, pais, 5, mk, cnome, placar, cantos_atual=extra_val if 'escanteio' in c_tipo else 0, stats=stats, sh=sh, sa=sa, fav_final=fav_final, odd_h=odd_h, odd_a=odd_a, odd_b365=ob365, odd_bano=obano, odd_paripesa=odd_paripesa, nome=cnome, tipo=c_tipo, probabilidade=_probabilidade_para_sinal(stats, c_tipo, sh, sa, extra_val if 'escanteio' in c_tipo else 0), game_id=j.get('paripesa_path')), marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
+                mid = send_telegram(mensagem_sinal, marca=key, home=h, away=a, odd_b365_val=ob365, odd_bano_val=obano)
             else:
                 print(f'[DIAG-{mk}-SILENT] {h} x {a} — notificar=False, registrando sem enviar')
                 mid = 0
