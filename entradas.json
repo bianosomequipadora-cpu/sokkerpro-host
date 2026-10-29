@@ -40156,5 +40156,23 @@
     "odd_mercado": 1.584,
     "timestamp": "2026-10-28T22:14:46.193475-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "413119bde535_custom_1792420050351_20261028",
+    "fixture_id": "19609970",
+    "mercado": "custom_1792420050351",
+    "tipo": "escanteio_ht",
+    "home": "Chicago Fire",
+    "away": "Orlando City",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.62,
+    "timestamp": "2026-10-28T22:15:00.021526-03:00",
+    "resultado": "pendente"
   }
 ]
