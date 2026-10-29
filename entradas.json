@@ -40066,5 +40066,23 @@
     "odd_mercado": 1.115,
     "timestamp": "2026-10-28T22:08:46.104055-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "49ee72a702bc_custom_1793235001869_20261028",
+    "fixture_id": "19609966",
+    "mercado": "custom_1793235001869",
+    "tipo": "escanteio_ft",
+    "home": "Charlotte",
+    "away": "CF Montréal",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 2,
+    "entry_sa": 0,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.13,
+    "timestamp": "2026-10-28T22:12:53.517350-03:00",
+    "resultado": "pendente"
   }
 ]
