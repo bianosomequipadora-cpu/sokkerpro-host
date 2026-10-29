@@ -3291,18 +3291,20 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                     continue
                 confirmed_ids.add(uid)
                 emoji = '🟢GREEN CONFIRMADO🟢' if res == 'green' else ('🔵REEMBOLSO CONFIRMADO🔵' if res == 'refund' else '🔴RED CONFIRMADO🔴')
+                rotulo_resultado = 'Green Confirmado🟢' if res == 'green' else ('Reembolso Confirmado🔵' if res == 'refund' else 'Red Confirmado🔴')
+                linha_resultado = f'⚠️Resultado: {rotulo_resultado}'
                 confirmacao = f"{emoji}\n<b>Mercado:</b> {s.get('mercado', '—')}\n<b>Jogo:</b> {s.get('home', '—')} x {s.get('away', '—')}"
                 mensagem_original_enviada = False
                 if s.get('message_id') and s.get('message_chat_id') and s.get('mensagem_original'):
                     mensagem_original_enviada = editar_sinal_telegram(
                         s.get('message_chat_id'), s.get('message_id'), s.get('mensagem_original'),
-                        s.get('teclado_original'), emoji
+                        s.get('teclado_original'), linha_resultado
                     )
                 elif s.get('message_id') and len(CHAT_IDS) == 1 and s.get('mensagem_original'):
                     # Compatibilidade para sinais gravados antes da persistência do chat_id.
                     mensagem_original_enviada = editar_sinal_telegram(
                         CHAT_IDS[0], s.get('message_id'), s.get('mensagem_original'),
-                        s.get('teclado_original'), emoji
+                        s.get('teclado_original'), linha_resultado
                     )
                 if not mensagem_original_enviada and s.get('message_id'):
                     mensagem_original_enviada = send_telegram(emoji, reply_to=s.get('message_id')) is not None
