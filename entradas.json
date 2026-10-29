@@ -41540,5 +41540,23 @@
     "timestamp": "2026-10-29T16:23:06.883024-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "b9b521c1c61a_custom_1793278942679_20261029",
+    "fixture_id": "19888285",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "HSV Hoek",
+    "away": "Sparta Nijkerk",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.19,
+    "timestamp": "2026-10-29T16:32:22.398249-03:00",
+    "resultado": "pendente"
   }
 ]
