@@ -41768,5 +41768,23 @@
     "timestamp": "2026-10-29T17:43:21.849646-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "c2aafbb9ea33_custom_1793241474533_20261029",
+    "fixture_id": "19867710",
+    "mercado": "custom_1793241474533",
+    "tipo": "escanteio_ft",
+    "home": "Gloria Bistrita",
+    "away": "FCSB",
+    "message_id": 0,
+    "extra_val": 10,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.096,
+    "timestamp": "2026-10-29T18:06:57.793843-03:00",
+    "resultado": "pendente"
   }
 ]
