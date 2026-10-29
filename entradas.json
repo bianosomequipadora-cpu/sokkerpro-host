@@ -40408,5 +40408,23 @@
     "odd_mercado": 1.11,
     "timestamp": "2026-10-28T23:13:57.640107-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4d5e67fac64d_custom_1793235001869_20261028",
+    "fixture_id": "19609972",
+    "mercado": "custom_1793235001869",
+    "tipo": "escanteio_ft",
+    "home": "Austin",
+    "away": "Real Salt Lake",
+    "message_id": 0,
+    "extra_val": 15,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.165,
+    "timestamp": "2026-10-28T23:15:32.839610-03:00",
+    "resultado": "pendente"
   }
 ]
