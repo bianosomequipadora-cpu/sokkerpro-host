@@ -40246,5 +40246,23 @@
     "odd_mercado": 1.115,
     "timestamp": "2026-10-28T22:28:44.171979-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "4965a90bcbf3_custom_1793235001869_20261028",
+    "fixture_id": "19725389",
+    "mercado": "custom_1793235001869",
+    "tipo": "escanteio_ft",
+    "home": "Malacateco",
+    "away": "Aurora",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.135,
+    "timestamp": "2026-10-28T22:39:23.975655-03:00",
+    "resultado": "pendente"
   }
 ]
