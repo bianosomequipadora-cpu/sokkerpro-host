@@ -41863,5 +41863,23 @@
     "timestamp": "2026-10-29T18:17:13.411691-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "5e3ec4d49be0_custom_1793309646531_20261029",
+    "fixture_id": "19713537",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Fiorentina",
+    "away": "Atalanta",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": 1.67,
+    "odd_bano": null,
+    "odd_mercado": 1.736,
+    "timestamp": "2026-10-29T18:36:51.890542-03:00",
+    "resultado": "pendente"
   }
 ]
