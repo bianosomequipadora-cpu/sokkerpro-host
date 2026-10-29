@@ -41738,7 +41738,7 @@
     "tipo": "escanteio_ht",
     "home": "FC Groningen",
     "away": "FC Emmen",
-    "message_id": 0,
+    "message_id": 18292,
     "extra_val": 0,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -41747,6 +41747,7 @@
     "odd_bano": null,
     "odd_mercado": 1.835,
     "timestamp": "2026-10-29T17:37:30.505182-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
