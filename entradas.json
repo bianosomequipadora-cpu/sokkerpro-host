@@ -40894,5 +40894,23 @@
     "timestamp": "2026-10-29T01:36:25.987934-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "6f330ce57ea6_custom_1793240201873_20261029",
+    "fixture_id": "19715256",
+    "mercado": "custom_1793240201873",
+    "tipo": "escanteio_ft",
+    "home": "América",
+    "away": "Tijuana",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.304,
+    "timestamp": "2026-10-29T01:43:08.230338-03:00",
+    "resultado": "pendente"
   }
 ]
