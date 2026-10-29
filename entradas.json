@@ -41358,7 +41358,7 @@
     "tipo": "escanteio_ht",
     "home": "Austria Lustenau",
     "away": "Sturm Graz",
-    "message_id": 0,
+    "message_id": 18272,
     "extra_val": 7,
     "entry_sh": 2,
     "entry_sa": 1,
@@ -41367,6 +41367,7 @@
     "odd_bano": null,
     "odd_mercado": 1.655,
     "timestamp": "2026-10-29T14:37:35.974093-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
