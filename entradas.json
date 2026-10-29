@@ -41369,5 +41369,23 @@
     "timestamp": "2026-10-29T14:37:35.974093-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "6e39be1352aa_custom_1793240352537_20261029",
+    "fixture_id": "19879826",
+    "mercado": "custom_1793240352537",
+    "tipo": "escanteio_ht",
+    "home": "Austria Lustenau",
+    "away": "Sturm Graz",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": 1.65,
+    "odd_bano": null,
+    "odd_mercado": 1.816,
+    "timestamp": "2026-10-29T14:37:55.366613-03:00",
+    "resultado": "pendente"
   }
 ]
