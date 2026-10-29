@@ -41521,5 +41521,23 @@
     "timestamp": "2026-10-29T16:01:59.400569-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "4bd02bf7b9ca_custom_1793278942679_20261029",
+    "fixture_id": "19744262",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Sporting Braga",
+    "away": "Famalicão",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.448,
+    "timestamp": "2026-10-29T16:23:06.883024-03:00",
+    "resultado": "pendente"
   }
 ]
