@@ -40012,5 +40012,23 @@
     "odd_mercado": 1.13,
     "timestamp": "2026-10-28T21:58:51.202579-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "1cc5f6f99ff3_custom_1793235001869_20261028",
+    "fixture_id": "19900997",
+    "mercado": "custom_1793235001869",
+    "tipo": "escanteio_ft",
+    "home": "Carabobo",
+    "away": "Deportivo La Guaira",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 3,
+    "entry_sa": 1,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.135,
+    "timestamp": "2026-10-28T22:05:02.878108-03:00",
+    "resultado": "pendente"
   }
 ]
