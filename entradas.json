@@ -41255,5 +41255,23 @@
     "timestamp": "2026-10-29T09:42:08.581797-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "d388d3649d7e_custom_1793240231146_20261029",
+    "fixture_id": "19784553",
+    "mercado": "custom_1793240231146",
+    "tipo": "escanteio_ht",
+    "home": "CS Sfaxien",
+    "away": "ES Tunis",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.02,
+    "odd_bano": null,
+    "odd_mercado": 1.93,
+    "timestamp": "2026-10-29T11:05:36.579358-03:00",
+    "resultado": "pendente"
   }
 ]
