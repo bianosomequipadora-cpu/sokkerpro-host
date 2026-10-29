@@ -40535,5 +40535,23 @@
     "timestamp": "2026-10-28T23:41:01.345855-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "d4fd35c763e0_custom_1793241474533_20261028",
+    "fixture_id": "19902498",
+    "mercado": "custom_1793241474533",
+    "tipo": "escanteio_ft",
+    "home": "Diriangén",
+    "away": "Real Estelí",
+    "message_id": 0,
+    "extra_val": 14,
+    "entry_sh": 0,
+    "entry_sa": 2,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.38,
+    "timestamp": "2026-10-28T23:41:25.534211-03:00",
+    "resultado": "pendente"
   }
 ]
