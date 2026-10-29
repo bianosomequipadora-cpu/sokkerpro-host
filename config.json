@@ -271,7 +271,7 @@
       "ativo": true,
       "notificar": true,
       "nome": "⛳️🔮OVER 1.0 ESCANTEIO FT🔮⛳️",
-      "minuto_inicio": 2,
+      "minuto_inicio": 80,
       "minuto_fim": 89,
       "periodo": 3,
       "tipo": "escanteio_ft",
@@ -292,7 +292,7 @@
           "valor": 0
         },
         {
-          "campo": "dapm_total_orig_min",
+          "campo": "dapm_10_fav",
           "operador": "gte",
           "valor": 1
         }
