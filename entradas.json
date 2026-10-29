@@ -40951,5 +40951,23 @@
     "timestamp": "2026-10-29T03:00:38.613180-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "31aab4ace2e9_custom_1793241474533_20261029",
+    "fixture_id": "19901748",
+    "mercado": "custom_1793241474533",
+    "tipo": "escanteio_ft",
+    "home": "Megt & Centre",
+    "away": "Bangalore City FC",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.08,
+    "timestamp": "2026-10-29T04:01:19.161901-03:00",
+    "resultado": "pendente"
   }
 ]
