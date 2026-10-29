@@ -40354,5 +40354,23 @@
     "odd_mercado": 1.11,
     "timestamp": "2026-10-28T23:07:15.805222-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "652ba4a9ed31_custom_1793235001869_20261028",
+    "fixture_id": "19609968",
+    "mercado": "custom_1793235001869",
+    "tipo": "escanteio_ft",
+    "home": "Nashville SC",
+    "away": "Philadelphia Union",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.104,
+    "timestamp": "2026-10-28T23:11:59.742681-03:00",
+    "resultado": "pendente"
   }
 ]
