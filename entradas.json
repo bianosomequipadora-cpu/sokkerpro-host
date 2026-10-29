@@ -41388,5 +41388,23 @@
     "timestamp": "2026-10-29T14:37:55.366613-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "5887ef5822fa_custom_1793240201873_20261029",
+    "fixture_id": "19884434",
+    "mercado": "custom_1793240201873",
+    "tipo": "escanteio_ft",
+    "home": "Polonia Warszawa",
+    "away": "Korona Kielce",
+    "message_id": 0,
+    "extra_val": 16,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": 1.6,
+    "odd_bano": null,
+    "odd_mercado": 1.83,
+    "timestamp": "2026-10-29T15:11:28.922122-03:00",
+    "resultado": "pendente"
   }
 ]
