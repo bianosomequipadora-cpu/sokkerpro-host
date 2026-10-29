@@ -40543,7 +40543,7 @@
     "tipo": "escanteio_ft",
     "home": "Diriangén",
     "away": "Real Estelí",
-    "message_id": 0,
+    "message_id": 18221,
     "extra_val": 14,
     "entry_sh": 0,
     "entry_sa": 2,
@@ -40552,6 +40552,7 @@
     "odd_bano": null,
     "odd_mercado": 1.38,
     "timestamp": "2026-10-28T23:41:25.534211-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
