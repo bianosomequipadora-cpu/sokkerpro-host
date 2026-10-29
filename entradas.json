@@ -41092,7 +41092,7 @@
     "tipo": "escanteio_ht",
     "home": "Canberra FC",
     "away": "South Melbourne",
-    "message_id": 0,
+    "message_id": 18257,
     "extra_val": 7,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -41101,6 +41101,7 @@
     "odd_bano": null,
     "odd_mercado": 1.41,
     "timestamp": "2026-10-29T06:07:49.762730-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
