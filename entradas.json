@@ -40102,5 +40102,23 @@
     "odd_mercado": 1.104,
     "timestamp": "2026-10-28T22:13:15.793482-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "b12e248364de_custom_1793235001869_20261028",
+    "fixture_id": "19609964",
+    "mercado": "custom_1793235001869",
+    "tipo": "escanteio_ft",
+    "home": "New York City",
+    "away": "Atlanta United",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.104,
+    "timestamp": "2026-10-28T22:14:11.777780-03:00",
+    "resultado": "pendente"
   }
 ]
