@@ -1,27 +1,6 @@
 {
   "login": {},
   "mercados": {
-    "custom_1793235001869": {
-      "ativo": true,
-      "notificar": false,
-      "nome": "🫡TESTE 🫡",
-      "minuto_inicio": 2,
-      "minuto_fim": 89,
-      "periodo": 3,
-      "tipo": "escanteio_ft",
-      "stake": 10,
-      "placar_valido": "",
-      "criterios": {
-        "situacao_favorito": ""
-      },
-      "criterios_api": [
-        {
-          "campo": "appm_min_por_time",
-          "operador": "gte",
-          "valor": 0.2
-        }
-      ]
-    },
     "custom_1793238171907": {
       "ativo": true,
       "notificar": true,
