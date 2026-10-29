@@ -40820,5 +40820,23 @@
     "timestamp": "2026-10-29T01:10:51.685941-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "ff5c33d91f46_custom_1793235001869_20261029",
+    "fixture_id": "19609974",
+    "mercado": "custom_1793235001869",
+    "tipo": "escanteio_ft",
+    "home": "Vancouver Whitecaps",
+    "away": "San Diego",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 3,
+    "entry_sa": 0,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.18,
+    "timestamp": "2026-10-29T01:11:10.283143-03:00",
+    "resultado": "pendente"
   }
 ]
