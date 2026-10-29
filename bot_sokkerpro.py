@@ -663,7 +663,7 @@ def _save_entradas(registros):
             return False
 
     headers = _entradas_github_headers()
-    ref_url = _entradas_repo_api('git/ref/heads/main')
+    ref_url = _entradas_repo_api('git/refs/heads/main')
     for tentativa in range(5):
         try:
             # Always reload and merge with the latest remote version before writing.
