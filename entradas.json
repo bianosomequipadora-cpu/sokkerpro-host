@@ -40600,7 +40600,7 @@
     "tipo": "escanteio_ft",
     "home": "Municipal",
     "away": "Comunicaciones",
-    "message_id": 0,
+    "message_id": 18229,
     "extra_val": 6,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -40609,6 +40609,7 @@
     "odd_bano": null,
     "odd_mercado": 1.245,
     "timestamp": "2026-10-29T00:40:43.946054-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
