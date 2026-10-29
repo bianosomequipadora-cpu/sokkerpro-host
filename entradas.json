@@ -40228,5 +40228,23 @@
     "odd_mercado": 1.12,
     "timestamp": "2026-10-28T22:15:48.117954-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "f699baf9e58f_custom_1793235001869_20261028",
+    "fixture_id": "19882045",
+    "mercado": "custom_1793235001869",
+    "tipo": "escanteio_ft",
+    "home": "Delfin",
+    "away": "Independiente del Valle",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 3,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.115,
+    "timestamp": "2026-10-28T22:28:44.171979-03:00",
+    "resultado": "pendente"
   }
 ]
