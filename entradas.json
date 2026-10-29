@@ -41160,5 +41160,23 @@
     "timestamp": "2026-10-29T06:42:11.878048-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "39dfc60264c0_custom_1793244041203_20261029",
+    "fixture_id": "19862279",
+    "mercado": "custom_1793244041203",
+    "tipo": "escanteio_ht",
+    "home": "Gangwon",
+    "away": "Kuching FA",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.24,
+    "timestamp": "2026-10-29T07:28:18.127526-03:00",
+    "resultado": "pendente"
   }
 ]
