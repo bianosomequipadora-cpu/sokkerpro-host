@@ -379,47 +379,6 @@
         }
       ]
     },
-    "custom_1793199318115": {
-      "ativo": true,
-      "notificar": true,
-      "nome": "⚽️🔥OVER 0.5 GOL PARTIDA(FT)🔥⚽️ ",
-      "minuto_inicio": 65,
-      "minuto_fim": 72,
-      "periodo": 2,
-      "tipo": "over_gol",
-      "stake": 10,
-      "placar_valido": "0x0",
-      "criterios": {
-        "situacao_favorito": ""
-      },
-      "criterios_api": [
-        {
-          "campo": "prob_ft_over_0_5",
-          "operador": "gte",
-          "valor": 90
-        },
-        {
-          "campo": "dapm_total_orig_min",
-          "operador": "gte",
-          "valor": 1
-        },
-        {
-          "campo": "media_gols_partida_min",
-          "operador": "gte",
-          "valor": 2.6
-        },
-        {
-          "campo": "prob_1x2_casa_ou_fora",
-          "operador": "gte",
-          "valor": 70
-        },
-        {
-          "campo": "chutes_alvo_min",
-          "operador": "gte",
-          "valor": 4
-        }
-      ]
-    },
     "custom_1793205000000": {
       "ativo": true,
       "notificar": true,
