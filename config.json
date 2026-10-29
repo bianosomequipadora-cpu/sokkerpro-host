@@ -478,7 +478,7 @@
     },
     "custom_1793235001869": {
       "ativo": true,
-      "notificar": true,
+      "notificar": false,
       "nome": "🫡TESTE 🫡",
       "minuto_inicio": 2,
       "minuto_fim": 89,
