@@ -41149,7 +41149,7 @@
     "tipo": "escanteio_ft",
     "home": "Ulaanbaatar",
     "away": "Deren",
-    "message_id": 0,
+    "message_id": 18260,
     "extra_val": 5,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -41158,6 +41158,7 @@
     "odd_bano": null,
     "odd_mercado": 1.635,
     "timestamp": "2026-10-29T06:42:11.878048-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
