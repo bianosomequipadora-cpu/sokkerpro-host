@@ -3,7 +3,7 @@
   "mercados": {
     "custom_1793235001869": {
       "ativo": true,
-      "notificar": false,
+      "notificar": true,
       "nome": "🫡TESTE 🫡",
       "minuto_inicio": 2,
       "minuto_fim": 89,
