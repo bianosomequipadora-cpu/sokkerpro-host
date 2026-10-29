@@ -470,7 +470,7 @@
       "ativo": true,
       "notificar": true,
       "nome": "⛳️👿OVER 1.0 ESCANTEIO HT👿⛳️",
-      "minuto_inicio": 26,
+      "minuto_inicio": 30,
       "minuto_fim": 39,
       "periodo": 1,
       "tipo": "escanteio_ht",
@@ -491,9 +491,9 @@
           "valor": 0
         },
         {
-          "campo": "dapm_total_orig_min",
+          "campo": "dapm_10_fav",
           "operador": "gte",
-          "valor": 0.8
+          "valor": 1
         }
       ]
     }
