@@ -41833,7 +41833,7 @@
     "tipo": "escanteio_ht",
     "home": "Benfica",
     "away": "Gil Vicente",
-    "message_id": 0,
+    "message_id": 18297,
     "extra_val": 3,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -41842,6 +41842,7 @@
     "odd_bano": null,
     "odd_mercado": 1.26,
     "timestamp": "2026-10-29T18:16:57.253634-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
