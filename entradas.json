@@ -41730,5 +41730,23 @@
     "timestamp": "2026-10-29T17:34:01.347043-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "cbda1f19a92e_custom_1793278942679_20261029",
+    "fixture_id": "19888288",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "FC Groningen",
+    "away": "FC Emmen",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 2.0,
+    "odd_bano": null,
+    "odd_mercado": 1.835,
+    "timestamp": "2026-10-29T17:37:30.505182-03:00",
+    "resultado": "pendente"
   }
 ]
