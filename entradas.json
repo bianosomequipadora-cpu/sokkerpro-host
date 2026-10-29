@@ -41700,7 +41700,7 @@
     "tipo": "escanteio_ft",
     "home": "Sporting Braga",
     "away": "Famalicão",
-    "message_id": 0,
+    "message_id": 18290,
     "extra_val": 13,
     "entry_sh": 1,
     "entry_sa": 2,
@@ -41709,6 +41709,7 @@
     "odd_bano": null,
     "odd_mercado": 1.155,
     "timestamp": "2026-10-29T17:28:44.420615-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
