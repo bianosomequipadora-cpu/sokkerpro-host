@@ -40809,7 +40809,7 @@
     "tipo": "escanteio_ft",
     "home": "Seattle Sounders",
     "away": "Houston Dynamo",
-    "message_id": 0,
+    "message_id": 18241,
     "extra_val": 9,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -40818,6 +40818,7 @@
     "odd_bano": null,
     "odd_mercado": 1.315,
     "timestamp": "2026-10-29T01:10:51.685941-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
