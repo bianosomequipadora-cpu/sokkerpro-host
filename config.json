@@ -462,7 +462,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 0.8
+          "valor": 1
         }
       ]
     },
