@@ -41502,5 +41502,23 @@
     "timestamp": "2026-10-29T15:47:50.193447-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "0dae528c89ad_custom_1793278942679_20261029",
+    "fixture_id": "19880568",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Maccabi Tel Aviv",
+    "away": "Hapoel Tel Aviv",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.336,
+    "timestamp": "2026-10-29T16:01:59.400569-03:00",
+    "resultado": "pendente"
   }
 ]
