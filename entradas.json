@@ -40426,5 +40426,23 @@
     "odd_mercado": 1.165,
     "timestamp": "2026-10-28T23:15:32.839610-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "009a96b19729_custom_1793235001869_20261028",
+    "fixture_id": "19609971",
+    "mercado": "custom_1793235001869",
+    "tipo": "escanteio_ft",
+    "home": "Minnesota United",
+    "away": "Sporting KC",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.12,
+    "timestamp": "2026-10-28T23:15:55.645408-03:00",
+    "resultado": "pendente"
   }
 ]
