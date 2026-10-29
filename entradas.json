@@ -40902,7 +40902,7 @@
     "tipo": "escanteio_ft",
     "home": "América",
     "away": "Tijuana",
-    "message_id": 0,
+    "message_id": 18247,
     "extra_val": 11,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -40911,6 +40911,7 @@
     "odd_bano": null,
     "odd_mercado": 1.304,
     "timestamp": "2026-10-29T01:43:08.230338-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
