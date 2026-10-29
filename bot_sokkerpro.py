@@ -502,21 +502,81 @@ def _save_sinais_github(sinais):
 ENTRADAS_FILE = os.path.join(BASE_DIR, 'entradas.json')
 ENTRADAS_API_PATH = 'entradas.json'
 
+def _entradas_github_headers():
+    return {
+        'Authorization': f'Bearer {GITHUB_TOKEN}',
+        'Accept': 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28',
+    }
+
+
+def _entradas_repo_api(path):
+    return f'https://api.github.com/repos/{GITHUB_REPO}/{path.lstrip("/")}'
+
+
+def _entradas_remote_state():
+    """Return exact branch head + complete large entradas.json blob at that head."""
+    ref_response = requests.get(
+        _entradas_repo_api('git/ref/heads/main'),
+        headers=_entradas_github_headers(), timeout=20,
+    )
+    ref_response.raise_for_status()
+    parent_sha = ref_response.json()['object']['sha']
+    commit_response = requests.get(
+        _entradas_repo_api(f'git/commits/{parent_sha}'),
+        headers=_entradas_github_headers(), timeout=20,
+    )
+    commit_response.raise_for_status()
+    base_tree = commit_response.json()['tree']['sha']
+
+    # Contents endpoint is used only for metadata at a pinned commit; large content
+    # always comes from Git Blobs API, never from its possibly empty `content` field.
+    meta_response = requests.get(
+        _entradas_repo_api(f'contents/{ENTRADAS_API_PATH}'),
+        headers=_entradas_github_headers(), params={'ref': parent_sha}, timeout=20,
+    )
+    if meta_response.status_code == 404:
+        return parent_sha, base_tree, None, [], None
+    meta_response.raise_for_status()
+    blob_sha = meta_response.json().get('sha')
+    if not blob_sha:
+        raise ValueError('GitHub não retornou SHA do blob de entradas.json')
+    blob_response = requests.get(
+        _entradas_repo_api(f'git/blobs/{blob_sha}'),
+        headers=_entradas_github_headers(), timeout=30,
+    )
+    blob_response.raise_for_status()
+    blob = blob_response.json()
+    content = blob.get('content')
+    if not isinstance(content, str) or blob.get('encoding') != 'base64':
+        raise ValueError('GitHub retornou blob de entradas.json sem conteúdo base64 completo')
+    raw = base64.b64decode(content)
+    registros = json.loads(raw.decode('utf-8'))
+    if not isinstance(registros, list):
+        raise ValueError('entradas.json remoto não contém uma lista')
+    return parent_sha, base_tree, blob_sha, registros, raw
+
 def _load_entradas():
     if GITHUB_TOKEN and GITHUB_REPO:
         try:
-            url = f'https://api.github.com/repos/{GITHUB_REPO}/contents/{ENTRADAS_API_PATH}'
-            r = requests.get(url, headers={'Authorization': f'Bearer {GITHUB_TOKEN}', 'Accept': 'application/vnd.github+json'}, timeout=8)
-            if r.status_code == 200:
-                return json.loads(base64.b64decode(r.json()['content']).decode())
+            _, _, _, registros, raw = _entradas_remote_state()
+            if raw is not None:
+                with open(ENTRADAS_FILE, 'wb') as f:
+                    f.write(raw)
+                print(f'[ENTRADAS] Histórico completo carregado do Git blob: {len(registros)} registros')
+                return registros
+            return []
         except Exception as e:
-            print(f'[ENTRADAS] Erro load GitHub: {e}')
+            print(f'[ENTRADAS] Erro lendo blob completo do GitHub: {e}; usando fallback local sem confirmar gravação remota')
     try:
         if os.path.exists(ENTRADAS_FILE):
-            with open(ENTRADAS_FILE, 'r') as f:
-                return json.load(f)
+            with open(ENTRADAS_FILE, 'r', encoding='utf-8') as f:
+                registros = json.load(f)
+            if isinstance(registros, list):
+                return registros
+            raise ValueError('arquivo local não contém uma lista')
     except Exception as e:
-        print(f'[ENTRADAS] Erro leitura: {e}')
+        print(f'[ENTRADAS] Erro leitura local: {e}')
     return []
 
 def _identidade_entrada(registro):
@@ -583,70 +643,99 @@ def _mesclar_listas_entradas(remotas, locais):
     return resultado
 
 
+def _save_entradas_local(registros):
+    with open(ENTRADAS_FILE, 'w', encoding='utf-8') as f:
+        json.dump(registros, f, ensure_ascii=False, indent=2)
+
+
 def _save_entradas(registros):
-    """Persiste entradas com merge/retry em conflito, preservando odds e updates paralelos."""
+    """Persist large entradas.json by Git blobs/trees/commits with conflict-safe retries."""
     if not isinstance(registros, list):
         print('[ENTRADAS] Gravação recusada: payload não é uma lista')
         return False
     if not (GITHUB_TOKEN and GITHUB_REPO):
         try:
-            with open(ENTRADAS_FILE, 'w', encoding='utf-8') as f:
-                json.dump(registros, f, ensure_ascii=False, indent=2)
+            _save_entradas_local(registros)
+            print('[ENTRADAS] Salvas somente localmente: credencial/repositório ausente')
             return True
         except Exception as exc:
             print(f'[ENTRADAS] Falha ao salvar localmente: {exc}')
             return False
 
-    url = f'https://api.github.com/repos/{GITHUB_REPO}/contents/{ENTRADAS_API_PATH}'
-    headers = {'Authorization': f'Bearer {GITHUB_TOKEN}', 'Accept': 'application/vnd.github+json'}
+    headers = _entradas_github_headers()
+    ref_url = _entradas_repo_api('git/ref/heads/main')
     for tentativa in range(5):
         try:
-            req_get = request.Request(url, headers=headers)
-            try:
-                with request.urlopen(req_get, timeout=12) as resp:
-                    arquivo = json.loads(resp.read())
-                sha = arquivo.get('sha')
-                remotas = json.loads(base64.b64decode(arquivo.get('content', '')).decode('utf-8'))
-            except error.HTTPError as exc:
-                if exc.code != 404:
-                    raise
-                sha = None
-                remotas = []
-
+            # Always reload and merge with the latest remote version before writing.
+            parent_sha, base_tree, old_blob_sha, remotas, _ = _entradas_remote_state()
             mescladas = _mesclar_listas_entradas(remotas, registros)
-            conteudo = base64.b64encode(json.dumps(mescladas, ensure_ascii=False, indent=2).encode('utf-8')).decode('ascii')
-            payload = {'message': 'state: atualiza entradas [retry seguro] [skip ci]', 'content': conteudo}
-            if sha:
-                payload['sha'] = sha
-            req_put = request.Request(
-                url, data=json.dumps(payload).encode('utf-8'),
-                headers={**headers, 'Content-Type': 'application/json'}, method='PUT'
+            conteudo = json.dumps(mescladas, ensure_ascii=False, indent=2)
+
+            blob_response = requests.post(
+                _entradas_repo_api('git/blobs'), headers=headers,
+                json={'content': conteudo, 'encoding': 'utf-8'}, timeout=30,
             )
-            with request.urlopen(req_put, timeout=20) as resp:
-                resp.read()
-            with open(ENTRADAS_FILE, 'w', encoding='utf-8') as f:
-                json.dump(mescladas, f, ensure_ascii=False, indent=2)
-            print(f'[ENTRADAS] Salvas no GitHub: {len(mescladas)} registros')
-            return True
-        except error.HTTPError as exc:
-            if exc.code == 409 and tentativa < 4:
-                print(f'[ENTRADAS] Conflito simultâneo; recarregando e mesclando (tentativa {tentativa + 1}/5)')
-                time.sleep(0.2 * (tentativa + 1))
+            blob_response.raise_for_status()
+            new_blob_sha = blob_response.json().get('sha')
+            if not new_blob_sha:
+                raise ValueError('GitHub não retornou SHA do novo blob')
+
+            tree_response = requests.post(
+                _entradas_repo_api('git/trees'), headers=headers,
+                json={'base_tree': base_tree, 'tree': [{
+                    'path': ENTRADAS_API_PATH, 'mode': '100644', 'type': 'blob', 'sha': new_blob_sha,
+                }]}, timeout=30,
+            )
+            tree_response.raise_for_status()
+            tree_sha = tree_response.json().get('sha')
+            if not tree_sha:
+                raise ValueError('GitHub não retornou SHA da nova árvore')
+
+            new_commit_response = requests.post(
+                _entradas_repo_api('git/commits'), headers=headers,
+                json={'message': 'state: atualiza entradas via Git Database [skip ci]',
+                      'tree': tree_sha, 'parents': [parent_sha]}, timeout=30,
+            )
+            new_commit_response.raise_for_status()
+            new_commit_sha = new_commit_response.json().get('sha')
+            if not new_commit_sha:
+                raise ValueError('GitHub não retornou SHA do commit')
+
+            update_response = requests.patch(
+                ref_url, headers=headers, json={'sha': new_commit_sha, 'force': False}, timeout=30,
+            )
+            if update_response.status_code in (409, 422) and tentativa < 4:
+                print(f'[ENTRADAS] Concorrência ao avançar main; recarregando (tentativa {tentativa + 1}/5)')
+                time.sleep(0.25 * (tentativa + 1))
                 continue
-            print(f'[ENTRADAS] Falha GitHub HTTP {exc.code}; não confirmei a gravação')
+            update_response.raise_for_status()
+
+            # Verify the exact new blob is now reachable from the branch before reporting success.
+            saved_head, _, saved_sha, saved_records, saved_raw = _entradas_remote_state()
+            if saved_head != new_commit_sha or saved_sha != new_blob_sha or len(saved_records) != len(mescladas):
+                raise ValueError('verificação pós-gravação não corresponde ao blob publicado')
+            _save_entradas_local(saved_records)
+            print(f'[ENTRADAS] Confirmadas no GitHub via Git Database: {len(saved_records)} registros; blob={saved_sha}')
+            return True
+        except requests.HTTPError as exc:
+            status = exc.response.status_code if exc.response is not None else 'desconhecido'
+            if status in (409, 422) and tentativa < 4:
+                print(f'[ENTRADAS] Conflito GitHub HTTP {status}; recarregando (tentativa {tentativa + 1}/5)')
+                time.sleep(0.25 * (tentativa + 1))
+                continue
+            print(f'[ENTRADAS] Falha GitHub HTTP {status}; gravação remota não confirmada')
             break
         except Exception as exc:
             if tentativa < 4:
-                print(f'[ENTRADAS] Falha temporária; repetindo gravação ({tentativa + 1}/5): {exc}')
-                time.sleep(0.2 * (tentativa + 1))
+                print(f'[ENTRADAS] Falha temporária Git Database; repetindo ({tentativa + 1}/5): {exc}')
+                time.sleep(0.25 * (tentativa + 1))
                 continue
             print(f'[ENTRADAS] Falha ao salvar no GitHub: {exc}')
             break
 
-    # Guarda o estado recebido localmente para recuperação, sem afirmar que subiu ao GitHub.
+    # Keep the incoming state for recovery, but return False so callers do not claim remote persistence.
     try:
-        with open(ENTRADAS_FILE, 'w', encoding='utf-8') as f:
-            json.dump(registros, f, ensure_ascii=False, indent=2)
+        _save_entradas_local(registros)
     except Exception:
         pass
     return False
