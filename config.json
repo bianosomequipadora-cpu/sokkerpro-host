@@ -267,14 +267,14 @@
         }
       ]
     },
-    "custom_1793241474533": {
+    "custom_1793278942679": {
       "ativo": true,
       "notificar": true,
-      "nome": "⛳️🔮OVER 1.0 ESCANTEIO FT🔮⛳️",
-      "minuto_inicio": 80,
-      "minuto_fim": 89,
-      "periodo": 3,
-      "tipo": "escanteio_ft",
+      "nome": "⛳️👿OVER 1.0 ESCANTEIO HT👿⛳️",
+      "minuto_inicio": 30,
+      "minuto_fim": 39,
+      "periodo": 1,
+      "tipo": "escanteio_ht",
       "stake": 10,
       "placar_valido": "",
       "criterios": {
@@ -298,14 +298,14 @@
         }
       ]
     },
-    "custom_1793278942679": {
+    "custom_1793309646531": {
       "ativo": true,
       "notificar": true,
-      "nome": "⛳️👿OVER 1.0 ESCANTEIO HT👿⛳️",
-      "minuto_inicio": 30,
-      "minuto_fim": 39,
-      "periodo": 1,
-      "tipo": "escanteio_ht",
+      "nome": "⛳️🔮OVER 1.0 ESCANTEIO FT🔮⛳️",
+      "minuto_inicio": 80,
+      "minuto_fim": 89,
+      "periodo": 3,
+      "tipo": "escanteio_ft",
       "stake": 10,
       "placar_valido": "",
       "criterios": {
