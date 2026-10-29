@@ -41168,7 +41168,7 @@
     "tipo": "escanteio_ht",
     "home": "Gangwon",
     "away": "Kuching FA",
-    "message_id": 0,
+    "message_id": 18261,
     "extra_val": 4,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -41177,6 +41177,7 @@
     "odd_bano": null,
     "odd_mercado": 1.24,
     "timestamp": "2026-10-29T07:28:18.127526-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
