@@ -40048,5 +40048,23 @@
     "odd_mercado": 1.11,
     "timestamp": "2026-10-28T22:06:49.334647-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "64e1c3a09f94_custom_1793235001869_20261028",
+    "fixture_id": "19644905",
+    "mercado": "custom_1793235001869",
+    "tipo": "escanteio_ft",
+    "home": "Universidad Católica",
+    "away": "Audax Italiano",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.115,
+    "timestamp": "2026-10-28T22:08:46.104055-03:00",
+    "resultado": "pendente"
   }
 ]
