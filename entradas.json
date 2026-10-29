@@ -39994,5 +39994,23 @@
     "odd_mercado": 1.736,
     "timestamp": "2026-10-24T08:33:12.666276-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "eed84e951015_custom_1793235001869_20261028",
+    "fixture_id": "19900990",
+    "mercado": "custom_1793235001869",
+    "tipo": "escanteio_ft",
+    "home": "Metropolitanos",
+    "away": "Portuguesa",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.13,
+    "timestamp": "2026-10-28T21:58:51.202579-03:00",
+    "resultado": "pendente"
   }
 ]
