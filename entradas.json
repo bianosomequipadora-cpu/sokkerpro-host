@@ -40336,5 +40336,23 @@
     "odd_mercado": 1.16,
     "timestamp": "2026-10-28T23:05:32.683330-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "20a3f178bd9b_custom_1793235001869_20261028",
+    "fixture_id": "19621750",
+    "mercado": "custom_1793235001869",
+    "tipo": "escanteio_ft",
+    "home": "Remo",
+    "away": "Botafogo",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 2,
+    "entry_sa": 0,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.11,
+    "timestamp": "2026-10-28T23:07:15.805222-03:00",
+    "resultado": "pendente"
   }
 ]
