@@ -41415,7 +41415,7 @@
     "tipo": "escanteio_ft",
     "home": "Grosuplje",
     "away": "Bravo",
-    "message_id": 0,
+    "message_id": 18275,
     "extra_val": 6,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -41424,6 +41424,7 @@
     "odd_bano": null,
     "odd_mercado": 1.115,
     "timestamp": "2026-10-29T15:30:48.502755-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
