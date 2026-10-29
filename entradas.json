@@ -40828,7 +40828,7 @@
     "tipo": "escanteio_ft",
     "home": "Vancouver Whitecaps",
     "away": "San Diego",
-    "message_id": 0,
+    "message_id": 18242,
     "extra_val": 9,
     "entry_sh": 3,
     "entry_sa": 0,
@@ -40837,6 +40837,7 @@
     "odd_bano": null,
     "odd_mercado": 1.18,
     "timestamp": "2026-10-29T01:11:10.283143-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
