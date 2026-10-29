@@ -40839,5 +40839,23 @@
     "timestamp": "2026-10-29T01:11:10.283143-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "f21f948ae92d_custom_1793235001869_20261029",
+    "fixture_id": "19609976",
+    "mercado": "custom_1793235001869",
+    "tipo": "escanteio_ft",
+    "home": "SJ Earthquakes",
+    "away": "Colorado Rapids",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.18,
+    "timestamp": "2026-10-29T01:17:03.487851-03:00",
+    "resultado": "pendente"
   }
 ]
