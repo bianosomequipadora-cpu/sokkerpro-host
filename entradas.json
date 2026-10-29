@@ -40592,5 +40592,23 @@
     "timestamp": "2026-10-29T00:39:13.187136-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "6e0aefce0641_custom_1793235001869_20261029",
+    "fixture_id": "19725387",
+    "mercado": "custom_1793235001869",
+    "tipo": "escanteio_ft",
+    "home": "Municipal",
+    "away": "Comunicaciones",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.245,
+    "timestamp": "2026-10-29T00:40:43.946054-03:00",
+    "resultado": "pendente"
   }
 ]
