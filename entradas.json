@@ -41795,7 +41795,7 @@
     "tipo": "escanteio_ft",
     "home": "Gloria Bistrita",
     "away": "FCSB",
-    "message_id": 0,
+    "message_id": 18295,
     "extra_val": 10,
     "entry_sh": 1,
     "entry_sa": 0,
@@ -41804,6 +41804,7 @@
     "odd_bano": null,
     "odd_mercado": 1.37,
     "timestamp": "2026-10-29T18:13:25.306272-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
