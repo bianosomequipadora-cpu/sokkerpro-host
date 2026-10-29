@@ -40390,5 +40390,23 @@
     "odd_mercado": 2.07,
     "timestamp": "2026-10-28T23:13:37.795592-03:00",
     "resultado": "pendente"
+  },
+  {
+    "signal_key": "9cdb3cf5fb85_custom_1793235001869_20261028",
+    "fixture_id": "19609969",
+    "mercado": "custom_1793235001869",
+    "tipo": "escanteio_ft",
+    "home": "Dallas",
+    "away": "Columbus Crew",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 2,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.11,
+    "timestamp": "2026-10-28T23:13:57.640107-03:00",
+    "resultado": "pendente"
   }
 ]
