@@ -41939,5 +41939,23 @@
     "timestamp": "2026-10-30T09:45:32.976451-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "a5ed5316791c_custom_1793278942679_20261030",
+    "fixture_id": "19872936",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Hà Nội",
+    "away": "Ninh Bình",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-10-30T09:45:57.814327-03:00",
+    "resultado": "pendente"
   }
 ]
