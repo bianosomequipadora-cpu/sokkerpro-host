@@ -42517,7 +42517,7 @@
     "tipo": "escanteio_ht",
     "home": "Fortuna Düsseldorf",
     "away": "Meppen",
-    "message_id": 0,
+    "message_id": 18335,
     "extra_val": 4,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -42526,6 +42526,7 @@
     "odd_bano": null,
     "odd_mercado": 1.84,
     "timestamp": "2026-10-30T15:36:18.643955-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
