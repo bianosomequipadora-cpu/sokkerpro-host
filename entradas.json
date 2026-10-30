@@ -41996,5 +41996,23 @@
     "timestamp": "2026-10-30T10:43:00.535482-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "473d4cc90357_custom_1793309646531_20261030",
+    "fixture_id": "19788551",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Kowloon City",
+    "away": "BC Rangers",
+    "message_id": 0,
+    "extra_val": 14,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.65,
+    "odd_bano": null,
+    "odd_mercado": 1.655,
+    "timestamp": "2026-10-30T10:52:10.198072-03:00",
+    "resultado": "pendente"
   }
 ]
