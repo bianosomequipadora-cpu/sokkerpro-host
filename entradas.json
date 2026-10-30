@@ -42357,5 +42357,23 @@
     "timestamp": "2026-10-30T14:09:30.853868-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "2c48b8c8fc1f_custom_1793278942679_20261030",
+    "fixture_id": "19789053",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "ASO Chlef",
+    "away": "ES Sétif",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.496,
+    "timestamp": "2026-10-30T14:16:58.870846-03:00",
+    "resultado": "pendente"
   }
 ]
