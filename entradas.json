@@ -42783,7 +42783,7 @@
     "tipo": "escanteio_ft",
     "home": "Oberpullendorf",
     "away": "Leithaprodersdorf",
-    "message_id": 0,
+    "message_id": 18350,
     "extra_val": 6,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -42792,6 +42792,7 @@
     "odd_bano": null,
     "odd_mercado": 1.915,
     "timestamp": "2026-10-30T17:12:09.478297-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
