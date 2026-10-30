@@ -42555,7 +42555,7 @@
     "tipo": "escanteio_ht",
     "home": "Bragantino U20",
     "away": "Capivariano U20",
-    "message_id": 0,
+    "message_id": 18337,
     "extra_val": 2,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -42564,6 +42564,7 @@
     "odd_bano": null,
     "odd_mercado": 2.745,
     "timestamp": "2026-10-30T15:38:49.429964-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
