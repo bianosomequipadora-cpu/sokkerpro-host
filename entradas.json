@@ -42984,5 +42984,23 @@
     "timestamp": "2026-10-30T17:58:37.491386-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "3b172d1333ca_custom_1793309646531_20261030",
+    "fixture_id": "19732633",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Villarreal",
+    "away": "Espanyol",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 2.05,
+    "odd_bano": null,
+    "odd_mercado": 2.01,
+    "timestamp": "2026-10-30T18:45:38.072477-03:00",
+    "resultado": "pendente"
   }
 ]
