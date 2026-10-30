@@ -42156,7 +42156,7 @@
     "tipo": "escanteio_ft",
     "home": "Al-Karma",
     "away": "Duhok",
-    "message_id": 0,
+    "message_id": 18316,
     "extra_val": 6,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -42165,6 +42165,7 @@
     "odd_bano": null,
     "odd_mercado": 1.885,
     "timestamp": "2026-10-30T12:40:32.943686-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
