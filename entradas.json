@@ -41882,5 +41882,23 @@
     "timestamp": "2026-10-29T18:36:51.890542-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "09f5733ab3ff_custom_1793278942679_20261029",
+    "fixture_id": "19902500",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "UNAN Managua",
+    "away": "Walter Ferreti",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.3,
+    "odd_bano": null,
+    "odd_mercado": 2.208,
+    "timestamp": "2026-10-29T22:35:29.503347-03:00",
+    "resultado": "pendente"
   }
 ]
