@@ -43011,7 +43011,7 @@
     "tipo": "escanteio_ft",
     "home": "Cailungo",
     "away": "Juvenes / Dogana",
-    "message_id": 0,
+    "message_id": 18362,
     "extra_val": 12,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -43020,6 +43020,7 @@
     "odd_bano": null,
     "odd_mercado": 1.7,
     "timestamp": "2026-10-30T18:57:04.010740-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
