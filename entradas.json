@@ -42080,7 +42080,7 @@
     "tipo": "escanteio_ht",
     "home": "USM Blida",
     "away": "WA Mostaganem",
-    "message_id": 0,
+    "message_id": 18312,
     "extra_val": 3,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -42089,6 +42089,7 @@
     "odd_bano": null,
     "odd_mercado": 1.6,
     "timestamp": "2026-10-30T11:34:40.754069-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
