@@ -42737,5 +42737,23 @@
     "timestamp": "2026-10-30T16:40:28.985419-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "9269ddcb0441_custom_1793309646531_20261030",
+    "fixture_id": "19735797",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Allerheiligen",
+    "away": "FC Gleisdorf",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.52,
+    "timestamp": "2026-10-30T16:41:30.588609-03:00",
+    "resultado": "pendente"
   }
 ]
