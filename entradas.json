@@ -42110,5 +42110,23 @@
     "timestamp": "2026-10-30T11:44:26.231648-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "da8bc67e57f8_custom_1793309646531_20261030",
+    "fixture_id": "19720807",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Maccabi Ahi Nazareth",
+    "away": "Kafr Qasim",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.552,
+    "timestamp": "2026-10-30T11:45:50.181595-03:00",
+    "resultado": "pendente"
   }
 ]
