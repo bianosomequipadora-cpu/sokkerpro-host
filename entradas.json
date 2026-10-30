@@ -41966,7 +41966,7 @@
     "tipo": "escanteio_ft",
     "home": "Persebaya Surabaya",
     "away": "Persijap",
-    "message_id": 0,
+    "message_id": 18306,
     "extra_val": 11,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -41975,6 +41975,7 @@
     "odd_bano": null,
     "odd_mercado": 1.31,
     "timestamp": "2026-10-30T10:42:25.351022-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
