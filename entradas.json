@@ -42205,5 +42205,23 @@
     "timestamp": "2026-10-30T12:56:07.894478-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "7c69f5afcd5c_custom_1793240373682_20261030",
+    "fixture_id": "19854401",
+    "mercado": "custom_1793240373682",
+    "tipo": "escanteio_ft",
+    "home": "Niger Tornadoes",
+    "away": "Barau",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 1.736,
+    "timestamp": "2026-10-30T13:00:14.812398-03:00",
+    "resultado": "pendente"
   }
 ]
