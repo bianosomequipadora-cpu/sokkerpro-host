@@ -42327,7 +42327,7 @@
     "tipo": "escanteio_ft",
     "home": "Al Riffa",
     "away": "Al-Najma",
-    "message_id": 0,
+    "message_id": 18325,
     "extra_val": 9,
     "entry_sh": 2,
     "entry_sa": 2,
@@ -42336,6 +42336,7 @@
     "odd_bano": null,
     "odd_mercado": 1.42,
     "timestamp": "2026-10-30T13:43:37.619021-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
