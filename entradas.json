@@ -42072,5 +42072,23 @@
     "timestamp": "2026-10-30T11:32:47.269937-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "d5eb25871e6f_custom_1793278942679_20261030",
+    "fixture_id": "19902359",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "USM Blida",
+    "away": "WA Mostaganem",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.57,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-10-30T11:34:40.754069-03:00",
+    "resultado": "pendente"
   }
 ]
