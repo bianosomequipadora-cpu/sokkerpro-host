@@ -42794,5 +42794,23 @@
     "timestamp": "2026-10-30T17:12:09.478297-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "e63dd38510bf_custom_1793309646531_20261030",
+    "fixture_id": "19831147",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Oberpullendorf",
+    "away": "Leithaprodersdorf",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.05,
+    "odd_bano": null,
+    "odd_mercado": 2.05,
+    "timestamp": "2026-10-30T17:13:56.417120-03:00",
+    "resultado": "pendente"
   }
 ]
