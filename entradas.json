@@ -42745,7 +42745,7 @@
     "tipo": "escanteio_ft",
     "home": "Allerheiligen",
     "away": "FC Gleisdorf",
-    "message_id": 0,
+    "message_id": 18348,
     "extra_val": 12,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -42754,6 +42754,7 @@
     "odd_bano": null,
     "odd_mercado": 1.52,
     "timestamp": "2026-10-30T16:41:30.588609-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
