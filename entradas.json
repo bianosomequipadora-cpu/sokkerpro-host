@@ -42965,5 +42965,23 @@
     "timestamp": "2026-10-30T17:45:32.980502-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "5d779b7dafaf_custom_1793278942679_20261030",
+    "fixture_id": "19901288",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Difaâ El Jadida",
+    "away": "UTS Rabat",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 3.98,
+    "timestamp": "2026-10-30T17:58:37.491386-03:00",
+    "resultado": "pendente"
   }
 ]
