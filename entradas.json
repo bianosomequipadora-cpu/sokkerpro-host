@@ -42813,5 +42813,23 @@
     "timestamp": "2026-10-30T17:13:56.417120-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "ef1feb3ae1a9_custom_1793309646531_20261030",
+    "fixture_id": "19720600",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Rapperswil-Jona",
+    "away": "Stade Nyonnais",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.65,
+    "odd_bano": null,
+    "odd_mercado": 1.655,
+    "timestamp": "2026-10-30T17:15:21.524106-03:00",
+    "resultado": "pendente"
   }
 ]
