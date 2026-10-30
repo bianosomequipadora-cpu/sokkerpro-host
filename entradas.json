@@ -42270,7 +42270,7 @@
     "tipo": "escanteio_ht",
     "home": "Be1 NFA",
     "away": "Babrungas",
-    "message_id": 0,
+    "message_id": 18322,
     "extra_val": 1,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -42279,6 +42279,7 @@
     "odd_bano": null,
     "odd_mercado": 1.915,
     "timestamp": "2026-10-30T13:05:00.340426-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
