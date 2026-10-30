@@ -41909,7 +41909,7 @@
     "tipo": "escanteio_ht",
     "home": "I.S.P.E",
     "away": "Yadanarbon",
-    "message_id": 0,
+    "message_id": 18303,
     "extra_val": 5,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -41918,6 +41918,7 @@
     "odd_bano": null,
     "odd_mercado": 1.835,
     "timestamp": "2026-10-30T06:38:10.118528-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
