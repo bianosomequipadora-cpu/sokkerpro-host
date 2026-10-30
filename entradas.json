@@ -43030,7 +43030,7 @@
     "tipo": "escanteio_ht",
     "home": "Huracán",
     "away": "Tigre",
-    "message_id": 0,
+    "message_id": 18363,
     "extra_val": 6,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -43039,6 +43039,7 @@
     "odd_bano": null,
     "odd_mercado": 1.39,
     "timestamp": "2026-10-30T19:33:21.465909-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
