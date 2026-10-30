@@ -41920,5 +41920,23 @@
     "timestamp": "2026-10-30T06:38:10.118528-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "692008d27682_custom_1793309646531_20261030",
+    "fixture_id": "19657154",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "FC Iberia 2010",
+    "away": "Kolkheti Khobi",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.58,
+    "timestamp": "2026-10-30T09:45:32.976451-03:00",
+    "resultado": "pendente"
   }
 ]
