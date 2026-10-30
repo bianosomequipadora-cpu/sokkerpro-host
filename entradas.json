@@ -42414,5 +42414,23 @@
     "timestamp": "2026-10-30T14:32:36.200679-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "ca3e0bf889cb_custom_1793278942679_20261030",
+    "fixture_id": "19760773",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Hlučín",
+    "away": "Šumperk",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.568,
+    "timestamp": "2026-10-30T14:34:43.578602-03:00",
+    "resultado": "pendente"
   }
 ]
