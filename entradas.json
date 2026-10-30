@@ -42642,5 +42642,23 @@
     "timestamp": "2026-10-30T15:41:22.456594-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "c2da8cf4d42d_custom_1793309646531_20261030",
+    "fixture_id": "19721702",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Kauno Žalgiris II",
+    "away": "Neptūną Klaipėda",
+    "message_id": 0,
+    "extra_val": 13,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 2.02,
+    "odd_bano": null,
+    "odd_mercado": 2.02,
+    "timestamp": "2026-10-30T15:42:03.365252-03:00",
+    "resultado": "pendente"
   }
 ]
