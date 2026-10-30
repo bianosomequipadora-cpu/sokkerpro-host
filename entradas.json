@@ -42699,5 +42699,23 @@
     "timestamp": "2026-10-30T16:31:24.580498-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "13949bc84a62_custom_1793278942679_20261030",
+    "fixture_id": "19722565",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "RFC Seraing",
+    "away": "RFC Liège",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 1.96,
+    "timestamp": "2026-10-30T16:38:11.597332-03:00",
+    "resultado": "pendente"
   }
 ]
