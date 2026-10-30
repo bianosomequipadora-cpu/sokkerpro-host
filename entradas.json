@@ -42376,5 +42376,23 @@
     "timestamp": "2026-10-30T14:16:58.870846-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "7ab95199f73e_custom_1793278942679_20261030",
+    "fixture_id": "19713893",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Slaven Koprivnica",
+    "away": "Istra 1961",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.504,
+    "timestamp": "2026-10-30T14:32:08.047572-03:00",
+    "resultado": "pendente"
   }
 ]
