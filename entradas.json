@@ -42547,5 +42547,23 @@
     "timestamp": "2026-10-30T15:38:28.885082-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "f9d5cd61c9eb_custom_1793278942679_20261030",
+    "fixture_id": "19901008",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Bragantino U20",
+    "away": "Capivariano U20",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.02,
+    "odd_bano": null,
+    "odd_mercado": 2.745,
+    "timestamp": "2026-10-30T15:38:49.429964-03:00",
+    "resultado": "pendente"
   }
 ]
