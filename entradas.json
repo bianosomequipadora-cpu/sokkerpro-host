@@ -42718,5 +42718,23 @@
     "timestamp": "2026-10-30T16:38:11.597332-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "29560a9e8f6e_custom_1793309646531_20261030",
+    "fixture_id": "19744543",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Fortuna Düsseldorf",
+    "away": "Meppen",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.67,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-10-30T16:40:28.985419-03:00",
+    "resultado": "pendente"
   }
 ]
