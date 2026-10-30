@@ -42851,5 +42851,23 @@
     "timestamp": "2026-10-30T17:18:53.698018-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "ba284c014b4e_custom_1793278942679_20261030",
+    "fixture_id": "19726027",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Zulte-Waregem",
+    "away": "Club Brugge",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.496,
+    "timestamp": "2026-10-30T17:19:09.109282-03:00",
+    "resultado": "pendente"
   }
 ]
