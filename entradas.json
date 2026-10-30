@@ -43136,5 +43136,23 @@
     "timestamp": "2026-10-30T20:42:22.042657-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "0d297302359c_custom_1793309646531_20261030",
+    "fixture_id": "19636545",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Huracán",
+    "away": "Tigre",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.37,
+    "timestamp": "2026-10-30T20:46:01.236387-03:00",
+    "resultado": "pendente"
   }
 ]
