@@ -41977,5 +41977,23 @@
     "timestamp": "2026-10-30T10:42:25.351022-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "323bc7962cb4_custom_1793309646531_20261030",
+    "fixture_id": "19875884",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Mahasarakham United",
+    "away": "Chanthaburi",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 2.2,
+    "odd_bano": null,
+    "odd_mercado": 2.2,
+    "timestamp": "2026-10-30T10:43:00.535482-03:00",
+    "resultado": "pendente"
   }
 ]
