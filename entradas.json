@@ -43155,5 +43155,23 @@
     "timestamp": "2026-10-30T20:46:01.236387-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "96001c3b410c_custom_1793240319803_20261030",
+    "fixture_id": "19895987",
+    "mercado": "custom_1793240319803",
+    "tipo": "escanteio_ft",
+    "home": "Real Potosí",
+    "away": "Independiente Petrolero",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.25,
+    "odd_bano": null,
+    "odd_mercado": 2.25,
+    "timestamp": "2026-10-30T20:47:55.001311-03:00",
+    "resultado": "pendente"
   }
 ]
