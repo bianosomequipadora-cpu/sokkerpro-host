@@ -42946,5 +42946,23 @@
     "timestamp": "2026-10-30T17:23:19.947035-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "f6bf7cb4e524_custom_1793309646531_20261030",
+    "fixture_id": "19788449",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "RFC Seraing U21",
+    "away": "Francs Borains U21",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.575,
+    "timestamp": "2026-10-30T17:45:32.980502-03:00",
+    "resultado": "pendente"
   }
 ]
