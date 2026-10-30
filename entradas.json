@@ -42422,7 +42422,7 @@
     "tipo": "escanteio_ht",
     "home": "Hlučín",
     "away": "Šumperk",
-    "message_id": 0,
+    "message_id": 18330,
     "extra_val": 1,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -42431,6 +42431,7 @@
     "odd_bano": null,
     "odd_mercado": 1.568,
     "timestamp": "2026-10-30T14:34:43.578602-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
