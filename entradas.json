@@ -42395,5 +42395,23 @@
     "timestamp": "2026-10-30T14:32:08.047572-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "d8c97736ecea_custom_1793278942679_20261030",
+    "fixture_id": "19732264",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Karviná",
+    "away": "Slavia Praha B",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.31,
+    "timestamp": "2026-10-30T14:32:36.200679-03:00",
+    "resultado": "pendente"
   }
 ]
