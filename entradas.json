@@ -42973,7 +42973,7 @@
     "tipo": "escanteio_ht",
     "home": "Difaâ El Jadida",
     "away": "UTS Rabat",
-    "message_id": 0,
+    "message_id": 18360,
     "extra_val": 2,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -42982,6 +42982,7 @@
     "odd_bano": null,
     "odd_mercado": 3.98,
     "timestamp": "2026-10-30T17:58:37.491386-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
