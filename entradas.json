@@ -43049,7 +43049,7 @@
     "tipo": "escanteio_ht",
     "home": "Criciúma",
     "away": "Ponte Preta",
-    "message_id": 0,
+    "message_id": 18364,
     "extra_val": 7,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -43058,6 +43058,7 @@
     "odd_bano": null,
     "odd_mercado": 1.34,
     "timestamp": "2026-10-30T20:10:28.161457-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
