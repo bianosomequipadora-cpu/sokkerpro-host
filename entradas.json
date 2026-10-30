@@ -42281,5 +42281,23 @@
     "timestamp": "2026-10-30T13:05:00.340426-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "e1a8726144e2_custom_1793278942679_20261030",
+    "fixture_id": "19729985",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Shakhtar Donetsk",
+    "away": "Obolon'-Brovar",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.4,
+    "timestamp": "2026-10-30T13:34:01.539293-03:00",
+    "resultado": "pendente"
   }
 ]
