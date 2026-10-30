@@ -42053,5 +42053,23 @@
     "timestamp": "2026-10-30T11:30:54.119553-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "a786573a77a8_custom_1793278942679_20261030",
+    "fixture_id": "19874419",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Al-Karma",
+    "away": "Duhok",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.625,
+    "timestamp": "2026-10-30T11:32:47.269937-03:00",
+    "resultado": "pendente"
   }
 ]
