@@ -42319,5 +42319,23 @@
     "timestamp": "2026-10-30T13:35:55.790682-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "e8199075b928_custom_1793309646531_20261030",
+    "fixture_id": "19902089",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Al Riffa",
+    "away": "Al-Najma",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.42,
+    "timestamp": "2026-10-30T13:43:37.619021-03:00",
+    "resultado": "pendente"
   }
 ]
