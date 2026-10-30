@@ -42593,7 +42593,7 @@
     "tipo": "escanteio_ft",
     "home": "Karviná",
     "away": "Slavia Praha B",
-    "message_id": 0,
+    "message_id": 18339,
     "extra_val": 10,
     "entry_sh": 1,
     "entry_sa": 2,
@@ -42602,6 +42602,7 @@
     "odd_bano": null,
     "odd_mercado": 1.645,
     "timestamp": "2026-10-30T15:39:42.182553-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
