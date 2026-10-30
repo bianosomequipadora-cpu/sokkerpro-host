@@ -42441,7 +42441,7 @@
     "tipo": "escanteio_ht",
     "home": "Kauno Žalgiris II",
     "away": "Neptūną Klaipėda",
-    "message_id": 0,
+    "message_id": 18331,
     "extra_val": 4,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -42450,6 +42450,7 @@
     "odd_bano": null,
     "odd_mercado": 1.7,
     "timestamp": "2026-10-30T14:35:04.706359-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
