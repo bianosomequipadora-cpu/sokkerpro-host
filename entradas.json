@@ -43098,5 +43098,23 @@
     "timestamp": "2026-10-30T20:40:31.524830-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "e1f680b85719_custom_1793240352537_20261030",
+    "fixture_id": "19902284",
+    "mercado": "custom_1793240352537",
+    "tipo": "escanteio_ht",
+    "home": "Union Omaha",
+    "away": "Chattanooga Red Wolves",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.344,
+    "timestamp": "2026-10-30T20:40:46.846677-03:00",
+    "resultado": "pendente"
   }
 ]
