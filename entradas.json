@@ -42129,5 +42129,23 @@
     "timestamp": "2026-10-30T11:45:50.181595-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "5aa0ac7a5dbb_custom_1793278942679_20261030",
+    "fixture_id": "19738377",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Puebla U21",
+    "away": "Pumas UNAM U21",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.205,
+    "timestamp": "2026-10-30T12:35:50.138186-03:00",
+    "resultado": "pendente"
   }
 ]
