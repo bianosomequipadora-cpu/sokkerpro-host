@@ -43041,5 +43041,23 @@
     "timestamp": "2026-10-30T19:33:21.465909-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "225c85097972_custom_1793240325943_20261030",
+    "fixture_id": "19667081",
+    "mercado": "custom_1793240325943",
+    "tipo": "escanteio_ht",
+    "home": "Criciúma",
+    "away": "Ponte Preta",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.34,
+    "timestamp": "2026-10-30T20:10:28.161457-03:00",
+    "resultado": "pendente"
   }
 ]
