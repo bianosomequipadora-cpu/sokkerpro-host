@@ -42661,5 +42661,23 @@
     "timestamp": "2026-10-30T15:42:03.365252-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "31ebdf486d39_custom_1793309646531_20261030",
+    "fixture_id": "19716310",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Cracovia Kraków",
+    "away": "Motor Lublin",
+    "message_id": 0,
+    "extra_val": 15,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.736,
+    "timestamp": "2026-10-30T15:42:29.680396-03:00",
+    "resultado": "pendente"
   }
 ]
