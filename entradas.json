@@ -42042,7 +42042,7 @@
     "tipo": "escanteio_ht",
     "home": "Kiyovu Sports",
     "away": "AS Kigali",
-    "message_id": 0,
+    "message_id": 18310,
     "extra_val": 1,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -42051,6 +42051,7 @@
     "odd_bano": null,
     "odd_mercado": 1.5,
     "timestamp": "2026-10-30T11:30:54.119553-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
