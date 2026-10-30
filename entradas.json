@@ -42034,5 +42034,23 @@
     "timestamp": "2026-10-30T10:55:44.384920-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "a990626402eb_custom_1793278942679_20261030",
+    "fixture_id": "19862704",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Kiyovu Sports",
+    "away": "AS Kigali",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.5,
+    "timestamp": "2026-10-30T11:30:54.119553-03:00",
+    "resultado": "pendente"
   }
 ]
