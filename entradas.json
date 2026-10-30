@@ -42756,5 +42756,23 @@
     "timestamp": "2026-10-30T16:41:30.588609-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "f0d51469efba_custom_1793278942679_20261030",
+    "fixture_id": "19716306",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Górnik Zabrze",
+    "away": "Legia Warszawa",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.432,
+    "timestamp": "2026-10-30T17:02:13.819474-03:00",
+    "resultado": "pendente"
   }
 ]
