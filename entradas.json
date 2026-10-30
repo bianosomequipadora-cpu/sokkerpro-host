@@ -41958,5 +41958,23 @@
     "timestamp": "2026-10-30T09:45:57.814327-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "fcbacb157dcd_custom_1793309646531_20261030",
+    "fixture_id": "19813546",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Persebaya Surabaya",
+    "away": "Persijap",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.31,
+    "timestamp": "2026-10-30T10:42:25.351022-03:00",
+    "resultado": "pendente"
   }
 ]
