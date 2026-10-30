@@ -42927,5 +42927,23 @@
     "timestamp": "2026-10-30T17:22:58.614336-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "d4bb69ea9f10_custom_1793278942679_20261030",
+    "fixture_id": "19748160",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Fylde",
+    "away": "AFC Hornchurch",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 2.34,
+    "timestamp": "2026-10-30T17:23:19.947035-03:00",
+    "resultado": "pendente"
   }
 ]
