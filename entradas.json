@@ -42452,5 +42452,23 @@
     "timestamp": "2026-10-30T14:35:04.706359-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "fb861f67b426_custom_1793309646531_20261030",
+    "fixture_id": "19889960",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Al Wihdat",
+    "away": "Al Arabi",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.655,
+    "timestamp": "2026-10-30T15:15:42.615942-03:00",
+    "resultado": "pendente"
   }
 ]
