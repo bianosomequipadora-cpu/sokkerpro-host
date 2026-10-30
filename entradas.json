@@ -42631,7 +42631,7 @@
     "tipo": "escanteio_ft",
     "home": "Slaven Koprivnica",
     "away": "Istra 1961",
-    "message_id": 0,
+    "message_id": 18341,
     "extra_val": 7,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -42640,6 +42640,7 @@
     "odd_bano": null,
     "odd_mercado": 1.75,
     "timestamp": "2026-10-30T15:41:22.456594-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
