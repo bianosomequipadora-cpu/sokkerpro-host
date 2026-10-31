@@ -43193,5 +43193,23 @@
     "timestamp": "2026-10-30T22:32:05.944056-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "3e68e7783a97_custom_1793240325943_20261030",
+    "fixture_id": "19713063",
+    "mercado": "custom_1793240325943",
+    "tipo": "escanteio_ht",
+    "home": "Atlético Bucaramanga",
+    "away": "Deportivo Pasto",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 2.2,
+    "odd_bano": null,
+    "odd_mercado": 2.65,
+    "timestamp": "2026-10-30T22:45:44.385260-03:00",
+    "resultado": "pendente"
   }
 ]
