@@ -43581,7 +43581,7 @@
     "tipo": "escanteio_ft",
     "home": "Chengdu Rongcheng II",
     "away": "Beijing BIT",
-    "message_id": 0,
+    "message_id": 18394,
     "extra_val": 4,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -43590,6 +43590,7 @@
     "odd_bano": null,
     "odd_mercado": 2.24,
     "timestamp": "2026-10-31T05:19:14.636023-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
