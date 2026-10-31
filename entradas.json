@@ -43554,5 +43554,23 @@
     "timestamp": "2026-10-31T05:15:33.035486-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "d583c3a4ff6e_custom_1793240373682_20261031",
+    "fixture_id": "19880448",
+    "mercado": "custom_1793240373682",
+    "tipo": "escanteio_ft",
+    "home": "Wuhan Three Towns II",
+    "away": "Qingdao Red Lions",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.52,
+    "timestamp": "2026-10-31T05:17:25.103855-03:00",
+    "resultado": "pendente"
   }
 ]
