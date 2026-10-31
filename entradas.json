@@ -43953,5 +43953,23 @@
     "timestamp": "2026-10-31T12:15:09.218841-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "85321d327e01_custom_1793443293490_20261031",
+    "fixture_id": "19748156",
+    "mercado": "custom_1793443293490",
+    "tipo": "escanteio_ht",
+    "home": "Altrincham",
+    "away": "Carlisle United",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.344,
+    "timestamp": "2026-10-31T12:31:09.674525-03:00",
+    "resultado": "pendente"
   }
 ]
