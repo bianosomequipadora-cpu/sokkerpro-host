@@ -44360,7 +44360,7 @@
     "tipo": "escanteio_ft",
     "home": "Flandria",
     "away": "Deportivo Armenio",
-    "message_id": 0,
+    "message_id": 18438,
     "extra_val": 11,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -44369,6 +44369,7 @@
     "odd_bano": null,
     "odd_mercado": 2.05,
     "timestamp": "2026-10-31T16:49:07.720649-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
