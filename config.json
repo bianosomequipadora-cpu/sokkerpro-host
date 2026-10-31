@@ -309,7 +309,7 @@
       "nome": "⛳️🔮OVER 1.0 ESCANTEIO FT🔮⛳️",
       "minuto_inicio": 80,
       "minuto_fim": 89,
-      "periodo": 3,
+      "periodo": 2,
       "tipo": "escanteio_ft",
       "stake": 10,
       "placar_valido": "",
@@ -330,7 +330,12 @@
         {
           "campo": "dapm_10_fav",
           "operador": "gte",
-          "valor": 1
+          "valor": 1.1
+        },
+        {
+          "campo": "escanteios_5m",
+          "operador": "lte",
+          "valor": 0
         }
       ]
     }
