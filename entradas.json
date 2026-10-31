@@ -43763,5 +43763,23 @@
     "timestamp": "2026-10-31T11:04:15.831627-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "ad04fb2264ad_custom_1793240325943_20261031",
+    "fixture_id": "19786728",
+    "mercado": "custom_1793240325943",
+    "tipo": "escanteio_ht",
+    "home": "Ospitaletto",
+    "away": "Trento Calcio 1921",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.75,
+    "odd_bano": null,
+    "odd_mercado": 2.08,
+    "timestamp": "2026-10-31T11:04:30.312959-03:00",
+    "resultado": "pendente"
   }
 ]
