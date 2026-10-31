@@ -44379,7 +44379,7 @@
     "tipo": "escanteio_ft",
     "home": "Duque de Caxias",
     "away": "Serrano RJ",
-    "message_id": 0,
+    "message_id": 18439,
     "extra_val": 6,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -44388,6 +44388,7 @@
     "odd_bano": null,
     "odd_mercado": 2.07,
     "timestamp": "2026-10-31T16:57:39.681947-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
