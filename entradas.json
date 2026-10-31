@@ -43429,7 +43429,7 @@
     "tipo": "escanteio_ht",
     "home": "Jiangxi Dingnan United",
     "away": "Shenzhen Juniors FC",
-    "message_id": 0,
+    "message_id": 18386,
     "extra_val": 2,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -43438,6 +43438,7 @@
     "odd_bano": null,
     "odd_mercado": 2.192,
     "timestamp": "2026-10-31T04:07:15.704229-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
