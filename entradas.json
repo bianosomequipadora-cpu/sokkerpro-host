@@ -44113,7 +44113,7 @@
     "tipo": "escanteio_ft",
     "home": "Taverne",
     "away": "Mendrisio",
-    "message_id": 0,
+    "message_id": 18425,
     "extra_val": 12,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -44122,6 +44122,7 @@
     "odd_bano": null,
     "odd_mercado": 1.552,
     "timestamp": "2026-10-31T14:07:19.988822-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
