@@ -43752,7 +43752,7 @@
     "tipo": "escanteio_ht",
     "home": "Ospitaletto",
     "away": "Trento Calcio 1921",
-    "message_id": 0,
+    "message_id": 18405,
     "extra_val": 0,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -43761,6 +43761,7 @@
     "odd_bano": null,
     "odd_mercado": 2.08,
     "timestamp": "2026-10-31T11:04:15.831627-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
