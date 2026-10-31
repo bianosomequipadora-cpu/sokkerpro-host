@@ -43364,5 +43364,23 @@
     "timestamp": "2026-10-31T02:45:38.729460-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "ea20dfa44045_custom_1793240373682_20261031",
+    "fixture_id": "19676296",
+    "mercado": "custom_1793240373682",
+    "tipo": "escanteio_ft",
+    "home": "Yongin City",
+    "away": "Seoul E.",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 3,
+    "entry_sa": 2,
+    "entry_total": 5,
+    "odd_b365": 2.05,
+    "odd_bano": null,
+    "odd_mercado": 2.152,
+    "timestamp": "2026-10-31T03:47:05.897074-03:00",
+    "resultado": "pendente"
   }
 ]
