@@ -43372,7 +43372,7 @@
     "tipo": "escanteio_ft",
     "home": "Yongin City",
     "away": "Seoul E.",
-    "message_id": 0,
+    "message_id": 18383,
     "extra_val": 9,
     "entry_sh": 3,
     "entry_sa": 2,
@@ -43381,6 +43381,7 @@
     "odd_bano": null,
     "odd_mercado": 2.152,
     "timestamp": "2026-10-31T03:47:05.897074-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
