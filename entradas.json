@@ -43896,5 +43896,23 @@
     "timestamp": "2026-10-31T12:05:30.295370-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "bce6b2db03ca_custom_1793240325943_20261031",
+    "fixture_id": "19757643",
+    "mercado": "custom_1793240325943",
+    "tipo": "escanteio_ht",
+    "home": "Miedź Legnica",
+    "away": "Nieciecza",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.504,
+    "timestamp": "2026-10-31T12:07:56.954758-03:00",
+    "resultado": "pendente"
   }
 ]
