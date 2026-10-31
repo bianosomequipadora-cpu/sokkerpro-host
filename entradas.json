@@ -44569,7 +44569,7 @@
     "tipo": "escanteio_ft",
     "home": "St. Louis City",
     "away": "San Diego",
-    "message_id": 0,
+    "message_id": 18449,
     "extra_val": 6,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -44578,6 +44578,7 @@
     "odd_bano": null,
     "odd_mercado": 2.34,
     "timestamp": "2026-10-31T17:56:28.985241-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
