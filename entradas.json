@@ -43231,5 +43231,23 @@
     "timestamp": "2026-10-31T00:45:33.639288-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "8059d8797390_custom_1793278942679_20261031",
+    "fixture_id": "19719132",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Fagiano Okayama",
+    "away": "FC Tokyo",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.31,
+    "timestamp": "2026-10-31T02:33:38.850535-03:00",
+    "resultado": "pendente"
   }
 ]
