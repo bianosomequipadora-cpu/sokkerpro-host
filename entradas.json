@@ -44409,5 +44409,23 @@
     "timestamp": "2026-10-31T17:05:41.121237-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "4faa702a8c08_custom_1793240373682_20261031",
+    "fixture_id": "19636769",
+    "mercado": "custom_1793240373682",
+    "tipo": "escanteio_ft",
+    "home": "Los Andes",
+    "away": "CA Mitre",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.79,
+    "timestamp": "2026-10-31T17:15:32.015289-03:00",
+    "resultado": "pendente"
   }
 ]
