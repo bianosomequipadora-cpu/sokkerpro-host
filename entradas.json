@@ -43649,5 +43649,23 @@
     "timestamp": "2026-10-31T06:32:28.135240-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "4776bbb740fa_custom_1793240352537_20261031",
+    "fixture_id": "19792733",
+    "mercado": "custom_1793240352537",
+    "tipo": "escanteio_ht",
+    "home": "Hapoel Haifa U19",
+    "away": "Bnei Yehuda Tel Aviv U19",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.62,
+    "odd_bano": null,
+    "odd_mercado": 1.656,
+    "timestamp": "2026-10-31T06:34:25.269733-03:00",
+    "resultado": "pendente"
   }
 ]
