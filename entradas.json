@@ -44398,7 +44398,7 @@
     "tipo": "escanteio_ht",
     "home": "Peñarol",
     "away": "Wanderers",
-    "message_id": 0,
+    "message_id": 18440,
     "extra_val": 2,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -44407,6 +44407,7 @@
     "odd_bano": null,
     "odd_mercado": 2.112,
     "timestamp": "2026-10-31T17:05:41.121237-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
