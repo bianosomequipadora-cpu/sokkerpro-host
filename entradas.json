@@ -43706,5 +43706,23 @@
     "timestamp": "2026-10-31T08:38:15.936424-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "829065c52037_custom_1793443293490_20261031",
+    "fixture_id": "19711727",
+    "mercado": "custom_1793443293490",
+    "tipo": "escanteio_ht",
+    "home": "Panevėžys",
+    "away": "TransINVEST Vilnius",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.87,
+    "odd_bano": null,
+    "odd_mercado": 1.925,
+    "timestamp": "2026-10-31T09:51:52.947322-03:00",
+    "resultado": "pendente"
   }
 ]
