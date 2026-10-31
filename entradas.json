@@ -43467,7 +43467,7 @@
     "tipo": "escanteio_ht",
     "home": "Hang Yuen W",
     "away": "Kaohsiung Attackers W",
-    "message_id": 0,
+    "message_id": 18388,
     "extra_val": 3,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -43476,6 +43476,7 @@
     "odd_bano": null,
     "odd_mercado": 2.79,
     "timestamp": "2026-10-31T04:36:57.344100-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
