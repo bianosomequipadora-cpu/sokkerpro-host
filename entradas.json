@@ -43600,7 +43600,7 @@
     "tipo": "escanteio_ht",
     "home": "Golden Arrows U23",
     "away": "TS Galaxy U23",
-    "message_id": 0,
+    "message_id": 18397,
     "extra_val": 5,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -43609,6 +43609,7 @@
     "odd_bano": null,
     "odd_mercado": 2.2,
     "timestamp": "2026-10-31T05:38:39.585783-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
