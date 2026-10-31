@@ -44455,7 +44455,7 @@
     "tipo": "escanteio_ft",
     "home": "Fénix",
     "away": "Cerrito",
-    "message_id": 0,
+    "message_id": 18443,
     "extra_val": 7,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -44464,6 +44464,7 @@
     "odd_bano": null,
     "odd_mercado": 1.62,
     "timestamp": "2026-10-31T17:41:00.331201-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
