@@ -43934,5 +43934,23 @@
     "timestamp": "2026-10-31T12:10:05.824241-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "9baea22822aa_custom_1793240373682_20261031",
+    "fixture_id": "19784061",
+    "mercado": "custom_1793240373682",
+    "tipo": "escanteio_ft",
+    "home": "SSC Giugliano",
+    "away": "Casertana",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.92,
+    "odd_bano": null,
+    "odd_mercado": 1.98,
+    "timestamp": "2026-10-31T12:15:09.218841-03:00",
+    "resultado": "pendente"
   }
 ]
