@@ -44561,5 +44561,23 @@
     "timestamp": "2026-10-31T17:56:09.940217-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "9e5978ba12f8_custom_1793443278766_20261031",
+    "fixture_id": "19609987",
+    "mercado": "custom_1793443278766",
+    "tipo": "escanteio_ft",
+    "home": "St. Louis City",
+    "away": "San Diego",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 2.3,
+    "odd_bano": null,
+    "odd_mercado": 2.34,
+    "timestamp": "2026-10-31T17:56:28.985241-03:00",
+    "resultado": "pendente"
   }
 ]
