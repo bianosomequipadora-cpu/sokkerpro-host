@@ -43497,5 +43497,23 @@
     "timestamp": "2026-10-31T05:08:14.819530-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "aa0c9cbfdd54_custom_1793309646531_20261031",
+    "fixture_id": "19880473",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Wenzhou",
+    "away": "Shanghai Segenda",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-10-31T05:10:39.203528-03:00",
+    "resultado": "pendente"
   }
 ]
