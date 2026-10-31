@@ -43991,5 +43991,23 @@
     "timestamp": "2026-10-31T12:36:47.167586-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "d4bd6aaf7395_custom_1793240325943_20261031",
+    "fixture_id": "19855398",
+    "mercado": "custom_1793240325943",
+    "tipo": "escanteio_ht",
+    "home": "Lecco U19",
+    "away": "Reggiana U19",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.93,
+    "timestamp": "2026-10-31T13:04:32.651966-03:00",
+    "resultado": "pendente"
   }
 ]
