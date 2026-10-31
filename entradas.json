@@ -44170,7 +44170,7 @@
     "tipo": "escanteio_ht",
     "home": "Maccabi Netanya",
     "away": "Hapoel Jerusalem",
-    "message_id": 0,
+    "message_id": 18428,
     "extra_val": 4,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -44179,6 +44179,7 @@
     "odd_bano": null,
     "odd_mercado": 1.44,
     "timestamp": "2026-10-31T15:02:09.765112-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
