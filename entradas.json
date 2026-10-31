@@ -43174,5 +43174,23 @@
     "timestamp": "2026-10-30T20:47:55.001311-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "a29f815997f3_custom_1793278942679_20261030",
+    "fixture_id": "19888722",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Estrella Roja",
+    "away": "Atlético Independiente",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.36,
+    "timestamp": "2026-10-30T22:32:05.944056-03:00",
+    "resultado": "pendente"
   }
 ]
