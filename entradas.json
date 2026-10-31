@@ -43478,5 +43478,23 @@
     "timestamp": "2026-10-31T04:36:57.344100-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "c20f7855adeb_custom_1793309646531_20261031",
+    "fixture_id": "19684053",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Suzhou Dongwu",
+    "away": "Yanbian Longding",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.52,
+    "timestamp": "2026-10-31T05:08:14.819530-03:00",
+    "resultado": "pendente"
   }
 ]
