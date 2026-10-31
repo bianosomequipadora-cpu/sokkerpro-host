@@ -43220,7 +43220,7 @@
     "tipo": "escanteio_ft",
     "home": "Reboceros La Piedad",
     "away": "Inter Playa del Carmen",
-    "message_id": 0,
+    "message_id": 18375,
     "extra_val": 9,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -43229,6 +43229,7 @@
     "odd_bano": null,
     "odd_mercado": 1.925,
     "timestamp": "2026-10-31T00:45:33.639288-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
