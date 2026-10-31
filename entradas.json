@@ -43866,7 +43866,7 @@
     "tipo": "escanteio_ht",
     "home": "Miedź Legnica",
     "away": "Nieciecza",
-    "message_id": 0,
+    "message_id": 18411,
     "extra_val": 4,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -43875,6 +43875,7 @@
     "odd_bano": null,
     "odd_mercado": 1.33,
     "timestamp": "2026-10-31T12:05:09.541534-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
