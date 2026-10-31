@@ -43923,7 +43923,7 @@
     "tipo": "escanteio_ft",
     "home": "Audace Cerignola",
     "away": "Catania",
-    "message_id": 0,
+    "message_id": 18414,
     "extra_val": 6,
     "entry_sh": 1,
     "entry_sa": 0,
@@ -43932,6 +43932,7 @@
     "odd_bano": null,
     "odd_mercado": 1.42,
     "timestamp": "2026-10-31T12:10:05.824241-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
