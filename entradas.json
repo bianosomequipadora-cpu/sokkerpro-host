@@ -43410,7 +43410,7 @@
     "tipo": "escanteio_ht",
     "home": "Wenzhou",
     "away": "Shanghai Segenda",
-    "message_id": 0,
+    "message_id": 18385,
     "extra_val": 2,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -43419,6 +43419,7 @@
     "odd_bano": null,
     "odd_mercado": 1.9,
     "timestamp": "2026-10-31T04:05:37.161892-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
