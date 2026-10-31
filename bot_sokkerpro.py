@@ -3157,8 +3157,8 @@ def run_ciclo(sent, total_env, confirmed_ids=None):
                     continue
                 confirmed_ids.add(uid)
                 emoji = '🟢GREEN CONFIRMADO🟢' if res == 'green' else ('🔵REEMBOLSO CONFIRMADO🔵' if res == 'refund' else '🔴RED CONFIRMADO🔴')
-                rotulo_resultado = 'Green Confirmado🟢' if res == 'green' else ('Reembolso Confirmado🔵' if res == 'refund' else 'Red Confirmado🔴')
-                linha_resultado = f'⚠️Resultado: {rotulo_resultado}'
+                rotulo_resultado = 'Green✅' if res == 'green' else ('Reembolso🔄' if res == 'refund' else 'Red❌️')
+                linha_resultado = f'⚠️Resultado do Sinal: {rotulo_resultado}'
                 confirmacao = f"{emoji}\n<b>Mercado:</b> {s.get('mercado', '—')}\n<b>Jogo:</b> {s.get('home', '—')} x {s.get('away', '—')}"
                 mensagem_original_enviada = False
                 if s.get('message_id') and s.get('message_chat_id') and s.get('mensagem_original'):
