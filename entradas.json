@@ -44086,5 +44086,23 @@
     "timestamp": "2026-10-31T14:03:50.807590-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "b46c72cec090_custom_1793240255350_20261031",
+    "fixture_id": "19754908",
+    "mercado": "custom_1793240255350",
+    "tipo": "escanteio_ft",
+    "home": "Taverne",
+    "away": "Mendrisio",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.552,
+    "timestamp": "2026-10-31T14:07:06.141935-03:00",
+    "resultado": "pendente"
   }
 ]
