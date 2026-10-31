@@ -43505,7 +43505,7 @@
     "tipo": "escanteio_ft",
     "home": "Wenzhou",
     "away": "Shanghai Segenda",
-    "message_id": 0,
+    "message_id": 18390,
     "extra_val": 12,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -43514,6 +43514,7 @@
     "odd_bano": null,
     "odd_mercado": 1.7,
     "timestamp": "2026-10-31T05:10:39.203528-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
