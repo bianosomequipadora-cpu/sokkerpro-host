@@ -44436,7 +44436,7 @@
     "tipo": "escanteio_ft",
     "home": "Győri ETO",
     "away": "Vasas",
-    "message_id": 0,
+    "message_id": 18442,
     "extra_val": 9,
     "entry_sh": 1,
     "entry_sa": 2,
@@ -44445,6 +44445,7 @@
     "odd_bano": null,
     "odd_mercado": 1.95,
     "timestamp": "2026-10-31T17:27:37.252432-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
