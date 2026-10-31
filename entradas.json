@@ -43212,5 +43212,23 @@
     "timestamp": "2026-10-30T22:45:44.385260-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "efd4f705617f_custom_1793309646531_20261031",
+    "fixture_id": "19875425",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Reboceros La Piedad",
+    "away": "Inter Playa del Carmen",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.87,
+    "odd_bano": null,
+    "odd_mercado": 1.925,
+    "timestamp": "2026-10-31T00:45:33.639288-03:00",
+    "resultado": "pendente"
   }
 ]
