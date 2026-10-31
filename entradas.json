@@ -43239,7 +43239,7 @@
     "tipo": "escanteio_ht",
     "home": "Fagiano Okayama",
     "away": "FC Tokyo",
-    "message_id": 0,
+    "message_id": 18376,
     "extra_val": 4,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -43248,6 +43248,7 @@
     "odd_bano": null,
     "odd_mercado": 1.31,
     "timestamp": "2026-10-31T02:33:38.850535-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
