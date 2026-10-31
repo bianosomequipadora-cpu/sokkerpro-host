@@ -44238,5 +44238,23 @@
     "timestamp": "2026-10-31T15:12:16.490296-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "19ec167d0669_custom_1793240319803_20261031",
+    "fixture_id": "19713897",
+    "mercado": "custom_1793240319803",
+    "tipo": "escanteio_ft",
+    "home": "Rudeš",
+    "away": "Dinamo Zagreb",
+    "message_id": 0,
+    "extra_val": 16,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.736,
+    "timestamp": "2026-10-31T15:50:17.769204-03:00",
+    "resultado": "pendente"
   }
 ]
