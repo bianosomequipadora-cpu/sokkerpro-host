@@ -43809,7 +43809,7 @@
     "tipo": "escanteio_ht",
     "home": "FC Augsburg",
     "away": "SC Freiburg",
-    "message_id": 0,
+    "message_id": 18408,
     "extra_val": 2,
     "entry_sh": 1,
     "entry_sa": 0,
@@ -43818,6 +43818,7 @@
     "odd_bano": null,
     "odd_mercado": 1.384,
     "timestamp": "2026-10-31T12:01:13.189581-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
