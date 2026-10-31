@@ -43573,5 +43573,23 @@
     "timestamp": "2026-10-31T05:17:25.103855-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "1329524509ce_custom_1793240319803_20261031",
+    "fixture_id": "19880457",
+    "mercado": "custom_1793240319803",
+    "tipo": "escanteio_ft",
+    "home": "Chengdu Rongcheng II",
+    "away": "Beijing BIT",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.97,
+    "odd_bano": null,
+    "odd_mercado": 2.24,
+    "timestamp": "2026-10-31T05:19:14.636023-03:00",
+    "resultado": "pendente"
   }
 ]
