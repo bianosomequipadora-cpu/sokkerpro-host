@@ -43516,5 +43516,23 @@
     "timestamp": "2026-10-31T05:10:39.203528-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "52ad1eba2b91_custom_1793309646531_20261031",
+    "fixture_id": "19684056",
+    "mercado": "custom_1793309646531",
+    "tipo": "escanteio_ft",
+    "home": "Guangxi Hengchen",
+    "away": "Wuxi Wugou",
+    "message_id": 0,
+    "extra_val": 14,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.344,
+    "timestamp": "2026-10-31T05:12:30.495997-03:00",
+    "resultado": "pendente"
   }
 ]
