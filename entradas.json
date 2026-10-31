@@ -44428,5 +44428,23 @@
     "timestamp": "2026-10-31T17:15:32.015289-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "ea71af06616a_custom_1793240373682_20261031",
+    "fixture_id": "19725290",
+    "mercado": "custom_1793240373682",
+    "tipo": "escanteio_ft",
+    "home": "Győri ETO",
+    "away": "Vasas",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 1.95,
+    "timestamp": "2026-10-31T17:27:37.252432-03:00",
+    "resultado": "pendente"
   }
 ]
