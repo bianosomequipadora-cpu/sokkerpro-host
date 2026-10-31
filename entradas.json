@@ -44626,7 +44626,7 @@
     "tipo": "escanteio_ht",
     "home": "Cacahuatique",
     "away": "INCA-Aruba",
-    "message_id": 0,
+    "message_id": 18452,
     "extra_val": 3,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -44635,6 +44635,7 @@
     "odd_bano": null,
     "odd_mercado": 1.715,
     "timestamp": "2026-10-31T18:37:14.906307-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
