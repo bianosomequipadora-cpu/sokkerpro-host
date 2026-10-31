@@ -44371,5 +44371,23 @@
     "timestamp": "2026-10-31T16:49:07.720649-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "9212a6c7f7e4_custom_1793443278766_20261031",
+    "fixture_id": "19757770",
+    "mercado": "custom_1793443278766",
+    "tipo": "escanteio_ft",
+    "home": "Duque de Caxias",
+    "away": "Serrano RJ",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.07,
+    "odd_bano": null,
+    "odd_mercado": 2.07,
+    "timestamp": "2026-10-31T16:57:39.681947-03:00",
+    "resultado": "pendente"
   }
 ]
