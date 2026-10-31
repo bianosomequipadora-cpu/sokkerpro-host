@@ -43421,5 +43421,23 @@
     "timestamp": "2026-10-31T04:05:37.161892-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "7ed6b87328a5_custom_1793278942679_20261031",
+    "fixture_id": "19684049",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Jiangxi Dingnan United",
+    "away": "Shenzhen Juniors FC",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.15,
+    "odd_bano": null,
+    "odd_mercado": 2.192,
+    "timestamp": "2026-10-31T04:07:15.704229-03:00",
+    "resultado": "pendente"
   }
 ]
