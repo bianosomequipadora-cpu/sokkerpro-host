@@ -43459,5 +43459,23 @@
     "timestamp": "2026-10-31T04:08:53.861122-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "b09d0f9236ca_custom_1793278942679_20261031",
+    "fixture_id": "19883178",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Hang Yuen W",
+    "away": "Kaohsiung Attackers W",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.79,
+    "timestamp": "2026-10-31T04:36:57.344100-03:00",
+    "resultado": "pendente"
   }
 ]
