@@ -44067,5 +44067,23 @@
     "timestamp": "2026-10-31T13:13:14.261626-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "dca7d04a65a9_custom_1793443293490_20261031",
+    "fixture_id": "19784063",
+    "mercado": "custom_1793443293490",
+    "tipo": "escanteio_ht",
+    "home": "Cavese",
+    "away": "Picerno",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.645,
+    "timestamp": "2026-10-31T14:03:50.807590-03:00",
+    "resultado": "pendente"
   }
 ]
