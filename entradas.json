@@ -43695,7 +43695,7 @@
     "tipo": "escanteio_ht",
     "home": "Nam Định",
     "away": "Thể Công - Viettel",
-    "message_id": 0,
+    "message_id": 18402,
     "extra_val": 2,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -43704,6 +43704,7 @@
     "odd_bano": null,
     "odd_mercado": 2.48,
     "timestamp": "2026-10-31T08:38:15.936424-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
