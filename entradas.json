@@ -43611,5 +43611,23 @@
     "timestamp": "2026-10-31T05:38:39.585783-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "807bd49223da_custom_1793278942679_20261031",
+    "fixture_id": "19758807",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Macarthur",
+    "away": "Western Sydney Wanderers",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.47,
+    "timestamp": "2026-10-31T06:13:08.925875-03:00",
+    "resultado": "pendente"
   }
 ]
