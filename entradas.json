@@ -44333,5 +44333,23 @@
     "timestamp": "2026-10-31T16:44:25.065374-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "e86db6f962dc_custom_1793443278766_20261031",
+    "fixture_id": "19899940",
+    "mercado": "custom_1793443278766",
+    "tipo": "escanteio_ft",
+    "home": "Santa Fé",
+    "away": "Águia PE",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.37,
+    "timestamp": "2026-10-31T16:45:34.891647-03:00",
+    "resultado": "pendente"
   }
 ]
