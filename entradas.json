@@ -44303,7 +44303,7 @@
     "tipo": "escanteio_ft",
     "home": "União de Leiria",
     "away": "AVS",
-    "message_id": 0,
+    "message_id": 18435,
     "extra_val": 8,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -44312,6 +44312,7 @@
     "odd_bano": null,
     "odd_mercado": 1.47,
     "timestamp": "2026-10-31T16:44:07.758691-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
