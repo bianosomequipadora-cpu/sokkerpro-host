@@ -44029,5 +44029,23 @@
     "timestamp": "2026-10-31T13:11:32.154298-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "947980289dd2_custom_1793443278766_20261031",
+    "fixture_id": "19757644",
+    "mercado": "custom_1793443278766",
+    "tipo": "escanteio_ft",
+    "home": "Lechia Gdańsk",
+    "away": "Unia Skierniewice",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.616,
+    "timestamp": "2026-10-31T13:12:57.343170-03:00",
+    "resultado": "pendente"
   }
 ]
