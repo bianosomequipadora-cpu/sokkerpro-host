@@ -44599,5 +44599,23 @@
     "timestamp": "2026-10-31T18:10:33.334723-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "5b0f422ce76a_custom_1793443278766_20261031",
+    "fixture_id": "19901609",
+    "mercado": "custom_1793443278766",
+    "tipo": "escanteio_ft",
+    "home": "Peñarol",
+    "away": "Wanderers",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 1.75,
+    "timestamp": "2026-10-31T18:13:37.382240-03:00",
+    "resultado": "pendente"
   }
 ]
