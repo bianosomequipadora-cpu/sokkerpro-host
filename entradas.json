@@ -44181,5 +44181,23 @@
     "timestamp": "2026-10-31T15:02:09.765112-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "140d8e2a88da_custom_1793443293490_20261031",
+    "fixture_id": "19721177",
+    "mercado": "custom_1793443293490",
+    "tipo": "escanteio_ht",
+    "home": "Maccabi Netanya",
+    "away": "Hapoel Jerusalem",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.85,
+    "odd_bano": null,
+    "odd_mercado": 2.26,
+    "timestamp": "2026-10-31T15:07:21.426130-03:00",
+    "resultado": "pendente"
   }
 ]
