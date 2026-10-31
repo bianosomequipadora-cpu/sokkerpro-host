@@ -43915,5 +43915,23 @@
     "timestamp": "2026-10-31T12:07:56.954758-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "207d1c79eba3_custom_1793443278766_20261031",
+    "fixture_id": "19784067",
+    "mercado": "custom_1793443278766",
+    "tipo": "escanteio_ft",
+    "home": "Audace Cerignola",
+    "away": "Catania",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.42,
+    "timestamp": "2026-10-31T12:10:05.824241-03:00",
+    "resultado": "pendente"
   }
 ]
