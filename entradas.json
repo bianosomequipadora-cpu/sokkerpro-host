@@ -44618,5 +44618,23 @@
     "timestamp": "2026-10-31T18:13:37.382240-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "a7e837079ba4_custom_1793443293490_20261031",
+    "fixture_id": "19768432",
+    "mercado": "custom_1793443293490",
+    "tipo": "escanteio_ht",
+    "home": "Cacahuatique",
+    "away": "INCA-Aruba",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 1.715,
+    "timestamp": "2026-10-31T18:37:14.906307-03:00",
+    "resultado": "pendente"
   }
 ]
