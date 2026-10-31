@@ -44151,7 +44151,7 @@
     "tipo": "escanteio_ft",
     "home": "Mačva Šabac",
     "away": "Crvena Zvezda",
-    "message_id": 0,
+    "message_id": 18427,
     "extra_val": 7,
     "entry_sh": 2,
     "entry_sa": 2,
@@ -44160,6 +44160,7 @@
     "odd_bano": null,
     "odd_mercado": 2.08,
     "timestamp": "2026-10-31T14:41:02.109838-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
