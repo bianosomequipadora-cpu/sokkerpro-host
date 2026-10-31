@@ -44314,5 +44314,23 @@
     "timestamp": "2026-10-31T16:44:07.758691-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "53f9e1dfe944_custom_1793443278766_20261031",
+    "fixture_id": "19736475",
+    "mercado": "custom_1793443278766",
+    "tipo": "escanteio_ft",
+    "home": "União de Leiria",
+    "away": "AVS",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.52,
+    "timestamp": "2026-10-31T16:44:25.065374-03:00",
+    "resultado": "pendente"
   }
 ]
