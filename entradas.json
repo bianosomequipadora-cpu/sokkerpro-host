@@ -43687,5 +43687,23 @@
     "timestamp": "2026-10-31T07:35:38.051822-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "401588181921_custom_1793443293490_20261031",
+    "fixture_id": "19872932",
+    "mercado": "custom_1793443293490",
+    "tipo": "escanteio_ht",
+    "home": "Nam Định",
+    "away": "Thể Công - Viettel",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 2.35,
+    "odd_bano": null,
+    "odd_mercado": 2.48,
+    "timestamp": "2026-10-31T08:38:15.936424-03:00",
+    "resultado": "pendente"
   }
 ]
