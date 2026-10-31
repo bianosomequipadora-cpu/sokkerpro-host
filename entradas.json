@@ -43801,5 +43801,23 @@
     "timestamp": "2026-10-31T11:04:43.905170-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "30474db47aa1_custom_1793443293490_20261031",
+    "fixture_id": "19735131",
+    "mercado": "custom_1793443293490",
+    "tipo": "escanteio_ht",
+    "home": "FC Augsburg",
+    "away": "SC Freiburg",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.384,
+    "timestamp": "2026-10-31T12:01:13.189581-03:00",
+    "resultado": "pendente"
   }
 ]
