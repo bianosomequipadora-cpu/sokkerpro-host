@@ -44227,7 +44227,7 @@
     "tipo": "escanteio_ft",
     "home": "Al Merreikh",
     "away": "Mukura",
-    "message_id": 0,
+    "message_id": 18431,
     "extra_val": 5,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -44236,6 +44236,7 @@
     "odd_bano": null,
     "odd_mercado": 2.392,
     "timestamp": "2026-10-31T15:12:16.490296-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
