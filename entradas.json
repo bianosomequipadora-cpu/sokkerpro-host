@@ -43524,7 +43524,7 @@
     "tipo": "escanteio_ft",
     "home": "Guangxi Hengchen",
     "away": "Wuxi Wugou",
-    "message_id": 0,
+    "message_id": 18391,
     "extra_val": 14,
     "entry_sh": 1,
     "entry_sa": 2,
@@ -43533,6 +43533,7 @@
     "odd_bano": null,
     "odd_mercado": 1.344,
     "timestamp": "2026-10-31T05:12:30.495997-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
