@@ -43201,7 +43201,7 @@
     "tipo": "escanteio_ht",
     "home": "Atlético Bucaramanga",
     "away": "Deportivo Pasto",
-    "message_id": 0,
+    "message_id": 18372,
     "extra_val": 2,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -43210,6 +43210,7 @@
     "odd_bano": null,
     "odd_mercado": 2.65,
     "timestamp": "2026-10-30T22:45:44.385260-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
