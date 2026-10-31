@@ -44265,7 +44265,7 @@
     "tipo": "escanteio_ft",
     "home": "Rudeš",
     "away": "Dinamo Zagreb",
-    "message_id": 0,
+    "message_id": 18433,
     "extra_val": 16,
     "entry_sh": 1,
     "entry_sa": 0,
@@ -44274,6 +44274,7 @@
     "odd_bano": null,
     "odd_mercado": 1.736,
     "timestamp": "2026-10-31T15:50:31.949465-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
