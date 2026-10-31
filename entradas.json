@@ -44219,5 +44219,23 @@
     "timestamp": "2026-10-31T15:07:58.548041-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "8bace4fbde7b_custom_1793443278766_20261031",
+    "fixture_id": "19862858",
+    "mercado": "custom_1793443278766",
+    "tipo": "escanteio_ft",
+    "home": "Al Merreikh",
+    "away": "Mukura",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.15,
+    "odd_bano": null,
+    "odd_mercado": 2.392,
+    "timestamp": "2026-10-31T15:12:16.490296-03:00",
+    "resultado": "pendente"
   }
 ]
