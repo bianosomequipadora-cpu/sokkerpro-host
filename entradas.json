@@ -44352,5 +44352,23 @@
     "timestamp": "2026-10-31T16:45:34.891647-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "f0b97edfcf1d_custom_1793443278766_20261031",
+    "fixture_id": "19637864",
+    "mercado": "custom_1793443278766",
+    "tipo": "escanteio_ft",
+    "home": "Flandria",
+    "away": "Deportivo Armenio",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 2.05,
+    "odd_bano": null,
+    "odd_mercado": 2.05,
+    "timestamp": "2026-10-31T16:49:07.720649-03:00",
+    "resultado": "pendente"
   }
 ]
