@@ -44276,5 +44276,23 @@
     "timestamp": "2026-10-31T15:50:31.949465-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "1f481da37383_custom_1793443293490_20261031",
+    "fixture_id": "19901938",
+    "mercado": "custom_1793443293490",
+    "tipo": "escanteio_ht",
+    "home": "Fénix",
+    "away": "Cerrito",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.67,
+    "timestamp": "2026-10-31T16:33:01.273311-03:00",
+    "resultado": "pendente"
   }
 ]
