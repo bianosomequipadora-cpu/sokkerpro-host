@@ -44702,7 +44702,7 @@
     "tipo": "escanteio_ft",
     "home": "UPNFM",
     "away": "Génesis",
-    "message_id": 0,
+    "message_id": 18458,
     "extra_val": 11,
     "entry_sh": 3,
     "entry_sa": 3,
@@ -44711,6 +44711,7 @@
     "odd_bano": null,
     "odd_mercado": 1.79,
     "timestamp": "2026-10-31T19:43:19.388530-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
