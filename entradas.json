@@ -43383,5 +43383,23 @@
     "timestamp": "2026-10-31T03:47:05.897074-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "71df8a1218f2_custom_1793278942679_20261031",
+    "fixture_id": "19880489",
+    "mercado": "custom_1793278942679",
+    "tipo": "escanteio_ht",
+    "home": "Dalian Yingbo B",
+    "away": "Guangdong Mingtu",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.57,
+    "odd_bano": null,
+    "odd_mercado": 1.645,
+    "timestamp": "2026-10-31T04:03:37.278835-03:00",
+    "resultado": "pendente"
   }
 ]
