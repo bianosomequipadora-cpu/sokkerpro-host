@@ -44048,5 +44048,23 @@
     "timestamp": "2026-10-31T13:12:57.343170-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "0ea4d2f4cc6b_custom_1793443278766_20261031",
+    "fixture_id": "19721323",
+    "mercado": "custom_1793443278766",
+    "tipo": "escanteio_ft",
+    "home": "Spartak Trnava",
+    "away": "Komárno",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.79,
+    "timestamp": "2026-10-31T13:13:14.261626-03:00",
+    "resultado": "pendente"
   }
 ]
