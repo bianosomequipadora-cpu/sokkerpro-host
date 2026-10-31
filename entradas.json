@@ -44531,7 +44531,7 @@
     "tipo": "escanteio_ht",
     "home": "Carlos Mannucci",
     "away": "Bentín Tacna Heroica",
-    "message_id": 0,
+    "message_id": 18447,
     "extra_val": 5,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -44540,6 +44540,7 @@
     "odd_bano": null,
     "odd_mercado": 2.008,
     "timestamp": "2026-10-31T17:55:53.452738-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
