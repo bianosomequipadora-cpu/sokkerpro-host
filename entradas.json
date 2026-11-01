@@ -45074,5 +45074,23 @@
     "timestamp": "2026-11-01T10:02:59.297220-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "e6e73a77e367_custom_1793523442939_20261101",
+    "fixture_id": "19785818",
+    "mercado": "custom_1793523442939",
+    "tipo": "escanteio_ht",
+    "home": "Kapaz",
+    "away": "İmişli FK",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.525,
+    "timestamp": "2026-11-01T11:02:27.746573-03:00",
+    "resultado": "pendente"
   }
 ]
