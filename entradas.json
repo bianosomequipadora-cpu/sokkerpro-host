@@ -45359,5 +45359,23 @@
     "timestamp": "2026-11-01T14:41:26.284870-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "3977872ec01b_custom_1793523448404_20261101",
+    "fixture_id": "19901292",
+    "mercado": "custom_1793523448404",
+    "tipo": "escanteio_ft",
+    "home": "Widad Témara",
+    "away": "Maghreb Fès",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 2.0,
+    "odd_bano": null,
+    "odd_mercado": 2.03,
+    "timestamp": "2026-11-01T14:43:48.151894-03:00",
+    "resultado": "pendente"
   }
 ]
