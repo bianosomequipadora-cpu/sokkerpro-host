@@ -44854,7 +44854,7 @@
     "tipo": "escanteio_ht",
     "home": "Dalian Kewei",
     "away": "Jiangxi Lushan",
-    "message_id": 0,
+    "message_id": 18468,
     "extra_val": 4,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -44863,6 +44863,7 @@
     "odd_bano": null,
     "odd_mercado": 2.288,
     "timestamp": "2026-11-01T04:08:21.114524-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
