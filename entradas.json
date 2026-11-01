@@ -45234,7 +45234,7 @@
     "tipo": "escanteio_ht",
     "home": "Celje",
     "away": "Nafta",
-    "message_id": 0,
+    "message_id": 18488,
     "extra_val": 2,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -45243,6 +45243,7 @@
     "odd_bano": null,
     "odd_mercado": 1.256,
     "timestamp": "2026-11-01T14:01:02.366782-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
