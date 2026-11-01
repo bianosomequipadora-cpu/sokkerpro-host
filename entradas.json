@@ -44998,5 +44998,23 @@
     "timestamp": "2026-11-01T09:00:38.868373-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "4e4228fce934_custom_1793523448404_20261101",
+    "fixture_id": "19864621",
+    "mercado": "custom_1793523448404",
+    "tipo": "escanteio_ft",
+    "home": "Customs United",
+    "away": "Cha Choeng Sao",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": 2.3,
+    "odd_bano": null,
+    "odd_mercado": 2.3,
+    "timestamp": "2026-11-01T09:54:40.082236-03:00",
+    "resultado": "pendente"
   }
 ]
