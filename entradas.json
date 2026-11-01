@@ -44979,5 +44979,23 @@
     "timestamp": "2026-11-01T08:02:19.970473-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "1a9d4deb375d_custom_1793523442939_20261101",
+    "fixture_id": "19778307",
+    "mercado": "custom_1793523442939",
+    "tipo": "escanteio_ht",
+    "home": "Balestier Khalsa",
+    "away": "Lion City Sailors FC",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.225,
+    "timestamp": "2026-11-01T09:00:38.868373-03:00",
+    "resultado": "pendente"
   }
 ]
