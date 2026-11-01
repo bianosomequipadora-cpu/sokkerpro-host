@@ -45511,5 +45511,23 @@
     "timestamp": "2026-11-01T16:40:58.192680-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "6932c7ff8d3c_custom_1793523442939_20261101",
+    "fixture_id": "19768430",
+    "mercado": "custom_1793523442939",
+    "tipo": "escanteio_ht",
+    "home": "Fuerte San Francisco",
+    "away": "Águila",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.256,
+    "timestamp": "2026-11-01T18:30:33.597481-03:00",
+    "resultado": "pendente"
   }
 ]
