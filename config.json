@@ -294,12 +294,17 @@
         {
           "campo": "dapm_10_fav",
           "operador": "gte",
-          "valor": 1.1
+          "valor": 1
         },
         {
           "campo": "escanteios_5m",
           "operador": "lte",
           "valor": 0
+        },
+        {
+          "campo": "dapm_total_orig_min",
+          "operador": "gte",
+          "valor": 0.7
         }
       ]
     },
@@ -330,12 +335,17 @@
         {
           "campo": "dapm_10_fav",
           "operador": "gte",
-          "valor": 1.1
+          "valor": 1
         },
         {
           "campo": "escanteios_5m",
           "operador": "lte",
           "valor": 0
+        },
+        {
+          "campo": "dapm_total_orig_min",
+          "operador": "gte",
+          "valor": 0.7
         }
       ]
     }
