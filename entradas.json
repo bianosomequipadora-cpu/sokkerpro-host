@@ -44721,7 +44721,7 @@
     "tipo": "escanteio_ht",
     "home": "Ulsan HD",
     "away": "Gangwon",
-    "message_id": 0,
+    "message_id": 18461,
     "extra_val": 1,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -44730,6 +44730,7 @@
     "odd_bano": null,
     "odd_mercado": 1.685,
     "timestamp": "2026-11-01T02:33:25.206495-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
