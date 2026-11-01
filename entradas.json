@@ -44987,7 +44987,7 @@
     "tipo": "escanteio_ht",
     "home": "Balestier Khalsa",
     "away": "Lion City Sailors FC",
-    "message_id": 0,
+    "message_id": 18475,
     "extra_val": 3,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -44996,6 +44996,7 @@
     "odd_bano": null,
     "odd_mercado": 1.225,
     "timestamp": "2026-11-01T09:00:38.868373-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
