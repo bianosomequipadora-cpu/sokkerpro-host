@@ -44751,5 +44751,23 @@
     "timestamp": "2026-11-01T02:38:25.161881-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "8084a5e6ed72_custom_1793240352537_20261101",
+    "fixture_id": "19676293",
+    "mercado": "custom_1793240352537",
+    "tipo": "escanteio_ht",
+    "home": "Suwon",
+    "away": "Ansan Greeners",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.85,
+    "odd_bano": null,
+    "odd_mercado": 2.08,
+    "timestamp": "2026-11-01T02:38:39.025284-03:00",
+    "resultado": "pendente"
   }
 ]
