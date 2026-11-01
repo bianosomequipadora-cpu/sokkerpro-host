@@ -44949,7 +44949,7 @@
     "tipo": "escanteio_ht",
     "home": "Nõmme Kalju",
     "away": "Kuressaare",
-    "message_id": 0,
+    "message_id": 18473,
     "extra_val": 3,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -44958,6 +44958,7 @@
     "odd_bano": null,
     "odd_mercado": 1.16,
     "timestamp": "2026-11-01T08:00:35.799635-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
