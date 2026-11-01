@@ -45454,5 +45454,23 @@
     "timestamp": "2026-11-01T15:42:44.762006-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "dde2fba6f583_custom_1793523659574_20261101",
+    "fixture_id": "19775182",
+    "mercado": "custom_1793523659574",
+    "tipo": "escanteio_ht",
+    "home": "Colchagua",
+    "away": "Trasandino",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.62,
+    "timestamp": "2026-11-01T16:35:44.179155-03:00",
+    "resultado": "pendente"
   }
 ]
