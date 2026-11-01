@@ -45340,5 +45340,23 @@
     "timestamp": "2026-11-01T14:38:20.680138-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "7a8043d5b93d_custom_1793523659574_20261101",
+    "fixture_id": "19668238",
+    "mercado": "custom_1793523659574",
+    "tipo": "escanteio_ht",
+    "home": "FC Nomme United U21",
+    "away": "FC Tallinn",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.25,
+    "odd_bano": null,
+    "odd_mercado": 2.744,
+    "timestamp": "2026-11-01T14:41:26.284870-03:00",
+    "resultado": "pendente"
   }
 ]
