@@ -44873,7 +44873,7 @@
     "tipo": "escanteio_ft",
     "home": "Machida Zelvia",
     "away": "Gamba Osaka",
-    "message_id": 0,
+    "message_id": 18469,
     "extra_val": 12,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -44882,6 +44882,7 @@
     "odd_bano": null,
     "odd_mercado": 1.7,
     "timestamp": "2026-11-01T05:46:49.989549-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
