@@ -45006,7 +45006,7 @@
     "tipo": "escanteio_ft",
     "home": "Customs United",
     "away": "Cha Choeng Sao",
-    "message_id": 0,
+    "message_id": 18476,
     "extra_val": 11,
     "entry_sh": 1,
     "entry_sa": 2,
@@ -45015,6 +45015,7 @@
     "odd_bano": null,
     "odd_mercado": 2.3,
     "timestamp": "2026-11-01T09:54:40.082236-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
