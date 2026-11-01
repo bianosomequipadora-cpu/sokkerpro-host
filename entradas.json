@@ -45093,5 +45093,23 @@
     "timestamp": "2026-11-01T11:02:27.746573-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "6ae65100daa3_custom_1793523448404_20261101",
+    "fixture_id": "19736470",
+    "mercado": "custom_1793523448404",
+    "tipo": "escanteio_ft",
+    "home": "Tondela",
+    "away": "Felgueiras 1932",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.62,
+    "timestamp": "2026-11-01T12:50:45.040990-03:00",
+    "resultado": "pendente"
   }
 ]
