@@ -45112,5 +45112,23 @@
     "timestamp": "2026-11-01T12:50:45.040990-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "4ec47eb1e183_custom_1793523442939_20261101",
+    "fixture_id": "19635834",
+    "mercado": "custom_1793523442939",
+    "tipo": "escanteio_ht",
+    "home": "Elfsborg",
+    "away": "Örgryte",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.275,
+    "timestamp": "2026-11-01T12:59:19.397760-03:00",
+    "resultado": "pendente"
   }
 ]
