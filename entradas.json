@@ -45150,5 +45150,23 @@
     "timestamp": "2026-11-01T13:02:28.698966-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "4a83a93625dc_custom_1793523442939_20261101",
+    "fixture_id": "19848916",
+    "mercado": "custom_1793523442939",
+    "tipo": "escanteio_ht",
+    "home": "Inter Club d'Escaldes",
+    "away": "Penya Encarnada",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.33,
+    "timestamp": "2026-11-01T13:30:16.222615-03:00",
+    "resultado": "pendente"
   }
 ]
