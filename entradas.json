@@ -45055,5 +45055,23 @@
     "timestamp": "2026-11-01T10:02:42.181793-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "d6dce32da676_custom_1793523732794_20261101",
+    "fixture_id": "19668058",
+    "mercado": "custom_1793523732794",
+    "tipo": "escanteio_ht",
+    "home": "Flora",
+    "away": "JK Trans Narva",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.225,
+    "timestamp": "2026-11-01T10:02:59.297220-03:00",
+    "resultado": "pendente"
   }
 ]
