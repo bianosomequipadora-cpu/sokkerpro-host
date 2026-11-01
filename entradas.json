@@ -44941,5 +44941,23 @@
     "timestamp": "2026-11-01T07:58:55.339171-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "e2f1727a23e7_custom_1793523442939_20261101",
+    "fixture_id": "19668059",
+    "mercado": "custom_1793523442939",
+    "tipo": "escanteio_ht",
+    "home": "Nõmme Kalju",
+    "away": "Kuressaare",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.16,
+    "timestamp": "2026-11-01T08:00:35.799635-03:00",
+    "resultado": "pendente"
   }
 ]
