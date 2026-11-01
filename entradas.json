@@ -44892,7 +44892,7 @@
     "tipo": "escanteio_ft",
     "home": "Anyang",
     "away": "Bucheon 1995",
-    "message_id": 0,
+    "message_id": 18470,
     "extra_val": 3,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -44901,6 +44901,7 @@
     "odd_bano": null,
     "odd_mercado": 1.47,
     "timestamp": "2026-11-01T06:07:06.861346-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
