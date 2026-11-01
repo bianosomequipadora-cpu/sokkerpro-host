@@ -44759,7 +44759,7 @@
     "tipo": "escanteio_ht",
     "home": "Suwon",
     "away": "Ansan Greeners",
-    "message_id": 0,
+    "message_id": 18463,
     "extra_val": 5,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -44768,6 +44768,7 @@
     "odd_bano": null,
     "odd_mercado": 2.08,
     "timestamp": "2026-11-01T02:38:39.025284-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
