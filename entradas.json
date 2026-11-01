@@ -45435,5 +45435,23 @@
     "timestamp": "2026-11-01T15:40:31.473306-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "7bc23be6060f_custom_1793523448404_20261101",
+    "fixture_id": "19721706",
+    "mercado": "custom_1793523448404",
+    "tipo": "escanteio_ft",
+    "home": "Hegelmann II",
+    "away": "BFA",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 2.3,
+    "timestamp": "2026-11-01T15:42:44.762006-03:00",
+    "resultado": "pendente"
   }
 ]
