@@ -45378,5 +45378,23 @@
     "timestamp": "2026-11-01T14:43:48.151894-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "d535cf070f9a_custom_1793523448404_20261101",
+    "fixture_id": "19786730",
+    "mercado": "custom_1793523448404",
+    "tipo": "escanteio_ft",
+    "home": "Lumezzane",
+    "away": "Arzignano Valchiampo",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.344,
+    "timestamp": "2026-11-01T15:08:35.805216-03:00",
+    "resultado": "pendente"
   }
 ]
