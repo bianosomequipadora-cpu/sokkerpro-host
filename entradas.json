@@ -44713,5 +44713,23 @@
     "timestamp": "2026-10-31T19:43:19.388530-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "314fd64c04e3_custom_1793443293490_20261101",
+    "fixture_id": "19902379",
+    "mercado": "custom_1793443293490",
+    "tipo": "escanteio_ht",
+    "home": "Ulsan HD",
+    "away": "Gangwon",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.75,
+    "odd_bano": null,
+    "odd_mercado": 1.685,
+    "timestamp": "2026-11-01T02:33:25.206495-03:00",
+    "resultado": "pendente"
   }
 ]
