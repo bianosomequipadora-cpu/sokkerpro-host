@@ -45568,5 +45568,23 @@
     "timestamp": "2026-11-02T05:31:56.083647-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "b71ab1a7773b_custom_1793523686171_20261102",
+    "fixture_id": "19716056",
+    "mercado": "custom_1793523686171",
+    "tipo": "escanteio_ht",
+    "home": "Skopje",
+    "away": "Sileks",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.504,
+    "timestamp": "2026-11-02T08:55:27.981340-03:00",
+    "resultado": "pendente"
   }
 ]
