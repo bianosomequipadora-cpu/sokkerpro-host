@@ -45758,5 +45758,23 @@
     "timestamp": "2026-11-02T16:30:35.362178-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "2d0537b2410e_custom_1793523686171_20261102",
+    "fixture_id": "19789059",
+    "mercado": "custom_1793523686171",
+    "tipo": "escanteio_ht",
+    "home": "CR Belouizdad",
+    "away": "JS Saoura",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.715,
+    "timestamp": "2026-11-02T16:35:33.727868-03:00",
+    "resultado": "pendente"
   }
 ]
