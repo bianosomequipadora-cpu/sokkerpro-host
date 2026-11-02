@@ -45538,7 +45538,7 @@
     "tipo": "escanteio_ft",
     "home": "Firpo",
     "away": "FAS",
-    "message_id": 0,
+    "message_id": 18504,
     "extra_val": 10,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -45547,6 +45547,7 @@
     "odd_bano": null,
     "odd_mercado": 1.715,
     "timestamp": "2026-11-01T22:18:21.784863-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
