@@ -45682,5 +45682,23 @@
     "timestamp": "2026-11-02T14:05:51.047296-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "e1cd1a659580_custom_1793523448404_20261102",
+    "fixture_id": "19767476",
+    "mercado": "custom_1793523448404",
+    "tipo": "escanteio_ft",
+    "home": "Simba",
+    "away": "Namungo",
+    "message_id": 0,
+    "extra_val": 10,
+    "entry_sh": 1,
+    "entry_sa": 2,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.25,
+    "timestamp": "2026-11-02T14:39:10.931273-03:00",
+    "resultado": "pendente"
   }
 ]
