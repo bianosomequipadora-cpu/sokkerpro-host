@@ -45777,5 +45777,23 @@
     "timestamp": "2026-11-02T16:35:33.727868-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "0ec94e5856bd_custom_1793523442939_20261102",
+    "fixture_id": "19716308",
+    "mercado": "custom_1793523442939",
+    "tipo": "escanteio_ht",
+    "home": "Raków Częstochowa",
+    "away": "Pogoń Szczecin",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.15,
+    "timestamp": "2026-11-02T17:00:46.458607-03:00",
+    "resultado": "pendente"
   }
 ]
