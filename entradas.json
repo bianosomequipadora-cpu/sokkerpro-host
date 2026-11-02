@@ -45530,5 +45530,23 @@
     "timestamp": "2026-11-01T18:30:33.597481-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "45743f448edb_custom_1793523448404_20261101",
+    "fixture_id": "19768428",
+    "mercado": "custom_1793523448404",
+    "tipo": "escanteio_ft",
+    "home": "Firpo",
+    "away": "FAS",
+    "message_id": 0,
+    "extra_val": 10,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.75,
+    "odd_bano": null,
+    "odd_mercado": 1.715,
+    "timestamp": "2026-11-01T22:18:21.784863-03:00",
+    "resultado": "pendente"
   }
 ]
