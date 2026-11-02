@@ -45728,7 +45728,7 @@
     "tipo": "escanteio_ft",
     "home": "Malmö FF W",
     "away": "Norrköping W",
-    "message_id": 0,
+    "message_id": 18516,
     "extra_val": 6,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -45737,6 +45737,7 @@
     "odd_bano": null,
     "odd_mercado": 1.775,
     "timestamp": "2026-11-02T15:42:49.428974-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
