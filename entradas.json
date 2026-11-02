@@ -45614,7 +45614,7 @@
     "tipo": "escanteio_ft",
     "home": "Vardar",
     "away": "Struga",
-    "message_id": 0,
+    "message_id": 18510,
     "extra_val": 7,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -45623,6 +45623,7 @@
     "odd_bano": null,
     "odd_mercado": 1.7,
     "timestamp": "2026-11-02T11:42:21.996539-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
