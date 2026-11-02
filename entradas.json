@@ -45606,5 +45606,23 @@
     "timestamp": "2026-11-02T10:01:59.274404-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "ba5dee9b2551_custom_1793523448404_20261102",
+    "fixture_id": "19716057",
+    "mercado": "custom_1793523448404",
+    "tipo": "escanteio_ft",
+    "home": "Vardar",
+    "away": "Struga",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.7,
+    "timestamp": "2026-11-02T11:42:21.996539-03:00",
+    "resultado": "pendente"
   }
 ]
