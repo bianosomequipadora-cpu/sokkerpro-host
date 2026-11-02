@@ -45891,5 +45891,23 @@
     "timestamp": "2026-11-02T17:54:38.581552-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "430d9ed4a112_custom_1793523448404_20261102",
+    "fixture_id": "19772133",
+    "mercado": "custom_1793523448404",
+    "tipo": "escanteio_ft",
+    "home": "Chelmsford City",
+    "away": "Farnham Town",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 2.07,
+    "odd_bano": null,
+    "odd_mercado": 1.995,
+    "timestamp": "2026-11-02T18:30:32.520854-03:00",
+    "resultado": "pendente"
   }
 ]
