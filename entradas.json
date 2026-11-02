@@ -45918,7 +45918,7 @@
     "tipo": "escanteio_ft",
     "home": "Mallorca",
     "away": "Cádiz",
-    "message_id": 0,
+    "message_id": 18526,
     "extra_val": 10,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -45927,6 +45927,7 @@
     "odd_bano": null,
     "odd_mercado": 1.552,
     "timestamp": "2026-11-02T18:43:51.071383-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
