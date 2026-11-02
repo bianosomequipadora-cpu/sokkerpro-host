@@ -45853,5 +45853,23 @@
     "timestamp": "2026-11-02T17:37:39.582796-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "871d12b7b665_custom_1793523659574_20261102",
+    "fixture_id": "19736768",
+    "mercado": "custom_1793523659574",
+    "tipo": "escanteio_ht",
+    "home": "Benfica",
+    "away": "Alverca",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.52,
+    "odd_bano": null,
+    "odd_mercado": 1.565,
+    "timestamp": "2026-11-02T17:54:13.474589-03:00",
+    "resultado": "pendente"
   }
 ]
