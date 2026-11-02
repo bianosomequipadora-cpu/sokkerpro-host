@@ -45557,7 +45557,7 @@
     "tipo": "escanteio_ht",
     "home": "Central Stallions",
     "away": "Deren",
-    "message_id": 0,
+    "message_id": 18507,
     "extra_val": 2,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -45566,6 +45566,7 @@
     "odd_bano": null,
     "odd_mercado": 1.325,
     "timestamp": "2026-11-02T05:31:56.083647-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
