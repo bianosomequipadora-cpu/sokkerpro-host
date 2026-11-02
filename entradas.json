@@ -45663,5 +45663,23 @@
     "timestamp": "2026-11-02T13:40:36.233189-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "af94ed855d5f_custom_1793523442939_20261102",
+    "fixture_id": "19714138",
+    "mercado": "custom_1793523442939",
+    "tipo": "escanteio_ht",
+    "home": "Cherno More",
+    "away": "Botev Vratsa",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.95,
+    "odd_bano": null,
+    "odd_mercado": 1.9,
+    "timestamp": "2026-11-02T14:05:51.047296-03:00",
+    "resultado": "pendente"
   }
 ]
