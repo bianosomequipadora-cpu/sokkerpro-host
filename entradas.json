@@ -45937,7 +45937,7 @@
     "tipo": "escanteio_ft",
     "home": "Albion",
     "away": "Deportivo Maldonado",
-    "message_id": 0,
+    "message_id": 18529,
     "extra_val": 11,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -45946,6 +45946,7 @@
     "odd_bano": null,
     "odd_mercado": 1.22,
     "timestamp": "2026-11-02T21:37:04.421690-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
