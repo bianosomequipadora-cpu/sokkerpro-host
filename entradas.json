@@ -46195,5 +46195,23 @@
     "timestamp": "2026-11-03T12:42:54.813681-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "9a942659aefe_custom_1793523448404_20261103",
+    "fixture_id": "19767814",
+    "mercado": "custom_1793523448404",
+    "tipo": "escanteio_ft",
+    "home": "Marítimo U23",
+    "away": "Moreirense U23",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.7,
+    "odd_bano": null,
+    "odd_mercado": 1.655,
+    "timestamp": "2026-11-03T13:48:18.266683-03:00",
+    "resultado": "pendente"
   }
 ]
