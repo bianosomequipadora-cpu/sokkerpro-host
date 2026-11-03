@@ -45986,5 +45986,23 @@
     "timestamp": "2026-11-03T02:35:35.590383-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "a4556fd6abdc_custom_1793523442939_20261103",
+    "fixture_id": "19719598",
+    "mercado": "custom_1793523442939",
+    "tipo": "escanteio_ht",
+    "home": "Yokohama",
+    "away": "Blaublitz Akita",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.1,
+    "odd_bano": null,
+    "odd_mercado": 2.416,
+    "timestamp": "2026-11-03T02:40:32.180072-03:00",
+    "resultado": "pendente"
   }
 ]
