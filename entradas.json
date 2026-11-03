@@ -46423,5 +46423,23 @@
     "timestamp": "2026-11-03T15:41:15.103137-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "c95c005675af_custom_1793523448404_20261103",
+    "fixture_id": "19862730",
+    "mercado": "custom_1793523448404",
+    "tipo": "escanteio_ft",
+    "home": "APR",
+    "away": "Gasogi United",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.95,
+    "odd_bano": null,
+    "odd_mercado": 2.045,
+    "timestamp": "2026-11-03T15:46:12.240648-03:00",
+    "resultado": "pendente"
   }
 ]
