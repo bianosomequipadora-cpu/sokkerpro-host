@@ -46062,5 +46062,23 @@
     "timestamp": "2026-11-03T03:47:43.571830-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "37237b19262b_custom_1793523448404_20261103",
+    "fixture_id": "19877492",
+    "mercado": "custom_1793523448404",
+    "tipo": "escanteio_ft",
+    "home": "Galatasaray U19",
+    "away": "Stuttgart U19",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.31,
+    "timestamp": "2026-11-03T09:38:32.355858-03:00",
+    "resultado": "pendente"
   }
 ]
