@@ -46070,7 +46070,7 @@
     "tipo": "escanteio_ft",
     "home": "Galatasaray U19",
     "away": "Stuttgart U19",
-    "message_id": 0,
+    "message_id": 18538,
     "extra_val": 9,
     "entry_sh": 2,
     "entry_sa": 1,
@@ -46079,6 +46079,7 @@
     "odd_bano": null,
     "odd_mercado": 1.31,
     "timestamp": "2026-11-03T09:38:32.355858-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
