@@ -46241,7 +46241,7 @@
     "tipo": "escanteio_ht",
     "home": "Pogoń Siedlce",
     "away": "Ruch Chorzów",
-    "message_id": 0,
+    "message_id": 18547,
     "extra_val": 3,
     "entry_sh": 1,
     "entry_sa": 0,
@@ -46250,6 +46250,7 @@
     "odd_bano": null,
     "odd_mercado": 1.264,
     "timestamp": "2026-11-03T14:31:07.332476-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
