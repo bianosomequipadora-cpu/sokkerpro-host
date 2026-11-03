@@ -46442,5 +46442,23 @@
     "timestamp": "2026-11-03T15:46:12.240648-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "102c2b89ed6b_custom_1793523442939_20261103",
+    "fixture_id": "19729005",
+    "mercado": "custom_1793523442939",
+    "tipo": "escanteio_ht",
+    "home": "Queens Park Rangers",
+    "away": "Burnley",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.65,
+    "odd_bano": null,
+    "odd_mercado": 1.752,
+    "timestamp": "2026-11-03T17:21:06.941867-03:00",
+    "resultado": "pendente"
   }
 ]
