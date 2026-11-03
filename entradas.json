@@ -46138,5 +46138,23 @@
     "timestamp": "2026-11-03T11:33:29.010356-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "0bcd063fef29_custom_1793523442939_20261103",
+    "fixture_id": "19767819",
+    "mercado": "custom_1793523442939",
+    "tipo": "escanteio_ht",
+    "home": "Gil Vicente U23",
+    "away": "Felgueiras U23",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.37,
+    "timestamp": "2026-11-03T12:31:45.226444-03:00",
+    "resultado": "pendente"
   }
 ]
