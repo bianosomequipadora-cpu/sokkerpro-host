@@ -46127,7 +46127,7 @@
     "tipo": "escanteio_ht",
     "home": "AS Kigali",
     "away": "Mukura",
-    "message_id": 0,
+    "message_id": 18541,
     "extra_val": 2,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -46136,6 +46136,7 @@
     "odd_bano": null,
     "odd_mercado": 1.77,
     "timestamp": "2026-11-03T11:33:29.010356-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
