@@ -46260,7 +46260,7 @@
     "tipo": "escanteio_ht",
     "home": "Chrobry Głogów",
     "away": "Arka Gdynia",
-    "message_id": 0,
+    "message_id": 18548,
     "extra_val": 3,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -46269,6 +46269,7 @@
     "odd_bano": null,
     "odd_mercado": 1.265,
     "timestamp": "2026-11-03T14:31:26.352255-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
