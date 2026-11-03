@@ -46089,7 +46089,7 @@
     "tipo": "escanteio_ht",
     "home": "Stade Tunisien",
     "away": "Club Africain",
-    "message_id": 0,
+    "message_id": 18539,
     "extra_val": 8,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -46098,6 +46098,7 @@
     "odd_bano": null,
     "odd_mercado": 1.84,
     "timestamp": "2026-11-03T11:07:06.252874-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
