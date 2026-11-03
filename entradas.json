@@ -46460,5 +46460,23 @@
     "odd_mercado": 1.752,
     "timestamp": "2026-11-03T17:21:06.941867-03:00",
     "resultado": "green"
+  },
+  {
+    "signal_key": "d9f01fef0e77_custom_1793523448404_20261103",
+    "fixture_id": "19809127",
+    "mercado": "custom_1793523448404",
+    "tipo": "escanteio_ft",
+    "home": "Rotherham United",
+    "away": "Newcastle United U21",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.375,
+    "timestamp": "2026-11-03T17:36:19.708927-03:00",
+    "resultado": "pendente"
   }
 ]
