@@ -46032,7 +46032,7 @@
     "tipo": "escanteio_ft",
     "home": "Yokohama",
     "away": "Blaublitz Akita",
-    "message_id": 0,
+    "message_id": 18536,
     "extra_val": 7,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -46041,6 +46041,7 @@
     "odd_bano": null,
     "odd_mercado": 2.288,
     "timestamp": "2026-11-03T03:45:56.119778-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
