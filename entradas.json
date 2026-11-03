@@ -46043,5 +46043,23 @@
     "timestamp": "2026-11-03T03:45:56.119778-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "f0599c554ea6_custom_1793523448404_20261103",
+    "fixture_id": "19719596",
+    "mercado": "custom_1793523448404",
+    "tipo": "escanteio_ft",
+    "home": "Ventforet Kofu",
+    "away": "Albirex Niigata",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.28,
+    "timestamp": "2026-11-03T03:47:43.571830-03:00",
+    "resultado": "pendente"
   }
 ]
