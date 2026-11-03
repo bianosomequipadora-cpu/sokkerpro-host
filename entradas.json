@@ -46146,7 +46146,7 @@
     "tipo": "escanteio_ht",
     "home": "Gil Vicente U23",
     "away": "Felgueiras U23",
-    "message_id": 0,
+    "message_id": 18542,
     "extra_val": 1,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -46155,6 +46155,7 @@
     "odd_bano": null,
     "odd_mercado": 1.37,
     "timestamp": "2026-11-03T12:31:45.226444-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
