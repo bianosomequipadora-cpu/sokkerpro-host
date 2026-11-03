@@ -46404,5 +46404,23 @@
     "timestamp": "2026-11-03T15:38:32.303755-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "49305d5caea0_custom_1793523704917_20261103",
+    "fixture_id": "19757637",
+    "mercado": "custom_1793523704917",
+    "tipo": "escanteio_ft",
+    "home": "Pogoń Siedlce",
+    "away": "Ruch Chorzów",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 2.02,
+    "odd_bano": null,
+    "odd_mercado": 1.93,
+    "timestamp": "2026-11-03T15:41:15.103137-03:00",
+    "resultado": "pendente"
   }
 ]
