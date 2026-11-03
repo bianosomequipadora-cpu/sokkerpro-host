@@ -46431,7 +46431,7 @@
     "tipo": "escanteio_ft",
     "home": "APR",
     "away": "Gasogi United",
-    "message_id": 0,
+    "message_id": 18557,
     "extra_val": 9,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -46440,6 +46440,7 @@
     "odd_bano": null,
     "odd_mercado": 2.045,
     "timestamp": "2026-11-03T15:46:12.240648-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
