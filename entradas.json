@@ -45967,5 +45967,23 @@
     "timestamp": "2026-11-02T22:33:15.911018-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "f8773fd5b9ba_custom_1793523686171_20261103",
+    "fixture_id": "19720171",
+    "mercado": "custom_1793523686171",
+    "tipo": "escanteio_ht",
+    "home": "Renofa Yamaguchi",
+    "away": "Kagoshima United",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.425,
+    "timestamp": "2026-11-03T02:35:35.590383-03:00",
+    "resultado": "pendente"
   }
 ]
