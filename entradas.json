@@ -45948,5 +45948,23 @@
     "timestamp": "2026-11-02T21:37:04.421690-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "82485c74dd37_custom_1793523442939_20261102",
+    "fixture_id": "19881800",
+    "mercado": "custom_1793523442939",
+    "tipo": "escanteio_ht",
+    "home": "Waterhouse",
+    "away": "Cavalier",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.456,
+    "timestamp": "2026-11-02T22:33:15.911018-03:00",
+    "resultado": "pendente"
   }
 ]
