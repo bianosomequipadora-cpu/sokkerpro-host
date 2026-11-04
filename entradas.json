@@ -46506,7 +46506,7 @@
     "tipo": "escanteio_ht",
     "home": "Real Cartagena",
     "away": "Deportes Quindío",
-    "message_id": 0,
+    "message_id": 18562,
     "extra_val": 2,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -46515,6 +46515,7 @@
     "odd_bano": null,
     "odd_mercado": 1.36,
     "timestamp": "2026-11-03T23:00:34.731952-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
