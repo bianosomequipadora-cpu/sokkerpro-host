@@ -46517,5 +46517,23 @@
     "timestamp": "2026-11-03T23:00:34.731952-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "0b719f8a5bda_custom_1793523642893_20261104",
+    "fixture_id": "19902597",
+    "mercado": "custom_1793523642893",
+    "tipo": "escanteio_ft",
+    "home": "Real Cartagena",
+    "away": "Deportes Quindío",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.31,
+    "timestamp": "2026-11-04T00:08:12.369720-03:00",
+    "resultado": "pendente"
   }
 ]
