@@ -46555,5 +46555,23 @@
     "timestamp": "2026-11-04T00:08:34.111142-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "0e4ee75c453d_custom_1793523442939_20261104",
+    "fixture_id": "19867026",
+    "mercado": "custom_1793523442939",
+    "tipo": "escanteio_ht",
+    "home": "Pohang Steelers",
+    "away": "Gamba Osaka",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.325,
+    "timestamp": "2026-11-04T07:28:11.299308-03:00",
+    "resultado": "pendente"
   }
 ]
