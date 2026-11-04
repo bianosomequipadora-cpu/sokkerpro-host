@@ -46563,7 +46563,7 @@
     "tipo": "escanteio_ht",
     "home": "Pohang Steelers",
     "away": "Gamba Osaka",
-    "message_id": 0,
+    "message_id": 18571,
     "extra_val": 1,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -46572,6 +46572,7 @@
     "odd_bano": null,
     "odd_mercado": 1.325,
     "timestamp": "2026-11-04T07:28:11.299308-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
