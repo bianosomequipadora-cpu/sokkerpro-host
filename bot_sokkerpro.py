@@ -1395,7 +1395,14 @@ _M4_SESSION = M4Session(SOKKERPRO_BASE_URL)
 
 
 def _m4_post_json(url, payload):
-    response = _M4_HTTP.post(url, json=payload, timeout=15)
+    # Headers de cliente no POST de handshake M4; não substituir o payload,
+    # a sessão ECDH/HKDF nem os headers assinados das chamadas GET.
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'en-US,en;q=0.9',
+    }
+    response = _M4_HTTP.post(url, json=payload, headers=headers, timeout=15)
     if not response.ok:
         raise _SokkerProM4HTTPError('POST', response)
     return response.json()
