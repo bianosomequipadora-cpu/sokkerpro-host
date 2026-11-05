@@ -1373,7 +1373,18 @@ class _SokkerProM4HTTPError(RuntimeError):
         self.status_code = response.status_code
         self.cf_ray = response.headers.get('CF-Ray')
         self.retry_after = response.headers.get('Retry-After')
-        super().__init__(f"M4 {method} HTTP {self.status_code}; CF-Ray={self.cf_ray or 'none'}; Retry-After={self.retry_after or 'none'}")
+        self.content_type = response.headers.get('Content-Type', 'none')
+        self.server = response.headers.get('Server', 'none')
+        # Preserve only a short, sanitized diagnostic excerpt: no headers, cookies,
+        # request payload, or credentials are written to Actions logs.
+        body = re.sub(r'<[^>]*>', ' ', getattr(response, 'text', '') or '')
+        body = re.sub(r'\s+', ' ', body).strip()[:240]
+        self.body_preview = body or 'none'
+        super().__init__(
+            f"M4 {method} HTTP {self.status_code}; CF-Ray={self.cf_ray or 'none'}; "
+            f"Server={self.server}; Content-Type={self.content_type}; "
+            f"Body={self.body_preview}; Retry-After={self.retry_after or 'none'}"
+        )
 
 
 urllib3_connection.allowed_gai_family = lambda: socket.AF_INET
