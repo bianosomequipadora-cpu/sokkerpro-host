@@ -47201,5 +47201,23 @@
     "timestamp": "2026-11-06T15:31:39.664860-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "1881a28865cf_custom_1793976797771_20261106",
+    "fixture_id": "19775448",
+    "mercado": "custom_1793976797771",
+    "tipo": "escanteio_ht",
+    "home": "FC Marchfeld Donauauen",
+    "away": "Donaufeld",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.44,
+    "timestamp": "2026-11-06T15:32:22.379588-03:00",
+    "resultado": "pendente"
   }
 ]
