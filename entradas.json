@@ -47152,7 +47152,7 @@
     "tipo": "escanteio_ft",
     "home": "Nafta",
     "away": "Olimpija",
-    "message_id": 0,
+    "message_id": 18646,
     "extra_val": 9,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -47161,6 +47161,7 @@
     "odd_bano": null,
     "odd_mercado": 1.552,
     "timestamp": "2026-11-06T15:09:30.272598-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
