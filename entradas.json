@@ -46669,5 +46669,23 @@
     "timestamp": "2026-11-06T10:07:36.202331-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "eb83678b2597_custom_1793845356786_20261106",
+    "fixture_id": "19894897",
+    "mercado": "custom_1793845356786",
+    "tipo": "over_15",
+    "home": "Al Thaid",
+    "away": "Emirates",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.04,
+    "odd_bano": null,
+    "odd_mercado": 1.045,
+    "timestamp": "2026-11-06T10:08:22.780715-03:00",
+    "resultado": "pendente"
   }
 ]
