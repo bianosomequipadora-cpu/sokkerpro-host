@@ -47315,5 +47315,23 @@
     "timestamp": "2026-11-06T17:44:19.357423-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "fd44d629ab2f_custom_1793975069332_20261106",
+    "fixture_id": "19715885",
+    "mercado": "custom_1793975069332",
+    "tipo": "escanteio_ft",
+    "home": "Helmond Sport",
+    "away": "FC Volendam",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.37,
+    "timestamp": "2026-11-06T17:44:50.474043-03:00",
+    "resultado": "pendente"
   }
 ]
