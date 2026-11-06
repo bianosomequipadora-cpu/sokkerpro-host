@@ -46650,5 +46650,23 @@
     "timestamp": "2026-11-06T10:06:53.431648-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "d7da684e0102_custom_1793845356786_20261106",
+    "fixture_id": "19894896",
+    "mercado": "custom_1793845356786",
+    "tipo": "over_15",
+    "home": "Dibba Al Fujairah",
+    "away": "Al Hamriyah",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.06,
+    "odd_bano": null,
+    "odd_mercado": 1.06,
+    "timestamp": "2026-11-06T10:07:36.202331-03:00",
+    "resultado": "pendente"
   }
 ]
