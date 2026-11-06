@@ -47247,7 +47247,7 @@
     "tipo": "escanteio_ht",
     "home": "Ammanford",
     "away": "Briton Ferry",
-    "message_id": 0,
+    "message_id": 18651,
     "extra_val": 1,
     "entry_sh": 1,
     "entry_sa": 0,
@@ -47256,6 +47256,7 @@
     "odd_bano": null,
     "odd_mercado": 2.744,
     "timestamp": "2026-11-06T17:27:38.712647-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
