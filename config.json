@@ -356,7 +356,7 @@
       "minuto_inicio": 2,
       "minuto_fim": 89,
       "periodo": 3,
-      "tipo": "escanteio_ft",
+      "tipo": "over_15",
       "stake": 10,
       "placar_valido": "",
       "criterios": {
