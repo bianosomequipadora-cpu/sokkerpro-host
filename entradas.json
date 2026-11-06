@@ -47095,7 +47095,7 @@
     "tipo": "escanteio_ht",
     "home": "AEK Larnaca",
     "away": "Karmiotissa",
-    "message_id": 0,
+    "message_id": 18643,
     "extra_val": 2,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -47104,6 +47104,7 @@
     "odd_bano": null,
     "odd_mercado": 1.31,
     "timestamp": "2026-11-06T14:31:17.414767-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
