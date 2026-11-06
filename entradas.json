@@ -46688,5 +46688,23 @@
     "timestamp": "2026-11-06T10:08:22.780715-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "763b04703d91_custom_1793845356786_20261106",
+    "fixture_id": "19894898",
+    "mercado": "custom_1793845356786",
+    "tipo": "over_15",
+    "home": "City",
+    "away": "Forte Virtus",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.28,
+    "odd_bano": null,
+    "odd_mercado": 1.275,
+    "timestamp": "2026-11-06T10:09:41.355512-03:00",
+    "resultado": "pendente"
   }
 ]
