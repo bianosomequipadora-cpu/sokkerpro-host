@@ -47125,5 +47125,23 @@
     "timestamp": "2026-11-06T15:02:06.503040-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "4eded4fa0f97_custom_1793976797771_20261106",
+    "fixture_id": "19791958",
+    "mercado": "custom_1793976797771",
+    "tipo": "escanteio_ht",
+    "home": "Baťov",
+    "away": "Kroměříž II",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.22,
+    "timestamp": "2026-11-06T15:02:40.920020-03:00",
+    "resultado": "pendente"
   }
 ]
