@@ -46878,5 +46878,23 @@
     "timestamp": "2026-11-06T12:29:48.306598-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "a1a517fa62d7_custom_1793523442939_20261106",
+    "fixture_id": "19902070",
+    "mercado": "custom_1793523442939",
+    "tipo": "escanteio_ht",
+    "home": "Qalali",
+    "away": "Busaiteen",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.48,
+    "timestamp": "2026-11-06T12:33:24.996400-03:00",
+    "resultado": "pendente"
   }
 ]
