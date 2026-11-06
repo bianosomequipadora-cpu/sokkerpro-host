@@ -46612,5 +46612,23 @@
     "timestamp": "2026-11-06T10:05:29.723205-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "5ef8e0201165_custom_1793845356786_20261106",
+    "fixture_id": "19795597",
+    "mercado": "custom_1793845356786",
+    "tipo": "over_15",
+    "home": "Hapoel Ramat HaSharon",
+    "away": "Hapoel Herzliya",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 2,
+    "entry_sa": 1,
+    "entry_total": 3,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": null,
+    "timestamp": "2026-11-06T10:06:11.688554-03:00",
+    "resultado": "pendente"
   }
 ]
