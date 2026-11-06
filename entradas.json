@@ -46707,5 +46707,23 @@
     "timestamp": "2026-11-06T10:09:41.355512-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "828a353d91dd_custom_1793845356786_20261106",
+    "fixture_id": "19720794",
+    "mercado": "custom_1793845356786",
+    "tipo": "escanteio_ht",
+    "home": "Kiryat Yam SC",
+    "away": "Ashdod",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 2,
+    "entry_sa": 0,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 2.48,
+    "timestamp": "2026-11-06T10:38:34.629044-03:00",
+    "resultado": "pendente"
   }
 ]
