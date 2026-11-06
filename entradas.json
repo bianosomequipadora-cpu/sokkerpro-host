@@ -47304,7 +47304,7 @@
     "tipo": "escanteio_ft",
     "home": "Helmond Sport",
     "away": "FC Volendam",
-    "message_id": 0,
+    "message_id": 18654,
     "extra_val": 8,
     "entry_sh": 2,
     "entry_sa": 2,
@@ -47313,6 +47313,7 @@
     "odd_bano": null,
     "odd_mercado": 1.344,
     "timestamp": "2026-11-06T17:44:19.357423-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
