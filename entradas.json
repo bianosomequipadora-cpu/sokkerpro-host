@@ -46726,5 +46726,23 @@
     "timestamp": "2026-11-06T10:38:34.629044-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "69107372ce34_custom_1793523442939_20261106",
+    "fixture_id": "19902347",
+    "mercado": "custom_1793523442939",
+    "tipo": "escanteio_ht",
+    "home": "CA Batna",
+    "away": "Paradou AC",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.0,
+    "odd_bano": null,
+    "odd_mercado": 1.944,
+    "timestamp": "2026-11-06T11:34:54.540349-03:00",
+    "resultado": "pendente"
   }
 ]
