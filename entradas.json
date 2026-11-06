@@ -46715,7 +46715,7 @@
     "tipo": "escanteio_ht",
     "home": "Kiryat Yam SC",
     "away": "Ashdod",
-    "message_id": 0,
+    "message_id": 18615,
     "extra_val": 3,
     "entry_sh": 2,
     "entry_sa": 0,
@@ -46724,6 +46724,7 @@
     "odd_bano": null,
     "odd_mercado": 2.48,
     "timestamp": "2026-11-06T10:38:34.629044-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
