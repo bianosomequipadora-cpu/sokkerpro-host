@@ -46593,5 +46593,23 @@
     "timestamp": "2026-11-06T10:01:37.418474-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "b681be57433b_custom_1793845356786_20261106",
+    "fixture_id": "19902469",
+    "mercado": "custom_1793845356786",
+    "tipo": "over_15",
+    "home": "Smouha",
+    "away": "El Minya",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": 1.1,
+    "odd_bano": null,
+    "odd_mercado": 1.12,
+    "timestamp": "2026-11-06T10:05:29.723205-03:00",
+    "resultado": "pendente"
   }
 ]
