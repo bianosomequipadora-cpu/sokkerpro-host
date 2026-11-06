@@ -46935,5 +46935,23 @@
     "timestamp": "2026-11-06T12:37:09.544507-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "275504868fbf_custom_1793523442939_20261106",
+    "fixture_id": "19904526",
+    "mercado": "custom_1793523442939",
+    "tipo": "escanteio_ht",
+    "home": "Dukagjini",
+    "away": "KF Llapi",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.41,
+    "timestamp": "2026-11-06T13:29:41.296185-03:00",
+    "resultado": "pendente"
   }
 ]
