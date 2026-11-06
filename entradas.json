@@ -47277,5 +47277,23 @@
     "timestamp": "2026-11-06T17:41:15.665997-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "18d18eae95fe_custom_1793975069332_20261106",
+    "fixture_id": "19715882",
+    "mercado": "custom_1793975069332",
+    "tipo": "escanteio_ft",
+    "home": "TOP Oss",
+    "away": "RKC Waalwijk",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.52,
+    "timestamp": "2026-11-06T17:41:46.321888-03:00",
+    "resultado": "pendente"
   }
 ]
