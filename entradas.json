@@ -47038,7 +47038,7 @@
     "tipo": "escanteio_ft",
     "home": "Septemvri Sofia",
     "away": "Lokomotiv Sofia 1929",
-    "message_id": 0,
+    "message_id": 18640,
     "extra_val": 8,
     "entry_sh": 1,
     "entry_sa": 0,
@@ -47047,6 +47047,7 @@
     "odd_bano": null,
     "odd_mercado": 1.81,
     "timestamp": "2026-11-06T13:42:11.855946-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
