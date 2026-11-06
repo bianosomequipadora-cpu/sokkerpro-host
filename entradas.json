@@ -47087,5 +47087,23 @@
     "timestamp": "2026-11-06T14:30:42.385218-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "fb57ad227e11_custom_1793976797771_20261106",
+    "fixture_id": "19777867",
+    "mercado": "custom_1793976797771",
+    "tipo": "escanteio_ht",
+    "home": "AEK Larnaca",
+    "away": "Karmiotissa",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.31,
+    "timestamp": "2026-11-06T14:31:17.414767-03:00",
+    "resultado": "pendente"
   }
 ]
