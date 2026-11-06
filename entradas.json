@@ -46821,5 +46821,23 @@
     "timestamp": "2026-11-06T11:44:01.921811-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "bcbb3e805471_custom_1793975069332_20261106",
+    "fixture_id": "19900439",
+    "mercado": "custom_1793975069332",
+    "tipo": "escanteio_ft",
+    "home": "Shillong Lajong",
+    "away": "Chanmari",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.67,
+    "odd_bano": null,
+    "odd_mercado": 2.288,
+    "timestamp": "2026-11-06T11:44:43.672558-03:00",
+    "resultado": "pendente"
   }
 ]
