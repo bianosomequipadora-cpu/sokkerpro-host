@@ -46620,7 +46620,7 @@
     "tipo": "over_15",
     "home": "Hapoel Ramat HaSharon",
     "away": "Hapoel Herzliya",
-    "message_id": 0,
+    "message_id": 18598,
     "extra_val": 3,
     "entry_sh": 2,
     "entry_sa": 1,
@@ -46629,6 +46629,7 @@
     "odd_bano": null,
     "odd_mercado": null,
     "timestamp": "2026-11-06T10:06:11.688554-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
