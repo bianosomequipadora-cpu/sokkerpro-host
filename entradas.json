@@ -46905,7 +46905,7 @@
     "tipo": "escanteio_ht",
     "home": "Qalali",
     "away": "Busaiteen",
-    "message_id": 0,
+    "message_id": 18633,
     "extra_val": 4,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -46914,6 +46914,7 @@
     "odd_bano": null,
     "odd_mercado": 1.53,
     "timestamp": "2026-11-06T12:34:16.812873-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
