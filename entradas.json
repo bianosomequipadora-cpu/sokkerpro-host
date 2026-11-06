@@ -46840,5 +46840,23 @@
     "timestamp": "2026-11-06T11:44:43.672558-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "7b1edac23589_custom_1793976797771_20261106",
+    "fixture_id": "19714141",
+    "mercado": "custom_1793976797771",
+    "tipo": "escanteio_ht",
+    "home": "Septemvri Sofia",
+    "away": "Lokomotiv Sofia 1929",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.265,
+    "timestamp": "2026-11-06T12:26:28.747126-03:00",
+    "resultado": "pendente"
   }
 ]
