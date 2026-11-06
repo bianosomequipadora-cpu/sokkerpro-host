@@ -47334,5 +47334,23 @@
     "timestamp": "2026-11-06T17:44:50.474043-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "5c97101f2132_custom_1793523448404_20261106",
+    "fixture_id": "19786718",
+    "mercado": "custom_1793523448404",
+    "tipo": "escanteio_ft",
+    "home": "Union Brescia",
+    "away": "Arzignano Valchiampo",
+    "message_id": 0,
+    "extra_val": 11,
+    "entry_sh": 2,
+    "entry_sa": 2,
+    "entry_total": 4,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.344,
+    "timestamp": "2026-11-06T18:08:12.155347-03:00",
+    "resultado": "pendente"
   }
 ]
