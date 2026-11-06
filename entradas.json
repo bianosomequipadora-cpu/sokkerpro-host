@@ -47163,5 +47163,23 @@
     "timestamp": "2026-11-06T15:09:30.272598-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "9f93f2440026_custom_1793975069332_20261106",
+    "fixture_id": "19724407",
+    "mercado": "custom_1793975069332",
+    "tipo": "escanteio_ft",
+    "home": "Nafta",
+    "away": "Olimpija",
+    "message_id": 0,
+    "extra_val": 9,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.645,
+    "timestamp": "2026-11-06T15:10:03.194995-03:00",
+    "resultado": "pendente"
   }
 ]
