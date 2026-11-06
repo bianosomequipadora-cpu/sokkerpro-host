@@ -1390,7 +1390,7 @@ class _SokkerProM4HTTPError(RuntimeError):
 urllib3_connection.allowed_gai_family = lambda: socket.AF_INET
 # Reproduz o transporte usado pelo script Termux enviado pelo usuário:
 # POST e GET diretos do módulo requests, sem sessão/cookies compartilhados.
-_M4_HTTP = requests.Session()
+_M4_HTTP = requests
 _M4_SESSION = M4Session(SOKKERPRO_BASE_URL)
 
 
