@@ -46574,5 +46574,23 @@
     "timestamp": "2026-11-04T07:28:11.299308-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "8f7932f59bc7_custom_1793845356786_20261106",
+    "fixture_id": "19730174",
+    "mercado": "custom_1793845356786",
+    "tipo": "escanteio_ft",
+    "home": "Polissya Zhytomyr",
+    "away": "Veres",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.144,
+    "timestamp": "2026-11-06T10:01:37.418474-03:00",
+    "resultado": "pendente"
   }
 ]
