@@ -47714,5 +47714,23 @@
     "timestamp": "2026-11-07T04:32:31.762601-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "099db738bc7e_custom_1794033272217_20261107",
+    "fixture_id": "19720178",
+    "mercado": "custom_1794033272217",
+    "tipo": "escanteio_ht",
+    "home": "Ehime",
+    "away": "Rayluck Shiga",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.296,
+    "timestamp": "2026-11-07T04:33:06.842864-03:00",
+    "resultado": "pendente"
   }
 ]
