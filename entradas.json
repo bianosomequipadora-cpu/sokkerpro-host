@@ -47665,7 +47665,7 @@
     "tipo": "escanteio_ht",
     "home": "Shanghai Segenda",
     "away": "Guangzhou Dandelion",
-    "message_id": 0,
+    "message_id": 18679,
     "extra_val": 0,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -47674,6 +47674,7 @@
     "odd_bano": null,
     "odd_mercado": 1.81,
     "timestamp": "2026-11-07T04:00:52.390770-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
