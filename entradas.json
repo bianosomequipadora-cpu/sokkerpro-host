@@ -47513,7 +47513,7 @@
     "tipo": "escanteio_ht",
     "home": "Iwaki",
     "away": "Montedio Yamagata",
-    "message_id": 0,
+    "message_id": 18671,
     "extra_val": 5,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -47522,6 +47522,7 @@
     "odd_bano": null,
     "odd_mercado": 1.715,
     "timestamp": "2026-11-07T02:39:49.635284-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
