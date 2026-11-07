@@ -47912,7 +47912,7 @@
     "tipo": "escanteio_ht",
     "home": "South Melbourne",
     "away": "Sutherland Sharks",
-    "message_id": 0,
+    "message_id": 18692,
     "extra_val": 2,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -47921,6 +47921,7 @@
     "odd_bano": null,
     "odd_mercado": 1.23,
     "timestamp": "2026-11-07T06:03:49.006784-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
