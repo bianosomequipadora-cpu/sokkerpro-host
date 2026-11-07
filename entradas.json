@@ -48235,7 +48235,7 @@
     "tipo": "escanteio_ht",
     "home": "Real Cartagena",
     "away": "Real Cundinamarca",
-    "message_id": 0,
+    "message_id": 18716,
     "extra_val": 7,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -48244,6 +48244,7 @@
     "odd_bano": null,
     "odd_mercado": 4.39,
     "timestamp": "2026-11-07T20:51:12.588164-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
