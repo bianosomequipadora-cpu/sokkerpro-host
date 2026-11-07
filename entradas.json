@@ -47741,7 +47741,7 @@
     "tipo": "escanteio_ht",
     "home": "Gimhae City",
     "away": "Hwaseong",
-    "message_id": 0,
+    "message_id": 18683,
     "extra_val": 3,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -47750,6 +47750,7 @@
     "odd_bano": null,
     "odd_mercado": 1.55,
     "timestamp": "2026-11-07T05:02:39.447804-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
