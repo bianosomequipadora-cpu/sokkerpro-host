@@ -47562,5 +47562,23 @@
     "timestamp": "2026-11-07T02:41:04.489514-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "680ef5608b35_custom_1793523686171_20261107",
+    "fixture_id": "19676289",
+    "mercado": "custom_1793523686171",
+    "tipo": "escanteio_ht",
+    "home": "Seongnam",
+    "away": "Daegu",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.3,
+    "odd_bano": null,
+    "odd_mercado": 2.3,
+    "timestamp": "2026-11-07T02:41:38.977718-03:00",
+    "resultado": "pendente"
   }
 ]
