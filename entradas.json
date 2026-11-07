@@ -48037,5 +48037,23 @@
     "timestamp": "2026-11-07T17:33:18.429679-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "795d02e80a42_custom_1793976797771_20261107",
+    "fixture_id": "19901300",
+    "mercado": "custom_1793976797771",
+    "tipo": "escanteio_ht",
+    "home": "Moghreb Tétouan",
+    "away": "CODM Meknès",
+    "message_id": 0,
+    "extra_val": 8,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.48,
+    "timestamp": "2026-11-07T17:34:06.956358-03:00",
+    "resultado": "pendente"
   }
 ]
