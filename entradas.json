@@ -47931,7 +47931,7 @@
     "tipo": "escanteio_ft",
     "home": "Long An",
     "away": "Bình Minh Sài Gòn",
-    "message_id": 0,
+    "message_id": 18693,
     "extra_val": 7,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -47940,6 +47940,7 @@
     "odd_bano": null,
     "odd_mercado": 1.89,
     "timestamp": "2026-11-07T07:12:01.961789-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
