@@ -47923,5 +47923,23 @@
     "timestamp": "2026-11-07T06:03:49.006784-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "35accb15ea4c_custom_1793523448404_20261107",
+    "fixture_id": "19871451",
+    "mercado": "custom_1793523448404",
+    "tipo": "escanteio_ft",
+    "home": "Long An",
+    "away": "Bình Minh Sài Gòn",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.9,
+    "odd_bano": null,
+    "odd_mercado": 1.89,
+    "timestamp": "2026-11-07T07:12:01.961789-03:00",
+    "resultado": "pendente"
   }
 ]
