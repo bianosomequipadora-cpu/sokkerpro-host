@@ -48075,5 +48075,23 @@
     "timestamp": "2026-11-07T17:34:53.068343-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "1150301415e2_custom_1793523686171_20261107",
+    "fixture_id": "19609996",
+    "mercado": "custom_1793523686171",
+    "tipo": "escanteio_ht",
+    "home": "CF Montréal",
+    "away": "Vancouver Whitecaps",
+    "message_id": 0,
+    "extra_val": 1,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.33,
+    "timestamp": "2026-11-07T18:39:46.190896-03:00",
+    "resultado": "pendente"
   }
 ]
