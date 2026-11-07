@@ -48170,5 +48170,23 @@
     "timestamp": "2026-11-07T20:17:21.617426-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "b5f0548787df_custom_1793523686171_20261107",
+    "fixture_id": "19712941",
+    "mercado": "custom_1793523686171",
+    "tipo": "escanteio_ht",
+    "home": "Atlético Nacional",
+    "away": "Deportivo Pereira",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.75,
+    "odd_bano": null,
+    "odd_mercado": 1.715,
+    "timestamp": "2026-11-07T20:49:16.724179-03:00",
+    "resultado": "pendente"
   }
 ]
