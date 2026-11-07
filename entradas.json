@@ -48026,7 +48026,7 @@
     "tipo": "escanteio_ht",
     "home": "Moghreb Tétouan",
     "away": "CODM Meknès",
-    "message_id": 0,
+    "message_id": 18703,
     "extra_val": 8,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -48035,6 +48035,7 @@
     "odd_bano": null,
     "odd_mercado": 1.384,
     "timestamp": "2026-11-07T17:33:18.429679-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
