@@ -47836,7 +47836,7 @@
     "tipo": "escanteio_ft",
     "home": "Wollongong Wolves",
     "away": "Preston Lions",
-    "message_id": 0,
+    "message_id": 18688,
     "extra_val": 12,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -47845,6 +47845,7 @@
     "odd_bano": null,
     "odd_mercado": 1.464,
     "timestamp": "2026-11-07T05:21:41.067720-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
