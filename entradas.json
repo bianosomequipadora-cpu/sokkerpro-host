@@ -47733,5 +47733,23 @@
     "timestamp": "2026-11-07T04:33:06.842864-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "d78213dc407f_custom_1793976797771_20261107",
+    "fixture_id": "19676286",
+    "mercado": "custom_1793976797771",
+    "tipo": "escanteio_ht",
+    "home": "Gimhae City",
+    "away": "Hwaseong",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.57,
+    "odd_bano": null,
+    "odd_mercado": 1.55,
+    "timestamp": "2026-11-07T05:02:39.447804-03:00",
+    "resultado": "pendente"
   }
 ]
