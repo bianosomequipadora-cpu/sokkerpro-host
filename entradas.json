@@ -47999,5 +47999,23 @@
     "timestamp": "2026-11-07T17:30:37.341630-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "2b86b47d4e29_custom_1793523732794_20261107",
+    "fixture_id": "19732624",
+    "mercado": "custom_1793523732794",
+    "tipo": "escanteio_ht",
+    "home": "Valencia",
+    "away": "Real Madrid",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.21,
+    "timestamp": "2026-11-07T17:31:29.731105-03:00",
+    "resultado": "pendente"
   }
 ]
