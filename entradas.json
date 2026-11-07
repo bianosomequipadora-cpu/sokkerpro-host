@@ -48159,7 +48159,7 @@
     "tipo": "escanteio_ft",
     "home": "Leones del Norte",
     "away": "Guayaquil City",
-    "message_id": 0,
+    "message_id": 18712,
     "extra_val": 8,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -48168,6 +48168,7 @@
     "odd_bano": null,
     "odd_mercado": 2.03,
     "timestamp": "2026-11-07T20:17:21.617426-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
