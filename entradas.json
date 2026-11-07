@@ -47608,7 +47608,7 @@
     "tipo": "escanteio_ft",
     "home": "Seongnam",
     "away": "Daegu",
-    "message_id": 0,
+    "message_id": 18676,
     "extra_val": 8,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -47617,6 +47617,7 @@
     "odd_bano": null,
     "odd_mercado": 1.344,
     "timestamp": "2026-11-07T03:40:48.738376-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
