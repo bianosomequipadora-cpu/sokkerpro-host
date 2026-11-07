@@ -47950,7 +47950,7 @@
     "tipo": "escanteio_ft",
     "home": "Petrópolis",
     "away": "Duque de Caxias",
-    "message_id": 0,
+    "message_id": 18699,
     "extra_val": 10,
     "entry_sh": 2,
     "entry_sa": 2,
@@ -47959,6 +47959,7 @@
     "odd_bano": null,
     "odd_mercado": 1.944,
     "timestamp": "2026-11-07T17:17:37.184610-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
