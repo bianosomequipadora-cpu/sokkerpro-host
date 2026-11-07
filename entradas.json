@@ -48102,7 +48102,7 @@
     "tipo": "escanteio_ft",
     "home": "Sporting SM II",
     "away": "Costa del Este",
-    "message_id": 0,
+    "message_id": 18707,
     "extra_val": 5,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -48111,6 +48111,7 @@
     "odd_bano": null,
     "odd_mercado": 2.155,
     "timestamp": "2026-11-07T18:42:28.243636-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
