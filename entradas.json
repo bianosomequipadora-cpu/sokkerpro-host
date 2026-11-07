@@ -48246,5 +48246,23 @@
     "timestamp": "2026-11-07T20:51:12.588164-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "e734705c99e2_custom_1794033272217_20261107",
+    "fixture_id": "19903718",
+    "mercado": "custom_1794033272217",
+    "tipo": "escanteio_ht",
+    "home": "Real Cartagena",
+    "away": "Real Cundinamarca",
+    "message_id": 0,
+    "extra_val": 7,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 5.3,
+    "timestamp": "2026-11-07T20:51:51.039083-03:00",
+    "resultado": "pendente"
   }
 ]
