@@ -48113,5 +48113,23 @@
     "timestamp": "2026-11-07T18:42:28.243636-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "e4aa6bbf13fd_custom_1793523704917_20261107",
+    "fixture_id": "19764388",
+    "mercado": "custom_1793523704917",
+    "tipo": "escanteio_ft",
+    "home": "Sporting SM II",
+    "away": "Costa del Este",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 2.2,
+    "odd_bano": null,
+    "odd_mercado": 2.3,
+    "timestamp": "2026-11-07T18:42:59.485053-03:00",
+    "resultado": "pendente"
   }
 ]
