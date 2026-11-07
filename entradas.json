@@ -47874,7 +47874,7 @@
     "tipo": "escanteio_ht",
     "home": "Kirivong Sok Sen Chey",
     "away": "Moi Kompong Dewa",
-    "message_id": 0,
+    "message_id": 18690,
     "extra_val": 3,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -47883,6 +47883,7 @@
     "odd_bano": null,
     "odd_mercado": 1.275,
     "timestamp": "2026-11-07T06:01:04.574035-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
