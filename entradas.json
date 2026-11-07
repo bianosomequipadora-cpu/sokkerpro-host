@@ -47771,5 +47771,23 @@
     "timestamp": "2026-11-07T05:04:44.390973-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "7c84db25df91_custom_1793975069332_20261107",
+    "fixture_id": "19880494",
+    "mercado": "custom_1793975069332",
+    "tipo": "escanteio_ft",
+    "home": "Shanghai Segenda",
+    "away": "Guangzhou Dandelion",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.72,
+    "timestamp": "2026-11-07T05:05:17.228133-03:00",
+    "resultado": "pendente"
   }
 ]
