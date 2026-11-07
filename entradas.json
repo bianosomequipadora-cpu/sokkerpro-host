@@ -47372,5 +47372,23 @@
     "timestamp": "2026-11-06T18:08:43.413294-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "686f6dc036cc_custom_1793976797771_20261107",
+    "fixture_id": "19719602",
+    "mercado": "custom_1793976797771",
+    "tipo": "escanteio_ht",
+    "home": "Tokushima Vortis",
+    "away": "Tegevajaro Miyazaki",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 1,
+    "entry_sa": 0,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.275,
+    "timestamp": "2026-11-07T02:31:02.322445-03:00",
+    "resultado": "pendente"
   }
 ]
