@@ -48569,5 +48569,23 @@
     "timestamp": "2026-11-08T05:06:53.952561-03:00",
     "resultado": "red",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "222534bd12ef_custom_1793523642893_20261108",
+    "fixture_id": "19854405",
+    "mercado": "custom_1793523642893",
+    "tipo": "escanteio_ft",
+    "home": "Warri Wolves",
+    "away": "Katsina United",
+    "message_id": 0,
+    "extra_val": 12,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 2.2,
+    "odd_bano": null,
+    "odd_mercado": 2.2,
+    "timestamp": "2026-11-08T13:49:31.572600-03:00",
+    "resultado": "pendente"
   }
 ]
