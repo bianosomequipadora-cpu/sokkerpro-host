@@ -48531,5 +48531,23 @@
     "timestamp": "2026-11-08T05:05:53.002571-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "cf8e09e760b8_custom_1794100733031_20261108",
+    "fixture_id": "19902374",
+    "mercado": "custom_1794100733031",
+    "tipo": "escanteio_ht",
+    "home": "Gangwon",
+    "away": "Jeonbuk Motors",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 1,
+    "entry_sa": 1,
+    "entry_total": 2,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 2.075,
+    "timestamp": "2026-11-08T05:06:23.219750-03:00",
+    "resultado": "pendente"
   }
 ]
