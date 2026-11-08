@@ -48455,5 +48455,23 @@
     "timestamp": "2026-11-08T03:45:48.998573-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "ec5d1bf72841_custom_1793523704917_20261108",
+    "fixture_id": "19720182",
+    "mercado": "custom_1793523704917",
+    "tipo": "escanteio_ft",
+    "home": "Parceiro Nagano",
+    "away": "Kamatamare Sanuki",
+    "message_id": 0,
+    "extra_val": 14,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.57,
+    "odd_bano": null,
+    "odd_mercado": 1.81,
+    "timestamp": "2026-11-08T03:46:30.736485-03:00",
+    "resultado": "pendente"
   }
 ]
