@@ -48577,7 +48577,7 @@
     "tipo": "escanteio_ft",
     "home": "Warri Wolves",
     "away": "Katsina United",
-    "message_id": 0,
+    "message_id": 18741,
     "extra_val": 12,
     "entry_sh": 1,
     "entry_sa": 1,
@@ -48586,6 +48586,7 @@
     "odd_bano": null,
     "odd_mercado": 2.2,
     "timestamp": "2026-11-08T13:49:31.572600-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
