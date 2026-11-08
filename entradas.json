@@ -48341,5 +48341,23 @@
     "timestamp": "2026-11-07T21:58:48.993778-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "3ec75f924c9b_custom_1793976797771_20261107",
+    "fixture_id": "19667070",
+    "mercado": "custom_1793976797771",
+    "tipo": "escanteio_ht",
+    "home": "Náutico",
+    "away": "CRB",
+    "message_id": 0,
+    "extra_val": 3,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.5,
+    "timestamp": "2026-11-07T22:05:58.880065-03:00",
+    "resultado": "pendente"
   }
 ]
