@@ -48368,7 +48368,7 @@
     "tipo": "escanteio_ft",
     "home": "San Carlos",
     "away": "Pérez Zeledón",
-    "message_id": 0,
+    "message_id": 18723,
     "extra_val": 6,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -48377,6 +48377,7 @@
     "odd_bano": null,
     "odd_mercado": 1.6,
     "timestamp": "2026-11-07T22:45:05.505456-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
