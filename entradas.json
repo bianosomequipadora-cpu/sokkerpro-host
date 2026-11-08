@@ -48284,5 +48284,23 @@
     "timestamp": "2026-11-07T21:29:09.189727-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "0fd0f4db6557_custom_1793523686171_20261107",
+    "fixture_id": "19610002",
+    "mercado": "custom_1793523686171",
+    "tipo": "escanteio_ht",
+    "home": "Dallas",
+    "away": "Colorado Rapids",
+    "message_id": 0,
+    "extra_val": 4,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.72,
+    "odd_bano": null,
+    "odd_mercado": 1.715,
+    "timestamp": "2026-11-07T21:47:45.768630-03:00",
+    "resultado": "pendente"
   }
 ]
