@@ -48596,7 +48596,7 @@
     "tipo": "escanteio_ht",
     "home": "Sporting Escaldes",
     "away": "Inter Club d'Escaldes",
-    "message_id": 0,
+    "message_id": 18742,
     "extra_val": 5,
     "entry_sh": 0,
     "entry_sa": 0,
@@ -48605,6 +48605,7 @@
     "odd_bano": null,
     "odd_mercado": 2.008,
     "timestamp": "2026-11-08T16:37:00.170505-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
