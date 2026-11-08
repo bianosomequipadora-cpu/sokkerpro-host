@@ -48311,7 +48311,7 @@
     "tipo": "escanteio_ft",
     "home": "Atlético Nacional",
     "away": "Deportivo Pereira",
-    "message_id": 0,
+    "message_id": 18720,
     "extra_val": 8,
     "entry_sh": 2,
     "entry_sa": 3,
@@ -48320,6 +48320,7 @@
     "odd_bano": null,
     "odd_mercado": 1.925,
     "timestamp": "2026-11-07T21:58:16.292327-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
