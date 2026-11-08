@@ -33,7 +33,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 0.75
+          "valor": 1
         },
         {
           "campo": "escanteios_5m",
@@ -79,7 +79,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 0.75
+          "valor": 1
         },
         {
           "campo": "pressure_bar_min",
@@ -110,7 +110,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 0.75
+          "valor": 1
         },
         {
           "campo": "media_gols_partida_min",
@@ -156,7 +156,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 0.75
+          "valor": 1
         },
         {
           "campo": "dapm_10_fav",
@@ -207,7 +207,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 0.75
+          "valor": 1
         }
       ]
     },
@@ -233,7 +233,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 0.75
+          "valor": 1
         },
         {
           "campo": "dapm_10_fav",
@@ -269,7 +269,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 0.75
+          "valor": 1
         },
         {
           "campo": "media_gols_partida_min",
@@ -320,7 +320,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 0.75
+          "valor": 1
         },
         {
           "campo": "pressure_bar_min",
@@ -366,7 +366,7 @@
         {
           "campo": "dapm_total_orig_min",
           "operador": "gte",
-          "valor": 0.75
+          "valor": 1
         }
       ]
     }
