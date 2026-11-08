@@ -48360,5 +48360,23 @@
     "timestamp": "2026-11-07T22:05:58.880065-03:00",
     "resultado": "green",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "3504855aa35a_custom_1793523642893_20261107",
+    "fixture_id": "19715038",
+    "mercado": "custom_1793523642893",
+    "tipo": "escanteio_ft",
+    "home": "San Carlos",
+    "away": "Pérez Zeledón",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.6,
+    "odd_bano": null,
+    "odd_mercado": 1.6,
+    "timestamp": "2026-11-07T22:45:05.505456-03:00",
+    "resultado": "pendente"
   }
 ]
