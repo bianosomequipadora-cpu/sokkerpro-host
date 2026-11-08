@@ -48417,5 +48417,23 @@
     "timestamp": "2026-11-07T23:41:46.541171-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "ed76cdc7574d_custom_1794100733031_20261107",
+    "fixture_id": "19725375",
+    "mercado": "custom_1794100733031",
+    "tipo": "escanteio_ht",
+    "home": "Marquense",
+    "away": "Comunicaciones",
+    "message_id": 0,
+    "extra_val": 6,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": 1.77,
+    "odd_bano": null,
+    "odd_mercado": 1.752,
+    "timestamp": "2026-11-07T23:42:16.294726-03:00",
+    "resultado": "pendente"
   }
 ]
