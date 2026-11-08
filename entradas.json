@@ -48607,5 +48607,23 @@
     "timestamp": "2026-11-08T16:37:00.170505-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "180e5e1f2d28_custom_1794100733031_20261108",
+    "fixture_id": "19848900",
+    "mercado": "custom_1794100733031",
+    "tipo": "escanteio_ht",
+    "home": "Sporting Escaldes",
+    "away": "Inter Club d'Escaldes",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.77,
+    "odd_bano": null,
+    "odd_mercado": 1.896,
+    "timestamp": "2026-11-08T16:37:56.587231-03:00",
+    "resultado": "pendente"
   }
 ]
