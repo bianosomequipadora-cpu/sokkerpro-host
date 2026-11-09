@@ -1388,13 +1388,33 @@ class _SokkerProM4HTTPError(RuntimeError):
 
 
 urllib3_connection.allowed_gai_family = lambda: socket.AF_INET
-# Reproduz o transporte usado pelo script Termux enviado pelo usuário:
-# POST e GET diretos do módulo requests, sem sessão/cookies compartilhados.
-_M4_HTTP = requests
+# Mantém cookies compartilhados entre a página, o handshake e as chamadas REST M4.
+_M4_HTTP = requests.Session()
+_M4_HTTP.headers.update({
+    'User-Agent': 'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36',
+    'Accept': 'application/json, text/plain, */*',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Referer': 'https://sokkerpro.com/',
+    'Origin': 'https://sokkerpro.com',
+})
 _M4_SESSION = M4Session(SOKKERPRO_BASE_URL)
+_M4_SITE_BOOTSTRAPPED = False
+
+
+def _m4_bootstrap_site_session():
+    """Inicializa uma sessão HTTP e preserva cookies do site antes do handshake."""
+    global _M4_SITE_BOOTSTRAPPED
+    if _M4_SITE_BOOTSTRAPPED:
+        return
+    response = _M4_HTTP.get('https://sokkerpro.com/', timeout=15)
+    # Não interrompe o handshake por um status da página principal; a resposta M4
+    # continua sendo a fonte decisiva e erros são registrados sem corpo/cookies.
+    LOGGER.info('[M4] Inicialização de sessão do site: HTTP %s', response.status_code)
+    _M4_SITE_BOOTSTRAPPED = True
 
 
 def _m4_post_json(url, payload):
+    _m4_bootstrap_site_session()
     # Headers de cliente no POST de handshake M4; não substituir o payload,
     # a sessão ECDH/HKDF nem os headers assinados das chamadas GET.
     headers = {
