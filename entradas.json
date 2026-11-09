@@ -48645,5 +48645,23 @@
     "timestamp": "2026-11-08T22:37:17.676707-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "2489511d329d_custom_1794100733031_20261108",
+    "fixture_id": "19768422",
+    "mercado": "custom_1794100733031",
+    "tipo": "escanteio_ht",
+    "home": "FAS",
+    "away": "Fuerte San Francisco",
+    "message_id": 0,
+    "extra_val": 5,
+    "entry_sh": 0,
+    "entry_sa": 1,
+    "entry_total": 1,
+    "odd_b365": null,
+    "odd_bano": null,
+    "odd_mercado": 1.715,
+    "timestamp": "2026-11-08T22:37:54.484743-03:00",
+    "resultado": "pendente"
   }
 ]
