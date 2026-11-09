@@ -1409,7 +1409,7 @@ def _m4_bootstrap_site_session():
     response = _M4_HTTP.get('https://sokkerpro.com/', timeout=15)
     # Não interrompe o handshake por um status da página principal; a resposta M4
     # continua sendo a fonte decisiva e erros são registrados sem corpo/cookies.
-    LOGGER.info('[M4] Inicialização de sessão do site: HTTP %s', response.status_code)
+    print(f'[M4] Inicialização de sessão do site: HTTP {response.status_code}')
     _M4_SITE_BOOTSTRAPPED = True
 
 
