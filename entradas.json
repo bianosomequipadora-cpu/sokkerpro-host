@@ -48653,7 +48653,7 @@
     "tipo": "escanteio_ht",
     "home": "FAS",
     "away": "Fuerte San Francisco",
-    "message_id": 0,
+    "message_id": 18747,
     "extra_val": 5,
     "entry_sh": 0,
     "entry_sa": 1,
@@ -48662,6 +48662,7 @@
     "odd_bano": null,
     "odd_mercado": 1.715,
     "timestamp": "2026-11-08T22:37:54.484743-03:00",
-    "resultado": "pendente"
+    "resultado": "pendente",
+    "message_chat_id": -1003843430798
   }
 ]
