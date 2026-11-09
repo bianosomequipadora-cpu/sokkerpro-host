@@ -1398,9 +1398,11 @@ def _m4_post_json(url, payload):
     # Headers de cliente no POST de handshake M4; não substituir o payload,
     # a sessão ECDH/HKDF nem os headers assinados das chamadas GET.
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'User-Agent': 'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36',
         'Accept': 'application/json, text/plain, */*',
         'Accept-Language': 'en-US,en;q=0.9',
+        'Referer': 'https://sokkerpro.com/',
+        'Origin': 'https://sokkerpro.com',
     }
     response = _M4_HTTP.post(url, json=payload, headers=headers, timeout=15)
     if not response.ok:
@@ -1424,8 +1426,10 @@ def _m4_get_json(path):
         _m4_handshake(force=False)
         headers = _M4_SESSION.headers_for('GET', url)
         headers.update({
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+            'User-Agent': 'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36',
             'Accept': 'application/json, text/plain, */*',
+            'Referer': 'https://sokkerpro.com/',
+            'Origin': 'https://sokkerpro.com',
         })
         response = _M4_HTTP.get(
             url,
