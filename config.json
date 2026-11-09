@@ -369,6 +369,32 @@
           "valor": 1
         }
       ]
+    },
+    "custom_1794213446470": {
+      "ativo": true,
+      "notificar": true,
+      "nome": "⛳️🔔FAVORITO PERDENDO🔔⛳️",
+      "minuto_inicio": 30,
+      "minuto_fim": 38,
+      "periodo": 1,
+      "tipo": "gol_intervalo",
+      "stake": 10,
+      "placar_valido": "",
+      "criterios": {
+        "situacao_favorito": "perdendo"
+      },
+      "criterios_api": [
+        {
+          "campo": "diferenca_gols_fav_max",
+          "operador": "lte",
+          "valor": 1
+        },
+        {
+          "campo": "pressure_bar_min",
+          "operador": "gte",
+          "valor": 75
+        }
+      ]
     }
   }
 }
