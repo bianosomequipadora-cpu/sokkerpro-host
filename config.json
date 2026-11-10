@@ -468,9 +468,9 @@
       },
       "criterios_api": [
         {
-          "campo": "appm_total_min",
+          "campo": "appm_min_por_time",
           "operador": "gte",
-          "valor": 0.2
+          "valor": 999999
         }
       ]
     }
