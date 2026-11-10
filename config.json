@@ -445,7 +445,13 @@
       "criterios": {
         "situacao_favorito": "perdendo_ou_empatando"
       },
-      "criterios_api": []
+      "criterios_api": [
+        {
+          "campo": "appm_min_por_time",
+          "operador": "gte",
+          "valor": 999999
+        }
+      ]
     },
     "custom_1794272731835": {
       "ativo": true,
@@ -462,9 +468,9 @@
       },
       "criterios_api": [
         {
-          "campo": "appm_min_por_time",
+          "campo": "ataques_perigosos_h",
           "operador": "gte",
-          "valor": 999999
+          "valor": 10
         }
       ]
     }
