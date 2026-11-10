@@ -449,7 +449,7 @@
         {
           "campo": "appm_min_por_time",
           "operador": "gte",
-          "valor": 0.3
+          "valor": 0.1
         }
       ]
     }
