@@ -177,23 +177,6 @@ SENT_API_PATH = 'sent_live_signals.json'
 RESULTADO_API_PATH = 'resultados.json'
 PERFORMANCE_API_PATH = 'performance.json'
 
-def _git_commit_push(msg):
-    """Faz git add, commit e push de todos os arquivos de estado."""
-    import subprocess
-    try:
-        subprocess.run(['git', 'config', 'user.name', 'bot-sokkerpro'], capture_output=True, timeout=10)
-        subprocess.run(['git', 'config', 'user.email', 'bot@sokkerpro.com'], capture_output=True, timeout=10)
-        subprocess.run(['git', 'add', '-A', '--', '*.json'], capture_output=True, timeout=10)
-        r = subprocess.run(['git', 'diff', '--cached', '--quiet'], capture_output=True, timeout=10)
-        if r.returncode == 0:
-            print(f'[GIT] Nada a commitar, skip')
-            return
-        subprocess.run(['git', 'commit', '-m', msg], capture_output=True, timeout=10)
-        subprocess.run(['git', 'push', f'https://{GITHUB_TOKEN}@github.com/{GITHUB_REPO}.git'], capture_output=True, timeout=30)
-        print(f'[GIT] Commit+push OK: {msg}')
-    except Exception as e:
-        print(f'[GIT] Erro no commit+push: {e}')
-
 def load_sent():
     """Carrega sent do GitHub API (sempre a versão mais recente do repositório)."""
     if GITHUB_TOKEN and GITHUB_REPO:
@@ -231,28 +214,50 @@ def load_sent():
     return set()
 
 def _save_json_api(path, data, msg='state: atualiza [skip ci]'):
-    """Salva qualquer JSON no GitHub via API PUT direta (instantânea e síncrona)."""
-    try:
-        url = f'https://api.github.com/repos/{GITHUB_REPO}/contents/{path}'
-        b64 = base64.b64encode(json.dumps(data).encode()).decode()
-        req = request.Request(url, headers={'Authorization': f'Bearer {GITHUB_TOKEN}', 'Accept': 'application/vnd.github+json'})
-        sha = None
+    """Persiste JSON pelo GitHub Contents API; refaz leitura em conflito e confirma PUT."""
+    url = f'https://api.github.com/repos/{GITHUB_REPO}/contents/{path}'
+    headers = {
+        'Authorization': f'Bearer {GITHUB_TOKEN}',
+        'Accept': 'application/vnd.github+json',
+    }
+    encoded = base64.b64encode(json.dumps(data).encode()).decode()
+    for tentativa in range(1, 4):
         try:
-            resp = request.urlopen(req, timeout=10)
-            sha = json.loads(resp.read())['sha']
-        except error.HTTPError as e:
-            if e.code != 404:
-                raise
-        payload = {'message': msg, 'content': b64}
-        if sha:
-            payload['sha'] = sha
-        req = request.Request(url, data=json.dumps(payload).encode(), headers={'Authorization': f'Bearer {GITHUB_TOKEN}', 'Content-Type': 'application/json'}, method='PUT')
-        request.urlopen(req, timeout=15)
-        print(f'[API-PUT] Salvo {path} via API')
-        return True
-    except Exception as e:
-        print(f'[API-PUT] Erro {path}: {e}')
-        return False
+            sha = None
+            try:
+                req = request.Request(url, headers=headers)
+                with request.urlopen(req, timeout=10) as resp:
+                    atual = json.loads(resp.read())
+                sha = atual.get('sha')
+            except error.HTTPError as exc:
+                if exc.code != 404:
+                    raise
+            payload = {'message': msg, 'content': encoded}
+            if sha:
+                payload['sha'] = sha
+            req = request.Request(
+                url, data=json.dumps(payload).encode(),
+                headers={**headers, 'Content-Type': 'application/json'}, method='PUT'
+            )
+            with request.urlopen(req, timeout=15) as resp:
+                saved = json.loads(resp.read())
+                status = getattr(resp, 'status', 200)
+            if status not in (200, 201) or not saved.get('content', {}).get('sha'):
+                raise RuntimeError(f'resposta inesperada do GitHub (HTTP {status})')
+            print(f'[API-PUT] Salvo e confirmado {path} no GitHub (HTTP {status})')
+            return True
+        except error.HTTPError as exc:
+            if exc.code == 409 and tentativa < 3:
+                print(f'[API-PUT] Conflito ao salvar {path}; atualizando SHA e tentando novamente ({tentativa}/3)')
+                continue
+            detalhe = exc.read().decode('utf-8', 'replace')[:240]
+            print(f'[API-PUT] Falha ao salvar {path}: HTTP {exc.code} {exc.reason}; {detalhe}')
+            return False
+        except Exception as exc:
+            print(f'[API-PUT] Falha ao salvar {path} (tentativa {tentativa}/3): {type(exc).__name__}: {exc}')
+            if tentativa == 3:
+                return False
+    return False
 
 CORNER_HISTORY_API_PATH = 'corner_history.json'
 CORNER_HISTORY = {}
@@ -376,11 +381,16 @@ def _save_corner_history(history):
         with open(path, 'w', encoding='utf-8') as f:
             json.dump(payload, f, separators=(',', ':'))
     except Exception as e:
-        print(f'[CORNER] Não foi possível salvar fallback local: {e}')
-    if not (GITHUB_TOKEN and GITHUB_REPO):
-        print('[CORNER] Estado não persistido no GitHub: credencial/repositório ausente')
+        print(f'[CORNER] Falha ao escrever cópia local: {type(e).__name__}: {e}')
+    if not GITHUB_TOKEN or not GITHUB_REPO:
+        print('[CORNER] NÃO PERSISTIDO no GitHub: credencial ou repositório ausente')
         return False
-    return _save_json_api(CORNER_HISTORY_API_PATH, payload, 'state: atualiza corner_history [skip ci]')
+    salvo = _save_json_api(CORNER_HISTORY_API_PATH, payload, 'state: atualiza corner_history [skip ci]')
+    if not salvo:
+        print('[CORNER] NÃO PERSISTIDO remotamente; cópia local não substitui o GitHub')
+        return False
+    print(f'[CORNER] Histórico remoto persistido: {len(history)} jogos')
+    return True
 
 
 def _claim_report_slot(chave):
@@ -500,8 +510,7 @@ def save_sent(sent):
         json.dump(list(sent), f)
     if GITHUB_TOKEN and GITHUB_REPO:
         if not _save_sent_api(sent):
-            print('[SENT] Fallback para git commit+push')
-            _git_commit_push('state: atualiza sent [skip ci]')
+            print('[SENT] GitHub API recusou a gravação; estado salvo apenas localmente, sem fallback git')
 
 def _load_sinais_github():
     """Carrega sinais_pendentes.json do GitHub API (fonte da verdade) com fallback local."""
