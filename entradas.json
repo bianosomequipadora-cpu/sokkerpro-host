@@ -48664,5 +48664,23 @@
     "timestamp": "2026-11-08T22:37:54.484743-03:00",
     "resultado": "refund",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "fe8b69770c0c_custom_1794272731835_20261109",
+    "fixture_id": "19712934",
+    "mercado": "custom_1794272731835",
+    "tipo": "over_gol",
+    "home": "Junior FC",
+    "away": "Cúcuta Deportivo",
+    "message_id": 0,
+    "extra_val": 2,
+    "entry_sh": 2,
+    "entry_sa": 0,
+    "entry_total": 2,
+    "odd_b365": 1.67,
+    "odd_bano": null,
+    "odd_mercado": 1.685,
+    "timestamp": "2026-11-09T22:30:42.926000-03:00",
+    "resultado": "pendente"
   }
 ]
