@@ -48683,5 +48683,23 @@
     "timestamp": "2026-11-09T22:30:42.926000-03:00",
     "resultado": "pendente",
     "message_chat_id": -1003843430798
+  },
+  {
+    "signal_key": "51dec81c537b_custom_1794272731835_20261109",
+    "fixture_id": "19896002",
+    "mercado": "custom_1794272731835",
+    "tipo": "over_gol",
+    "home": "Aurora",
+    "away": "Universitario de Vinto",
+    "message_id": 0,
+    "extra_val": 0,
+    "entry_sh": 0,
+    "entry_sa": 0,
+    "entry_total": 0,
+    "odd_b365": 1.5,
+    "odd_bano": null,
+    "odd_mercado": 1.44,
+    "timestamp": "2026-11-09T22:53:55.090873-03:00",
+    "resultado": "pendente"
   }
 ]
